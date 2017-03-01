@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\usepackage[utf8]{inputenc} 
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
 \usepackage[russian]{babel}
 \usepackage{rotating}
@@ -21,49 +21,49 @@
 \begin{array}{|c|c|c|}
 
   \hline
-  1 &		(x^{a})'		    &	ax^{a-1}\\
+  1 &   (x^{a})'        & ax^{a-1}\\
   \hline
-  2 &		(a^{x})'		    &	a^{x}\ln a\\
+  2 &   (a^{x})'        & a^{x}\ln a\\
   \hline
-  3 &		(\log_{a}x)'	  &	\frac{1}{x\ln a}\\
+  3 &   (\log_{a}x)'    & \frac{1}{x\ln a}\\
   \hline
-  4 &		(\sin x)'			  &	\cos x\\
+  4 &   (\sin x)'       & \cos x\\
   \hline
-  5 &		(\cos x)'		    &	-\sin x\\
+  5 &   (\cos x)'       & -\sin x\\
   \hline
-  6 &		(\tg x)'			  &	\frac{1}{\cos^{2} x}\\
+  6 &   (\tg x)'        & \frac{1}{\cos^{2} x}\\
   \hline
-  7 & 	(\ctg x)'		    &	-\frac{1}{\sin^{2} x}\\
+  7 &   (\ctg x)'       & -\frac{1}{\sin^{2} x}\\
   \hline
-  8 &		(\arcsin x)'		&	\frac{1}{\sqrt{1-x^{2}}}\\
+  8 &   (\arcsin x)'    & \frac{1}{\sqrt{1-x^{2}}}\\
   \hline
-  9 &		(\arccos x)'		&	-\frac{1}{\sqrt{1-x^{2}}}\\
+  9 &   (\arccos x)'    & -\frac{1}{\sqrt{1-x^{2}}}\\
   \hline
-  10&	(\arctg x)'		    &	\frac{1}{1-x^{2}}\\
+  10& (\arctg x)'       & \frac{1}{1-x^{2}}\\
   \hline
-  11&	(\arcctg x)'		  &	-\frac{1}{1-x^{2}}\\
+  11& (\arcctg x)'      & -\frac{1}{1-x^{2}}\\
   \hline
-  12&	(\sh x)'			    &	\ch x\\
+  12& (\sh x)'          & \ch x\\
   \hline
-  13&	(\ch x)'			    &	\sh x\\
+  13& (\ch x)'          & \sh x\\
   \hline
-  14&	(\th x)' 			    &	\frac{1}{\ch^{2} x}\\
+  14& (\th x)'          & \frac{1}{\ch^{2} x}\\
   \hline
-  15&	(\cth x)'		      &	-\frac{1}{\sh^{2} x}\\
+  15& (\cth x)'         & -\frac{1}{\sh^{2} x}\\
   \hline
-  16&	(\arcsh x)'		    &	\frac{1}{\sqrt{x^{2}+1}}\\
+  16& (\arcsh x)'       & \frac{1}{\sqrt{x^{2}+1}}\\
   \hline
-  17&	(\arcch x)'		    &	\frac{1}{\sqrt{x^{2}-1}}\\
+  17& (\arcch x)'       & \frac{1}{\sqrt{x^{2}-1}}\\
   \hline
-  18&	(\arcth x)'		    &	\frac{1}{1-x^{2}}\\
+  18& (\arcth x)'       & \frac{1}{1-x^{2}}\\
   \hline
-  19&	(\arccth x)'		  &	\frac{1}{1-x^{2}}\\
+  19& (\arccth x)'      & \frac{1}{1-x^{2}}\\
   \hline
 
 \end{array}
 \end{displaymath}
 
-%производная сложной функции 
+%производная сложной функции
 \[   \Big(f(g(x))\Big) ' = f'(g(x)) \cdot g'(x)  \]
 
 %правила дефференцирования
@@ -133,12 +133,12 @@
   \hline
   1 &\int dx & x + C\\
   \hline
-  2 &\int x^{n}dx &\frac{x^{n+1}}{n+1} + C, ~ x \not -1\\
+  2 &\int x^{n}dx &\frac{x^{n+1}}{n+1} + C, ~ x \not= -1\\
   \hline
   3 &\int x^{-1}dx &\ln |x| + C\\
   \hline
   4 &\int a^{x}dx &\frac{a^x}{\ln a} + C\\
-  \hline 
+  \hline
   5 &\int e^{x}dx &e^x + C\\
   \hline
   6 &\int \cos x dx &\sin x + C\\
@@ -150,15 +150,15 @@
   9 &\int \frac{dx}{\sqrt{\sin^2 x}} &-\ctg x + C\\
   \hline
   10&\int \frac{dx}{\sqrt{1-x^2}} &\arcsin x + C\\
-  \hline 
+  \hline
   11&\int \frac{dx}{1+x^2} &\arctg x + C\\
   \hline
   12&\int \frac{dx}{a^2+x^2} &\frac{1}{a}\arctg \frac{x}{a} + C\\
   \hline
   13&\int \frac{dx}{\sqrt{a^2-x^2}}& \arcsin \frac{x}{a} + C\\
-  \hline 
+  \hline
   14&\int \frac{dx}{x^2-a^2} &\frac{1}{2a}\ln |\frac{x-1}{x+a}| + C\\
-  \hline 
+  \hline
   15&\int \frac{dx}{\sqrt{x^2 \pm a}} &\ln |x + \sqrt{x^2 \pm a}| + C\\
   \hline
   16&\int \frac{dx}{\sin x} &\ln |\frac{1-\cos x}{\sin x}| + C\\
@@ -212,7 +212,7 @@
   15&1 - 2\sin^2 x\\
   \hline
   16&\tg 2x = \frac{2\tg x}{1 - \tg^2 x}\\
-  \hline 
+  \hline
   17&\ctg 2x = \frac{\ctg^2 x - 1}{2\ctg x}\\
   \hline
   18&\sin x \pm \sin y = 2\sin \frac{x\pm y}{2} \cdot \cos \frac{x\mp y}{2}\\
@@ -222,7 +222,7 @@
   20&\cos x - \cos y = -2\sin\frac{x + y}{2} \cdot \sin\frac{x - y}{2}\\
   \hline
 
-\end{array} 
+\end{array}
 \end{displaymath}
 
 \begin{displaymath}
@@ -249,7 +249,7 @@
   \hline
   30&\ctg \frac{x}{2} = \frac{\sin x}{1 - \cos x}\\
   \hline
-\end{array} 
+\end{array}
 \end{displaymath}
 
 %свойства логарифмов
@@ -262,17 +262,17 @@
   \hline
   3&\log_{c}(ab) = \log_{c}a + \log_{c}b\\
   \hline
-  4&\log_{c}(\frac{a}{b}) = \log_{c}a - \log_{c}b\\ 
+  4&\log_{c}(\frac{a}{b}) = \log_{c}a - \log_{c}b\\
   \hline
   5&\log_{a}b = \frac{\log_{c}b}{\log_{c}a}\\
   \hline
   6&\log_{a}b = \frac{1}{\log_{b}a}\\
-  \hline  
+  \hline
   7&a^{\log_{c}b} = b^{\log_{c}a}\\
   \hline
   8&\log_{a}b \cdot \log_{c}d = \log_{c}b \cdot \log_{a}d\\
-  \hline    
-\end{array} 
+  \hline
+\end{array}
 \end{displaymath}
 
 \end{document}
