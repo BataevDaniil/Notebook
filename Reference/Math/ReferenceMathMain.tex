@@ -1,0 +1,245 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[russian]{babel}
+\usepackage{rotating}
+\usepackage{layout}
+
+\usepackage[left=0cm,right=0cm,
+    top=0cm,bottom=0cm,bindingoffset=0cm]{geometry}
+
+\renewcommand{\arraystretch}{1.8}
+
+\newcommand{\arcsh}{\mathrm{arcsh}}
+\newcommand{\arcch}{\mathrm{arcch}}
+\newcommand{\arcth}{\mathrm{arcth}}
+\newcommand{\arccth}{\mathrm{arccth}}
+
+\begin{document}
+
+%справочник по математике в таблицах
+\begin{turn}{90}
+$
+\begin{array}{llll}
+  %Первая таблица производных
+  \begin{array}{|c|c|c|}
+  \hline
+  1 &   (x^{a})'        & ax^{a-1}\\
+  \hline
+  2 &   (a^{x})'        & a^{x}\ln a\\
+  \hline
+  3 &   (\log_{a}x)'    & \frac{1}{x\ln a}\\
+  \hline
+  4 &   (\sin x)'       & \cos x\\
+  \hline
+  5 &   (\cos x)'       & -\sin x\\
+  \hline
+  6 &   (\tg x)'        & \frac{1}{\cos^{2} x}\\
+  \hline
+  7 &   (\ctg x)'       & -\frac{1}{\sin^{2} x}\\
+  \hline
+  8 &   (\arcsin x)'    & \frac{1}{\sqrt{1-x^{2}}}\\
+  \hline
+  9 &   (\arccos x)'    & -\frac{1}{\sqrt{1-x^{2}}}\\
+  \hline
+  10& (\arctg x)'       & \frac{1}{1+x^{2}}\\
+  \hline
+  11& (\arcctg x)'      & -\frac{1}{1+x^{2}}\\
+  \hline
+  12& (\sh x)'          & \ch x\\
+  \hline
+  13& (\ch x)'          & \sh x\\
+  \hline
+  14& (\th x)'          & \frac{1}{\ch^{2} x}\\
+  \hline
+  15& (\cth x)'         & -\frac{1}{\sh^{2} x}\\
+  \hline
+  16& (\arcsh x)'       & \frac{1}{\sqrt{x^{2}+1}}\\
+  \hline
+  17& (\arcch x)'       & \frac{1}{\sqrt{x^{2}-1}}\\
+  \hline
+  18& (\arcth x)'       & \frac{1}{1-x^{2}}\\
+  \hline
+  19& (\arccth x)'      & \frac{1}{1-x^{2}}\\
+  \hline
+  \end{array} &
+
+%вторая таблица
+%таблица интегрирования
+  \begin{array}{|c|c|c|}
+  \hline
+  1 &\int dx & x + C\\
+  \hline
+  2 &\int x^{n}dx &\frac{x^{n+1}}{n+1} + C, ~ n \not= -1\\
+  \hline
+  3 &\int \frac{1}{x}dx &\ln |x| + C\\
+  \hline
+  4 &\int a^{x}dx &\frac{a^x}{\ln a} + C\\
+  \hline
+  5 &\int e^{x}dx &e^x + C\\
+  \hline
+  6 &\int \cos x dx &\sin x + C\\
+  \hline
+  7 &\int \sin x dx &-\cos x + C\\
+  \hline
+  8 &\int \frac{dx}{\cos^2 x} &\tg x + C\\
+  \hline
+  9 &\int \frac{dx}{\sin^2 x} &-\ctg x + C\\
+  \hline
+  10&\int \frac{dx}{\sqrt{1-x^2}} &\arcsin x + C = -\arccos x + C\\
+  \hline
+  11&\int \frac{dx}{1+x^2} &\arctg x + C = -\arcctg x + C\\
+  \hline
+  12&\int \frac{dx}{a^2+x^2} &\frac{1}{a}\arctg \frac{x}{a} + C\\
+  \hline
+  13&\int \frac{dx}{\sqrt{a^2-x^2}}& \arcsin \frac{x}{a} + C\\
+  \hline
+  14&\int \frac{dx}{x^2-a^2} &\frac{1}{2a}\ln |\frac{x-a}{x+a}| + C\\
+  \hline
+  15&\int \frac{dx}{\sqrt{x^2 \pm a}} &\ln |x + \sqrt{x^2 \pm a}| + C\\
+  \hline
+  16&\int \frac{dx}{\sin x} &\ln |\frac{1-\cos x}{\sin x}| + C\\
+  \hline
+  17&\int \frac{dx}{\cos x} &\ln |\frac{1+\sin x}{\cos x}| + C\\
+  \hline
+  18&\int \sh dx &\ch x + C\\
+  \hline
+  19&\int \ch dx &\sh x + C\\
+  \hline
+  20&\int \frac{dx}{\ch^2 x} & {\th} x + C\\
+  \hline
+  21&\int \frac{dx}{\sh^2 x} & -\cth x + C\\
+  \hline
+  \end{array}&
+
+  %третья таблица тригенометрии
+  \begin{array}{|c|c|}
+
+  \hline
+  1 &\cos^2 x + \sin^2 x = 1\\
+  \hline
+  2 &\tg x = \frac{\sin x}{\cos x}\\
+  \hline
+  3 &\ctg x = \frac{\cos x}{\sin x}\\
+  \hline
+  4 &\tg x \cdot \ctg x = 1\\
+  \hline
+  5 &\tg x = \frac{1}{\ctg x}\\
+  \hline
+  6 &\ctg x = \frac{1}{\tg x}\\
+  \hline
+  7 &1 + \tg^2 x = \frac{1}{\cos^2 x}\\
+  \hline
+  8 &1 + \ctg^2 x = \frac{1}{\sin^2 x}\\
+  \hline
+  9 &\sin (x\pm y) = \sin x \cdot \cos y \pm \cos x \cdot \sin y\\
+  \hline
+  10&\cos (x\pm y) = \cos x \cdot \cos y \mp \sin x \cdot \sin y\\
+  \hline
+  11&\tg (x\pm y) = \frac{\tg x \pm \tg y}{1 \mp \tg x \cdot \tg y}\\
+  \hline
+  12&\sin 2x = 2\sin x \cdot \cos x\\
+  \hline
+  13&\cos 2x = \cos^2 x - \sin^2 x\\
+  \hline
+  14&\cos 2x = 2\cos^2 x - 1\\
+  \hline
+  15&\cos 2x = 1 - 2\sin^2 x\\
+  \hline
+  16&\tg 2x = \frac{2\tg x}{1 - \tg^2 x}\\
+  \hline
+  17&\ctg 2x = \frac{\ctg^2 x - 1}{2\ctg x}\\
+  \hline
+  18&\sin x \pm \sin y = 2\sin \frac{x\pm y}{2} \cdot \cos \frac{x\mp y}{2}\\
+  \hline
+  19&\cos x + \cos y = 2\cos\frac{x + y}{2} \cdot \cos\frac{x - y}{2}\\
+  \hline
+  20&\cos x - \cos y = -2\sin\frac{x + y}{2} \cdot \sin\frac{x - y}{2}\\
+  \hline
+  21&\tg x \pm \tg y = \frac{\sin (x \pm y)}{\cos x \cdot \cos y}\\
+  \hline
+  22&\sin^2 x = \frac{1 - \cos 2x}{2}\\
+  \hline
+  23&\cos^2 x = \frac{1 + \cos 2x}{2}\\
+  \hline
+  24&\sin x \cdot \cos y = \frac{1}{2}(\sin (x+y) + \sin (x-y))\\
+  \hline
+  25&\cos x \cdot \cos y = \frac{1}{2}(\cos (x+y) + \cos (x-y))\\
+  \hline
+  26&\sin x \cdot \sin y = \frac{1}{2}(\cos (x-y) - \cos (x+y))\\
+  \hline
+
+  \end{array}&
+
+  %Четвертая таблица: дописана тригонометрия, логорифмы, первый замечательный
+  %предел и второй замечательный предел.
+  \begin{array}{|c|c|}
+
+  \hline
+  27&|\sin \frac{x}{2}| = \sqrt{\frac{1 - \cos x}{2}}\\
+  \hline
+  28&|\cos \frac{x}{2}| = \sqrt{\frac{1 + \cos x}{2}}\\
+  \hline
+  29&\tg \frac{x}{2} = \frac{\sin x}{1 + \cos x}\\
+  \hline
+  30&\ctg \frac{x}{2} = \frac{\sin x}{1 - \cos x}\\
+  \hline
+
+  %Первый замечательный предел
+  \hline
+  1 &\lim_{x \to 0} \frac{\sin f(x)}{f(x)} = 1\\
+  \hline
+  2 &\lim_{x \to 0} \frac{\tg f(x)}{f(x)} = 1\\
+  \hline
+  3 &\lim_{x \to 0} \frac{\arcsin f(x)}{f(x)} = 1\\
+  \hline
+  4 &\lim_{x \to 0} \frac{\arctg f(x)}{f(x)} = 1\\
+  \hline
+  5 &\lim_{x \to 0} \frac{1 - \cos x}{\frac{f(x)^2}{2}} = 1\\
+  \hline
+
+  %Второй замечательный предел
+  \hline
+  1 &\lim_{x \to 0} (1+f(x))^{\frac{1}{f(x)}} = e\\
+  \hline
+  2 &\lim_{x \to \infty} ( 1 + \frac{k}{f(x)} )^{f(x)}  = e^k \\
+  \hline
+  3 &\lim_{x \to 0} \frac{\ln (1 + f(x))}{f(x)} = 1 \\
+  \hline
+  4 &\lim_{x \to 0} \frac{e^{f(x)} - 1}{f(x)} = 1\\
+  \hline
+  5 &\lim_{x \to 0} \frac{a^{f(x)} - 1}{f(x)\ln a} = 1 ~\text{для}~ a>0, a \not = 1\\
+  \hline
+  6 &\lim_{x \to 0} \frac{(1 + f(x))^a - 1}{af(x)} = 1\\
+  \hline
+
+  %Логорифмы
+  \hline
+  1&\log_{a}b = c, ~ a^c = b\\
+  \hline
+  2&\log_{a^k}b^m = \frac{m}{k}\log_{a}b\\
+  \hline
+  3&\log_{c}(ab) = \log_{c}a + \log_{c}b\\
+  \hline
+  4&\log_{c}(\frac{a}{b}) = \log_{c}a - \log_{c}b\\
+  \hline
+  5&\log_{a}b = \frac{\log_{c}b}{\log_{c}a}\\
+  \hline
+  6&\log_{a}b = \frac{1}{\log_{b}a}\\
+  \hline
+  7&a^{\log_{c}b} = b^{\log_{c}a}\\
+  \hline
+  8&\log_{a}b \cdot \log_{c}d = \log_{c}b \cdot \log_{a}d\\
+  \hline
+
+  \hline
+  1&(a\pm b)^3 = a^3 \pm 3a^{2}b + 3ab^2 \pm b^3 \\
+  \hline
+
+  \end{array}
+\end{array}
+$
+\end{turn}
+
+\end{document}

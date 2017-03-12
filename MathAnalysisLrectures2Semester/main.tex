@@ -3,18 +3,29 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
 \usepackage[russian]{babel}
-\parindent=0pt 
-\newcommand{\bd}[1]{{\bfseries #1}} %\b{текст} текст жирным (bold)
-\newcommand{\kv}{\emph}  %\k{текст} текст курсивом 
+\usepackage[pdftex]{color}
+
+\parindent=0pt
+\newcommand{\bd}[1]{{\bfseries #1}} %\bd{текст} текст жирным (bold)
+\newcommand{\kv}{\emph} %\kv{текст} текст курсивом
 \newcommand{\mt}{\mathit} %\mt{текст} математический шрифт в формулах (mathText)
 \newcommand{\bk}[1]{\bd{\kv{#1}} } %\bk текст жирный и курсивным шрифтом
+\newcommand{\tit}[1]{\colorbox[rgb]{0.7, 0.7, 0.7}{\bd{#1}}}%Заголовок
+
+\newenvironment{theorem}{\colorbox[rgb]{1, 0.4, 0.6}{\bd{Теорема:}}\\}%
+{\colorbox[rgb]{0, 0, 0}{1}\\} %Теорема
+
+\newenvironment{proof}{\colorbox[rgb]{0, 0.8, 0.5}{\bd{Докозательство:}}\\}%
+{\colorbox[rgb]{0, 0, 0}{1}\\} %Доказательство
+
+\newenvironment{defin}{\colorbox[rgb]{1, 0.4, 1}{\bd{Определение:}}\\}%
+{\colorbox[rgb]{0, 0, 0}{1}\\} %definition определение
 
 \begin{document}
-   
-\input{1Lecture} 
+
+\input{1Lecture}
 \input{2Lecture}
 \input{3Lecture}
 \input{4Lecture}
- 
-\end{document} 
-                        
+
+\end{document}
