@@ -1,30 +1,6 @@
 \documentclass{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath,amssymb}
-\usepackage[russian]{babel}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.9}
-%\usepackage[pdftex]{color} пакет pdfplots уже подключил пакет color
-\usepackage{cancel}
-
-\parindent=0pt
-\newcommand{\bd}[1]{{\bfseries #1}} %текст жирным (bold)
-\newcommand{\kv}{\emph}  %текст курсивом
-\newcommand{\mt}{\mathit} %математический шрифт в формулах (mathText)
-\newcommand{\bk}[1]{\bd{\kv{#1}}} %текст жирный и курсивным шрифтом
-
-\newenvironment{theorem}[1][\!\!]{\colorbox[rgb]{1, 0.4, 0.6}%
-{\bd{Теорема #1:}}\\}{\\ \colorbox[rgb]{0, 0, 0}{1}\\} %Теорема
-
-\newenvironment{proof}{\colorbox[rgb]{0, 0.8, 0.5}{\bd{Доказательство:}}\\}%
-{\\ \colorbox[rgb]{0, 0, 0}{1}\\} %Доказательство
-
-\newenvironment{defin}[1][\!\!]{\colorbox[rgb]{1, 0.4, 1}%
-{\bd{Определение #1:}}\\}{\\\colorbox[rgb]{0, 0, 0}{1}\\}%definition определение
-
-\renewenvironment{title}{\begin{center} \bfseries \LARGE}{\end{center}}
-%заголовок
+\usepackage{LectureCommand}
 
 \begin{document}
 
