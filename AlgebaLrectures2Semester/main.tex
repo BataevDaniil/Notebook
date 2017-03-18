@@ -14,14 +14,14 @@
 \newcommand{\mt}{\mathit} %математический шрифт в формулах (mathText)
 \newcommand{\bk}[1]{\bd{\kv{#1}}} %текст жирный и курсивным шрифтом
 
-\newenvironment{theorem}{\colorbox[rgb]{1, 0.4, 0.6}{\bd{Теорема:}}\\}%
-{\colorbox[rgb]{0, 0, 0}{1}\\} %Теорема
+\newenvironment{theorem}[1][\!\!]{\colorbox[rgb]{1, 0.4, 0.6}%
+{\bd{Теорема #1:}}\\}{\\ \colorbox[rgb]{0, 0, 0}{1}\\} %Теорема
 
 \newenvironment{proof}{\colorbox[rgb]{0, 0.8, 0.5}{\bd{Доказательство:}}\\}%
-{\colorbox[rgb]{0, 0, 0}{1}\\} %Доказательство
+{\\ \colorbox[rgb]{0, 0, 0}{1}\\} %Доказательство
 
-\newenvironment{defin}{\colorbox[rgb]{1, 0.4, 1}{\bd{Определение:}}\\}%
-{\colorbox[rgb]{0, 0, 0}{1}\\} %definition определение
+\newenvironment{defin}[1][\!\!]{\colorbox[rgb]{1, 0.4, 1}%
+{\bd{Определение #1:}}\\}{\\\colorbox[rgb]{0, 0, 0}{1}\\}%definition определение
 
 \renewenvironment{title}{\begin{center} \bfseries \LARGE}{\end{center}}
 %заголовок
