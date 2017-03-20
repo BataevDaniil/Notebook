@@ -1,0 +1,221 @@
+\begin{title}
+  Интегрировнаие функции одной переменной.
+\end{title}
+
+\begin{title}[\Large]
+  Первообразная и неопределенный интеграл и их cвойства.
+\end{title}
+
+\begin{defin}[первообразной]
+  Пусть $F(x); f(x)$ определена на $<a;b>$, F - непрерывна на $<a,b>$ и
+  дифференцируема на $(a;b)$ тогда $\forall x \in (a; b) ~~ F'(x) = f(x)$,
+  то $F(x)$ называют \kv{первообразной} для $f(x)$ на $(a;b)$.
+\end{defin}
+
+\bd{Свойства:}\\
+1) Если F(x) - первообразная для $f(x)$ и определена на $\Delta$ то $F(x) + C$
+также первообразная к $f(x)$.\\
+\begin{proof}
+  $(F(x) + C)' = F'(x) + 0 = f(x)$.
+\end{proof}
+
+2) Если $F_{1}(x), F_{2}(x)$ обе первообразнозные для $f(x)$ на промежутке
+$\Delta$, то $F_{1}(x) - F_{2}(x) = C$.\\
+\begin{proof}
+  $(F_{1}(x) - F_{2}(x))' = F'_{1}(x) - F'_{2}(x) = f(x) - f(x) \equiv 0$\\
+  $F_{1}(x) - F_{2}(x) = const$.
+\end{proof}
+
+\begin{defin}[неопредленного интеграла]
+  Совокупность всех первообразных для $f(x)$ на промежутке $<\Delta>$ называют
+  \kv{неопределенным интегралом} от $f(x)$ и обозначают
+  \[\int f(x)dx\]
+  $f(x)$ - называют \kv{подинтервальной функцией.}\\
+  $f(x)dx$ - \kv{Подинтегральным выражением.}
+  \[\int f(x)dx = \cancel{\{} F(x) + C \cancel{\}}\]
+  Где $F(x) + C$ - \kv{семейство функций.}
+\end{defin}
+
+1) Диффиренциал от неопределенного интеграла равен подинтергальному выражению:
+\[d \left ( \int f(x)dx \right ) = f(x)dx \]
+\begin{proof}
+  \[d \left ( \int f(x)dx \right ) = d(F(x) + C) = d(F(x)) + 0 = F'(x)dx
+  = f(x)dx\]
+\end{proof}
+
+2) \[\int d(F(x)) = F(x) + C\]
+\begin{proof}
+  \[\int d(F(x)) = \int F'(x)dx = F(x) + C\]
+\end{proof}
+
+3) $a, b \in R$\\
+\[\int (af(x) + bf(x)) = a \int f(x)dx + b \int g(x)dx\]
+\begin{proof}
+  \begin{eqnarray*}
+    aF(x) + bG(x) = \int (af(x) + bg(x))dx\\
+    aF'(x) + bG'(x) = af(x) + bg(x)
+  \end{eqnarray*}
+\end{proof}
+
+\begin{title}[\Large]
+  Замена переменных (подстановка) в неопределенных интегралах.
+\end{title}
+
+\begin{theorem}
+  Пусть $F(t)$ - первообразная для $f(t)$ на $<T>$ где $t = \varphi (x)$
+  непрерывна и дифференциируема на $\varphi(\Delta) \subset T$ то\\
+  \[\int f(\varphi (x)) \varphi'(x)dx = F(\varphi (x)) + C\]
+\end{theorem}
+
+\begin{proof}
+  \[(F(\varphi(x)) + C)' = F'(\varphi (x)) \varphi'(x) + 0 = f(\varphi(x))
+    \varphi'(x)\]\\
+\end{proof}
+
+\begin{title}[\Large]
+  Интегрирование по частям в неопределенном интеграле.
+\end{title}
+$u = u(x)$\\
+$v = v(x)$\\
+$(u(x)\cdot v(x))' = u'(x)\cdot v(x) + u(x)\cdot v'(x)$\\
+$\int(u(x)\cdot v(x))'dx = \int u'(x)\cdot v(x)dx + \int u(x)\cdot v'(x)dx$\\
+$u(x)\cdot v(x) = \int v(x)du(x) = \int u(x)dv(x)$\\
+\[\int udv = uv - \int vdu\]
+
+\begin{title}[\Large]
+  Интегрирование простых рациональных дробей.
+\end{title}
+Рациональная дробь $\frac{P_n(x)}{Q_m(x)}$ где $P_n(x), Q_m(x)$ многочлены.\\
+Если $P_n(x) \ge Q_m(x)$ неправильная дробь.\\
+Если $P_n(x) < Q_m(x)$ правильная дробь.\\
+
+Существует 4 типа рациональных дробей.\\
+1. $\frac{A}{x-a}$\\
+2. $\frac{A}{(x-a)^n} ~~~ n > 1$\\
+3. $\frac{Ax + B}{x^2 + px +q} ~~~ D = p^2 - 4q < 0$\\
+4. $\frac{Ax + B}{(x^2 + px +q)^n} ~~~ D < 0 ~~ n > 1$\\
+
+1. $\int \frac{A}{x-a}dx = A\int \frac{d(x-a)}{x-a} = A\ln|x-a| + C$\\
+2. $\int \frac{Adx}{(x-a)^n} = A\int (x-a)^{-n}d(x-a)
+  = \frac{A(x-a)^{1-n}}{1-n} + C$\\
+3. Приводим числетель в равенство с продиффиринциоравным знаменателем плюс
+  константа. (путем вынесени из числителя числа за интеграл).
+  Раскладываем интеграл на суммы (разности) интегралов. Интеграл с константой
+  в числителе решаем с помощью выражения в знаменателе полного кдвадрата
+  (приведение к табличному интегралу). Интеграл с линейным выражением
+  в числителе решаем внеся знаменатель под дефференциал.\\
+4. То же что в 3 пункте, только надо брать не весь знаменатель, а то что под
+  степенью знаменателя. После применить 2 метод.\\
+
+\begin{title}[\Large]
+  Интегрирование рациональных дробей.
+\end{title}
+Любуюю неправильнульную рациональную дробь можно представить в виде:\\
+$\frac{P_n(x)}{Q_m(x)} = S_k(x) + \frac{H_c(x)}{Q_n(x)} ~~ m>n$ можно разложить
+на сумму простых дробей.\\
+
+\begin{center}
+  \bd{Пример Интегрирования рациональных дробей}\\
+\end{center}
+
+\[\int \frac{x^5 - 2x^4 + 5x^3 - 12x^2 + 16x}{x^4 + 2x^2 - 8x + 5} dx = \]
+
+\bd{I}\\
+Делим уголком числитель на знаменатель, чтобы дробь привести к правильному виду
+\[= \int (x - 2)dx + \int \frac{3x^3 - 5x + 10}{x^4 + 2x^2 - 8x + 5} = \]
+
+\bd{II}\\
+Раскладываем знаменатель на множетели.
+\[= \int (x - 2)dx + \int \frac{3x^3 - 5x + 10}{(x-1)^2 (x^2+2x+5)} dx = \]
+
+\bd{III}\\
+Раскладываем дробь на простые дроби с неопрделенными коэффицентами.
+\[
+  \frac{3x^3 - 5x + 10}{(x-1)^2 (x^2+2x+5)} = \frac{A}{x - 1} +
+  \frac{B}{(x - 1)^2} + \frac{C \cdot x + D}{x^2 + 2x + 5}
+\]
+
+\bd{IV}\\
+Приводим правую часть к общему знаменателю и убираем знаменатель, раскрываем
+скобки и записываем в матрицу построчно кэффеценты перед иксами с одинаковой
+степенью.\\
+
+\bd{V}\\
+Дальше идет стандартное решение интегралов
+\begin{eqnarray*}
+  \int (x - 2)dx + \int \frac{dx}{(x - 1)^2} + \int \frac{3x + 5}{x^2 + 2x + 5}
+    dx = \\
+  =\frac{x^2}{2} - 2x - \frac{1}{x-1} + \frac{3}{2} ln(x^2 + 2x + 5) + \arctg
+    \frac{x + 1}{2} + C
+\end{eqnarray*}
+
+\begin{title}[\Large]
+  Интегрирование иррациональных выражений.
+\end{title}
+
+$R(u, v, w \ldots)$, где $R$ - Рациональная дробь по отношению к каждому
+элементу\\
+
+\bd{I тип}\\
+\[
+\int R \left( Cx; \left( \frac{ax + b}{cx + d} \right)^{r_1};
+\left( \frac{ax + b}{cx + d} \right)^{r_2} \cdots
+\left( \frac{ax + b}{cx + d} \right)^{r_m} \right)dx
+\]
+$ad - bc \neq 0$, $r_1 \ldots r_m\in Q ~~ r_i = \frac{p_i}{n_i}$
+$\left( \frac{ax + b}{cx + d} \right) = t^q$ где $q$ наименьший общий делитель
+  $n_i$\\
+
+\bd{II тип}\\
+\[\int R \left(x; \sqrt{ax^2 + bx + c} \right)dx\]
+$a \neq 0$\\
+1) $a > 0 ~~~ \sqrt{ax^2 + bx + c} = \pm \sqrt{a}x \pm t$\\
+2) $c > 0 ~~~ \sqrt{ax^2 + bx + c} = \pm xt \pm \sqrt{c}$\\
+2) $D > 0 ~~~ \sqrt{ax^2 + bx + c} = \pm t (x - x_0)$\\
+
+\bd{III тип}\\
+\[\int x^m \cdot (ax^n + b)^p dx\]
+$m, n, p \in Q ~~~ a, b \in R$\\
+1) $p \in Z ~~~ x = t^q$ где $q$ наименьший общий знаменатель $m$ и $n$.\\
+2) $\frac{m+1}{n} \in Z ~~~ ax^n + b = t^q$ где $q$ знаменатель $p$.\\
+3) $\frac{m+1}{n} + p \in Z ~~~ a + \frac{b}{x^n} = t^q$ где $q$ знаменатель
+  $p$.\\
+
+\begin{title}[\Large]
+  Интегрирование тигонометрических выражений.
+\end{title}
+
+\[ \int R(\sin x; \cos x)dx \]
+
+\[
+  \sin x = \frac{2\sin \frac{x}{2} \cdot \cos \frac{x}{2}}{\sin^2 \frac{x}{2}
+  + \cos^2 \frac{x}{2}} = \frac{2\tg \frac{x}{2}}{1 + \tg^2 \frac{x}{2}} =
+  \left| t = \tg \frac{x}{2} \right| = \frac{2t}{1+t^2}
+\]
+
+\[
+  \cos x = \frac{\cos^2 \frac{x}{2} - \sin^2 \frac{x}{2}}
+  {\cos^2 \frac{x}{2} + \sin^2 \frac{x}{2}} =
+  \frac{1 - \tg^2 \frac{x}{2}}{1 + \tg^2 \frac{x}{2}} =
+  \left| t = \tg \frac{x}{2} \right| =
+  \frac{1 - t^2}{1 + t^2}
+\]
+
+\[
+  \tg x = \frac{\sin x}{\cos x} = \frac{2t}{1+t^2} : \frac{1-t^2}{1+t^2} =
+  \frac{2t \cancel{(1+t^2)}}{\cancel{(1+t^2)} (1-t^2)} = \frac{2t}{1-t^2}
+\]
+
+\[
+  \ctg x = \frac{\cos x}{\sin x} = \frac{1-t^2}{1+t^2} : \frac{2t}{1+t^2} =
+  \frac{(1-t^2) \cancel{(1+t^2)}}{\cancel{(1+t^2)} 2t} = \frac{1-t^2}{2t}
+\]
+
+Так как мы интегрируем, то $t = \tg \frac{x}{2} ~~ x = 2\arctg t ~~
+  dx = \frac{2}{1+t^2}dt$
+\begin{eqnarray*}
+  \int (\sin x)^{\alpha_1} \cdot (\cos x)^{\alpha_2} dx =
+  \int (\sin x)^{\alpha_1} \cdot (\sqrt{1 - \sin^2 x})^{\alpha_2} = \\
+  \left| t = \sin x ~~ x = \arcsin t ~~ dx = \frac{dt}{\sqrt{1-t^2}} \right| =
+  \int t^{\alpha_1}(1-t^2)^{\frac{\alpha_2 - 1}{2}} dt
+\end{eqnarray*}
