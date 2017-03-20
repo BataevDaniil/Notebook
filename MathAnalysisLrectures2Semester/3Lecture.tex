@@ -1,67 +1,73 @@
 \begin{title}
-  функции одной переменной.
+  Интегрировнаие функции одной переменной.
 \end{title}
 
-\bd{Первообразная и неопределенный интеграл. Свойства:}\\
-Пусть $F(x); f(x)$ пределена на $<a;b>$ F - непрерывна на $<a,b>$,
-дифференцируема на $(a;b)$ и $\forall x \in (a; b) ~~ F'(x) = f(x)$, то $F(x)$
-называют первообразной для $f(x)$ на $(a;b)$.\\
+\begin{title}[\Large]
+  Первообразная и неопределенный интеграл и их cвойства.
+\end{title}
+
+\begin{defin}[первообразной]
+  Пусть $F(x); f(x)$ определена на $<a;b>$, F - непрерывна на $<a,b>$ и
+  дифференцируема на $(a;b)$ тогда $\forall x \in (a; b) ~~ F'(x) = f(x)$,
+  то $F(x)$ называют \kv{первообразной} для $f(x)$ на $(a;b)$.
+\end{defin}
 
 \bd{Свойства:}\\
-1) Если F(x) - первообразная для $f(x)$ определена на $\Delta$ то $F(x) + C$
+1) Если F(x) - первообразная для $f(x)$ и определена на $\Delta$ то $F(x) + C$
 также первообразная к $f(x)$.\\
 \begin{proof}
-  $(F(x) + C)' = F'(x) + 0 = f(x)$.\\
+  $(F(x) + C)' = F'(x) + 0 = f(x)$.
 \end{proof}
 
 2) Если $F_{1}(x), F_{2}(x)$ обе первообразнозные для $f(x)$ на промежутке
 $\Delta$, то $F_{1}(x) - F_{2}(x) = C$.\\
 \begin{proof}
   $(F_{1}(x) - F_{2}(x))' = F'_{1}(x) - F'_{2}(x) = f(x) - f(x) \equiv 0$\\
-  $F_{1}(x) - F_{2}(x) = const$.\\
+  $F_{1}(x) - F_{2}(x) = const$.
 \end{proof}
 
-\begin{defin}
-  Совокупность всех первообразных для $f(x)$ на промежутке $\Delta$ называют
-  неопределенным интегралом от $f(x)$ и обозначают
+\begin{defin}[неопредленного интеграла]
+  Совокупность всех первообразных для $f(x)$ на промежутке $<\Delta>$ называют
+  \kv{неопределенным интегралом} от $f(x)$ и обозначают
   \[\int f(x)dx\]
-  $f(x)$ - называют подынтервальной функцией.\\
-  $f(x)dx$ - Подинтегральным выражением.
-  \[\int f(x)dx = \not\{ F(x) + C \not\} \]
-  Где $F(x) + C$ - семейство функций.\\
+  $f(x)$ - называют \kv{подинтервальной функцией.}\\
+  $f(x)dx$ - \kv{Подинтегральным выражением.}
+  \[\int f(x)dx = \cancel{\{} F(x) + C \cancel{\}}\]
+  Где $F(x) + C$ - \kv{семейство функций.}
 \end{defin}
 
 1) Диффиренциал от неопределенного интеграла равен подинтергальному выражению:
 \[d \left ( \int f(x)dx \right ) = f(x)dx \]
 \begin{proof}
-  \[d \left ( \int f(x)dx \right ) = d(F(x) + C) = dF(x) + 0 = F'(x)dx
+  \[d \left ( \int f(x)dx \right ) = d(F(x) + C) = d(F(x)) + 0 = F'(x)dx
   = f(x)dx\]
 \end{proof}
 
-2)\[\int dF(x) = F(x) + C\]
+2) \[\int d(F(x)) = F(x) + C\]
 \begin{proof}
-  $\int dF(x) = \int F'(x)dx = F(x) + C$ \\
+  \[\int d(F(x)) = \int F'(x)dx = F(x) + C\]
 \end{proof}
 
 3) $a, b \in R$\\
-\[\int (af(x) + bf(x)) = a \cdot \int f(x)dx + b \cdot \int g(x)dx\]
+\[\int (af(x) + bf(x)) = a \int f(x)dx + b \int g(x)dx\]
 \begin{proof}
-  $aF(x) + bG(x) \in \int (af(x) + bg(x))dx\\
-  aF'(x) + G'(x) = af(x) + bg(x)$ \\
+  \begin{eqnarray*}
+    aF(x) + bG(x) = \int (af(x) + bg(x))dx\\
+    aF'(x) + bG'(x) = af(x) + bg(x)
+  \end{eqnarray*}
 \end{proof}
 
-\begin{title}
+\begin{title}[\Large]
   Замена переменных (подстановка) в неопределенных интегралах.
 \end{title}
 
 \begin{theorem}
-  Пусть $F(t)$ - первообразная для $f(x)$ на промежутке $T$ \\
-  $t = \varphi (x)$ непрерывна и дифференциируема на $\varphi(\delta) \subset T$
-  то\\
+  Пусть $F(t)$ - первообразная для $f(t)$ на $<T>$ где $t = \varphi (x)$
+  непрерывна и дифференциируема на $\varphi(\Delta) \subset T$ то\\
   \[\int f(\varphi (x)) \varphi'(x)dx = F(\varphi (x)) + C\]
 \end{theorem}
 
 \begin{proof}
-  \[(F(\varphi(x)) + C)' = F'(\varphi (x)) \cdot \varphi'(x) + 0 = f(\varphi(x))
-  \varphi'(x)\]\\
+  \[(F(\varphi(x)) + C)' = F'(\varphi (x)) \varphi'(x) + 0 = f(\varphi(x))
+    \varphi'(x)\]\\
 \end{proof}

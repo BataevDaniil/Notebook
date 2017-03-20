@@ -1,4 +1,4 @@
-\begin{title}
+\begin{title}[\Large]
   Интегрирование тигонометрических выражений.
 \end{title}
 
@@ -7,14 +7,14 @@
 \[
   \sin x = \frac{2\sin \frac{x}{2} \cdot \cos \frac{x}{2}}{\sin^2 \frac{x}{2}
   + \cos^2 \frac{x}{2}} = \frac{2\tg \frac{x}{2}}{1 + \tg^2 \frac{x}{2}} =
-  | t = \tg \frac{x}{2} | = \frac{2t}{1+t^2}
+  \left| t = \tg \frac{x}{2} \right| = \frac{2t}{1+t^2}
 \]
 
 \[
   \cos x = \frac{\cos^2 \frac{x}{2} - \sin^2 \frac{x}{2}}
   {\cos^2 \frac{x}{2} + \sin^2 \frac{x}{2}} =
   \frac{1 - \tg^2 \frac{x}{2}}{1 + \tg^2 \frac{x}{2}} =
-  | t = \tg \frac{x}{2} | =
+  \left| t = \tg \frac{x}{2} \right| =
   \frac{1 - t^2}{1 + t^2}
 \]
 
@@ -28,16 +28,14 @@
   \frac{(1-t^2) \cancel{(1+t^2)}}{\cancel{(1+t^2)} 2t} = \frac{1-t^2}{2t}
 \]
 
-Так как мы интегрируем, то $x = 2\arctg t ~~ dx = \frac{2}{1+t^2}dt$
+Так как мы интегрируем, то $t = \tg \frac{x}{2} ~~ x = 2\arctg t ~~
+  dx = \frac{2}{1+t^2}dt$
 \begin{eqnarray*}
   \int (\sin x)^{\alpha_1} \cdot (\cos x)^{\alpha_2} dx =
   \int (\sin x)^{\alpha_1} \cdot (\sqrt{1 - \sin^2 x})^{\alpha_2} = \\
-  | t = \sin x ~ x = \arcsin x ~ dx = \frac{dt}{\sqrt{1-t}} | =
+  \left| t = \sin x ~~ x = \arcsin t ~~ dx = \frac{dt}{\sqrt{1-t^2}} \right| =
   \int t^{\alpha_1}(1-t^2)^{\frac{\alpha_2 - 1}{2}} dt
 \end{eqnarray*}
-
-
-
 
 \begin{title}
   Определение определенного интеграла. Необходимые условия существования.
@@ -45,29 +43,29 @@
 
 $y = f(x)$ определена на $[a,b]$\\
 $x_k \in [a,b]$ такое что $x_0 = a < x_1 < x_2 \ldots < x_k = b$ называют
-разбиением отрезка $[a,b]$ и обозначают $R[a,b] =
+\kv{разбиением} отрезка $[a,b]$ и обозначают $R[a,b] =
 \{x_k | k = 1,2,3 \ldots n\}$\\
 $\Delta_k = [x_{k-1}, x_k]$ тоже что и $\Delta{x_k} = x_k - x_{k-1}$\\
-$\lambda(R) = max\Delta x_k \in 1 \le k \le n$ мелкость разбиения\\
-$c_k \in \Delta_k ~ \{c_k\} = \upsilon(R)$ выборка\\
-$\sum_{k=1}^{n} f(c_k)\Delta x_k$ интегральная сумма\\
+$\lambda(R) = max\Delta x_k$ где $1 \le k \le n$ \kv{мелкость разбиения}\\
+$c_k \in \Delta_k ~~ \{c_k\} = \upsilon(R)$ \kv{выборка}\\
+$\sum_{k=1}^{n} f(c_k)\Delta x_k$ \kv{интегральная сумма}\\
 
 Для $f(x)$ на $[a,b]$ соотвецтвует разбиению R и выборке $\upsilon(R)$\\
 
-\begin{defin}
+\begin{defin}[определенного интеграла]
   Если существует число $I$ такое что для
   \begin{eqnarray*}
-    \forall\epsilon>0 ~~ \exists\delta_{\epsilon}>0 ~~ \forall R[a,b]
+    \forall\epsilon>0 ~~ \exists\delta_{\epsilon}>0 ~~ \forall R[a,b] ~~~
     \lambda(R)<\delta ~~ \forall\upsilon(R) ~~~
-    |\sum_{k=1}^{n} f(c_k)\Delta x_k - I| < \epsilon
+    \left| \sum_{k=1}^{n} f(c_k)\Delta x_k - I \right| < \epsilon
   \end{eqnarray*}
-  называется опрделенным интегралом от функции $f$ на $[a,b]$ и обознают
+  называется \kv{опрделенным интегралом} от функции $f$ на $[a,b]$ и обознают
   $$\int_{a}^{b} f(x)dx$$
 \end{defin}
 
 \begin{theorem}
   Необходимое существование определенного интеграла. Если для $f(x)$ на $[a,b]$
-  $\forall \int_{a}{b}$ то $f(x)$ ограничена на $[a,b]$
+  $\exists \int_{a}^{b}$ то $f(x)$ ограничена на $[a,b]$.
 \end{theorem}
 
 \begin{proof}
