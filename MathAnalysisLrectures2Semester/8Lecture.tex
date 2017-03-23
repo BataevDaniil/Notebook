@@ -1,0 +1,78 @@
+\begin{title}[\Large]
+    Основные свойства определенных интегралов.
+\end{title}
+
+1) $f(x), g(x)$ интегрируемы на $[a, b] ~~ \alpha , \beta \in R ~~ \alpha \cdot
+\beta \not= 0 ~~ \alpha f(x) + \beta g(x)$ интегрируем на $[a, b]$ тогда верно
+\[
+    \int (\alpha f(x) + \beta g(x))dx = \alpha \int_a^b f(x)dx
+    + \beta \int_a^b f(x)dx
+\]
+
+\begin{proof}
+    Из определения определенного интеграла следует
+    \[
+        \forall\epsilon>0 ~~ \exists\delta_{\epsilon}>0 ~~ \forall R[a,b] ~~~
+        \lambda(R) < \delta_{\epsilon} ~~ \forall\upsilon(R) ~~~
+        \left| \sum_{k=1}^{n} f(c_k)\Delta x_k -
+        \int_a^b f(x)dx \right| < \frac{\epsilon}{2|\alpha|}
+    \]
+    \[
+        \left| \sum_{k=1}^{n} g(c_k)\Delta x_k -
+        \int_a^b g(x)dx \right| < \frac{\epsilon}{2|\beta|}
+    \]
+    \[
+        \left| \sum_{k=1}^{n} (\alpha f(x) + \beta g(x))\Delta x_k \right| -
+        \left| \alpha \int_a^b f(x)dx + \beta \int_a^b f(x)dx \right| \le
+    \]
+    \[
+      \le \left| \sum_{k=1}^{n} (\alpha f(c_k) \Delta x_k -
+      \alpha \int_a^b f(x)dx \right| + \left| \sum_{k=1}^{n} \beta g(c_k)
+      \Delta x_k - \beta \int_a^b g(x)dx \right| \le
+    \]
+    \[
+      \le |\alpha| \left| \sum_{k=1}^{n} (f(c_k) \Delta x_k -
+      \int_a^b f(x)dx \right| + |\beta| \left| \sum_{k=1}^{n} g(c_k)
+      \Delta x_k - \int_a^b g(x)dx \right| \le
+    \]
+    \[
+        \alpha \frac{\epsilon}{2|\alpha|} + |\beta| \frac{\epsilon}{2|\beta|}
+        = \epsilon
+    \]
+    \[
+        \int (\alpha f(x) + \beta g(x))dx
+    \]
+\end{proof}
+
+2) $f(x), g(x)$ интегрируема на $[a, b]$ то $f(x) \cdot g(x)$ также
+интегрируема.\\
+3) $f(x)$ интегрируема на $[a, b]$ то $[c, d] \subset [a, b]$ интегрируема.\\
+4) $f(x)$ интегрируема на $[a, b]$ $a < c < b$
+    \[
+        \int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx
+    \]
+
+Договоренность математиков.
+\[
+    \int_a^a f(x)dx = 0
+\]
+\[
+    \int_a^b f(x)dx = - \int_a^c f(x)dx
+\]
+
+5) $f(x)$ интегрируема на $[a, b]$ $c_1, c_2, c_3 \in [a, b]$
+\begin{proog}
+    \[
+    \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2} f(x)dx + \int_{c_2}{c_3} f(x)dx
+    \]
+    \[
+        \int_{c_3}^{c_2} f(x)dx = \int_{c_3}^{c_1} f(x)dx + \int_{c_1}{c_2} f(x)dx
+    \]
+    \[
+        \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2} f(x)dx + \int_{c_2}{c_3} f(x)dx
+    \]
+\end{proog}
+
+\begin{title}[\Large]
+    Оценки определенного интеграла.
+\end{title}
