@@ -61,18 +61,71 @@
 \]
 
 5) $f(x)$ интегрируема на $[a, b]$ $c_1, c_2, c_3 \in [a, b]$
-\begin{proog}
+\begin{proof}
     \[
     \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2} f(x)dx + \int_{c_2}{c_3} f(x)dx
     \]
     \[
-        \int_{c_3}^{c_2} f(x)dx = \int_{c_3}^{c_1} f(x)dx + \int_{c_1}{c_2} f(x)dx
+        \int_{c_3}^{c_2} f(x)dx = \int_{c_3}^{c_1}f(x)dx + \int_{c_1}{c_2}f(x)dx
     \]
     \[
-        \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2} f(x)dx + \int_{c_2}{c_3} f(x)dx
+        \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2}f(x)dx + \int_{c_2}{c_3}f(x)dx
     \]
-\end{proog}
+\end{proof}
 
 \begin{title}[\Large]
     Оценки определенного интеграла.
 \end{title}
+1) $f(x)$ интегрируема на $[a, b]$ $f(x) \ge 0$
+\[\int_a^b f(x)dx \ge 0\]
+\begin{proof}
+    \[\sum_{k=1}^{n} f(c_k)\Delta x_k \ge 0\]
+    $f(x), g(x)$ интегрируемы на $[a, b]$ $\forall x \in [a, b] ~~ f(x)\le g(x)$
+    \[\int_a^b f(x)dx \le \int_a^b g(x)dx\]
+    \[g(x) - f(x) \ge 0 ~~ \int_a^b (g(x) - f(x))dx \ge 0\]
+    \[\int_a^b g(x)dx - \int_a^b f(x)dx \ge 0\]
+\end{proof}
+2) $f(x) \ge 0$ интегрируема на $[a, b]$ $\exists c \in [a, b]$ непрерывна в
+$f(c) > 0$ \[\int_a^b f(x)dx > 0\]
+\begin{proof}
+    3) локальные свойство непрерывности в точке $\exists O_{\delta}c ~~
+    \forall x \in O_{\delta}c ~~ f(x) > \frac{f(c)}{2}$
+    \[
+        \int_a^b f(x)dx = \int_a^{c-\delta} f(x)dx +
+        \int_{c-\delta}^{c+\delta} f(x)dx + \int_{c+\delta}^b f(x)dx >
+        0 + \int_{c-\delta}^{c+\delta} \frac{f(c)}{2}dx
+        = \frac{f(c) 2\delta}{2} > 0
+    \]
+\end{proof}
+3) $f(x)$ интегрируем на $[a, b]$ то $|f(x)|$ также интегрируема
+(но не наоборот)
+\[\left| \int_a^b f(x)dx \right| \le \int_a^b |f(x)|dx\]
+\[||a| - |b|| < |a - b|\]
+\[
+    \left| \sum_{k=1}^n f(c_k)\Delta x_k \right| \le
+    \sum_{k=1}^{n}|f(c_k)|\Delta x_k
+\]
+4) $f(x)$ интегрируема $[a, b]$ $\forall c_1, c_2 \in [a, b]$
+\[
+    \left| \int_{c_1}^{c_2} f(x)dx \right| \le
+    \left| \int_{c_1}^{c_2} |f(x)|dx \right|
+\]
+5) $f(x), g(x)$ интегрируемы на $[a, b]$ $\forall x \in [a, b] ~~
+m \le f(x) \le M$ $g(x) \ge 0$ или $g(x) \le 0$ $\exists m \le \varphi \le M$
+\[\int_a^b f(x)g(x)dx \varphi \int_a^b g(x)dx\]
+\begin{proof}
+    $g(x) \le 0 ~~ m \le f(x) \le M ~~ mg(x) \ge f(x)g(x) \ge Mg(x)$
+    \[\int_a^b mg(x)dx \ge \int_a^b f(x)g(x)dx \ge \int_a^b Mg(x)dx\]
+    \[m\int_a^b g(x)dx \ge \int_a^b f(x)g(x)dx \ge M\int_a^b g(x)dx\]
+    \[m \le \frac{\int_a^b f(x)g(x)dx}{\int_a^b g(x)dx} \le M\]
+\end{proof}
+
+Следствие.\\
+\begin{theorem}[о среднем для определенного интеграла]
+    $f(x)$ интегрируем на $[a, b]$ $g(x)$ интегрируема и не меняет напрвления на
+    $[a, b]$ $\exists c \in [a, b]$
+    \[\int_a^b f(x)g(x)dx  = f(c) \int_a^b g(x)dx\]
+    $m = inf f(x) ~~ u \in [a, b] ~~ M = sup f(x) ~~ u \in [a, b]$
+    $m \le f(x) \le M ~~ f([a, b]) = [m, M]$ на основании свойства 5
+    $\forall M \in [m, M] ~~ \exists c \in [a, b] ~~ f(c) = M$
+\end{theorem}
