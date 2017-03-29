@@ -1,0 +1,118 @@
+\begin{title}
+  Свойства определенных интегралов как функции верхнего предела.
+\end{title}
+
+Функция $f(x)$ определена на отрезке $[a; b]$
+\[F(x) = \int^x_a f(t)dt\]
+\[\int^b_a f(x)dx \int^b_a f(t)dt\]
+
+\begin{theorem}[1]
+  Функция $f(x)$ определена на отрезке $[a; b]$
+  Функция $F(x)$ непрерывна на отрезке $[a; b]$
+  \[F(x) = \int^x_a f(x)dt\]
+\end{theorem}
+
+\begin{proof}
+  \[\exists M > 0 ~~~ \forall x \in [a; b] ~~~ |f(x)| \le M\]
+  Пусть $x, x + \Delta x \in [a; b]$
+  \[\Delta F(x) < F(x + \Delta x) - F(x) = \int^{x + \Delta x}_a f(t)dt -
+    \int^x_a f(t)dt = \int^{x + \Delta x}_x f(t)dt\]
+  \[|\Delta F(x)| \le \left |\int^{x + \Delta x}_x |f(t)|dt \right| \le
+    M \left |\int^{x + \Delta x}_x dt \right| = M |\Delta x|
+    ~~~ \Delta x \to 0 ~~~ |\Delta x F(x)| \to 0\]
+\end{proof}
+
+\begin{theorem}[2]
+  Функция $f(x)$ интегрируема на отрезке $[a; b]$. При этом
+  $\exists x_0 \in [a; b]$ - непрерывная точка.
+  \[F(x) = \int^x_a f(t)dt\]
+  Тогда
+  \[F'(x_0) = f(x_0)\]
+\end{theorem}
+
+\begin{proof}
+  Пусть $x_0 + \Delta x \in [a; b]$
+  \[\frac{\Delta F(x_0)}{\Delta x} - f(x_0) = \frac{1}{\Delta x}
+    \int^{x_0 + \Delta x}_{x_0} f(t)dt - \frac{f(x_0)}{\Delta x}
+    \int^{x_0 + \Delta x}_{x_0} dt = \frac{1}{\Delta x}
+    \int^{x_0 + \Delta x}_{x_0} (f(t) - f(x_0))dt\]
+  \[\left | \frac{\Delta F(x_0)}{\Delta x} - f(x_0)
+    \right | \le \frac{1}{|\Delta x|} \left |
+    \int^{x_0 + \Delta x}_{x_0} |f(x) - f(x_0)|dt \right |\]
+  \[\forall \varepsilon > 0 ~~~ \exists \delta_\varepsilon > 0
+    ~~~ \forall \in [a; b] ~~~ |t - x_0| < \delta_\varepsilon \Rightarrow
+    |f(t) - f(x_0) < \varepsilon|\]
+  Если $|\Delta x| < \delta_\varepsilon$
+  \[\left | \frac{\Delta F(x_0)}{\Delta x} - f(x_0) \right | \le
+    \frac{1}{|\Delta x|} \left | \int^{x_0 + \Delta x}_{x_0} |f(x) -
+    f(x_0)|dt \right | \le \frac{\varepsilon}{|\Delta x|} |\Delta x| =
+    \varepsilon\]
+  \[\lim_{\Delta x \to 0} \frac{\Delta F(x_0)}{\Delta x} = f(x_0)\]
+  \[F'(x_0) = f(x_0)\]
+
+  Следствие\\
+  Если $F(x)$ непрерывна на отрезке $[a; b]$, то
+  \[F(x) = \int^x_a f(t)dt\] - дифференцирована на всем отрезке и
+  \[F'(x) = f(x) ~~~ x \in [a; b]\]
+\end{proof}
+
+\begin{title}
+  Вычисление определенных интегралов. Формула Ньютона Леменца.
+\end{title}
+
+\[F(x) = \int^x_a f(t)dt\]
+$F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a; b]$ Любая первообразная
+от $f(x) [a; b]$
+\[\phi (x) = \int^x_a f(t)dt + C\]
+\[x = a ~~~ \phi (a) = \int^a_a f(t)dt + C = C\]
+\[x = b ~~~ \phi (b) = \int^b_a f(t)dt + C = \int^b_a f(t)dt + \phi(x)\]
+\[\int^b_a f(t)dt = \phi(b) - \phi(a) = \phi(x)|^b_a\]
+
+\begin{title}[\Large]
+  Интегрирование по частям в определенных интегралах.
+\end{title}
+
+\begin{theorem}
+  Пусть $\upsilon (x), \nu(x)$ - непрерывно диффиренцируемы на отрезке $[a; b]$,
+  тогда $d\upsilon \nu = \nu d \upsilon + \upsilon d \nu$
+  \[\int^b_a d\upsilon \nu = \int^b_a \nu d \upsilon +
+    \int ^b_a \upsilon d \nu\]
+\end{theorem}
+
+\begin{title}[\Large]
+  Замена переменных (подстановка) в определенных интегралах.
+\end{title}
+
+\begin{theorem}
+  Пусть $y = f(x)$ - неопределена на $\Delta$, $x = \varphi (t)$ - непрерывна и
+  диффиренцируема на $T$. При этом $\varphi (T) \subset \Delta$.\\
+  Если
+  \[a; b \in \Delta ~~~ a = \varphi (\alpha) ~~~ b = \varphi (\beta)\]
+  \[\int^b_a f(x)dx = \int^{\beta}_{\alpha} f(\varphi (t)) \varphi' (t)dt\]
+\end{theorem}
+
+\begin{proof}
+  Путсь $F(x)$ - первообразная $f(x)$ на отрезке $[a; b]$, то
+  \[F'(x) = f(x)\]
+  Тогда по формуле Ньютона-Леменца:
+  \[\int^b_a F(t)dt = F(b) - F(a)\]
+  $F(\varphi (t))$ - первообразная $f(\varphi (t)) \cdot \varphi(t)$
+  \[(F(\varphi (t)))' = F'(\varphi (t)) \cdot \varphi' (t) = f(\varphi(t))
+    \cdot \varphi'(t)\]
+  А значит по фармуле Ньютона-Леменца:
+  \[\int^{\beta}_{\alpha} f(\varphi (t)) \varphi (t)dt = F(\varphi (\beta)) -
+    F(\varphi (\alpha)) = F(b) - F(a)\]
+\end{proof}
+
+\begin{theorem}
+  Если $f(x)$ - нечетная на отрезке $[-a; a]$, то
+  \[\int^a_{-a} f(x)dx = 0\]
+\end{theorem}
+
+\begin{proof}
+  Функция нечетна
+  \[f(-x) = -f(x)\]
+  \[\int^a_{-a} f(x)dx = \int^0_{-a} f(x)dx + \int^a_0 f(x)dx =
+    |x = -t, dx = -dt| = -\int^0_a f(-t)dt + \int^a_0 f(t)dt =\]
+    \[= -\int^a_0 f(t)dt + \int^a_0 f(t)dt = 0\]
+\end{proof}
