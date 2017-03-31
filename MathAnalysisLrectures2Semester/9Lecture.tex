@@ -56,7 +56,7 @@
   \[F'(x) = f(x) ~~~ x \in [a; b]\]
 \end{proof}
 
-\begin{title}
+\begin{title}[\Large]
   Вычисление определенных интегралов. Формула Ньютона Леменца.
 \end{title}
 
@@ -84,24 +84,25 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a; 
 \end{title}
 
 \begin{theorem}
-  Пусть $y = f(x)$ - неопределена на $\Delta$, $x = \varphi (t)$ - непрерывна и
+  Пусть $y = f(x)$ - непрерывна на $\Delta$, $x = \varphi (t)$ - непрерывна и
   диффиренцируема на $T$. При этом $\varphi (T) \subset \Delta$.\\
   Если
-  \[a; b \in \Delta ~~~ a = \varphi (\alpha) ~~~ b = \varphi (\beta)\]
+  \[a, b \in \Delta ~~~ a = \varphi (\alpha) ~~~ b = \varphi (\beta)\]
   \[\int^b_a f(x)dx = \int^{\beta}_{\alpha} f(\varphi (t)) \varphi' (t)dt\]
 \end{theorem}
 
 \begin{proof}
-  Путсь $F(x)$ - первообразная $f(x)$ на отрезке $[a; b]$, то
-  \[F'(x) = f(x)\]
-  Тогда по формуле Ньютона-Леменца:
-  \[\int^b_a F(t)dt = F(b) - F(a)\]
-  $F(\varphi (t))$ - первообразная $f(\varphi (t)) \cdot \varphi(t)$
-  \[(F(\varphi (t)))' = F'(\varphi (t)) \cdot \varphi' (t) = f(\varphi(t))
-    \cdot \varphi'(t)\]
-  А значит по фармуле Ньютона-Леменца:
-  \[\int^{\beta}_{\alpha} f(\varphi (t)) \varphi (t)dt = F(\varphi (\beta)) -
-    F(\varphi (\alpha)) = F(b) - F(a)\]
+  Пусть $F(x)$ - первообразная $f(x)$ на отрезке $[a; b]$\\
+  \[
+    (F(\varphi (t)))' = F'(\varphi (t)) \cdot \varphi' (t) = f(\varphi(t))
+    \cdot \varphi'(t)
+  \]
+  Тогда по формуле Ньютона-Лейбница:
+  \[\int^b_a f(x)dx = F(b) - F(a)\]
+  \[
+    \int^{\beta}_{\alpha} f(\varphi (t)) \cdot \varphi' (t)dt =
+    F(\varphi (\beta)) - F(\varphi (\alpha)) = F(b) - F(a)
+  \]
 \end{proof}
 
 \begin{theorem}
@@ -110,9 +111,8 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a; 
 \end{theorem}
 
 \begin{proof}
-  Функция нечетна
-  \[f(-x) = -f(x)\]
+  Так как функция нечетная, то верно $f(-x) = -f(x)$
   \[\int^a_{-a} f(x)dx = \int^0_{-a} f(x)dx + \int^a_0 f(x)dx =
-    |x = -t, dx = -dt| = -\int^0_a f(-t)dt + \int^a_0 f(t)dt =\]
-    \[= -\int^a_0 f(t)dt + \int^a_0 f(t)dt = 0\]
+    |x = -t ~~ dx = -dt| = -\int^0_a f(-t)dt + \int^a_0 f(x)dx =\]
+    \[= -\int^a_0 f(t)dt + \int^a_0 f(x)dx = 0\]
 \end{proof}

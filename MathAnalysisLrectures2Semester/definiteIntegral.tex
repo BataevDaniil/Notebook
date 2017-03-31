@@ -17,7 +17,7 @@ $\sum_{k=1}^{n} f(c_k)\Delta x_k$ \kv{интегральная сумма}\\
   Если существует число $I$ такое что для
   \begin{eqnarray*}
     \forall\epsilon>0 ~~ \exists\delta_{\epsilon}>0 ~~ \forall R[a,b] ~~~
-    \lambda(R)<\delta ~~ \forall\upsilon(R) ~~~
+    \lambda(R)<\delta_{\epsilon} ~~ \forall\upsilon(R) ~~~
     \left| \sum_{k=1}^{n} f(c_k)\Delta x_k - I \right| < \epsilon
   \end{eqnarray*}
   называется \kv{опрделенным интегралом} от функции $f$ на $[a,b]$ и обознают
@@ -25,8 +25,8 @@ $\sum_{k=1}^{n} f(c_k)\Delta x_k$ \kv{интегральная сумма}\\
 \end{defin}
 
 \begin{theorem}
-  Необходимое существование определенного интеграла. Если для $f(x)$ на $[a,b]$
-  $\exists \int_{a}^{b}$ то $f(x)$ ограничена на $[a,b]$.
+  Необходимое условие существование определенного интеграла. Если для $f(x)$
+  на $[a,b]$ $\exists \int_{a}^{b}$ то $f(x)$ ограничена на $[a,b]$.
 \end{theorem}
 
 \begin{proof}
@@ -34,8 +34,8 @@ $\sum_{k=1}^{n} f(c_k)\Delta x_k$ \kv{интегральная сумма}\\
   на $[a,b]$\\
   Пусть $\epsilon = 1$ тогда \[\exists \delta_1 > 0 ~~ \forall R[a,b] ~~
   \upsilon(R) < \delta_1 ~~ \forall \upsilon(R)\]
-  \[I-1 < \sum_{k=1}^{n} f(c_k)\Delta x_k < I+\] зафиксируем $c_1, c_2, \ldots c_n$
+  \[I-1 < \sum_{k=1}^{n} f(c_k)\Delta x_k < I+1\] зафиксируем $c_1, c_2, \ldots c_n$
   тогда \[I-1 < \sum_{k=1}^{n} f(c_k)\Delta x_k < I+1\]
   Если для $f(x)$ на $[a,b]$ $\exists \int_{b}^{a}$ то $f(x)$
-  является теоремой по Виету.
+  является интегрируемой по теореме Виета.
 \end{proof}
