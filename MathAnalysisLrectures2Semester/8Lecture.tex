@@ -2,81 +2,83 @@
     Основные свойства определенных интегралов.
 \end{title}
 
-1) $f(x), g(x)$ интегрируемы на $[a, b] ~~ \alpha , \beta \in R ~~ \alpha \cdot
-\beta \not= 0 ~~ \alpha f(x) + \beta g(x)$ интегрируем на $[a, b]$ тогда верно
+1) $f(x), g(x)$ на $[a,b]$ интегрируемы на $[a,b] ~~ \alpha , \beta \in R ~~
+\alpha \cdot \beta \not= 0 ~~ \alpha f(x) + \beta g(x)$ интегрируема на $[a,b]$
 \[
-    \int (\alpha f(x) + \beta g(x))dx = \alpha \int_a^b f(x)dx
+    \int_a^b (\alpha f(x) + \beta g(x))dx = \alpha \int_a^b f(x)dx
     + \beta \int_a^b f(x)dx
 \]
 
 \begin{proof}
     Из определения определенного интеграла следует
     \[
-        \forall\epsilon>0 ~~ \exists\delta_{\epsilon}>0 ~~ \forall R[a,b] ~~~
-        \lambda(R) < \delta_{\epsilon} ~~ \forall\upsilon(R) ~~~
+        \forall\varepsilon>0 ~~ \exists\delta_{\varepsilon}>0 ~~ \forall R[a,b]
+        ~~~ \lambda(R) < \delta_{\varepsilon} ~~ \forall\upsilon(R) ~~~
+    \]
+    \[
         \left| \sum_{k=1}^{n} f(c_k)\Delta x_k -
-        \int_a^b f(x)dx \right| < \frac{\epsilon}{2|\alpha|}
+        \int_a^b f(x)dx \right| < \frac{\varepsilon}{2|\alpha|}
     \]
     \[
         \left| \sum_{k=1}^{n} g(c_k)\Delta x_k -
-        \int_a^b g(x)dx \right| < \frac{\epsilon}{2|\beta|}
+        \int_a^b g(x)dx \right| < \frac{\varepsilon}{2|\beta|}
     \]
     \[
         \left| \sum_{k=1}^{n} (\alpha f(x) + \beta g(x))\Delta x_k \right| -
         \left| \alpha \int_a^b f(x)dx + \beta \int_a^b f(x)dx \right| \le
     \]
     \[
-      \le \left| \sum_{k=1}^{n} (\alpha f(c_k) \Delta x_k -
-      \alpha \int_a^b f(x)dx \right| + \left| \sum_{k=1}^{n} \beta g(c_k)
-      \Delta x_k - \beta \int_a^b g(x)dx \right| \le
+      \le \left| \sum_{k=1}^{n} (\alpha f(c_k) \Delta x_k) -
+      \alpha \int_a^b f(x)dx \right| + \left| \sum_{k=1}^{n} (\beta g(c_k)
+      \Delta x_k) - \beta \int_a^b g(x)dx \right| \le
     \]
     \[
       \le |\alpha| \left| \sum_{k=1}^{n} (f(c_k) \Delta x_k -
       \int_a^b f(x)dx \right| + |\beta| \left| \sum_{k=1}^{n} g(c_k)
-      \Delta x_k - \int_a^b g(x)dx \right| \le
+      \Delta x_k - \int_a^b g(x)dx \right| <
     \]
     \[
-        \alpha \frac{\epsilon}{2|\alpha|} + |\beta| \frac{\epsilon}{2|\beta|}
-        = \epsilon
+        < |\alpha| \frac{\varepsilon}{2|\alpha|} + |\beta|
+        \frac{\varepsilon}{2|\beta|} = \varepsilon
     \]
-    \[
-        \int (\alpha f(x) + \beta g(x))dx
-    \]
+    \[\alpha \int_a^b f(x)dx + \beta \int_a^b f(x)dx\]
 \end{proof}
 
-2) $f(x), g(x)$ интегрируема на $[a, b]$ то $f(x) \cdot g(x)$ также
-интегрируема.\\
-3) $f(x)$ интегрируема на $[a, b]$ то $[c, d] \subset [a, b]$ интегрируема.\\
-4) $f(x)$ интегрируема на $[a, b]$ $a < c < b$
-    \[
-        \int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx
-    \]
+2) $f(x),g(x)$ на $[a,b]$ интегрируема на $[a,b]$, значит $f(x) \cdot g(x)$
+интегрируема на $[a,b]$.\\
+3) $f(x)$ на $[a,b]$ интегрируема на $[a,b] ~~~ [c,d] \subset [a,b]$, значит
+$f(x)$ интегрируема на $[c,d]$.\\
+4) $f(x)$ на $[a,b]$ интегрируема на $[a,b]$ $a < c < b$, значит
+    \[\int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx\]
 
 Договоренность математиков.
 \[
     \int_a^a f(x)dx = 0
 \]
 \[
-    \int_a^b f(x)dx = - \int_a^c f(x)dx
+    \int_a^b f(x)dx = - \int_b^a f(x)dx
 \]
 
-5) $f(x)$ интегрируема на $[a, b]$ $c_1, c_2, c_3 \in [a, b]$
+5) $f(x)$ на $[a, b]$ интегрируема на $[a, b]$ $\forall c_1, c_2, c_3
+                                                                \in [a, b]$\\
 \begin{proof}
     \[
-    \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2} f(x)dx + \int_{c_2}{c_3} f(x)dx
+    \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2} f(x)dx + \int_{c_2}^{c_3} f(x)dx
     \]
     \[
-        \int_{c_3}^{c_2} f(x)dx = \int_{c_3}^{c_1}f(x)dx + \int_{c_1}{c_2}f(x)dx
+        \int_{c_3}^{c_2} f(x)dx = \int_{c_3}^{c_1}f(x)dx +
+        \int_{c_1}^{c_2}f(x)dx
     \]
     \[
-        \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2}f(x)dx + \int_{c_2}{c_3}f(x)dx
+        \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2}f(x)dx +
+        \int_{c_2}^{c_3}f(x)dx
     \]
 \end{proof}
 
 \begin{title}[\Large]
     Оценки определенного интеграла.
 \end{title}
-1) $f(x)$ интегрируема на $[a, b]$ $f(x) \ge 0$
+1) $f(x)$ на $[a, b]$ интегрируема на $[a, b]$ $f(x) \ge 0$, значит
 \[\int_a^b f(x)dx \ge 0\]
 \begin{proof}
     \[\sum_{k=1}^{n} f(c_k)\Delta x_k \ge 0\]
