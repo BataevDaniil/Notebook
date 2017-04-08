@@ -1,0 +1,156 @@
+\begin{title}[\Large]
+  Признак сравнения в предельной форме.
+\end{title}
+
+\begin{theorem}
+  $f(x), g(x)$ на $[a, b)$ $b$ особая точка, $f(x) > 0 ~~~ g(x) > 0 ~~~
+  f(x) \sim g(x) ~~~ x \to b -0$ значит
+  $$
+  \int_a^b f(x)dx = \int_a^b g(x)dx
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \lim_{x \to b-0} \frac{f(x)}{g(x)} = 1
+  $$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
+  b - \delta_{\varepsilon} < x < b ~~~ \left| \frac{f(x)}{g(x)} - 1 \right|
+  < \varepsilon
+  $$
+  $$
+  \varepsilon = \frac{1}{2} ~~~ \exists \delta_{\frac{1}{2}} > 0 ~~~
+  b - \delta_{\frac{1}{2}} < x < b ~~~
+  1 - \frac{1}{2} < \frac{f(x)}{g(x)} < 1 + \frac{1}{2}
+  $$
+  $$
+  \frac{1}{2} < \frac{f(x)}{g(x)} < \frac{3}{2}
+  $$
+  $$
+  \frac{1}{2} g(x) < f(x) < \frac{3}{2} g(x)
+  $$
+  $$
+  \int_a^b g(x)dx = \frac{3}{2} \int_{b - \delta_{\frac{1}{2}}}^b g(x)dx ~~~
+  \int_{b - \delta_{\frac{1}{2}}}^b f(x)dx ~~~
+  \int_a^b f(x)dx
+  $$
+  В обратную сторону
+  $$
+  \int_a^b f(x)dx ~~~
+  \int_{b - \delta_{\frac{1}{2}}}^b f(x)dx ~~~
+  \frac{1}{2} \int_{b - \delta_{\frac{1}{2}}}^b g(x)dx ~~~
+  \int_a^b g(x)dx
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Критерий Коши сходимости несобственного интеграла.
+\end{title}
+Критерий значить необходимые и достаточные условия.
+
+$$
+\forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} \in [a,b) ~~~
+\forall c', c'' \in [d_a, b) \left| \int_{c'}^{c''} f(x)dx \right| < \varepsilon
+$$
+$$
+\int_a^b f(x)dx = \lim_{c \to b-0} \int_a^c f(x)dx = \lim_{c \to b-0} F(x)
+$$
+$$
+F(x) = \int_a^x f(t)dt
+$$
+$$
+\lim_{c \to b-0} F(c) \int_a^b f(x)dx
+$$
+$$
+\forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} \in [a,b) ~~~
+\forall c', c'' \in [d_a, b) |F(c'') - F(c')| < \varepsilon
+$$
+
+\begin{title}[\Large]
+  Признак Дирехле сходоимости несобственных интегралов.
+\end{title}
+
+\begin{theorem}
+  $f(x), g'(x)$ непрерывны на $[a,b)$ если
+
+  1) $f(x)$ ограничена $F(x)$ тоисть $\forall [a,b] ~~~ |f(x)| \le M$
+
+  2) $\forall x[a,b) ~~~ g'(x) \le 0$ или $g'(x) \ge 0$
+
+  3) $\lim_{x \to b-0} g(x) = 0$ тогда
+
+  $$\int_a^b f(x)g(x)dx$$ cходится
+\end{theorem}
+
+\begin{proof}
+  $$
+  \int_{c'}^{c''} f(x)g(x)dx =
+  \left|
+    \begin{array}{ll}
+      v = g(x)    & dx = g'(x)dx \\
+      dv = f(x)dx & v = F(x)
+    \end{array}
+  \right|
+  = g(x)F(x)|_{c'}^{c''} - \int_{c'}^{c''} F(x)g'(x)dx
+  $$
+  для определенности $g'(x) \le 0$
+  $$
+  g(x)F(x)|_{c'}{c''} \le M g(c'') + M g(c')
+  $$
+  $$
+  \left| \int_{c'}{c''} F(x)g'(x)dx \right| \le
+  \left| \int_{c'}{c''} |F(x)||g'(x)| \right| \le
+  M \left| \int_{c'}{c''} g(x)dx \right| = M|g(c'') - g(c')| \le
+  $$
+  $$
+  \int_{c'}^{c''} f(x)g(x) \le 2M||g(c'')| + |g(c')||
+  $$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists d_{\varepsilon} \in [a,b) ~~~
+  \forall c \in [d_{\varepsilon}, b) ~~~ |g(c)| < \frac{\varepsilon}{4M}
+  $$
+  $$
+  \forall c', c'' \in [d_{\varepsilon}, b) ~~~ \int_{c'}^{c''} f(x)g(x)dx \le
+  (|g(c'') + |g(c')|) <
+  2M \left(\frac{\varepsilon + \varepsilon}{4M + 4M}\right) = \varepsilon
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Признаки Абеля сходимости несобственного интеграла.
+\end{title}
+
+\begin{theorem}
+  $f(x),g'(x)$ непрерывна на $[a,b)$
+
+  1) $$\int_a^b f(x)$$ сходится
+
+  2) $\forall x \in [a,b) ~~~ g'(x) \le 0$ или $g'(x) \ge 0$
+
+  3) $\forall x \in [a,b) ~~~ |g(x)| \le \delta$
+  $$
+  \int_a^b f(x)g(x)dx
+  $$
+  cходится
+\end{theorem}
+
+\begin{proof}
+  Из 2 условия следует что функция монотонна возрастает
+  $$
+  \lim_{a \to b-0}g(x) = p ~~~ g(x) - p \to 0 ~~~ x \to b-0
+  $$
+  $$
+  F(x) = \int_a^x f(t)dx ~~~ \lim_{x \to b-0} F(x) = \int_a^b f(t)dt
+  $$
+  $$
+  \exists M > 0 ~~~ \forall x \in [a,b] ~~~ |F(x)| \le M
+  $$
+  $$
+  \int_a^b f(x)g(x)dx
+  $$
+  сходится
+  $$
+  \int_a^b f(x)g(x)dx = \int_a^b f(x)g(x)dx + p\int_a^b f(x)dx
+  $$
+\end{proof}
