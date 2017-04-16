@@ -1,0 +1,105 @@
+\begin{title}
+  Абсолютно и условно сходящиеся интегралы.
+\end{title}
+
+\begin{defin}
+  $\int_a^b f(x)dx$ называется абсолютно сходящимся $f(x)$ абсолютно
+интегрируема где $b$ - особая точка, то если сходится $\int_a^b |f(x)|dx$.
+\end{defin}
+
+\begin{defin}
+  $\int_a^b f(x)dx$ условно сходящимся необсалютно сходящимся если сам интеграл
+сходится и интеграл от модуля расходится.
+\end{defin}
+
+\begin{theorem}
+  Абсолютно сходящийся интеграл является сходящимся
+  $$
+  \left| \int_a^b f(x)dx \right| \le \int_a^b |f(x)|dx
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} \in [a,b) ~~~
+  \forall c',c'' \in [d_{\varepsilon}, b) ~~~
+  \left| \int_{c'}^{c''} |f(x)|dx \right| < \varepsilon
+  $$
+  $$
+  \left| \int_{c'}^{c''} f(x)dx \right| \le
+  \left| \int_{c'}^{c''} |f(x)|dx \right| < \varepsilon
+  $$
+  $$
+  \forall c \in [a,b) ~~~ \left| \int_a^c f(x)dx \right| \le
+  \left| \int_a^c |f(x)|dx \right|
+  $$
+  $$
+  \lim_{c \to b-0} \left| \int_a^{c} f(x)dx \right| \le
+  \lim_{c \to b-0} \left| \int_a^c |f(x)|dx \right|
+  $$
+  $$
+  \left| \int_a^b f(x)dx \right| \le
+  \left| \int_a^b |f(x)|dx \right|
+  $$
+\end{proof}
+
+\begin{theorem}
+  $b$ - может быть особая точка $\int_a^b f(x)dx ~~~ \int_a^b g(x)dx$
+абсолютно интегрируемы тогда
+  $$
+  \int_a^b f(x)dx ~~~ \int_a^b (f(x) + g(x)) dx
+  $$
+  либо оба сходятся, либо расходятся, либо оба абсолютно сходятся.
+\end{theorem}
+
+\begin{proof}
+  $$
+  \forall \varepsilon < 0 ~~~ \exists \delta_{\varepsilon} \in [a,b)
+  \forall c', c'' \in [\delta_{\varepsilon}, b)
+  \left| \int_{c'}^{c''} |f(x)|dx \right| < \frac{\varepsilon}{2}
+  \left| \int_{c'}^{c''} |f(x)|dx \right| < \frac{\varepsilon}{2}
+  $$
+  $$
+  \left| \int_{c'}^{c''} |(f(x) + g(x))| dx \right| \le
+  \left| \int_{c'}^{c''} f(x) \right| \left| \int_{c'}^{c''} g(x) \right|
+  < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+  $$
+  $$
+  f(x) = f(x) + g(x) + (-g(x))
+  $$
+\end{proof}
+
+\begin{title}
+  Мера Жордана в пространстве $R^n$
+\end{title}
+
+\begin{defin}
+  $$
+  E \to \mu (E) \ge 0
+  $$
+  $$
+  E = \cup_{k=1}^m ~~~ \mu(E) = \sum_{k=1}^n \mu (E_k)
+  $$
+\end{defin}
+
+\begin{defin}[умножения множеств]
+   $$
+   E \times D = \{ (x,y): x \in E; y \in D \}
+   $$
+\end{defin}
+
+\begin{defin}[параллелипипеда]
+  $P \subset R^n ~~~ P = [a_1, b_1] \times [a_2, b_2] \times [a_n, b_n]$ или
+множество которое получится если отбросить всей или части границы.
+
+  $m(p) = \prod_{k=1}^n (b_k - a_k)$
+
+  $E \subset R^n$ называется элементарным если его можно представить в виде
+конечного $E = \sqcup_{k=1}^m P_k$
+
+  $\sqcup$ - попарно непересекающиеся множества.
+\end{defin}
+
+$$
+m (E) = \sum_{k=1}^m m(R_k)
+$$

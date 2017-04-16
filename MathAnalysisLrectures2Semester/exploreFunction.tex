@@ -4,19 +4,23 @@
 \end{title}
 
 \begin{title}
+  Иследование функции с помощью производной.
+\end{title}
+
+\begin{title}[\Large]
   Иследование монотонности функции с помощью производной.
 \end{title}
 
 \begin{theorem}
-  Пусть $f(x)$ - непрерывана на $<a; b>$ и имеет $f'(x)$ на $(a;b)$ то
+  $f(x)$ непрерывана на $<a,b>$ и имеет $f'(x)$ на $(a,b)$ значит
   \\
-  Если $\forall x \in (a,b) ~~ f'(x) \ge 0 $ то $f(x) \nearrow ~~ <a; b>$\\
-  Если $\forall x \in (a,b) ~~ f'(x) \le 0 $ то $f(x) \searrow ~~ <a; b>$
+  Если $\forall x \in (a,b) ~~ f'(x) \ge 0 $ то $f(x) \nearrow ~~ <a,b>$\\
+  Если $\forall x \in (a,b) ~~ f'(x) \le 0 $ то $f(x) \searrow ~~ <a,b>$
 \end{theorem}
 
 \begin{proof}
-  Пусть $\forall x_1, x_2 \in <a,b>$ и при этом $x_1 < x_2 $\\
-  Запишем \kv{теорему Лагранжа о формуле конечных преращений.}\\
+  $\forall x_1, x_2 \in <a,b>$ и при этом $x_1 < x_2 $\\
+  По \kv{теореме o конечных преращений.}\\
   $f(x_2) - f(x_1) = f'(c)(x_2 - x_1)$ очевидно что $x_2 - x_1 > 0 $\\
   Если $f'(c) \ge 0$ то $f(x_2) \ge f(x_1) \Rightarrow f(x)$ на $<a,b>$
   \kv{возрастает}.\\
@@ -25,24 +29,24 @@
 \end{proof}
 
 \begin{theorem}
-  Пусть $f(x)$ - непрерывана на $<a; b>$ и имеет $f'(x)$ на $(a;b)$ то\\
+  $f(x)$ непрерывана на $<a,b>$ и имеет $f'(x)$ на $(a,b)$ значит\\
   Если $\forall x \in (a, b) ~~ f'(x) > 0$ то $f(x)$ \kv{строго}
-  $\nearrow (a; b)$\\
+  $\nearrow (a, b)$\\
   Если $\forall x \in (a, b) ~~ f'(x) < 0$ то $f(x)$ \kv{строго}
-  $\searrow (a; b)$
+  $\searrow (a, b)$
 \end{theorem}
 
 \begin{proof}
-  Пусть $\forall x_1, x_2 \in <a,b>$ и при этом $x_1 < x_2 $\\
-  Запишем \kv{теорему Лагранжа о формуле конечных преращений.}\\
+  $\forall x_1, x_2 \in <a,b>$ и при этом $x_1 < x_2 $\\
+  По \kv{теореме о конечных преращений.}\\
   $f(x_2) - f(x_1) = f'(c)(x_2 - x_1)$ очевидно что $x_2 - x_1 > 0$\\
-  Если $f'(c) > 0$ то $f(x_1) > f(x_2) \Rightarrow f(x)$ на $<a,b>$
-  \kv{возрастает}.\\
-  Если $f'(c) < 0$ то $f(x_2) < f(x_1) \Rightarrow f(x)$ на $<a,b>$
-  \kv{убывает}.
+  Если $f'(c) > 0$ то $f(x_1) > f(x_2) \Rightarrow f(x)$ на $(a,b)$
+  \kv{строго возрастает}.\\
+  Если $f'(c) < 0$ то $f(x_2) < f(x_1) \Rightarrow f(x)$ на $(a,b)$
+  \kv{строго убывает}.
 \end{proof}
 
-\begin{title}
+\begin{title}[\Large]
   Исследование функции на экстремум с помощью производной.
 \end{title}
 
@@ -52,18 +56,18 @@
     1) $f(x)$ дифференцируема в проколотой окрестности точки $a$.\\
     2) Непрерывна в точке $a$.\\
     3) При переходе через точку $a$ $f(x)$ меняется с - на +. То есть\\
-      $\exists \delta > 0 ~~ \forall x \in (a - \delta; a) ~~ f'(x) < 0$\\
-      $\exists \delta > 0 ~~ \forall x \in (a; a + \delta) ~~ f'(x) > 0$\\
+      $\exists \delta > 0 ~~ \forall x \in (a - \delta, a) ~~ f'(x) < 0$\\
+      $\exists \delta > 0 ~~ \forall x \in (a, a + \delta) ~~ f'(x) > 0$\\
   Тогда $a$ - точка \kv{строгого минимума.}
 \end{theorem}
 
 \begin{proof}
   По формуле конечных приращений\\
-  $\forall x \in (a - \delta; a) ~~ f(x) - f(a) = f'(c)(x - a)$ очевидно что
+  $\forall x \in (a - \delta, a) ~~ f(x) - f(a) = f'(c)(x - a)$ очевидно что
   $x - a < 0$ и \\ $f'(c) < 0$ $\Rightarrow f(x) > f(a)$\\
-  $\forall x \in (a; a + \delta) ~~ f(x) - f(a) = f'(c)(x - a)$ очевидно что
+  $\forall x \in (a, a + \delta) ~~ f(x) - f(a) = f'(c)(x - a)$ очевидно что
   $x - a > 0$ и \\ $f'(c) > 0$ $\Rightarrow f(x) > f(a)$\\
-  $\forall x \in (a - \delta; a+ \delta)\backslash \{a\} ~~ f(x) > f(a)$\\
+  $\forall x \in (a - \delta, a+ \delta) ~~ f(x) > f(a)$\\
   Тогда $a$ - точка \kv{строгого минимума.}
 \end{proof}
 
@@ -72,18 +76,18 @@
     1) $f(x)$ дифференцируема в проколотой окрестности точки $a$.\\
     2) Непрерывна в точке $a$.\\
     3) При переходе через точку $a$ $f(x)$ меняется с + на -. То есть\\
-      $\exists \delta > 0 ~~ \forall x \in (a - \delta; a) ~~ f'(x) > 0$\\
-      $\exists \delta > 0 ~~ \forall x \in (a; a + \delta) ~~ f'(x) < 0$\\
+      $\exists \delta > 0 ~~ \forall x \in (a - \delta, a) ~~ f'(x) > 0$\\
+      $\exists \delta > 0 ~~ \forall x \in (a, a + \delta) ~~ f'(x) < 0$\\
   Тогда $a$ - точка \kv{строгого максимума.}
 \end{theorem}
 
 \begin{proof}
   По формуле конечных приращений\\
-  $\forall x \in (a - \delta; a) ~~ f(x) - f(a) = f'(c)(x - a)$ очевидно что
+  $\forall x \in (a - \delta, a) ~~ f(x) - f(a) = f'(c)(x - a)$ очевидно что
   $x - a < 0$ и \\ $f'(c) > 0$ $\Rightarrow f(x) < f(a)$\\
-  $\forall x \in (a; a + \delta) ~~ f(x) - f(a) = f'(c)(x - a)$ очевидно что
+  $\forall x \in (a, a + \delta) ~~ f(x) - f(a) = f'(c)(x - a)$ очевидно что
   $x - a > 0$ и \\ $f'(c) < 0$ $\Rightarrow f(x) < f(a)$\\
-  $\forall x \in (a - \delta; a+ \delta)\backslash \{a\} ~~ f(x) < f(a)$\\
+  $\forall x \in (a - \delta, a+ \delta) ~~ f(x) < f(a)$\\
   Тогда $a$ - точка \kv{строгого максимума.}
 \end{proof}
 
@@ -98,12 +102,12 @@
 \end{theorem}
 
 \begin{proof}
-  Формула Тейлора ипользуется для доказательства в форме Пиано:\\
+  По формуле Тейлора в форме Пиано:\\
   $f(x) - f(a) = \frac{f^{(n)}(a)}{n!} \cdot (x - a)^n + \alpha (x)
   \cdot (x - a)^n = (x - a)^n \left(\frac{f^{(n)}(a)}{n!} + \alpha(x) \right)\\
   \alpha (x) \to 0 ~~ x \to a$ \\
   Выберем $\delta$ так, чтобы $\delta > 0 ~~ \forall x \in
-  (a - \delta; a + \delta) > |d(x)| < \frac{f^{(n)}(a)}{2n!}\\
+  (a - \delta, a + \delta) > |d(x)| < \frac{f^{(n)}(a)}{2n!}\\
   \sign \left(\frac{f^{(n)}(a)}{n!} + \alpha(x)\right) = \sign (f^{(n)}(a)$\\
   Пусть $r$ - не четный. Если $(x - a)^n$ - меняет знак, то и
   f(x) - f(a) - меняет знак и нет экстремумума\\
@@ -111,15 +115,17 @@
   Пусть $n$ - четный $f(x) - f(a) < 0$, то $a$ - точка строгого максимума.
 \end{proof}
 
-\bd{Алгоритм нахождения наибольшего и наименьшего значения функции.}\\
-Дана функция $f(x)$ на $[a;b]$. Необходимо\\
-1) Найти все критические точки $x_1, x_2, \ldots, x_n \in [a; b]$\\
+\begin{title}[\Large]
+  Алгоритм нахождения наибольшего и наименьшего значения функции.
+\end{title}
+Дана функция $f(x)$ на $[a,b]$. Необходимо\\
+1) Найти все критические точки $x_1, x_2, \ldots, x_n \in [a, b]$\\
 2) Вычислить значения критических точек и крайних точек отрезка:\\
 $f(a), f(b), f(x_1), f(x_2), \ldots, f(x_k) ~~ k = 1, 2 \ldots n$\\
-$max \{f(a); f(b); f(x_k), k = 1, 2, \ldots, n\} = c - $ тогда \kv{наибольший}\\
-$min \{f(a); f(b); f(x_k), k = 1, 2, \ldots, n\} = c - $ тогда \kv{наименьший}\\
+$max \{f(a), f(b), f(x_k), k = 1, 2, \ldots, n\} = c $ тогда \kv{наибольший}\\
+$min \{f(a), f(b), f(x_k), k = 1, 2, \ldots, n\} = c $ тогда \kv{наименьший}\\
 
-\begin{title}
+\begin{title}[\Large]
   Иследование выпоклости функций с помощью производной.
 \end{title}
 
@@ -161,17 +167,17 @@ $min \{f(a); f(b); f(x_k), k = 1, 2, \ldots, n\} = c - $ тогда \kv{наим
   f(x_1) = f(x_0 - h) = f(x_0) + \frac{f'(x_0)}{1!}h +
     \frac{f''(c_1)}{2!}h^2 ~~ x_0 > c_1 > x_1\\
   f(x_1) + f(x_2) = 2f(x_0) + 2f'(x_0)h + \frac{h^2}{2}(f''(c_2) + f''(c_1)) ~~
-  x_1 < c_1 < x_0 < c_2 > x_2
+  x_1 < c_1 < x_0 < c_2 < x_2
   $
 \end{proof}
 
-\begin{title}
+\begin{title}[\Large]
   Нахождение точек перегиба функции с помощью производной.
 \end{title}
 
 \begin{defin}[точки перегиба]
   Точка $a$ называется \kv{точкой перегиба} функции если в точке
-  $a$ существует конечная или бесконечная $f'(x)$ определенного знака
+  $a$ существует конечная или бесконечная $f''(x)$ определенного знака
   и при переходе через точку $a$ меняется направление выпуклости.\\
   $(a, f(x))$ точка пергиба графика функции.
 \end{defin}
@@ -199,7 +205,9 @@ $min \{f(a); f(b); f(x_k), k = 1, 2, \ldots, n\} = c - $ тогда \kv{наим
   $a$ точка перегиба.\\
 \end{theorem}
 
-\bd{План иследования функции}\\
+\begin{title}[\Large]
+  План иследования функции.
+\end{title}
 1. D(y), четность, переодичность.\\
 2. Найти точки пересечения графика функции с Ox и Oy, и промежутки возрастания
   и убывания.\\
