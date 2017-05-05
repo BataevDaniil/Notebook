@@ -1,0 +1,289 @@
+\begin{title}
+  Числовые ряды.
+\end{title}
+
+\begin{title}[\Large]
+  Сходимость чилосвых рядов необходимые и достаточные условия сходимости рядов.
+\end{title}
+
+  $a_k$ - числовая последовательность.
+
+  $\sum_{k=1}^{\infty} a_k = a_1 + a_2 + \ldots a_k + \ldots$
+
+  $S_n = \sum_{k=1}^n a_k = a_1 + a_2 + \ldots + a_n$ $n$ частичная (частая)
+сумма числового ряда.
+
+  Если существует конечный $\lim_{n \to \infty} S_n = S$ то его называют суммой
+числового ряда, который сходится иначе раходящийся рядом.
+
+\begin{theorem}
+  Необходимые условия сходимости числового ряда
+  $$
+  \sum_{k=1}^{\infty} a_k
+  $$
+  Сходится если
+  $$
+  \lim_{k \to \infty} a_k = 0
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \exists \lim_{n \to \infty} S_n = S ~~~ a_n = S_n - S_{n-1}
+  $$
+  $$
+  \lim_{n \to \infty} a_n = \lim_{n \to \infty} S_n -
+  \lim_{n \to \infty} S_{n-1} = S - S = 0
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Свойства сходящегося числового ряда.
+\end{title}
+
+\begin{theorem}
+  $$
+  \sum_{k=1}^{\infty} a_k = A ~~~
+  \sum_{k=1}^{\infty} b_k = B ~~~
+  \alpha, \beta \in R
+  $$
+  $$
+  \sum_{k=1}^{\infty} (\alpha a_k + \beta b_k) = \alpha A + \beta B
+  $$
+  $$
+  S_n = \sum_{k=1}^n (\alpha a_k + \beta b_k) =
+  \alpha \sum_{k=1}^n a_k + \beta \sum_{k=1}^n b_k = \alpha A_n + \beta b_n
+  $$
+  $$
+  \lim_{n \to \infty} S_n = \alpha \lim A_n + \beta \lim B_m
+  = \alpha A + \beta B
+  $$
+\end{theorem}
+
+\begin{theorem}
+  $
+  \sum_{k=1}^{\infty} a_k = S \sum_{\varphi = 1}^{\infty} b_{\varphi}
+  $
+  конечная замена некоторым рядом стоящими ряда $a_k$ на одни без перестановке
+  $
+  \sum_{\varphi}^{\infty} b_{\varphi} = S
+  $
+  $
+  b_1 = a_1 + a_2 + \ldots + a_{k_1}
+  b_2 = a_{k_1+1} + a_{k_1+2} + \ldots + a_{k_2}
+  b_3 = a_{k_2+1} + a_{k_2+2} + \ldots + a_{k_3}
+  $
+\end{theorem}
+
+\begin{proof}
+  $S_n$ - частная сумма $a_k$. $G_m$ частная сумма $b_k$ $G_n = S_{k_m}$
+  последовательность суммы первого ряда
+  $$
+  \lim_{n \to \infty} G_n = \lim_{n \to \infty} S_n = S
+  $$
+\end{proof}
+
+  Добавление конечного чилса членов или отбрасывание конечного числа членов к
+числовому ряду неизменяет его сходимость но может изменить его сумму.
+
+\begin{theorem}
+  $\sum_{k=1}^{\infty}$
+\end{theorem}
+
+\begin{proof}
+  $$
+  b_1 + b_2 + \ldots + b_m + \sum_{k=1}^{\infty} a_k
+  $$
+  $$
+  G_n = b_1 + b_2 + \ldots + b_n + S_{n-m}
+  $$
+  $$
+  G_m = S_n - (a_1 + a_2 + \ldots + a_n)
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Критерий Коши сходимости числового ряда.
+\end{title}
+
+$\sum_{k+1}^{\infty} a_k$ был сходящимся необходимое и достаточное условие.
+
+$$
+\forall \varepsilon > 0 ~~~
+\exists n_{\varepsilon} \in N ~~~
+\forall n \le n_{\varepsilon} ~~~
+\forall p \in N ~~~
+\left| \sum_{k=n+1}^{n+1} < \varepsilon \right|
+$$
+
+\begin{proof}
+  $$
+  S_n = \sum_{k=1}^n a_k ~~~ \lim_{n \to \infty} S_n = S
+  $$
+  $$
+  \forall \varepsilon > 0 ~~~
+  \exists n_{\varepsilon} \in N ~~~
+  \forall \varphi \ge n_{\varepsilon} ~~~
+  \forall p \in N ~~~
+  \left| S_{\varphi + p} - S_{\varphi} < \varepsilon \right|
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Интегральный признак сходимости числового ряда.
+\end{title}
+
+$
+\forall k \in N ~~~
+a_k \ge 0
+$
+для сходимости $a_k$ необходимо и достаточно чтобы $S_k \le M$
+
+\begin{proof}
+  $S_k$ возрастает $S_{n+1} - S_n = a_{n+1} \ge 0$
+\end{proof}
+
+\begin{theorem}
+  Интегральный признак числового ряда $f(x)$ определена, непрерывна,
+  неотрицательна на $[1, +\infty]$
+  $$
+  \sum_{k=1}^{\infty} f(k) ~~~~~~ \int_1^{\infty} f(x)dx
+  $$
+  сходится только если оба сходятся
+\end{theorem}
+
+\begin{proof}
+  $\Delta = [k, k+1] ~~ k \in N$
+  $$
+  \forall x \in \Delta k ~~~ f(k+1) \le f(x) \le f(k)
+  $$
+  $$
+  f(k+1) \le \int_k^{k+1} f(x)dx \le f(k) ~~~ k = 1, \ldots, n
+  $$
+  $$
+  \sum_{k=1}^n f(k+1) \le \sum_{k=1}^n \int_k^{k+1} f(x)dx \le \sum_{k=1}^n f(k)
+  $$
+  $$
+  S_{n+1} < f(x) \le \int_1^{n+1} f(x)dx \le S_n
+  $$
+  $$
+  \int_1^{+\infty} f(x)dx ~~~ \forall n \in N ~~~
+  \int_1^{n+1} f(x)dx \le \int_1^{+\infty} f(x) dx = M
+  $$
+  $$
+  \forall n \in N ~~~ S_{n+1} \le m + f(x)
+  $$
+  $$
+  \sum_{k=1}^{\infty} ~~~
+  \forall n \in N ~~~
+  S_m \le M ~~~
+  \int_1^b f(x)dx \le \int_1^{n+1} f(x)dx \le S_n \le M
+  $$
+  $\forall b>1 ~~~ \exists n+1 > b$
+  $$
+  \lim_{b \to +\infty} \int_1^b f(x)dx = \int_1^{\infty} f(x)dx
+  $$
+\end{proof}
+
+\begin{title}
+  Признак сравнения для определения сходимости числового ряда.
+\end{title}
+
+\begin{theorem}
+  $\forall k \in N ~~~ 0 \le a_k \le b_k$ тогда
+
+  $\sum_{k=1}^{\infty} b_k$ сходится следовательно $\sum_{k=1}^{\infty} a_k$
+  сходится
+
+  $\sum_{k=1}^{\infty} a_k$ расходится следовательно $\sum_{k=1}^{\infty} b_k$
+  расходится
+\end{theorem}
+
+\begin{proof}
+  $\sum_{k=1}^{\infty} b_k$ сходится
+  $$
+  \forall n \in N ~~~ B_n = \sum_{k=1}^n b_k \le M
+  $$
+  $$
+  A_n = \sum_{k=1}^n a_k \le B_n \le M
+  $$
+  второе утверждение получается и первого методом от противного.
+\end{proof}
+
+\begin{theorem}
+  $$
+  \forall k \in N ~~~ a_k, b_k > 0 ~~~ a_k \sim b_k ~~ k \to \infty
+  $$
+  $\sum_1^{\infty} ~~~ \sum_1^{\infty} b_k$ сходится
+\end{theorem}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} ~~~
+  \forall k \le n_{\varepsilon} \left| \frac{a_k}{b_k} -1 \right| < \varepsilon
+  $$
+  $$
+  1 - \varepsilon < \frac{a_k}{b_k} < 1 + \varepsilon
+  $$
+  $$
+  (1 - \varepsilon)b_k < a_k < (1 + \varepsilon)b_k
+  $$
+  $$
+  \varepsilon = \frac{1}{2} ~~~
+  \exists n_{frac{1}{2}} \in N ~~~
+  \forall k \ge n_{\frac{1}{2}} ~~~
+  \frac{b_k}{2} < a_k < \frac{3}{2} b_k
+  $$
+  $$
+  \sum_{k=1}^{\infty} b_k ~~~ \sum_{k=n_{\frac{1}{2}}} b_k ~~~
+  \sum_{k=n_{\frac{1}{2}}} \frac{3}{2} b_k
+  $$
+\end{proof}
+
+\begin{theorem}
+  $$
+  \forall k \in N ~~~ a_k > 0 ~~~ \exists \lambda < 1 ~~~
+  \frac{a_{k+1}}{a_k} \le \lambda
+  $$
+  тогда $\sum_{k=1}^{\infty} a_k$ сходится
+  $$
+  \forall k \in N ~~~ \frac{a_{k+1}}{a_k} \ge 1
+  $$
+  $\sum_{k=1}^{\infty}$ расходится
+\end{theorem}
+
+\begin{proof}
+  $$
+  a_2 \le \lambda a_1
+  $$
+  $$
+  a_3 \le \lambda a_2 \le \lambda^2 a_1
+  $$
+  $$
+  a_4 \le \lambda a_2 \le \lambda^3 a_1
+  $$
+  $$
+  a_4 \le \lambda a_2 \le \lambda^3 a_1
+  $$
+  $$
+  a_k < a_1 \lambda^{k-1} ~~~ 0 \le \lambda < 1
+  $$
+  $$
+  \sum_{k_1}^{\infty} a_1 \lambda^{k-1} = \frac{a_1}{a-\lambda}
+  $$
+  $\sum_{k=0}^{\infty} a_k$ сходится
+\end{proof}
+
+\begin{theorem}
+  $$
+  \forall k \in N ~~~ a_k > 0 ~~~
+  \lim_{k \to \infty} \frac{a_{n+1}}{a_n} = \lambda
+  $$
+  если $\lambda < 1 ~~~ \sum_{k=1}^{\infty} a_k$ сходится
+
+  если $\lambda > 1 ~~~ \sum_{k=1}^{\infty}$ расходится
+
+  если $\lambda = 1 ~~~ \sum_{k=1}^{\infty}$ может быть что угодно
+
+  Наиболее эфективно его можно использовать если члены ряда содержат факториал.
+\end{theorem}
