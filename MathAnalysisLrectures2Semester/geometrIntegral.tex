@@ -1,0 +1,406 @@
+\begin{title}[\Large]
+  Мера Жордана в пространстве $R^n$
+\end{title}
+
+\begin{defin}
+  $$
+  E \to \mu (E) \ge 0
+  $$
+  $$
+  E = \cup_{k=1}^m ~~~ \mu(E) = \sum_{k=1}^n \mu (E_k)
+  $$
+\end{defin}
+
+\begin{defin}[умножения множеств]
+   $$
+   E \times D = \{ (x,y): x \in E; y \in D \}
+   $$
+\end{defin}
+
+\begin{defin}[параллелипипеда]
+  $P \subset R^n ~~~ P = [a_1, b_1] \times [a_2, b_2] \times [a_n, b_n]$ или
+множество которое получится если отбросить всей или части границы.
+
+  $m(p) = \prod_{k=1}^n (b_k - a_k)$
+
+  $E \subset R^n$ называется элементарным если его можно представить в виде
+конечного $E = \sqcup_{k=1}^m P_k$
+
+  $\sqcup$ - попарно непересекающиеся множества.
+\end{defin}
+
+$$
+m (E) = \sum_{k=1}^m m(P_k)
+$$
+
+\begin{defin}[измерения по Жордану]
+  $E \subset R^n$ называется измеренным по Жордану
+  $$
+  \forall \varepsilon > 0 ~~~
+  \exists P_{\varepsilon}, Q_{\varepsilon} \subset R^n ~~~
+  P_{\varepsilon} \subset E \subset Q_{\varepsilon} ~~~
+  0 \le m(Q_{\varepsilon}) - m(P_{\varepsilon}) < \varepsilon
+  $$
+\end{defin}
+
+  Если $E \subset R_n$ то его мерой Жордана называется такое число $e$
+  $$
+  \forall P,Q \subset R_n ~~~
+  P \subset E \subset Q ~~~
+  m(P) \le m(E) \le m(Q)
+  $$
+
+\begin{theorem}
+  Для любого измеримого по Жорадану множества $E$ пространства $n$ мера Жордана
+существует и при том единственна.
+\end{theorem}
+
+\begin{proof}
+  $$
+  P \subset E \subset Q ~~~
+  \{ m(P): P \subset E \} ~~~
+  \{ m(Q): E \subset Q \} ~~~
+  m(P) \le m(Q)
+  $$
+  $$
+  \exists c \in R ~~~
+  m(P) \le c \le m(Q) ~~~
+  c = m(E)
+  $$
+  Так как $E$ измеримо по Жордану $E \subset R^n$
+  $$
+  \forall \varepsilon > 0 ~~~
+  \exists P_{\varepsilon},Q_{\varepsilon} \subset R^n ~~~
+  P_{\varepsilon} \subset E \subset Q_{\varepsilon} ~~~
+  0 \le m(Q_{\varepsilon}) - m(P_\varepsilon) < \varepsilon
+  $$
+  $$
+  m(P_{\varepsilon}) \le m_1 (E) \le m(Q_{\varepsilon})
+  $$
+  $$
+  m(P_{\varepsilon}) \le m_2 (E) \le m(Q_{\varepsilon})
+  $$
+  $$
+  |m_1 (E) - m_2 (E))| \le m(Q_{\varepsilon}) - m(P_{\varepsilon}) < \varepsilon
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Вычисление площади плоской фигуры заданной в декартовой системе координат.
+\end{title}
+
+\begin{defin}[криво линейной трапеции]
+ $$
+  D = \{ (x,y): ~~~ x \in [a,b]  ~~~ 0 \le y \le f(x) \}
+ $$
+\end{defin}
+
+\begin{theorem}
+  $$
+  S(D) = \int_a^b f(x) dx
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \int^* (R) = \sum_{k=1}^n M_k \Delta x_k ~~~
+  \int_* (R) = \sum_{k=1}^n m_k \Delta x_k
+  $$
+  $$
+  P_n = \sqcup_{k=1}^n P_k ~~~
+  Q_n = \sqcup_{k=1}^n Q_k
+  $$
+  $$
+  m(P_n) = \sum_{k=1}^n m(P_k) = \sum_{k=1}^n m_k \Delta x_k = \int_* (R)
+  $$
+  $$
+  m(Q_n) = \sum_{k=1}^n m(Q_k) = \sum_{k=1}^n M_k \Delta x_k = \int^* (R)
+  $$
+  $f(x)$ непрерывна на $[a,b]$ значит имеет интеграл по критерию интегрируемости
+  $$
+  \forall \varepsilon > 0 ~~~
+  \exists R_{\varepsilon} ([a,b]) ~~~
+  \int^*(R_{\varepsilon}) - \int_* (R_{\varepsilon}) < \varepsilon ~~~
+  m(Q_n) - m(P_n) < \varepsilon ~~~
+  P_n \subset D \subset Q_{\varepsilon}
+  $$
+  Из свойства определенного интеграла
+  $$
+  \int_* (R) \le \int_a^b f(x)dx \le \int^* (R)
+  $$
+\end{proof}
+
+\begin{proof}
+  $f(x),g(x)$ непрерывный на $[a,b]$
+
+  $$
+  D = \{ (x,y): ~~ x \in [a,b] ~~ f(x) \le y \le g(x) \}
+  $$
+
+  $c = \inf f(x) ~~~ y' = y + c ~~~ D = D_g \backslash D_f$
+  $$
+  S(D) = S(D_g) - S(D_f) = \int_a^b g(x)dx - \int_a^b f(x)dx =
+  \int_a^b (g(x) - f(x)) dx
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Вычисление площади фигуры заданной в полярных координатах.
+\end{title}
+
+\begin{theorem}
+  $$
+  D = \{ (\rho,\alpha): ~~ \alpha \le \phi \le \beta ~~ 0 \le
+  \rho \le \beta \}
+  $$
+  $$
+  S(D) = \frac{1}{2} = \int_{\alpha}^{\beta} \phi^2 d\alpha
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \int^* (R) = \sum_{k=1}^n M_k \Delta \phi_k
+  $$
+  $$
+  \int_* (R) = \sum_{k=1}^n m_k \Delta \phi_k
+  $$
+  $$
+  S(P_k) = \frac{m_k \Delta \phi_k}{2} ~~~
+  S(Q_k) = \frac{M_k \Delta \phi_k}{2}
+  $$
+  $$
+  P_n = \sqcup_{k=1}^n ~~~
+  S(P_n) = \sum_{k=1}^n S(P_k) = \frac{1}{2} \sum_{k=1} m_k \Delta \phi_k =
+  \int_* (R)
+  $$
+  $$
+  Q_n = \sqcup_{k=1}^n ~~~
+  S(Q_n) = \sum_{k=1}^n S(Q_k) = \frac{1}{2} \sum_{k=1} M_k \Delta \phi_k =
+  \int^* (R)
+  $$
+
+  $\frac{\rho}{2}$ интегрируема на $[\alpha, \beta]$
+
+  $$
+  \int^* (R_{\varepsilon}) - \int_* (R_{\varepsilon}) < \varepsilon ~~~
+  S(Q_n) - S(P_n) < \varepsilon
+  $$
+  $$
+  \int_* (R_{\varepsilon}) \le \int_{\alpha}^{\beta} \rho d\phi \le
+  \int^* (R_{\varepsilon})
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Вычисление объемов с помощью определенного интеграла.
+\end{title}
+
+\begin{defin}[цилиндра]
+  $$
+  \vartheta = \{ (x,y,z) | (x,y) \in D ~~~ 0 < z \le h\}
+  $$
+\end{defin}
+
+\begin{theorem}
+  $D \subset R^2 ~~~ S(D)$ измеримо по Жордану $\vartheta \subset R^3 ~~~
+  V(\vartheta) = h S(D)$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0 ~~~
+  \exists P_{\varepsilon}, Q_{\varepsilon} \subset R^3 ~~~
+  P_{\varepsilon}, \subset D \subset Q_{\varepsilon} ~~~
+  S(Q_{\varepsilon} - S(P_{\varepsilon})) < \frac{\varepsilon}{h}
+  $$
+  $$
+  \vartheta'_{\varepsilon} = P_{\varepsilon} \times [0,h] ~~~
+  \vartheta''_{\varepsilon} = Q_{\varepsilon} \times [0,h] ~~~
+  \vartheta'_{\varepsilon} \subset \vartheta \subset \vartheta''_{\varepsilon}
+  $$
+  $$
+  V(\vartheta''_{\varepsilon}) - V(\vartheta'_{\varepsilon}) <
+  h S(Q_{\varepsilon}) - h S(P_{\varepsilon}) =
+  h (S(Q_{\varepsilon}) - S(P_{\varepsilon}))
+  $$
+  $$
+  P_{\varepsilon} \subset D \subset Q_{\varepsilon} ~~~
+  S(P_{\varepsilon}) \le S(D) \le S(Q_{\varepsilon})
+  hS(P_{\varepsilon}) \le hS(D) \le hS(Q_{\varepsilon})
+  V(\vartheta'_{\varepsilon}) \le h S(D) \le V(\vartheta''_{\varepsilon})
+  $$
+\end{proof}
+
+\begin{theorem}
+  $$
+  D = \{ (x,y) ~~~ x \in [a,b] ~~~
+  0 \le y \le f(x) \}
+  $$
+  $$
+  V(T) = \pi \int_a^b f^2(x) dx
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  P_k ~~ \Delta x_k ~~ m_k ~~~
+  V(P_k) = \pi m_k^2 \Delta x_k
+  $$
+  $$
+  Q_k ~~ \Delta x_k ~~ M_k ~~~
+  V(Q_k) = \pi M_k^2 \Delta x_k
+  $$
+  $$
+  P = \sqcup_{k=1}^n P_k ~~~
+  Q = \sqcup_{k=1}^n Q_k
+  $$
+  $$
+  V(P) = \sum_{k=1}^n \pi m_k^2 \Delta x_k ~~~
+  V(Q) = \sum_{k=1}^n \pi M_k^2 \Delta x_k = \int^* (R)
+  $$
+  $$
+  \forall \varepsilon > 0 ~~~
+  \exists R_{\varepsilon} ([a,b]) ~~~
+  0 \le \int^* (R_{\varepsilon}) - \int_* (R_{\varepsilon}) < \varepsilon
+  $$
+  $$
+  \exists P_{\varepsilon}, Q_{\varepsilon} ~~~
+  P_{\varepsilon} \subset T \subset Q_{\varepsilon} ~~~
+  V(Q_{\varepsilon} - V(P_{\varepsilon}) < \varepsilon
+  $$
+  $$
+  \int_* (R_{\varepsilon}) \le V(T) \le \int^* (R_{\varepsilon})
+  $$
+\end{proof}
+
+\begin{theorem}
+  Тело $T$ расположено в $R^3$ между плоскостями $x = a ~~ x = b ~~
+  \forall x \in [a,b]$ $Ox$ сечение плоскости и $Oz$ и $S(x)$ измеримо по
+  Жордану, $f(x)$ непрерывна на $[a,b]$ $\forall x', x'' \in [a,b]$ проэкции
+  $Dx', Dx''$ но $Oyz$ вложены одна в другую, тогда $T$ измеримо по Жордану
+  $V(T) = \int_a^b S(x) dx$
+\end{theorem}
+
+\begin{title}[\Large]
+  Вычисление длины кривой с помощью интеграла.
+\end{title}
+
+\begin{defin}[кривой]
+  $(x,y,z) \in R^3$
+  $$
+    \left\{
+      \begin{array}{l}
+        x = x(t) \\
+        y = y(t) \\
+        z = z(t)
+      \end{array}
+    \right.
+  $$
+  $
+  \vec z = \vec z (t) = ( x(t), y(t) , z(t) ) =
+  ( x(t)\vec i, y(t)\vec j , z(t)\vec k )
+  $
+\end{defin}
+
+Кривая непрерывна если все ее функции непрерывны.
+
+$\varphi (Ln)$ - длина ломанной. $\varphi = sup \varphi (Ln)$ - число
+
+\begin{theorem}
+  Если $\omega$ непрерывна деференциирума то
+  $$
+  \varphi (\omega) \le (b-a) max |r'(t)| ~~~ t \in [a,b]
+  $$
+\end{theorem}
+
+\begin{proof}
+  $
+  R([a,b]) = \{t_k\} ~~~ Ln \vec r (t_k)
+  $
+  $$
+  \varphi (Ln) = \sum_{k=1}^n |\vec r (t_k) - \vec r (t_{k-1}) \le
+  \sum_{k=1}^n (t_k - t_{k-1}) |\vec r (t_k^*)| \le max |\vec r (t)|
+  \sum_{k=1}^n (t_k - t_{k-1}) \le max |\vec r (t)| (b-a)
+  $$
+  $t_k^* \in (t_{k-1}, t_k) ~~~ t \in [a,b]$
+  $$
+  \varphi (\omega) = sup \varphi (Ln) \le max |\vec r (t)|(b-a) ~ t \in [a,b]
+  $$
+\end{proof}
+
+\begin{theorem}
+  $\omega$ - непрерывна диференциирума $\vec r = r(t) ~ t \in [a,b]$ если
+  $\varphi (t)$ - длина части кривой между $\vec r(a), \vec r(t)$ то
+  $\forall t \in [a,b] ~~~ \varphi = |\vec r'(t)|$
+\end{theorem}
+
+\begin{proof}
+  $t, t+\Delta t \in [a,b]$
+  $$
+  \Delta \varphi (t) = \varphi( t+\Delta t) - \varphi(t)
+  $$
+  $$
+  |\Delta \vec r(t) | = |\vec r(t+\Delta t) - \vec r(t)|
+  $$
+  $$
+  |\Delta \vec r(t)| \le |\Delta \varphi (t)| \le |\Delta t|
+  $$
+  $$
+  \left| \frac{\Delta \vec r(t)}{\Delta t} \right| \le
+  \left| \frac{\Delta \varphi (t)}{\Delta t} \right| \le
+  max |\vec r(t)|
+  $$
+  $$
+  \left| \frac{\Delta \vec r(t)}{\Delta t} \right| \le
+  \frac{\Delta \varphi (t)}{\Delta t} \le
+  max |\vec r(t)| ~~~ \Delta t \to 0
+  $$
+  $$
+  |\vec r'(t)| \le \varphi'(t) \le |\vec r'(t)|
+  $$
+\end{proof}
+
+  Если $\omega$ непрерывна деференциирумая кривая
+$\vec r = \vec r(t) ~~~ t \in [a,b]$
+$$
+\varphi (\omega) = \varphi(b) - \varphi(a) =
+\int_a^b \varphi'(t)dt =
+\int_a^b \vec r'(t)dt
+$$
+
+  Если $\omega$ непрерына деференциирума $y = f(x) ~~~ x \in [a,b] ~~~
+\vec r(x) = (x, f(x)) \vec r'(x) = (1, f'(x))$
+$$
+\int_a^b |\vec r'(x)|dx = \int_a^b \sqrt{1 + (f'(x))^2}dx
+$$
+
+  Вычисление длины в полярной системе координат.
+$$
+\varphi (\omega) = \int_a^b \sqrt{x'(t)^2 + (y'(t)^2)}dt
+$$
+$$
+x = \rho (\alpha) \cos \alpha ~~~ y = \rho (\alpha) \sin \alpha
+$$
+$$
+x'(\alpha) = \rho'(\alpha) \cos \alpha - \rho(\alpha) \sin \alpha \\
+y'(\alpha) = \rho'(\alpha) \sin \alpha + \rho(\alpha) \cos \alpha
+$$
+$$
+\varphi (\omega) = \int_{\alpha}^{\beta}
+\sqrt{\rho^2 (\alpha) + (\rho'(\alpha)^2)} d\alpha
+$$
+
+  Если $P$ поверхность вращения $y=f(x) > 0 ~~~ x \in [a,b]$
+$$
+S(P) = 2\pi \int_a^b f(x)dx
+$$
+$$
+d\varphi = \varphi' (x)dx = |\vec r'(x)|dx = \sqrt{1+f'(x)^2}dx
+$$
+
+\begin{title}[\Large]
+  Физические приложения интеграла.
+\end{title}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

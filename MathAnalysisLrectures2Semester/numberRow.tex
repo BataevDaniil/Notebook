@@ -287,3 +287,147 @@ $
 
   Наиболее эфективно его можно использовать если члены ряда содержат факториал.
 \end{theorem}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0 ~~~
+  \exists n_{\varepsilon} \in N ~~~
+  \forall k \ge n_{\varepsilon} ~~~
+  \left| \frac{a_{n+1}}{a_n} \lambda \right| < \varepsilon ~~~
+  \lambda - \varepsilon < \frac{a_{n+1}}{a_n} < \lambda + \varepsilon
+  $$
+  $$
+  1) ~~ \lambda < 1 ~~~ \lambda + \varepsilon < 1
+  $$
+  $\sum_{k = n_{\varepsilon}}^{\infty} a_k$ сходится, значит сходится
+$\sum_{k = 1}^{\infty} a_k$
+
+  $$
+  2) ~~ \lambda > 1 ~~~ \lambda - \varepsilon > 1
+  $$
+  $\sum_{k = n_{\varepsilon}}^{\infty} a_k$ расходится, значит расходится
+$\sum_{k = 1}^{\infty} a_k$
+\end{proof}
+
+\begin{title}[\Large]
+  Признак Коши сходимости числового ряда.
+\end{title}
+
+\begin{theorem}
+  $$
+  \forall k \in N ~~~ a_k \ge 0 ~~~ \sqrt[k]{a_n} \le \lambda < 1
+  $$
+  $\sum_{k=1}^{\infty} a_k$ сходится, тогда
+  $\sqrt[k]{a_k} \ge 1 ~~~ \sum_{k=1}^{\infty} a_k$ расходится
+\end{theorem}
+
+\begin{proof}
+  $a_k \le \lambda^k ~~~ \lambda < 1$
+
+  $\sum_{k=1}^{\infty} \lambda^k$ сходится
+
+  $\sum_{k=1}^{\infty} a_k$ cходится
+
+  $\sqrt[k]{a_k} \ge 1 ~~~ a_k \ge 1$
+
+  $\sum_{k=1}^{\infty} a_k$ расходится. Нарушено необходимое условие сходимости
+  ряда.
+\end{proof}
+
+\begin{theorem}
+  $$
+  \forall k \in N ~~~ a_k \ge 0 ~~~ \lim_{k \to \infty} \sqrt[k]{a_k} = \lambda
+  $$
+  тогда
+
+  $1) ~~ \lambda > 1 ~~~ \sum_{k=1}^{\infty} a_k$ сходится.
+
+  $2) ~~ \lambda < 1 ~~~ \sum_{k=1}^{\infty} a_k$ расходится.
+
+  $3) ~~ \lambda = 1$ может расходится и сходится.
+\end{theorem}
+
+\begin{proof}
+  надо доказать самостоятельно.
+\end{proof}
+
+\begin{title}[\Large]
+  Признак Лейбница сходимости знака чередования.
+\end{title}
+
+\begin{theorem}
+  $\forall k \in N ~~~ a_k > 0 ~~~ a_k \searrow ~~~ a_k \to 0$ тогда
+
+  $\sum_{k=1}^{\infty} (-1)^{k+1} a_k$ сходится.
+\end{theorem}
+
+\begin{proof}
+  $S_{2n} = a_1 - a_2 + a_3 - a_4 + \ldots + a_{2n-1} - a_{2n}$
+
+  $S_{2n+2} - S_{2n} = -a_{2n+2} + a_{2n+1} > 0$
+
+  $S_{2n+2} > S_{2n}$
+
+  $S_{2n} = a_1 - (a_2 - a_3) - (a_4 - a_5) - \ldots - a_{2n} \le a_1$
+
+  $$
+  \lim_{n \to \infty} S_{2n} = S ~~~ \lim_{n \to \infty} S_{2n+1} =
+  \lim_{n \to \infty} (S_{2n} + a_{2n+1}) = S + 0 = S
+  $$
+\end{proof}
+
+Следствие: выполнены все условия Лейбница
+$\forall n \in N ~~~ S_{2n} \le S \le S_{2n+1} ~~~ |S_n - S| \le a_{n+1}$
+
+\begin{proof}
+  $S_{2n+1} \searrow ~~~ S_{2n+1} - S_{2n-1} = a_{2n+1} - a_{2n} < 0$
+
+  $S_{2n-1} - a_{2n} \le S \le S_{2n} + a_{2n+1}$
+
+  $0 \le S_{2n-1} - S \le a_{2n}$
+  $0 \le S - S_{2n} \le a_{2n+1}$
+\end{proof}
+
+\begin{title}[\Large]
+  Признак дирехле сходимости  числового ряда.
+\end{title}
+
+\begin{theorem}
+  1) $\sum_{k=1}^{\infty} a_k ~~~ \exists M > 0 ~~~ \forall n \in N
+  |\sum_{k=1}^n a_k| \le M$
+
+  2) $b_k \nearrow$ или $\searrow$
+
+  3) $b_k \to 0$
+
+  тогда $\sum_{k=1}^{\infty} a_k b_k$ сходится.
+\end{theorem}
+
+\begin{title}[\Large]
+  Признак Абеля.
+\end{title}
+
+\begin{theorem}
+  1) $\sum_{k=1}^{\infty} a_k$ сходится.
+
+  2) $b_k \nearrow$ или $\searrow$
+
+  3) $\exists M > 0 ~~~ \forall k \in N ~~~ |b_k| \le M$
+
+  тогда $\sum_{k=1}^{\infty} a_k b_k$ сходится.
+\end{theorem}
+
+\begin{proof}
+  $\lim_{k \to \infty} b_k = p ~~~ b_k^* = b_k - p \to 0$
+
+  так как $a_k$ сходится то $| \sum_{k=1}^n a_k \le \Delta$
+
+  $$
+  \sum_{k=1}^{\infty} a_k b_k^*  ~~~ \sum_{k=1}^{\infty} a_k (b_k - p) =
+  \sum_{k=1}^{\infty} a_k b_k - p \sum_{k=1}^{\infty} a_k
+  $$
+  $$
+  \sum_{k=1}^{\infty} a_k b_k = \sum_{k=1}^{\infty} a_k b_k^* +
+  p\sum_{k=1}^{\infty} a_k
+  $$
+\end{proof}
