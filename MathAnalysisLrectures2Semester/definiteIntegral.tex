@@ -208,7 +208,7 @@ $$
 
 \begin{theorem}[Критерий интегрирования функции (по Риману)]
   Для того, чтобы $f(x)$ на $[a,b]$ была интегрируема на $[a,b]$ необходимо
-  и достаточно, чтобы она была ограничена на $[a,b]$ и
+  и достаточно, чтобы:
   \[
     \forall \varepsilon > 0 ~~~ \exists \delta_\varepsilon > 0 ~~~ \forall R
     [a,b] ~~~ \lambda (R) < \delta_\varepsilon ~~~ 0 \le \int^* (R) -
@@ -282,7 +282,8 @@ $$
     Основные свойства определенных интегралов.
 \end{title}
 
-\bd{I} $f(x), g(x)$ на $[a,b]$ интегрируемы на $[a,b] ~~ \alpha , \beta \in R ~~
+\bd{I}\\
+$f(x), g(x)$ интегрируемы на $[a,b] ~~ \alpha , \beta \in R ~~
 \alpha \cdot \beta \not= 0 ~~ \alpha f(x) + \beta g(x)$ интегрируема на $[a,b]$
 \[
     \int_a^b (\alpha f(x) + \beta g(x))dx = \alpha \int_a^b f(x)dx
@@ -323,11 +324,14 @@ $$
     \[\alpha \int_a^b f(x)dx + \beta \int_a^b f(x)dx\]
 \end{proof}
 
-\bd{II} $f(x),g(x)$ на $[a,b]$ интегрируема на $[a,b]$, значит $f(x) \cdot g(x)$
+\bd{II}\\
+$f(x),g(x)$ интегрируема на $[a,b]$, значит $f(x) \cdot g(x)$
 интегрируема на $[a,b]$.\\
-\bd{III} $f(x)$ на $[a,b]$ интегрируема на $[a,b] ~~~ [c,d] \subset [a,b]$, значит
+\bd{III}\\
+ $f(x)$ интегрируема на $[a,b] ~~~ [c,d] \subset [a,b]$, значит
 $f(x)$ интегрируема на $[c,d]$.\\
-\bd{IV} $f(x)$ на $[a,b]$ интегрируема на $[a,b]$ $a < c < b$, значит
+\bd{IV}\\
+$f(x)$ интегрируема на $[a,b]$ $a < c < b$, значит
     \[\int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx\]
 
 \bd{V}
@@ -339,13 +343,14 @@ $f(x)$ интегрируема на $[c,d]$.\\
     \int_a^b f(x)dx = - \int_b^a f(x)dx
 \]
 
-\bd{VII} $f(x)$ на $[a, b]$ интегрируема на $[a, b]$ $\forall c_1, c_2, c_3
-                                                                \in [a, b]$
-
-\begin{proof}
+\bd{VII}\\
+$f(x)$ интегрируема на $[a, b]$ $\forall c_1, c_2, c_3 \in [a, b]$
     \[
     \int_{c_1}^{c_3} f(x)dx = \int_{c_1}^{c_2} f(x)dx + \int_{c_2}^{c_3} f(x)dx
     \]
+
+\begin{proof}
+  $c_3 < c_1 < c_2$
     \[
         \int_{c_3}^{c_2} f(x)dx = \int_{c_3}^{c_1}f(x)dx +
         \int_{c_1}^{c_2}f(x)dx
@@ -359,20 +364,26 @@ $f(x)$ интегрируема на $[c,d]$.\\
 \begin{title}[\Large]
     Оценки определенного интеграла.
 \end{title}
-\bd{I} $f(x)$ интегрируема на $[a, b]$ $f(x) \ge 0$, значит
+\bd{I}\\
+$f(x)$ интегрируема на $[a,b]$ $f(x) \ge 0$, значит
 \[\int_a^b f(x)dx \ge 0\]
 \begin{proof}
     \[\sum_{k=1}^{n} f(c_k)\Delta x_k \ge 0\]
+\end{proof}
+\bd{II}\\
     $f(x), g(x)$ интегрируемы на $[a, b]$ $\forall x \in [a, b] ~~ f(x)\le g(x)$
     \[\int_a^b f(x)dx \le \int_a^b g(x)dx\]
+\begin{proof}
     \[g(x) - f(x) \ge 0 ~~ \int_a^b (g(x) - f(x))dx \ge 0\]
     \[\int_a^b g(x)dx - \int_a^b f(x)dx \ge 0\]
+    \[\int_a^b g(x)dx \ge \int_a^b f(x)dx \]
 \end{proof}
 
-\bd{II} $f(x) \ge 0$ интегрируема на $[a, b]$ $\exists c \in [a, b]$ непрерывна в
-$f(c) > 0$ \[\int_a^b f(x)dx > 0\]
+\bd{III}\\
+$f(x) \ge 0$ интегрируема на $[a, b]$ $\exists c \in [a, b]$ непрерывна
+в $f(c) > 0$ \[\int_a^b f(x)dx > 0\]
 \begin{proof}
-    3) локальные свойство непрерывности в точке $\exists O_{\delta}c ~~
+    Локальные свойство непрерывности в точке $\exists O_{\delta}c ~~
     \forall x \in O_{\delta}c ~~ f(x) > \frac{f(c)}{2}$
     \[
         \int_a^b f(x)dx = \int_a^{c-\delta} f(x)dx +
@@ -381,72 +392,95 @@ $f(c) > 0$ \[\int_a^b f(x)dx > 0\]
         = \frac{f(c) 2\delta}{2} > 0
     \]
 \end{proof}
-3) $f(x)$ интегрируем на $[a, b]$ то $|f(x)|$ также интегрируема
+\bd{IV}\\
+$f(x)$ интегрируем на $[a, b]$ то $|f(x)|$ также интегрируема
 (но не наоборот)
-\[\left| \int_a^b f(x)dx \right| \le \int_a^b |f(x)|dx\]
-\[||a| - |b|| < |a - b|\]
-\[
-    \left| \sum_{k=1}^n f(c_k)\Delta x_k \right| \le
-    \sum_{k=1}^{n}|f(c_k)|\Delta x_k
-\]
-4) $f(x)$ интегрируема $[a, b]$ $\forall c_1, c_2 \in [a, b]$
+
+\begin{proof}
+  \[\left| \int_a^b f(x)dx \right| \le \int_a^b |f(x)|dx\]
+  \[||a| - |b|| < |a - b|\]
+  \[
+      \left| \sum_{k=1}^n f(c_k)\Delta x_k \right| \le
+      \sum_{k=1}^{n}|f(c_k)|\Delta x_k
+  \]
+\end{proof}
+\bd{V}\\
+$f(x)$ интегрируема $[a, b]$ $\forall c_1, c_2 \in [a, b]$
 \[
     \left| \int_{c_1}^{c_2} f(x)dx \right| \le
     \left| \int_{c_1}^{c_2} |f(x)|dx \right|
 \]
-5) $f(x), g(x)$ интегрируемы на $[a, b]$ $\forall x \in [a, b] ~~
+\bd{VI}\\
+$f(x), g(x)$ интегрируемы на $[a, b]$ $\forall x \in [a, b] ~~
 m \le f(x) \le M$ $g(x) \ge 0$ или $g(x) \le 0$ $\exists m \le \varphi \le M$
-\[\int_a^b f(x)g(x)dx \varphi \int_a^b g(x)dx\]
+\[\int_a^b f(x)g(x)dx = \varphi \int_a^b g(x)dx\]
 \begin{proof}
     $g(x) \le 0 ~~ m \le f(x) \le M ~~ mg(x) \ge f(x)g(x) \ge Mg(x)$
     \[\int_a^b mg(x)dx \ge \int_a^b f(x)g(x)dx \ge \int_a^b Mg(x)dx\]
     \[m\int_a^b g(x)dx \ge \int_a^b f(x)g(x)dx \ge M\int_a^b g(x)dx\]
-    \[m \le \frac{\int_a^b f(x)g(x)dx}{\int_a^b g(x)dx} \le M\]
+    \[\int_a^b g(x)dx = 0 ~~~ \int_a^b f(x)g(x)dx = 0\]
+    \[
+    \int_a^b g(x)dx < 0 ~~~
+    m \le \frac{\int_a^b f(x)g(x)dx}{\int_a^b g(x)dx} \le M
+    \]
 \end{proof}
 
-Следствие.\\
 \begin{theorem}[о среднем для определенного интеграла]
-    $f(x)$ интегрируем на $[a, b]$ $g(x)$ интегрируема и не меняет напрвления на
-    $[a, b]$ $\exists c \in [a, b]$
-    \[\int_a^b f(x)g(x)dx  = f(c) \int_a^b g(x)dx\]
-    $m = inf f(x) ~~ u \in [a, b] ~~ M = sup f(x) ~~ u \in [a, b]$
-    $m \le f(x) \le M ~~ f([a, b]) = [m, M]$ на основании свойства 5
-    $\forall M \in [m, M] ~~ \exists c \in [a, b] ~~ f(c) = M$
+  $f(x)$ интегрируем и непрерывна на $[a,b]$
+
+  $g(x)$ интегрируема и не меняет знак тогда $\exists c \in [a,b]$
+  \[\int_a^b f(x)g(x)dx  = f(c) \int_a^b g(x)dx\]
 \end{theorem}
+
+\begin{proof}
+  $m = inf f(x) ~~~ x \in [a,b]$
+
+  $M = sup f(x) ~~~ x \in [a,b]$
+
+  $\forall x [a,b] ~~~ m \le f(x) \le M$
+
+  По свойству функции непрерывной на отрезке $f([a,b]) = [m, M]$
+
+  На основании о среднем для определенного интеграла $\exists m \le \nu \le M$
+  $$
+  \int_a^b f(x)g(x) dx = \nu \int_a^b g(x) dx
+  $$
+
+  По теореме Коши $\forall \nu \in [m,M] ~~~ \exists c \in [a,b] ~~~ f(c) = \nu$
+\end{proof}
+
 \begin{title}
   Свойства определенных интегралов как функции верхнего предела.
 \end{title}
 
-Функция $f(x)$ определена на отрезке $[a; b]$
+$f(x)$ определена на $[a, b]$
 \[F(x) = \int^x_a f(t)dt\]
-\[\int^b_a f(x)dx \int^b_a f(t)dt\]
 
-\begin{theorem}[1]
-  Функция $f(x)$ определена на отрезке $[a; b]$
-  Функция $F(x)$ непрерывна на отрезке $[a; b]$
-  \[F(x) = \int^x_a f(x)dt\]
+\begin{theorem}
+  $f(x)$ определена на $[a,b]$ то $F(x)$ непрерывна на $[a,b]$
+  \[F(x) = \int^x_a f(t)dt\]
 \end{theorem}
 
 \begin{proof}
-  \[\exists M > 0 ~~~ \forall x \in [a; b] ~~~ |f(x)| \le M\]
-  Пусть $x, x + \Delta x \in [a; b]$
+  \[\exists M > 0 ~~~ \forall x \in [a, b] ~~~ |f(x)| \le M\]
+  Пусть $x, x + \Delta x \in [a, b]$
   \[\Delta F(x) < F(x + \Delta x) - F(x) = \int^{x + \Delta x}_a f(t)dt -
     \int^x_a f(t)dt = \int^{x + \Delta x}_x f(t)dt\]
   \[|\Delta F(x)| \le \left |\int^{x + \Delta x}_x |f(t)|dt \right| \le
-    M \left |\int^{x + \Delta x}_x dt \right| = M |\Delta x|
-    ~~~ \Delta x \to 0 ~~~ |\Delta x F(x)| \to 0\]
+    M \left |\int^{x + \Delta x}_x |f(t)| dt \right| = M |\Delta x|
+    ~~~ \Delta x \to 0 ~~~ |\Delta F(x)| \to 0\]
+  Так как $x$ произвольная точка, то $F(x)$ непрерывна на $[a,b]$
 \end{proof}
 
-\begin{theorem}[2]
-  Функция $f(x)$ интегрируема на отрезке $[a; b]$. При этом
-  $\exists x_0 \in [a; b]$ - непрерывная точка.
+\begin{theorem}
+  $f(x)$ интегрируема на $[a,b]$ и непрерывна в точке $x_0 \in [a,b]$
   \[F(x) = \int^x_a f(t)dt\]
-  Тогда
+  тогда
   \[F'(x_0) = f(x_0)\]
 \end{theorem}
 
 \begin{proof}
-  Пусть $x_0 + \Delta x \in [a; b]$
+  Пусть $x_0 + \Delta x \in [a, b]$
   \[\frac{\Delta F(x_0)}{\Delta x} - f(x_0) = \frac{1}{\Delta x}
     \int^{x_0 + \Delta x}_{x_0} f(t)dt - \frac{f(x_0)}{\Delta x}
     \int^{x_0 + \Delta x}_{x_0} dt = \frac{1}{\Delta x}
@@ -455,7 +489,7 @@ m \le f(x) \le M$ $g(x) \ge 0$ или $g(x) \le 0$ $\exists m \le \varphi \le M$
     \right | \le \frac{1}{|\Delta x|} \left |
     \int^{x_0 + \Delta x}_{x_0} |f(x) - f(x_0)|dt \right |\]
   \[\forall \varepsilon > 0 ~~~ \exists \delta_\varepsilon > 0
-    ~~~ \forall \in [a; b] ~~~ |t - x_0| < \delta_\varepsilon \Rightarrow
+    ~~~ \forall \in [a, b] ~~~ |t - x_0| < \delta_\varepsilon \Rightarrow
     |f(t) - f(x_0) < \varepsilon|\]
   Если $|\Delta x| < \delta_\varepsilon$
   \[\left | \frac{\Delta F(x_0)}{\Delta x} - f(x_0) \right | \le
@@ -466,9 +500,9 @@ m \le f(x) \le M$ $g(x) \ge 0$ или $g(x) \le 0$ $\exists m \le \varphi \le M$
   \[F'(x_0) = f(x_0)\]
 
   Следствие\\
-  Если $F(x)$ непрерывна на отрезке $[a; b]$, то
+  Если $F(x)$ непрерывна на отрезке $[a, b]$, то
   \[F(x) = \int^x_a f(t)dt\] - дифференцирована на всем отрезке и
-  \[F'(x) = f(x) ~~~ x \in [a; b]\]
+  \[F'(x) = f(x) ~~~ x \in [a, b]\]
 \end{proof}
 
 \begin{title}[\Large]
@@ -476,8 +510,8 @@ m \le f(x) \le M$ $g(x) \ge 0$ или $g(x) \le 0$ $\exists m \le \varphi \le M$
 \end{title}
 
 \[F(x) = \int^x_a f(t)dt\]
-$F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a; b]$ Любая первообразная
-от $f(x) [a; b]$
+$F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a, b]$ Любая первообразная
+от $f(x) [a, b]$
 \[\phi (x) = \int^x_a f(t)dt + C\]
 \[x = a ~~~ \phi (a) = \int^a_a f(t)dt + C = C\]
 \[x = b ~~~ \phi (b) = \int^b_a f(t)dt + C = \int^b_a f(t)dt + \phi(x)\]
@@ -508,7 +542,7 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a; 
 \end{theorem}
 
 \begin{proof}
-  Пусть $F(x)$ - первообразная $f(x)$ на отрезке $[a; b]$\\
+  Пусть $F(x)$ - первообразная $f(x)$ на отрезке $[a, b]$\\
   \[
     (F(\varphi (t)))' = F'(\varphi (t)) \cdot \varphi' (t) = f(\varphi(t))
     \cdot \varphi'(t)
@@ -522,7 +556,7 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a; 
 \end{proof}
 
 \begin{theorem}
-  Если $f(x)$ - нечетная на отрезке $[-a; a]$, то
+  Если $f(x)$ - нечетная на отрезке $[-a, a]$, то
   \[\int^a_{-a} f(x)dx = 0\]
 \end{theorem}
 
@@ -534,7 +568,7 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a; 
 \end{proof}
 
 \begin{theorem}
-  Если $f(x)$ - четная на отрезке $[-a; a]$, то
+  Если $f(x)$ - четная на отрезке $[-a, a]$, то
   \[\int^a_{-a} f(x)dx = 2\int^a_{0} f(x)dx \]
 \end{theorem}
 
@@ -546,7 +580,7 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a; 
 \end{proof}
 
 \begin{theorem}
-  Если $f(x)$ - переодична на отрезке $[-a; a]$, то
+  Если $f(x)$ - переодична на отрезке $[-a, a]$, то
   \[\int^a_{-a} f(x)dx = 0\]
 \end{theorem}
 
