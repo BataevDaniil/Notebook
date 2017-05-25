@@ -28,24 +28,25 @@ $\sum_{k=1}^{n} f(c_k)\Delta x_k$ \kv{интегральная сумма}\\
   по Риману}.
 \end{defin}
 
-\begin{theorem}
-  Необходимое условие существование определенного интеграла. Если для $f(x)$
-  на $[a,b]$ $\exists \int_{a}^{b}$ то $\forall x \in [a,b] f(x)$ ограничена.
-\end{theorem}
+\begin{block}[Необходимое условие существование определенного интеграла]
+  $f(x)$ интегрируема на $[a,b]$ то $\forall x \in [a,b]$ $f(x)$ ограничена.
+\end{block}
 
 \begin{proof}
   Предположим $f(x)$ неограничена $\forall O(a)$ на первом
   отрезке $\forall R[a,b]$. Так как определенный интеграл существует
   то
 
-  пусть $\varepsilon = 1$ тогда \[\exists \delta_1 > 0 ~~ \forall R[a,b] ~~
-  \lambda(R) < \delta_1 ~~ \forall \upsilon(R)\]
-  \[I-1 < \sum_{k=1}^{n} f(c_k)\Delta x_k < I+1\] зафиксируем элемент выборки
+  пусть $\varepsilon = 1$ тогда
+  \[
+  \exists \delta_1 > 0 ~~~ \forall R[a,b] ~~~
+  \lambda(R) < \delta_1 ~~~ \forall \upsilon(R) ~~~
+   I-1 < \sum_{k=1}^{n} f(c_k)\Delta x_k < I+1
+  \] зафиксируем элемент выборки
   $$
   I - 1 - \sum_{k=2}^n f(c_k) \Delta x_k < f(c_1) \Delta x_1 <
   I + 1 - \sum_{k=2}^n f(c_k) \Delta x_k
   $$
-  $c_1$ это любая точка первого отрезка $\Delta x_1 \not= 0$
   $$
   \frac{I-1 - \sum_{k=2}^n f(c_k) \Delta x_k}{\Delta x_1} <
   f(c_1) < \frac{I+1 - \sum_{k=2}^n f(c_k) \Delta x_k}{\Delta x_1}
@@ -166,11 +167,12 @@ $$
   M''_k = sup f(x) ~~~ x \in [x^*, x_k]
   $$
   $$
-  \int^* (R_1) - \int^*(R_k) = M_k(x_k - x_{k-1}) - M_k'(x^* - x_{k-1})
+  \int^* (R_1) - \int^*(R_2) = M_k(x_k - x_{k-1}) - M_k'(x^* - x_{k-1})
   - M''_k(x_k - x^*) =
   $$
   $$
-  = M_k(x^* - x{k-1}) + M_k(x_k - x^*) - M'_k(x^* - x{k-1}) - M''_k(x_k - x^*) =
+  = M_k(x^* - x_{k-1}) + M_k(x_k - x^*) - M'_k(x^* - x_{k-1}) -
+  M''_k(x_k - x^*) =
   $$
   $$
   (M_k - M'_k)(x^* - x_{k-1}) + (M_k - M''_k)(x_k - x^*)
@@ -181,7 +183,7 @@ $$
 \end{proof}
 
 \bk{IV}\\
-Если $R_1 \not= R_2$ - произвольные разбиения на $[a,b]$, то
+$R_1 \not= R_2$ произвольные разбиения на $[a,b]$, то
 \[\int_* (R_1) \le \int^* (R_2) ~~~ \]
 
 \begin{proof}
@@ -193,8 +195,9 @@ $$
 
 \bk{V}
 $$
-inf_R \int_* (R) = I_* ~~~ sup_R \int^* (R) = I^*
+\exists ~~~ inf \int_* (R) = I_* ~~~ sup \int^* (R) = I^*
 $$
+такое что выполнено следущее условие
 \[\forall R ~~~ \int_* (R) \le I_* \le I^* \le \int^* (R)\]
 
 \begin{proof}
@@ -206,15 +209,28 @@ $$
   \[A = \left\{ \int_* (R) \right\} ~~~ B = \left\{ \int^* (R) \right\}\]
 \end{proof}
 
-\begin{theorem}[Критерий интегрирования функции (по Риману)]
+\begin{block}[Критерий интегрирования функции (по Риману)]
   Для того, чтобы $f(x)$ на $[a,b]$ была интегрируема на $[a,b]$ необходимо
-  и достаточно, чтобы:
+  и достаточно, чтобы была ограничена и
   \[
     \forall \varepsilon > 0 ~~~ \exists \delta_\varepsilon > 0 ~~~ \forall R
     [a,b] ~~~ \lambda (R) < \delta_\varepsilon ~~~ 0 \le \int^* (R) -
     \int_* (R) < \varepsilon
   \]
-\end{theorem}
+\end{block}
+
+\begin{block}[Замечание]
+  Для того чтобы $f(x)$ на $[a,b]$ была интегрируемой по Риману необходимо и
+  достаточно:
+
+  1. Была ограничена на $[a,b]$
+
+  2.
+  $$
+  \forall \varepsilon > 0 ~~~ \exists R_{\varepsilon} [a,b] ~~~
+  0 \le \int^*(R_{\varepsilon}) - \int_*(R_{\varepsilon}) < \varepsilon
+  $$
+\end{block}
 
 \begin{title}[\Large]
   Интегрируемость непрерывных функций
@@ -239,7 +255,7 @@ $$
   \]
   $f(x'_k) = M_k ~~~ f(x''_k) = m_k$
   По теореме Вейерштрасса
-  \[x'_k, x''_k \in \Delta x_k ~~~ |x'_k - x'_k| < \delta_\varepsilon\]
+  \[x'_k, x''_k \in \Delta x_k \Rightarrow |x'_k - x'_k| < \delta_\varepsilon\]
   \[
     0 \le \sum_{k = 1}^{n} (f(x'_k) - f(x''_k)) \Delta x_k <
     \frac{\varepsilon}{b - a} \cdot \sum_{k = 1}^{n} \Delta x_k = \varepsilon
@@ -248,7 +264,7 @@ $$
 
 \begin{theorem}
   $f(x)$ ограничена на $[a,b]$ и непрерывна на $[a,b]$ за исключением конечного
-  числа точек, значит $f(x)$ интегрируема (по Риману) на $[a,b]$.
+  числа точек, значит $f(x)$ интегрируема по Риману на $[a,b]$.
 \end{theorem}
 
 \begin{title}[\Large]
@@ -428,7 +444,9 @@ m \le f(x) \le M$ $g(x) \ge 0$ или $g(x) \le 0$ $\exists m \le \varphi \le M$
 \begin{theorem}[о среднем для определенного интеграла]
   $f(x)$ интегрируем и непрерывна на $[a,b]$
 
-  $g(x)$ интегрируема и не меняет знак тогда $\exists c \in [a,b]$
+  $g(x)$ интегрируема и не меняет знак
+
+  тогда $\exists c \in [a,b]$
   \[\int_a^b f(x)g(x)dx  = f(c) \int_a^b g(x)dx\]
 \end{theorem}
 
@@ -441,15 +459,17 @@ m \le f(x) \le M$ $g(x) \ge 0$ или $g(x) \le 0$ $\exists m \le \varphi \le M$
 
   По свойству функции непрерывной на отрезке $f([a,b]) = [m, M]$
 
-  На основании о среднем для определенного интеграла $\exists m \le \nu \le M$
+  На основании о среднем для определенного интеграла
+  $\exists m \le \varphi \le M$
   $$
-  \int_a^b f(x)g(x) dx = \nu \int_a^b g(x) dx
+  \int_a^b f(x)g(x) dx = \varphi \int_a^b g(x) dx
   $$
 
-  По теореме Коши $\forall \nu \in [m,M] ~~~ \exists c \in [a,b] ~~~ f(c) = \nu$
+  По теореме Коши $\forall \varphi \in [m,M] ~~~ \exists c \in [a,b] ~~~ f(c) =
+  \varphi$
 \end{proof}
 
-\begin{title}
+\begin{title}[\Large]
   Свойства определенных интегралов как функции верхнего предела.
 \end{title}
 
@@ -464,7 +484,7 @@ $f(x)$ определена на $[a, b]$
 \begin{proof}
   \[\exists M > 0 ~~~ \forall x \in [a, b] ~~~ |f(x)| \le M\]
   Пусть $x, x + \Delta x \in [a, b]$
-  \[\Delta F(x) < F(x + \Delta x) - F(x) = \int^{x + \Delta x}_a f(t)dt -
+  \[\Delta F(x) = F(x + \Delta x) - F(x) = \int^{x + \Delta x}_a f(t)dt -
     \int^x_a f(t)dt = \int^{x + \Delta x}_x f(t)dt\]
   \[|\Delta F(x)| \le \left |\int^{x + \Delta x}_x |f(t)|dt \right| \le
     M \left |\int^{x + \Delta x}_x |f(t)| dt \right| = M |\Delta x|
@@ -481,16 +501,17 @@ $f(x)$ определена на $[a, b]$
 
 \begin{proof}
   Пусть $x_0 + \Delta x \in [a, b]$
-  \[\frac{\Delta F(x_0)}{\Delta x} - f(x_0) = \frac{1}{\Delta x}
-    \int^{x_0 + \Delta x}_{x_0} f(t)dt - \frac{f(x_0)}{\Delta x}
+  \[\frac{\Delta F(x)}{\Delta x} - f(x_0) = \frac{1}{\Delta x}
+    \int^{x_0 + \Delta x}_{x_0} f(t)dt = \frac{f(x)}{\Delta x}
     \int^{x_0 + \Delta x}_{x_0} dt = \frac{1}{\Delta x}
     \int^{x_0 + \Delta x}_{x_0} (f(t) - f(x_0))dt\]
   \[\left | \frac{\Delta F(x_0)}{\Delta x} - f(x_0)
     \right | \le \frac{1}{|\Delta x|} \left |
     \int^{x_0 + \Delta x}_{x_0} |f(x) - f(x_0)|dt \right |\]
-  \[\forall \varepsilon > 0 ~~~ \exists \delta_\varepsilon > 0
+  $\forall \varepsilon > 0 ~~~ \exists \delta_\varepsilon > 0
     ~~~ \forall \in [a, b] ~~~ |t - x_0| < \delta_\varepsilon \Rightarrow
-    |f(t) - f(x_0) < \varepsilon|\]
+    |f(t) - f(x_0) < \varepsilon|$ по Коши
+
   Если $|\Delta x| < \delta_\varepsilon$
   \[\left | \frac{\Delta F(x_0)}{\Delta x} - f(x_0) \right | \le
     \frac{1}{|\Delta x|} \left | \int^{x_0 + \Delta x}_{x_0} |f(x) -
@@ -498,24 +519,30 @@ $f(x)$ определена на $[a, b]$
     \varepsilon\]
   \[\lim_{\Delta x \to 0} \frac{\Delta F(x_0)}{\Delta x} = f(x_0)\]
   \[F'(x_0) = f(x_0)\]
-
-  Следствие\\
-  Если $F(x)$ непрерывна на отрезке $[a, b]$, то
-  \[F(x) = \int^x_a f(t)dt\] - дифференцирована на всем отрезке и
-  \[F'(x) = f(x) ~~~ x \in [a, b]\]
 \end{proof}
 
+\begin{theorem}
+  Если $F(x)$ непрерывна на отрезке $[a, b]$, то
+  \[F(x) = \int^x_a f(t)dt\] дифференциируема на всем отрезке и
+  \[F'(x) = f(x) ~~~ x \in [a, b]\]
+\end{theorem}
+
 \begin{title}[\Large]
-  Вычисление определенных интегралов. Формула Ньютона Леменца.
+  Вычисление определенных интегралов. Формула Ньютона Лейбница.
 \end{title}
 
-\[F(x) = \int^x_a f(t)dt\]
-$F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a, b]$ Любая первообразная
-от $f(x) [a, b]$
-\[\phi (x) = \int^x_a f(t)dt + C\]
-\[x = a ~~~ \phi (a) = \int^a_a f(t)dt + C = C\]
-\[x = b ~~~ \phi (b) = \int^b_a f(t)dt + C = \int^b_a f(t)dt + \phi(x)\]
-\[\int^b_a f(t)dt = \phi(b) - \phi(a) = \phi(x)|^b_a\]
+\begin{theorem}
+  $f(x)$ непрерывна на $[a, b]$
+  \[\int^b_a f(t)dt = \phi(b) - \phi(a) = \phi(x)|^b_a\]
+\end{theorem}
+
+\begin{proof}
+  Так как $F'(x) = f(x)$ то $F(x)$ первообразная $f(x)$
+  \[\phi (x) = \int^x_a f(t)dt + C\]
+  \[x = a ~~~ \phi (a) = \int^a_a f(t)dt + C = C\]
+  \[x = b ~~~ \phi (b) = \int^b_a f(t)dt + C = \int^b_a f(t)dt + \phi(a)\]
+  \[\int^b_a f(t)dt = \phi(b) - \phi(a) = \phi(x)|^b_a\]
+\end{proof}
 
 \begin{title}[\Large]
   Интегрирование по частям в определенных интегралах.
@@ -534,7 +561,7 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a, 
 \end{title}
 
 \begin{theorem}
-  Пусть $y = f(x)$ - непрерывна на $\Delta$, $x = \varphi (t)$ - непрерывна и
+  $f(x)$ непрерывна на $\Delta$, $x = \varphi (t)$ непрерывна и
   диффиренцируема на $T$. При этом $\varphi (T) \subset \Delta$.\\
   Если
   \[a, b \in \Delta ~~~ a = \varphi (\alpha) ~~~ b = \varphi (\beta)\]
@@ -542,10 +569,10 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a, 
 \end{theorem}
 
 \begin{proof}
-  Пусть $F(x)$ - первообразная $f(x)$ на отрезке $[a, b]$\\
+  Пусть $F(x)$ первообразная $f(x)$ на $\Delta$\\
+  Пусть $F(\varphi(t))$ первообразная $f(\varphi(t))\varphi'(t)$ на $T$\\
   \[
-    (F(\varphi (t)))' = F'(\varphi (t)) \cdot \varphi' (t) = f(\varphi(t))
-    \cdot \varphi'(t)
+    (F(\varphi (t)))' = f(\varphi(t)) \cdot \varphi'(t)
   \]
   Тогда по формуле Ньютона-Лейбница:
   \[\int^b_a f(x)dx = F(b) - F(a)\]
@@ -556,7 +583,7 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a, 
 \end{proof}
 
 \begin{theorem}
-  Если $f(x)$ - нечетная на отрезке $[-a, a]$, то
+  $f(x)$ нечетная на $[-a, a]$, то
   \[\int^a_{-a} f(x)dx = 0\]
 \end{theorem}
 
@@ -568,7 +595,7 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a, 
 \end{proof}
 
 \begin{theorem}
-  Если $f(x)$ - четная на отрезке $[-a, a]$, то
+  $f(x)$ четная на $[-a, a]$, то
   \[\int^a_{-a} f(x)dx = 2\int^a_{0} f(x)dx \]
 \end{theorem}
 
@@ -580,7 +607,7 @@ $F'(x) = f(x)$, если $f(x)$ - непрерывна на отрезке $[a, 
 \end{proof}
 
 \begin{theorem}
-  Если $f(x)$ - переодична на отрезке $[-a, a]$, то
+  $f(x)$ переодична на $[-a, a]$, то
   \[\int^a_{-a} f(x)dx = 0\]
 \end{theorem}
 

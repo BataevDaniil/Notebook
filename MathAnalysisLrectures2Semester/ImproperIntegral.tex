@@ -2,6 +2,9 @@
     Несобственный интеграл по неограниченому промежутку.
 \end{title}
 
+\kv{Несобственный интеграл} называют сходящимя если он сущетсвует,
+иначе называют \kv{расходящимся}.
+
 \begin{defin}
     Пусть $f(x)$ на $[a,+\infty)$ $\forall c \in (a, +\infty)$ интегрируема
     на $[a,c] \subset [a, +\infty)$
@@ -14,8 +17,9 @@
     \[\lim_{c \to -\infty} \int_c^b f(x)dx = \int_{-\infty}^b f(x)dx\]
 \end{defin}
 
-Называют \kv{несобственным интегралом}, если он сущетсвует то
-\kv{сходящийся}, иначе называют \kv{расходящимся}.
+\begin{title}[\Large]
+  Несобственный интеграл от неограниченной функции
+\end{title}
 
 \begin{defin}
     $f(x)$ на $[a,b]$ и интегрируема $[a,c] \subset [a,b)$ неограричена в
@@ -29,8 +33,13 @@
     \[\lim_{c \to b +0} \int_c^b f(x)dx = \int_a^b f(x)dx\]
 \end{defin}
 
+\begin{title}[\Large]
+  Особые точки для функции, неограниченной в их окрестности
+\end{title}
+
 \begin{defin}
-    $f(x)$ на $(-\infty, +\infty)$ кроме быть может точек
+    $f(x)$ на $(-\infty, +\infty)$ кроме быть может конечного числа особых точек
+
     $d_1 < d_2 < \ldots < d_m$\\
     $-\infty < a_1 < d_1 < a_2 < d_2 \ldots < a_m < d_m < a_{m+1} < +\infty$
     \[
@@ -38,52 +47,21 @@
         \int_{a_1}^{d_1}f(x)dx + \int_{d_1}^{a_2}f(x)dx + \ldots +
     \]
     \[
-        \int_{a_m}^{d_m}f(x)dx + \int_{d_m}^{a_{m+1}}f(x)dx +
+        + \int_{a_m}^{d_m}f(x)dx + \int_{d_m}^{a_{m+1}}f(x)dx +
         \int_{a_{m+1}}^{+\infty}f(x)dx
     \]
         Он сущетсвет только когда каждый интеграл из суммы интегралов существует.
 \end{defin}
-\begin{title}[\Large]
-  Несобственный интеграл от неограниченной функции
-\end{title}
-
-$f(x)$ определена на $[a, b]$ и интегрируема на $[a, c] \subset [a, b]$. А в
-любой окрестной точки $b$ - $f(x)$ не ограничена если существует:
-\[
-  \lim_{c \to b - 0} \int^{c}_{a} f(x)dx
-  \]
-то его называют несобственным интегралом $f(x)$ на $[a, b]$ и сходящимся.\\
-Если предела нет, то интеграл несобственный и расходящийся.
-
-\begin{title}[\Large]
-  Особые точки для функции, неограниченной в их окрестности
-\end{title}
-
-$f(x)$ определена на всей прямой, исключая $d_1 < d_2 < ... < d_m$:
-\[-\infty < a_1 < d_1 < a_2 < d_2 < ... < a_m < d_m < a_{m + 1} < +\infty\]
-По определению несобственных интегралов:
-\[
-  \int^{+\infty}_{-infty} f(x)dx = \int^{a_1}_{-\infty} f(x)dx +
-  \int^{d_1}_{a_1} f(x)dx + \int^{a_2}_{d_1} f(x)dx + \int^{d_2}_{a_2} f(x)dx +
-\]
-\[
-  ... + \int^{d_m}_{a_m} f(x)dx + \int^{a_{m + 1}}_{d_m} f(x)dx +
-  \int^{+\infty}_{a_{m + 1} f(x)dx}
-\]
-Этот интеграл сходящийся, если все интегралы сходящиеся. А расходящийся, если
-хотябы один интеграл расходящийся.
 
 \begin{title}[\Large]
   Основные свойства и способы вычисления несобственных интегралов.
 \end{title}
 
-\begin{theorem}[1]
-  Если:
+\begin{theorem}
   \[
     \int^{b}_{a} f(x)dx ~~~ \int^{b}_{a} g(x)dx
   \]
-  где $a$ - особая точка и сходящаяся. $b$ либо $+\infty$, либо $-\infty$,
-  то $\forall \alpha, \beta
+  $b$ особая точка и интегралы сходятся, то $\forall \alpha, \beta
   \in R$
   \[
     \int^{b}_{a} (\alpha f(x) + \beta g(x))dx = \alpha\int^{b}_{a} f(x)dx +
@@ -105,12 +83,12 @@ $f(x)$ определена на всей прямой, исключая $d_1 < 
   \]
 \end{proof}
 
-\begin{theorem}[2]
-  Пусть интеграл с особой точкой $b$ - сходящейся.
+\begin{theorem}
   \[
     \int^{b}_{a} f(x)dx ~~~ \int^{b}_{a} g(x)dx
   \]
-  $\forall x \in [a, b] ~~~ f(x) \le g(x)$ Тогда:
+  $b$ особая точка и интегралы сходятся
+  $\forall x \in [a, b] ~~~ f(x) \le g(x)$ тогда
   \[
     \int^{b}_{a} f(x)dx \le \int^{b}_{a} g(x)dx
   \]
@@ -122,21 +100,22 @@ $f(x)$ определена на всей прямой, исключая $d_1 < 
     \int^{c}_{a} f(x)dx \le \int^{c}_{a} g(x)dx
   \]
   \[
-    \lim_{c \ to b - 0} \int^{b}_{a} f(x)dx \le \lim_{c \ to b - 0}
+    \lim_{c \to b - 0} \int^{b}_{a} f(x)dx \le \lim_{c \to b - 0}
     \int^{b}_{a} g(x)dx \Rightarrow \int^{b}_{a} f(x)dx \le \int^{b}_{a} g(x)dx
   \]
 \end{proof}
 
-\begin{theorem}[3]
-  Пусть интеграл сходящийся и с особой точкой $b$:
+\begin{theorem}
   \[
     \int^{b}_{a} f(x)dx
   \]
-  $F(x)$ - первообразная $f(x)$ на $[a, b]$. Если:
+  $b$ особая точка и интеграл сходится
+
+  $F(x)$ первообразная $f(x)$ на $[a, b]$ и существует
   \[
     \lim_{x \to  b - 0} F(x) = F(b - 0)
   \]
-  то
+  тогда
   \[
     \int^{b}_{a} f(x)dx = \lim_{c \to b - 0} f(c) - F(a) = F(b - 0) - F(a) =
     F(x)|^{b}_{a}
@@ -150,10 +129,13 @@ $f(x)$ определена на всей прямой, исключая $d_1 < 
   \]
 \end{proof}
 
-\begin{theorem}[4]
-  Функция $f(x)$ определена на $[a, b)$. $x = \varphi(t) \nearrow ~~~
-  [\alpha, \beta)$\\
-  $\varphi(\alpha) = a ~~~ \lim_{t \ to \beta - 0} \varphi(t)$ Тогда
+\begin{theorem}
+  $f(x)$ на $[a,b)$ $x = \varphi(t)$ строго $\nearrow$ и непрерывна
+  дефференциирумой на $[\alpha, \beta)$ тогда
+
+  $$
+  \varphi(\alpha) = a ~~~ \lim_{t \to \beta - 0} \varphi(t) = b
+  $$
   \[
     \int^{b}_{a} f(x)dx = \int^{\beta}_{\alpha} f(\varphi(t)) \varphi'(t)dt
   \]
@@ -168,19 +150,17 @@ $f(x)$ определена на всей прямой, исключая $d_1 < 
   \[
     \lim_{c \to b - 0} \int^{c}_{a} f(x)dx \Leftrightarrow
     \lim_{\gamma \to \beta - 0} \int^{\gamma}_{\alpha} f(\varphi(t))
-    \varphi'(t)dt = \int^{b}_{a} f(x)dx = \int^{\beta}_{\alpha} f(\varphi(t))
     \varphi'(t)dt
   \]
 \end{proof}
 
-\begin{theorem}[5]
-  $u = u(x) ~~~ v = v(x)$ - интегрируемо-дифференцируемые функции на $[a, b)$.
-  $b$ - особоя точка.\\
-  Если :
+\begin{theorem}
+  $u = u(x) ~~~ v = v(x)$ непрерывно дифференцируемые на $[a, b)$ и
+  $b$ особая точка.
   \[
     \lim_{x \to b - 0} u(x) \cdot v(x) = u(b - 0) \cdot v(b - 0)
   \]
-  то
+  тогда
   \[
     \int^{b}_{a} udv = u(b - 0) \cdot v(b - 0) - \int^{b}_{a} vdu
   \]
@@ -188,16 +168,16 @@ $f(x)$ определена на всей прямой, исключая $d_1 < 
 \end{theorem}
 
 \begin{title}[\Large]
-  Признаки сходимости не собственных интегралов от неотрицательных функций
+  Признаки сходимости не собственных интегралов от неотрицательной функции.
 \end{title}
 
-\begin{theorem}[1]
-  Если $f(x) \ge 0 ~~~ \forall x \in [a, b)$, $b$ - особая точка и интеграл
+\begin{theorem}
+  $\forall x \in [a, b) ~~~ f(x) \ge 0$ $b$ особая точка и интеграл
   сходящийся
   \[
-    \int^{b}_{a} f(x)dx \Leftrightarrow F(x) - \int^{x}_{a} f(t)dt
+    \int^{b}_{a} f(x)dx \Leftrightarrow F(x) = \int^{x}_{a} f(t)dt
   \]
-  $F(x)$ - ограниченная функция. $\exists M ~~~ |F(x)| \le M$
+  $\exists M ~~~ |F(x)| \le M$
 \end{theorem}
 
 \begin{proof}
@@ -205,30 +185,31 @@ $f(x)$ определена на всей прямой, исключая $d_1 < 
   \[
     F(x_2) - F(x_1) = \int^{x_2}_{x_1} f(t)dt \ge 0
   \]
-  \[
-    \lim_{x \to b - 0} F(x) - F(a)
-  \]
-  Если некая $F$ имеет предел в точке, то она ограничена в окрестности точки $b$
+  $F(b)$ ограничена в окрестности $b$
+
+  Если $F(x)$ ограничена, то она имеет $\lim_{x \to b -0} F(x)$ по теореме о
+  монотонности функций.
 \end{proof}
 
-\begin{theorem}[2]
-  Признак сравнения для не собственного интеграла\\
-  Если $\forall x \in [a, b) ~~~ 0 \le f(x) \le g(x)$, $b$ - особая точка,
+\begin{block}[Признак сравнения для не собственного интеграла]
+  $\forall x \in [a, b) ~~~ 0 \le f(x) \le g(x)$, $b$ особая точка,
   тогда\\
   \bk{I} Если интеграл $g(x)$ сходящийся, то интеграл от $f(x)$ тоже сходящийся
   \[\int^{b}_{a} g(x)dx \Rightarrow \int^{b}_{a} f(x)dx\]
   \bk{II} Если интеграл $f(x)$ расходящийся, то интеграл от $g(x)$ тоже
   рассходящийся
   \[\int^{b}_{a} f(x)dx \Rightarrow \int^{b}_{a} g(x)dx\]
-\end{theorem}
+\end{block}
 
 \begin{proof}
   $\forall c \in [a, b)$
+
   \bk{I}
   \[
-    \int^{c}_{a} f(x)dx \le \int^{c}_{a} g(x)dx \le \int^{b}_{a} g(x)dx = M
+    F(c) = \int^{c}_{a} f(x)dx \le \int^{c}_{a} g(x)dx \le
+    \int^{b}_{a} g(x)dx = M
   \]
-  На основании 1й теоремы
+  На основании первой теоремы
   \[
     \lim_{c \to b - 0} \int^{c}_{a} f(x)dx = \int^{b}_{a} f(x)dx
   \]
@@ -237,7 +218,7 @@ $f(x)$ определена на всей прямой, исключая $d_1 < 
   \[
     \int^{b}_{a} f(x)dx \Rightarrow \int^{b}_{a} g(x)dx
   \]
-  По теореме 1 - противоречие
+  противоречие с первым утверждением.
 \end{proof}
 
 \begin{title}[\Large]
@@ -245,8 +226,10 @@ $f(x)$ определена на всей прямой, исключая $d_1 < 
 \end{title}
 
 \begin{theorem}
-  $f(x), g(x)$ на $[a, b)$ $b$ особая точка, $f(x) > 0 ~~~ g(x) > 0 ~~~
-  f(x) \sim g(x) ~~~ x \to b -0$ значит
+  $f(x), g(x)$ на $[a, b)$ $b$ особая точка, $\forall x \in [a,b) ~~~
+  f(x) > 0 ~~~ g(x) > 0$
+
+  $f(x) \sim g(x) ~~~ x \to b -0$ значит
   $$
   \int_a^b f(x)dx = \int_a^b g(x)dx
   $$
@@ -272,60 +255,85 @@ $f(x)$ определена на всей прямой, исключая $d_1 < 
   $$
   \frac{1}{2} g(x) < f(x) < \frac{3}{2} g(x)
   $$
+  Применим 2 теорему
+
+  сходится
   $$
-  \int_a^b g(x)dx = \frac{3}{2} \int_{b - \delta_{\frac{1}{2}}}^b g(x)dx ~~~
-  \int_{b - \delta_{\frac{1}{2}}}^b f(x)dx ~~~
+  \int_a^b g(x)dx \Rightarrow
+  $$
+
+  $$
+  \frac{3}{2} \int_{b - \delta_{\frac{1}{2}}}^b g(x)dx \Rightarrow
+  \int_{b - \delta_{\frac{1}{2}}}^b f(x)dx \Rightarrow
   \int_a^b f(x)dx
   $$
+  сходится.
+
   В обратную сторону
+
+  сходится
   $$
-  \int_a^b f(x)dx ~~~
-  \int_{b - \delta_{\frac{1}{2}}}^b f(x)dx ~~~
-  \frac{1}{2} \int_{b - \delta_{\frac{1}{2}}}^b g(x)dx ~~~
+  \int_a^b f(x)dx \Rightarrow
+  $$
+  $$
+  \int_{b - \delta_{\frac{1}{2}}}^b f(x)dx \Rightarrow
+  \frac{1}{2} \int_{b - \delta_{\frac{1}{2}}}^b g(x)dx \Rightarrow
   \int_a^b g(x)dx
   $$
+  cходится
 \end{proof}
 
 \begin{title}[\Large]
   Критерий Коши сходимости несобственного интеграла.
 \end{title}
-Критерий значить необходимые и достаточные условия.
 
-$$
-\forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} \in [a,b) ~~~
-\forall c', c'' \in [d_a, b) \left| \int_{c'}^{c''} f(x)dx \right| < \varepsilon
-$$
-$$
-\int_a^b f(x)dx = \lim_{c \to b-0} \int_a^c f(x)dx = \lim_{c \to b-0} F(x)
-$$
-$$
-F(x) = \int_a^x f(t)dt
-$$
-$$
-\lim_{c \to b-0} F(c) \int_a^b f(x)dx
-$$
-$$
-\forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} \in [a,b) ~~~
-\forall c', c'' \in [d_a, b) |F(c'') - F(c')| < \varepsilon
-$$
+\begin{block}[Критерий]
+  $$
+  \forall \varepsilon > 0 ~~~ \exists d_{\varepsilon} \in [a,b) ~~~
+  \forall c', c'' \in [d_{\varepsilon}, b) \left| \int_{c'}^{c''} f(x)dx \right| < \varepsilon
+  $$
+\end{block}
+
+\begin{proof}
+  $$
+  \int_a^b f(x)dx = \lim_{c \to b-0} \int_a^c f(x)dx = \lim_{c \to b-0} F(c)
+  $$
+  $$
+  F(x) = \int_a^x f(t)dt
+  $$
+  если первообразная имеет предел то интеграл сходится. Для того чтобы был
+  предел
+  $$
+  \lim_{c \to b-0} F(c) = \int_a^b f(x)dx
+  $$
+  необходимо и достаточно чтобы
+  $$
+  \forall \varepsilon > 0 ~~~ \exists d_{\varepsilon} \in [a,b) ~~~
+  \forall c', c'' \in [d_{\varepsilon}, b) ~~~
+  |F(c'') - F(c')| = \left|\int_{c'}^{c''} f(x) dx \right| < \varepsilon
+  $$
+\end{proof}
 
 \begin{title}[\Large]
   Признак Дирехле сходоимости несобственных интегралов.
 \end{title}
 
-\begin{theorem}
+\begin{block}[Признак]
   $f(x), g'(x)$ непрерывны на $[a,b)$ если
 
   1) $f(x)$ ограничена $F(x)$ тоисть $\forall [a,b] ~~~ |f(x)| \le M$
 
   2) $\forall x[a,b) ~~~ g'(x) \le 0$ или $g'(x) \ge 0$
 
-  3) $\lim_{x \to b-0} g(x) = 0$ тогда
+  3) $\lim_{x \to b-0} g(x) = 0$
+
+  тогда
 
   $$\int_a^b f(x)g(x)dx$$ cходится
-\end{theorem}
+\end{block}
 
 \begin{proof}
+  Расмотрим $c',c'' \in [a,b)$
   $$
   \int_{c'}^{c''} f(x)g(x)dx =
   \left|
@@ -336,64 +344,79 @@ $$
   \right|
   = g(x)F(x)|_{c'}^{c''} - \int_{c'}^{c''} F(x)g'(x)dx
   $$
-  для определенности $g'(x) \le 0$
   $$
-  g(x)F(x)|_{c'}{c''} \le M g(c'') + M g(c')
-  $$
-  $$
-  \left| \int_{c'}{c''} F(x)g'(x)dx \right| \le
-  \left| \int_{c'}{c''} |F(x)||g'(x)| \right| \le
-  M \left| \int_{c'}{c''} g(x)dx \right| = M|g(c'') - g(c')| \le
+  g(x)F(x)|_{c'}^{c''} \le M |g(c'')| + M |g(c')|
   $$
   $$
-  \int_{c'}^{c''} f(x)g(x) \le 2M||g(c'')| + |g(c')||
+  \left| \int_{c'}^{c''} F(x)g'(x)dx \right| \le
+  \left| \int_{c'}^{c''} |F(x)||g'(x)|dx \right| \le
+  M \left| \int_{c'}^{c''} g'(x)dx \right| =
+  $$
+  для определенности $\forall x \in [a,b) ~~~ g'(x) \le 0$
+  $$
+  = M \left| \int_{c'}^{c''} (-g'(x))dx \right| =
+  M \left| \int_{c'}^{c''} g'(x)dx \right| =
+  M|g(c'') - g(c')| \le
+  M|g(c'')| + |g(c')| \le
+  $$
+  $$
+  \left| \int_{c'}^{c''} f(x)g(x) \right| \le 2M(|g(c'')| + |g(c')|)
   $$
   $$
   \forall \varepsilon > 0 ~~~ \exists d_{\varepsilon} \in [a,b) ~~~
   \forall c \in [d_{\varepsilon}, b) ~~~ |g(c)| < \frac{\varepsilon}{4M}
   $$
   $$
-  \forall c', c'' \in [d_{\varepsilon}, b) ~~~ \int_{c'}^{c''} f(x)g(x)dx \le
-  (|g(c'') + |g(c')|) <
-  2M \left(\frac{\varepsilon + \varepsilon}{4M + 4M}\right) = \varepsilon
+  \forall c', c'' \in [d_{\varepsilon}, b) ~~~
+  \left| \int_{c'}^{c''} f(x)g(x)dx \right| \le
+  2M \left( \frac{\varepsilon}{4M} + \frac{\varepsilon}{4M}\right) = \varepsilon
   $$
+  следовательно по критерию Коши
+  $$
+  \int_a^b f(x)g(x)dx
+  $$
+  сходится
 \end{proof}
 
 \begin{title}[\Large]
   Признаки Абеля сходимости несобственного интеграла.
 \end{title}
 
-\begin{theorem}
+\begin{block}[Признак]
   $f(x),g'(x)$ непрерывна на $[a,b)$
 
-  1) $$\int_a^b f(x)$$ сходится
+  1) $$\int_a^b f(x)dx$$ сходится
 
   2) $\forall x \in [a,b) ~~~ g'(x) \le 0$ или $g'(x) \ge 0$
 
-  3) $\forall x \in [a,b) ~~~ |g(x)| \le \delta$
+  3) $\forall x \in [a,b) ~~~ |g(x)| \le \Delta$
+
+  тогда
   $$
   \int_a^b f(x)g(x)dx
   $$
   cходится
-\end{theorem}
+\end{block}
 
 \begin{proof}
-  Из 2 условия следует что функция монотонна возрастает
+  Из 2 условия следует что функция монотонна и ограничена $\Rightarrow$ имеет
+  предел
   $$
-  \lim_{a \to b-0}g(x) = p ~~~ g(x) - p \to 0 ~~~ x \to b-0
-  $$
-  $$
-  F(x) = \int_a^x f(t)dx ~~~ \lim_{x \to b-0} F(x) = \int_a^b f(t)dt
+  \lim_{a \to b-0}g(x) = p ~~~ g_1(x) = g(x) - p \to 0 ~~~ x \to b-0
   $$
   $$
-  \exists M > 0 ~~~ \forall x \in [a,b] ~~~ |F(x)| \le M
+  F(x) = \int_a^x f(t)dx \Rightarrow \lim_{x \to b-0} F(x) = \int_a^b f(t)dt
   $$
   $$
-  \int_a^b f(x)g(x)dx
+  \exists M > 0 ~~~ \forall x \in [a,b) ~~~ |F(x)| \le M
+  $$
+  по признаку Дирехле
+  $$
+  \int_a^b f(x)g_1(x)dx
   $$
   сходится
   $$
-  \int_a^b f(x)g(x)dx = \int_a^b f(x)g(x)dx + p\int_a^b f(x)dx
+  \int_a^b f(x)g(x)dx = \int_a^b f(x)g_1(x)dx + p\int_a^b f(x)dx
   $$
 \end{proof}
 
@@ -402,17 +425,17 @@ $$
 \end{title}
 
 \begin{defin}
-  $\int_a^b f(x)dx$ называется абсолютно сходящимся $f(x)$ абсолютно
-интегрируема где $b$ - особая точка, то если сходится $\int_a^b |f(x)|dx$.
+  $\int_a^b f(x)dx$ называется \kv{абсолютно сходящимся}. $f(x)$ \kv{абсолютно
+интегрируема}, где $b$ особая точка, если $\int_a^b |f(x)|dx$ сходится.
 \end{defin}
 
 \begin{defin}
-  $\int_a^b f(x)dx$ условно сходящимся необсалютно сходящимся если сам интеграл
-сходится и интеграл от модуля расходится.
+  $\int_a^b f(x)dx$ называют \kv{условно сходящимся} (необсалютно), если
+  $\int_a^b f(x)dx$сходится, а $\int_a^b |f(x)|dx$ расходится.
 \end{defin}
 
 \begin{theorem}
-  Абсолютно сходящийся интеграл является сходящимся
+  Абсолютно сходящийся интеграл является сходящимся, при этом
   $$
   \left| \int_a^b f(x)dx \right| \le \int_a^b |f(x)|dx
   $$
@@ -428,42 +451,52 @@ $$
   \left| \int_{c'}^{c''} f(x)dx \right| \le
   \left| \int_{c'}^{c''} |f(x)|dx \right| < \varepsilon
   $$
+  тогда $\int_a^b f(x) dx$ сходится
   $$
   \forall c \in [a,b) ~~~ \left| \int_a^c f(x)dx \right| \le
   \left| \int_a^c |f(x)|dx \right|
   $$
   $$
   \lim_{c \to b-0} \left| \int_a^{c} f(x)dx \right| \le
-  \lim_{c \to b-0} \left| \int_a^c |f(x)|dx \right|
-  $$
-  $$
-  \left| \int_a^b f(x)dx \right| \le
-  \left| \int_a^b |f(x)|dx \right|
+  \lim_{c \to b-0} \int_a^c |f(x)|dx
   $$
 \end{proof}
 
 \begin{theorem}
-  $b$ - может быть особая точка $\int_a^b f(x)dx ~~~ \int_a^b g(x)dx$
+  $b$ может быть особая точка $\int_a^b f(x)dx ~~~ \int_a^b g(x)dx$
 абсолютно интегрируемы тогда
   $$
-  \int_a^b f(x)dx ~~~ \int_a^b (f(x) + g(x)) dx
+  \int_a^b (f(x) + g(x)) dx
   $$
-  либо оба сходятся, либо расходятся, либо оба абсолютно сходятся.
+  либо оба сходятся, либо расходятся.
 \end{theorem}
 
 \begin{proof}
   $$
-  \forall \varepsilon < 0 ~~~ \exists \delta_{\varepsilon} \in [a,b)
-  \forall c', c'' \in [\delta_{\varepsilon}, b)
-  \left| \int_{c'}^{c''} |f(x)|dx \right| < \frac{\varepsilon}{2}
-  \left| \int_{c'}^{c''} |f(x)|dx \right| < \frac{\varepsilon}{2}
+  \forall \varepsilon < 0 ~~~ \exists d_{\varepsilon} \in [a,b)
+  \forall c', c'' \in [d_{\varepsilon}, b)
+  \left| \int_{c'}^{c''} |f(x)|dx \right| < \frac{\varepsilon}{2} ~~~
+  \left| \int_{c'}^{c''} |g(x)|dx \right| < \frac{\varepsilon}{2}
   $$
   $$
-  \left| \int_{c'}^{c''} |(f(x) + g(x))| dx \right| \le
-  \left| \int_{c'}^{c''} f(x) \right| \left| \int_{c'}^{c''} g(x) \right|
+  \left| \int_{c'}^{c''} |f(x) + g(x)| dx \right| \le
+  \left| \int_{c'}^{c''} f(x) \right| + \left| \int_{c'}^{c''} g(x) \right|
   < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
   $$
+  по критерию Коши интеграл сходится
   $$
   f(x) = f(x) + g(x) + (-g(x))
   $$
+  $\int_a^b (f(x) + g(x)) dx$ абсалютно интегрируем
+
+  $\int_a^b (-g(x)) dx$ абсалютно интегрируем
+
+  $\int_a^b f(x) dx$ тоже абсалютно интегрируем\\
+
+  $\int_a^b f(x)dx$ сходится $\Rightarrow$ $\int_a^b (f(x) + g(x)) dx$
+  расходящийся
+
+  $\int_a^b g(x) dx$ сходится
+
+  $\int_a^b (f(x) + g(x)) dx \Rightarrow \int_a^b f(x) dx$ расходящийся
 \end{proof}

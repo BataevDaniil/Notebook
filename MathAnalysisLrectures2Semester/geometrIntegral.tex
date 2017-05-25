@@ -2,53 +2,52 @@
   Мера Жордана в пространстве $R^n$
 \end{title}
 
-\begin{defin}
   $$
-  E \to \mu (E) \ge 0
+  E \to \mu (E) \ge 0 ~~~
+  E = \cup_{k=1}^m ~~~
+  \mu(E) = \sum_{k=1}^n \mu (E_k)
   $$
+
+  \kv{умножения множеств} $E \times D = \{ (x,y): x \in E; y \in D \}$
+
+  \kv{параллелипипеда}
+  $P \subset R^n ~~~ P = [a_1, b_1] \times [a_2, b_2] \times \ldots \times
+  [a_n, b_n]$ или множество которое получится если отбросить всей или части
+  границы.
+
+  $m(p)$ мера длины, площади и т.п.
+
   $$
-  E = \cup_{k=1}^m ~~~ \mu(E) = \sum_{k=1}^n \mu (E_k)
+  m(p) = \prod_{k=1}^n (b_k - a_k)
   $$
-\end{defin}
 
-\begin{defin}[умножения множеств]
-   $$
-   E \times D = \{ (x,y): x \in E; y \in D \}
-   $$
-\end{defin}
+  $E \subset R^n$ множество $E$ в пространсве $R^n$ называется \kv{элементарным}
+  если его можно представить в виде конечного $E = \sqcup_{k=1}^m P_k$ попарно
+  пересеающихся множест.
 
-\begin{defin}[параллелипипеда]
-  $P \subset R^n ~~~ P = [a_1, b_1] \times [a_2, b_2] \times [a_n, b_n]$ или
-множество которое получится если отбросить всей или части границы.
+  $\sqcup$ - \kv{попарно непересекающиеся множества}
 
-  $m(p) = \prod_{k=1}^n (b_k - a_k)$
-
-  $E \subset R^n$ называется элементарным если его можно представить в виде
-конечного $E = \sqcup_{k=1}^m P_k$
-
-  $\sqcup$ - попарно непересекающиеся множества.
-\end{defin}
-
+Мера элементарных множеств $E$ это сумма площадей, из которых она состоит
 $$
-m (E) = \sum_{k=1}^m m(P_k)
+m(E) = \sum_{k=1}^m m(P_k)
 $$
 
 \begin{defin}[измерения по Жордану]
-  $E \subset R^n$ называется измеренным по Жордану
+  $E$ называется \kv{измеренным по Жордану} $E \subset R^n$, если
   $$
   \forall \varepsilon > 0 ~~~
   \exists P_{\varepsilon}, Q_{\varepsilon} \subset R^n ~~~
   P_{\varepsilon} \subset E \subset Q_{\varepsilon} ~~~
   0 \le m(Q_{\varepsilon}) - m(P_{\varepsilon}) < \varepsilon
   $$
-\end{defin}
 
-  Если $E \subset R_n$ то его мерой Жордана называется такое число $e$
+  Если $E \subset R^n$ то его мерой Жордана называется такое число
   $$
-  \forall P,Q \subset R_n ~~~
+  \forall P,Q \subset R^n ~~~
   P \subset E \subset Q ~~~
   m(P) \le m(E) \le m(Q)
   $$
+\end{defin}
 
 \begin{theorem}
   Для любого измеримого по Жорадану множества $E$ пространства $n$ мера Жордана
@@ -67,7 +66,7 @@ $$
   m(P) \le c \le m(Q) ~~~
   c = m(E)
   $$
-  Так как $E$ измеримо по Жордану $E \subset R^n$
+  Так как $E$ измеримо по Жордану то $E \subset R^n$
   $$
   \forall \varepsilon > 0 ~~~
   \exists P_{\varepsilon},Q_{\varepsilon} \subset R^n ~~~
@@ -83,6 +82,7 @@ $$
   $$
   |m_1 (E) - m_2 (E))| \le m(Q_{\varepsilon}) - m(P_{\varepsilon}) < \varepsilon
   $$
+  $\Rightarrow m_1(E) = m_2(E)$
 \end{proof}
 
 \begin{title}[\Large]
@@ -137,7 +137,11 @@ $$
   D = \{ (x,y): ~~ x \in [a,b] ~~ f(x) \le y \le g(x) \}
   $$
 
-  $c = \inf f(x) ~~~ y' = y + c ~~~ D = D_g \backslash D_f$
+  $c = \inf_{x \in [a,b]} f(x)$
+
+  $y' = y + c$
+
+  $D = D_g \backslash D_f$
   $$
   S(D) = S(D_g) - S(D_f) = \int_a^b g(x)dx - \int_a^b f(x)dx =
   \int_a^b (g(x) - f(x)) dx
@@ -145,38 +149,36 @@ $$
 \end{proof}
 
 \begin{title}[\Large]
-  Вычисление площади фигуры заданной в полярных координатах.
+  Вычисление площади плоской фигуры заданной в полярных координатах.
 \end{title}
 
 \begin{theorem}
   $$
-  D = \{ (\rho,\alpha): ~~ \alpha \le \phi \le \beta ~~ 0 \le
-  \rho \le \beta \}
+  D = \{ (\rho,\varphi): ~~ \alpha \le \varphi \le \beta ~~ 0 \le
+  \rho \le \rho(\varphi) \}
   $$
   $$
-  S(D) = \frac{1}{2} = \int_{\alpha}^{\beta} \phi^2 d\alpha
+  S(D) = \frac{1}{2} \int_{\alpha}^{\beta} \rho^2(\varphi) d\varphi
   $$
 \end{theorem}
 
 \begin{proof}
   $$
-  \int^* (R) = \sum_{k=1}^n M_k \Delta \phi_k
+  \int^* (R) = \sum_{k=1}^n M_k \Delta \varphi_k ~~~
+  \int_* (R) = \sum_{k=1}^n m_k \Delta \varphi_k
   $$
   $$
-  \int_* (R) = \sum_{k=1}^n m_k \Delta \phi_k
+  S(P_k) = \frac{m_k \Delta \varphi_k}{2} ~~~
+  S(Q_k) = \frac{M_k \Delta \varphi_k}{2}
   $$
   $$
-  S(P_k) = \frac{m_k \Delta \phi_k}{2} ~~~
-  S(Q_k) = \frac{M_k \Delta \phi_k}{2}
-  $$
-  $$
-  P_n = \sqcup_{k=1}^n ~~~
-  S(P_n) = \sum_{k=1}^n S(P_k) = \frac{1}{2} \sum_{k=1} m_k \Delta \phi_k =
+  P_n = \sqcup_{k=1}^n P_k ~~~
+  S(P_n) = \sum_{k=1}^n S(P_k) = \frac{1}{2} \sum_{k=1} m_k \Delta \varphi_k =
   \int_* (R)
   $$
   $$
-  Q_n = \sqcup_{k=1}^n ~~~
-  S(Q_n) = \sum_{k=1}^n S(Q_k) = \frac{1}{2} \sum_{k=1} M_k \Delta \phi_k =
+  Q_n = \sqcup_{k=1}^n Q_k ~~~
+  S(Q_n) = \sum_{k=1}^n S(Q_k) = \frac{1}{2} \sum_{k=1} M_k \Delta \varphi_k =
   \int^* (R)
   $$
 
@@ -187,19 +189,22 @@ $$
   S(Q_n) - S(P_n) < \varepsilon
   $$
   $$
-  \int_* (R_{\varepsilon}) \le \int_{\alpha}^{\beta} \rho d\phi \le
+  \int_* (R_{\varepsilon}) \le
+  \frac{1}{2} \int_{\alpha}^{\beta} \rho^2(\varphi) d\varphi \le
   \int^* (R_{\varepsilon})
   $$
 \end{proof}
 
 \begin{title}[\Large]
-  Вычисление объемов с помощью определенного интеграла.
+  Вычисление объемов тел с помощью определенного интеграла.
 \end{title}
 
 \begin{defin}[цилиндра]
+  Множество точек $\vartheta$ трех мерного пространства
   $$
-  \vartheta = \{ (x,y,z) | (x,y) \in D ~~~ 0 < z \le h\}
+  \vartheta = \{ (x,y,z): ~~~ (x,y) \in D ~~~ 0 < z \le h\}
   $$
+  будем называть цилиндрическим телом с основанием $D$ и высотой $h$.
 \end{defin}
 
 \begin{theorem}
@@ -210,9 +215,9 @@ $$
 \begin{proof}
   $$
   \forall \varepsilon > 0 ~~~
-  \exists P_{\varepsilon}, Q_{\varepsilon} \subset R^3 ~~~
-  P_{\varepsilon}, \subset D \subset Q_{\varepsilon} ~~~
-  S(Q_{\varepsilon} - S(P_{\varepsilon})) < \frac{\varepsilon}{h}
+  \exists P_{\varepsilon}, Q_{\varepsilon} \subset R^2 ~~~
+  P_{\varepsilon} \subset D \subset Q_{\varepsilon} ~~~
+  S(Q_{\varepsilon}) - S(P_{\varepsilon}) < \frac{\varepsilon}{h}
   $$
   $$
   \vartheta'_{\varepsilon} = P_{\varepsilon} \times [0,h] ~~~
@@ -222,43 +227,53 @@ $$
   $$
   V(\vartheta''_{\varepsilon}) - V(\vartheta'_{\varepsilon}) <
   h S(Q_{\varepsilon}) - h S(P_{\varepsilon}) =
-  h (S(Q_{\varepsilon}) - S(P_{\varepsilon}))
+  h (S(Q_{\varepsilon}) - S(P_{\varepsilon})) <
+  h \frac{\varepsilon}{h} = \varepsilon
+  $$
+  значит цилиндрическое тело с характеристиками $D \subset R^2$
+  $\vartheta \subset R^3$ имеет объем $V(\vartheta) = h S(D)$
+  $$
+  P_{\varepsilon} \subset D \subset Q_{\varepsilon}
   $$
   $$
-  P_{\varepsilon} \subset D \subset Q_{\varepsilon} ~~~
   S(P_{\varepsilon}) \le S(D) \le S(Q_{\varepsilon})
+  $$
+  $$
   hS(P_{\varepsilon}) \le hS(D) \le hS(Q_{\varepsilon})
+  $$
+  $$
   V(\vartheta'_{\varepsilon}) \le h S(D) \le V(\vartheta''_{\varepsilon})
   $$
 \end{proof}
 
 \begin{theorem}
+  Тело $T$ получено вращением криволинейной трапеции
   $$
-  D = \{ (x,y) ~~~ x \in [a,b] ~~~
+  D = \{ (x,y): ~~~ x \in [a,b] ~~~
   0 \le y \le f(x) \}
   $$
+  тогда $T$ измеримо по Жордану
   $$
   V(T) = \pi \int_a^b f^2(x) dx
   $$
 \end{theorem}
 
 \begin{proof}
-  $$
-  P_k ~~ \Delta x_k ~~ m_k ~~~
-  V(P_k) = \pi m_k^2 \Delta x_k
-  $$
-  $$
-  Q_k ~~ \Delta x_k ~~ M_k ~~~
-  V(Q_k) = \pi M_k^2 \Delta x_k
-  $$
+  $P_k$ цилиндрическое тело с высотой $\Delta x_k$ в основании круг $m_k$
+  $$V(P_k) = \pi m_k^2 \Delta x_k$$
+
+  $Q_k$ цилиндрическое тело с высотой $\Delta x_k$ в основании круг $M_k$
+  $$V(Q_k) = \pi M_k^2 \Delta x_k$$
   $$
   P = \sqcup_{k=1}^n P_k ~~~
   Q = \sqcup_{k=1}^n Q_k
   $$
   $$
-  V(P) = \sum_{k=1}^n \pi m_k^2 \Delta x_k ~~~
+  V(P) = \sum_{k=1}^n \pi m_k^2 \Delta x_k = \int_* (R) ~~~
   V(Q) = \sum_{k=1}^n \pi M_k^2 \Delta x_k = \int^* (R)
   $$
+  так как по условию теоремы $f(x)$ непрерывна, $f^2(x)$ тоже непрерывна значит
+  интегрируема
   $$
   \forall \varepsilon > 0 ~~~
   \exists R_{\varepsilon} ([a,b]) ~~~
@@ -267,7 +282,7 @@ $$
   $$
   \exists P_{\varepsilon}, Q_{\varepsilon} ~~~
   P_{\varepsilon} \subset T \subset Q_{\varepsilon} ~~~
-  V(Q_{\varepsilon} - V(P_{\varepsilon}) < \varepsilon
+  V(Q_{\varepsilon}) - V(P_{\varepsilon}) < \varepsilon
   $$
   $$
   \int_* (R_{\varepsilon}) \le V(T) \le \int^* (R_{\varepsilon})
@@ -275,19 +290,25 @@ $$
 \end{proof}
 
 \begin{theorem}
-  Тело $T$ расположено в $R^3$ между плоскостями $x = a ~~ x = b ~~
-  \forall x \in [a,b]$ $Ox$ сечение плоскости и $Oz$ и $S(x)$ измеримо по
-  Жордану, $f(x)$ непрерывна на $[a,b]$ $\forall x', x'' \in [a,b]$ проэкции
-  $Dx', Dx''$ но $Oyz$ вложены одна в другую, тогда $T$ измеримо по Жордану
-  $V(T) = \int_a^b S(x) dx$
+  Тело $T$ расположено в $R^3$ между плоскостями $x = a ~~ x = b$
+  $Dx$ сечение плоскостью $yOz$ и проходящая через точку $x$
+
+  1. $\forall x \in [a,b]$ сечение $Dx$ измеримо по Жордану и имеет площадь
+  $S(x)$ - непрерывна
+
+  2. $\forall x', x'' \in [a,b]$ $D_{x'}, D_{x''}$ вложены одна в другую
+  проэкции множеств на плоскости $yOz$ тогда тело $T$ измеримо по Жордану
+  $$
+  V(T) = \int_a^b S(x)dx
+  $$
 \end{theorem}
 
 \begin{title}[\Large]
-  Вычисление длины кривой с помощью интеграла.
+  Вычисление длины кривой с помощью определенного интеграла.
 \end{title}
 
 \begin{defin}[кривой]
-  $(x,y,z) \in R^3$
+  Криво $\omega$ называется упорядоченое множество точек $(x,y,z) \in R^3$
   $$
     \left\{
       \begin{array}{l}
@@ -296,19 +317,29 @@ $$
         z = z(t)
       \end{array}
     \right.
+    t \in [a,b]
   $$
   $
-  \vec z = \vec z (t) = ( x(t), y(t) , z(t) ) =
-  ( x(t)\vec i, y(t)\vec j , z(t)\vec k )
+  \vec r = \vec r (t) = ( x(t), y(t) , z(t) ) =
+  x(t)\vec i + y(t)\vec j + z(t)\vec k
   $
+
+  Кривая непрерывна если все ее функции непрерывны.
+
+  Если $x(t), y(t), z(t)$ дифференцируемы, то кривая дифференцируема.
+
+  $\vec r'(t) = ( x'(t), y'(t) , z'(t) )$ касательный вектор
 \end{defin}
 
-Кривая непрерывна если все ее функции непрерывны.
+$L_n$ семейство ломанных вписанных в данную кривую
 
-$\varphi (Ln)$ - длина ломанной. $\varphi = sup \varphi (Ln)$ - число
+$\varphi (L_n)$ длина ломанной. $\varphi (\omega) = sup \varphi (L_n)$ конечно
+число
 
 \begin{theorem}
-  Если $\omega$ непрерывна деференциирума то
+  Если $\omega$ непрерывна деференциирумая кривая заданная
+  $\vec r = \vec r (t) ~~~ t \in [a,b]$ то она является справляемой
+  (то есть у нее есть длина) и ее длина имеет оценку
   $$
   \varphi (\omega) \le (b-a) max |r'(t)| ~~~ t \in [a,b]
   $$
@@ -316,22 +347,27 @@ $\varphi (Ln)$ - длина ломанной. $\varphi = sup \varphi (Ln)$ - ч�
 
 \begin{proof}
   $
-  R([a,b]) = \{t_k\} ~~~ Ln \vec r (t_k)
+  R([a,b]) = \{t_k\}
   $
   $$
-  \varphi (Ln) = \sum_{k=1}^n |\vec r (t_k) - \vec r (t_{k-1}) \le
-  \sum_{k=1}^n (t_k - t_{k-1}) |\vec r (t_k^*)| \le max |\vec r (t)|
-  \sum_{k=1}^n (t_k - t_{k-1}) \le max |\vec r (t)| (b-a)
+  \varphi (L_n) = \sum_{k=1}^n |\vec r (t_k) - \vec r (t_{k-1})| \le
+  \sum_{k=1}^n (t_k - t_{k-1}) |\vec r' (t_k^*)| \le
   $$
-  $t_k^* \in (t_{k-1}, t_k) ~~~ t \in [a,b]$
+  $t_k^* \in (t_{k-1}, t_k)$
   $$
-  \varphi (\omega) = sup \varphi (Ln) \le max |\vec r (t)|(b-a) ~ t \in [a,b]
+  \le max_{t \in [a,b]} |\vec r' (t)| \sum_{k=1}^n (t_k - t_{k-1}) \le
+  max_{t \in [a,b]} |\vec r' (t)| (b-a)
+  $$
+  $$
+  \varphi (\omega) = sup \varphi (L_n) \le max_{t \in [a,b]} |\vec r' (t)|(b-a)
   $$
 \end{proof}
 
 \begin{theorem}
-  $\omega$ - непрерывна диференциирума $\vec r = r(t) ~ t \in [a,b]$ если
-  $\varphi (t)$ - длина части кривой между $\vec r(a), \vec r(t)$ то
+  $\omega$  непрерывна диференциирумая кривая заданная с помощью
+  $\vec r = r(t) ~~~ t \in [a,b]$
+
+  $\varphi (t)$ длина части кривой между $\vec r(a), \vec r(b)$ то
   $\forall t \in [a,b] ~~~ \varphi = |\vec r'(t)|$
 \end{theorem}
 
@@ -344,63 +380,72 @@ $\varphi (Ln)$ - длина ломанной. $\varphi = sup \varphi (Ln)$ - ч�
   |\Delta \vec r(t) | = |\vec r(t+\Delta t) - \vec r(t)|
   $$
   $$
-  |\Delta \vec r(t)| \le |\Delta \varphi (t)| \le |\Delta t|
+  |\Delta \vec r(t)| \le |\Delta \varphi (t)| \le
+  |\Delta t| max | \vec r'(\gamma)
   $$
   $$
   \left| \frac{\Delta \vec r(t)}{\Delta t} \right| \le
   \left| \frac{\Delta \varphi (t)}{\Delta t} \right| \le
-  max |\vec r(t)|
+  max |\vec r'(\gamma)|
   $$
   $$
   \left| \frac{\Delta \vec r(t)}{\Delta t} \right| \le
   \frac{\Delta \varphi (t)}{\Delta t} \le
-  max |\vec r(t)| ~~~ \Delta t \to 0
+  max |\vec r'(\gamma)| ~~~ \Delta t \to 0
   $$
   $$
   |\vec r'(t)| \le \varphi'(t) \le |\vec r'(t)|
   $$
 \end{proof}
 
-  Если $\omega$ непрерывна деференциирумая кривая
-$\vec r = \vec r(t) ~~~ t \in [a,b]$
-$$
-\varphi (\omega) = \varphi(b) - \varphi(a) =
-\int_a^b \varphi'(t)dt =
-\int_a^b \vec r'(t)dt
-$$
+  Если непрерывна $\omega$ дефференциируемая прямая заданная
+  $\vec r = \vec r (t) ~~~ t \in [a,b]$ то ее длина
+  $$
+  \varphi (\omega) = \varphi(b) - \varphi(a) = \int_a^b \varphi' (t) dt =
+  \int_a^b | \vec r'(t) | dt
+  $$
 
-  Если $\omega$ непрерына деференциирума $y = f(x) ~~~ x \in [a,b] ~~~
-\vec r(x) = (x, f(x)) \vec r'(x) = (1, f'(x))$
+  Если $\omega$ непрерына деференциирума $y = f(x) ~~~ x \in [a,b]$
+
+$\vec r(x) = (x, f(x))$
+
+$\vec r'(x) = (1, f'(x))$
 $$
-\int_a^b |\vec r'(x)|dx = \int_a^b \sqrt{1 + (f'(x))^2}dx
+\varphi(\omega) = \int_a^b |\vec r'(x)|dx = \int_a^b \sqrt{1 + (f'(x))^2}dx
 $$
 
   Вычисление длины в полярной системе координат.
 $$
-\varphi (\omega) = \int_a^b \sqrt{x'(t)^2 + (y'(t)^2)}dt
+\varphi (\omega) = \int_a^b \sqrt{(x'(t))^2 + (y'(t))^2}dt
 $$
 $$
 x = \rho (\alpha) \cos \alpha ~~~ y = \rho (\alpha) \sin \alpha
 $$
 $$
-x'(\alpha) = \rho'(\alpha) \cos \alpha - \rho(\alpha) \sin \alpha \\
+x'(\alpha) = \rho'(\alpha) \cos \alpha - \rho(\alpha) \sin \alpha
+$$
+$$
 y'(\alpha) = \rho'(\alpha) \sin \alpha + \rho(\alpha) \cos \alpha
 $$
 $$
+(x'(\alpha))^2 + (y'(\alpha))^2 = \rho^2(\alpha) + (\rho'(\alpha))^2
+$$
+$$
 \varphi (\omega) = \int_{\alpha}^{\beta}
-\sqrt{\rho^2 (\alpha) + (\rho'(\alpha)^2)} d\alpha
+\sqrt{\rho^2 (\alpha) + (\rho'(\alpha))^2} d\alpha
 $$
 
-  Если $P$ поверхность вращения $y=f(x) > 0 ~~~ x \in [a,b]$
+  Если $P$ поверхность вращения $y=f(x) \ge 0 ~~~ x \in [a,b]$
 $$
-S(P) = 2\pi \int_a^b f(x)dx
+S(P) = 2\pi \int_a^b f(x)dx = 2\pi \int_a^b f(x) \sqrt{1 + (f'(x))^2} dx
 $$
 $$
-d\varphi = \varphi' (x)dx = |\vec r'(x)|dx = \sqrt{1+f'(x)^2}dx
+d\varphi = \varphi' (x)dx = |\vec r'(x)|dx = \sqrt{1+f'(x)^2}dx =
+\sqrt{\rho^2 (\alpha) - (\rho'(\alpha))^2} d\alpha
 $$
 
 \begin{title}[\Large]
-  Физические приложения интеграла.
+  Физические приложения определенного интеграла.
 \end{title}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
