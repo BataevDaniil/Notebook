@@ -21,9 +21,9 @@
   m(p) = \prod_{k=1}^n (b_k - a_k)
   $$
 
-  $E \subset R^n$ множество $E$ в пространсве $R^n$ называется \kv{элементарным}
+  множество $E \subset R^n$ называется \kv{элементарным}
   если его можно представить в виде конечного $E = \sqcup_{k=1}^m P_k$ попарно
-  пересеающихся множест.
+  не пересеающихся множеств.
 
   $\sqcup$ - \kv{попарно непересекающиеся множества}
 
@@ -50,8 +50,8 @@ $$
 \end{defin}
 
 \begin{theorem}
-  Для любого измеримого по Жорадану множества $E$ пространства $n$ мера Жордана
-существует и при том единственна.
+  Для любого измеримого по Жорадану множества $E \subset R^n$ существует мера
+  Жордана и при том единственна
 \end{theorem}
 
 \begin{proof}
@@ -80,22 +80,23 @@ $$
   m(P_{\varepsilon}) \le m_2 (E) \le m(Q_{\varepsilon})
   $$
   $$
-  |m_1 (E) - m_2 (E))| \le m(Q_{\varepsilon}) - m(P_{\varepsilon}) < \varepsilon
+  |m_1 (E) - m_2 (E)| \le m(Q_{\varepsilon}) - m(P_{\varepsilon}) < \varepsilon
   $$
   $\Rightarrow m_1(E) = m_2(E)$
 \end{proof}
 
 \begin{title}[\Large]
-  Вычисление площади плоской фигуры заданной в декартовой системе координат.
+  Вычисление площади плоской фигуры, заданной в декартовой системе координат
 \end{title}
 
-\begin{defin}[криво линейной трапеции]
+\begin{defin}[криволинейной трапеции]
  $$
   D = \{ (x,y): ~~~ x \in [a,b]  ~~~ 0 \le y \le f(x) \}
  $$
 \end{defin}
 
 \begin{theorem}
+  $f(x)$ непрерывная на $[a,b]$
   $$
   S(D) = \int_a^b f(x) dx
   $$
@@ -130,26 +131,22 @@ $$
   $$
 \end{proof}
 
-\begin{proof}
+\begin{theorem}
   $f(x),g(x)$ непрерывный на $[a,b]$
 
   $$
   D = \{ (x,y): ~~ x \in [a,b] ~~ f(x) \le y \le g(x) \}
   $$
 
-  $c = \inf_{x \in [a,b]} f(x)$
-
-  $y' = y + c$
-
   $D = D_g \backslash D_f$
   $$
   S(D) = S(D_g) - S(D_f) = \int_a^b g(x)dx - \int_a^b f(x)dx =
   \int_a^b (g(x) - f(x)) dx
   $$
-\end{proof}
+\end{theorem}
 
 \begin{title}[\Large]
-  Вычисление площади плоской фигуры заданной в полярных координатах.
+  Вычисление площади плоской фигуры заданной в полярных координатах
 \end{title}
 
 \begin{theorem}
@@ -168,21 +165,21 @@ $$
   \int_* (R) = \sum_{k=1}^n m_k \Delta \varphi_k
   $$
   $$
-  S(P_k) = \frac{m_k \Delta \varphi_k}{2} ~~~
-  S(Q_k) = \frac{M_k \Delta \varphi_k}{2}
+  S(P_k) = \frac{m_k^2 \Delta \varphi_k}{2} ~~~
+  S(Q_k) = \frac{M_k^2 \Delta \varphi_k}{2}
   $$
   $$
   P_n = \sqcup_{k=1}^n P_k ~~~
-  S(P_n) = \sum_{k=1}^n S(P_k) = \frac{1}{2} \sum_{k=1} m_k \Delta \varphi_k =
-  \int_* (R)
+  S(P_n) = \sum_{k=1}^n S(P_k) = \frac{1}{2} \sum_{k=1}^n m_k^2
+  \Delta \varphi_k = \int_* (R)
   $$
   $$
   Q_n = \sqcup_{k=1}^n Q_k ~~~
-  S(Q_n) = \sum_{k=1}^n S(Q_k) = \frac{1}{2} \sum_{k=1} M_k \Delta \varphi_k =
-  \int^* (R)
+  S(Q_n) = \sum_{k=1}^n S(Q_k) = \frac{1}{2} \sum_{k=1}^n M_k^2
+  \Delta \varphi_k = \int^* (R)
   $$
 
-  $\frac{\rho}{2}$ интегрируема на $[\alpha, \beta]$
+  $\frac{\rho^2}{2}$ интегрируема на $[\alpha, \beta]$
 
   $$
   \int^* (R_{\varepsilon}) - \int_* (R_{\varepsilon}) < \varepsilon ~~~
@@ -196,11 +193,12 @@ $$
 \end{proof}
 
 \begin{title}[\Large]
-  Вычисление объемов тел с помощью определенного интеграла.
+  Вычисление объемов тел вращения с помощью определенного интеграла. Вычисление
+  объемов тел с заданными площадями их поперечных сечений
 \end{title}
 
 \begin{defin}[цилиндра]
-  Множество точек $\vartheta$ трех мерного пространства
+  Множество точек $\vartheta \subset R^3$
   $$
   \vartheta = \{ (x,y,z): ~~~ (x,y) \in D ~~~ 0 < z \le h\}
   $$
@@ -208,8 +206,8 @@ $$
 \end{defin}
 
 \begin{theorem}
-  $D \subset R^2 ~~~ S(D)$ измеримо по Жордану $\vartheta \subset R^3 ~~~
-  V(\vartheta) = h S(D)$
+  $D \subset R^2 ~~~ S(D)$ измеримо по Жордану $\vartheta \subset R^3$ тогда
+  $V(\vartheta) = h S(D)$
 \end{theorem}
 
 \begin{proof}
@@ -247,12 +245,8 @@ $$
 \end{proof}
 
 \begin{theorem}
-  Тело $T$ получено вращением криволинейной трапеции
-  $$
-  D = \{ (x,y): ~~~ x \in [a,b] ~~~
-  0 \le y \le f(x) \}
-  $$
-  тогда $T$ измеримо по Жордану
+  Тело $T$ получено вращением криволинейной трапеции тогда $T$ измеримо по
+  Жордану
   $$
   V(T) = \pi \int_a^b f^2(x) dx
   $$
@@ -304,11 +298,11 @@ $$
 \end{theorem}
 
 \begin{title}[\Large]
-  Вычисление длины кривой с помощью определенного интеграла.
+  Понятие кривой
 \end{title}
 
 \begin{defin}[кривой]
-  Криво $\omega$ называется упорядоченое множество точек $(x,y,z) \in R^3$
+  Кривой $\omega$ называется упорядоченое множество точек $(x,y,z) \in R^3$
   $$
     \left\{
       \begin{array}{l}
@@ -330,6 +324,10 @@ $$
 
   $\vec r'(t) = ( x'(t), y'(t) , z'(t) )$ касательный вектор
 \end{defin}
+
+\begin{title}[\Large]
+  Длина кривой
+\end{title}
 
 $L_n$ семейство ломанных вписанных в данную кривую
 
@@ -362,6 +360,11 @@ $\varphi (L_n)$ длина ломанной. $\varphi (\omega) = sup \varphi (L_
   \varphi (\omega) = sup \varphi (L_n) \le max_{t \in [a,b]} |\vec r' (t)|(b-a)
   $$
 \end{proof}
+
+\begin{title}[\Large]
+  Вычисление длины кривой с помощью определенного интеграла. Вычисление площади
+  поверхности вращения с помощью определенного интеграла
+\end{title}
 
 \begin{theorem}
   $\omega$  непрерывна диференциирумая кривая заданная с помощью

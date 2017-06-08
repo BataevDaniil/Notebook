@@ -1,14 +1,14 @@
 \begin{title}
-  Интегрирование функции одной переменной.
+  Интегрирование функции одной переменной
 \end{title}
 
 \begin{title}[\Large]
-  Первообразная и неопределенный интеграл и их cвойства.
+  Первообразная и неопределенный интеграл. Основные свойства
 \end{title}
 
 \begin{defin}[первообразной]
-  $F(x), f(x)$ определена на $<a,b>$, $F(x)$ непрерывна на $<a,b>$ и
-  дифференцируема на $(a,b)$ $\forall x \in (a, b) ~~~ F'(x) = f(x)$,
+  $F(x), f(x)$ определена на $<a,b>$ $F(x)$ непрерывна на $<a,b>$ $F'(x)$
+  на $(a,b)$ $\forall x \in (a, b) ~~~ F'(x) = f(x)$,
   то $F(x)$ называют \kv{первообразной} для $f(x)$ на $<a,b>$.
 \end{defin}
 
@@ -84,13 +84,19 @@ $a, b \in R$\\
 \end{proof}
 
 \begin{title}[\Large]
-  Замена переменных (подстановка) в неопределенных интегралах.
+  Замена переменных (подстановка) в неопределенном интеграле
 \end{title}
 
 \begin{theorem}
   $F(t)$ первообразная для $f(t)$ на $<T>$ где $t = \varphi (x)$
-  непрерывна дифференциируема на $<\Delta>$ и $\varphi(\Delta) \subset T$ то
-  \[\int f(\varphi (x)) \varphi'(x)dx = F(\varphi (x)) + C\]
+  непрерывна дифференциируема на $<\Delta>$ и $\varphi(\Delta) \subseteq T$ то
+  \[
+  \int f(\varphi (x)) \varphi'(x)dx =
+  \int f(\varphi (x)) d(\varphi'(x)) =
+  \int f(t) dt =
+  F(t) + C =
+  F(\varphi (x)) + C
+  \]
 \end{theorem}
 
 \begin{proof}
@@ -103,16 +109,16 @@ $a, b \in R$\\
 \end{proof}
 
 \begin{title}[\Large]
-  Интегрирование по частям в неопределенном интеграле.
+  Интегрирование по частям в неопределенном интеграле
 \end{title}
 $u = u(x), v = v(x)$ непрерывна дефференциирумы на $<a,b>$
-$$(u\cdot v))' = u'\cdot v + u\cdot v'$$
-$$\int(u \cdot v)'dx = \int u'\cdot vdx + \int u\cdot v'dx$$
+$$d(u\cdot v) = v du + u dv$$
+$$\int d(u \cdot v) = \int v du + \int u dv$$
 $$u\cdot v = \int vdu + \int udv$$
 \[\int udv = uv - \int vdu\]
 
 \begin{title}[\Large]
-  Интегрирование простых рациональных дробей.
+  Интегрирование простых рациональных дробей
 \end{title}
 Рациональная дробь $\frac{P_n(x)}{Q_m(x)}$ где $P_n(x), Q_m(x)$ многочлены.\\
 Если $P_n(x) \ge Q_m(x)$ неправильная дробь.\\
@@ -131,11 +137,13 @@ $$
   = \frac{A(x-a)^{1-n}}{1-n} + C$\\
 3.
 $$
-\int \frac{dx}{(x^2+4)^2} = \frac{1}{4} \int \frac{x^2 + 4 - x^2}{(x^2 + 4)^2} dx = \frac{1}{4}\int \frac{1}{x^2 + 4} dx - \frac{1}{4} \int \frac{x}{(x^2+4)^2} dx \ldots
+\int \frac{dx}{(x^2+4)^2} = \frac{1}{4} \int \frac{x^2 + 4 - x^2}{(x^2 + 4)^2}
+dx = \frac{1}{4}\int \frac{1}{x^2 + 4} dx -
+\frac{1}{4} \int \frac{x}{(x^2+4)^2}dx \ldots
 $$
 
 \begin{title}[\Large]
-  Интегрирование рациональных дробей.
+  Интегрирование рациональных дробей
 \end{title}
 Любую неправильную рациональную дробь можно представить в виде:\\
 $\frac{P_m(x)}{Q_n(x)} = S_k(x) + \frac{H_c(x)}{Q_n(x)} ~~~ m \ge n ~~~ c < n$

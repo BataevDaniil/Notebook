@@ -1,21 +1,22 @@
 \begin{title}
-  Числовые ряды.
+  Числовые ряды
 \end{title}
 
 \begin{title}[\Large]
   Сходимость числовых рядов. Необходимые и достаточные условие сходимости
-  числовых рядов.
+  числовых рядов
 \end{title}
 
   $a_k$ числовая последовательность.
 
   $\sum_{k=1}^{\infty} a_k = a_1 + a_2 + \ldots a_k + \ldots$
 
-  $S_n = \sum_{k=1}^n a_k = a_1 + a_2 + \ldots + a_n$ $n$ частичная (частая)
+  $S_n = \sum_{k=1}^n a_k = a_1 + a_2 + \ldots + a_n$ частичная (частая)
 сумма числового ряда $a_k$.
 
   Если существует конечный $\lim_{n \to \infty} S_n = S$ то его называют суммой
-числового ряда, ряд который сходится сходящимся рядом иначе раходящимcя рядом.
+числового ряда. Ряд который сходится называют сходящимся рядом, иначе
+раходящимcя рядом.
 
 \begin{block}[Необходимые условия сходимости числового ряда]
   Числовой ряд $a_k$ cходится, тогда
@@ -36,7 +37,7 @@
 \end{proof}
 
 \begin{title}[\Large]
-  Свойства сходящегося числового ряда.
+  Свойства сходящегося числового ряда
 \end{title}
 
 \begin{theorem}
@@ -67,8 +68,8 @@
   $
   \sum_{k=1}^{\infty} a_k = S ~~~ \sum_{\varphi = 1}^{\infty} b_{\varphi}
   $
-  $b_{\varphi}$ получили конечной заменой некоторыч рядом стоящими членов $a_k$
-  на одни без перестановке, тогда
+  $b_{\varphi}$ получили конечной заменой некоторых рядом стоящими членов $a_k$
+  на одни без перестановки, тогда
   $
   \sum_{\varphi = 1}^{\infty} b_{\varphi} = S
   $
@@ -117,7 +118,7 @@
 \end{proof}
 
 \begin{title}[\Large]
-  Критерий Коши сходимости числового ряда.
+  Критерии сходимости числовых рядов.
 \end{title}
 
 \begin{block}[Критерий Коши сходимости числового ряда:]
@@ -128,7 +129,7 @@
   \exists n_{\varepsilon} \in N ~~~
   \forall n \ge n_{\varepsilon} ~~~
   \forall p \in N ~~~
-  \left| \sum_{k=n+p}^{n+1} a_k \right| < \varepsilon
+  \left| \sum_{k=n+1}^{n+p} a_k \right| < \varepsilon
   $$
 \end{block}
 
@@ -145,10 +146,6 @@
   $$
 \end{proof}
 
-\begin{title}[\Large]
-  Интегральный признак сходимости числового ряда.
-\end{title}
-
 \begin{block}[Критерий]
   $
   \forall k \in N ~~~
@@ -157,17 +154,16 @@
   для сходимости $a_k$ необходимо и достаточно чтобы $S_n \le M$
 \end{block}
 
-\begin{proof}
-  Для доказательства достаточно заметить что
-  $S_k \nearrow ~~~ S_{n+1} - S_n = a_{n+1} \ge 0$
-\end{proof}
+\begin{title}[\Large]
+  Интегральный признак сходимости числового ряда
+\end{title}
 
-\begin{block}[Интегральный признак числового ряда:]
-  $f(x)$ определена, непрерывна, неотрицательна на $[1, +\infty]$ тогда
+\begin{block}[Интегральный признак сходимости числового ряда:]
+  $f(x) \ge 0$ определена, непрерывна, $\searrow$ на $[1, +\infty]$ тогда
   $$
   \sum_{k=1}^{\infty} f(k) ~~~~~~ \int_1^{\infty} f(x)dx
   $$
-  сходится только если оба сходятся
+  сходятся или расходятся одновременно.
 \end{block}
 
 \begin{proof}
@@ -206,8 +202,8 @@
   $$
 \end{proof}
 
-\begin{title}
-  Признак сравнения для определения сходимости числового ряда.
+\begin{title}[\Large]
+  Признак сравнения для числовых рядов
 \end{title}
 
 \begin{block}[Признак сравнения:]
@@ -233,12 +229,12 @@
   Второе утверждение получается и первого докательством от противного.
 \end{proof}
 
-\begin{theorem}
+\begin{block}[Признак сравнения в предельной форме]
   $\forall k \in N ~~~ a_k, b_k > 0 ~~~ a_k \sim b_k ~~ k \to \infty$ тогда
 
   $\sum_{k=1}^{\infty} a_k ~~~ \sum_{k=1}^{\infty} b_k$
-  либо оба сходятся, либо оба расходятся
-\end{theorem}
+  сходятся или расходятся одновременно.
+\end{block}
 
 \begin{proof}
   $$
@@ -269,16 +265,16 @@
 \end{proof}
 
 \begin{title}
-  Признак Дирехле.
+  Признак Даламбера
 \end{title}
-\begin{block}[Признак Дирехле:]
-  $$
-  \forall k \in N ~~~ a_k > 0 ~~~ \exists \lambda < 1
-  $$
-  Если $\frac{a_{k+1}}{a_k} \le \lambda$ тогда $\sum_{k=1}^{\infty} a_k$
-  сходится
+\begin{block}[Признак Даламбера:]
+  $\forall k \in N ~~~ a_k > 0$
 
-  Если $\frac{a_{k+1}}{a_k} \ge 1$ тогда $\sum_{k=1}^{\infty} a_k$ расходится.
+  Если $\exists 0 < \lambda < 1 ~~~ \exists k_0 \in N ~~~ \forall k \ge k_0 ~~~
+  \frac{a_{k+1}}{a_k} \le \lambda$ тогда $\sum_{k=1}^{\infty} a_k$ сходится
+
+  Если $\exists k_0 \in N ~~~ \forall k \ge k_0 ~~~ \frac{a_{k+1}}{a_k} \ge 1$
+  тогда $\sum_{k=1}^{\infty} a_k$ расходится.
 \end{block}
 
 \begin{proof}
@@ -320,10 +316,10 @@
   расходится, тогда $\sum_{k=1}^{\infty} a_k$ расходится.
 \end{proof}
 
-\begin{theorem}
+\begin{block}[Признак Даламбера в предельной форме]
   $$
   \forall k \in N ~~~ a_k > 0 ~~~
-  \lim_{k \to \infty} \frac{a_{k+1}}{a_k} = \lambda
+  \exists \lim_{k \to \infty} \frac{a_{k+1}}{a_k} = \lambda
   $$
   1. Если $\lambda < 1 ~~~ \sum_{k=1}^{\infty} a_k$ сходится
 
@@ -332,7 +328,7 @@
   3. Если $\lambda = 1 ~~~ \sum_{k=1}^{\infty} a_k$ может быть что угодно
 
   Наиболее эфективно его можно использовать, если члены ряда содержат факториал.
-\end{theorem}
+\end{block}
 
 \begin{proof}
   $$
@@ -353,16 +349,17 @@
 \end{proof}
 
 \begin{title}[\Large]
-  Признак Коши сходимости числового ряда.
+  Признак Коши сходимости числового ряда
 \end{title}
 
-\begin{block}[Признак Коши сходимости числового ряда:]
-  $\forall k \in N ~~~ a_k \ge 0$ тогда
+\begin{block}[Признак Коши сходимости числового ряда]
+  $\forall k \in N ~~~ a_k \ge 0 $ тогда
 
-  1) Если $\sqrt[k]{a_n} \le \lambda < 1$ тогда
-  $\sum_{k=1}^{\infty} a_k$ сходится.
+  Если $\exists 0 < \lambda < 1 ~~~ \exists k_0 \in N ~~~ \forall k \ge k_0 ~~~
+  \sqrt[k]{a_k} \le \lambda$ тогда $\sum_{k=1}^{\infty} a_k$ сходится.
 
-  2) Если $\sqrt[k]{a_k} \ge 1$ тогда $\sum_{k=1}^{\infty} a_k$ расходится.
+  Если $\exists k_0 \in N ~~~ \forall k \ge k_0 ~~~ \sqrt[k]{a_k} \ge 1$ тогда
+  $\sum_{k=1}^{\infty} a_k$ расходится.
 \end{block}
 
 \begin{proof}
@@ -373,24 +370,21 @@
   Так как нарушено необходимое условие сходимости чилсового ряда.
 \end{proof}
 
-\begin{theorem}
+\begin{block}[Признак Коши в предельной форме]
   $$
-  \forall k \in N ~~~ a_k \ge 0 ~~~ \lim_{k \to \infty} \sqrt[k]{a_k} = \lambda
+  \forall k \in N ~~~ a_k \ge 0 ~~~ \exists \lim_{k \to \infty} \sqrt[k]{a_k} =
+  \lambda
   $$
 
-  1) Если $\lambda > 1 ~~~ \sum_{k=1}^{\infty} a_k$ сходится.
+  1. Если $\lambda < 1 ~~~ \sum_{k=1}^{\infty} a_k$ сходится.
 
-  2) Если $\lambda < 1 ~~~ \sum_{k=1}^{\infty} a_k$ расходится.
+  2. Если $\lambda > 1 ~~~ \sum_{k=1}^{\infty} a_k$ расходится.
 
-  3) Если $\lambda = 1$ может расходится или сходится.
-\end{theorem}
-
-\begin{proof}
-  надо доказать самостоятельно.
-\end{proof}
+  3. Если $\lambda = 1$ может расходится или сходится.
+\end{block}
 
 \begin{title}[\Large]
-  Признак Лейбница сходимости знака чередования.
+  Признак Лейбница сходимости знакочередующихся рядов и его следствия
 \end{title}
 
 \begin{block}[Признак Лейбница:]
@@ -429,7 +423,7 @@
 \end{proof}
 
 \begin{title}[\Large]
-  Признак Дирехле сходимости числового ряда.
+  Признаки Дирехле и Абеля сходимости числовых рядов
 \end{title}
 
 \begin{block}[Признак Дирехле:]
@@ -442,10 +436,6 @@
 
   тогда $\sum_{k=1}^{\infty} a_k b_k$ сходится.
 \end{block}
-
-\begin{title}[\Large]
-  Признак Абеля сходимости числового ряда.
-\end{title}
 
 \begin{block}[Признак Абеля:]
   1) $\sum_{k=1}^{\infty} a_k$ сходится.
@@ -471,23 +461,30 @@
   $$
 \end{proof}
 
-\begin{title}
-  Абсолютно сходящиеся числовые ряды. Простейшие свойства.
+\begin{title}[\Large]
+  Абсолютно сходящиеся числовые ряды. Простейшие свойства
 \end{title}
 
-Числовой ряд $\sum_{k=1}^{\infty} a_k$ называется \kv{абсолютно сходящимся},
-если $\sum_{k=1}^{\infty} |a_k|$ сходится.
+\begin{defin}[абсолютно сходящегося ряда]
+  Числовой ряд $\sum_{k=1}^{\infty} a_k$ называется \kv{абсолютно сходящимся},
+  если $\sum_{k=1}^{\infty} |a_k|$ сходится.
+\end{defin}
 
-Если ряд абсолютно сходится, то он ведет себя как обычная конечная суммы.
+\begin{block}[Свойство]
+  Если ряд абсолютно сходится, то он ведет себя как обычная конечная суммы.
+\end{block}
 
 \begin{theorem}
   Абсолютно сходящийся ряд является сходящимся
+\end{theorem}
+
+\begin{proof}
   $$
   \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} \in N ~~~
   \forall n \ge n_{\varepsilon} ~~~ \forall p \in N ~~~
   \sum_{k=n+1}^{n+p} |a_k| < \varepsilon
   $$
-\end{theorem}
+\end{proof}
 
 \begin{theorem}
   $a_k$ абсолютно сходящийся, $b_k$ ограничена
@@ -538,17 +535,18 @@
   $$
 \end{proof}
 
+\begin{title}[\Large]
+  Перестановка членов в абсолютно сходящихся рядах и перемножение абсолютно
+  сходящихся рядов
+\end{title}
+
 \begin{theorem}
   $\sum_{k=1}^{\infty} a_k$ абсолютно сходится, то
-  $\sum_{\varphi=1}^{\infty} b_{\varphi}$ полученный из ряда $a_k$ перестановкой членов
-  ряда $a_k$ ($b_{\varphi} = a_{k_{\varphi}}$) тоже является абсолютно сходящейся и
-  $\sum_{k=1}^{\infty} a_k = S \Rightarrow
+  $\sum_{\varphi=1}^{\infty} b_{\varphi}$ полученный из ряда $a_k$ перестановкой
+  членов ряда $a_k$ ($b_{\varphi} = a_{k_{\varphi}}$) тоже является абсолютно
+  сходящейся и $\sum_{k=1}^{\infty} a_k = S \Rightarrow
   \sum_{\varphi=1}^{\infty} b_{\varphi} = S$
 \end{theorem}
-
-\begin{title}
-  Перемножение абсолютно сходящихся рядов.
-\end{title}
 
 \begin{theorem}
   $\sum_{k=1}^{\infty} a_k = A$ абсолютно сходящийся
@@ -583,12 +581,14 @@
   $$
 \end{proof}
 
-\begin{title}
-  Условно сходящиеся ряды. Теорема Римана.
+\begin{title}[\Large]
+  Условно сходящиеся ряды. Теорема Римана
 \end{title}
 
-Числовой ряд называют условно сходящимся, если ряд $\sum_{k=1}^{\infty} a_k$
-сходится, а $\sum_{k=1}^{\infty} |a_k|$ расходится
+\begin{defin}[условно сходящегося числового ряда]
+  Числовой ряд называют условно сходящимся, если ряд $\sum_{k=1}^{\infty} a_k$
+  сходится, а $\sum_{k=1}^{\infty} |a_k|$ расходится
+\end{defin}
 
 \begin{block}[Свойство]
   $\sum_{k=1}^{\infty} a_k$ условно сходящийся ряд
@@ -635,11 +635,11 @@
 \end{block}
 
 \begin{theorem}
-  $\sum_{k=1}^{\infty} a_k$ усвно сходящийся, то
+  $\sum_{k=1}^{\infty} \alpha_k$ условно сходящийся
   $$
-  \lim_{k \to \infty} \alpha_k = \lim_{k \to \infty} B_k = 0
+  \lim_{k \to \infty} \alpha_k = \lim_{k \to \infty} \beta_k = 0
   $$
-  $\sum_{k=1}^{\infty} \alpha_k ~~~ \sum_{k=1}^{\infty} \beta_k$ расходится
+  тогда $\sum_{k=1}^{\infty} \beta_k$ расходится
 \end{theorem}
 
 \begin{proof}
@@ -653,7 +653,7 @@
   $\sum_{k=1}^{\infty} \frac{|a_k|}{2} + \sum_{k=1}^{\infty} \frac{a_k}{2}$
   противоречие
 
-  Пусть $\sum_{k=1}^{\infty} \beta_k$ схдится
+  Пусть $\sum_{k=1}^{\infty} \beta_k$ сходится
   $|a_k| = 2\beta_k + a_k$
 
   $\sum_{k=1}^{\infty} \frac{|a_k| - a_k}{2}$ сходится
@@ -664,12 +664,12 @@
   $$
 \end{proof}
 
-\begin{theorem}
-  $\sum_{k=1}^{\infty} a_k$ условно сходится, то
-  $\forall \Delta \in R $ можно так представить члены ряда $a_k$ и получить
-  ряд $b_{\varphi}$
-
-  $\sum_{\varphi=1}^{\infty} b_{\infty}$ то $B_n \to \Delta$
+\begin{theorem}[Римана]
+  $\sum_{k=1}^{\infty} a_k$ условно сходится, то $\forall \Delta \in R $ можно
+  так представить члены ряда $a_k$ и получить ряд $b_{\varphi}$
+  $$
+  \sum_{\varphi=1}^{\infty} b_{\varphi} = \Delta
+  $$
 \end{theorem}
 
 \begin{theorem}
