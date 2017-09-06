@@ -58,8 +58,8 @@
   $$
   $$
   S_n = \alpha A_n + \beta B_n ~~~
-  \lim_{n \to \infty} S_n = \alpha \lim A_n + \beta \lim B_m =
-  \alpha A + \beta B
+  \lim_{n \to \infty} S_n = \alpha \lim_{n \to \infty} A_n +
+  \beta \lim_{n \to \infty} B_n = \alpha A + \beta B
   $$
 \end{proof}
 
@@ -222,7 +222,7 @@
   \forall n \in N ~~~ B_n = \sum_{k=1}^n b_k \le M
   $$
   $$
-  A_n = \sum_{k=1}^n a_k \le B_n \le M
+  \forall n \in N ~~~ A_n = \sum_{k=1}^n a_k \le B_n \le M
   $$
   значит $a_k$ сходится.
 
@@ -335,7 +335,7 @@
   \forall \varepsilon > 0 ~~~
   \exists n_{\varepsilon} \in N ~~~
   \forall k \ge n_{\varepsilon} ~~~
-  \left| \frac{k_{n+1}}{a_k} - \lambda \right| < \varepsilon ~~~
+  \left| \frac{a_{k+1}}{a_k} - \lambda \right| < \varepsilon ~~~
   \lambda - \varepsilon < \frac{a_{k+1}}{a_k} < \lambda + \varepsilon
   $$
   1) Пусть $\lambda < 1 ~~~ \lambda + \varepsilon < 1$ тогда по
