@@ -5,24 +5,376 @@
 $$
 \sum_{k=1}^{\infty} f_k (x) = f(x)
 $$
-Пусть $f_k(x)$ на $E$ если $\forall x \in E$ числовой ряд $f_k(x)$ сходится то
+Пусть $f_k(x)$ на $E$ если $\forall x \in E$ ряд $f_k(x)$ сходится то
 говорят что функциональный ряд сходится на $E$ и его сумму обозначают $f(x)$
 $$
-\forall x \in E ~~~ \sum_{k=1}^n f_k(x) = \lim_{n \to \infty} S_n(x) = f(x)
-$$
-$$
-S_n(x) = x^n \to f(x) \equiv 0
-$$
-$$
-\forall \varepsilon > 0 ~~~ \forall x \in E ~~~ \exists n_{\varepsilon; x} \in N
-~~~ \forall n \ge n_{\varepsilon; x} ~~~ \left| S_n(x) - f(x) \right|
-< \varepsilon
-$$
-$$
-\forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~ \forall x \in E
-~~~ \forall n \ge n_{\varepsilon} ~~~ |S_n (x) - f(x)| < \varepsilon
+\forall x \in E ~~~ \lim_{n \to \infty} \sum_{k=1}^n f_k(x) =
+\lim_{n \to \infty} S_n(x) = f(x)
 $$
 
+\begin{define}
+  $$
+  \forall \varepsilon > 0 ~~~ \forall x \in E ~~~ \exists n_{\varepsilon; x}
+  \in N ~~~ \forall n \ge n_{\varepsilon; x} ~~~ \left| S_n(x) - f(x) \right|
+  < \varepsilon
+  $$
+\end{define}
+
+\begin{define}[равномерной сходимости]
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~ \forall x \in E
+  ~~~ \forall n \ge n_{\varepsilon} ~~~ |S_n (x) - f(x)| < \varepsilon
+  $$
+\end{define}
+
 $S_n(x)$ называется неравномерной сходимостью на $E$
-$\lim_{n \to \infty} f_k(x)$ если эта последоватеьность сходится точке то
-условие сходимости нарушено.
+$\lim_{k \to \infty} f_k(x)$ если эта последоватеьность сходится при
+$\forall x \in E$ но условие равномерной сходимости нарушено.
+
+\begin{define}
+  Если последовательность частных сумм сходится на $E$ равномерно, то ряд
+  называется равномерно сходящисмя.
+
+  Обозначения:
+  $$
+  S_n(x) \stackrel{E}{\to} f(x) ~ \text{- обычная сходимость}
+  $$
+  $$
+  S_n(x) \stackrel{E}{\rightrightarrows} f(x) ~ \text{- обычная сходимость}
+  $$
+\end{define}
+
+\begin{title}
+  Критерия равномерной сходимости ряда последовательности и функций ряда
+\end{title}
+\begin{theorem}[Критерий Коши]
+  $$
+  \sum_{k+1}^{\infty} f_n(x) ~ \text{на} ~ E
+  $$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall x \in E ~~~ \forall n \ge n_{\varepsilon} ~~~ \forall p \in N ~~~
+  |S_{n+p}(x) - S_n(x)| < \varepsilon ~ \text{или} ~
+  \left| \sum_{k = n + 1}^{n+p} f_k(x) \right| < \varepsilon
+  $$
+\end{theorem}
+
+\begin{theorem}[Критерий сходимости]
+  $$
+  S_n(x) \stackrel{E}{\rightrightarrows} f(x) ~~~
+  \lim_{n \to \infty} \sup\limits_{x \in E} |S_n(x) - f(x)| = 0
+  $$
+\end{theorem}
+
+\begin{title}
+  Прзнаки сходимости функционального ряда
+\end{title}
+
+\begin{theorem}[Признак Вейштрасса]
+  $$
+  \forall x \in E ~~~ \forall k \in N ~~~ |f_k(x)| \le a_k ~~~
+  \sum_{k=1}^{\infty}a_k ~ \text{сходится, тогда} ~~~
+  \sum_{k=1}^{\infty} f_k (x) ~ \text{равномерно сходится}
+  $$
+\end{theorem}
+
+\begin{proof}
+  Из сходимости ряда $a_n$ по критерию Коши следует
+  $$
+  \forall \varepsilon ~~~ \exists n_{\varepsilon} \in N ~~~ \forall n \ge
+  n_{\varepsilon} ~~~ \forall p \in N ~~~ |a_{n+1} + \ldots + a_{n+p}| <
+  \varepsilon
+  $$
+  тогда из условия теоремы
+  $$
+  \left| \sum_{k = n + 1}^{n+p} f_k(x) \right| < \sum_{k = n+1}^{n+p} a_k <
+  \varepsilon ~~ \forall x \in E
+  $$
+  По критерию Коши ряд $f_k(x)$ сходится равномерно на множестве $E$.
+\end{proof}
+
+Замечание: При условии признака Вейштраса ряд сходится не только равномерно, но
+и абсолютно.
+
+Замечание: Если нарушено одно из условий признак, то ничего определенного
+сказать нельзя.
+
+\begin{theorem}[Признак Дирихле]
+  1)
+  $$
+  M > 0 ~~ \forall x \in E ~~ \forall n \in N ~~~
+  \left| \sum_{k=1}^n f_k(x) \right| \le M
+  $$
+  2) $g_n(x) ~~~ \searrow$ или $\nearrow$
+
+  3) $g_n(x) \rightrightarrows 0$
+
+  тогда $\sum_{k=1}^{\infty} f_n(x) \cdot g_n(x)$ равномерно сходится
+\end{theorem}
+
+
+\begin{theorem}[Признак Абеля]
+  1) $\sum_{k=1}^{\infty} f_k(x) \rightrightarrows$
+
+  2) $g_n(x) ~~~ \searrow$ или $\nearrow$
+
+  3) $|g_n(x)| \le M$
+
+  тогда функциональный ряд сходится
+\end{theorem}
+
+\begin{title}
+  Непрерывность суммы функционального ряда
+\end{title}
+
+\begin{theorem}
+  1) $\forall k \in N ~~~ f_k(x) ~~~ [a,b]$
+
+  2) $\sum_{k=1}^{\infty} f_k (x) \rightrightarrows S(x)$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
+  \forall x \in [a,b] ~~~ |x - x_0| < \delta_{\varepsilon} ~~~
+  |S(x) - S(x_0)| < \varepsilon ~~~ x_0 \in [a,b]
+  $$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\delta} \in N ~~~ \forall n \ge
+  n_{\delta} ~~~ \forall x \in [a,b] ~~~ |S_n(x) - S(x)| <
+  \frac{\varepsilon}{3} ~~~ |S_n(x_0) - S(x_0)| < \frac{\varepsilon}{3}
+  $$
+  $$
+  S_{n_0}(x) = \sum_{k=1}^{n_0} f_k(x) ~~~ \forall \varepsilon > 0 ~~~
+  \exists \delta > 0 ~~~ \forall x \in [a,b] ~~~ |x - x_0| <
+  \delta_{\varepsilon}
+  $$
+  $$
+  |S_{n_p}(x) - S_{n_0}(x_0)| < \frac{\varepsilon}{3}
+  |S(x) - S(x_0)| =  |(S(x) - S_{n_0}(x)) + (S_{n_0}(x) - S_{n_0}(x_0)) +
+  $$
+  $$
+  + (S_{n_0}(x_0) - S(x_0)) \le |S_{n_0}(x) - S(x)| +
+  |S_{n_0}(x) - S_{n_0}(x_0)| + |S_{n_0}(x) - S(x_0)| < \frac{\varepsilon}{3} +
+  \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon
+  $$
+\end{proof}
+
+\begin{title}
+  Почленное интегрирование функционального ряда
+\end{title}
+
+\begin{theorem}
+  $\forall k \in N ~~~ f_k(x)$ непрерывна на отрезке $[a,b]$ и
+  $\sum_{k=1}^{\infty} f_k(x) \rightrightarrows S_n(x)$ тогда
+  $$
+  \forall \in [a,b] ~~~ \int_a^x S(t)dt =
+  \sum_{k=1}^{\infty} \int_a^x f_k(t)dt
+  $$
+\end{theorem}
+
+\begin{proof}
+  Из равномерной сходимости следует
+  $$
+  \forall \varepsilon  > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall n \ge n_{\varepsilon} ~~~ \forall x \in[a,b] ~~~
+  |S_n(x) - S(x)| < \varepsilon (b-a)
+  $$
+  $$
+  \left| \int_a^x S(t)dt - \int_a^x \sum_{k=1}^n f_k(t)dt \right| =
+  \left| \int_a^x (S(t) - \sum_{k=1}^n f_k(t))dt \right| \le
+  $$
+  $$
+  \le \int_a^a |S(t) - S_n(t)|dt < \frac{\varepsilon}{b-a} \int_a^x dt =
+  \frac{\varepsilon}{b-a}(x-a) \le \varepsilon
+  $$
+\end{proof}
+
+\begin{theorem}
+  1) $\forall n \in N ~~~ S_n(x)$ непрерывна на $[a,b]$
+
+  2) $S_n(x) \rightrightarrows S(x)$
+
+  тогда
+  $$
+  \forall x \in [a,b] ~~~ \int_a^x S(t)dt = \lim_{n \to \infty}
+  \int_a^x S_n(t)dt
+  $$
+\end{theorem}
+
+\begin{title}
+  Почленное дифференциирование функционального ряда
+\end{title}
+
+\begin{theorem}
+  1) $\forall k \in N ~~~ f_k(x)$ непрерывна на $[a,b]$
+
+  2) $\sum_{k=1}^{\infty} f_n'(x) \rightrightarrows S(x)$
+
+  3) $\sum_{k=1}^{\infty} f_n(a)$ сходится
+
+  тогда
+  $$
+  \sum_{k=1}^{\infty} f_k(x) \rightrightarrows S(x) ~~~
+  \sum_{k=1}^{\infty} f_k'(x) = S'(x)
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \text{обозначим} ~ \sum_{k=1}^{\infty} f_n'(x)
+  \stackrel{[a,b]}{\rightrightarrows} = G|x|
+  $$
+  $$
+  \int_a^x G(t)dt = \sum_{k=1}^{\infty} \int_a^x f_k'(t) dt =
+  \sum_{k=1}^{\infty} f_k(x) - \sum_{k=1}^{\infty} f_k(a) =
+  $$
+  $$
+  = G(x) \sum_{k=1}^{\infty} f_k(x) = \int_a^x G(t)dt + S(a) ~~~ S'(x) G(x) + 0
+  $$
+\end{proof}
+
+\begin{theorem}
+  1) $\forall n \in N ~~~ S_n(x) ~~~ [a,b]$
+
+  2) $S_n'(x) \rightrightarrows G(x)$
+
+  3) $S_n(a) \to S(a)$
+
+  тогда $S_n(x) \rightrightarrows S(x)$ и $S'(x) = G(x)$
+\end{theorem}
+
+\begin{title}
+  Степенные ряды. Теорема Абеля
+\end{title}
+
+\begin{define}
+  $$
+  \sum_{k=0}^{\infty} a_k (x-x_0)^k ~~ \text{ - степенной ряд}
+  $$
+  $$
+  \sum_{k=0}^{\infty} a_k t^k ~~~ t = x - x_0
+  $$
+\end{define}
+
+\begin{theorem}[Абеля]
+  Если степенной ряд сходится в точке $x_1 \not= 0$ то он сходится
+  $\forall x ~~~ |x| < |x_1|$ при том абсолютно, если степенной ряд расходится
+  в $x_2 \not= 0$ то он расходится на $\forall x ~~~ |x| < |x_2|$
+\end{theorem}
+
+\begin{proof}
+  Пусть ряд сходится в точке $x_1$ тогда на основании условия сходимости
+  числовго ряда $\lim_{k \to \infty} a_k x_1^k = 0$ следует что $\exists M > 0$
+  что $\forall k = 0, 1,2, \ldots,  ~~~ |a_k x_1^n| \le M$. Тогда
+  расмотрим $|a_k x^k| = \left| a_k x_1 < \left( \frac{x}{x_1} \right)^k
+  \right| = |a_k x_1^k| \left| \frac{x}{x_1} \right|^k \le Mq^k$, где
+  $q^k = \left| \frac{x}{x_1} \right|$ если предположить, что $q < 1$ то по
+  признаку сравнения $\sum_{k=0}^{\infty} Hq^k$ сходится. Значит наш ряд
+  сходится относительно $x_1$
+
+  2часть. Пусть наш ряд расходится, предположит, что $\exists |x_1| > |x_2|$ в
+  котором ряд сходится, тогда ряд должен сходится в $x_2$ что протеворечит
+  данному условию.
+\end{proof}
+
+Следствие. Из теоремы Абеля следует что степенной ряд сходится только в точке
+0, либо на всех числовой прямой, либо на полуинтервалах сходится данного
+степенного ряда.
+
+\begin{title}
+  r сходимости. Формула Коши-Адамара
+\end{title}
+
+$\rho = \sum\{ |x| : x \in D \}$ $D \not= 0$ - радиус сходимости
+Свойства
+
+1) $D = \{0\} ~~~ \rho = 0$
+
+2) $D = R ~~~ \rho = +\infty$
+
+3) $0 < \rho < +\infty$
+
+\begin{theorem}
+  $$
+  \lim_{k \to \infty} \left| \frac{a_n}{a_{n+1}} \right| = \rho
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \lim_{k \to \infty} \left| \frac{a_{k+1} x^{n+1}}{a_k x^k} \right| =
+  |x| \lim_{k \to \infty} \left| \frac{a_{k+1}}{a_k} < 1 \right|
+  $$
+  тогда сходится
+\end{proof}
+
+\begin{theorem}
+  $$
+  \lim_{k \to \infty} \sqrt[k]{|a_k|} = \frac{1}{\rho}
+  $$
+\end{theorem}
+
+\begin{proof}
+  По Каши
+\end{proof}
+
+\begin{title}
+  Свойства степенных рядов
+\end{title}
+
+\begin{theorem}
+  Если степенной имеет ненулевой радиус сходимости, то он сходится равномерно
+  на любом отрезке внутри интеравала сходимости.
+\end{theorem}
+
+Следствие: сумма степенного ряда является непрерывной во всех точках интервала
+сходимости
+
+Слудствие: внутри интервала ряд можно почленно интегрировать
+$$
+\int_0^x S(t)dt = \sum_{k=0}^{\infty} a_k \frac{x_k+1}{n+1}
+$$
+при этом $\rho_k = \rho$
+
+Следствие: $S'(x) = \sum_{k=1}^{\infty}k a_k x^{n-1}$ при $\rho_g = \rho$
+
+\begin{title}
+  Ряд Тейлора
+\end{title}
+
+\begin{define}
+  $f(x)$ имеет $f^{(k)}(a) ~~~ \forall k \in N$ тогда ряд вида
+  $$
+  \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!} (x-a)^k
+  $$
+  называют рядом Тейлора в точки $a$
+
+  Частный случай если $a = 0$ то это ряд Маклорена
+\end{define}
+
+\begin{theorem}
+  Если $f(x)$ представлена в виде степенного ряда $f(x) = \sum_{k=0}^{\infty}
+  c_k(k-a)^k ~~~ \forall x \in O_{\delta}(a)$ то это ряд Тейлора
+  $c_k = \frac{f^{(k)}(a)}{k!}$ где $k = 0,1,2, \ldots$
+\end{theorem}
+
+Замечание: Обратное утверждение не верно.
+
+\begin{define}
+  $R_n(x) = f(x) - S_n(x)$ остаточный член в форме логранжа
+\end{define}
+
+\begin{theorem}
+  $\forall k \in N ~~~ \forall x \in O_{\delta}(a) ~~~ |f_{(k)}(x)| \le M L^n$
+  тогда $\forall \in O_{\delta}(a)$ представима рядом Тейлора.
+\end{theorem}
+
+\begin{proof}
+  $|R_n(x)| = \left| \frac{f^{(n+1)}}{(n+1)!} \right| (x-a)^{n+1} =
+  \frac{ M (L\delta)^{n+1} }{(n+1)!} \to 0$
+\end{proof}
+
+\begin{title}
+  Разложение основных элементарных $f(x)$ в ряде Тейлора (Маклорена)
+\end{title}
