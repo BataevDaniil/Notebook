@@ -1,20 +1,6 @@
 \documentclass{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath,amssymb}
-\usepackage[russian]{babel}
-\usepackage{rotating}
-\usepackage{layout}
-
-\usepackage[left=0cm,right=0cm,
-    top=0cm,bottom=0cm,bindingoffset=0cm]{geometry}
-
-\renewcommand{\arraystretch}{1.8}
-
-\newcommand{\arcsh}{\mathrm{arcsh}}
-\newcommand{\arcch}{\mathrm{arcch}}
-\newcommand{\arcth}{\mathrm{arcth}}
-\newcommand{\arccth}{\mathrm{arccth}}
+\usepackage{LectureCommand}
 
 \begin{document}
 
@@ -242,33 +228,223 @@ $
 $
 \end{turn}
 
-$$
-e^x = \sum_{k=0}^{\infty} \frac{x^k}{k!}
-$$
-$$
-\ch(x) = \sum_{k=0}^{\infty} \frac{x^{2k}}{(2k)!}
-$$
-$$
-\sh(x) = \sum_{k=0}^{\infty} \frac{x^{2k + 1}}{(2k +1)!}
-$$
-$$
-\sin(x) = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k+1}}{(2k+1)!}
-$$
-$$
-\cos(x) = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k}}{(2k)!}
-$$
-$$
-\ln(1 + x) = \sum_{k=1}^{\infty} \frac{(-1)^{k+1} x^k}{k}
-$$
-$$
-(1+x)^p = \sum_{k=0}^{\infty} \frac{p! x^k}{(p - k)! k!}
-$$
-$$
-\arctg(x) = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k+1}}{2k + 1}
-$$
-$$
-\arcsin(x) = x + \sum_{k=1}^{\infty}
-\frac{(2k - 1)!! x^{2k-1}}{(2k)! (2k+1)}
-$$
+\begin{turn}{90}
+$
+\begin{array}{|c|c|}
+
+  \hline
+  1&e^x = \sum_{k=0}^{\infty} \frac{x^k}{k!}, ~ x \in (-\infty, +\infty) \\
+  \hline
+  2&\ch(x) = \sum_{k=0}^{\infty} \frac{x^{2k}}{(2k)!},
+  ~ x \in (-\infty, +\infty)\\
+  \hline
+  3&\sh(x) = \sum_{k=0}^{\infty} \frac{x^{2k + 1}}{(2k +1)!},
+  ~ x \in (-\infty, +\infty)\\
+  \hline
+  4&\sin(x) = \sum_{k=1}^{\infty} \frac{(-1)^{k+1} x^{2k-1}}{(2k-1)!},
+  ~ x \in (-\infty, +\infty)\\
+  \hline
+  5&\cos(x) = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k}}{(2k)!},
+  ~ x \in (-\infty, +\infty)\\
+  \hline
+  6&\ln(1 + x) = \sum_{k=1}^{\infty} \frac{(-1)^{k+1} x^k}{k}, ~ x \in (-1, 1]\\
+  \hline
+  7&(1 + x)^p = \sum_{k=0}^{\infty} \frac{p(p-1)(p-2)\ldots(p-k+1) x^k}{k!},
+  ~ x \in (-1,1)\\
+  \hline
+  8&\arctg(x) = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k+1}}{2k + 1},
+  ~ x \in [-1,1]\\
+  \hline
+  9&\arcsin(x) = x + \sum_{k=1}^{\infty}
+  \frac{(2k - 1)!! x^{2k+1}}{(2k)!! (2k+1)}, ~ x \in [-1,1]\\
+  \hline
+
+\end{array}
+$
+\end{turn}
+
+\begin{block}[Необходимые условия сходимости числового ряда]
+  $$
+  \lim_{k \to \infty} a_k = 0
+  $$
+\end{block}
+
+\begin{block}[Критерий Коши сходимости числового ряда:]
+  Для того чтобы $\sum_{k=1}^{\infty} a_k$ был сходящимся необходимо и
+  достаточно
+  $$
+  \forall \varepsilon > 0 ~~~
+  \exists n_{\varepsilon} \in N ~~~
+  \forall n \ge n_{\varepsilon} ~~~
+  \forall p \in N ~~~
+  \left| \sum_{k=n+1}^{n+p} a_k \right| < \varepsilon
+  $$
+\end{block}
+
+\begin{block}[Критерий]
+  $
+  \forall k \in N ~~~
+  a_k \ge 0
+  $
+  для сходимости $a_k$ необходимо и достаточно чтобы $S_n \le M$
+\end{block}
+
+\begin{block}[Интегральный признак сходимости числового ряда:]
+  $f(x) \ge 0$ определена, непрерывна, $\searrow$ на $[1, +\infty]$ тогда
+  $$
+  \sum_{k=1}^{\infty} f(k) ~~~~~~ \int_1^{\infty} f(x)dx
+  $$
+  сходятся или расходятся одновременно.
+\end{block}
+
+\begin{block}[Признак сравнения:]
+  $\forall k \in N ~~~ 0 \le a_k \le b_k$ тогда
+
+  $\sum_{k=1}^{\infty} b_k$ сходится следовательно $\sum_{k=1}^{\infty} a_k$
+  сходится
+
+  $\sum_{k=1}^{\infty} a_k$ расходится следовательно $\sum_{k=1}^{\infty} b_k$
+  расходится
+\end{block}
+
+\begin{block}[Признак сравнения в предельной форме]
+  $\forall k \in N ~~~ a_k, b_k > 0 ~~~ a_k \sim b_k ~~ k \to \infty$ тогда
+
+  $\sum_{k=1}^{\infty} a_k ~~~ \sum_{k=1}^{\infty} b_k$
+  сходятся или расходятся одновременно.
+\end{block}
+
+\begin{block}[Признак Даламбера:]
+  $\forall k \in N ~~~ a_k > 0$
+
+  Если $\exists 0 < \lambda < 1 ~~~ \exists k_0 \in N ~~~ \forall k \ge k_0 ~~~
+  \frac{a_{k+1}}{a_k} \le \lambda$ тогда $\sum_{k=1}^{\infty} a_k$ сходится
+
+  Если $\exists k_0 \in N ~~~ \forall k \ge k_0 ~~~ \frac{a_{k+1}}{a_k} \ge 1$
+  тогда $\sum_{k=1}^{\infty} a_k$ расходится.
+\end{block}
+
+\begin{block}[Признак Даламбера в предельной форме]
+  $$
+  \forall k \in N ~~~ a_k > 0 ~~~
+  \exists \lim_{k \to \infty} \frac{a_{k+1}}{a_k} = \lambda
+  $$
+  1. Если $\lambda < 1 ~~~ \sum_{k=1}^{\infty} a_k$ сходится
+
+  2. Если $\lambda > 1 ~~~ \sum_{k=1}^{\infty} a_k$ расходится
+
+  3. Если $\lambda = 1 ~~~ \sum_{k=1}^{\infty} a_k$ может быть что угодно
+
+  Наиболее эфективно его можно использовать, если члены ряда содержат факториал.
+\end{block}
+
+\begin{block}[Признак Коши сходимости числового ряда]
+  $\forall k \in N ~~~ a_k \ge 0 $ тогда
+
+  Если $\exists 0 < \lambda < 1 ~~~ \exists k_0 \in N ~~~ \forall k \ge k_0 ~~~
+  \sqrt[k]{a_k} \le \lambda$ тогда $\sum_{k=1}^{\infty} a_k$ сходится.
+
+  Если $\exists k_0 \in N ~~~ \forall k \ge k_0 ~~~ \sqrt[k]{a_k} \ge 1$ тогда
+  $\sum_{k=1}^{\infty} a_k$ расходится.
+\end{block}
+
+\begin{block}[Признак Коши в предельной форме]
+  $$
+  \forall k \in N ~~~ a_k \ge 0 ~~~ \exists \lim_{k \to \infty} \sqrt[k]{a_k} =
+  \lambda
+  $$
+
+  1. Если $\lambda < 1 ~~~ \sum_{k=1}^{\infty} a_k$ сходится.
+
+  2. Если $\lambda > 1 ~~~ \sum_{k=1}^{\infty} a_k$ расходится.
+
+  3. Если $\lambda = 1$ может расходится или сходится.
+\end{block}
+
+\begin{block}[Признак Лейбница:]
+  $\forall k \in N ~~~ a_k > 0 ~~~ a_k \searrow ~~~ a_k \to 0$ тогда
+  $\sum_{k=1}^{\infty} (-1)^{k+1} a_k$ сходится.
+\end{block}
+
+\begin{block}[Признак Дирехле:]
+  1) $\sum_{k=1}^{\infty} a_k ~~~ \exists M > 0 ~~~ \forall n \in N ~~~
+  |\sum_{k=1}^n a_k| \le M$
+
+  2) $b_k \nearrow$ или $\searrow$
+
+  3) $b_k \to 0$
+
+  тогда $\sum_{k=1}^{\infty} a_k b_k$ сходится.
+\end{block}
+
+\begin{block}[Признак Абеля:]
+  1) $\sum_{k=1}^{\infty} a_k$ сходится.
+
+  2) $b_k \nearrow$ или $\searrow$
+
+  3) $\exists M > 0 ~~~ \forall k \in N ~~~ |b_k| \le M$
+
+  тогда $\sum_{k=1}^{\infty} a_k b_k$ сходится.
+\end{block}
+
+\begin{define}[равномерной сходимости]
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~ \forall x \in E
+  ~~~ \forall n \ge n_{\varepsilon} ~~~ |S_n (x) - f(x)| < \varepsilon
+  $$
+\end{define}
+
+\begin{block}[Критерий Коши равномерной сходимости]
+  $$
+  \sum_{k=1}^{\infty} f_k(x) ~ \text{на} ~ E
+  $$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall x \in E ~~~ \forall n \ge n_{\varepsilon} ~~~ \forall p \in N ~~~
+  |S_{n+p}(x) - S_n(x)| < \varepsilon ~ \text{или} ~
+  \left| \sum_{k = n + 1}^{n+p} f_k(x) \right| < \varepsilon
+  $$
+  тогда $S_n(x) \stackrel{E}{\rightrightarrows} f(x)$
+\end{block}
+
+\begin{block}[Критерий равномерной сходимости]
+  $$
+  \lim_{n \to \infty} \sup\limits_{x \in E} |S_n(x) - f(x)| = 0 ~~ \text{тогда} ~~
+  S_n(x) \stackrel{E}{\rightrightarrows} f(x)
+  $$
+\end{block}
+
+\begin{block}[Признак Вейштрасса]
+  $$
+  \forall x \in E ~~~ \forall k \in N ~~~ |f_k(x)| \le a_k ~~~
+  \sum_{k=1}^{\infty}a_k ~ \text{сходится, тогда} ~~~
+  \sum_{k=1}^{\infty} f_k (x) ~ \text{равномерно сходится}
+  $$
+\end{block}
+
+\begin{block}[Признак Дирихле]
+  1)
+  $
+  M > 0 ~~ \forall x \in E ~~ \forall n \in N ~~~
+  \left| \sum_{k=1}^n f_k(x) \right| \le M
+  $
+
+  2) $g_n(x) ~~~ \searrow$ или $\nearrow$
+
+  3) $g_n(x) \rightrightarrows 0$
+
+  тогда $\sum_{k=1}^{\infty} f_n(x) \cdot g_n(x)$ равномерно сходится
+\end{block}
+
+
+\begin{block}[Признак Абеля]
+  1) $\sum_{k=1}^{\infty} f_k(x) \rightrightarrows$
+
+  2) $g_n(x) ~~~ \searrow$ или $\nearrow$
+
+  3) $|g_n(x)| \le M$
+
+  тогда $\sum_{k=1}^{\infty} f_n(x) \cdot g_n(x)$ равномерно сходится
+\end{block}
 
 \end{document}
