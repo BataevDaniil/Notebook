@@ -1,0 +1,370 @@
+\begin{title}
+  Дифференциорование функций многих переменных
+\end{title}
+
+\begin{title}[\Large]
+  Метрическое пространство. Пространства $R^n$
+\end{title}
+
+\begin{define}[метрического пространства]
+  Метрическое пространство это множество $M$, на котором определена функция
+  $(x, y) \to \rho(x, y) \ge 0$
+
+  Аксиомы:
+
+  1) $\forall x,y \in M ~~~ \rho(x,y) = 0$ тогда и только тогда когда $x = y$
+
+  2) $\forall x,y \in M ~~~ \rho(x,y) =\rho(y,x)$
+
+  3) $\forall x,y,z \in M ~~~ \rho(x,y) \le \rho(x,y) + \rho(z,y)$
+  (неравества треугольника)
+
+  Отображение с такими свойствами называется метрикой.
+
+  Значение $\rho(x,y)$ это растояние между $x$ и $y$.
+\end{define}
+
+\begin{block}[Неравенство Коши]
+  $$
+  \left( \sum_{k=1}^n a_k b_k \right)^2 \le \sum_{k=1}^n a_k^2 \cdot
+  \sum_{k=1}^n b_k^2
+  $$
+\end{block}
+
+\begin{proof}
+  $$
+  P(t) = \sum_{k=1}^n (a_k + t b_k)^2 = \sum_{k=1}^n a_k^2 +
+  2t\sum_{k=1}^n a_k b_k + t^2 \sum_{k=1}^n b_k^2
+  $$
+  $$
+  D = 4\left( \sum_{k=1}^n a_k b_k \right)^2 - 4\sum_{k=1}^n a_k^2 \cdot
+  \sum_{k=1}^n b_k^2 \le 0
+  $$
+  $$
+  \left( \sum_{k=1}^n a_k b_k \right)^2 \le \sum_{k=1}^n a_k^2 \cdot
+  \sum_{k=1}^n b_k^2
+  $$
+\end{proof}
+
+\begin{block}[Неравенство Минского]
+  $$
+  \sqrt{\sum_{k=1}^n (a_k + b_k)^2} \le \sqrt{\sum_{k=1}^n a_k^2} +
+  \sqrt{\sum_{k=1}^n b_k^2}
+  $$
+\end{block}
+
+\begin{proof}
+  $$
+  \sum_{k=1}^n (a_k + b_k)^2 \sum_{k=1}^n a_k^2 +
+  2\sum_{k=1}^n a_k b_k + \sum_{k=1}^n b_k^2 \le
+  $$
+  $$
+  \le \sum_{k=1}^n a_k^2 + 2\sqrt{\sum_{k=1}^n a_k^2} \sqrt{\sum_{k=1}^n b_k^2}
+  + \sum_{k=1}^n b_k^2 \le
+  $$
+  $$
+  \le \left( \sqrt{\sum_{k=1}^n a_k^2} \right)^2 + 2\sqrt{\sum_{k=1}^n a_k^2}
+  \sqrt{\sum_{k=1}^n b_k^2} + \left( \sqrt{\sum_{k=1}^n b_k^2} \right)^2 =
+  $$
+  $$
+  = \left( \sqrt{\sum_{k=1}^n a_k^2} + \sqrt{\sum_{k=1}^n b_k^2} \right)^2
+  $$
+  $$
+  \sqrt{\sum_{k=1}^n (a_k + b_k)^2} \le \sqrt{\sum_{k=1}^n a_k^2} +
+  \sqrt{\sum_{k=1}^n b_k^2}
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Сходимость в метрических пространствах
+\end{title}
+
+\begin{define}[предела в метрическом пространстве]
+  $M$ с метрикой $\rho$. Последовательность $x_k \in M$ называется сходящейся
+  к элементу $p \in M ~~~ \lim_{k \to \infty} \rho(x_k, \rho) = 0$
+\end{define}
+
+\begin{define}[окрестности в метрическом пространстве]
+  Окрестностью точки $p \in M$ называют
+  $$
+  \{ x \in M: ~ \rho(x, p) < \varepsilon \} = O_{\varepsilon}(p)
+  $$
+  $$
+  \{ x \in M: ~ 0 < \rho(x, p) < \varepsilon \} =
+  \stackrel{\bullet}{O}_{\varepsilon}(p)
+  $$
+\end{define}
+
+Если дано метрическое пространство, то сложенное подпротсранство тоже является
+метрическим.
+
+\begin{theorem}
+  Если $x_k$ сходится в $\rho \in R^n ~ n \in N$ тогда $x_k \le M$
+\end{theorem}
+
+\begin{theorem}
+  Если $x_k$ сходится то она имеет не более одного предела.
+\end{theorem}
+
+\begin{proof}
+  Допустим предела два $x_k \to p$ $x_k \to q$
+  $$
+  0 < \rho(p, q) \le \rho(p, x_k) + \rho(x_k, q) = \rho(x_k, p) + \rho(x_k, q)
+  $$
+\end{proof}
+
+\begin{theorem}
+  Для того чтобы в метрическом прострастве $R^n$ последовательность
+  $$
+  x^{(k)} = (x_1^{(k)}, x_2^{(k)}, \ldots, x_n^{(k)}) \to
+  p = (p_1, p_2, \ldots, p_n)
+  $$
+  необходимо и достаточно чтобы
+  $$
+  \left\{
+  \begin{array}{c}
+    x_1^{(k)} \to p_1 \\
+    x_2^{(k)} \to p_2 \\
+    \cdots \cdots \\
+    x_n^{(k)} \to p_n
+  \end{array}
+  \right.
+  $$
+\end{theorem}
+
+\begin{proof}
+  I Пусть $x^{(k)} \to p$, тогда $|x_i^{(k)} - p_i| \le \rho(x^{(k)}, p) \to 0
+  ~~~ i = 1, 2, \cdots, n$
+
+  II Пусть все условия выполнены $\rho(x^{(k)}, p)$ - б/м тогда $x^{(k)} \to p$
+\end{proof}
+
+\begin{define}[фундаментальной последовательности]
+  $x_k$ метрического пространства $M$ называесятся фундаментальной, если
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall k \ge n_{\varepsilon} ~~~ \forall m \in M ~~~ \rho(x_k - x_{k+m}) <
+  \varepsilon
+  $$
+\end{define}
+
+\begin{theorem}
+  Если $x_k$ сходится, то она фундаментальна.
+\end{theorem}
+
+\begin{proof}
+  $$
+  x_k \to p ~~~ \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall k \ge n_{\varepsilon} ~~~ \rho(x_k, p) < \frac{\varepsilon}{2}
+  $$
+  $$
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  \forall m \ge n_{\varepsilon} ~~~ \rho(x_{k + m}, p) < \frac{\varepsilon}{2}
+  $$
+  тогда
+  $$
+  \rho(x_k, x_{k+m}) \le \rho(x_k, p) + \rho(x_{n+k}, p)
+  < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+  $$
+
+  Замечание: обратное утверждение не верно.
+\end{proof}
+
+\begin{define}[полного метрического пространства]
+  Метрическое пространства, в которых любая фундаментальная последовательность
+  сходится называется полным.
+\end{define}
+
+\begin{theorem}
+  $R^n$ метрическое пространство с евклидовой метрикой является полным.
+\end{theorem}
+
+\begin{proof}
+  $(x_k, y_k, z_k)$ - пусть последовательность фундаменталная
+
+  $x_k, y_k, z_k$ - также фундаменталные
+
+  $$
+  |x_{k+m} - x_k| \le \rho(x_k, y_k, z_k)
+  $$
+  $$
+  \rho(x_{k+m}, y_{k+m}, z_{k+m}) < \varepsilon
+  $$
+  $$
+  |y_{k+m} - y_k| < \varepsilon
+  $$
+  $$
+  |z_{k+m} - z_k| < \varepsilon
+  $$
+  $x_k \to p_1 ~~~ y_k \to p_2 ~~~ z_k \to p_3$ имеют пределы по критерию Коши
+
+  $(x_k, y_k, z_k) = (p_1, p_2, p_3)$ является сходящейся $\Rightarrow$ $R^n$
+  - является полным.
+\end{proof}
+
+\begin{define}[внутреней точки метрического пространства]
+  Точка $a$ называется внутренней точкой $D \subset M$ метрического
+  пространства если  $\exists O_{\varepsilon}(a) \subset D$
+\end{define}
+
+\begin{define}[открытого множества]
+  Множество из внутренних точек называют открытым множеством.
+\end{define}
+
+\begin{block}[Свойства]
+  1) $\cup D_i ~ i \in I = D$ - объеденение любого числа открытых множеств
+  является открытым множеством.
+
+  \begin{proof}
+    $a \in D ~~ \Rightarrow ~~ \exists i_0 \in I ~~ a \in D_{i_0}$
+
+    $\exists O_{\varepsilon}(a) \subset D_{c_0} \subset \cup D_i ~ i \in I$
+  \end{proof}
+
+  2) $\cap D_i = D ~ i = 1, 2, \ldots, m$ пересечение конечного числа открытых
+  множеств является открытым множеством.
+
+  \begin{proof}
+    $a \in D ~~~ \forall i = 1, 2, \ldots, m$
+    что то неясное
+  \end{proof}
+\end{block}
+
+\begin{define}[предельной точки]
+  Точка $a$ называется предельной точкой множества $E \subset M$ если
+  $\forall \stackrel{\bullet}{O}(a) E \not= \oslash$
+\end{define}
+
+\begin{define}[замкнутого множества]
+  Если множество содержит все свои предельные точки, то оно называется
+  замкнутым.
+\end{define}
+
+\begin{theorem}
+  Для того, чтобы множество $E \subset M$ было замкнутым необходимоо и
+  достаточно, чтобы $D = M\backslash E$ его дополнение было открытым.
+\end{theorem}
+
+\begin{proof}
+  I Пусть $E$ - замкнутое. Предположим что $D = M \backslash E$ не является
+  открытым $\exists a \in D$ $a$ - не внутренняя. В $\forall
+  \stackrel{\bullet}{O}(a) \cap \not= \oslash$ тоисть $a$ - предельная, но $E$
+  замкнуто $\Rightarrow a \in E$. Не может быть так как дополнение $E$\\
+
+  II Пусть $D$ - открытое. Пусть $E$ не замкнутое, тогда есть хотя бы одна
+  точка, которая $a \not\in E$ и $a$ предельная для $E$ $\Rightarrow \forall
+  \stackrel{\bullet}{O}_{\varepsilon}(a) \cap E \not= \oslash$. $a$ - не может
+  быть внутренней точкой.
+\end{proof}
+
+\begin{block}[Свойства]
+  1) $\cup E_i = E ~ i = 1,2, \ldots, m$ - объединение конечного числа
+  замкнутых множеств, есть множество замкнутое.
+
+  2) $\cap E_i = E ~ i \in I$ - пересечение любого числа замкнутых множеств,
+  есть множество замкнутое.
+
+  Законы Деморгана
+
+  $M \backslash (A \cup B) = (M \backslash A) \cap (M \backslash B)$
+
+  $M \backslash (\cup A_i) = \cap (M \backslash A_i)$
+
+  $M \backslash (\cap A_i) = \cup (M \backslash A_i)$
+
+  \begin{proof}
+    $\cup E_i ~ i = 1,2, \ldots, m$ - замкнутое
+
+    $M \backslash (\cup E_i) ~ i = 1,2, \ldots, m$ - открытое
+
+    $\cap (M \backslash E_i) ~ i = 1,2, \ldots, m$ открытое
+  \end{proof}
+\end{block}
+
+\begin{title}[\Large]
+  Компактные множества. Границы множества
+\end{title}
+
+\begin{define}[компактного множества]
+  Множество $K \subset M$ называется компактным, если из $\forall x_m$ можно
+  извлечь подпоследовательность $x_{m_k}$ которая сходится к элементу данного
+  множества.
+\end{define}
+
+\begin{theorem}
+  Компактное множество является ограниченным.
+\end{theorem}
+
+\begin{proof}
+  Пусть $K$ - неограничена $x_1 \in K$
+
+  $\exists x_2 \in K ~~~ \rho(x_2, x_1) \ge 1$
+
+  $\exists x_3 \in K ~~~ \rho(x_3, x_1) \ge 1$ и $\rho(x_3, x_2) \ge 1$ и так
+  далее.
+
+  Расиотрим последовательность $x_k \to p$, то она была бы фундаментальной для
+  членов с достаточно большими номерами растояние должно быть $< \varepsilon$
+\end{proof}
+
+\begin{theorem}
+  Компактное множество в любом метрическом пространстве является замкнутым.
+\end{theorem}
+
+\begin{proof}
+  Пусть $K$ - незамкунутое $a$ - предельная точка, $a \not\in K ~~~
+  x_k \in \stackrel{\bullet}{O}_{\frac{1}{k}}(a)$, который $x_k \in K$
+
+  Все элементы сходятся к $a$, а $a$ не входит в $K$. Противоречие
+\end{proof}
+
+\begin{theorem}[Больцана-Вейерштраса для $R^n$]
+  Для простоты $n = 3$ тогда $(x_k, y_k, z_k) ~ k \in N$
+
+  $(x_{\varphi_{s_i}}, y_{\varphi_{s_i}}, z_{\varphi_{s_i}}) \to
+  (p_1, p_2, p_3)$
+\end{theorem}
+
+\begin{theorem}
+  Для того чтобы множество $K \in R^n$ было компактным необходимо и достаточно
+  чтобы оно было замкнутым и ограниченным.
+\end{theorem}
+
+\begin{proof}
+  $R^n$ $x_k \in K$ ограничена. Из теоремы 3 $x_{m_i} \to a \in R^n$ $a$ -
+  предельная точка из $K$. Так как $K$ - замкнуто, $a \in K$
+\end{proof}
+
+\begin{title}[\Large]
+  Граница множества
+\end{title}
+
+\begin{define}[граничной точки множества]
+  Точка называется граничной точкой множества $E \subset M$, если
+  $\forall O_{\varepsilon}(b)\cap E \not= 0$
+
+  $\partial E$ - множества всех граничных точек множества $E$
+\end{define}
+
+\begin{define}
+  $$
+  \text{Отрезком} ~~~ [a,b] = \{ x = (x_1, x_2, \ldots, x_n): ~
+  x_i = a_i(1 - t) + b_it \}
+  $$
+  $$
+  \text{Прямая} ~~~ \{ x = (x_1, x_2, \ldots, x_n): ~ x_i = a_i(1 - t) +
+  tb_i ~~~ t \in R \}
+  $$
+  $$
+  \text{Луч} ~~~ \frac{\varphi(a)}{e} = \{ x: ~ x_i = a_i + te_i ~~~
+  t \in [0, + \infty\}
+  $$
+  Множество называется выпуклым, если любые две точки которые принадлежат этому
+  множеству, можно провести отрезок так что он будет принадлежать этомуже
+  множеству.
+\end{define}
+
+\begin{title}[\Large]
+  Предел функции многих переменных. Различные типы пределов функций многих
+  переменных
+\end{title}
