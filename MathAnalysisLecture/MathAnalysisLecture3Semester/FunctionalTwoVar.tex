@@ -368,3 +368,283 @@
   Предел функции многих переменных. Различные типы пределов функций многих
   переменных
 \end{title}
+
+\begin{define}[предела функции многих переменных]
+  Пусть $f(x)$ определена на $\stackrel{\bullet}{O}(a) \subset R^n$ число
+  $p = \lim_{x \to a} f(x)$ если
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
+  \forall x \in \stackrel{\bullet}{O}(a) ~~~ \rho(x, a) < \delta_{\varepsilon}
+  ~~~ |f(x) - p| < \varepsilon
+  $$
+  определение по Коши
+  $$
+  \forall x \in \stackrel{\bullet}{O}(a) ~~~ x_k \to a \Rightarrow f(x_k) \to p
+  $$
+  определение по Гейне
+\end{define}
+
+\begin{define}[предела по направлению функции многих переменных]
+  Пределом функции многих переменных $a = (a_1, a_2, \ldots, a_n)$ по
+  напрвалению лучу $e = (e_1, e_2, \ldots, e_n)$ - направляющие косинусы тогда
+  $$
+  \lim_{t \to 0 +0} f(a_1 + te_1, a_2 + te_2, \ldots, a_n + te_n)
+  $$
+  предел функции $f(x)$ по направлению $e$ в точке $a$.
+
+  $\vec e_2 = (\cos \alpha, \sin \alpha)$
+\end{define}
+
+\begin{define}[предела по множеству функции многих переменных]
+  Число $p$ называется пределом $f(x)$ в точке $a$ по множеству $E$ если
+  $p = \lim \limits_{x \to a ~ x \in E} f(x)$ где $a$ - предельная точка
+  множества $E$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
+  \forall x \in E ~~~ \rho(x, a) < \delta_{\varepsilon} ~ \Rightarrow ~
+  |f(x) - p| < \varepsilon
+  $$
+  Предел по направлению, есть частный члучай предела по множеству, когда луч
+  выходящий из точки $a$ выходит по направлению у вектору $e$
+
+  $$
+  D = \{ (x,y): ~ 0 < |x - a| < \alpha ~ 0 < |y - b| < \beta \}
+  $$
+  $$
+  \forall y \in \stackrel{\bullet}{O}(b) ~~~
+  \lim_{x \to a} f(x, y) = \varphi(y) ~~~ \lim_{y \to b} \varphi(y) = p_1
+  $$
+  $$
+  \forall x \in \stackrel{\bullet}{O}(a)
+  \lim_{y \to b} f(x, y) = \psi(x) ~~~ \lim_{x \to a} \psi(x) = p_2
+  $$
+\end{define}
+
+\begin{title}[\Large]
+  Неприрывность функции многих переменных. Свойства ФМП (локальные)
+\end{title}
+
+\begin{define}[непрерывности ФМП]
+  Пусть $f(x)$ определена на $O(a)$ если $\lim_{x \to a} f(x) = f(x)$, то
+  $f(x)$ - непрерывна
+\end{define}
+
+\begin{theorem}
+  Если $f(x), g(x)$ непрерывна в точке $a$ то
+  $$
+  f(x) \pm g(x)
+  $$
+  $$
+  f(x) \cdot g(x)
+  $$
+  $$
+  \frac{f(x)}{f(x)} ~~~ (g(a) \not= 0)
+  $$
+  также будут непрывны в точке
+\end{theorem}
+
+\begin{theorem}
+  $f(t) = f(t_1, t_2, \ldots, t_m)$ непрерывна в $b = (b_1, b_2, \ldots, b_m)$
+  $t_k = g_k(x) = g_k(x_1, x_2, \ldots, x_n) ~ k = 1,2, \ldots, m$ непрывна в
+  точке $a = (a_1, a_2, \ldots, a_m)$ тогда
+  $F(x) = f(g_1(x), g_2(x), \ldots, g_n(x)) ~ (b_k = g_k(a))$ непрерывна в
+  точке $a$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \forall x^{(\varphi)} \to a ~ \Rightarrow ~ g_k(x^{(\varphi)}) \to b_k ~~~
+  f(g_1(x^{\varphi}), g_2(x^{\varphi}), \ldots, g_m(x^{\varphi})) \to f(b) ~~~
+  k = 1,2, \ldots, m
+  $$
+  $$
+  \Rightarrow F(x^{(\varphi)}) \to f(b) = F(a) ~~~ \text{непрерывна в } ~ a
+  $$
+\end{proof}
+
+\begin{define}
+  $f(x)$ определена на $E$ и предельна в точке $a$, то непрерывна в точке $a$
+  по множеству $E$, если $\lim \limits_{x \to a ~ x \in E} f(x) = f(a)$
+\end{define}
+
+\begin{title}[\Large]
+  Свойства ФМП непрерывных не множествах
+\end{title}
+
+\begin{define}[непрерывности на $E$ ФМП]
+  $f(x)$ называется непрерывной на $E$ если она непрерывна в каждой точке по
+  множеству $E$ тоисть
+  $$
+  \lim_{\substack{x \to a \\ x \in E}} f(x) = f(a)
+  $$
+\end{define}
+
+\begin{theorem}[Вейерштрасса ФМП]
+  Есил $f(x)$ непрерывна на комактном множестве $K$ в метрическом пространстве
+  $M$, то она ограничена на множестве $K$. $\exists L > 0 ~~~
+  \forall x \in K ~~~ |f(x)| \le L$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \exists L > 0 ~~~ \forall x_L \in K ~~~ |f(x_L)| > L
+  $$
+  $$
+  \exists n \in N ~~~ \forall x_n \in K ~~~ |f(x_n)| > n
+  $$
+  так как $K$ - компактное множество, то $x_n$ $x_{k_m} \to a \in K$ тогда
+  $|f(x_{n_m})| > n_m ~ \Rightarrow ~ n_m \to \infty ~ |f(a)| \ge +\infty$
+  противоречие
+\end{proof}
+
+
+\begin{theorem}
+  Если $f(x)$ непрерывно на компактном множестве $K$, то в некоторых точках она
+  достигается своего наибольшено и наименьшего значения
+  $$
+  \exists a \in K ~~~ f(a) = \inf \limits_{x \in K} f(x)
+  $$
+  $$
+  \exists a \in K ~~~ f(d) = \sup \limits_{x \in K} f(x)
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \inf \limits_{x \in K} f(x) = \alpha
+  $$
+  1) $\forall x \in K ~~~ f(x) \le \alpha$
+  2) $\varepsilon > 0 ~~~ \exists x_{\varepsilon} \in K ~~~
+  f(x_{\varepsilon}) < \alpha + \varepsilon$
+
+  Пусть
+  $$
+  \varepsilon = \frac{1}{k} ~~~ k \in N ~~~ \exists x_k \in K
+  \alpha \le f(x_k) < \alpha + \frac{1}{k}
+  $$
+  так как $K$ - компактное множество, то
+  $$
+  \exists x_k \in K ~~~ x_{k_{\varphi}} \to a \in K ~~~ \alpha \le
+  f(x_k{\varphi}) < \alpha + \frac{1}{k_{\varphi}}
+  $$
+  $$
+  \alpha \le f(a) \le \alpha ~ \Rightarrow ~ f(a) = \alpha = \inf f(x)
+  $$
+\end{proof}
+
+\begin{theorem}
+  $f(x)$ непрерывная на компактном множестве $K$ ялвляется равномерно
+  непрерывной на множестве $K$
+\end{theorem}
+
+\begin{proof}
+  $f(x)$ является равномерно непрерывной на множестве $K$ если
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
+  \forall x', x'' \in K ~~~ \rho(x' - x'') < \delta_{\varepsilon}
+  |f(x') - f(x'')| < \varepsilon
+  $$
+  Допустим это не так
+  $$
+  \exists \varepsilon_0 > 0 ~~~ \forall \delta > 0 ~~~ \exists x_{\delta}',
+  x_{\delta}'' \in K ~~~ \rho(x_{\delta}', x_{\delta}'') < \delta ~~~
+  |f(x_{\delta}') - f(x_{\delta}'') \ge \varepsilon_0
+  $$
+  $$
+  \delta = \frac{1}{k} ~~~ k \in N ~~~ x_k', x_k'' \in K ~~~
+  \rho(x_k', x_k'') < \frac{1}{k} ~~~ |f(x_k') - f(x_k'')| \ge \varepsilon_0
+  $$
+  $$
+  x_k' \in K ~~~ x_{k_{\varphi}}' \to a \in K ~~~ x_{k_{\varphi}}'' \to a
+  $$
+  $$
+  |f(x_{k_{\varphi}}' - f(x_{k_{\varphi}}'') \ge \varepsilon_0
+  $$
+  $$
+  |f(a) - f(a)| \ge \varepsilon_0 > 0
+  $$
+\end{proof}
+
+\begin{theorem}[Коши для открытого множества]
+  Пусть $f(x)$ непрерывна в области $D \subset R^n ~~~ f(a) = p ~~~ f(b) = q$
+  где $a,b \in D$ то для $\forall s$ между $p$ и $q$
+  $\exists c \in D: ~ f(c) = s$
+\end{theorem}
+
+\begin{proof}
+  $\gamma \subset D ~~~ x = x(t) = (x_1(t), x_2(t), \ldots, x_n(t)) ~~~
+  t \in [\alpha, \beta]$
+
+  Рассмотрим $f(t) = f(x(t))$ которая также непрерывна по теореме Коши о
+  функция непрерывных на отрезках $\forall s$ между $p$ и $q$
+  $\exists G \in [\alpha, \beta] ~~~ f(G) = s$
+
+  $f(\alpha) = f(a) = p ~~~ x(G) = s$
+
+  $f(\beta) = f(b) = q ~~~ f(c) = f(G) = s$
+\end{proof}
+
+\begin{title}[\Large]
+  Дифференциируемость функций многих переменных. Частная производная
+\end{title}
+
+\begin{define}[дифференциала в точке]
+  Пусть $f(x) = f(x_1, x_2, \ldots, x_n)$ определена в окрестности
+  $a = (a_1, a_2, \ldots, a_n)$
+  $$
+  f_{\Delta}(a) = f(x) - f(a) = \sum_{k=1}^n p_k (x_k - a_k) +
+  \stackrel{-}{o}(\rho(x, a))
+  $$
+  $\stackrel{-}{o}(\rho(x, a)) = \alpha(x) \rho(x, a)$ где $\alpha(x) \to 0
+  x \to a$
+
+  тогда $f(x)$ называют дифференцируемость в точке $a$
+\end{define}
+
+\begin{block}[Критерий]
+  Для того что $f(x)$ определен в окрестности точки $a$ была дифференцируема
+  необходимо и достаточно чтобы
+  $$
+  f_{\delta}(a) = f(x) - f(a) = \sum_{k=1}^n f_k(x)(x_k - a_k)
+  $$
+\end{block}
+
+\begin{theorem}
+  Если функция дифференцируема в точке $a$ тогда она непрерывна в точке $a$
+\end{theorem}
+
+\begin{define}
+  Пусть $f(x) = f(x_1, x_2, \ldots, x_n)$ определена в $O(a)$, если существует
+  конечный предел
+  $$
+  \lim_{x_1 \to a_1}
+  \frac{f(x_1, a_2, a_3, \ldots, a_n) - f(a_1, a_2, \ldots, a_n)}{x_1 - a_1}
+  $$
+  то его называют частной производной в точке $a$. $f_{x_1}'(a) =
+  \frac{\partial f(a)}{\partial x_1}$
+\end{define}
+
+\begin{theorem}
+  Если $f(x)$ дифференциируема в точке $a$, то существует частная производная
+  по $x_k$ в точке $a$ и $p_k = f_{x_k}'(a)$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \lim_{x_1 \to a_1}
+  \frac{p_1(x_1 - a_1) + 0 + \alpha(x) \rho(x, a)}{x_1 - a_1} =
+  $$
+  $$
+  = \lim_{x_1 \to a_1}
+  \frac{p_1(x_1 - a_1) + \alpha(x) |x_1 - a_1|}{x_1 - a_1} =
+  $$
+  $$
+  = p_1 \pm \lim_{x_1 \to a_1} \alpha(x) = p_1 \pm 0 = p_1
+  $$
+
+  Замечание: дает необходимое, но не достаточное условие
+\end{proof}
+
+\begin{title}[\Large]
+  Достаточное условия дифференцируемости функций многих переменных
+\end{title}
