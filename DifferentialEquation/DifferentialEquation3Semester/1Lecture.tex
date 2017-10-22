@@ -8,70 +8,53 @@ $y(x)$ - ОДУ
 
 $y(t_0, t_1, \ldots, t_n)$ - частные ДУ
 
-Задачи решаемые ОДУ
+\begin{title}[\Large]
+  Задачи приводящие к ДУ.
+\end{title}
 
 1) Найти закон движение тела с заданной постоянной скоростью $\upsilon$
-$$
-s' (t) = \upsilon
-$$
-$$
-s (t) = \upsilon t + C
-$$
+
+$s' (t) = \upsilon$ простейшее ДУ
+
+$s (t) = \upsilon t + C$ решение уравнения эта функция
 
 2) Найти закон движение тела при постоянном ускорения
-$$
-s'' (t) = a
-$$
-$$
-s'(t) = at + C_1
-$$
-$$
-s(t) = \frac{at^2}{2} + C_1 t + C_2
-$$
+
+$s'' (t) = a$ - уравнение 2-го порядка
+
+$s'(t) = at + C_1$
+
+$s(t) = \frac{at^2}{2} + C_1 t + C_2$
+
 или если известна начальная скорость и положение, то
-$$
-s(t) = \frac{at^2}{2} + \upsilon_0 t + v_0
-$$
 
-3) Задача о расходе радиактивного вещества. Известно что скорость распада радия
-прямопрапарциональны его количества $m(t)$. Опредилить закон изменения $m(t)$
+$s(t) = \frac{at^2}{2} + \upsilon_0 t + S_0$
 
-$$
-m'(t) = k m(t)
-$$
-$$
-m(t) = c e^{kt}
-$$
-$$
-m(t_0) = c e^{kt_0} = m_0 ~~~ c = m_0 e^{-kt_0}
-$$
-$$
-m(t) = m_0e^{k(t-t_0)}
-$$
+3) Задача о распаде радиактивного вещества. Скорость распада радия
+прямопрапарциональны его количества $m(t)$. Опредилить закон изменения
+$m(t)$ - массы от времени
 
-\begin{define}
+$m'(t) = k m(t)$
+
+$m(t) = c e^{kt}$
+
+$m(t_0) = c e^{kt_0} = m_0 ~~~ c = m_0 e^{-kt_0}$
+
+$m(t) = m_0e^{k(t-t_0)}$
+
+\begin{define}[обыкновенного дифференциального уравнения]
   ОДУ называется уравнение содержащее неизвестную функцию одной переменной и ее
   производные или дифференциалы т.е. уравнение вида
 
   $F(x, y(x), y'(x), \ldots, y^{(m)} (x)) = 0$ или
+
+
   $F(x, y(x), dx, dy, d^2 x, d^2 y, \ldots d^n x, d^n y) = 0$
 
   $$
   y'(x) = \frac{dy}{dx}
   $$
 \end{define}
-Примеры:
-
-1) $y'(x) = 2 y(x) + x$ может быть записана так $y' = 2y + x$ $y(x)$ - искомая
-функция
-
-2) $x'''(t) = x'(t)$
-
-3)
-
-$ydx + xdy = 0 ~~ / dx ~ y + xy' = 0$
-
-$ydx + xdy = 0 ~~ / dy ~ yx' + x = 0$
 
 \begin{define}[порядка уравнения]
   Порядком уравнения называется максимальный порядок производной или
@@ -83,17 +66,6 @@ $ydx + xdy = 0 ~~ / dy ~ yx' + x = 0$
   раз каков порядок уравнения и которая при подстановке в уравнение обращает его
   в тождество.
 \end{define}
-Пример:
-
-$x''(t) + xt = 0$
-
-$x''(t) = -x(t)$
-
-$\varphi(t) = C_1 \cos t$
-
-$\psi(t) = C_2 \sin t$
-
-$x(t) = C_1 \cos t + C_2 \sin t$
 
 \begin{title}
   Уравнения первого порядка
@@ -101,8 +73,8 @@ $x(t) = C_1 \cos t + C_2 \sin t$
 
 $F(x, y(x), y'(x)) = 0$ или $F(x, y(x), dy, dx) = 0$
 
-$y'(x) = f(x, y(x))$ - уравнение разрешено относительно производной. Тоже что
-$\frac{y(x)}{dx} = f(x, y(x))$
+$y'(x) = f(x, y(x))$ - уравнение разрешенное относительно производной. Тоже что
+$\frac{dy(x)}{dx} = f(x, y(x))$
 
 $f(x, y)$ - заданая функция с двумя независимыми переменными. Будем считать что
 эта функция определена и непрерывна в некоторой односвязной области $D$.
@@ -119,7 +91,7 @@ $f(x, y)$ - заданая функция с двумя независимыми
 
 4) устойчивость к изменениям ДУ
 
-\begin{define}
+\begin{define}[решения ДУ]
   Пусть функция $y = \varphi (x)$ определена на $<a,b>$. $\varphi (x)$
   называется решением уравнения $y'(x) = f(x, y(x))$ если
 
@@ -130,64 +102,663 @@ $f(x, y)$ - заданая функция с двумя независимыми
   3) $\frac{d\varphi (x)}{dx} \equiv f(x, \varphi(x)) ~~ \forall x \in <a,b>$
 \end{define}
 
-\begin{define}
+\begin{define}[задачи Коши]
   Задачей Коши для уравнения $y'(x) = f(x, y(x))$ называется следущая задача
-  найти такое решение уравнение уравнения которое при заданом $x$ принимает
-  заданное значение $y_0$
+  найти такое решение уравнения которое при заданом $x$ принимает
+  заданное значение $y_0$, тоесть удовлитворяет условию $y(x_0) = y_0$
+  - условие Коши или начальное условие
+  $$
+  \left\{
+  \begin{array}{l}
+    y'(x) = f(x, y(x)) \\
+    y(x_0) = y_0
+  \end{array}
+  \right.
+  $$
 \end{define}
-Пример:
-$$
-\left\{
-\begin{array}{l}
-  y'(x) = f(x, y(x)) \\
-  y(x_0) = y_0
-\end{array}
-\right.
-$$
 
+\begin{define}[общего решния ДУ]
   Общим решением уравнения $y'(x) = f(x, y(x))$ называется функция $y = y(x,c)$
-такая что при $\forall C$ функция является решением уравнения и $\forall$
-решение уравнения входит в это семейство при некоторых $C$.
+  такая что $\forall C$ функция является решением уравнения и любое
+  решение уравнение входит в это семейство при некоторых $C$.
 
   Решение при конкретном $C$ называется частным решением.
-
-$xdy + ydx = 0$ тоже что и $d(x,y) = 0$
+\end{define}
 
 \begin{title}[\Large]
   Гометрический смысл уравнения первого порядка
 \end{title}
 
-$y' = f(x,y) ~~~ y'(x) = \tg \alpha$
+\begin{define}[изоклина]
+  $y' = f(x,y) ~~~ y'(x) = \tg \alpha ~~~ \tg \alpha = f(x,y) ~~~
+  \tg \alpha = A ~ \Rightarrow ~ f(x,y) = A$
 
-$f(x, y) = A$ - изоклин
+  $f(x, y) = A$ - изоклин
+\end{define}
 
-Пример:
-
-$y' = y - x ~~~ y - x = A $
-
-$A = 0 ~~~ y = x$ если $y > x$ то $y' > 0$ тогда $y$ возрастает
-
-\includegraphics[width = 5cm]{geomFirstEqus}
-
-\begin{title}
+\begin{title}[\Large]
   Интегральные типы уравнений
 \end{title}
 
-$y'(x) = f(x, y(x))$
+$$
+y'(x) = f(x, y(x))
+$$
 $$
 y'(x) = f(x) ~~~ y(x) = \int f(x)dx
 $$
 $$
-y'(x) = x^2 ~~~ y(x) =\frac{x^3}{3} + C
-$$
-$$
-\left( \int_a^x f(x) dt \right)' = f(x) ~~~ \int f(x)dx = \int_a^x f(t)dt + C
+\left( \int_a^x f(t) dt \right)' = f(x) ~~~ \int f(x)dx = \int_a^x f(t)dt + C
 $$
 $$
 y(x) = \int_{x_0}^x f(t)dt + C ~ \text{- общее решение}
 $$
+$$
+y(x) = \int_{x_0}^x f(t)dt + y_0 ~ \text{- решение задачи Коши}
+$$
 
-Решить задачу Коши
+\begin{title}[\Large]
+  Типы уравнений
+\end{title}
+
+\begin{define}[уравнения с разделяющимися переменными]
+  Уравнения с разделяющимися переменными (УРП). Тоесть уравнения которые
+  могут быть переведены к такому виду
+  $$
+  y'(x) = f(x) \cdot g(y(x))
+  $$
+  $$
+  \frac{dy(x)}{dx} = f(x) \cdot g(y(x))
+  $$
+\end{define}
+
+\begin{block}[Общий вид решения УРП]
+  $$
+  y'(x) = f(x)g(y(x))
+  $$
+  $$
+  \frac{dy(x)}{dx} = f(x) g(y(x))
+  $$
+  $$
+  \frac{dy(x)}{g(y(x))} = \int f(x)dx ~~~ g(y(x)) \not= 0
+  $$
+  $$
+  \int \frac{dy(x)}{g(y(x))} = \int f(x)dx
+  $$
+\end{block}
+
+\begin{theorem}[о $\exists !$ решения УРП]
+  Пусть $f(x), g(u)$ определены и непрерывны на $x \in <a, b> ~ u \in <c, d>$
+  $g(u) \not= 0 ~~~ \forall u \in <c, d>$ тогда
+  $\forall x_0 \in <a, b> ~~~ \forall y_0 \in <c, d>$
+  $$
+  \left\{
+  \begin{array}{l}
+    y'(x) = f(x, y(x)) \\
+    y(x_0) = y_0
+  \end{array}
+  \right.
+  $$
+  имеет единственное решение
+
+  Замечание: $\exists m \in <c, d> ~ g(m) = 0$ тогда $y(x) \equiv m$
+\end{theorem}
+
+\begin{proof}
+  Предположим что $\varphi(x)$ - решение уравнения $y'(x) = f(x, y(x))$
+  удовлетворяющее $y(x_0) = y_0$ тоесть $\varphi(x_0) = y_0$
+  $$
+  \frac{d\varphi(x)}{dx} \equiv f(x)g(\varphi(x)) ~~~ x \in <a, b>
+  $$
+  $$
+  \frac{d(\varphi(x))}{g(\varphi(x))} \equiv f(x)dx
+  $$
+  $$
+  \int_{x_0}^x \frac{d(\varphi(t))}{g(\varphi(t))} = \int_{x_0}^x f(t)dt
+  $$
+  $$
+  u = \varphi(t) ~~~ \int_{\varphi(x_0)}^{\varphi(x)} \frac{du}{g(u)} =
+  \int_{x_0}^x f(t)dt
+  $$
+  $$
+  \int_{y_0}^{\varphi(x)} \frac{du}{g(u)} = \int_{x_0}^x f(t)dt
+  $$
+  $$
+  G(u) |_{y_0}^{\varphi(x)} = F(x) - F(x_0)
+  $$
+  $$
+  G(\varphi(x)) = G(y_0) + F(x) - F(x_0)
+  $$
+  $g(u) \not= 0$ $g(u)$ - сохраняет знак $G'(u) = \frac{1}{g(u)}$ - сохраняет
+  знак $G'(u) \not= 0$ $G(u)$ - строго монотонна и непрерывна $\Rightarrow$
+  существает обратная ей функция
+  $$
+  \varphi(x) = G^{-1} \left( G(y_0) + \int_{x_0}^x f(t)dt \right)
+  $$
+  из едеинственности обратной функции $\Rightarrow$ единственность решения \\
+
+  Докажем существование
+  $$
+  \varphi(x_0) = G^{-1}(G(y_0)) = y_0
+  $$
+  $$
+  (G^{-1}(y))' = \frac{1}{G'(G^{-1}(y))}
+  $$
+  $$
+  \varphi'(x) = \frac{1}{G' \left( G^{-1} \left( G(y_0)
+  + \int_{x_0}^x f(t)dt \right) \right)}
+  \left( G(y_0) + \int_{x_0}^x f(t)dt \right)' =
+  $$
+  $$
+  = f(x) \cdot g \left( G^{-1} \left( G(y_0) +
+  \int_{x_0}^x f(t)dt \right) \right) = f(x) \cdot g(\varphi(x))
+  $$
+  $\Rightarrow ~ \varphi(x)$ - решение задачи
+\end{proof}
+
+\begin{theorem}
+  Если $\int_m \frac{du}{g(u)}$ - расходится, то через каждую точку области
+  проходит единственное решение
+
+  Если $\int_m \frac{du}{g(u)}$ - сходится, то в точка $y = m$ единтвсенность
+  нарушена
+\end{theorem}
+
+\begin{title}[\Large]
+  Уравнения приводящие к УРП
+\end{title}
+
+\begin{block}[Уравнения сводящиеся к линейной заменой]
+  $$
+  y'(x) = f(\alpha x + \beta y(x) + \gamma) ~~~ \alpha, \beta, \gamma \in R
+  $$
+  $$
+  z(x) = \alpha x + \beta y(x) + \gamma ~ \Rightarrow z'(x) = \alpha +
+  \beta y'(x) ~~~ \beta \not= 0
+  $$
+  $$
+  \frac{z'(x) - \alpha}{\beta} = f(z(x))
+  $$
+  $$
+  z'(x) = \beta f(z(x)) + \alpha ~~ \text{тоже что и} ~~
+  z'(x) = 1 \cdot g(z(x))
+  $$
+\end{block}
+
+\begin{block}[Однородные уравнения]
+  $$
+  y'(x) = \Phi \left( \frac{y(x)}{x} \right) ~ \text{замена} ~ z(x) =
+  \frac{y(x)}{x}
+  $$
+  $$
+  y(x) = z(x) \cdot x
+  $$
+  $$
+  y'(x) = z'(x) x + z(x)
+  $$
+  $$
+  x z'(x) + z(x) = \Phi(z(x))
+  $$
+  $$
+  z'(x) = \frac{\Phi(z(x)) - z(x)}{x}
+  $$
+\end{block}
+
+\begin{title}[\Large]
+  Линейное уравнение 1-ого порядка
+\end{title}
+
+\begin{define}[линейного однородного и неоднородного уравнения]
+  $y'(x) = a(x)y(x) + b(x)$ - линейное неоднородное уравнение
+
+  $y'(x) = a(x)y(x)$ - линейное однородное уравнение
+\end{define}
+
+\begin{block}[Общее решение линейного однородного уравнения]
+  $$
+  y'(x) = a(x)y(x)
+  $$
+  $$
+  \frac{dy(x)}{dx} = a(x)y(x)
+  $$
+  $$
+  \int \frac{dy(x)}{y} = \int a(x)dx ~~~ y \not= 0
+  $$
+  $$
+  \ln y(x) = \in a(x)dx
+  $$
+  $$
+  |y(x)| = e^{\int_{x_0}^x a(t) dt + C}
+  $$
+  $$
+  y(x) = C e^{\int_{x_0}^x a(t) dt}
+  $$
+\end{block}
+
+\begin{block}[Метод вариации произвольной постоянной]
+  $$
+  y(x) = C(x) e^{\int_{x_0}^x a(t) dt}
+  $$
+  найдем $C(x)$ там чтобы $y(x)$ стал решением
+  $$
+  y'(x) = C'(x) \cdot e^{\int_{x_0}^x a(t) dt} +
+  C(x) \cdot \left( e^{\int_{x_0}^x a(t) dt} \right)' =
+  $$
+  $$
+  = C'(x) \cdot e^{\int_{x_0}^x a(t) dt} +
+  C(x) \cdot e^{\int_{x_0}^x a(t) dt} a(x)
+  $$
+  $$
+  C'(x) \cdot e^{\int_{x_0}^x a(t) dt} +
+  C(x) \cdot e^{\int_{x_0}^x a(t) dt} a(x) =
+  a(x) C(x) \cdot e^{\int_{x_0}^x a(t) dt} + b(x)
+  $$
+  $$
+  C'(x) = \frac{b(x)}{e^{\int_{x_0}^x a(t) dt}} =
+  b(x) e^{-\int_{x_0}^x a(t) dt}
+  $$
+  $$
+  C(x) = \int_{x_0}^x b(s) e^{\int_{x_0}^s a(t) dt} ds + D
+  $$
+  $$
+  y(x) = \left( \int_{x_0}^{\alpha} e^{-\int_{x_0}^t a(\tau) d\tau}
+  b(t)dt + D \right) \cdot e^{\int_{x_0}^x a(\tau) d\tau} =
+  $$
+  $$
+  = D e^{\int_{x_0}^x a(\tau) d\tau} + \int_{x_0}^x
+  e^{\int_{x_0}^x a(\tau) d\tau - \int_{x_0}^x a(\tau) b\tau} d(t)dt
+  $$
+  $$
+  y(x) = D e^{\int_{x_0}^x a(\tau) d\tau} + \int_{x_0}^x
+  e^{\int_{t}^x a(\tau) d\tau} b(t)dt
+  $$
+  общее решение неоднородного уравнения
+\end{block}
+
+\begin{block}[Формула Коши]
+  $$
+  \left\{
+  \begin{array}{l}
+    y'(x) = a(x)y(x) + b(x) \\
+    y(x_0) = y_0
+  \end{array}
+  \right. ~~~ \text{задача Коши}
+  $$
+  $$
+  y(x) = y_0 e^{\int_{x_0}^x a(\tau) d\tau} + \int_{x_0}^x
+  e^{\int_{t}^x a(\tau) d\tau} b(t)dt
+  $$
+
+  Введем обозначения
+
+  $$
+  K(x, t) = e^{\int_t^x a(\tau) d\tau}
+  $$
+  $$
+  y(x) = y_0 K(x, x_0) + \int_{x_0}^x K(x, t) b(t) dt
+  $$
+  $K(x, t)$ - функция Коши
+\end{block}
+
+\begin{block}[Свойства]
+  1) $K(x, x) = 1$
+
+  2) при каждом фиксираванном $t \in <\alpha, \beta> ~ K(x, t)$ есть решение
+  $y'(x) = a(x)y(x)$
+\end{block}
+
+\begin{theorem}
+  Пусть $a(x), b(x)$ определена и непрерывна $\forall \in <\alpha, \beta>$
+  тогда задача Коши $\forall x_0 \in <\alpha, \beta> ~~~ \forall y_0 \in R$
+  $\exists !$ решение которое выражается
+  $$
+  y(x) = y_0 e^{\int_{x_0}^x a(\tau) d\tau} + \int_{x_0}^x
+  e^{\int_{t}^x a(\tau) d\tau} b(t)dt
+  $$
+\end{theorem}
+
+\begin{proof}
+  Предположим что есть другое решение задачи Коши тогда
+  $$
+  \varphi(x) = u(x) e^{\int_{x_0}^x a(\tau)d\tau}
+  $$
+  проделов те же действия что и в методе вариаций получим что
+  $\varphi(x) = y(x)$ $\Rightarrow$ единственность есть.
+
+  Проверим что формула Коши действительно определяет решение задачи Коши
+  $$
+  y'(x) = y_0 e^{\int_{x_0}^x a(\tau) d\tau} a(x) + \left( \int_{x_0}^x
+  e^{\int_{t}^x a(\tau) d\tau} b(t)dt \cdot
+  e^{\int_{x_0}^x a(\tau)d\tau} \right)' =
+  $$
+  $$
+  \left( \int_{\alpha(x)}^{\beta(x)} F(x, t) dt \right)' =
+  F(x, \beta(x)) \beta'(x) - F(x, \alpha(x)) \alpha'(x) +
+  \int_{\alpha(x)}^{\beta(x)} F_x(x, t)dt
+  $$
+  $$
+  = y_0 e^{\int_{x_0} a(\tau)d\tau} a(x) + b(x) e^{-\int_{x_0}^x a(\tau) d\tau}
+  e^{\int_{x_0}^x a(\tau) d\tau} +
+  $$
+  $$
+  + \int_{x_0}^x b(t)
+  e^{-\int_{x_0}^t a(\tau) d\tau} e^{\int_{x_0}^x a(\tau) d\tau} a(x) dt =
+  $$
+  $$
+  a(x) \left( y_0 e^{\int_{x_0}^x a(\tau) d\tau} + \int_{x_0}^x b(t)
+  e^{\int_t^x a(\tau) d\tau dt} \right) + b(x) =
+  $$
+  $$
+  = a(x)y(x) + b(x)
+  $$
+\end{proof}
+
+\begin{block}[Уравнение Бернули]
+  $$
+  y'(x) = a(x)y(x) + b(x)y^m(x) ~~~ m \not= 0 ~~~ m \not= 1
+  $$
+  $$
+  \frac{y'(x)}{y^m(x)} = a(x) y^{1 - m}(x) + b(x)
+  $$
+  $$
+  z(x) = y^{1 - m}(x)
+  $$
+  $$
+  z'(x) = (1 - m) y^{-m}(x) y'(x) = \frac{(1-m)y'(x)}{y^m(x)} ~ \Rightarrow
+  $$
+  $$
+  \frac{y'(x)}{y^m(x)} = \frac{z'(x)}{1 - m}
+  $$
+  $$
+  z'(x) = (1 - m) a(x)z(x) + (1 - m)b(x) ~
+  \text{- линейное уравнение}
+  $$
+\end{block}
+
+\begin{title}[\Large]
+  Уравнение в полных дифференциалах
+\end{title}
+
+Если частные производные 2-ого порядка существуют и непрерывны, то она равны
 $$
-y(x) = \int_{x_0}f(t)dt + y_0
+\left( \frac{\partial^2 f}{\partial x \partial y},
+\frac{\partial^2 f}{\partial y \partial x} \right)
 $$
+
+\begin{define}[уравнения в полных дифференциалах]
+  Уравнение вида $P(x, y)dx + Q(x, y)dy = 0$ называется, уравнением в полных
+  дифференциалах, если левая часть уравнения есть дифференциал некоторой
+  функции тоесть выполнено условие
+  $$
+  \frac{\partial P(x, y)}{\partial y} = \frac{\partial Q(x, y)}{\partial x}
+  $$
+  $\Rightarrow ~ \exists F(x, y)$ чей дифференциал стоит слева
+  $$
+  \left\{
+  \begin{array}{l}
+    \frac{\partial F(x, y)}{\partial x} = P(x, y) \\
+    \frac{\partial F(x, y)}{\partial y} = Q(x, y)
+  \end{array}
+  \right.
+  $$
+  $dF(x, y) = 0 ~ \Rightarrow ~ F(x, y) \equiv C$ 1-ый интеграл уравнения
+\end{define}
+
+\begin{block}[Решение уравнений в полых дифференциалах в общем виде]
+  $$
+  F(x, y) = \int_{x_0}^x P(t, y)dt + C(y)
+  $$
+  $$
+  \frac{\partial F(x, y)}{\partial y} =
+  \left( \int_{x_0}^x P(t, y)dt + C(y) \right)'_y =
+  \int_{x_0}^x \frac{\partial P(t, y)}{\partial y} dt + C'(y) =
+  $$
+  $$
+  = \int_{x_0}^x \frac{\partial Q(t, y)}{\partial t} dt + C'(y) =
+  Q(t, y)|_{x_0}^x + C'(y) = Q(x, y) - Q(x_0, y) + C'(y) = Q(x, y)
+  $$
+  $$
+  C'(x) = Q(x_0, y)
+  $$
+  $$
+  C(y) = \int_{y_0}^y Q(x_0, s) ds + D
+  $$
+  $$
+  F(x, y) = \int_{x_0}^x P(t, y) \int_{y_0}^y Q(x_0, s) ds + D
+  $$
+  $$
+  \int_{x_0}^x P(t, y)dt + \int_{y_0}^y Q(x_0, s) ds = C ~ \text{- решение}
+  $$
+\end{block}
+
+\begin{theorem}
+  Пусть $P(x, y) ~ Q(x, y)$ непрерывны в некоторой односвязной области $G$
+  $Q(x, y) \not= 0 ~~~ (x,y) \in G$ и существуют непрерывные частные
+  производные, тогда $\forall (x_0, y_0) \in G_0$ задача Коши
+  $\exists !$ решение
+\end{theorem}
+
+\begin{title}
+  Система дифференциальных уравнений в нормальной форме
+\end{title}
+
+\begin{define}
+  $$
+  \left\{
+  \begin{array}{l}
+    x_1'(t) = f_1(t, x_1(t), x_2(t), \ldots, x_n(t)) \\
+    x_2'(t) = f_2(t, x_1(t), x_2(t), \ldots, x_n(t)) \\
+    \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots \\
+    x_n'(t) = f_n(t, x_1(t), x_2(t), \ldots, x_n(t))
+  \end{array}
+  \right.
+  $$
+  $$
+  x(t) =
+  \left(
+  \begin{array}{l}
+    x_1(t) \\
+    x_2(t) \\
+    \ldots \\
+    x_n(t)
+  \end{array}
+  \right) ~~~
+  f(t) =
+  \left(
+  \begin{array}{l}
+   f_1(t, x_1(t), x_2(t), \ldots, x_n(t)) \\
+   f_2(t, x_1(t), x_2(t), \ldots, x_n(t)) \\
+    \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots \\
+   f_n(t, x_1(t), x_2(t), \ldots, x_n(t))
+  \end{array}
+  \right)
+  $$
+  $x'(t) = f(t, x(t))$ $x(t)$ - неизвестный вектор функции
+  $$
+  <\alpha, \beta> \in R^n ~~~ x(t_0) = x_0 ~~~ t_0 \in <\alpha, \beta> ~~~
+  x_0 \in R^n
+  \left\{
+  \begin{array}{l}
+    x_1(t_0) = x_{0_1} \\
+    x_2(t_0) = x_{0_2} \\
+    \ldots ~~~ \ldots \\
+    x_n(t_0) = x_{0_n}
+  \end{array}
+  \right.
+  $$
+\end{define}
+
+\begin{block}[Решением системы ДУ называется]
+  $\varphi(t): ~ <\varphi, \beta> \to R^n$ которая
+
+  1) непрерывна дифференциируема на $<\alpha, \beta>$
+
+  2) $\forall t \in <\alpha, \beta> ~~~ (t, \varphi(t)) \in D$
+
+  3) $\frac{d\varphi(t)}{dt} \equiv f(t, \varphi(t)) ~~~
+  t \in <\alpha, \beta>$
+\end{block}
+
+\begin{title}[\Large]
+  Линейные системы дифференциальных уравнений (ЛСДУ)
+\end{title}
+
+$$
+\left\{
+\begin{array}{l}
+  x'_1(t) = a_{11}(t)x_1(t) + a_{12}(t)x_2(t) + \ldots
+  + a_{1n}x_n(t) + g_1(t) \\
+  x'_2(t) = a_{21}(t)x_1(t) + a_{22}(t)x_2(t) + \ldots
+  + a_{2n}x_n(t) + g_2(t) \\
+  \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~
+  \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots\\
+  x'_n(t) = a_{n1}(t)x_1(t) + a_{n2}(t)x_2(t) + \ldots
+  + a_{nn}x_n(t) + g_n(t) \\
+\end{array}
+\right.
+$$
+
+$$
+x(t) =
+\left(
+\begin{array}{l}
+  x_1(t) \\
+  x_2(t) \\
+  \ldots \\
+  x_n(t)
+\end{array}
+\right) ~~~
+A(t) =
+\left(
+\begin{array}{cccc}
+  a_{11} & a_{12} & \ldots & a_{1n} \\
+  a_{21} & a_{22} & \ldots & a_{2n} \\
+  \ldots & \ldots & \ldots & \ldots \\
+  a_{n1} & a_{n2} & \ldots & a_{nn}
+\end{array}
+\right) ~~~
+g(t) =
+\left(
+\begin{array}{l}
+  g_1(t) \\
+  g_2(t) \\
+  \ldots \\
+  g_n(t) \\
+\end{array}
+\right)
+$$
+
+$x'(t) = A(t)x(t) + g(t)$ - неоднородная система
+
+$x'(t) = A(t)x(t)$ - однородная система
+
+\begin{title}[\Large]
+  Теорема о существовании единственности для линейных систем. Рещение задачи
+  Коши
+\end{title}
+
+\begin{theorem}
+  Пусть $A(t) g(t)$ непрерывны на $<\alpha, \beta>$ тогда
+  $\forall t_0 \in <\alpha, \beta> ~~~ \forall x_0 \in R^n$ задачи Коши
+  $\exists !$ решение на $<\alpha, \beta>$
+\end{theorem}
+
+\begin{block}[Лемма]
+  Задача Коши эквивалентна
+  $$
+  x(t) = x_0 + \int_{t_0}^t A(s)x(s)dx +
+  \int_{t_0}^t g(s)ds
+  $$
+  тоесть любое решение задачи Коши явялется решением этого уравнения и наоборот
+\end{block}
+
+\begin{proof}
+  Доказательство в одну сторону
+  Пусть $\varphi$ - решение задачи Коши тогда
+  $$
+  \varphi'(t) = A(t)\varphi(t) + g(t)
+  $$
+  $$
+  \int_{t_0}^t \varphi'(s)ds = \int_{t_0}^t A(s) \varphi(s)ds +
+  \int_{t_0}^t g(s) ds
+  $$
+  $$
+  \int_{t_0}^t \varphi'(s)ds = \varphi(s)|_{t_0}^t = \varphi(t) - x_0
+  $$
+  $$
+  \varphi(t) = x_0 + \int_{t_0}^t A(s) \varphi(s) ds  + \int_{t_0}^t g(s)ds
+  $$
+  Доказательство в другую сторону
+
+  Пусть $\varphi(t)$ - решение
+  $$
+  x(t) = x_0 + \int_{t_0}^t A(s)x(s)dx +
+  \int_{t_0}^t g(s)ds
+  $$
+  тогда $\varphi(t)$ - непрерывная $\Rightarrow$ дифференцируема
+
+  $\varphi'(t) = A(t)\varphi(t) + g(t)$
+
+  $\varphi(t_0) = x_0$
+\end{proof}
+
+\begin{title}[\Large]
+  Множество решений линейной системы
+\end{title}
+
+\begin{theorem}[прицапа суперпозии решений]
+  $\varphi(t)$ решение $x'(t) = A(t)x(t) + g_1(t)$
+
+  $\psi(t)$ решение $x'(t) = A(t)x(t) + g_2(t)$
+
+  тогда $C\varphi(t) + B\psi(t)$ решение $x'(t) = A(t)x(t) + Cg_1(t) + Bg_2(t)$
+  $C,B$ - числа
+\end{theorem}
+
+\begin{proof}
+  $$
+  C\varphi'(t) + B\varphi'(t) = A(t)(C\varphi(t) + B\psi(t)) + Cg_1(t) +
+  Bg_2(t)
+  $$
+  $$
+  C\varphi'(t) + B\varphi'(t) = C(A(t)\varphi(t) + g_1(t))+
+  B(A(t)\psi(t) + g_2(t))
+  $$
+  $$
+  \Rightarrow ~ A(t)\varphi(t) + g_1(t) = \varphi'(t) ~~~
+  A(t)\psi(t) + g_2(t) = \psi'(t)
+  $$
+\end{proof}
+
+\begin{block}[Следствие 1]
+  Разность двух решений неоднородной системы $x'(t) = A(t)x(t) + g(t)$
+  является решением неоднородной системы $x'(t) = A(t)x(t)$
+\end{block}
+
+\begin{proof}
+  $x'(t) = A(t)x(t) + g(t) ~~ C = 1 ~~ B = 1$
+
+  $\varphi(t) - \psi(t)$
+
+  $g(t) - g(t) = 0$
+\end{proof}
+
+\begin{block}[Слудсвие 2]
+  Если $\varphi_0(t)$ некоторое решение сисетмы $x'(t) = A(t)x(t) + g(t)$ то
+  множество всех решений этой системы совпадает с множеством следующего вида
+  $\{\varphi_0(t) + \varphi(t)\}$ где $\varphi(t)$ пробегает множество решений
+  однородной системы
+\end{block}
+
+\begin{proof}
+  $\varphi_0(t)$ решение $x'(t) = A(t)x(t) + g(t)$
+
+  $\varphi(t)$ решение $x'(t) = A(t)x(t)$
+
+  $\varphi_0(t) + \varphi(t)$ решение $x'(t) = A(t)x(t) + g(t)$
+
+  Пусть $\varphi(t)$ решение $x'(t) = A(t)x(t) + g(t)$
+
+  $\psi(t) - \varphi_0(t)$ решение $x'(t) = A(t)x(t)$
+
+  $\Rightarrow ~ \varphi(t) = \varphi_0(t) - \varphi(t)$
+\end{proof}
