@@ -1,0 +1,127 @@
+\begin{title}
+  Параграф 3
+\end{title}
+
+\begin{title}
+  Формулы Френа. Формулы для нахождения кривизны кручения
+\end{title}
+
+\begin{theorem}[формула Френе]
+  $$
+  \left\{
+  \begin{array}{c}
+    \stackrel{\bullet}{\vec t} ~ = k \vec n \\
+    \stackrel{\bullet}{\vec n} ~ = -k \vec t + \kappa \vec b \\
+    \stackrel{\bullet}{\vec b} ~ = - \kappa \vec n
+  \end{array}
+  \right.
+  $$
+  $$
+  \left(
+  \begin{array}{c}
+    \stackrel{\bullet}{\vec t} \\
+    \stackrel{\bullet}{\vec n} \\
+    \stackrel{\bullet}{\vec b}
+  \end{array}
+  \right) =
+  \left(
+  \begin{array}{ccc}
+    c & k & c \\
+    -k & 0 & \kappa \\
+    0 & -\kappa & 0
+  \end{array}
+  \right) \cdot
+  \left(
+  \begin{array}{ccc}
+    \vec t \\
+    \vec n \\
+    \vec b
+  \end{array}
+  \right)
+  $$
+\end{theorem}
+
+\begin{proof}
+  $
+  \frac{d\vec t}{ds} = \frac{d^2 \varphi}{ds^2} = k \vec n ~~~ b = [t,n] ~~~
+  \frac{d\vec b}{ds} = - \kappa \vec n
+  $
+
+  $
+  \vec n = [\vec b, \vec t] ~ \Rightarrow ~ \stackrel{\bullet}{\vec n}~ =
+  [\stackrel{\bullet}{\vec b}, \vec t] + [\vec b, \stackrel{\bullet}{\vec t}]
+  = [-\kappa \vec n, \vec t] + [\vec b, k \vec n] = \kappa \vec b + k \vec t
+  $
+\end{proof}
+
+\begin{theorem}
+  Для регулярной кривой $\vec \varphi = \vec \varphi(t)$
+  $$
+  k = \frac{|[\vec \varphi, \varphi'']|}{|\varphi'|^3} ~~~
+  \kappa = \frac{(\varphi', \varphi'', \varphi''')}{|[\varphi', \varphi'']|^2}
+  $$
+\end{theorem}
+
+\begin{proof}
+  $
+  \vec t = \stackrel{\bullet}{\vec \varphi} = \frac{d\varphi}{dt}
+  \frac{dt}{ds}
+  $
+
+  $
+  k \vec n = \stackrel{\bullet \bullet}{\vec \varphi} =
+  \stackrel{\bullet}{\vec t} = \vec \varphi'' (\frac{dt}{ds})^2 +
+  \vec \varphi' \frac{d^2t}{ds^2}
+  $
+
+  $
+  k \vec n - k^n \vec t + k \kappa \vec b =
+  \stackrel{\bullet \bullet \bullet}{\vec \varphi} = \vec \varphi'''
+  (\frac{dt}{ds})^3 + \varphi'' 2 \frac{dt}{ds} \frac{d^2 t}{ds^2} +
+  \varphi'' \frac{dt}{ds} \frac{d^2 t}{ds^2} + \vec \varphi'
+  \frac{d^3 t}{ds^3} = \vec \varphi'' (\frac{dt}{ds})^3 + 3 \vec \varphi''
+  \frac{dt}{ds}\frac{d^2t}{ds^2} + \vec \varphi' \frac{d^3t}{ds^3}
+  $
+
+  расмотрим $[\stackrel{\bullet}{\vec \varphi},
+  \stackrel{\bullet \bullet}{\vec \varphi}]$
+
+  $
+  k \vec b = [\stackrel{\bullet}{\vec \varphi},
+  \stackrel{\bullet \bullet}{\vec \varphi}] = (\frac{dt}{ds})^3
+  [\vec \varphi', \vec \varphi''] = \frac{1}{|\varphi'|^3} \cdot
+  [\varphi', \varphi'']
+  $
+
+  $
+  s = \int_{t_0}^t |\varphi'|dt ~ \Rightarrow ~ \frac{ds}{dt} =
+  |\varphi'| ~ \Rightarrow ~
+  k = \frac{|[\vec \varphi, \varphi'']|}{|\varphi'|^3}
+  $
+
+
+  расмотрим
+  $
+  [\stackrel{\bullet}{\vec \varphi},
+  \stackrel{\bullet \bullet}{\vec \varphi},
+  \stackrel{\bullet \bullet \bullet}{\vec \varphi}] = (\vec t, k \vec n,
+  k \vec n - R^2t + k \kappa \vec b = k^2 \kappa(\vec t, \vec n, \vec b) =
+  k^2 \kappa
+  $
+
+  $
+  \stackrel{\bullet}{\vec \varphi},
+  \stackrel{\bullet \bullet}{\vec \varphi},
+  \stackrel{\bullet \bullet \bullet}{\vec \varphi}) =
+  (\vec \varphi', \vec \varphi'', \vec \varphi''') (\frac{dt}{ds})^6
+  $
+
+  $$
+  \kappa (\frac{|[\varphi', \varphi'']|}{|\varphi'|^3})^2 =
+  k^2 \kappa =
+  \frac{(\vec \varphi', \vec \varphi'', \vec \varphi''')}{|\varphi'|^6} ~~~
+  \kappa =
+  \frac{(\vec \varphi', \vec \varphi'', \vec \varphi''')}{|[\varphi',
+  \varphi'']|^2}
+  $$
+\end{proof}

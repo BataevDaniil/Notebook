@@ -1,0 +1,88 @@
+\begin{title}
+  Первая квадратичная форма поверхности
+\end{title}
+
+Пусть $\vec \varphi = \vec \varphi(u, \upsilon)$ регулярная поверхность
+$$
+\left\{
+  \begin{array}{l}
+    u = u(t) \\
+    \upsilon = \upsilon(t)
+  \end{array}
+\right. ~ \text{- кривая на поверхности, тогда} ~~
+S = \int_{t_1}^{t_0} |\vec \varphi'(t)| dt ~ \text{- длина}
+$$
+$\vec \varphi' = \vec \varphi_u u' + \vec \varphi_{\upsilon} \upsilon'$
+
+$
+|\varphi'|^2 = (\varphi', \varphi') =
+(\vec \varphi_u u' + \vec \varphi_{\upsilon} \upsilon',
+\vec \varphi_u u' + \vec \varphi_{\upsilon} \upsilon') =
+$
+
+$
+= (\varphi_u, \varphi_u)u'^2 + 2(\varphi_u, \varphi_{\varepsilon}')
+u' \upsilon' + (\varphi_u, \varphi_{\upsilon} \upsilon')
+$
+
+$E = (\varphi_u, \varphi_u), F = (\varphi_u, \varphi_{\upsilon}),
+G = (\varphi_{\upsilon}, \varphi_{\upsilon})$ - зависит только от поверхности
+но не от кривой
+
+$|\vec \varphi'|^2 = E u'^2 + 2Fu'\upsilon' + G\upsilon'^2$ кривая задана в
+локальной системе координат
+
+$$
+S = \int_{t_0}^{t_1} \sqrt{E u'^2 + 2Fu'\upsilon' + G\upsilon'^2}dt
+$$
+
+$ds^2 Edu'^2 + 2Fdu'd\upsilon' + Gd\upsilon'^2dt$ первая квадратичная форма
+поверхности в дифференциале
+
+Пусть $\vec a = \xi_1 \vec \varphi_u + \xi_2 \vec \varphi_{\upsilon} ~~~
+\vec b = \zeta_1 \vec \varphi_u + \zeta_2 \vec \varphi_{\upsilon}$
+
+$(\vec a, \vec b) = (\xi_1 \vec \varphi_u + \xi_2 \vec \varphi_{\upsilon},
+\zeta_1 \vec \varphi_u + \zeta_2 \vec \varphi_{\upsilon}) =
+E \xi_1 \zeta_1 + F(\xi_1 \zeta_2 + \xi_2 \zeta_1) + G\xi_2 \zeta_2$
+
+1) $|\vec a| = \sqrt{(\vec a, \vec a)} = \sqrt{E\xi_1^2 + 2F(\xi_1, \xi_2) +
+G\xi_2^2}$
+
+2) $\cos \measuredangle (\vec a, \vec b) =
+\frac{(\vec a, \vec b)}{|\vec a||\vec b|} =
+\frac{E \xi_1 \zeta_1 + F(\xi_1 \zeta_2 + \xi_2 \zeta_1) + G\xi_2 \zeta_1}
+{\sqrt{E\xi_1^2 + 2F\xi_1\xi_2 + G\xi_2^2}
+\sqrt{E\zeta_1^2 + 2F\zeta_1\zeta_2 + G\zeta_2^2}}$
+
+Расмотрим следующие кривые
+$$
+\left\{
+  \begin{array}{l}
+    u = u_1(t) \\
+    \upsilon = \upsilon_1(t)
+  \end{array}
+\right. ~~~
+\left\{
+  \begin{array}{l}
+    u = u_2(t) \\
+    \upsilon = \upsilon_2(t)
+  \end{array}
+\right.
+$$
+
+Угол между кривыми это угол между их касательными в точке пересечения
+
+$\cos \alpha = |\cos \measuredangle (\vec \varphi_1', \vec \varphi_2')|$
+
+$\vec \varphi_1' = \vec \varphi_u u_1' + \vec \varphi_{\varepsilon}'
+\varepsilon_1' = (u_1', \upsilon_1')$
+
+$\vec \varphi_2' = \vec \varphi_u u_2' + \vec \varphi_{\varepsilon}'
+\varepsilon_2' = (u_2', \upsilon_2')$
+$$
+\cos \alpha = \frac{Eu'_1 u'_2 + F(u'_1\upsilon_2' + u'_2 u'_1) + Gu_1'
+\upsilon'_1}
+{\sqrt{Eu_1'^2 + 2Fu_1'\upsilon_1' + G\upsilon_1'^2}
+\sqrt{Eu_1'^2 + 2Fu_1'\upsilon_1' + G\upsilon_1'^2}}
+$$

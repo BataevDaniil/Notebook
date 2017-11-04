@@ -742,7 +742,7 @@ $x'(t) = A(t)x(t)$ - однородная система
   $g(t) - g(t) = 0$
 \end{proof}
 
-\begin{block}[Слудсвие 2]
+\begin{block}[Слeдствие 2]
   Если $\varphi_0(t)$ некоторое решение сисетмы $x'(t) = A(t)x(t) + g(t)$ то
   множество всех решений этой системы совпадает с множеством следующего вида
   $\{\varphi_0(t) + \varphi(t)\}$ где $\varphi(t)$ пробегает множество решений
@@ -762,3 +762,508 @@ $x'(t) = A(t)x(t)$ - однородная система
 
   $\Rightarrow ~ \varphi(t) = \varphi_0(t) - \varphi(t)$
 \end{proof}
+
+\begin{define}
+  $$
+  \varphi_1 (t) =
+  \left(
+  \begin{array}{c}
+    \varphi_{11}(t) \\
+    \cdots \\
+    \varphi_{1n}(t) \\
+  \end{array}
+  \right),~~~
+  \varphi_2 (t) =
+  \left(
+  \begin{array}{c}
+    \varphi_{21}(t) \\
+    \cdots \\
+    \varphi_{2n}(t) \\
+  \end{array}
+  \right), \cdots,
+  \varphi_k (t) =
+  \left(
+  \begin{array}{c}
+    \varphi_{k1}(t) \\
+    \cdots \\
+    \varphi_{kn}(t) \\
+  \end{array}
+  \right) ~~~ t \in <\alpha, \beta>
+  $$
+  $\varphi, \cdots, \varphi_k(t)$ называется ЛЗ если $\exists C_1, C_2, \ldots,
+  C_k(\sum_{j=1}^k cj^2 \not= 0)$ то комбинация $C_1\varphi_1(t) +
+  C_2\varphi_2(t) + \ldots + C_k\varphi_k(t) = 0 ~ t \in <\alpha, \beta>$. В
+  противном случае система функций ЛНЗ
+\end{define}
+
+\begin{theorem}
+  Множество всех решений однородной системы $x'(t) = A(t)x(t)$ образует
+  линейное пространство размерность которого совпадает с размерностью системы
+\end{theorem}
+
+\begin{proof}
+  если $\varphi_1(t), \varphi_2(t)$ - решение $x'(t) = A(t)x(t) ~ \Rightarrow ~
+  C_1\varphi_1(t) + C_2\varphi_2(t)$ решение $x'(t) = A(t)x(t)$
+
+  $\varphi'_j(t) = A(t)\varphi_j(t)$
+
+  $C_1 \varphi'_1(t) + C_2 \varphi'_2(t) = C_1(A(t) \varphi_1(t)) +
+  C_2A^{(t)}\varphi_2(t) = A(t)(C_1\varphi_1(t) + C_2\varphi_2(t)) ~
+  \Rightarrow ~ C_1 \varphi_1(t) + C_2 \varphi_2(t)$ решение
+  $x'(t) = A(t)x(t)$\\
+
+  Построим $n$ ЛНЗ решений $t \in <\alpha, \beta>$ возьмем $t_0 \in
+  <\alpha, \beta>$
+  $$
+  e_1 =
+  \left(
+  \begin{array}{c}
+    1 \\
+    0 \\
+    \cdots \\
+    0
+  \end{array}
+  \right), ~~~
+  e_2 =
+  \left(
+  \begin{array}{c}
+    0 \\
+    1 \\
+    \cdots \\
+    0
+  \end{array}
+  \right), \cdots,
+  e_k =
+  \left(
+  \begin{array}{c}
+    0 \\
+    0 \\
+    \cdots \\
+    1
+  \end{array}
+  \right) ~~ \text{ЛНЗ}
+  $$
+  $$
+  \left\{
+  \begin{array}{c}
+    x'(t) = A(t)x(t) \\
+    x(t_0) = e_k
+  \end{array}
+  \right. ~~~ k = 1, 2, \ldots, n
+  $$
+  $\varphi_k(t)$ - единственое решение $\varphi_1(t), \ldots, \varphi_n(t) ~~~
+  t \in <\alpha, \beta$
+
+  покажем ЛНЗ $C_1 \varphi_1(t) + \ldots + C_n \varphi_n(t) \equiv 0 ~~~
+  t = t_0$
+
+  $C_1 \varphi_1(t_0) + C_2 \varphi_2(t_0) + \ldots + C_n \varphi_n(t_0)
+  \equiv 0$
+  $$
+  C_1
+  \left(
+  \begin{array}{c}
+    1 \\
+    0 \\
+    \cdots \\
+    0
+  \end{array}
+  \right) +
+  C_2
+  \left(
+  \begin{array}{c}
+    0 \\
+    1 \\
+    \cdots \\
+    0
+  \end{array}
+  \right) + \cdots +
+  C_k
+  \left(
+  \begin{array}{c}
+    0 \\
+    0 \\
+    \cdots \\
+    1
+  \end{array}
+  \right) =
+  \left(
+  \begin{array}{c}
+    0 \\
+    0 \\
+    \cdots \\
+    0
+  \end{array}
+  \right)
+  $$
+  $$
+  \left(
+  \begin{array}{c}
+    C_1 \\
+    C_2 \\
+    \cdots \\
+    C_n
+  \end{array}
+  \right) =
+  \left(
+  \begin{array}{c}
+    0 \\
+    0 \\
+    \cdots \\
+    0
+  \end{array}
+  \right) ~ \Rightarrow ~ C_1 = C_2 = \ldots = C_n = 0 ~ \Rightarrow ~
+  \varphi_1(t), \ldots, \varphi_n(t) ~~~ \text{- ЛНЗ}
+  $$\\
+
+  $\psi(t)$ произвольное решение
+  $$
+  \psi(t_0) =
+  \left(
+  \begin{array}{c}
+    a_1 \\
+    a_2 \\
+    \cdots \\
+    a_n
+  \end{array}
+  \right)
+  $$
+  $\varphi = a_1 \varphi_1(t) + \ldots + a_n \varphi_n(t)$
+
+  $\psi(t) \equiv \varphi(t)$
+
+  Заменим:
+  $$
+  \psi(t) =
+  \left\{
+  \begin{array}{c}
+  x'(t) = A(t)x(t)\\
+  x(t_0) =
+  \left(
+  \begin{array}{c}
+    a_1 \\
+    a_2 \\
+    \cdots \\
+    a_n
+  \end{array}
+  \right)
+  \end{array}
+  \right. ~~ \text{- решение задачи Коши}
+  \varphi(t) =
+  \left\{
+  \begin{array}{c}
+  x'(t) = A(t)x(t)\\
+  x(t_0) =
+  \left(
+  \begin{array}{c}
+    a_1 \\
+    a_2 \\
+    \cdots \\
+    a_n
+  \end{array}
+  \right)
+  \end{array}
+  \right.
+  $$
+  $$
+  \varphi(t_0) = a_1 \varphi_1(t_0) + \ldots + a_n \varphi_n(t_0) =
+  a_1
+  \left(
+  \begin{array}{c}
+    1 \\
+    0 \\
+    \cdots \\
+    0
+  \end{array}
+  \right) +
+  a_2
+  \left(
+  \begin{array}{c}
+    0 \\
+    1 \\
+    \cdots \\
+    0
+  \end{array}
+  \right) + \ldots +
+  a_n
+  \left(
+  \begin{array}{c}
+    0 \\
+    0 \\
+    \cdots \\
+    1
+  \end{array}
+  \right) =
+  \left(
+  \begin{array}{c}
+    a_1 \\
+    a_2 \\
+    \cdots \\
+    a_n
+  \end{array}
+  \right)
+  $$
+  так как они обе удовлетворяеют задачи Коши то $\varphi(t) \equiv \psi(t) ~
+  \Rightarrow ~ \psi(t) = \sum_{j=1}^n a_j \varphi_j(t)$
+\end{proof}
+
+\begin{define}[ФСР]
+  ФСР - называется базис пространства решений тоесть $n$ - ЛНЗ решений данной
+  системы
+\end{define}
+
+\begin{define}
+  $\varphi_1(t), \ldots, \varphi_n(t)$ - вектор функции
+  $$
+  \varphi_j(t) =
+  \left(
+  \begin{array}{c}
+    \varphi_{j1}(t) \\
+    \varphi_{j1}(t) \\
+    \cdots \\
+    \varphi_{jn}(t)
+  \end{array}
+  \right)
+  $$
+  $$
+  W[\varphi_1, \ldots, \varphi_n](t) =
+  \left|
+  \begin{array}{cccc}
+    \varphi_{11}(t) & \varphi_{21}(t) & \ldots & \varphi_{n1}(t) \\
+    \varphi_{12}(t) & \varphi_{22}(t) & \ldots & \varphi_{n2}(t) \\
+    \ldots & \ldots & \ldots & \ldots \\
+    \varphi_{1n}(t) & \varphi_{2n}(t) & \ldots & \varphi_{nn}(t)
+  \end{array}
+  \right|
+  $$
+\end{define}
+
+\begin{block}[Утверждения]
+  1) Если $\varphi_1(t), \ldots, \varphi_n(t)$ ЛЗ $\Rightarrow W(t) \equiv 0
+  ~~~ t \in <\alpha, \beta>$
+
+  2) Если $W(t) \not\equiv 0 ~ \Rightarrow ~ \varphi_1(t), \ldots,
+  \varphi_n(t)$ ЛНЗ
+\end{block}
+
+\begin{block}[Критерий ЛНЗ решений системы]
+  Пусть $\varphi_1, \ldots, \varphi_n(t)$
+  решение задачи Коши тогда
+
+  1) $W(t) = 0$ хотябы в одной точке
+  $t \in <\alpha, \beta>$ то решение $\varphi_1(t), \ldots, \varphi_n(t)$ ЛЗ
+
+  2) $\varphi_1, \ldots, \varphi_n(t)$ ЛНЗ то $W(t) \not0$ ни в одной точке
+  $t \in <\alpha, \beta>$
+\end{block}
+
+\begin{proof}
+  Пусть $W(t_0) = 0 ~~~ t \in <\alpha, \beta> ~ \Rightarrow ~ \varphi_1(t_1),
+  \ldots, \varphi_n(t_1)$ ЛЗ $\exists C_1, \ldots, C_n ~~~
+  C_1 \varphi_1(t_1) + \ldots + C_n \varphi_n (t_1) = 0$
+
+  $\varphi(t) = C_1\varphi_1(t) + \ldots + C_n \varphi_n(t)$
+  $$
+  \varphi(t) =
+  \left(
+  \begin{array}{c}
+    x'(t) = A(t)x(t) \\
+    x(t_0) = 0
+  \end{array}
+  \right)
+  $$
+  $\psi \equiv 0$ другое решение $\Rightarrow ~ \varphi(t) = C_1 \varphi_1(t) +
+  \ldots + C_n \varphi_n(t) \equiv 0 ~ \Rightarrow ~ \varphi_1, \ldots,
+  \varphi_n$ ЛЗ \\
+\end{proof}
+
+\begin{theorem}
+  $$
+  W(t) =
+  \left|
+  \begin{array}{cccc}
+    \varphi_{11}(t) & \varphi_{21}(t) & \ldots & \varphi_{n1}(t) \\
+    \varphi_{12}(t) & \varphi_{22}(t) & \ldots & \varphi_{n2}(t) \\
+    \ldots & \ldots & \ldots & \ldots \\
+    \varphi_{1n}(t) & \varphi_{2n}(t) & \ldots & \varphi_{nn}(t)
+  \end{array}
+  \right|
+  $$
+  пусть $W(t)$ - определитель Вронского решение $\varphi_1(t), \ldots,
+  \varphi_n(t)$ системы $x'(t) = A(t)x(t)$ то он является
+  $\frac{W(t)}{dt} = (t_2A(t))W(t) ~~~ t \in <\alpha, \beta>$
+
+  $t_2A(t) = a_{11}(t) + a_{22}(t) + \ldots + a_{nn}(t)$
+\end{theorem}
+
+\begin{block}[Формула Леовиля]
+  $$
+  W(t) = W(t_0)e^{\int_{t_0}^t t_2 A(s)ds}
+  $$
+  если определитель Вронского в некоторой точке $= 0$ то $W(t) \equiv 0$
+\end{block}
+
+\begin{title}[\Large]
+  Фундаментальная матрица
+\end{title}
+
+\begin{define}
+  Матрица $\Phi(t) ~ t \in <\alpha, \beta>$ называется решением системы
+  $x'(t) = A(t)x(t)$ если столбцы матрицы являются решением системы
+\end{define}
+
+\begin{block}[Утверждение]
+  $\Phi(t)$ является матрицей решений если удовлетворяет матричной системе
+  $X'_{n \times n}(t) = A_{n \times n}(t) X_{n \times n}(t)$ $n$ - уравней
+\end{block}
+
+\begin{define}
+  Невырожденная матрица решений называется фундаментальной матрицей
+  $|\Phi(t)| = W(t)$ столбца ЛНЗ. Фкндаментальная матрица это матрица столбцы
+  которой образуют ФСР
+\end{define}
+
+\begin{block}[Предложение]
+  Если $\Phi(t)$ фундаментальная матрица $x'(t) = A(t)x(t)$
+  тогда множество решений системы совпадает со множеством функций вида
+  $\varphi(t) = \Phi(t)C$ где $C$ произвольный постоянный вектор из $e^n$
+\end{block}
+
+\begin{proof}
+  $\Phi(t)$ фундаментальная матрица и $\varphi_1(t), \ldots, \varphi_n(t)$
+  это ФСР
+
+  $\Phi(t)C = (\varphi_1(t), \ldots, \varphi_n(t))C = C_1 \varphi_1(t) +
+  C_2 \varphi_2(t) + \ldots + C_n \varphi_n(t)$
+\end{proof}
+
+\begin{block}[Утверждение]
+  $\Phi(t)$ фундаментальная матрица $x'(t) = A(t)x(t)$ тогда множество всех
+  фундаментальных матриц системы совпадает с множеством матриц следующего вида
+  $\Psi(t) = \Phi(t)B ~~ detB \not= 0$
+\end{block}
+
+\begin{proof}
+  так как $\Phi(t)$ фундаментальная матрица $det\Phi(t) \not= 0 ~~
+  \forall t \in <\alpha, \beta>$ удовлетворяет $\Phi(t) = A(t)\Phi(t)$
+  $det\Psi(t) \not= 0$ невырожденная
+
+  $\Phi'(t)B = A(t)(\Phi(t)B)$
+
+  $(\Phi(t)B)' = A(t)(\Phi(t)B)$
+
+  $\Psi'(t) = A(t)\Psi(t)$ $\Psi$ - фундаментальная матрица \\
+
+  Пусть $\Psi(t)$ фиксированная фундаментальная матрица
+
+  $B = \Phi^{-1}(t_0) \Psi(t_0) ~~~ t_0 \in <\alpha, \beta>$
+
+  $\Psi(t) = \Phi(t) \Phi_{-1}(t_0) \Psi(t_0)$
+
+  $t = t_0 ~~~ \Phi(t_0) \Phi^{-1}(t_0) \Psi(t_0)$
+  $$
+  \left\{
+  \begin{array}{c}
+    X(t_0) = \Psi(t_0) \\
+    X'(t) = A(t)X(t)
+  \end{array}
+  \right. ~ \Rightarrow ~
+  \Psi(t) = \Phi(t) \Phi^{-1}(t_0)\Phi(t_0)
+  $$
+\end{proof}
+
+Вывод: $x'(t) = A(t)x(t)$
+
+1) Множество ее решений образует линейное пространство степени $n$
+
+2) Для ее решения достаточно найти ФСР
+$$
+\varphi(t) = \sum_{j=1}^n C_j \varphi_j(t)
+$$
+
+\begin{title}[\Large]
+  Линейная неоднородная системы
+\end{title}
+
+$x'(t) = A(t) x(t) + g(t) ~~~ t \in <\alpha, \beta>$ $A(t), g(t)$ -
+непрерывные функции. Метод вариаций производных постоянных.
+
+Расмотрим $x'(t) = A(t)x(t)$ $\Phi(t)$ - фундаментальная матрица
+$x(t) = \Phi(t) C$ общее решение $x'(t) = A(t)x(t)$
+$$
+C =
+\left\{
+\begin{array}{c}
+  C_1 \\
+  C_2 \\
+  \cdots \\
+  C_n
+\end{array}
+\right) ~~~
+C(t) =
+\left\{
+\begin{array}{c}
+  C_1(t) \\
+  C_2(t) \\
+  \cdots \\
+  C_n(t)
+\end{array}
+\right)
+$$
+$x(t) = \Phi(t)C(t) ~~~ x'(t) = \Phi'(t)C(t) + \Phi(t)C'(t)$
+
+$\Phi'(t)C(t) + \Phi(t)C'(t) = A(t)\Phi(t)C(t) + g(t)$
+
+$\Phi'(t) = A(t) \Phi(t)$
+
+$\Phi(t)C'(t) = g(t)$
+
+$C'(t) = \Phi^{-1}(t)g(t)$
+
+$C(t) = \int_{t_0}^2 \Phi^{-1}(s)g(s)ds + D$
+
+$x(t) = \Phi(t)D + \int_{t_0}^t\Phi(t) \Phi^{-1}(s)g(s)ds$ формула общего
+решения. $x(t_0) = x_0$ задача Коши
+
+$x(t_0) = \Phi(t_0)D ~~~ D = \Phi^{-1}(t_0)x(t_0)$
+
+$x(t) = \Phi(t) \Phi^{-1}(t_0)x_0 + \int_{t_0}^t \Phi(t)\Phi^{-1}(s)g(s)ds$
+формула Коши
+
+$$
+\left\{
+\begin{array}{c}
+  x'(t) = A(t)x(t) + g(t) \\
+  x(t_0) = x_0
+\end{array}
+\right. ~~~ \text{задача Коши}
+$$
+
+\begin{theorem}
+  Пусть $A(t), g(t)$ непрерывная матрица и вектор $t \in <\alpha, \beta>$ тогда
+  решение задачи Коши определяется формулой Коши
+\end{theorem}
+
+$C(t,s) = \Phi(t)\Phi^{-1}(s)$ матрица Коши
+
+$x(t) = C(t, t_0)x_0 + \int_{t_0}^t C(t,s)g(s)ds$
+
+$C(t,s)$ зависит от выбора фундаментальной матрицы $\Phi(t)$. Пусть $\Psi(t)$
+другая фундаментальная матрица $D(t,s) = \Psi(t)\Psi^{-1}(s)$ $\exists B$
+невырожденаая матрица которая обеспечивает
+
+$\Psi(t) = \Phi(t)B$
+
+$\Psi^{-1}(s) = B^{-1} \Phi^{-1}(s)$
+
+$\Psi(t) \Psi^{-1}(s) = \Phi(t) B B^{-1} \Phi^{-1}(s)$
+
+$D(t, s) = C(t, s) ~ \Rightarrow$ функция Коши не зависит от выбра
+фундаментальной матрица $\Phi(t)$
+
+\begin{block}[Свойства]
+  1) При каждом фиксиравоном $s \in <\alpha, \beta>$ $C(t, s)$ решение системы
+  $X'(t) = A(t)X(t)$
+
+  2) $C(t,t) = E$ еденичная матрица
+\end{block}

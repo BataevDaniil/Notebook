@@ -1,0 +1,181 @@
+\begin{title}
+  Параграф 2
+\end{title}
+
+\begin{title}[\Large]
+  Натуральная параметризация кривой, кривизна и кручение кривой
+\end{title}
+
+Пусть $\vec \varphi = \vec \varphi(t)$ - регулярная кривая, тогда длина дуги
+кривой
+$$
+S = \int_{t_0}^{t_1} | \vec \varphi'(t)| dt
+$$
+если форма записи
+$$
+\left\{
+\begin{array}{c}
+  x = x(t) \\
+  y = y(t) \\
+  z = z(t)
+\end{array}
+\right.
+S = \int_{t_0}^{t_1} \sqrt{ x'^2(t) + y'^2(t) + z'^2(t)}
+$$
+
+\begin{define}[натуральной параметризации кривой]
+  Параметризация при которой каждой точке кривой сопаставляется длина дуги
+  кривой от точки до некоторой фиксированной точки называется натуральной или
+  естественной.
+\end{define}
+
+\begin{block}[Свойства]
+  1) Натуральная параметризация эквивалентна исходной параметризации.
+
+  \begin{proof}
+    $\vec \varphi = \vec \varphi(t)$ - уравнение кривой
+
+    $s = s(t)$ - натуральная параметризация
+    $$
+    \int_{t_0}^{t} |\varphi'(t)| dt ~~~
+    \frac{ds}{dt} = |\varphi'(t)| > 0 ~ \Rightarrow ~ s = s(t) ~ \nearrow ~
+    $$
+    $\Rightarrow ~ s = s(t)$ является биективной
+  \end{proof}
+
+  2) $\left| \frac{d \vec \varphi}{ds} \right| = 1$ для любой точки касательный
+  вектор имеет длину $1$
+
+  \begin{proof}
+    $\varphi(s) = \varphi (t(s))$
+
+    $\frac{d\vec \varphi}{ds} = \frac{d\varphi}{dt} ~~~ \frac{dt}{ds} =
+    \vec \varphi' \cdot \frac{1}{|\varphi'|}$ вектор длины 1
+  \end{proof}
+
+  3)
+  $$
+  \frac{d^2 \vec \varphi}{ds^2} \perp \frac{d\vec \varphi}{ds}
+  $$
+\end{block}
+
+\begin{block}[Лемма]
+  Если $|\varphi(t)| = const$, тогда $\vec \varphi'(t) \perp
+  \vec \varphi(t)$
+\end{block}
+
+\begin{proof}
+  $(\vec \varphi, \vec \varphi) = |\vec \varphi|^2 = const$
+  $$
+  \frac{d}{dt}(\varphi, \varphi) = (\varphi', \varphi) +
+  (\varphi, \varphi') = 2(\varphi', \varphi) = 0
+  $$
+  $$
+  \Rightarrow (\varphi', \varphi) = 0 ~~~ \Rightarrow \varphi' \perp \varphi
+  $$
+\end{proof}
+
+\begin{define}[кривизны кривой]
+  $$
+  k =
+  \left|
+    \frac{d^2 \varphi}{d \xi^2}
+  \right| ~~~
+  \text{называется кривизной кривой}
+  $$
+  $$
+    \frac{d^2 \varphi}{d \xi^2} ~~~ \text{вектор кривизны}
+  $$
+\end{define}
+
+\begin{theorem}
+  Кривизна кривой $= 0$ тогда когда ее образ является прямой
+\end{theorem}
+
+\begin{proof}
+  Доказательство в одну сторону пусть $k = 0$ тогда
+  $$
+  \left| \frac{d^2 \varphi}{ds^2} \right| = 0 ~ \Rightarrow ~
+  \frac{d^2 \varphi}{ds^2} = \vec 0 ~ \Rightarrow ~
+  \frac{d\varphi}{d s} = \vec a (=const) ~ \Rightarrow ~
+  \varphi = \vec a S + \vec b
+  $$
+  прямая это $\varphi = \vec \varphi_0 + \vec g t$
+
+  Доказательство в другую сторону что $k = 0$
+  $$
+  \varphi = \vec \varphi_0 + \vec g t ~ \Rightarrow ~
+  \frac{d^2 \varphi}{ds^2} = \vec 0 ~ \Rightarrow ~ k = 0
+  $$
+\end{proof}
+
+$\vec \varphi = \vec \varphi (s)$ - регулярная кривая, $s$ - натуральный
+параметр
+%img
+$\vec t = \frac{d \vec \varphi}{ds}$
+
+$\vec n = \frac{1}{k} ~~~ \frac{d^2 \varphi}{ds^2}$ - вектор главной нормали
+
+$\vec b = [\vec t, \vec n]$ - вектор бинормали
+
+$\vec t, \vec n, \vec b$ - репер Френе (в каждой точке получается
+ортонормированный базис)
+%img
+
+\begin{block}[Лемма 2]
+  $$
+  \frac{d\vec b}{ds}a~ || ~ \vec n ~ \text{- колинеарны}
+  $$
+\end{block}
+
+\begin{proof}
+  $\vec b = \vec b(s)$ докажем что $\frac{db}{ds} \perp \vec t, \vec b$
+
+  $|b| = 1 = const ~ \Rightarrow ~ \frac{db}{ds} \perp \vec b$ (по лемме 1)
+
+  $
+  \vec b = [\vec t, \vec n] ~ \Rightarrow ~ \frac{d\vec b}{ds} =
+  [\frac{dt}{ds}, \vec b] + [\vec t, \frac{d\vec n}{ds}] =
+  [\vec t, \frac{d\vec n}{ds}] \perp \vec t
+  $
+\end{proof}
+
+\begin{block}[Следствие]
+  Из леммы следует $\frac{\vec b}{ds} = - \kappa$ $\kappa$ - коэффицент
+  пропорциональности каппа называется кручениче кривой в точке.
+\end{block}
+
+\begin{theorem}
+  Кругление кривой равно 0 $\Rightarrow$ когда кривая явялется плоскостью
+  (ее образ лежит в некоторой плоскости)
+\end{theorem}
+
+\begin{proof}
+  Пусть $\kappa = 0$, тогда $\frac{d\vec b}{ds} = \vec 0 \Rightarrow \vec b =
+  const = (\vec \alpha, \vec \beta, \vec \gamma)$ расмотрим
+  $\frac{d}{ds}(\vec \varphi, \vec b) = (\frac{d \vec \varphi}{ds}, b) +
+  (\vec \varphi, \frac{d\vec b}{ds}) = 0 ~ \Rightarrow ~
+  (\vec \varphi, \vec b) = const$
+
+  $\alpha x(s) + \beta y(s) + \gamma z(s) = \delta ~ \Rightarrow$ кривая
+  $\vec \varphi = \vec \varphi (s)$ лужит в плоскости $\alpha x + \beta y +
+  \gamma z = \delta$
+
+  Доказательство в обратную сторону. Пусть кривая лежит в некоторой плоскости
+  %img
+  $\vec b = const ~ \Rightarrow ~ \frac{db}{ds} = 0 ~ \Rightarrow ~ \kappa = 0$
+\end{proof}
+
+\begin{theorem}[(гометрический смысл кривизны кручения)]
+  1) Для плоской кривой $k = |\frac{d \vec t}{ds}|$ равна скорости вращения
+  касательного вектора.
+
+  2) $|\kappa| = |\frac{d\vec b}{ds}|$ равна скорости вращения соприкасающейся
+  плоскости относительно касательной прямой.
+\end{theorem}
+
+\begin{theorem}
+  Для всяких гладких функций $k = k(s) > 0$ и $\kappa = \kappa(s)$ существует
+  единственный с точностью до пложения в пространстве кривая
+  $\varphi = \varphi(s)$ кривизна которой равна кручению
+\end{theorem}

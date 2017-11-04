@@ -1,0 +1,148 @@
+\begin{title}
+  Глава 2
+\end{title}
+
+\begin{title}
+  Теория поверхностей
+\end{title}
+
+Формула для нахождения кривизны плоской кривой
+$$
+k = \frac{
+  + \left|
+  \begin{array}{cc}
+    x' & y' \\
+    x'' & y''
+  \end{array}
+  \right|
+}{(x'^2 + y'^2)^{\frac{3}{2}}}
+$$
+$y = f(x)$
+$$
+  \left\{
+  \begin{array}{c}
+    x = t \\
+    y = f(t)
+  \end{array}
+  \right. ~~~
+k = \frac{
+  + \left|
+  \begin{array}{cc}
+    1 & f' \\
+    0 & f''
+  \end{array}
+  \right|
+}{(x'^2 + f'^2)^{\frac{3}{2}}}
+=
+\frac{|f''|}{(1 + f'^2)^{\frac{3}{2}}}
+$$
+
+\begin{title}
+  Параграф 1
+\end{title}
+
+\begin{title}[\Large]
+  Определение и способы задания поверхностей
+\end{title}
+
+\begin{define}
+  Поверхность - это отображение непрерывной поверхностью в $R^3$, называется
+  непрерывное отображение $\varphi: ~ U \subseteq R^2 \to R^3$, где
+  $U \subseteq R^2$ - открытое множество на плоскости
+
+  $(u, \upsilon) \in U \to \varphi(u, \upsilon) = (x(u, \upsilon),
+  y(u, \upsilon), z(u, \upsilon))$
+
+  $\vec \varphi (U) \subseteq R^2$ - образ поверхности
+
+  $\vec z = (x(u, \upsilon), y(u, \upsilon), z(u, \upsilon))$ - вектор функция
+
+  $$
+  \left\{
+  \begin{array}{c}
+    x = x(u, \upsilon) \\
+    y = y(u, \upsilon) \\
+    z = z(u, \upsilon)
+  \end{array}
+  \right. ~~~ \text{параметрическое уравнение поверхности}
+  $$
+
+  $\vec \varphi = \vec \varphi(u, \upsilon)$ - называется гладкая если
+  задающие ее координаты функции являются гладкими
+\end{define}
+
+\begin{define}
+  Гладка поверхность $\vec \varphi = (x(u, \upsilon), y(u, \upsilon),
+  z(u, \upsilon))$ называется регулярной если
+  $$
+  \forall (u, \upsilon) ~~~
+  \left(
+  \begin{array}{ccc}
+    \frac{\partial x}{\partial u} & \frac{\partial y}{\partial u} &
+    \frac{\partial z}{\partial u} \\
+    \frac{\partial x}{\partial \upsilon} &
+    \frac{\partial y}{\partial \upsilon} &
+    \frac{\partial z}{\partial \upsilon}
+  \end{array}
+  \right) = 2 ~ \Rightarrow
+  $$
+  $\vec \varphi_u = (x_u, y_u, z_u) ~~~ \vec \varphi_{\upsilon} ~~~
+  (x_{\upsilon}, z_{\upsilon}, z_{\upsilon})$ - линейно независимы
+\end{define}
+
+\begin{theorem}
+  Пусть $\varphi = \varphi(u, \upsilon)$ - гладкая поверхность и
+  $(u_0, \upsilon_0)$ такова что $\vec \varphi_{u} (u_0, \upsilon_0),
+  \vec \varepsilon_{\upsilon} (u_0, \upsilon_0)$ линейно независисмы, тогда
+  $\exists O(U(u_0, \upsilon_0))$ такова что $\vec \varphi :~ U(u_0,
+  \upsilon_0) \to R^3$ - инективно. (разные точки поверхности переходят в
+  разные точки пространства)
+\end{theorem}
+
+\begin{block}[Следствие]
+  Локально каждая точка образа поверхности однозначно определяется своими
+  параметрами $(u, \upsilon)$ (невозможно что две точки проходят в одну точку
+  образа)
+
+  Будем говорит что $(u, \upsilon)$ задаются на поверхности локальную систему
+  координат
+\end{block}
+
+\begin{theorem}
+  Пусть $f: ~ U \subseteq R^n \to R^m ~~ m \le n$ гладкое отображение и точка
+  $x_0 \in U$ такова что $rang ~ kdf(x_0) = u$ тогда $\exists O(U(x_0))$
+  такая что $f:~ U(x_0) \to R^m$ инективно
+\end{theorem}
+
+\begin{proof}
+  $f: U \subseteq R^2 \to R^3$
+
+  $f = (x(u, \upsilon)), y(u, \upsilon), z(u, \upsilon))$ в каждой точке
+  дифференциала это линейное отображение
+  $$
+  df =
+  \left(
+  \begin{array}{ccc}
+    x_u & y_u & z_u \\
+    x_{\upsilon} & y_{\upsilon} & z_{\upsilon} \\
+  \end{array}
+  \right)^T
+  $$
+  по условию $rang ~ kdf(u_0, \upsilon_0) = 2$ тогда по следствию из теоремы о
+  неявной функции следует что найдется окрестность в точке $(u_0, \upsilon_0)$
+  такая что $\exists O(U(u_0, \upsilon_0))$ такое что $f: U(u_0,
+  \upsilon_0) \to R^3$ инективн
+\end{proof}
+
+\begin{theorem}
+  Пусть $F(x,y,z)$ - гладкая функция, $(x_0, y_0, z_0) ~~ F(x_0, y_0, z_0) = 0
+  ~~ \grad F(x_0, y_0, z_0) = \left(
+  \frac{\partial F}{\partial x}(x_0, y_0, z_0),
+  \frac{\partial F}{\partial y}(x_0, y_0, z_0),
+  \frac{\partial F}{\partial z}(x_0, y_0, z_0)
+  \right) \not= 0$ тогда $\exists O(U(x_0, y_0, z_0))$ в которой множество
+  точек улидотворяет $F(x, y, z) = 0$ является образом регулярной поверхности.
+
+  В этом случае мы будем говорит ьчто эта регулярная поверхность задана
+  уравнением $F(x, y, z) = 0$
+\end{theorem}

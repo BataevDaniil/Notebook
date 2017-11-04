@@ -1,0 +1,97 @@
+\begin{title}
+  Касательные векторы поверхности. Касательная плоскости поверхности
+\end{title}
+
+\begin{define}
+  Каcательный вектор поверхности в точке $m_0$ называется вектор в точке $m_0$
+  являющийся касательнам вектором некоторой кривой поверxности проходящей
+  через точку $m_0$
+
+  Кривая на поверхности может быть задана в локальной системой координат
+  $(u, \upsilon)$
+  $$
+  \left\{
+    \begin{array}{l}
+      u = u(t) \\
+      \upsilon = \upsilon(t)
+    \end{array}
+  \right.
+  $$
+
+  $\varphi = \varphi(u(t), \upsilon(t))$ уравнение кривой в декартовой
+  системе координат
+
+  $\vec \varphi' = \vec \varphi_u u' + \vec \varphi_{\upsilon}
+  \upsilon'$ является линейной комьинацией векторов $\vec \varphi_u
+  \vec \varphi_{\upsilon}$
+\end{define}
+
+\begin{theorem}
+  Множество касательных векторов поверхности точки $m_0$ является двумерным
+  линейным пространством, в качестве базиса которого можно взять
+  $\vec \varphi_u \vec \varphi_{\upsilon}$
+\end{theorem}
+
+\begin{proof}
+  1) $\vec \varphi_u \vec \varphi_{\upsilon}$ - л.н.з
+
+  2) Всякий касательный вектор поверхости точки $m_0$ линейно выражается через
+  $\vec \varphi_u \vec \varphi_{\upsilon}$
+
+  $\alpha \vec \varphi_u +\beta \vec \varphi_{\upsilon} ~~~
+  \alpha, \beta \in R$ - нужно доказать
+
+  $$
+  \text{расмотрим кривую} ~~~
+  \left\{
+    \begin{array}{l}
+      u = \alpha t + u_0 \\
+      \upsilon = \beta t + \upsilon_0
+    \end{array}
+  \right. ~~~ m_0 (u_0, \upsilon_0)
+  $$
+  $$
+  \text{при} ~ t = 0 ~
+  \left\{
+    \begin{array}{l}
+      u = u_0 \\
+      \upsilon = \upsilon_0
+    \end{array}
+  \right. ~ \Rightarrow ~ \text{кривая проходит через точку} ~
+  m_0 (u_0, \upsilon_0)
+  $$
+  $\vec \varphi' = \vec \varphi_u u' + \vec \varphi_{\upsilon}
+  \upsilon' = \alpha \vec \varphi_u + \beta \vec \varphi_{\upsilon}$
+
+  $\vec \varphi_u, \vec \varphi_{\upsilon}$ касательный векторы, которые
+  образуют базис для всех касательных векторов.
+
+  Расмотрим координатные линии $\upsilon = \const ~~~ u = \const$
+
+  $$
+  u = \const
+  \left\{
+    \begin{array}{l}
+      u = \const \\
+      \upsilon = t
+    \end{array}
+  \right.
+  $$
+  $\vec \varphi' = \vec \varphi_u u' + \vec \varphi_{\upsilon}
+  \upsilon' = \vec \varphi_u 0 + \vec \varphi_{\upsilon} 1 =
+  \vec \varphi_{\upsilon}$
+\end{proof}
+
+\begin{define}[координат касательного вектора]
+  Каждый касательный вектор $\vec a$ имеет вид $\vec a =
+  \alpha \vec \varphi_u + \beta \vec \varphi_{\upsilon}$ тогда
+  $(\alpha, \beta)$ - называются
+  координатами касательного вектора $\vec a$ относительно локальной системы
+  координат $(u, \upsilon)$
+\end{define}
+
+\begin{define}[касательной плоскости поверхности в точке]
+  Касательная плоскость поверхности в точке $m_0$ называется плоскость
+  проходящая через точку $m_0$ и вектор $\vec \varphi_0 (m_0)
+  \vec \varphi_{\upsilon}(m_0)$
+\end{define}

@@ -12,11 +12,12 @@
 
   Аксиомы:
 
-  1) $\forall x,y \in M ~~~ \rho(x,y) = 0$ тогда и только тогда когда $x = y$
+  1) $\forall x,y \in M ~~~ \rho(x,y) \ge 0$ причем $\rho(x,y) = 0$ тогда и
+  только тогда когда $x = y$
 
   2) $\forall x,y \in M ~~~ \rho(x,y) =\rho(y,x)$
 
-  3) $\forall x,y,z \in M ~~~ \rho(x,y) \le \rho(x,y) + \rho(z,y)$
+  3) $\forall x,y,z \in M ~~~ \rho(x,z) \le \rho(x,y) + \rho(y,z)$
   (неравества треугольника)
 
   Отображение с такими свойствами называется метрикой.
@@ -55,7 +56,7 @@
 
 \begin{proof}
   $$
-  \sum_{k=1}^n (a_k + b_k)^2 \sum_{k=1}^n a_k^2 +
+  \sum_{k=1}^n (a_k + b_k)^2 = \sum_{k=1}^n a_k^2 +
   2\sum_{k=1}^n a_k b_k + \sum_{k=1}^n b_k^2 \le
   $$
   $$
@@ -80,8 +81,9 @@
 \end{title}
 
 \begin{define}[предела в метрическом пространстве]
-  $M$ с метрикой $\rho$. Последовательность $x_k \in M$ называется сходящейся
-  к элементу $p \in M ~~~ \lim_{k \to \infty} \rho(x_k, \rho) = 0$
+  Множество $M$ с метрикой $\rho$ последовательность $x_k \in M$ называется
+  сходящейся к элементу $p \in M$ если $\exists \lim_{k \to \infty} \rho(x_k, p)
+  = 0$
 \end{define}
 
 \begin{define}[окрестности в метрическом пространстве]
@@ -95,15 +97,17 @@
   $$
 \end{define}
 
-Если дано метрическое пространство, то сложенное подпротсранство тоже является
+Если дано метрическое пространство, то вложенное подпротсранство тоже является
 метрическим.
 
 \begin{theorem}
-  Если $x_k$ сходится в $\rho \in R^n ~ n \in N$ тогда $x_k \le M$
+  Если $x_k$ в метрическом пространсве сходится в $p \in R^n ~ n \in N$ тогда
+  $x_k \le M$
 \end{theorem}
 
 \begin{theorem}
-  Если $x_k$ сходится то она имеет не более одного предела.
+  Если $x_k$ в метрическом пространстве сходится то она имеет не более одного
+  предела.
 \end{theorem}
 
 \begin{proof}
@@ -113,7 +117,7 @@
   $$
 \end{proof}
 
-\begin{theorem}
+\begin{block}[Критерий сходимости]
   Для того чтобы в метрическом прострастве $R^n$ последовательность
   $$
   x^{(k)} = (x_1^{(k)}, x_2^{(k)}, \ldots, x_n^{(k)}) \to
@@ -130,26 +134,29 @@
   \end{array}
   \right.
   $$
-\end{theorem}
+\end{block}
 
 \begin{proof}
   I Пусть $x^{(k)} \to p$, тогда $|x_i^{(k)} - p_i| \le \rho(x^{(k)}, p) \to 0
-  ~~~ i = 1, 2, \cdots, n$
+  ~~~ i = 1, 2, \ldots, n$
 
-  II Пусть все условия выполнены $\rho(x^{(k)}, p)$ - б/м тогда $x^{(k)} \to p$
+  II Пусть все условия выполнены $\rho(x^{(k)}, p) \to 0$ тогда $x^{(k)} \to p$
 \end{proof}
 
 \begin{define}[фундаментальной последовательности]
-  $x_k$ метрического пространства $M$ называесятся фундаментальной, если
+  $x_k$ метрического пространства $M$ называется фундаментальной
+  последовательностью, если
   $$
   \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
-  \forall k \ge n_{\varepsilon} ~~~ \forall m \in M ~~~ \rho(x_k - x_{k+m}) <
+  \forall k \ge n_{\varepsilon} ~~~ \forall m \in M ~~~ \rho(x_k, x_{k+m}) <
   \varepsilon
   $$
 \end{define}
 
 \begin{theorem}
   Если $x_k$ сходится, то она фундаментальна.
+
+  Замечание: обратное утверждение не верно.
 \end{theorem}
 
 \begin{proof}
@@ -163,11 +170,9 @@
   $$
   тогда
   $$
-  \rho(x_k, x_{k+m}) \le \rho(x_k, p) + \rho(x_{n+k}, p)
+  \rho(x_k, x_{k+m}) \le \rho(x_k, p) + \rho(x_{k+m}, p)
   < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
   $$
-
-  Замечание: обратное утверждение не верно.
 \end{proof}
 
 \begin{define}[полного метрического пространства]
@@ -202,6 +207,10 @@
   - является полным.
 \end{proof}
 
+\begin{title}[\Large]
+  Открытые и замкнутые множества в метрическом пространстве
+\end{title}
+
 \begin{define}[внутреней точки метрического пространства]
   Точка $a$ называется внутренней точкой $D \subset M$ метрического
   пространства если  $\exists O_{\varepsilon}(a) \subset D$
@@ -212,27 +221,33 @@
 \end{define}
 
 \begin{block}[Свойства]
-  1) $\cup D_i ~ i \in I = D$ - объеденение любого числа открытых множеств
+  1) $\bigcup_{i \in I} D_i = D$ - объеденение любого числа открытых множеств
   является открытым множеством.
 
   \begin{proof}
     $a \in D ~~ \Rightarrow ~~ \exists i_0 \in I ~~ a \in D_{i_0}$
 
-    $\exists O_{\varepsilon}(a) \subset D_{c_0} \subset \cup D_i ~ i \in I$
+    $\exists O_{\varepsilon}(a) \subset D_{c_0} \subset \bigcup_{i \in I} D_i$
   \end{proof}
 
-  2) $\cap D_i = D ~ i = 1, 2, \ldots, m$ пересечение конечного числа открытых
+  2) $\bigcap_{i=1}^m D_i = D$ пересечение конечного числа открытых
   множеств является открытым множеством.
 
   \begin{proof}
-    $a \in D ~~~ \forall i = 1, 2, \ldots, m$
-    что то неясное
+    $\forall i = 1, 2, \ldots, m ~~~ a \in D_i ~~~
+    \exists O_{\varepsilon_i}(a) \subset D_i$
+
+    $\varepsilon = \min \{\varepsilon_1, \varepsilon_2, \ldots, \varepsilon_m\}$
+
+    $\forall i = 1, 2, \ldots, m ~~~
+    O_{\varepsilon}(a) \subset O_{\varepsilon_i}(a) \subset D$
   \end{proof}
 \end{block}
 
 \begin{define}[предельной точки]
   Точка $a$ называется предельной точкой множества $E \subset M$ если
-  $\forall \stackrel{\bullet}{O}(a) E \not= \oslash$
+
+  $\forall \stackrel{\bullet}{O}(a) \cap E \not= \oslash$
 \end{define}
 
 \begin{define}[замкнутого множества]
