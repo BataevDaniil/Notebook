@@ -394,7 +394,8 @@
   $$
   определение по Коши
   $$
-  \forall x \in \stackrel{\bullet}{O}(a) ~~~ x_k \to a \Rightarrow f(x_k) \to p
+  \forall x_k \in \stackrel{\bullet}{O}(a) ~~~ x_k \to a \Rightarrow
+  f(x_k) \to p
   $$
   определение по Гейне
 \end{define}
@@ -416,14 +417,14 @@
   множества $E$
   $$
   \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
-  \forall x \in E ~~~ \rho(x, a) < \delta_{\varepsilon} ~ \Rightarrow ~
+  \forall x \in E ~~~ \rho(x, a) < \delta_{\varepsilon} ~~~
   |f(x) - p| < \varepsilon
   $$
-  Предел по направлению, есть частный члучай предела по множеству, когда луч
-  выходящий из точки $a$ выходит по направлению у вектору $e$
+  Предел по направлению, есть частный случай предела по множеству, когда луч
+  выходящий из точки $a$ выходит по направлению к вектору $e$
 
   $$
-  D = \{ (x,y): ~ 0 < |x - a| < \alpha ~ 0 < |y - b| < \beta \}
+  D = \{ (x,y): ~ 0 < |x - a| < \alpha ~~ 0 < |y - b| < \beta \}
   $$
   $$
   \forall y \in \stackrel{\bullet}{O}(b) ~~~
@@ -439,30 +440,30 @@
   Неприрывность функции многих переменных. Свойства ФМП (локальные)
 \end{title}
 
-\begin{define}[непрерывности ФМП]
-  Пусть $f(x)$ определена на $O(a)$ если $\lim_{x \to a} f(x) = f(x)$, то
-  $f(x)$ - непрерывна
+\begin{define}[непрерывности ФМП в точке]
+  Пусть $f(x)$ определена в $O(a)$ если $\lim_{x \to a} f(x) = f(a)$, то
+  $f(a)$ - непрерывна в точке
 \end{define}
 
-\begin{theorem}
+\begin{block}[Свойства]
   Если $f(x), g(x)$ непрерывна в точке $a$ то
   $$
-  f(x) \pm g(x)
+  f(a) \pm g(a)
   $$
   $$
-  f(x) \cdot g(x)
+  f(a) \cdot g(a)
   $$
   $$
-  \frac{f(x)}{f(x)} ~~~ (g(a) \not= 0)
+  \frac{f(a)}{g(a)} ~~~ (g(a) \not= 0)
   $$
   также будут непрывны в точке
-\end{theorem}
+\end{block}
 
 \begin{theorem}
   $f(t) = f(t_1, t_2, \ldots, t_m)$ непрерывна в $b = (b_1, b_2, \ldots, b_m)$
   $t_k = g_k(x) = g_k(x_1, x_2, \ldots, x_n) ~ k = 1,2, \ldots, m$ непрывна в
   точке $a = (a_1, a_2, \ldots, a_m)$ тогда
-  $F(x) = f(g_1(x), g_2(x), \ldots, g_n(x)) ~ (b_k = g_k(a))$ непрерывна в
+  $F(x) = f(g_1(x), g_2(x), \ldots, g_m(x))$ непрерывна в
   точке $a$
 \end{theorem}
 
@@ -483,24 +484,25 @@
 \end{define}
 
 \begin{title}[\Large]
-  Свойства ФМП непрерывных не множествах
+  Свойства ФМП непрерывных на множествах
 \end{title}
 
-\begin{define}[непрерывности на $E$ ФМП]
+\begin{define}[непрерывности ФМП на множестве]
   $f(x)$ называется непрерывной на $E$ если она непрерывна в каждой точке по
-  множеству $E$ тоисть
+  множеству $E$ то eсть
   $$
-  \lim_{\substack{x \to a \\ x \in E}} f(x) = f(a)
+  \lim_{\substack{x \to a \\ \forall x \in E}} f(x) = f(a)
   $$
 \end{define}
 
 \begin{theorem}[Вейерштрасса ФМП]
-  Есил $f(x)$ непрерывна на комактном множестве $K$ в метрическом пространстве
+  Если $f(x)$ непрерывна на компактном множестве $K$ в метрическом пространстве
   $M$, то она ограничена на множестве $K$. $\exists L > 0 ~~~
   \forall x \in K ~~~ |f(x)| \le L$
 \end{theorem}
 
 \begin{proof}
+  Доказательство от обратного
   $$
   \exists L > 0 ~~~ \forall x_L \in K ~~~ |f(x_L)| > L
   $$
@@ -528,19 +530,20 @@
   $$
   \inf \limits_{x \in K} f(x) = \alpha
   $$
-  1) $\forall x \in K ~~~ f(x) \le \alpha$
-  2) $\varepsilon > 0 ~~~ \exists x_{\varepsilon} \in K ~~~
+  1) $\forall x \in K ~~~ \alpha \le f(x)$
+
+  2) $\forall \varepsilon > 0 ~~~ \exists x_{\varepsilon} \in K ~~~
   f(x_{\varepsilon}) < \alpha + \varepsilon$
 
   Пусть
   $$
-  \varepsilon = \frac{1}{k} ~~~ k \in N ~~~ \exists x_k \in K
+  \varepsilon = \frac{1}{k} ~~~ k \in N ~~~ \exists x_k \in K ~~~
   \alpha \le f(x_k) < \alpha + \frac{1}{k}
   $$
   так как $K$ - компактное множество, то
   $$
   \exists x_k \in K ~~~ x_{k_{\varphi}} \to a \in K ~~~ \alpha \le
-  f(x_k{\varphi}) < \alpha + \frac{1}{k_{\varphi}}
+  f(x_{k_{\varphi}}) < \alpha + \frac{1}{k_{\varphi}}
   $$
   $$
   \alpha \le f(a) \le \alpha ~ \Rightarrow ~ f(a) = \alpha = \inf f(x)
@@ -548,7 +551,7 @@
 \end{proof}
 
 \begin{theorem}
-  $f(x)$ непрерывная на компактном множестве $K$ ялвляется равномерно
+  $f(x)$ непрерывная на компактном множестве $K$ является равномерно
   непрерывной на множестве $K$
 \end{theorem}
 
@@ -556,14 +559,14 @@
   $f(x)$ является равномерно непрерывной на множестве $K$ если
   $$
   \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
-  \forall x', x'' \in K ~~~ \rho(x' - x'') < \delta_{\varepsilon}
+  \forall x', x'' \in K ~~~ \rho(x', x'') < \delta_{\varepsilon} ~~~
   |f(x') - f(x'')| < \varepsilon
   $$
   Допустим это не так
   $$
   \exists \varepsilon_0 > 0 ~~~ \forall \delta > 0 ~~~ \exists x_{\delta}',
   x_{\delta}'' \in K ~~~ \rho(x_{\delta}', x_{\delta}'') < \delta ~~~
-  |f(x_{\delta}') - f(x_{\delta}'') \ge \varepsilon_0
+  |f(x_{\delta}') - f(x_{\delta}'')| \ge \varepsilon_0
   $$
   $$
   \delta = \frac{1}{k} ~~~ k \in N ~~~ x_k', x_k'' \in K ~~~
@@ -573,7 +576,7 @@
   x_k' \in K ~~~ x_{k_{\varphi}}' \to a \in K ~~~ x_{k_{\varphi}}'' \to a
   $$
   $$
-  |f(x_{k_{\varphi}}' - f(x_{k_{\varphi}}'') \ge \varepsilon_0
+  |f(x_{k_{\varphi}}') - f(x_{k_{\varphi}}'')| \ge \varepsilon_0
   $$
   $$
   |f(a) - f(a)| \ge \varepsilon_0 > 0
@@ -663,3 +666,671 @@
 \begin{title}[\Large]
   Достаточное условия дифференцируемости функций многих переменных
 \end{title}
+
+\begin{theorem}
+  Если $O(a) \subset R ~~ \exists$ все частные производные $f(x)$ который
+  яввляются непрерывными в точке $a$ тогда $f(x)$ дифференциируема в точке $a$
+\end{theorem}
+
+\begin{proof}
+  $f(x,y,z) ~~ \exists (a,b,c) ~~ f'_x (x,y,z) ~~ f'_y (x,y,z) ~~ f'_z (x,y,z)$
+  $$
+  f_{\Delta}(a,b,c) = f(x,y,z) - f(a,b,c) =
+  $$
+  $$
+  = (f(x,y,z) - f(a,y,z)) +
+  (f(a,y,z) - f(a,b,z)) + (f(a,b,z) - f(a,b,c)) =
+  $$
+  $$
+  = f'_x(a + \theta_1(x-1)), y, z)(x-a) + f'_y(a,b + \theta_2(y-b), z)(y-b) +
+  f'_z(a,b,c + \theta_3(z-c))(z-c) =
+  $$
+  $$
+  = f_1(x,y,z)(x-1) + f_2(x,y,z)(y-b) + f_3(x,y,z)(z-c)
+  $$
+  $$
+  0 < \theta_1 < 1 ~~ 0 < \theta_2 < 1 ~~ y_{\Delta} = f'(c)x_{\Delta}
+  $$
+\end{proof}
+
+\begin{title}
+  Дифференцирование сложных функций многих переменных
+\end{title}
+
+\begin{theorem}
+  Пусть $u = f(t_1, t_2, \ldots, t_m)$ и $f$ дифференциируема в точке
+  $b = (b_1, b_2, \ldots, b_m)$ функция $t_k = g_k(x) ~~ k = 1,2, \ldots m$
+  определна в $O(a)$ $a = (a_1, a_2, \ldots a_n)$ и дифференциируемы в $a$
+  $b_k = g_k(a)$ тогда $F(x) = f(g_1(x), g_2(x), \ldots, g_m(x))$ является
+  дифференциируемой в точке $a$ и частные производные
+  $$
+  F'_{x_i}(a) = \sum_{k=1}^m \frac{\partial f(b)}{\partial t_k}
+  \frac{\partial g_k(a)}{\partial x_i}
+  $$
+\end{theorem}
+
+\begin{proof}
+  $f(t) - f(b) = \sum_{k=1}^m f_k(t)(t_k - b_k)$ где $f_k(t)$ определена и
+  непрерывная в точке $b$ $f_k(b) = f'_{t_k}(b)$ $g_k(x) - g_k(a) =
+  \sum_{i=1}g_{k_i}(x)(x_i - a_i)$ где $g_{k_i}(x)$ определена $O(a)$ и
+  непрерывна в точке $g_{k_i}(a) = \frac{\partial g_k(a)}{\partial x_i}$ тогда
+  $$
+  F(x) - F(a) = f(g_1(x), g_2(x), \ldots, g_m(x)) - f(g_1(a), g_2(a),
+  \ldots, g_m(a)) =
+  $$
+  $$
+  = \sum_{k=1}^m f_k(g_1(x), g_2(x), \ldots, g_m(x)) (g_k(x) - g_k(a)) =
+  $$
+  $$
+  \sum_{k=1}^m f_k(g_1(x), g_2(x), \ldots, g_m(x)) \sum_{i=1}^n g_{k_i}(x)
+  (x_i - a_i)=
+  $$
+  $$
+  \sum_{i=1}^n \overbrace{\left( \sum_{k=1}^m f_k(g_1(x), g_2(x), \ldots,
+  g_m(x)) \right)}^{\text{непр по критерию} ~ F(x) ~ \text{дифф в точке} ~ a}
+  (x_i - a_i)
+  $$
+  $$
+  F'_{x_i}(a) = \sum_{k=1}^m f_k(b) g_k(a) = \sum_{k=1}^m
+  \frac{\partial f(b)}{\partial t_k} \frac{\partial g_k(a)}{\partial x_i}
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Формула конечных приращений для ФМП. Производные по направлениюю Градиент
+\end{title}
+
+\begin{theorem}
+  Пусть $f(x)$ дифференциируема в всех точка в выпуклой области $D \subset R^n$
+
+  $\forall a,b \subset D ~~ \exists 0 < \theta < 1$
+  $$
+  f(b) - f(a) = \sum_{k=1}^n f'_{x_k} (a + \theta(b-a)(b_k-a_k))
+  $$
+\end{theorem}
+
+\begin{proof}
+  $[a,b] = \{x = (x_1, x_2, \ldots, x_m): ~ x_k = a_k + t(b_k - a_k) ~
+  t \in [0,1]\}$
+
+  $\varphi = f(a_1 + t(b_1 - a_1)), a_2 + t(b_2 - a_2), \ldots,
+  a_n + t(b_n-a_n))$
+
+  $\varphi(1) - \varphi(0) = \varphi(\theta) (1 - 0)$
+  $$
+  f(b) - f(a) = \sum_{k=1}^n f'_{x_k}(a_1 + \theta(b_1 - a_n)),
+  a_2 + \theta(b_2 - a_2), \ldots, a_n + \theta(b_k - a_k) (b_k - a_k) =
+  $$
+  $$
+  = \sum_{k=1}^n f'_{x_k}(a + \theta(b-a)(b_k - a_k))
+  $$
+\end{proof}
+
+\begin{define}[прозводной по направлению]
+  Пусть $f(x)$ задана в окрестности $a \in R^n$ по напрвлению
+  $\vec e = (e_1, e_2, \ldots e_n)$ производной в точке $f(a)$ называется
+  $$
+  \lim_{t \to 0 ~ +0} \frac{f(a_1 + te_1, a_2 + te_2, \ldots, a_n + te_n) -
+  f(a_1, a_2, \ldots, a_n)}{t} = \frac{\partial f(a)}{\partial \vec e}
+  $$
+\end{define}
+
+\begin{theorem}
+  Если $f(x)$ дифференциируема а точке $a \in R^n$ тогда производная
+  $$
+  \frac{\partial f(a)}{\partial \vec e} = \sum_{k=1}^n e_k f'_{x_k}(a) =
+  (\grad f(a), \vec e) ~ \text{- скалярное направление}
+  $$
+\end{theorem}
+
+\begin{define}[градиента]
+  Вектор составленный из частных производных это градиент
+  $$
+  (f'_{x_1}(a), f'_{x_2}(a), \ldots, f'_{x_n}(a)) = \grad f(a)
+  $$
+  $\grad f(a)$ показывает направление наибольшего изменения функции
+
+  $|\grad f(a)|$ показывает скорость изменения
+\end{define}
+
+\begin{title}[\Large]
+  Дифференциал ФМП
+\end{title}
+
+\begin{define}
+  Пусть $f(x)$ дифференциала в точке $a \in R^n$ то есть
+  $$
+  f(x) - f(a) = \sum_{k=1}^n f'_{x_k}(a) (x_k - a_k) + \alpha(x)\rho(x,z)
+  $$
+  $x_k - a_k = dx_k ~~ df(a) = \sum_{k=1}^n f'_{x_k}(a)dx_k$ - дифференциал
+  первого порядка
+\end{define}
+
+\begin{block}[Свойства]
+  Если $f(x), g(x)$ дифференциируемы в точке $x$ то
+
+  1) $d(f(x) \pm g(x)) = df(x) \pm dg(x)$
+
+  2) $d(f(x) \cdot g(x)) = g(x)df(x) + f(x)dg(x)$
+
+  \begin{proof}
+    $$
+    d(f(x) \cdot g(x)) = \sum_{k=1}^n (f(x) g(x))'_{x_k} dx_k =
+    \sum_{k=1}^n (f'_{x_k}(x) g(x) + f(x) g'_{x_k}(x))dx_k =
+    $$
+    $$
+    = g(x)) \sum_{k=1}^n f'_{x_k}dx_k + f(x) \sum_{k=1}^n g'_{x_k}(x)dx_k =
+    g(x)df(x) + f(x)dg(x)
+    $$
+  \end{proof}
+
+  3) $d(\frac{f(x)}{g(x)}) = \frac{g(x)df(x) - f(x)dg(x)}{g^2(x)} ~~~
+  g(x) \not= 0$
+\end{block}
+
+\begin{theorem}
+  Первый дифференциал обладает свойством инвариантности формы то есть
+  форма дифференциала остается неизменной, даже если $x_k$ зависит от
+  чего-то другого
+  $$
+  df(a) = \sum_{k=1}^n f'_{x_k}(a) dx_k
+  $$
+\end{theorem}
+
+\begin{proof}
+  Пусть $x_k = g_k(t) ~~ t \in R^m$
+
+  $F(t) = f(g_1(t), g_2(t), \ldots, g_n(t))$
+
+  $$
+  dF(t) = \sum_{i=1}^m F'_{t_i}dt_i = \sum_{i=1}^m \sum_{k=1}^n
+  f'_{x_k}(x) (g_k(t))'_{t_i}dt_i =
+  $$
+  $$
+  = \sum_{k=1}^n f'_{x_k}(x) \sum_{i=1}^m (g_k(t))'_{t_i} dt_i =
+  \sum_{k=1}^n f'_{x_k}(x)dg_k(t) = \sum_{k=1}^n f'_{x_k}(x) dx_k
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Геометрический смысл дифференциала ФМП
+\end{title}
+$z = f(x, y)$ существует дифференциал $(x_0, y_0)$ $f(x_0, y_0) = z_0$
+
+$\rho = \grad f(x, y)$
+
+возьмем произвольную кривую данной поверхности
+$$
+K = \left\{
+\begin{array}{l}
+  x = x(t) \\
+  y = y(t) \\
+  z = z(t)
+\end{array}
+\right. ~~~ t \in [a,b]
+$$
+$dz(t_0) = f'_x(x(t_0), y(t_0)) dx(t_0) + f'_y(x(t_0), y(t_0))dy(t_0)$
+
+$dz_0 = f'_x (x_0, y_0)dx_0 + f'_y(x_0, y_0)dy_0$
+
+$(dx_0, dy_0, dz_0)$ - касательный вектор кривой $K$
+
+$dz(t_0) - f'_x(x(t_0), y(t_0)) dx(t_0) + f'_y(x(t_0), y(t_0))dy(t_0) = 0$
+
+$(-f'(x_0, y_0), -f'_y(x_0, y_0), 1) = 0$ - ортогональность вектора,
+ортогонален всем кривым вектора нормали
+
+плоскость проходящая через точку $M$ перпендикулярная нормали это касательная
+плоскость поверхности $\rho$
+
+$z - f(x_0, y_0) = f'_x(x_0, y_0) + f'_y(x_0, y_0)(y - y_0)$ - уравнение
+касательной плоскости
+
+дифференциал $f(x,y)$ в точке $(x_0, y_0)$ приращение ампликаты касательной
+плоскости к графику функции в определнной точке
+
+\begin{title}[\Large]
+  Производная и дифференциалы высших порядков для ФМП
+\end{title}
+
+\begin{define}
+  Пусть $u = f(x)$ дифференциируема в $a \in R^n ~ O(a) ~~ \exists f'_{x_k}(x)
+  x \in O(a)$
+  $$
+  (f'_{x_k}(x))'_{x_i} = f''_{x_k x_i}(x) = \frac{\partial^2 f(x)}
+  {\partial x_i \partial x_k}
+  $$
+  $f''_{x_k x_i}(x), f''_{x_i x_k}(x)$ смешанный производные
+
+  $f''_{x_k x_k}(x) = f''_{x_k^2}(x)$
+\end{define}
+
+\begin{theorem}
+  Если в некоторой $O(a,b) ~ \exists f''_{xy}(x,y)$ обе смешанные производные
+  $f''_{yx}(x,y)$ которые непрерывны в точке $(a,b)$ тогда
+  $$
+  f''_{xy}(a,b) = f''_{yx}(a,b)
+  $$
+\end{theorem}
+
+\begin{title}[\Large]
+  Неявные функции. Теорема о существовании непрерывности и дифференциирование
+  неявной функции
+\end{title}
+
+\begin{define}
+  Если $F(x, y) = 0$ на $R^n$ $\forall x \in P ~~~ \exists! y \in R$ который
+  удовлитворяет уравнению $F(x, y) = 0$ тогда говорят что $y = f(x)$
+  задает неявную функцию
+
+  Если $\exists P = [a,b] \times [c,d]$ такое что $\forall x \in [a,b] ~~
+  \exists! y \in [c,b]$ удовлитворяющий $F(x,y) = 0$ то говорят что
+  $F(x,y) = 0$ в $P$ определяет $y = f(x)$
+\end{define}
+
+\begin{theorem}
+
+  1) $F(x, y) = 0$ имеет непрерывные частные производные $(x_0, y_0) ~~
+  F'_x(x,y) ~~ F'_y(x,y)$
+
+  2) $F(x_0, y_0) = 0$
+
+  3) $F'_y(x_0, y_0) \not= 0$
+
+  тогда существует прямоугольник с центром в точке $(x_0, y_0)$ то
+  $F(x, y) = 0$ определяет неявную функцию $y = y(x)$ которая является
+  непрерывной дифференциируемой в точке $(x_0, y_0)$ и
+  $$
+  f'(x) = - \frac{F'_x(x, y)}{F'_y(x, y)} = -
+  \frac{F'_x(x, f(x))}{F'_y(x, f(x))}
+  $$
+\end{theorem}
+
+\begin{proof}
+  1. Пусть для определенности $F'_y(x_0, y_0) > 0$
+
+  существует квадрат внутри круга где производная положительна из свойств
+  непрерывной функции
+
+  1) $F(x_0, y)$ - кривая пересекает нашу плоскость (так как $F(x_0, y_0) = 0$)
+  на отрезке $[y_0 - \tau_1, y_0 - \tau_1]$ $F_y(x_0, y) > 0$
+
+  $F(x_0, y_0 - \tau_1) < 0$
+
+  $F(x_0, y_0 + \tau_1) > 0$
+
+  2) $F(x, y_0 - \tau_1) ~~~ \exists [x_0 - \tau_2, x_0 + \tau_2]$
+
+  3) $F(x, y_0 + \tau_1) > 0 ~~~ [x_0 - \tau_3, x_0 + \tau_3]$
+
+  $[x_0 - \tau, x_0 + \tau] \times [x_0 - \tau_1, x_0 + \tau_1]$
+
+  $z = m \cdot n(\tau_2, \tau_3)$
+
+  $\forall x^* \in [x_0 - \tau, x_0 + \tau]$
+
+  $F(x^*, y_0 - \tau_1) < 0$
+
+  $F(x^*, y_0 + \tau_2) > 0$
+
+  так как $F(x^*, y) ~ \nearrow ~ F(x^*, y) ~ [y_0 - \tau_1, y_0 + \tau_1]$
+
+  существует непрерывная заданная в неявном виде функция
+
+  2. $F(x, y)$ достигает своего наибольшего значения
+
+  $F'_y(x, y) \ge \alpha = \inf F'_y (x, y) ~ (x, y) \in P$
+
+  $\alpha > 0 ~ \Rightarrow ~ |F'_x (x, y)| \le M$
+
+  Расмотрим $(x, y)$ и $(x + x_{\Delta}, y + y_{\Delta})$ - лежат в $P$ и на
+  кривой $F(x, y) = 0 ~~ F(x + x_{\Delta}, y + y_{\Delta}) = 0$
+
+  $F(x + x_{\Delta}, y + y_{\Delta}) - F(x, y) = 0$
+
+  $$
+  F'_x (x + \theta x_{\Delta}, y + \theta y_{\Delta})x_{\Delta} +
+  F'_y(x + \theta x_{\Delta}, y + \theta y_{\Delta})y_{\Delta} = 0
+  $$
+  $$
+  - \frac{F'_x (x + \theta x_{\Delta}, y + \theta y_{\Delta})}
+  {F'_y(x + \theta x_{\Delta}, y + \theta y_{\Delta})x_{\Delta}} = y_{\Delta}
+  $$
+
+  $|y_{\Delta}| \le \frac{M}{\alpha} |x_{\Delta}|$ - оценка
+  $x_{\Delta} \to 0 ~ y_{\Delta} \to 0$
+  $$
+  - \frac{F'_x (x + \theta x_{\Delta}, y + \theta y_{\Delta})}
+  {F'_y(x + \theta x_{\Delta}, y + \theta y_{\Delta})} =
+  \frac{y_{\Delta}}{x_{\Delta}}
+  $$
+  $- \frac{F'_x (x, y)}{F'_y(x, y)} = f'(x)$
+\end{proof}
+
+$$
+* =
+\left\{
+\begin{array}{l}
+  F_1(x_1, x_2, \ldots, x_n, y_1, y_2, \ldots, y_m) = 0 \\
+  F_2(x_1, x_2, \ldots, x_n, y_1, y_2, \ldots, y_m) = 0 \\
+  \ldots ~~~~ \ldots ~~~~ \ldots ~~~~ \ldots ~~~~ \ldots ~~~~ \ldots\\
+  F_m(x_1, x_2, \ldots, x_n, y_1, y_2, \ldots, y_m) = 0 \\
+\end{array}
+\right.
+$$
+
+\begin{define}
+  $F_i (x, y) ~ i = 1,2, \ldots, m$ определена на некотором параллелепипеде
+
+  $A \subset R^n =
+  [x_{01} - \alpha_1, x_{01} + \alpha_1] \times
+  [x_{02} - \alpha_2, x_{02} + \alpha_2] \times \ldots \times
+  [x_{0n} - \alpha_n, x_{0n} + \alpha_n]$
+
+  $B \subset R^n =
+  [y_{01} - \beta_1, y_{01} + \beta_1] \times
+  [y_{02} - \beta_2, y_{02} + \beta_2] \times \ldots \times
+  [y_{0n} - \beta_n, y_{0n} + \beta_n]$
+
+  $A \times B \subset R^{n+m}$
+
+  $x = (x_1, x_2, \ldots, x_n)$
+
+  $y = (y_1, y_2, \ldots, y_m)$
+
+  $x_0 = (x_{01}, x_{02}, \ldots, x_{0n})$
+
+  $y_0 = (y_{01}, y_{02}, \ldots, y_{0m})$
+
+  Если $\forall x \in A$ можно найти $y \in B$ для которого справедливы все
+  уравнения системы $*$ тогда говорят  что в параллелограмм $A \times B$ с
+  с $*$ задает неявную функцию
+
+  $y_i = f_1(x) = f_1(x_1, x_2, \ldots, x_n) ~~ i = 1, 2, \ldots, n$
+\end{define}
+
+\begin{theorem}
+  1) $F_i(x, y)$ непрерывна дифференциируема в $(x_0, y_0)$ то есть имеет
+  непрерывные частные производные
+
+  2) $F_i(x_0, y_0) = 0 ~~ i = 1,2, \ldots, m$
+
+  3)
+  $$
+  \left|
+  \begin{array}{cccc}
+    \frac{\partial F_1(x_0, y_0)}{\partial y_1} &
+    \frac{\partial F_1(x_0, y_0)}{\partial y_2} &
+    \cdots &
+    \frac{\partial F_1(x_0, y_0)}{\partial y_m} \\
+
+    \frac{\partial F_2(x_0, y_0)}{\partial y_1} &
+    \frac{\partial F_2(x_0, y_0)}{\partial y_2} &
+    \cdots &
+    \frac{\partial F_2(x_0, y_0)}{\partial y_m} \\
+
+    \cdots & \cdots &\cdots &\cdots \\
+
+    \frac{\partial F_m(x_0, y_0)}{\partial y_1} &
+    \frac{\partial F_m(x_0, y_0)}{\partial y_2} &
+    \cdots &
+    \frac{\partial F_m(x_0, y_0)}{\partial y_m}
+  \end{array}
+  \right| \not= 0
+  $$
+
+  тогда существует параллелипипед $A \times B$ с центром в точке $(x_0, y_0)$
+  в котором система $*$ задает неявную функцию
+  $y_i = f_i(x) = f_i(x_1, x_2, \ldots, x_n)$ которые имеют непрерывные частные
+  производные
+\end{theorem}
+
+\begin{title}[\Large]
+  Формула Тейлора для ФМП
+\end{title}
+
+\begin{theorem}
+  $y = f(x)$ определена $O(a) \subset R^n$ и имеет в этой окрестности частные
+  производные до $m$ порядка включительно
+  $$
+  \forall x \in O(a) ~~ \exists \theta \in (0, 1) ~~
+  f(x) = f(a) + \sum_{k=1}^{m-1} \frac{d^k f(a)}{k!} + R_m(x) ~~~
+  R_m(x) = \frac{d^m f(a + \theta(x-a))}{m!}
+  $$
+\end{theorem}
+
+\begin{proof}
+  $[a - x_{\Delta}, a + x_{\Delta}] = \{ a + tx_{\Delta}: ~ t \in [-1, 1] \}$
+
+  $\varphi(t) = f(a + tx_{\Delta}) ~~ \varphi(0) = f(a)$
+  $$
+  \varphi'(t) = \sum_{k=1}^n f'_{x_k}(a + tx_{\Delta})x_{\Delta k} =
+  df(a + tx_{\Delta}) ~~~ x_k = a_k + tx_{\Delta k}
+  $$
+  $$
+  \varphi''(t) = \sum_{k=1}^n \sum_{l=1}^n f''_{x_k x_l}
+  (a + tx_{\Delta})dx_k dx_k = d^2f(a + tx_{\Delta})
+  $$
+  $$
+  \cdots ~~~~ \cdots ~~~~\cdots ~~~~\cdots ~~~ \cdots ~~~~ \cdots ~~~~
+  \cdots ~~~~\cdots
+  $$
+  $$
+  \varphi^m(t) = d^m f(a + tx_{\Delta})
+  $$
+\end{proof}
+
+\begin{block}[Формула Маклорена]
+  $$
+  \varphi(1) = \varphi(0) + \sum_{k=1}^{m-1} \frac{\varphi^{(k)}(0)}{k!} 1^k +
+  \frac{\varphi^{(m)}(\theta)}{m!} 1^m
+  $$
+  $$
+  f(x) = f(a) + \sum_{k=1}^{m-1} \frac{d^k f(0)}{k!} +
+  \frac{d^m f(a + \theta x_{\Delta})}{m!}
+  $$
+\end{block}
+
+\begin{block}[Следствие]
+  Если выполнены все условия теоремы выше то
+  $$
+  f(x) = f(a) + \sum_{k=1}^m \frac{d^k f(a)}{k!} + \overline{0}(|x_{\Delta}|^m)
+  ~~~ x_{\Delta} \to 0 ~~~ |x_{\Delta}| = \sqrt{\sum_{k=1}^n (x_{\Delta k})^m}
+  $$
+  формула Тейлора с остаточным членом в форме Пеано
+\end{block}
+
+\begin{title}[\Large]
+  Экстремум ФМП. Необходимые условия ФМП
+\end{title}
+
+\begin{define}[$\max ~ \min$ ФМП]
+  $f(x)$ определена $O(a) \subset R^n$
+
+  $\forall x \in O(a) ~~~ f(x) \le f(a)$ точка $a$ $\max$
+
+  $\forall x \in \stackrel{\bullet}{O}(a) ~~~ f(x) < f(a)$ точка $a$
+  строгова $\max$
+
+  $\forall x \in O(a) ~~~ f(x) \ge f(a)$ точка $a$ $\min$
+
+  $\forall x \in \stackrel{\bullet}{O}(a) ~~~ f(x) > f(a)$ точка $a$
+  строгова $\min$
+\end{define}
+
+\begin{theorem}
+  $f(x)$ имеет в точке $a$ экстремум и частную производную $f'_{x_k}(a)$ тогда
+  $f'_{x_k}(a) = 0$ (теорема Ферма)
+\end{theorem}
+
+\begin{block}[Следствие]
+  $f(x)$ имеет в точке $a$ экстремум и дифференциируема тогда $df(a) = 0$
+  - стационарная точка
+\end{block}
+
+\begin{block}[Лемма]
+  Необходимые условия минимума для $f(x)$ одной переменной
+
+  Если $\varphi(t)$ в точке $a=0$ имеет минимум и существует $\varphi''(0)$
+  тогда $\varphi''(0) \ge 0$
+\end{block}
+
+\begin{proof}
+  $$
+  \varphi(t) = \varphi(0) + \frac{\varphi'(0)}{1!}t +
+  \frac{\varphi''(0)}{2!}t^2 + \alpha(t)t^2 ~~~ \alpha(t) \to 0 ~~ t \to 0
+  $$
+  $$
+  \varphi(t) - \varphi(0) = \frac{\varphi''(0)}{2!}t^2 + \alpha(t)t^2
+  $$
+  $$
+  0 \le \frac{\varphi(t) - \varphi(0)}{t^2} = \frac{\varphi''(0)}{2!} +
+  \alpha(t) ~ \Rightarrow ~ \frac{\varphi''(0)}{2!} \ge 0
+  $$
+\end{proof}
+
+\begin{theorem}
+  $f(x)$ в точке минимума $a$ имеет непрерывные частные производные до 2-ого
+  порядка включительно тогда $d^2f(a) \ge 0$
+\end{theorem}
+
+\begin{proof}
+  $\varphi(t) = f(a + tx_{\Delta}) ~~~ x_{\Delta} = x - a ~~~
+  t \in [-\delta, \delta]$ по первой теореме в этом разделе
+\end{proof}
+
+\begin{title}[\Large]
+  Достаточные условия экстремума ФМП
+\end{title}
+
+\begin{define}[квадратичной формы]
+  $$
+  \Phi(t) = \sum_{k=1}^n \sum_{l=1}^n a_{kl}t_k t_l ~
+  \text{квадратичная форма}
+  $$
+  $a_{kl} = a_{lk} ~~~ t = (t_1, t_2, \ldots, t_n) ~~~
+  l = (l_1, l_2, \ldots, l_n)$
+
+  $\forall t \not= 0 ~~~ \Phi(t) > 0$ полижтельная определенная квадратичкая
+  форма
+
+  $\forall t \not= 0 ~~~ \Phi(t) < 0$ отрицательная определенная квадратичкая
+  форма
+
+  $\exists t', t'' \in R^n ~~~ \Phi(t') > 0 ~~~ \Phi(t'') < 0$ неопределенная
+  квадратичная форма
+\end{define}
+
+\begin{theorem}
+  $\Phi(t)$ положительно определенная квадтратичная форма тогда
+  $$
+  \exists S > 0 ~~~ \forall t \in R^n ~~~ \Phi(t) \ge S|t|^2 ~~~
+  |t| = \sqrt{\sum_{k=1}^n t_k^2}
+  $$
+\end{theorem}
+
+\begin{proof}
+  $\forall t \not= 0$ рассмотрим $\Phi(\frac{t}{|t|}) ~~~ \frac{t}{|t|} \in
+  S_1(0)$
+
+  $\Phi(\frac{t}{|t|}) \ge \Phi(\frac{t_0}{|t_0|}) =
+  \inf \limits_{t \in S_1(0)} \Phi(t) > 0$
+
+  $\Phi(\frac{t}{|t|}) \ge s > 0$
+
+  $\frac{1}{|t|^2} \Phi(t) \ge s$
+
+  $\Phi(t) \ge s|t|^2$
+\end{proof}
+
+\begin{theorem}
+  $f(x)$ имеет непрерывные частные производные 2-ого порядка в $a \in R^n$ и
+  $df(a) = 0$
+
+  1) Если $d^2 f(a) = \sum_{k=1}^n \sum_{l=1}^n f''_{x_k x_l} dx_k dx_l$
+  является положительной определенной квадратичной формой относительно
+  дифференциалов независимых переменных, то $a$ является точкой стогово
+  минимума
+
+  2) Если $d^2 f(a) = \sum_{k=1}^n \sum_{l=1}^n f''_{x_k x_l} dx_k dx_l$
+  является отрицательной определенной квадратичной формой относительно
+  дифференциалов независимых переменных, то $a$ является точкой стогово
+  максимума
+
+  3) Если $d^2 f(a) = \sum_{k=1}^n \sum_{l=1}^n f''_{x_k x_l} dx_k dx_l$
+  является неопределенной квадратичной формой относительно
+  дифференциалов независимых переменных, то $a$ не является точкой экстремума
+\end{theorem}
+
+\begin{proof}
+  $$
+  f(x) - f(a) = \frac{1}{2}d^2f(a) + \alpha(x) \rho^2(x, a) ~~~
+  \alpha(x) \to 0 ~~~ x \to a
+  $$
+  1) Пусть $d^2f(a)$ является положительной определенной квадратичной формой
+  тогда на основании первой теоремы в этом разделе
+  $$
+  f(x) - f(a) = \frac{1}{2} d^2f(a) + \alpha \rho^2(x, a) \ge \frac{1}{2}
+  S|x_{\Delta}|^2 + \alpha(x)|x_{\Delta}|^2 =
+  $$
+  $$
+  = |x_{\Delta}|^2 (\frac{S}{2} + \alpha(x)) \le |x_{\Delta}|^2 \frac{S}{4} > 0
+  ~~ |\alpha(x)| \le \frac{S}{4}
+  $$
+  $\forall x_{\Delta} \not= 0 ~~~ f_{\Delta}(a) > 0$ $a$ - точка минимума
+
+  2) Если $d^2f(a)$ является отрицательной определенной квадратичной формой то
+  заменяем $f(x)$ на $-f(x)$ а дальше принцип чайника
+
+  3) Если $d^2 f(a)$ знакоопределенная квадратичная форма то от обратного
+\end{proof}
+
+\begin{block}[Критерий знакоопределенности квадратичной формы]
+  1) $\Phi(t) = \sum_{k=l}^n \sum_{l=1}^n a_{kl} t_k t_l$ для того чтобы
+  квадратичная форма была положительно определенной необходимо и достаточно
+  чтобы главные миноры матрица $A$ были положительны
+
+  2) Для того чтобы квадратичная форма была отрицательно определенной
+  необходимо и достаточно чтобы главные миноры матрица $A$ были
+  знакочередующимися $(-1)^k \Delta_k > 0$
+
+  3) В остальных случаях знаконеопределенная квадратичная форма
+\end{block}
+
+\begin{block}[Критерий знакоопределенности квадратичной формы]
+  1) Для того чтобы квадратичная форма была положительно определенной
+  необходимо и достаточно чтобы все ее собственные значения были положительны
+
+  2) Для того чтобы квадратичная форма была положительно определенной
+  необходимо и достаточно чтобы все ее собственные значения были отрицательны
+\end{block}
+
+\begin{title}[\Large]
+  Условия экстремума ФМП. Прямой метод отыскания точек условного экстремума
+\end{title}
+
+\begin{define}
+  $u = f(x) ~~~ x \in D \subset R^n$
+  $$
+  (*) =
+  \left\{
+  \begin{array}{c}
+    \varphi_1(x) = 0 \\
+    \varphi_2(x) = 0 \\
+    \cdots ~~~ \cdots \\
+    \varphi_m(x) = 0 \\
+  \end{array}
+  \right. ~~ \text{уравнение связи}
+  $$
+  $\varphi_m(x) \in D ~~~ m < n$
+
+  $E$ - множество точке $D$ удовлитворяющих всем уравнениям системы $*$
+
+  $a \in D \cap E$ называется точкой условного минимума
+
+  если $\exists O(a)$ такая что $\forall x \in O(a) \cap E ~~~ f(x) \ge f(a)$
+  точка $a$ условного минимума
+
+  если $\exists \stackrel{\bullet}{O}(a)$ такая что $\forall x \in O(a) \cap E
+  ~~~ f(x) \ge f(a)$ точка $a$ строгово условного минимума
+\end{define}
