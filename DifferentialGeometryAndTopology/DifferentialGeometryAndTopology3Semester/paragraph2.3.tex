@@ -86,3 +86,112 @@ $$
 {\sqrt{Eu_1'^2 + 2Fu_1'\upsilon_1' + G\upsilon_1'^2}
 \sqrt{Eu_1'^2 + 2Fu_1'\upsilon_1' + G\upsilon_1'^2}}
 $$
+
+\begin{block}[Свойства]
+  1. $E,G > 0$
+  \begin{proof}
+    $\vec \varphi = \vec \varphi (u, \upsilon)$ регулярное поверхность
+    $ds^2 = Edu^2 + 2Fdud\upsilon + Gd\upsilon^2$
+
+    $E = (\vec \varphi_u, \vec \varphi_u) = |\vec \varphi_u|^2 > 0$
+    $G = (\vec \varphi_{\upsilon}, \vec \varphi_{\upsilon}) =
+    |\vec \varphi_{\upsilon}|^2 > 0$
+  \end{proof}
+
+  2. первая квадратичная формула положительна определена
+  $$
+  A =
+  \left|
+  \begin{array}{cc}
+    E & F \\
+    F & G
+  \end{array}
+  \right|
+  $$
+  $$
+  \left|
+  \begin{array}{cc}
+    E & F \\
+    F & G
+  \end{array}
+  \right|
+  = EG - F^2 = |\vec \varphi_u|^2|\vec \varphi_u|^2 - |\vec \varphi_u|^2
+  |\vec \varphi_{\upsilon}|^2 \cos^2 \alpha = |\vec \varphi_u|^2
+  |\vec \varphi_{\upsilon}|^2 \sin^2 \alpha = |[\vec \varphi_u, \vec
+  \varphi_{\upsilon}]|^2 > 0
+  $$
+  так как $\vec \varphi_u, \vec \varphi_{\upsilon}$ лнз
+
+  $d\upsilon = |[\vec \varphi_u du, \vec \varphi_{\upsilon} d\upsilon]| =
+  |[\vec \varphi_u, \vec \varphi_{\upsilon}]| du d\upsilon$
+
+  $$
+  G = \iint \limits_{\Omega} |[\vec \varphi_u, \vec \varphi_{\upsilon}]|
+  du d\upsilon = \iint \limits_{\Omega} \sqrt{EL - F^2}dud\upsilon
+  $$
+\end{block}
+
+\begin{define}[изометрического отображения поверхности]
+  Отображение поверхноси называется изометрическим если оно сохраняется длины
+  кривых и углы между кривыми.
+\end{define}
+
+\begin{theorem}
+  Поверхность является локальным изометрическим тогда когда выбрать
+  параметризацию так что соответствующим квадтртичной формы будут одинаковы
+\end{theorem}
+
+\begin{define}[конформного отображения поверхности]
+  Отображения поверхности сохраняющая углы между кривыми называется
+  конформным.
+\end{define}
+
+\begin{theorem}
+  Две поверхности локально комфорны тогда и только тогда когда на них можно
+  выбрать параметризацию так что соответсвующие квадратичные формы будут
+  параметризованными.
+\end{theorem}
+
+\begin{title}[\Large]
+  Нормальная кривизна кривой на поверхности второй квадратичной формы
+  поверхности
+\end{title}
+
+Пусть $\vec \varphi = \vec \varphi(u, \upsilon)$ регулярная поверхность
+
+$\vec m$ еденичная нормаль к поверхности
+
+$\vec m = \frac{[\vec \varphi_u, \vec \varphi_{\upsilon}]}{[\vec \varphi_u,
+\vec \varphi_{\upsilon}]} = \frac{[\vec \varphi_u, \vec \varphi_{\upsilon}]}
+{EG - F^2}$
+
+пусть
+$$
+\left\{
+\begin{array}{c}
+  u = u(s) \\
+  \upsilon = \upsilon(s)
+\end{array}
+\right. ~ \text{кривая на поверхности с натуральным параметром $s$}
+$$
+$\vec \varphi = \vec \varphi(u(s), \upsilon(s))$ уравнение кривой в декартовой
+системе координат
+
+$\cos \alpha = K \cos \alpha$
+
+$\stackrel{\bullet}{\vec \varphi} = \vec \varphi_u \stackrel{\bullet}{u} +
+\vec \varphi_{\upsilon} \stackrel{\bullet}{\upsilon}$
+
+$$
+\stackrel{\bullet \bullet}{\vec \varphi} = \vec \varphi{uu}
+\stackrel{\bullet}{u^2} + 2\vec \varphi{u\upsilon}\stackrel{\bullet}{u}
+\stackrel{\bullet}{\upsilon} + \vec \varphi_{\upsilon \upsilon} \upsilon^2
++ 2\stackrel{\bullet}{\upsilon}\stackrel{\bullet \bullet}{\upsilon} +
+\vec \varphi_u \stackrel{\bullet \bullet}{u} =
+$$
+$$
+= \frac{Ldu^2 + 2Mdud\upsilon + Nd\upsilon^2}{ds^2} =
+= \frac{Ldu^2 + 2Mdud\upsilon + Nd\upsilon^2}{Edu^2 + 2Fdu d\upsilon +
+Gd\upsilon^2}
+$$
+$II Ldu^2 + 2Mdud\upsilon + Nd\upsilon^2$ вторая квадратичная форма поверхности

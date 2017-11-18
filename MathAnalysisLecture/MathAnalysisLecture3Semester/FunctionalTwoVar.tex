@@ -97,8 +97,10 @@
   $$
 \end{define}
 
-Если дано метрическое пространство, то вложенное подпротсранство тоже является
-метрическим.
+\begin{block}[Свойство]
+  Если дано метрическое пространство, то вложенное подпротсранство тоже
+  является метрическим.
+\end{block}
 
 \begin{theorem}
   Если $x_k$ в метрическом пространсве сходится в $p \in R^n ~ n \in N$ тогда
@@ -1334,3 +1336,212 @@ $$
   если $\exists \stackrel{\bullet}{O}(a)$ такая что $\forall x \in O(a) \cap E
   ~~~ f(x) \ge f(a)$ точка $a$ строгово условного минимума
 \end{define}
+
+\begin{title}[\Large]
+  Методы множетелей Лагранжа. Необходимые и достаточные условия условного
+  экстремума
+\end{title}
+
+\begin{define}
+  $x = (x_1, x_2, \ldots, x_m) ~~~ \lambda = (\lambda_1, \lambda_2, \ldots,
+  \lambda_n)$
+  $$
+  L(x, \lambda) = f(x) + \sum_{i=1}^m \lambda_i \varphi_i(x) ~ \text{
+  функция Лагранжа}
+  $$
+  $(a, \lambda^*)$ называется стационарной точкой функции Лагранжа если
+  $\frac{\partial (a, \lambda^*)}{\partial x_k} = 0 ~~~ k = 1,2, \ldots, n$
+  $\frac{\partial (a, \lambda^*)}{\partial x_i} = 0 ~~~ i = 1,2, \ldots, m$
+
+  $\lambda_i^*$ множетели Лагранжа
+\end{define}
+
+\begin{theorem}[Лагранжа необходимое условие условного экстремума]
+  1) $a$ точка условного экстремума $f$ при наличии связи системы $*$
+
+  2) $f_i, \varphi_i$ непрерывно дифференциируема в $O(a)$
+
+  3) Матрица Якоби имеет имеет ранг $m$
+  $$
+  A =
+  \left(
+  \begin{array}{cccc}
+    \frac{\partial \varphi_1(a)}{\partial x_1} &
+    \frac{\partial \varphi_1(a)}{\partial x_2} &
+    \cdots &
+    \frac{\partial \varphi_1(a)}{\partial x_n} \\
+
+    \frac{\partial \varphi_2(a)}{\partial x_1} &
+    \frac{\partial \varphi_2(a)}{\partial x_2} &
+    \cdots &
+    \frac{\partial \varphi_2(a)}{\partial x_n} \\
+    \cdots & \cdots & \cdots & \cdots \\
+
+    \frac{\partial \varphi_m(a)}{\partial x_1} &
+    \frac{\partial \varphi_m(a)}{\partial x_2} &
+    \cdots &
+    \frac{\partial \varphi_m(a)}{\partial x_n} \\
+  \end{array}
+  \right) ~~ \text{матрица Якоби}
+  $$
+  тогда $\exists \lambda^*$ такие что $(a, \lambda^*)$ явлется стационарной
+  точкой для функции Лагранжа
+\end{theorem}
+
+\begin{proof}
+  Из условия 3 следует что
+  $$
+  \begin{array}{c}
+    x_1 = g_1(x_{m+1}, x_{m+2}, \ldots, x_n) \\
+    x_2 = g_2(x_{m+1}, x_{m+2}, \ldots, x_n) \\
+    \cdots ~~~ \cdots ~~~ \cdots ~~~ \cdots \\
+    x_m = g_m(x_{m+1}, x_{m+2}, \ldots, x_n)
+  \end{array}
+  $$
+  $F(x_{m+1}, x_{m+2}, \ldots, x_n) = f(g_1(), g_2(x), \ldots, g_m, x_{m+1},
+  \ldots, x_n)$ используя инвариантность
+
+  $\sum_{k=1}^n \frac{\partial f(a)}{\partial x_k} dx_k = 0 ~~~
+  \sum_{k=1}^n \frac{\partial \varphi_i(a)}{\partial x_k} dx_k = 0 ~~~
+  i = 1, 2, \ldots, m$ если функция равна нулю то и ее дифференциал равен нулю
+
+  $\sum_{k=1}^n \lambda_i \frac{\partial \varphi_i(a)}{\partial x_k} dx_k = 0$
+  $$
+  \sum_{k=1}^n \overbrace{\left( \frac{\partial f(a)}{\partial x_k} +
+  \sum_{i=1}^m \lambda_i \frac{\partial \varphi_i(a)}{\partial x_k}
+  \right)}^{\frac{\partial L(a, \lambda)}{\partial x_k}}dx = 0
+  $$
+  $\lambda^* = (\lambda_1^*, \lambda_2^*, \ldots, \lambda_m^*)$ единственное
+  решение из условия 3 системы
+  $\sum_{l=1}^m \lambda_i \frac{\partial \varphi_i(a)}{\partial x_k} dx_k = 0
+  ~~~ k = 1,2,\ldots, m ~~~ i = 1,2,\ldots, m$
+  $$
+  dL(a, \lambda^*) = \sum_{k = m+1}^n \cancelto{= 0}{\frac{\partial
+  L(a, \lambda^*)}{\partial x_k}} dx_k + \sum_{l=i}^m \cancelto{= 0}{\frac{
+  \partial L(a, \lambda^*)}{\partial x_i}}dx_i = 0
+  $$
+  все частные производные равны нулю значит точка $(a, \lambda^*)$ стационарна
+\end{proof}
+
+\begin{define}
+  $$
+  E_T = \{t = (t_1, t_2, \ldots, t_n): ~ \sum_{k=1}^n
+  \frac{\partial \varphi_i(a)}{\partial x_k} t_k = 0 ~~ i = 1,2,\ldots,m\}
+  $$
+  $$
+  d_{xx}^2 L(a, \lambda) = \sum_{k=1}^n \sum_{l=1}^n
+  \frac{\partial L(a, \lambda)}{\partial x_k \partial x_l} dx_k dx_l
+  $$
+\end{define}
+
+\begin{block}[Достаточные условия условного экстремума]
+  1) $(a, \lambda^*)$ является стационарной точкой функции Лагранжа
+
+  2) $O(a) ~~ \exists$ все непрерывные частные производные второго порядка
+  $f(x) ~~ \varphi_i (x)$
+
+  3) $\rang A(a) = m$
+
+  Если $\forall dx \in E_T ~~~ d_{xx}^2 L(a, \lambda^*) > 0$ то $a$ является
+  точкой условного $\min ~ f$ при наличии связи с системой $*$
+
+  Если $\forall dx \in E_T ~~~ d_{xx}^2 L(a, \lambda^*) < 0$ то $a$ является
+  точкой условного $\max ~ f$ при наличии связи с системой $*$
+
+  Если знако неопределенная то $a$ не является точкой условного экстремума
+  $f$ при наличии связи с системой $*$
+\end{block}
+
+\begin{title}[\Large]
+  Наибольшее и наименьшее значение ФМП
+\end{title}
+
+\begin{block}[Способ нахождения наибольшего и наименьшего значения функции]
+  Для нахождения нибольшего или наименьшего занчения ФМП на компактном
+  множестве $E \subset R^n$ необходимо
+
+  1) найти стационарные точки и точки в которых $f$ не дефференциируются на $E$
+
+  2) найти возможные условные экстремумы $f$ при условии что $x \in \partial E$
+  ($x \in$ гринице $E$)
+
+  3) найти значения $f$ в этих точках и выбрать из них наибольшее или нименьшее
+  соответсвенно
+\end{block}
+
+\begin{title}
+  Интегрирования ФМП
+\end{title}
+
+\begin{title}[\Large]
+  Определений кратного интеграла. Критерий интегрированя
+\end{title}
+
+\begin{block}[Обозначения]
+  $f(x)$ определена и измерена по Жорадану множества $E \subset R^n$
+
+  $R(E) = \{E_k\}$ разбиение
+
+  $E = \sqcup_{k=1}^L E_k$
+
+  $d(E_k) = \sup \limits_{x,y \in E_k} \rho(x,y)$ ($d(A)$ - наибольшее
+  растояние между двумя точками множества)
+
+  $\lambda(R) = \max \limits_{1 \le k \le L} d(E_k)$ мелкость разбиения
+
+  $m_k = \inf \limits_{x \in E_k} f(x) ~~~ M_k = \sup \limits_{x \in E_k} f(x)$
+
+  $\sum_{k=1}^L f(x^{(k)}) m(E_k)$ называется итегральной суммой для $f$
+  соответствующее разбиению $R(E)$ и выборки $\upsilon(R) = \{x^{(k)}\}$
+
+  $\sum_{k=1}^L m_k m(E_k) = \int_* (R)$ нижняя сумма Дарбу
+
+  $\sum_{k=1}^L M_k m(E_k) = \int^* (R)$ верхняя сумма Дарбу
+\end{block}
+
+\begin{define}[кратного интеграла]
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
+  \forall R(E) ~~~ \lambda(R) < \delta_{\varepsilon} ~~~
+  \forall \upsilon(R) ~~~ \left| \sum_{k=1}^L f(x^{(k)}) m(E_k) - I \right|
+  < \varepsilon
+  $$
+  $I$ называется кратным интегралом и обозначают
+  $$
+  \int_E f(x) dx = \int_E f(x) dm
+  $$
+  $$
+  \iint_E f(x,y) dxdy ~~~ n = 2 ~~ \text{двойной интеграл}
+  $$
+  $$
+  \iiint_E f(x,y,z) dxdydz ~~~ n = 3 ~~ \text{тройной интеграл}
+  $$
+  Если кратный интеграл функции на множестве $E$ существует то $f(x)$
+  называется интегрируемой по мере Жорадана
+
+  Если $n \ge 2$ то ограниченное не является необходимым условием
+  интегрирования функции
+\end{define}
+
+\begin{block}[Критерий интегрируемости кратного интеграла]
+  Для того чтобы $f(x)$ была интегрируема на измеренным по Жордану множестве
+  $E \subset R^n$ необходимо и достаточно
+
+  1) ограничена
+
+  2)
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~ \forall(R)
+  ~~~ \lambda(R) < \delta_{\varepsilon} ~~~ \left| S^*(R) - S_*(R) \right| <
+  \varepsilon
+  $$
+\end{block}
+
+\begin{title}[\Large]
+  Классы интегрируемости ФМП
+\end{title}
+
+\begin{theorem}
+  $f(x)$ непрерывна на компактном множестве $E$ измеренным по Жордану то она
+  интегрируема на этом множестве
+\end{theorem}
