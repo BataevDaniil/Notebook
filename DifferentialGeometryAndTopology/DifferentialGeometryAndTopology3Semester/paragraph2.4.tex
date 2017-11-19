@@ -1,0 +1,94 @@
+\begin{title}[\Large]
+  Нормальная кривизна кривой на поверхности второй квадратичной формы
+  поверхности
+\end{title}
+
+Пусть $\vec \varphi = \vec \varphi(u, \upsilon)$ регулярная поверхность
+
+$\vec m$ еденичная нормаль к поверхности
+
+$\vec m = \frac{[\vec \varphi_u, \vec \varphi_{\upsilon}]}{[\vec \varphi_u,
+\vec \varphi_{\upsilon}]} = \frac{[\vec \varphi_u, \vec \varphi_{\upsilon}]}
+{EG - F^2}$
+
+пусть
+$$
+\left\{
+\begin{array}{c}
+  u = u(s) \\
+  \upsilon = \upsilon(s)
+\end{array}
+\right. ~ \text{кривая на поверхности с натуральным параметром $s$}
+$$
+$\vec \varphi = \vec \varphi(u(s), \upsilon(s))$ уравнение кривой в декартовой
+системе координат
+
+$K_n = \stackrel{\bullet \bullet}{\vec \varphi} \cos \alpha = K \cos \alpha$
+
+$\stackrel{\bullet}{\vec \varphi} = \vec \varphi_u \stackrel{\bullet}{u} +
+\vec \varphi_{\upsilon} \stackrel{\bullet}{\upsilon}$
+$$
+\stackrel{\bullet \bullet}{\vec \varphi} = \vec \varphi_{uu}
+\stackrel{\bullet}{u^2} + 2\vec \varphi_{u\upsilon}\stackrel{\bullet}{u}
+\stackrel{\bullet}{\upsilon} + \vec \varphi_{\upsilon \upsilon}
+\stackrel{\bullet}{\upsilon^2}
++ \vec \varphi_u \stackrel{\bullet \bullet}{\upsilon} +
+\vec \varphi_{\upsilon} \stackrel{\bullet \bullet}{\upsilon}
+$$
+$$
+K_n = (\vec m, \stackrel{\bullet \bullet}{\vec \varphi}) = (\vec \varphi_{uu}
+\stackrel{\bullet}{u^2} + 2\vec \varphi_{u\upsilon}\stackrel{\bullet}{u}
+\stackrel{\bullet}{\upsilon} + \vec \varphi_{\upsilon \upsilon}
+\stackrel{\bullet}{\upsilon^2}
++ \vec \varphi_u \stackrel{\bullet \bullet}{u} +
+\vec \varphi_{\upsilon} \stackrel{\bullet \bullet}{\upsilon}, \vec m) =
+$$
+$$
+= \overbrace{(\vec m, \vec \varphi_{uu})}^L \stackrel{\bullet}{u^2} +
+2\overbrace{(\vec m, \vec \varphi_{u\upsilon})}^M \stackrel{\bullet}{u}
+\stackrel{\bullet}{\upsilon} + \overbrace{(\vec m, \vec \varphi_{\upsilon})}^N
+\stackrel{\bullet}{\upsilon^2} =
+$$
+$$
+= \frac{Ldu^2 + 2Mdud\upsilon + Nd\upsilon^2}{ds^2}
+= \frac{Ldu^2 + 2Mdud\upsilon + Nd\upsilon^2}{Edu^2 + 2Fdu d\upsilon +
+Gd\upsilon^2}
+$$
+$Ldu^2 + 2Mdud\upsilon + Nd\upsilon^2$ вторая квадратичная форма поверхности
+
+\begin{theorem}
+  Нормальная кривизна кривой
+  $$
+  \left\{
+  \begin{array}c
+    u = u(t) \\
+    \upsilon = \upsilon(t)
+  \end{array}
+  \right. ~~ \text{на регулрной плоскости} ~~ \vec \varphi = \vec \varphi(u,
+  \upsilon)
+  $$
+  вычисляется по формуле
+  $$
+  K_n = \frac{Lu'^2 + 2Mu'\upsilon' + N\upsilon'^2}{Eu'^2 + 2Fu'\upsilon' +
+  G\upsilon'^2}
+  $$
+  вчастности из этой формулы следует что нормальная кривизна кривой зависит
+  только от напрвления касательных векторов
+\end{theorem}
+
+\begin{theorem}
+  Нормальная кривизна кривой на поверхности равна по абсолютной велечине
+  кривезне соответствующего нормального сечения
+\end{theorem}
+
+\begin{proof}
+  Достаточно показать что нормальная кривизна нормального сечени по
+  абсолютной величине равна его кривизне
+\end{proof}
+
+\begin{define}[индекрисы Дюпена]
+  Индекриса Дюпена в точке $M$ поверхности называется кривая в касательной
+  плоскости которую описывает конец отрезка длины $\sqrt{R_n}$ начало
+  которого находится в точке $M$. $R = \frac{1}{K_n}$ радиус нормальной
+  кривизны
+\end{define}
