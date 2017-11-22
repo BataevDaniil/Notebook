@@ -1,0 +1,299 @@
+\begin{title}
+  Интегрирования ФМП
+\end{title}
+
+\begin{title}[\Large]
+  Определений кратного интеграла. Критерий интегрированя
+\end{title}
+
+\begin{block}[Обозначения]
+  $f(x)$ определена и измерена по Жорадану множества $E \subset R^n$
+
+  $R(E) = \{E_k\}$ разбиение
+
+  $E = \sqcup_{k=1}^L E_k$
+
+  $d(E_k) = \sup \limits_{x,y \in E_k} \rho(x,y)$ ($d(A)$ - наибольшее
+  растояние между двумя точками множества)
+
+  $\lambda(R) = \max \limits_{1 \le k \le L} d(E_k)$ мелкость разбиения
+
+  $m_k = \inf \limits_{x \in E_k} f(x) ~~~ M_k = \sup \limits_{x \in E_k} f(x)$
+
+  $\sum_{k=1}^L f(x^{(k)}) m(E_k)$ называется итегральной суммой для $f$
+  соответствующее разбиению $R(E)$ и выборки $\upsilon(R) = \{x^{(k)}\}$
+
+  $\sum_{k=1}^L m_k m(E_k) = \int_* (R)$ нижняя сумма Дарбу
+
+  $\sum_{k=1}^L M_k m(E_k) = \int^* (R)$ верхняя сумма Дарбу
+\end{block}
+
+\begin{define}[кратного интеграла]
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
+  \forall R(E) ~~~ \lambda(R) < \delta_{\varepsilon} ~~~
+  \forall \upsilon(R) ~~~ \left| \sum_{k=1}^L f(x^{(k)}) m(E_k) - I \right|
+  < \varepsilon
+  $$
+  $I$ называется кратным интегралом и обозначают
+  $$
+  \int_E f(x) dx = \int_E f(x) dm
+  $$
+  $$
+  \iint_E f(x,y) dxdy ~~~ n = 2 ~~ \text{двойной интеграл}
+  $$
+  $$
+  \iiint_E f(x,y,z) dxdydz ~~~ n = 3 ~~ \text{тройной интеграл}
+  $$
+  Если кратный интеграл функции на множестве $E$ существует то $f(x)$
+  называется интегрируемой по мере Жорадана
+
+  Если $n \ge 2$ то ограниченное не является необходимым условием
+  интегрирования функции
+\end{define}
+
+\begin{block}[Критерий интегрируемости кратного интеграла]
+  Для того чтобы $f(x)$ была интегрируема на измеренным по Жордану множестве
+  $E \subset R^n$ необходимо и достаточно
+
+  1) ограничена
+
+  2)
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~ \forall(R)
+  ~~~ \lambda(R) < \delta_{\varepsilon} ~~~ \left| S^*(R) - S_*(R) \right| <
+  \varepsilon
+  $$
+\end{block}
+
+\begin{title}[\Large]
+  Классы интегрируемости ФМП
+\end{title}
+
+\begin{theorem}
+  $f(x)$ непрерывна на компактном множестве $E$ измеренным по Жордану то она
+  интегрируема на этом множестве
+\end{theorem}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~ \forall R
+  ~~~  \lambda(R) \subset \delta_{\varepsilon} ~~~
+  \left| \int^*(R) - \int_*(R) \right| < \varepsilon
+  $$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
+  x', x'' \in E ~~~ \rho (x', x'') \le \delta_{\varepsilon} ~~~
+  |f(x') - f(x'')| < \varepsilon
+  $$
+  $$
+  \int^*(R) - \int_*(R) \le \sum_{k=1}^m(M_k - m_k)m(E_k^*) =
+  $$
+  $$
+  = \sum_{k=1}^m (f(x'^{(k)}) - f(x''^{(k)}))m(E_k^*) < \frac{\varepsilon}{m(E)}
+  \sum_{k=1}^m m(E_k^*) = \frac{\varepsilon}{m(E)} m(E) = \varepsilon
+  $$
+\end{proof}
+
+\begin{theorem}
+  $f(x)$ ограничена на компактном множестве $E$ и непрерывна на $E$ за
+  исключением Жорданова множество 0 тогда $f(x)$ интегрируема
+\end{theorem}
+
+\begin{define}[Жораданова множетеля $0$]
+  $$
+  \forall \varepsilon > 0 ~~~ \exists B_{\varepsilon} ~~~ E \subset
+  B_{\varepsilon} ~~~ n(B_{\varepsilon}) < \varepsilon
+  $$
+\end{define}
+
+\begin{define}
+  $$
+  E_h = \{ (x_1, x_2, \ldots, x_n, x_{n+1}): ~ (x_1, x_2, \ldots, x_n) \in E
+  ~~ 0 \le x_{n+1} \le h\}
+  $$
+  цилиндр с основанием $E$ и высотой $h$
+\end{define}
+
+\begin{block}[Лемма]
+  $E \subset R^n ~~~ m(E) ~~~ m(E)h = m(E_h)$
+\end{block}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0 ~~~ A_{\varepsilon} \subset E \subset B_{\varepsilon}
+  ~~~ m(B_{\varepsilon}) - m(A_{\varepsilon}) < \frac{\varepsilon}{h}
+  $$
+  $$
+  m(A_{\varepsilon h}) = hm(A_{\varepsilon}) ~~~ m(B_{\varepsilon h}) =
+  hm(B_{\varepsilon})
+  $$
+  $$
+  A_{\varepsilon h} \subset E_h \subset B_{\varepsilon h} ~~~
+  m(B_{\varepsilon h}) - m(A_{\varepsilon h}) \le h(m(B_{\varepsilon}) -
+  m(A_{\varepsilon})) < \varepsilon
+  $$
+  $$
+  m(A_{\varepsilon h}) \le m(E_h) \le m(B_{\varepsilon h})
+  $$
+  $$
+  hm(A_{\varepsilon}) \le hm(E) \le hm(B_{\varepsilon})
+  $$
+  $$
+  m(A_{\varepsilon}) \le m(E) \le m(B_{\varepsilon})
+  $$
+  $$
+  m(E_h) - hm(E) \le m(B_{\varepsilon h}) - m(A_{\varepsilon h}) < \varepsilon
+  $$
+\end{proof}
+
+\begin{define}
+  $$
+  \Gr f = \{ (x_1, x_2, \ldots, x_n, x_{n+1}): ~ (x_1, x_2, \ldots, x_n) \in E
+  ~~ x_{n+1} = f(x_1, x_2, \ldots, x_n) \}
+  $$
+\end{define}
+\begin{theorem}
+  $f(x)$ интегрируема на измеренным по Жордану множестве $E \subset R^n$ тогда
+  ее $\Gr f$ является $\Gr f \subset R^{n+1}$
+\end{theorem}
+
+\begin{proof}
+  $m(E) > 0$ так как $E$ измерима по Жордану
+  $$
+  \forall \varepsilon > 0 ~~~ A_{\varepsilon} \subset E \subset B_{\varepsilon}
+  ~~~ m(B_{\varepsilon}) - m(A_{\varepsilon}) < \frac{\varepsilon}{m(E)}
+  $$
+  пусть $R(E) = \{E_k\} ~~~ A_{\varepsilon} = \sqcup_{k=1}^n A_k ~~~
+  B_{\varepsilon} = \sqcup_{k=1}^n B_k$
+  $$
+  \sqcup_{k=1}^n A_{k m_k} \subset \Gr f \subset \sqcup_{k=1}^n B_{k M_k}
+  $$
+  $$
+  \Gr f \subset \sqcup_{k=1}^m (B_{k M_k} - A_{k m_k}) ~~~~
+  m(\Gr f) \le \sum_{k=1}^m (M_k - m_k)m(E_k) =
+  \int^* (R) - \int_* (R) < \varepsilon
+  $$
+\end{proof}
+
+\begin{block}[Следствие]
+  График любой непрерывной $f$ а компактном множестве $E \subset R^n$ имеет
+  $n(E)$ в $R^{n+1}$
+\end{block}
+
+\begin{title}[\Large]
+  Свойства кратных интегралов
+\end{title}
+
+\begin{block}[Свойства]
+  1) $\int_E 1 dx = m(E)$
+
+  2) $\forall x \in E \subset R^n ~~~ f(x) > 0$ тогда $\int_E f(x) dx \ge 0$
+
+  3) $\alpha, \beta \subset R ~~~ f(x), g(x)$ интегрируемы на $E$ тогда
+  $$
+  \exists \int_E (\alpha f(x) + \beta g(x)) dx = \alpha \int_E f(x)dx +
+  \beta \int_E g(x) dx
+  $$
+  4) $f(x), g(x)$ интегрируема на $E$ тогда $f \cdot g$ интегрируема
+
+  5) $f(x)$ интегрируема на $E$ и $|f(x)|$ интегрируема на $E$ тогда
+  $$
+  \left| \int_E f(x) dx \right| \le \int_E |f(x)|dx
+  $$
+  6)
+  $$
+  E = \sqcup_{k=1}^m E_k ~~~ \int_E f(x) dx = \sum_{k=1}^m \int_E f(x) dx
+  $$
+\end{block}
+
+\begin{theorem}[о среднем]
+  $f(x)$ непрерывна на компактном множестве $E$ и связанное тогда
+  $\exists c \in E$
+  $$
+  \int_E f(x)dx = f(c) m(E)
+  $$
+\end{theorem}
+
+\begin{proof}
+  $m(E) > 0$ так как $f$ непрерывна на $E$ тогда
+  $$
+  \exists \mu = \inf \limits_{x \in E} f(x) ~~~ \nu = \sup \limits_{x \in E}
+  f(x) ~~~ \mu \le f(x) \le \nu
+  $$
+  $$
+  \int_E \mu dx \le \int_E f(x) dx \le \int_E \nu dx
+  $$
+  $$
+  \mu m(E) \le \int_E f(x) dx \le \nu m(E)
+  $$
+  $$
+  \mu) \le \frac{\int_E f(x)dx}{m(E)} \le \nu
+  $$
+  по Коши
+  $$
+  \exists c \in E ~~~ f(c) = \frac{\int_E f(x)dx}{m(E)}
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Сведение двойного интеграла по прямоугольнику к повторному интегралу
+\end{title}
+
+\begin{theorem}
+  1) $f(x, y)$ ограничена на прямоугольнике $[a,b] \times [c,d] = \Pi$
+
+  2) $\exists \iint_{\Pi} (x,y)dxdy$
+
+  3) $\forall x \in [a,b] ~~~ \exists \int_c^d f(x,y) dy = F(x)$
+
+  тогда
+
+  1) $F(x)$ интегрируема на $[a,b]$
+
+  2)
+  $$
+  \iint_{\Pi} f(x, y) dxdy = \int_a^b F(x)dx = \int_a^b \left( \int_c^d f(x,y)
+  dy\right)dx = \int_a^b dx \int_c^d f(x,y) dy
+  $$
+  повторный интеграл
+\end{theorem}
+
+\begin{title}[\Large]
+  Сведение двойного интеграла к повторному в случа области произвольного вида
+\end{title}
+
+\begin{theorem}
+  $f(x,y)$ определена и непрерывна на $E ~~~ E = (x,y) ~~~ a < x < b ~~~
+  \varphi(x) \le y \le \psi(x)$ где $\varphi(x), \phi(x)$ непрерывны на
+  $[a,b]$ тогда
+  $$
+  \iint_E f(x,y)dxdy = \int_a^b dx \int_{\varphi(x)}^{\phi(x)} f(x,y)dy
+  $$
+\end{theorem}
+
+\begin{proof}
+  $0 \le \varphi(x) \le y \le \phi$
+
+  $\Pi = [a,b] \times [c,d]$
+
+  $$
+  F(x,y) =
+  \left\{
+  \begin{array}{cc}
+    f(x,y) &(x,y) \in E \\
+    0 & (x,y) \in \Pi \backslash E
+  \end{array}
+  \right. ~~ \text{интегрируема на $\Pi$}
+  $$
+  $$
+  \iint_{\Pi} F(x,y) dxdy = \int_a^b dx \int_c^d F(x,y) dy =
+  $$
+  $$
+  = \iint_{\Pi \backslash E} F(x,y) dxdy + \iint_E F(x,y)dxdy =
+  $$
+  $$
+  \int_a^b dx \left( \int_a^{\varphi(x)} F(x, y) dy +
+  \int_{\varphi(x)}^{\phi(x)} F(x, y) dy \right)
+  $$
+\end{proof}
