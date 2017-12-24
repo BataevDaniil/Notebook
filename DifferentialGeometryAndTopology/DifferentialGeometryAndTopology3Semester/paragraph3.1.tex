@@ -58,3 +58,57 @@
 \begin{block}[Замечание]
   Топология на $X$ может быть задана выделением системы замкнутых подмножеств
 \end{block}
+
+\begin{title}[\Large]
+  Топология метрических пространства
+\end{title}
+
+$$
+B_r(a) = \{x \in X : ~ \rho(x,a) < r\} ~~ \text{шар}
+$$
+
+Открытое множество $(x,\rho)$ $U \supseteq X$ называется открытым если
+$\forall a \in U ~~ \exists r > 0$
+
+$r_{\rho}$ семейство открытых множеств $x$ докажем что задает топологическую
+структуру
+
+1) $\oslash, X \in \tau_{\rho}$
+
+2) $U_{\alpha} \in \tau_{\rho} (\alpha \in I)$
+
+тогда $\cup_{\varphi \in I} U_{\varphi} \tau_{\rho}$
+
+\begin{proof}
+  $U = \cup_{\alpha} u_{\alpha}$ пусть $a \in U$ тогда $a \in U_{\alpha}$ для
+  некоторого $\alpha_0$ так как $U_{\alpha_0}$ открыто то $\exists B_r(a)$
+  лежащий в $u_{\alpha_0} ~~ \Rightarrow ~ B_r (a) \subseteq U ~~ \Rightarrow ~
+  U \in \tau_{\rho}$
+\end{proof}
+
+\begin{theorem}
+  $\forall B_r(a) \in$ метрическому пространству является открытым множеством
+\end{theorem}
+
+\begin{theorem}
+  Подмножество метрического пространства является открытым тогда и только
+  тогда когда его можно представить в виде объеденение шароф
+\end{theorem}
+
+\begin{proof}
+  $\Rightarrow$ пусть $u$-открытое множество тогда $\forall a \in K ~~~
+  \exists r_a > 0$ точка $B_{r_a}(a) \subset U$ тогда $u = \cup_{a \in u}
+  B_{r_a}(a)$
+
+  $\Leftarrow$ пусть есть объеденение шаров тогда $U$ открыто так как T2
+\end{proof}
+
+\begin{theorem}
+  Всякая метрическая топология является Хауздорфовой.
+
+  Топологическое пространство называется Хауздорфовой если $\forall a,b \in X ~
+  x \not= 0$ открыто $\exists U, V \in T$ тоггда $a \in U, ~ b \in V ~~~
+  U \cap V = \oslash$
+\end{theorem}
+
+

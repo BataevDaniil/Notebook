@@ -67,7 +67,8 @@
 \end{block}
 
 \begin{title}[\Large]
-  Классы интегрируемости ФМП
+  Классы интегрируемых ФМП. Мера цилиндричского тела. Мера Жордана графика
+  интегрируемой функции
 \end{title}
 
 \begin{theorem}
@@ -153,6 +154,7 @@
   ~~ x_{n+1} = f(x_1, x_2, \ldots, x_n) \}
   $$
 \end{define}
+
 \begin{theorem}
   $f(x)$ интегрируема на измеренным по Жордану множестве $E \subset R^n$ тогда
   ее $\Gr f$ является $\Gr f \subset R^{n+1}$
@@ -412,3 +414,242 @@
   \iiint_{\Pi} f(y,z) dxdydz = \int_a^b dx \int_c^d dy \int_p^h f(x,y,z) dz
   $$
 \end{theorem}
+
+\begin{theorem}
+  $T = \{ (x, y, z): ~ (x, y) \in D ~~ \varphi(x, y) \le z \le \psi(x, y) \}$
+
+  $T$ - измерена по Жордану, $\varphi, \psi$ непрерывны в $D$ тогда
+  $u = f(x, y, z)$ непрерывна в $T$
+  $$
+  \iiint_T f(x,y,z) dxdydz = \iint_D dx dy \int_{\varphi(x,y)}^{\psi(x,y)}
+  f(x,y,z)dz
+  $$
+\end{theorem}
+
+\begin{title}[\Large]
+  Замена переменных в кратных интегралах
+\end{title}
+
+$$
+\begin{array}{c}
+  x_1 = \varphi_1(t_1, t_2, \ldots, t_n) \\
+  x_2 = \varphi_2(t_1, t_2, \ldots, t_n) \\
+  \cdots ~~~ \cdots ~~~ \cdots ~~~ \cdots \\
+  x_n = \varphi_n(t_1, t_2, \ldots, t_n) \\
+\end{array}
+$$
+1) $\phi$ биективна $D \to E$
+
+2) $\exists \frac{\partial \varphi_i}{\partial f_i}$ ограничена и равномерно
+непрерывна
+$$
+3) ~~~ Y(t) =
+\left|
+\begin{array}{cccc}
+  \frac{\partial \varphi_1}{\partial t_1} &
+  \frac{\partial \varphi_1}{\partial t_2} &
+  \cdots &
+  \frac{\partial \varphi_1}{\partial t_n} \\
+
+  \frac{\partial \varphi_2}{\partial t_1} &
+  \frac{\partial \varphi_2}{\partial t_2} &
+  \cdots &
+  \frac{\partial \varphi_2}{\partial t_n} \\
+
+  \frac{\partial \varphi_n}{\partial t_1} &
+  \frac{\partial \varphi_n}{\partial t_2} &
+  \cdots &
+  \frac{\partial \varphi_n}{\partial t_n}
+\end{array}
+\right| ~~~ |Y(t)| \ge \delta > 0
+$$
+тогда
+$$
+\int_E f(x) dx = \int_D f(\varphi_1(t), \varphi_2(t), \ldots \varphi_n(t))
+Y(t)dt
+$$
+
+\begin{title}[\Large]
+  Использование полярных координат при вычислении двойных интегралов
+\end{title}
+$$
+Y(t) =
+\left|
+\begin{array}{cc}
+  \cos \varphi & -r \sin \varphi \\
+  \sin \varphi & r \cos \varphi
+\end{array}
+\right| =
+\cos \varphi r \cos \varphi + r \sin \varphi \sin \varphi = r
+$$
+
+\begin{title}[\Large]
+  Использование цилиндрических координат при вычислении тройных интегралов
+\end{title}
+$$
+\left\{
+\begin{array}{c}
+  x = r \cos \varphi \\
+  y = r \sin \varphi \\
+  z = h
+\end{array}
+\right.
+$$
+$$
+T  = \{ (r, \varphi, h): ~ r \ge 0, ~ 0 \le \varphi \le 2\pi ~ h \in R \}
+$$
+$$
+Y(r, \varphi, h) =
+\left|
+\begin{array}{ccc}
+  \cos \varphi & -r \sin \varphi & 0 \\
+  \sin \varphi & r \cos \varphi & 0 \\
+  0 & 0 & 1
+\end{array}
+\right| = r
+$$
+$$
+\iiint_E f(x, y, z) dxdydz = \iiint_D f(r\cos \varphi, r\sin \varphi, h) r
+dr d\varphi dh
+$$
+
+\begin{title}[\Large]
+  Использование сферических координат при вычислении тройных интегралов
+\end{title}
+$$
+\left\{
+\begin{array}{c}
+  x = r \cos \psi \cos \varphi\\
+  y = r \sin \psi \sin \varphi \\
+  z = r \sin \psi
+\end{array}
+\right.
+$$
+$$
+T = \left\{ (r, \varphi, \psi): ~ r \ge 0 ~ \varphi, \psi \in
+\left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \right\}
+$$
+$$
+Y =
+\left|
+\begin{array}{ccc}
+  \cos \psi \cos \varphi &
+  -r \cos \psi \sin \varphi &
+  -r \sin \psi \cos \varphi \\
+
+  \cos \psi \sin \varphi &
+  r \cos \psi \cos \varphi &
+  -r \sin \psi \sin \varphi \\
+
+  \sin \psi & 0 & r \cos \psi
+\end{array}
+\right| = r^2 \cos \phi
+$$
+$$
+\iiint_E f(x,y,z) dxdydz = \iint_D f(r\cos \psi \cos \varphi,
+2\cos \psi \sin \varphi, r\sin \varphi) r^2 \cos \psi dr d\varphi d\psi
+$$
+
+\begin{title}[\Large]
+  Несобственные кратные интегралы
+\end{title}
+
+\begin{define}[исчерпания]
+  $D \subset R^m ~ \{D_n\}$ называется исчерпание $D$ если
+
+  1) открытые и измеримы по Жордану множества
+
+  2) $\forall n \in N ~~ [D_n] \subset D_{n+1}$
+
+  3) $\cup_{n=1}^{\infty} D_n = D$
+\end{define}
+
+\begin{theorem}
+  $\{D_n\} ~~ \{Q_n\}$ исчерпания $D \subset R^m$ $\forall n \in N ~~
+  \exists k_n \in N ~~ [D_n] \subset Q_{k_n}$
+\end{theorem}
+
+\begin{proof}
+  От противного
+
+  $\exists n_0 \in N ~~ \forall k \in N ~~ [D_{n_0}] \subset Q_k$
+  $$
+  \begin{array}{c}
+    \exists x_1 \in [D_{n_0}] ~~ x_1 \not\in Q_1 \\
+    \exists x_2 \in [D_{n_0}] ~~ x_2 \not\in Q_2 \\
+    \cdots ~~~ \cdots ~~~ \cdots \\
+    \exists x_n \in [D_{n_0}] ~~ x_n \not\in Q_n
+  \end{array}
+  $$
+  $\exists x_{n_k} \to a \in [D_{n_0}] \subset D_{n_0+1} \subset D ~~
+  Q \in \cup_{k=1}^{\infty} Q_k$
+
+  $\exists k_o \in N ~~ a \in Q_{k_0} ~~ \exists O_{\delta}(a) \subset Q_{k_0}$
+
+  $x_{n_k} \to a ~~ \exists l \in N ~~ x_{n_k} \in O_{\delta}(a)$
+\end{proof}
+
+\begin{theorem}
+  $f(x) \ge 0$ непрерывна в $D \subset R^n$ тогда
+  $$
+  \lim_{n \to \infty} \int_{\Delta_n} f(x) dx = \int_D f(x) dx
+  $$
+  если предел конечен то несобственный кратный интеграл сходится иначе
+  расходится
+\end{theorem}
+
+\begin{theorem}
+  Определение несобственного интеграла коректно, тоесть не зависит от выбора
+  исчерпаемого множества
+\end{theorem}
+
+\begin{proof}
+  $$
+  \alpha_n = \int_{D_n} f(x) dx ~ \nearrow ~~ \beta_n = \int_{Q_n} f(x) dx ~
+  \nearrow
+  $$
+  $$
+  \alpha_n = \int_{D_n} \le f(x) dx \int_{Q_{k_n}} f(x) dx = \beta_{k_n} \le
+  \lim_{n \to \infty} \beta_n = \beta
+  $$
+  $$
+  \forall \alpha_n \le \beta ~~ \lim_{n \to \infty} \alpha_n = \alpha \le \beta
+  $$
+  $$
+  \beta_n = \int_{Q_n} \le f(x) dx \int_{D_{k_n}} f(x) dx = \alpha_{k_n} \le
+  \lim_{n \to \infty} \alpha_n = \alpha
+  $$
+  $$
+  \forall \beta_n \le \alpha ~~ \lim_{n \to \infty} \beta_n = \beta \le \alpha
+  $$
+  $\Rightarrow ~ \alpha = \beta$
+\end{proof}
+
+\begin{theorem}
+  Пусть $D \subset R^m$ возможно меняет знак
+  $$
+  f^+(x) = \frac{|f(x)| + f(x)}{2} ~~~
+  f^-(x) = \frac{|f(x)| - f(x)}{2} ~~~
+  f(x) = f^+(x) - f^-(x)
+  $$
+  $$
+  \int_D f(x) dx = \int_D f^+(x) dx - \int_D f^-(x)dx
+  $$
+  сходится если оба оба интегрла сходсят иначе расходится
+\end{theorem}
+
+\begin{title}[\Large]
+  Приложения кратных интегралов
+\end{title}
+$$
+\iint_D \rho(x,y) dx dy = M(D)
+$$
+$$
+\iiint_T \rho(x,y,z) dx dy dz = M(T)
+$$
+$$
+S_{oy} = \iint_D x \rho(x,y) dx dy ~~~ x_0 = \frac{S_{oy}}{M(D)}
+$$
+$$
+I_{oy} = \iint x^2 \rho(x,y)dx dy ~~~ x_0 = \frac{I_{oy}}{M(D)}
+$$

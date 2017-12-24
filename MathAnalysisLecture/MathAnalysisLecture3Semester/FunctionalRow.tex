@@ -2,63 +2,133 @@
   Функциональные ряды
 \end{title}
 
-\begin{define}[функционального ряда]
+\begin{title}[\Large]
+  Сходимость и равномерная сходимость функциональной последовательности и
+  функционального ряда
+\end{title}
+
+\href{http://nuclphys.sinp.msu.ru/mathan/p3/m3102.html}{Информация по теме}
+
+\begin{define}[функциональной последовательности]
+  $f_n(x)$ определена на $E$ тогда если
   $$
-  \sum_{k=1}^{\infty} f_k (x) = f(x)
+  \forall x \in E ~~~ \lim_{n \to \infty} f_k(x) = f(x)
   $$
-  Пусть $f_k(x)$ определена на $E$ если $\forall x \in E$ числово ряд $f_k(x)$
-  сходится то говорят что функциональный ряд сходится на $E$ и его сумму $f(x)$
+  то есть
+  $$
+  \forall \varepsilon > 0 ~~~ \forall x \in E ~~~ \exists n_{\varepsilon; x}
+  \in N ~~~ \forall n \ge n_{\varepsilon; x} ~~~ \left| f_n(x) - f(x) \right|
+  < \varepsilon
+  $$
+  то говорят что функциональная последовательность сходится на $E$ и равна
+  $f(x)$ и обозначают
+  $$
+  f_n(x) \stackrel{E}{\to} f(x)
+  $$
 \end{define}
 
-\begin{theorem}
+\begin{define}[равномерной сходимости функционального ряда]
+  $f_n(x)$ определена на $E$ тогда если
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~ \forall x \in E
+  ~~~ \forall n \ge n_{\varepsilon} ~~~ |f_n (x) - f(x)| < \varepsilon
+  $$
+  то говорят что функциональная последовательность сходится на $E$ равномерно и
+  обозначают
+  $$
+  f_n(x) \stackrel{E}{\rightrightarrows} f(x)
+  $$
+\end{define}
+
+\begin{define}[сходимости функционального ряда]
+  $f_n(x)$ определена на $E$ тогда если
   $$
   \forall x \in E ~~~ \lim_{n \to \infty} \sum_{k=1}^n f_k(x) =
   \lim_{n \to \infty} S_n(x) = f(x)
   $$
-  сходится на множестве $E$ для $\lim_{n \to \infty} S_n(x)$ если
+  то есть $\forall x \in E$ числово ряд $f_n(x)$
+  сходится
+
+  то есть
   $$
   \forall \varepsilon > 0 ~~~ \forall x \in E ~~~ \exists n_{\varepsilon; x}
   \in N ~~~ \forall n \ge n_{\varepsilon; x} ~~~ \left| S_n(x) - f(x) \right|
   < \varepsilon
   $$
-\end{theorem}
+  то говорят что функциональный ряд сходится на $E$ и его суммa равна $f(x)$ и
+  обозначают
+  $$
+  S_n(x) \stackrel{E}{\to} f(x)
+  $$
+\end{define}
 
-\begin{define}[равномерной сходимости]
-  $S_n(x)$ сходится на множестве $E$ равномерно если
+\begin{define}[равномерной сходимости функционального ряда]
+  $f_n(x)$ определена на $E$ тогда если
   $$
   \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~ \forall x \in E
   ~~~ \forall n \ge n_{\varepsilon} ~~~ |S_n (x) - f(x)| < \varepsilon
   $$
+  то говорят что функциональный ряд сходится на $E$ равномерно и обозначают
+  $$
+  S_n(x) \stackrel{E}{\rightrightarrows} f(x) ~~~
+  f(x) - S_n(x) \stackrel{E}{\rightrightarrows} 0 ~~~
+  r_n(x) \stackrel{E}{\rightrightarrows} 0
+  $$
   $S_n(x)$ называется неравномерной сходимостью на множестве $E$ если $S_n(x)$
-  сходится при $\forall x \in E$ но условие равномерной сходимости нарушено.
-
-  Обозначения:
-  $$
-  S_n(x) \stackrel{E}{\to} f(x) ~ \text{- обычная сходимость}
-  $$
-  $$
-  S_n(x) \stackrel{E}{\rightrightarrows} f(x) ~ \text{- равномерная сходимость}
-  $$
+  сходится $\forall x \in E$ но условие равномерной сходимости нарушено.
 \end{define}
 
 \begin{title}[\Large]
-  Критерия равномерной сходимости ряда последовательности и функций ряда
+  Критерии равномерной сходимости функциональной последовательности и
+  функционального ряда
 \end{title}
 
-\begin{block}[Критерий Коши сходимости функционального ряда]
-  $$
-  \sum_{k=1}^{\infty} f_k(x) ~ \text{определен на} ~ E
-  $$
+\begin{block}[Критерий Коши сходимости функциональной последовательности]
+  $f_n(x)$ определена на $E$ тогда если
   $$
   \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
   \forall x \in E ~~~ \forall n \ge n_{\varepsilon} ~~~ \forall p \in N ~~~
-  |S_{n+p}(x) - S_n(x)| < \varepsilon ~ \text{или} ~
-  \left| \sum_{k = n + 1}^{n+p} f_k(x) \right| < \varepsilon
+  |f_{n+p}(x) - f_n(x)| < \varepsilon
+  $$
+  тогда $f_n(x) \stackrel{E}{\rightarrow} f(x)$
+\end{block}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall x \in E ~~~ \forall n \ge n_{\varepsilon} ~~~
+  |f_n(x) - f(x)| < \varepsilon
+  $$
+  $$
+  |f_{n+p}(x) - f_n(x)| = |f_{n+p}(x) - f(x) + f(x) - f_n(x)| \le
+  $$
+  $$
+  \le |f_{n+p}(x) - f(x)| + |f(x) - f_n(x)| < \frac{\varepsilon}{2} +
+  \frac{\varepsilon}{2} = \varepsilon
+  $$
+\end{proof}
+
+\begin{block}[Критерий равномерной сходимости функциональной последовательности]
+  $f_n(x)$ определена на $E$ тогда если
+  $$
+  \lim_{n \to \infty} \sup\limits_{x \in E} |f_n(x) - f(x)| = 0 ~~ \text{тогда}
+  ~~~ f_n(x) \stackrel{E}{\rightrightarrows} f(x)
+  $$
+\end{block}
+
+\begin{block}[Критерий Коши сходимости функционального ряда]
+  $f_n(x)$ определена на $E$ тогда если
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall x \in E ~~~ \forall n \ge n_{\varepsilon} ~~~ \forall p \in N ~~~
+  |S_{n+p}(x) - S_n(x)| = \left| \sum_{k = n + 1}^{n+p} f_k(x) \right|
+  < \varepsilon
   $$
   тогда $S_n(x) \stackrel{E}{\rightarrow} f(x)$
 \end{block}
 
 \begin{block}[Критерий равномерной сходимости функционального ряда]
+  $f_n(x)$ определена на $E$ тогда если
   $$
   \lim_{n \to \infty} \sup\limits_{x \in E} |S_n(x) - f(x)| = 0 ~~ \text{тогда}
   ~~~ S_n(x) \stackrel{E}{\rightrightarrows} f(x)
@@ -66,34 +136,36 @@
 \end{block}
 
 \begin{title}[\Large]
-  Признаки сходимости функционального ряда
+  Признаки Вейерштраса равномерной сходимости функционального ряда
 \end{title}
 
 \begin{block}[Признак Вейштрасса]
+  $f_n(x)$ определена на $E$ $a_k \ge 0 ~~ \sum_{k=1}^{\infty}a_k$ cходится
+  тогда если
   $$
-  \forall x \in E ~~~ \forall k \in N ~~~ |f_k(x)| \le a_k ~~~
-  \sum_{k=1}^{\infty}a_k \stackrel{E}{\rightarrow} ~~~
-  \sum_{k=1}^{\infty} f_k (x) \stackrel{E}{\rightrightarrows}
+  \forall x \in E ~~~ \forall k \in N~~~ |S_k(x)| \le a_k ~ \text{тогда} ~
+  S_k (x) \stackrel{E}{\rightrightarrows} ~ \text{и абсолютно}
   $$
-  Замечание: При условии признака Вейштраса ряд сходится не только равномерно,
-  но и абсолютно.
 \end{block}
 
 \begin{proof}
   Из сходимости ряда $a_n$ по критерию Коши следует
   $$
   \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~ \forall n \ge
-  n_{\varepsilon} ~~~ \forall p \in N ~~~ |\sum_{k=n+1}^{n+p} a_k| <
-  \varepsilon
+  n_{\varepsilon} ~~~ \forall p \in N ~~~ \left| \sum_{k=n+1}^{n+p} a_k \right|
+  < \varepsilon
   $$
   тогда из условия теоремы
   $$
   \left| \sum_{k = n + 1}^{n+p} f_k(x) \right| \le
-  \sum_{k = n + 1}^{n+p} f_k(x) < \sum_{k = n+1}^{n+p} a_k < \varepsilon ~~~
-  \forall x \in E
+  \sum_{k = n + 1}^{n+p} |f_k(x)| \le \sum_{k = n+1}^{n+p} a_k < \varepsilon ~~~
   $$
   по критерию Коши $\sum_{k=1}^{\infty} f_k(x) \stackrel{E}{\rightrightarrows}$
 \end{proof}
+
+\begin{title}[\Large]
+  Признаки Дирехле и Абеля равномерной сходимости функционального ряда
+\end{title}
 
 \begin{block}[Признак Дирихле]
   1)
@@ -107,17 +179,20 @@
   3) $g_k(x) \stackrel{E}{\rightrightarrows} 0$
 
   тогда $\sum_{k=1}^{\infty} f_k(x) \cdot g_k(x)\stackrel{E}{\rightrightarrows}$
+
+  Кудрявцев 3 том 87 страница
 \end{block}
 
-
 \begin{block}[Признак Абеля]
-  1) $\sum_{k=1}^{\infty} f_k(x) \stackrel{E}{\rightrightarrows}$
+  1) $S_k(x) \stackrel{E}{\rightrightarrows}$
 
   2) $g_k(x) ~~~ \searrow$ или $\nearrow$
 
-  3) $\forall x \in E ~~~ \forall k \in N ~~~ |g_k(x)| \le M$
+  3) $\exists M > 0 ~~~ \forall x \in E ~~~ \forall k \in N ~~~ |g_k(x)| \le M$
 
   тогда $\sum_{k=1}^{\infty} f_k(x) \cdot g_k(x)\stackrel{E}{\rightrightarrows}$
+
+  Кудрявцев 3 том 89 страница
 \end{block}
 
 \begin{title}[\Large]
@@ -127,14 +202,22 @@
 \begin{theorem}
   1) $\forall k \in N ~~~ f_k(x)$ непрерывна на $[a,b]$
 
-  2) $\sum_{k=1}^{\infty} f_k (x) \rightrightarrows S(x)$
+  2) $S_k (x) \stackrel{[a,b]}{\rightrightarrows} f(x)$
+
+  тогда $f(x)$ непрерывна на $[a,b]$
+
+  Кудрявцев 3 том 90 страница
+  $$
+  \lim_{x \to x_0} \sum_{n=1}^{\infty} u_n (x) = \sum_{n=1}^{\infty}
+  \lim_{x \to x_0} u_n(x)
+  $$
 \end{theorem}
 
 \begin{proof}
   $$
-  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
-  \forall x \in [a,b] ~~~ |x - x_0| < \delta_{\varepsilon} ~~~
-  |S(x) - S(x_0)| < \frac{\varepsilon}{3} ~~~ x_0 \in [a,b]
+  x_0 \in [a,b] ~~~ \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0
+   ~~~ \forall x \in [a,b] ~~~ |x - x_0| < \delta_{\varepsilon} ~~~
+  |S(x) - S(x_0)| < \frac{\varepsilon}{3}
   $$
   $$
   \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~ \forall n \ge
@@ -148,7 +231,7 @@
   $$
   $$
   |S(x) - S(x_0)| =  |(S(x) - S_{n_0}(x)) + (S_{n_0}(x) - S_{n_0}(x_0))
-  + (S_{n_0}(x_0) - S(x_0)| \le
+  + (S_{n_0}(x_0) - S(x_0))| \le
   $$
   $$
    \le |S_{n_0}(x) - S(x)| +
@@ -165,12 +248,13 @@
 \end{title}
 
 \begin{theorem}
-  $\forall k \in N ~~~ f_k(x)$ непрерывна на отрезке $[a,b]$ и
-  $\sum_{k=1}^{\infty} f_k(x) \rightrightarrows S_n(x)$ тогда
+  $\forall k \in N ~~ f_k(x)$ непрерывна на $[a,b]$ и
+  $S_k(x) \stackrel{[a,b]}{\rightrightarrows} S(x)$ тогда
   $$
-  \forall x \in [a,b] ~~~ \int_a^x S(t)dt =
-  \sum_{k=1}^{\infty} \int_a^x f_k(t)dt
+  \forall c \in [a,b] ~~~ \int_a^c S(x)dx =
+  \sum_{k=1}^{\infty} \int_a^c f_k(x)dx
   $$
+  Кудрявцев 3 том 94 страница
 \end{theorem}
 
 \begin{proof}
@@ -181,12 +265,12 @@
   |S_n(x) - S(x)| < \frac{\varepsilon}{(b-a)}
   $$
   $$
-  \left| \int_a^x S(t)dt - \sum_{k=1}^n \int_a^x f_k(t)dt \right| =
-  \left| \int_a^x \left( S(t) - \sum_{k=1}^n f_k(t) \right)dt \right| \le
+  \left| \int_a^c S(x)dx - \sum_{k=1}^n \int_a^c f_k(x)dx \right| =
+  \left| \int_a^c \left( S(x) - \sum_{k=1}^n f_k(x) \right)dx \right| \le
   $$
   $$
-  \le \int_a^a |S(t) - S_n(t)|dt < \frac{\varepsilon}{b-a} \int_a^x dt =
-  \frac{\varepsilon}{b-a}(x-a) \le \varepsilon
+  \le \int_a^c |S(x) - S_n(x)|dx < \frac{\varepsilon}{b-a} \int_a^c dx =
+  \frac{\varepsilon}{b-a}(c-a) \le \varepsilon
   $$
 \end{proof}
 
@@ -197,10 +281,18 @@
 
   тогда
   $$
-  \forall x \in [a,b] ~~~ \int_a^x S(t)dt = \lim_{n \to \infty}
-  \int_a^x S_n(t)dt
+  \forall c \in [a,b] ~~~ \int_a^c S(x)dx = \lim_{n \to \infty}
+  \int_a^c S_n(x)dc
   $$
 \end{theorem}
+
+\begin{proof}
+  $$
+  \left| \int_a^c S(x) dx - \int_a^c S_n(x)dx \right| =
+  \left| \int_a^c S(x) dx - \sum_{k=1}^{\infty} \int_a^c f_k(x)dx \right|
+  $$
+  задача свелась к выше решенной
+\end{proof}
 
 \begin{title}[\Large]
   Почленное дифференциирование функционального ряда
@@ -209,31 +301,30 @@
 \begin{theorem}
   1) $\forall k \in N ~~~ f_k(x)$ непрерывна дифференцируема на $[a,b]$
 
-  2) $\sum_{k=1}^{\infty} f_k'(x) \stackrel{[a, b]}{\rightrightarrows} S(x)$
+  2) $\sum_{k=1}^{\infty} f_k'(x) \stackrel{[a, b]}{\rightrightarrows}$
 
-  3) $\sum_{k=1}^{\infty} f_k(a)$ сходится
+  3) $\exists! c \in [a,b] ~~ S_k(c)$ сходится
 
   тогда
   $$
-  \sum_{k=1}^{\infty} f_k(x) \stackrel{[a, b]}{\rightrightarrows} S(x) ~~~
-  \sum_{k=1}^{\infty} f_k'(x) = S'(x)
+  S_k(x) \stackrel{[a, b]}{\rightrightarrows} f(x) ~
+  \text{непрерывна дифференцируема и} ~ \sum_{k=1}^{\infty} f_k'(x) = f'(x)
   $$
+  Кудрявцев 3 том 97 страница
 \end{theorem}
 
 \begin{proof}
   $$
-  \sum_{k=1}^{\infty} f_n'(x) \stackrel{[a,b]}{\rightrightarrows} ~
-  \text{обозначим} ~ G(x)
+  \sum_{k=1}^{\infty} f_n'(x) \stackrel{[a,b]}{\rightrightarrows} G(x)
   $$
   $$
-  \int_a^x G(t)dt = \sum_{k=1}^{\infty} \int_a^x f_k'(t) dt =
-  \sum_{k=1}^{\infty} f_k(x) - \sum_{k=1}^{\infty} f_k(a)
+  \int_a^x G(t)dt = \sum_{k=1}^{\infty} \int_a^x f_k'(t) dt = f(x) - f(a)
   $$
   $$
-  S(x) = \sum_{k=1}^{\infty} f_k(x) = \int_a^x G(t)dt + S(a)
+  f(x) = \int_a^x G(t)dt + f(a)
   $$
   $$
-  S'(x) = G'(x) + 0
+  f'(x) = G(x) + 0
   $$
 \end{proof}
 
@@ -262,26 +353,29 @@
 \end{define}
 
 \begin{theorem}[Абеля]
-  Если $\sum_{k=0}^{\infty} a_k x^k$ сходится в точке $x_1 \not= 0$ тогда он
-  при $\forall x ~~~ |x| < |x_1|$ сходится абсолютно.
+  Если $\sum_{k=0}^{\infty} a_k x^k$ сходится в точке $x_1 \not= 0$ тогда
+  $\forall x ~~ |x| < |x_1|$ сходится абсолютно.
 
-  Если $\sum_{k=0}^{\infty} a_k x^k$ расходится в точке $x_2 \not= 0$ тогда он
-  расходится при $\forall x ~~~ |x| > |x_2|$
+  Если $\sum_{k=0}^{\infty} a_k x^k$ расходится в точке $x_2 \not= 0$ тогда
+  $\forall x ~~ |x| > |x_2|$ расходится
 \end{theorem}
 
 \begin{proof}
   Пусть $\sum_{k = 0}^{\infty}a_k x_1^k$ cходится тогда на основании
   необходимости условия сходимости числовго ряда
-  $\lim_{k \to \infty} a_k x_1^k = 0$ следует что $\exists M > 0$
-  $\forall k = 0, 1,2, \ldots,  ~~~ |a_k x_1^n| \le M$. Тогда
-  расмотрим $|a_k x^k| = \left| a_k x_1^k < \left( \frac{x}{x_1} \right)^k
-  \right| = |a_k x_1^k| \left| \frac{x}{x_1} \right|^k \le Mq^k$
+  $$
+  \lim_{k \to \infty} a_k x_1^k = 0 ~ \Rightarrow ~ \exists M > 0 ~~
+  \forall k \in N \cup \{0\} ~~ |a_k x_1^n| \le M
+  $$
+  $$
+  |a_k x^k| = |a_k x_1^k| \left| \frac{x}{x_1} \right|^k \le
+  M \left| \frac{x}{x_1} \right|^k
+  $$
+  $\left| \frac{x}{x_1} \right| < 1$ то ряд будет суммой геометрической
+  прогрессии $\Rightarrow \sum_{k=0}^{\infty} M \left| \frac{x}{x_1} \right|^k$
+  сходится
 
-  $q = \left| \frac{x}{x_1} \right| < 1$ то по признаку сравнения
-  $\sum_{k=0}^{\infty} Mq^k$ сходится. Значит наш ряд сходится относительно
-  $x_1$
-
-  Пусть наш ряд расходится, предположит, что $\exists |x_1| > |x_2|$ в
+  Пусть наш ряд расходится, предположим, что $\exists x_1 ~~ |x_1| > |x_2|$ в
   котором ряд сходится, тогда ряд должен сходится в $x_2$ что протеворечит
   данному условию.
 \end{proof}
@@ -291,10 +385,10 @@
 
   1) сходится только в одной точке
 
-  2) сходится на всех числовой прямой
+  2) сходится на всей числовой прямой
 
   3) сходится во всех точках некоторого интеравала, симметричен относительно
-  точки $(0, 0)$
+  точки $0$
 \end{block}
 
 \begin{title}[\Large]
@@ -315,13 +409,13 @@
 
 \begin{theorem}
   $$
-  \exists \lim_{k \to \infty} \left| \frac{a_n}{a_{n+1}} \right| = \rho
+  \exists \lim_{k \to \infty} \left| \frac{a_k}{a_{k+1}} \right| = \rho
   $$
 \end{theorem}
 
 \begin{proof}
   $$
-  \lim_{k \to \infty} \left| \frac{a_{k+1} x^{n+1}}{a_k x^k} \right| =
+  \lim_{k \to \infty} \left| \frac{a_{k+1} x^{k+1}}{a_k x^k} \right| =
   |x| \lim_{k \to \infty} \left| \frac{a_{k+1}}{a_k} \right| < 1
   $$
   $$
@@ -331,10 +425,6 @@
   $$
   |x| > \lim_{k \to \infty} \left| \frac{a_k}{a_{k+1}} \right| ~~~
   \text{- расходится}
-  $$
-  тогда сходится
-  $$
-  \lim_{k \to \infty} \left| \frac{a_n}{a_{n+1}} \right| = \rho
   $$
 \end{proof}
 
@@ -346,8 +436,8 @@
 
 \begin{proof}
   $$
-  \lim_{k \to \infty} \sqrt[k]{|a_k x^k|} = |x| \lim_{k \to \infty} \sqrt{|a_k|}
-  < 1
+  \lim_{k \to \infty} \sqrt[k]{|a_k x^k|} = |x| \lim_{k \to \infty}
+  \sqrt[k]{|a_k|} < 1
   $$
   $$
   |x| < \lim_{k \to \infty} \frac{1}{\sqrt[k]{a_k}} ~~~ \text{- сходится}
@@ -362,6 +452,13 @@
   \lim_{k \to \infty} \sqrt[k]{a_k} = \frac{1}{\rho}
   $$
 \end{proof}
+
+\begin{block}[Формула Коши-Адамара]
+  $$
+  \overline{\lim_{k \to \infty}} \sqrt[k]{|a_k|} =
+  \lim_{n \to \infty} \sup_{k > n}\sqrt[k]{|a_k|} = \frac{1}{\rho}
+  $$
+\end{block}
 
 \begin{title}[\Large]
   Свойства степенных рядов
