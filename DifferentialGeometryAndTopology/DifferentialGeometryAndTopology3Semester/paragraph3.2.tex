@@ -1,0 +1,63 @@
+\begin{title}[\Large]
+  Внутренность и замыкания множеств топологического пространства
+\end{title}
+
+\begin{define}[внутренней точки]
+  $(X, T)$ то и $A \subseteq X ~~ a \in Q$ называется внутренней точкой
+  множества $Q$ если $\exists u(a)$ окретность точки $u(a) \subseteq A$
+\end{define}
+
+\begin{define}[точки прикосновения]
+  $x \in X$ называется точкой прикосновения множества $A$ если всякая его
+  окрестность пересекается $A$
+\end{define}
+
+\begin{theorem}
+  1) $A$ является замкнутым $\Leftrightarrow$ $x \in A$ точка является
+  внутренней
+
+  2) $A$ является замкнутой $\Leftrightarrow$ содержит все свои точки
+  прикосновения
+\end{theorem}
+
+\begin{proof}
+  1) $\Rightarrow$ Предположим что $A$ открытой множество тогда $\forall a \in A
+  ~~ u(a) = A \subseteq$
+
+  $\Leftarrow$ Предположим что все точкм $A$ является внутренней то есть
+  $\forall a \in A ~~ \exists u(a)$ точка $u(a) \subseteq A$ тогда
+  $A \cup_{a \in A} u(a)$ открыто
+
+  2) $\Rightarrow$ Предположим что $A$ замкнуто покажем что если $x \in A$
+  то $x$ не является точка прикосновения $\Rightarrow$ $u(a) = A$
+
+  $\Leftarrow$ Предположим что $A$ содержит все точкм прикосновения что $A$
+  замкнуто то $CA$ открыто, покажем что $\forall x \in CA$ внутренней так как
+  $x \in CA$ и $CA$ не является прикосновением $A$ $\Rightarrow$ $\exists u(x)$
+  не пересекается с $A$ $\Rightarrow$ $u(x) \subseteq CA$
+\end{proof}
+
+\begin{block}[Следствие]
+  Внутренностью $A$ называется множество всех его внутренних точек
+  $\stackrel{\bullet}{A} \subseteq A$
+\end{block}
+
+\begin{define}[Замыкания]
+  Замыканием множества $A$ называется множество всех его прикосновений
+\end{define}
+
+\begin{theorem}
+  1) $A$ открыто когда все его точки внутренни $\Rightarrow$ $A \subseteq A
+  ~ \Rightarrow ~ A \subseteq \stackrel{\bullet}{A}$
+
+  2) $A$ является замкнутым $\Leftrightarrow ~ \overline{A} \subseteq A ~
+  \Leftrightarrow ~ A = \overline{A}$
+\end{theorem}
+
+\begin{theorem}
+  1) Внутренность $\stackrel{\bullet}{A}$ является наибольшим открытым множество
+  содержащиеся в $A$
+
+  2) Замыкание множество $A$ является наименьшим замкнутым множеством
+  содержащим $A$
+\end{theorem}
