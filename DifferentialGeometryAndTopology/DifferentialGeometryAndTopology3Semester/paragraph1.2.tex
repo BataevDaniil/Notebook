@@ -1,181 +1,217 @@
-\begin{title}
-  Параграф 2
+\begin{title}[\Large]
+  Параграф 1.2
 \end{title}
 
 \begin{title}[\Large]
-  Натуральная параметризация кривой, кривизна и кручение кривой
+  Эквивалентные параметризации кривой. Определение и свойства натурального
+  параметра
 \end{title}
 
-Пусть $\vec \varphi = \vec \varphi(t)$ - регулярная кривая, тогда длина дуги
-кривой
-$$
-S = \int_{t_0}^{t_1} | \vec \varphi'(t)| dt
-$$
-если форма записи
-$$
-\left\{
-\begin{array}{c}
-  x = x(t) \\
-  y = y(t) \\
-  z = z(t)
-\end{array}
-\right.
-S = \int_{t_0}^{t_1} \sqrt{ x'^2(t) + y'^2(t) + z'^2(t)}
-$$
+\begin{define}[диффеоморфизма]
+  Диффеоморфизмом называется гладкое отображение при котором обратное
+  отображение тоже гладкое.
+
+  Биективное отображение гладкое в обе стороны.
+\end{define}
+
+\begin{define}[эквивалентных кривых]
+  $\varphi_1 : [a,b] \to R^3$
+
+  $\varphi_2 : [\alpha, \beta] \to R^3$
+
+  называются эквивалентными если существует диффeoморфизм то есть
+  $\varphi : [a,b] \to [\alpha, \beta]$ или $\varphi_2(\varphi(t)) =
+  \varphi_1(t)$
+
+  Параметризацией эквивалентных прямых называется эквивалентными.
+
+  Все кривые разбиваются на классы эквивалентных кривых
+\end{define}
+
+\begin{block}[Длина дуги кривой]
+  $\vec \varphi = \vec \varphi(t)$ регулярная кривая, тогда длина дуги кривой
+  $$
+  S = \int_{t_0}^{t_1} | \vec \varphi'(t)| dt
+  $$
+  или если
+  $$
+  \left\{
+  \begin{array}{c}
+    x = x(t) \\
+    y = y(t) \\
+    z = z(t)
+  \end{array}
+  \right.
+  S = \int_{t_0}^{t_1} \sqrt{ x'^2(t) + y'^2(t) + z'^2(t)}
+  $$
+\end{block}
 
 \begin{define}[натуральной параметризации кривой]
   Параметризация при которой каждой точке кривой сопаставляется длина дуги
   кривой от точки до некоторой фиксированной точки называется натуральной или
-  естественной.
+  естественной параметризацией.
 \end{define}
 
 \begin{block}[Свойства]
   1) Натуральная параметризация эквивалентна исходной параметризации.
 
   \begin{proof}
-    $\vec \varphi = \vec \varphi(t)$ - уравнение кривой
+    $\vec \varphi = \vec \varphi(t)$ кривая
 
-    $s = s(t)$ - натуральная параметризация
+    $s = s(t)$ натуральная параметризация
     $$
-    \int_{t_0}^{t} |\varphi'(t)| dt ~~~
-    \frac{ds}{dt} = |\varphi'(t)| > 0 ~ \Rightarrow ~ s = s(t) ~ \nearrow ~
+    \int_{t_0}^{t} |\vec \varphi'(t)| dt ~~~
+    \frac{ds}{dt} = |\vec \varphi'(t)| > 0
     $$
-    $\Rightarrow ~ s = s(t)$ является биективной
+    $\Rightarrow ~ s = s(t) ~ \nearrow ~ \Rightarrow ~ s = s(t)$ биективна
+    $\Rightarrow$ диффеоморфна
   \end{proof}
 
-  2) $\left| \frac{d \vec \varphi}{ds} \right| = 1$ для любой точки касательный
-  вектор имеет длину $1$
+  2) $\left| \frac{d \vec \varphi}{ds} \right| = 1$ то есть для любой точки
+  натурально параметризованной кривой касательный вектор имеет длину $1$
 
   \begin{proof}
-    $\varphi(s) = \varphi (t(s))$
+    $\vec \varphi(s) = \vec \varphi (t(s))$
+    $$
+    S = \int_{t_0}^{t_1} |\vec \varphi'(t)| dt ~ \Rightarrow ~ \frac{ds}{dt} =
+    |\vec \varphi'(t)|
+    $$
+    $$
+    \frac{d\vec \varphi}{ds} = \frac{d \vec \varphi}{dt} \frac{dt}{ds} =
+    \vec \varphi' \cdot \frac{1}{|\vec \varphi'|} ~ \Rightarrow ~ \vec \varphi'
+    ~ \text{вектор длины 1}
+    $$
+  \end{proof}
 
-    $\frac{d\vec \varphi}{ds} = \frac{d\varphi}{dt} ~~~ \frac{dt}{ds} =
-    \vec \varphi' \cdot \frac{1}{|\varphi'|}$ вектор длины 1
+  \begin{block}[Лемма]
+    Если $|\vec \varphi(t)| = \const$ тогда $\vec \varphi'(t) \perp
+    \vec \varphi(t)$
+  \end{block}
+
+  \begin{proof}
+    $(\vec \varphi, \vec \varphi) = |\vec \varphi|^2 = \const$
+    $$
+    \frac{d(\vec \varphi, \vec \varphi)}{dt} = (\vec \varphi', \vec \varphi) +
+    (\vec \varphi, \vec \varphi') = 2(\vec \varphi', \vec \varphi) = 0
+    $$
+    $$
+    \Rightarrow (\vec \varphi', \vec \varphi) = 0 ~~~ \Rightarrow \vec \varphi'
+    \perp \vec \varphi
+    $$
   \end{proof}
 
   3)
   $$
   \frac{d^2 \vec \varphi}{ds^2} \perp \frac{d\vec \varphi}{ds}
   $$
+  \begin{proof}
+    Так как $\left| \frac{d\vec \varphi}{ds} \right| = 1 = const$ тогда
+    по лемме $\frac{d^2 \vec \varphi}{ds^2} \perp \frac{d\vec \varphi}{ds}$
+  \end{proof}
 \end{block}
 
-\begin{block}[Лемма]
-  Если $|\varphi(t)| = const$, тогда $\vec \varphi'(t) \perp
-  \vec \varphi(t)$
-\end{block}
-
-\begin{proof}
-  $(\vec \varphi, \vec \varphi) = |\vec \varphi|^2 = const$
-  $$
-  \frac{d}{dt}(\varphi, \varphi) = (\varphi', \varphi) +
-  (\varphi, \varphi') = 2(\varphi', \varphi) = 0
-  $$
-  $$
-  \Rightarrow (\varphi', \varphi) = 0 ~~~ \Rightarrow \varphi' \perp \varphi
-  $$
-\end{proof}
+\begin{title}[\Large]
+  Кривизна и кручение кривой: определение, геометрический смысл, свойства
+\end{title}
 
 \begin{define}[кривизны кривой]
   $$
   k =
   \left|
-    \frac{d^2 \varphi}{d \xi^2}
+    \frac{d^2 \vec \varphi}{d s^2}
   \right| ~~~
   \text{называется кривизной кривой}
   $$
   $$
-    \frac{d^2 \varphi}{d \xi^2} ~~~ \text{вектор кривизны}
+    \frac{d^2 \vec \varphi}{d s^2} ~~~ \text{вектор кривизны}
   $$
+  Величина, обратная кривизне кривой $r = \frac{1}{\kappa}$ называется радиусом
+  кривизны который совпадает с радиусом соприкасающейся окружности в данной
+  точке кривой. Центр этой окружности называется центром кривизны. Если кривизна
+  кривой равна нулю, то соприкасающаяся окружность вырождается в прямую.
+
+  \includegraphics[width = 4.5cm]{Osculating_circle}
 \end{define}
 
 \begin{theorem}
-  Кривизна кривой $= 0$ тогда когда ее образ является прямой
+  Кривизна кривой $k = 0$ тогда когда ее образ является прямой.
 \end{theorem}
 
 \begin{proof}
-  Доказательство в одну сторону пусть $k = 0$ тогда
+  $\Rightarrow ~ k = 0$ тогда
   $$
-  \left| \frac{d^2 \varphi}{ds^2} \right| = 0 ~ \Rightarrow ~
-  \frac{d^2 \varphi}{ds^2} = \vec 0 ~ \Rightarrow ~
-  \frac{d\varphi}{d s} = \vec a (=const) ~ \Rightarrow ~
-  \varphi = \vec a S + \vec b
+  \left| \frac{d^2 \vec \varphi}{ds^2} \right| = 0 ~ \Rightarrow ~
+  \frac{d^2 \vec \varphi}{ds^2} = \vec 0 ~ \Rightarrow ~
+  \frac{d\vec \varphi}{d s} = \vec a = const ~ \Rightarrow ~
+  \vec \varphi = \vec a S + \vec b
   $$
-  прямая это $\varphi = \vec \varphi_0 + \vec g t$
+  прямая это $\vec \varphi = \vec \varphi_0 + \vec g t$
 
-  Доказательство в другую сторону что $k = 0$
+  $\Leftarrow ~ k = 0$ тогда
   $$
-  \varphi = \vec \varphi_0 + \vec g t ~ \Rightarrow ~
-  \frac{d^2 \varphi}{ds^2} = \vec 0 ~ \Rightarrow ~ k = 0
+  \vec \varphi = \vec \varphi_0 + \vec g t ~ \Rightarrow ~
+  \frac{d^2 \vec \varphi}{ds^2} = \vec 0 ~ \Rightarrow ~ k = 0
   $$
 \end{proof}
 
-$\vec \varphi = \vec \varphi (s)$ - регулярная кривая, $s$ - натуральный
-параметр
-%img
-$\vec t = \frac{d \vec \varphi}{ds}$
-
-$\vec n = \frac{1}{k} ~~~ \frac{d^2 \varphi}{ds^2}$ - вектор главной нормали
-
-$\vec b = [\vec t, \vec n]$ - вектор бинормали
-
-$\vec t, \vec n, \vec b$ - репер Френе (в каждой точке получается
-ортонормированный базис)
-%img
-
-\begin{block}[Лемма 2]
+\begin{block}[Лемма]
   $$
-  \frac{d\vec b}{ds}a~ || ~ \vec n ~ \text{- колинеарны}
+  \frac{d\vec b}{ds} ~ || ~ \vec n ~ \text{колинеарны}
   $$
 \end{block}
 
 \begin{proof}
-  $\vec b = \vec b(s)$ докажем что $\frac{db}{ds} \perp \vec t, \vec b$
+  $\vec b = \vec b(s)$ докажем что $\frac{d \vec b}{ds} \perp \vec t, \vec b$
 
-  $|b| = 1 = const ~ \Rightarrow ~ \frac{db}{ds} \perp \vec b$ (по лемме 1)
-
-  $
-  \vec b = [\vec t, \vec n] ~ \Rightarrow ~ \frac{d\vec b}{ds} =
-  [\frac{dt}{ds}, \vec b] + [\vec t, \frac{d\vec n}{ds}] =
-  [\vec t, \frac{d\vec n}{ds}] \perp \vec t
-  $
+  $|\vec b| = 1 = \const ~ \Rightarrow ~ \frac{d\vec b}{ds} \perp \vec b$
+  (по лемме)
+  $$
+  \vec b = [\vec \vec t, \vec n] ~ \Rightarrow ~ \frac{d\vec b}{ds} =
+  \cancelto{\vec 0}{\left[\frac{dt}{ds}, \vec n\right]} +
+  \left[\vec t, \frac{d\vec n}{ds}\right] =
+  \left[\vec t, \frac{d\vec n}{ds}\right] ~ \Rightarrow ~ \vec b \perp \vec t
+  $$
 \end{proof}
 
-\begin{block}[Следствие]
-  Из леммы следует $\frac{\vec b}{ds} = - \kappa$ $\kappa$ - коэффицент
-  пропорциональности каппа называется кручениче кривой в точке.
-\end{block}
+\begin{define}[кручения кривой]
+  $\frac{d\vec b}{ds} = -\kappa \vec n$ где $\kappa$ называется кручениче кривой
+  в точке.
+\end{define}
 
 \begin{theorem}
-  Кругление кривой равно 0 $\Rightarrow$ когда кривая явялется плоскостью
-  (ее образ лежит в некоторой плоскости)
+  Кручение кривой равно $0$ $\Leftrightarrow$ когда кривая явялется плоскостью
+  (ее образ лежит в плоскости)
 \end{theorem}
 
 \begin{proof}
-  Пусть $\kappa = 0$, тогда $\frac{d\vec b}{ds} = \vec 0 \Rightarrow \vec b =
-  const = (\vec \alpha, \vec \beta, \vec \gamma)$ расмотрим
-  $\frac{d}{ds}(\vec \varphi, \vec b) = (\frac{d \vec \varphi}{ds}, b) +
+  $\Rightarrow$ Пусть $\kappa = 0$, тогда $\frac{d\vec b}{ds} = \vec 0 ~
+  \Rightarrow ~ \vec b = \const = (\alpha, \beta, \gamma)$
+
+  Расмотрим
+  $\frac{d(\vec \varphi, \vec b)}{ds} = (\frac{d \vec \varphi}{ds}, \vec b) +
   (\vec \varphi, \frac{d\vec b}{ds}) = 0 ~ \Rightarrow ~
-  (\vec \varphi, \vec b) = const$
+  (\vec \varphi, \vec b) = \const$
 
   $\alpha x(s) + \beta y(s) + \gamma z(s) = \delta ~ \Rightarrow$ кривая
-  $\vec \varphi = \vec \varphi (s)$ лужит в плоскости $\alpha x + \beta y +
+  $\vec \varphi = \vec \varphi (s)$ лежит в плоскости $\alpha x + \beta y +
   \gamma z = \delta$
 
-  Доказательство в обратную сторону. Пусть кривая лежит в некоторой плоскости
-  %img
-  $\vec b = const ~ \Rightarrow ~ \frac{db}{ds} = 0 ~ \Rightarrow ~ \kappa = 0$
+  $\Leftarrow$ Пусть кривая лежит в некоторой плоскости
+  $\vec b = \const ~ \Rightarrow ~ \frac{d \vec b}{ds} = \vec 0 ~ \Rightarrow ~
+  \kappa = 0$
 \end{proof}
 
-\begin{theorem}[(гометрический смысл кривизны кручения)]
-  1) Для плоской кривой $k = |\frac{d \vec t}{ds}|$ равна скорости вращения
-  касательного вектора.
+\begin{block}[Гометрический смысл кривизны и кручения кривой]
+  1) Для плоской кривой $k = \left|\frac{d \vec t}{ds}\right|$ равна
+  скорости вращения касательного вектора.
 
-  2) $|\kappa| = |\frac{d\vec b}{ds}|$ равна скорости вращения соприкасающейся
-  плоскости относительно касательной прямой.
-\end{theorem}
+  2) $\kappa = \left|\frac{d\vec b}{ds}\right|$ равна скорости вращения
+  соприкасающейся плоскости относительно касательной прямой.
+\end{block}
 
 \begin{theorem}
-  Для всяких гладких функций $k = k(s) > 0$ и $\kappa = \kappa(s)$ существует
-  единственный с точностью до пложения в пространстве кривая
-  $\varphi = \varphi(s)$ кривизна которой равна кручению
+  $\forall$ гладких функций $k = k(s) > 0$ и $\kappa = \kappa(s)$ $\exists!$
+  с точностью до пложения в пространстве кривая
+  $\vec \varphi = \vec \varphi(s)$ где кривизна и кручение равна то есть
+  кривизна и кручение определяют кривую однозначно.
 \end{theorem}
