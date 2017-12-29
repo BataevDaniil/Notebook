@@ -3,70 +3,82 @@
 \end{title}
 
 \begin{title}[\Large]
-  Топологическое пространство
+  Параграф 3.1
+\end{title}
+
+\begin{title}[\Large]
+  Топологические пространства, открытые и замкнутые множества. Топология
+  метрических пространств
 \end{title}
 
 \begin{define}[топологической структуры]
-  На множестве $X$ задана топология или топологическая структура, если в нем
-  выбрана некоторая система подмножеств $T$ удовлитворяющих условиям
+  На множестве $X$ задана топология или топологическая структура, если
+  выбрана некоторая система подмножеств $\mathcal{T}$ удовлитворяющих условиям
 
-  1. $\oslash ~~~ x \in T$
+  1) $\oslash, X \in \mathcal{T}$
 
-  2. если $u_{\alpha}, \alpha \in T$ принадлежит семейству $T$ тогда
-  $\cup u_{\alpha} \in T$ (замкнутость $T$ относительно объедениненя)
+  2) $U_{\alpha} \in \mathcal{T} ~~~ \forall \alpha ~~~ \cup U_{\alpha} \in
+  \mathcal{T}$ (замкнутость $\mathcal{T}$ относительно объедениненя)
 
-  3. если $u_1, \ldots, u_k \in T$ тогда $u_1 \cap \ldots \cap u_k \in T$
-  (замкнутость $T$ относительно конечных пересичений)
-
-  $\sim$ 3 если $u, \upsilon \in T$ тогда $u \cap \upsilon \in T$
+  3) $u_1, \ldots, u_k \in \mathcal{T} ~~~ u_1 \cap \ldots \cap u_k \in
+  \mathcal{T}$ (замкнутость $\mathcal{T}$ относительно конечных пересечений)
+  или тоже что и $u, \upsilon \in \mathcal{T} ~~~ u \cap \upsilon \in
+  \mathcal{T}$
 \end{define}
 
 \begin{define}[топологического пространства]
-  Множество $(X, T)$ это топологическое пространство
+  Множество $(X, \mathcal{T})$ на котором задана топологическая структура это
+  топологическое пространство.
+
+  Множества, принадлежащие $\mathcal{T}$ называются открытыми множествами.
+
+  Замечание: топология на $X$ может быть задана выделением системы замкнутых
+  подмножеств.
 \end{define}
 
-если $(X, T)$ топологическое пространство тогда множество $T$ будем называть
-открытым множеством
+\begin{define}[открытого множества]
+  Если $(X, \mathcal{T})$ топологическое пространство тогда множество
+  $\mathcal{T}$ будем называть открытым множеством.
+\end{define}
 
-\begin{define}
+\begin{define}[замкнутого множества]
   Множество $A \subseteq X$ называется замкнутым, если его дополнение
-  $CA = X \backslash A$ является открытым
+  $CA = X \backslash A$ является открытым.
 \end{define}
 
-\begin{block}[Свойства]
-  1) $\oslash ~ X$ тревиальные подмножества являются замкнутыми
+\begin{block}[Свойства замкнутых множеств]
+  1) $\oslash, X$ тревиальные подмножества являются замкнутыми
 
-  2) Если $F_{\alpha}, \alpha \in I$ замкнутым тогда $\cap_{\alpha}F_{\alpha}$
-  является замкнутым
+  2) Если $F_{\alpha} \in \mathcal{T}$ замкнуто тогда $\forall \alpha ~~~
+  \cap F_{\alpha}$ является замкнутым
 
   3) Если $F_1, \ldots, F_k$ замкнуто тогда $F \cup \ldots \cup F_k$ замкнуто
 \end{block}
 
 \begin{proof}
-  1) $\oslash = CX$ - замкнуто
+  1) $\oslash = CX$ замкнуто
 
-  $X = C \oslash$ - замкнуто
+  $X = C \oslash$ замкнуто
 
-  2) Так как $F_{\alpha}$ замкнуто тогда $F_{\alpha} = CU_{\alpha}$ для
-  $U_{\alpha} \in T$ тогда $\cap_{\alpha}F_{\alpha} = \cap_{\alpha}CU_{\alpha}
-  = C(\cup_{\alpha}U_{\alpha})$ замкнуто так как $\cup_{\alpha} U_{\alpha}
-  \in T$
+  2) $F_{\alpha}$ замкнуто тогда $F_{\alpha} = CU_{\alpha}$ для
+  $U_{\alpha} \in \mathcal{T}$ тогда
+  $$
+  \forall \alpha ~ \cap F_{\alpha} = \cap CU_{\alpha} = C(\cup U_{\alpha})
+  $$
+  замкнуто так как $\forall \alpha ~ \cup U_{\alpha} \in \mathcal{T}$
 
-  3) Аналогично
+  2) $F_{\alpha}$ замкнуто тогда $F_{\alpha} = CU_{\alpha}$ для
+  $U_{\alpha} \in \mathcal{T}$ тогда
+  $$
+  \forall \alpha ~ \cup F_{\alpha} = \cup CU_{\alpha} = C(\cap U_{\alpha})
+  $$
+  замкнуто так как $\forall \alpha ~ \cap U_{\alpha} \in \mathcal{T}$
 \end{proof}
 
-\begin{block}[Замечание]
-  Топология на $X$ может быть задана выделением системы замкнутых подмножеств
-\end{block}
-
-\begin{title}[\Large]
-  Топология метрических пространства
-\end{title}
-
+Топология метрических пространства
 $$
 B_r(a) = \{x \in X : ~ \rho(x,a) < r\} ~~ \text{шар}
 $$
-
 Открытое множество $(x,\rho)$ $U \supseteq X$ называется открытым если
 $\forall a \in U ~~ \exists r > 0$
 
@@ -110,5 +122,3 @@ $r_{\rho}$ семейство открытых множеств $x$ докаже
   x \not= 0$ открыто $\exists U, V \in T$ тогда $a \in U, ~ b \in V ~~~
   U \cap V = \oslash$
 \end{theorem}
-
-
