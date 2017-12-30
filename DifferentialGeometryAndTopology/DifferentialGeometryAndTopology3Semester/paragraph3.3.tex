@@ -6,14 +6,34 @@
   Индукцированная топология. Топологические подпространство
 \end{title}
 
-Пусть $(X, T)$ топологическое пространство и $S \subseteq X$ обозначим
-$T_s = \{ S \cap u\}$ покажем что $T_s$ задает топологию на $S$
+\begin{define}[индукцированной топологии]
+  $(X, \mathcal{T})$ топологическое пространство и $S \subseteq X$
+  $$
+  \mathcal{T}_s = \{ S \cap U ~ | ~ U \in \mathcal{T} \}
+  $$
+  Топология $\mathcal{T}_s$ называется индукцированной топологией.
 
-Пусть $\forall_{\alpha} \in T_s ~~ \alpha \in I$ тогда $ \forall_{\alpha} = S
-\cap u_{\alpha}$ где $u_{\alpha} ~ \Rightarrow ~ \cup_{\alpha \in I} \cup =
-\cup_{\alpha \in I}(S \cap u_{\alpha}) = S$
+  $(S, \mathcal{T}_s)$ топологическое подпространство
 
-\begin{define}
-  Топология $T_s$ называется индукцированной тополонией даже подмножество $S$
-  называется топологическим подпространством
+  Построенная индукцированная топология на $[0,1]$ называется стандартной
 \end{define}
+
+\begin{proof}
+  Покажем что $\mathcal{T}_s$ задает топологию на $S$
+
+  1) $\oslash, S \in \mathcal{T}_s$
+
+  $\oslash = S \cap \oslash \in \mathcal{T}_s$
+
+  $S = S \cap X \in \mathcal{T}_s$
+
+  2) $V_{\alpha} \in \mathcal{T}_s$ тогда
+  $V_{\alpha} = S \cap U_{\alpha}$ где $U_{\alpha} \in \mathcal{T} ~
+  \Rightarrow$
+  $$
+  \forall \alpha ~~ \cup V_{\alpha} =
+  \cup(S \cap U_{\alpha}) = S \cap (\cup U_{\alpha}) \in \mathcal{T}_s
+  $$
+  3)
+\end{proof}
+

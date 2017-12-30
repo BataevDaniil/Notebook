@@ -1,0 +1,112 @@
+\begin{title}[\Large]
+  Параграф 3.4
+\end{title}
+
+\begin{title}[\Large]
+  Непрерывные отображения топологических пространств
+\end{title}
+
+\begin{define}[непрерывности]
+  $(X, \mathcal{T}), (Y, \mathcal{T}')$ топологическое пространство
+  $f: X \to Y$ называются непрерывными в точке $x_0 \in X$ если
+  $$
+  \forall O(f(x_0)) ~~ \exists O(x_0) ~~ f(O(x_0)) \subseteq O(f(x_0))
+  $$
+  Все непрерывные функции в математическом анализе непрерывны в топологию.
+
+  Если отображение непрерывно в каждой точке пространства $X$ то оно
+  называется непрерывным
+\end{define}
+
+\begin{theorem}
+  $f:(X, \mathcal{T}) \to (Y, \mathcal{T}')$ является непрерывным когда
+  $\forall V \in \mathcal{T}'$ его полный праобраз
+  $$
+  f^{-1}(V) = \{ x \in X ~ | ~ f(x) \in V \} \in \mathcal{T}
+  $$
+  является открытым
+\end{theorem}
+
+\begin{proof}
+  В учебнике Александра Мерзаханяна
+\end{proof}
+
+\begin{title}[\Large]
+  Свойства непрерывных отображений
+\end{title}
+
+\begin{theorem}
+  Суперпозиция непрерывных отображений является непрерывным отображением.
+\end{theorem}
+
+\begin{proof}
+  $$
+  (X, \mathcal{T}) \stackrel{f}{\to} (Y, \mathcal{T}') \stackrel{g}{\to}
+  (Z, \mathcal{T}'') ~~~ (gf)(x) = g(f(x))
+  $$
+  $$
+  V \in \mathcal{T}'' ~~~ (gf)^{-1}(V) =
+  f^{-1}(\overbrace{g^{-1}(V)}^{\mathcal{T}'}) \in \mathcal{T}
+  $$
+\end{proof}
+
+\begin{theorem}
+  Ограничения непрерывного отображения на подпространства является непрерывным.
+\end{theorem}
+
+\begin{proof}
+  $f: (X, \mathcal{T}) \to (Y, \mathcal{T}')$ непрерывна и $(S, \mathcal{T}_s)
+  \subseteq (X, \mathcal{T})$ топологическое подпространство
+
+  нужно доказать что $f|S : (S, \mathcal{T}_s) \to (Y, \mathcal{T}')$
+  $$
+  V \in \mathcal{T}' ~~~ (f | S)^{-1}(V) = \{ x \in S ~ | ~ f(x) \in V \} =
+  $$
+  $$
+  = \{x \in X ~ | ~ f(x) \in V\} \cap S = S \cap f^{-1}(V) \in \mathcal{T}_s
+  $$
+  $f^{-1}(V)$ открыто так как $f$ непрерывно
+\end{proof}
+
+\begin{title}[\Large]
+  Гомеоморфизмы топологических пространств
+\end{title}
+
+\begin{define}[гомеоморфизма]
+  $(X, \mathcal{T}), (Y, \mathcal{T}')$ топологические пространства тогда
+  $f: X \to Y$ называется гомеоморфизмом если
+
+  1) $f$ биективное отображение
+
+  2) $f$ непрерывное отображений
+
+  3) $f^{-1}$ непрерывное отображений
+
+  $X \approx Y$
+\end{define}
+
+\begin{theorem}
+  Всякий гомеоморфизм устанавливает взаимооднозначное соответствие между
+  открытыми множествами. И обратно, если отображение устанавливает
+  взаимооднозначное соответствие мужду открытыми множествами то оно является
+  гомеоморфизмом.
+\end{theorem}
+
+\begin{proof}
+  $\Rightarrow$ $f:(X, \mathcal{T}) \stackrel{\approx}{\to} (Y, \mathcal{T}')$
+  $$
+  \alpha : U \in \mathcal{T} \mapsto f(U) = (f^{-1})^{-1}(U) \in \mathcal{T}
+  $$
+  так как $f^{-1}$ непрерывно (всякое открытое множество отображается в открытое
+  при гомеоморфизме)
+  $$
+  \beta : V \in \mathcal{T} \mapsto f^{-1}(V) \in \mathcal{T}
+  $$
+  $$
+  \alpha \cdot \beta (V) = \alpha(\beta(V)) = f(f^{-1}(V)) = V
+  $$
+  $$
+  \beta \cdot \alpha (V) = \beta(\alpha(V)) = f(f^{-1}(V)) = V
+  $$
+  $\Leftarrow$
+\end{proof}

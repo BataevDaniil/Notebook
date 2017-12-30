@@ -1,0 +1,156 @@
+\begin{title}[\Large]
+  Параграф 3.5
+\end{title}
+
+\begin{title}[\Large]
+  Компактные пространства и множества: определение, примеры, основные свойства
+\end{title}
+
+\begin{define}[открытого покрытия и подпокрытия]
+  $(X, \mathcal{T})$ топологическое пространство $A \subseteq X$ открытым
+  покрытием множества $A$ называется $\{ U_{\alpha} \in \mathcal{T} ~ | ~
+  \alpha \in I \} ~~ A \subseteq \cup_{\alpha \in I} U_{\alpha}$
+
+  Если $|I| < \infty$ тогда называется конечным
+
+  Если для некоторого подмножества индексов $J \subset I ~~
+  A \subseteq \cup_{\alpha \in J} U_{\alpha}$ тогда $\{U_{\alpha} ~ | ~
+  \alpha \in J \}$ называется подпокрытием
+\end{define}
+
+\begin{define}[компактного множества]
+  Множество $A$ называется компактны если из всякого его покрытия можно выбрать
+  конечное подпокрытие
+\end{define}
+
+\begin{block}[Примеры]
+  1)  $(0,1)$ в топологии не компактен так как $\{(\frac{1}{n}, 1),
+  n = 2,3, \ldots\} ~~~ (0,1) = \cup (\frac{1}{n}, 1)$ это покрытие не имеет
+  конечного подпокрытия
+
+  2) $[0,1]$ компактен
+\end{block}
+
+\begin{theorem}
+  Образ компактного множества при непрерывном отображении является компактным
+  множеством.
+\end{theorem}
+
+\begin{proof}
+  Нужно доказать что $f(A)$ также компактно
+
+  Пусть $f: X \to Y$ непрерывное отображение и $A \subseteq X$ компактное
+  множество и $\{ V_{\alpha} ~ | ~ \alpha \in I \}$ покрытие для $f(A) \subseteq
+  \cup_{\alpha \in I} V_{\alpha}$ тогда
+  $$
+  A \subseteq f^{-1} (\cup_{\alpha \in I} V_{\alpha}) =
+  \cup_{\alpha} f^{-1}(V_{\alpha}) ~ \text{открыто так как $f$ непрерывно}
+  $$
+  $\Rightarrow$ $\{f^{-1}(V_{\alpha} ~ | ~ \alpha \in I\}$ покрытие для $A$
+  так как $A$ компактное множество то
+  $$
+  A \subseteq f^{-1} (V_{\alpha_1}) \cup \ldots \cup f^{-1} (V_{\alpha_k})
+  ~ \Rightarrow
+  $$
+  $$
+  f(A) \subseteq V_{\alpha} \cup \ldots \cup V_{\alpha_k} ~ \Rightarrow
+  $$
+  $\{V_{\alpha_1}, \ldots, V_{\alpha_k}\}$ конечное подпокрытие для $f(A)$
+\end{proof}
+
+\begin{block}[Следствие]
+  $X \approx Y$ тогда если $X$ компактное то $Y$ компактное.
+\end{block}
+
+\begin{proof}
+  Предположим что $f:X \stackrel{\approx}{\to} Y$ тогда $Y = f(X)$ компактно
+\end{proof}
+
+\begin{title}[\Large]
+  Теоремы о связи компактности и замкнутости множеств
+\end{title}
+
+\begin{theorem}
+  Компактное множество в Хаусдорфовом пространстве замкнуто.
+\end{theorem}
+
+\begin{proof}
+  Пусть $A \subseteq (X, \mathcal{T})$ компактно и $x \in CA$ тогда
+  $\forall a \in A$ $\exists$ непересекающиеся окружности $O(a) ~~ O_0(x)$ где
+  $\{O(a), a \in A\}$ покрытие для $A$
+
+  так как $A$ компактно то $A \subseteq O(a_1) \cup \ldots \cup O(a_k)$
+  $O(x) = O_{a_1}(x) \cap \ldots \cap O_{a_k}(x)$ не пересекаются ни с одной
+  окрестностью с $O(a_1), \ldots, O(a_k)$
+
+  $\Rightarrow$ $O(x)$ не пересикается с $A$
+
+  $\Rightarrow$ $O(x) \subseteq CA$
+
+  $\Rightarrow$ все точки $CA$ являются внутренними
+
+  $\Rightarrow$ $CA$ открытое множество
+
+  $\Rightarrow$ $A$ замкнутое
+\end{proof}
+
+\begin{theorem}
+  Замкнутое подмножество компактного пространства компактно.
+\end{theorem}
+
+\begin{proof}
+  Учебник Александра Мерзкаханян
+\end{proof}
+
+\begin{title}[\Large]
+  Критерий компактности в $R^n$
+\end{title}
+
+\begin{theorem}
+  Подмножество в $R^n$ является компактным тогда когда ограничена и замкнута.
+\end{theorem}
+
+\begin{proof}
+  $\Rightarrow$ пусть $A \subseteq R^n$ компактно. Так как $R^n$ Хаусдорфово
+  то по теореме выше $A$ замкнуто. Расмотрим покрытие $\{B_n(0) ~ | ~
+  n = 1,2,3, \ldots \}$ Так как $A$ компактно то $A \subseteq B_{n_1}(0) \cup
+  \ldots \cup B_{b_k}(0) = B_N(0)$ шар самого большого радиуса объеденения
+  шаров $\Rightarrow$ $A$ ограничена
+
+  $\Leftarrow$ пусть $A$ замкнуто и ограничено тогда $A \subseteq [\alpha_1,
+  \beta_1] \times \ldots \times [\alpha_n, \beta_n]$ $\Rightarrow$ $A$ компактно
+  по теоереме выше
+\end{proof}
+
+\begin{title}[\Large]
+  Теоремы о непрерывных отображениях компактных пространств
+\end{title}
+
+\begin{theorem}[Вейерштрасса]
+  Если $X$ компактное топологическое пространство и $f: X \to R$ непрерывная
+  функция тогда $\exists x_1, x_2 \in X ~~ \forall x \in X ~~
+  f(x_1) \le f(x) \le f(x_2)$
+\end{theorem}
+
+\begin{proof}
+  $f(x) \subseteq R$ компактно по теоереме выше
+
+  По теореме выше $f(x)$ ограничена и замкнуто $\Rightarrow$ $\inf f(x),
+  \sup f(x) \in R$
+
+  $\inf f(x), \sup f(x) \in \overline{f(x)} = f(x)$ где $\overline{f(x)}$
+  точки соприкосновения и замыкания $\Rightarrow$ $\inf f(x) = f(x_1) ~~
+  \sup f(x) = f(x_2)$ для непрерывных $x_1, x_2 \in X$
+\end{proof}
+
+\begin{block}[Следствие]
+  $X$ компактно топологическое пространство $f: X \to R$ непрерывно и
+  $\forall x \in X ~~ f(x) > 0$ тогда $\exists c > 0 ~~~ f(x) \ge c$
+\end{block}
+
+\begin{proof}
+   $$
+   f(x) \ge \overbrace{\inf f(x) = f(x_1)}^c > 0
+   $$
+\end{proof}
+

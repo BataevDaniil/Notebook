@@ -3,21 +3,21 @@
 \end{title}
 
 \begin{title}[\Large]
-  Внутренность и замыкания множеств топологического пространства
+  Внутренние точки и точки прикосновения. Замыкание и внутренность множества
 \end{title}
 
 \begin{define}[внутренней точки]
-  $(X, T)$ то и $A \subseteq X ~~ a \in Q$ называется внутренней точкой
-  множества $Q$ если $\exists u(a)$ окретность точки $u(a) \subseteq A$
+  $(X, \mathcal{T})$ открыто и $A \subseteq X ~~ a \in A$ называется внутренней точкой
+  множества $A$ если $\exists O(a) \subseteq A$
 \end{define}
 
 \begin{define}[точки прикосновения]
-  $x \in X$ называется точкой прикосновения множества $A$ если всякая его
-  окрестность пересекается $A$
+  $(X, \mathcal{T})$ открыто и $x \in X$ называется точкой прикосновения множества $A$
+  если всякая его окрестность пересекается с $A$
 \end{define}
 
 \begin{theorem}
-  1) $A$ является замкнутым $\Leftrightarrow$ $x \in A$ точка является
+  1) $A$ является открытым $\Leftrightarrow$ $\forall x \in A$ точка является
   внутренней
 
   2) $A$ является замкнутой $\Leftrightarrow$ содержит все свои точки
@@ -25,43 +25,56 @@
 \end{theorem}
 
 \begin{proof}
-  1) $\Rightarrow$ Предположим что $A$ открытой множество тогда $\forall a \in A
-  ~~ u(a) = A \subseteq$
+  1) $\Rightarrow$ Предположим что $A$ открытое множество тогда $\forall a \in A
+  ~~ O(a) = A \subseteq A$
 
-  $\Leftarrow$ Предположим что все точкм $A$ является внутренней то есть
-  $\forall a \in A ~~ \exists u(a)$ точка $u(a) \subseteq A$ тогда
-  $A \cup_{a \in A} u(a)$ открыто
+  $\Leftarrow$ Предположим что все точки $A$ являются внутренними то есть
+  $\forall a \in A ~~ \exists O(a) \subseteq A$ тогда
+  $$
+  A = \bigcup_{a \in A} O(a) ~ \text{открыто}
+  $$
+  2) $\Rightarrow$ Предположим что $A$ замкнуто тогда если $x \in CA$
+  то $x$ не является точка прикосновения $\Rightarrow$ $O(a) = A$ не пересекаеся
+  c $A$  $\Rightarrow$ $x$ не является точкой прикосновения
 
-  2) $\Rightarrow$ Предположим что $A$ замкнуто покажем что если $x \in A$
-  то $x$ не является точка прикосновения $\Rightarrow$ $u(a) = A$
-
-  $\Leftarrow$ Предположим что $A$ содержит все точкм прикосновения что $A$
-  замкнуто то $CA$ открыто, покажем что $\forall x \in CA$ внутренней так как
-  $x \in CA$ и $CA$ не является прикосновением $A$ $\Rightarrow$ $\exists u(x)$
-  не пересекается с $A$ $\Rightarrow$ $u(x) \subseteq CA$
+  $\Leftarrow$ Предположим что $A$ содержит все свои точки прикосновения нужно
+  доказать что $A$ замкнуто или $CA$ открыто. Покажем что $\forall x \in CA$
+  внутренняя так как
+  $x \in CA$ то $x$ не является точкой прикосновением $A$ $\Rightarrow$
+  $\exists O(x)$ не пересекающаяся с $A$ $\Rightarrow$ $O(x) \subseteq CA$
 \end{proof}
 
-\begin{block}[Следствие]
-  Внутренностью $A$ называется множество всех его внутренних точек
+\begin{define}[внутренности множества]
+  Внутренностью множества $A$ называется множество всех его внутренних точек
   $\stackrel{\bullet}{A} \subseteq A$
-\end{block}
+\end{define}
 
 \begin{define}[Замыкания]
   Замыканием множества $A$ называется множество всех его прикосновений
+  $A \subseteq \overline{A}$
 \end{define}
 
-\begin{theorem}
-  1) $A$ открыто когда все его точки внутренни $\Rightarrow$ $A \subseteq A
-  ~ \Rightarrow ~ A \subseteq \stackrel{\bullet}{A}$
+\begin{block}[Следствие]
+  1) $A$ открыто когда все его точки внутренни то есть
+  $A \subseteq \stackrel{\bullet}{A} ~ \Leftrightarrow ~
+  A = \stackrel{\bullet}{A}$
 
   2) $A$ является замкнутым $\Leftrightarrow ~ \overline{A} \subseteq A ~
   \Leftrightarrow ~ A = \overline{A}$
-\end{theorem}
+\end{block}
+
+\begin{define}[границы множества]
+  Граница множества $\partial A = \overline{A} \backslash \stackrel{\bullet}{A}$
+\end{define}
 
 \begin{theorem}
-  1) Внутренность $\stackrel{\bullet}{A}$ является наибольшим открытым множество
+  1) Внутренность $A$ является наибольшим открытым множество
   содержащиеся в $A$
 
   2) Замыкание множество $A$ является наименьшим замкнутым множеством
   содержащим $A$
 \end{theorem}
+
+\begin{proof}
+  Учебник Александра Мерзаханяна
+\end{proof}

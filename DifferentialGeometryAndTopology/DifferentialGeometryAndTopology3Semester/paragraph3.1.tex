@@ -75,50 +75,73 @@
   замкнуто так как $\forall \alpha ~ \cap U_{\alpha} \in \mathcal{T}$
 \end{proof}
 
-Топология метрических пространства
-$$
-B_r(a) = \{x \in X : ~ \rho(x,a) < r\} ~~ \text{шар}
-$$
-Открытое множество $(x,\rho)$ $U \supseteq X$ называется открытым если
-$\forall a \in U ~~ \exists r > 0$
+\begin{define}
+  Топология на множестве $X$ называется метризуемой евсли она может быть
+  определена с помощью некоторой метрики $\mathcal{T_{\rho}}$
+\end{define}
 
-$r_{\rho}$ семейство открытых множеств $x$ докажем что задает топологическую
-структуру
+\begin{proof}[топологии метрических пространств]
+  $$
+  B_r(a) = \{x \in X : ~ \rho(x,a) < r\} ~~ \text{шар}
+  $$
+  $(X,\rho)$ множество $X$ с метрикой $\rho$
 
-1) $\oslash, X \in \tau_{\rho}$
+  $U \subseteq X$ называется открытым если $\forall a \in U ~~ \exists r > 0 ~~
+  B_r(a) \subseteq U$
 
-2) $U_{\alpha} \in \tau_{\rho} (\alpha \in I)$
+  $\mathcal{T}_{\rho}$ семейство открытых множеств в $X$
 
-тогда $\cup_{\varphi \in I} U_{\varphi} \tau_{\rho}$
+  1) $\oslash, X \in \mathcal{T}_{\rho}$
 
-\begin{proof}
-  $U = \cup_{\alpha} u_{\alpha}$ пусть $a \in U$ тогда $a \in U_{\alpha}$ для
-  некоторого $\alpha_0$ так как $U_{\alpha_0}$ открыто то $\exists B_r(a)$
-  лежащий в $u_{\alpha_0} ~~ \Rightarrow ~ B_r (a) \subseteq U ~~ \Rightarrow ~
-  U \in \tau_{\rho}$
+  2) $U_{\alpha} \in \mathcal{T}_{\rho}$ тогда $\forall \alpha ~ \cup U_{\alpha}
+  \mathcal{T}_{\rho}$
+
+  \begin{proof}
+   $U = \cup_{\alpha} U_{\alpha}$ по определению открыто
+
+    пусть $a \in U$ тогда $\exists \alpha_0 ~~
+    a \in U_{\alpha_0}$ так как $U_{\alpha_0}$ открыто то $\exists B_r(a)$
+    лежащий в $U_{\alpha_0} ~ \Rightarrow ~ B_r (a) \subseteq U ~ \Rightarrow ~
+    U \in \mathcal{T}_{\rho}$
+  \end{proof}
+  3)
 \end{proof}
 
 \begin{theorem}
-  $\forall B_r(a) \in$ метрическому пространству является открытым множеством
+  $\forall B_r(a)$ в метрическом пространстве является открытым множеством
 \end{theorem}
+
+\begin{proof}
+  Пусть $x \in B_r(a) ~~ d = \rho(x, a)$ тогда $B_{r-d}(x) \subseteq B_r(a)$
+\end{proof}
 
 \begin{theorem}
   Подмножество метрического пространства является открытым тогда и только
-  тогда когда его можно представить в виде объеденение шароф
+  тогда когда его можно представить в виде объеденение шаров.
 \end{theorem}
 
 \begin{proof}
-  $\Rightarrow$ пусть $u$-открытое множество тогда $\forall a \in K ~~~
-  \exists r_a > 0$ точка $B_{r_a}(a) \subset U$ тогда $u = \cup_{a \in u}
-  B_{r_a}(a)$
-
-  $\Leftarrow$ пусть есть объеденение шаров тогда $U$ открыто так как T2
+  $\Rightarrow$ пусть $U$ открытое множество тогда $\forall a \in U ~~~
+  \exists r_a > 0 ~~ B_{r_a}(a) \subseteq U$ тогда
+  $$
+  U = \bigcup_{a \in U} B_{r_a}(a)
+  $$
+  $\Leftarrow$ пусть есть объеденение шаров тогда $U$ открыто по теоереме выше
 \end{proof}
+
+\begin{define}[Хауздорфовой топологии]
+  Топологическое пространство $(X, \mathcal{T})$ называется Хауздорфовой если
+  $\forall a,b \in X ~~ a \not= b ~~ \exists U, V \in \mathcal{T} ~~
+  a \in U ~~ b \in V ~~ U \cap V = \oslash$
+\end{define}
 
 \begin{theorem}
   Всякая метрическая топология является Хауздорфовой.
-
-  Топологическое пространство называется Хауздорфовой если $\forall a,b \in X ~
-  x \not= 0$ открыто $\exists U, V \in T$ тогда $a \in U, ~ b \in V ~~~
-  U \cap V = \oslash$
 \end{theorem}
+
+\begin{proof}
+  В метрическом прстранстве достаточно
+  $$
+  U = B_{\frac{d}{2}}(a) ~~~ V = B_{\frac{d}{2}}(b) ~ \text{где} ~ d = \rho(a,b)
+  $$
+\end{proof}
