@@ -8,8 +8,8 @@
 \end{title}
 
 \begin{define}[диффеоморфизма]
-  Диффеоморфизмом называется гладкое отображение при котором обратное
-  отображение тоже гладкое.
+  Диффеоморфизмом называется взаимооднозначаное и гладкое отображение при
+  котором обратное отображение тоже гладкое.
 
   Биективное отображение гладкое в обе стороны.
 \end{define}
@@ -20,10 +20,8 @@
   $\varphi_2 : [\alpha, \beta] \to R^3$
 
   называются эквивалентными если существует диффeoморфизм то есть
-  $\varphi : [a,b] \to [\alpha, \beta]$ или $\varphi_2(\varphi(t)) =
-  \varphi_1(t)$
-
-  Параметризацией эквивалентных прямых называется эквивалентными.
+  $\exists \varphi : [a,b] \to [\alpha, \beta] ~~~ \vec \varphi_2
+  (\vec \varphi(t)) = \vec \varphi_1(t)$
 
   Все кривые разбиваются на классы эквивалентных кривых
 \end{define}
@@ -33,21 +31,21 @@
   $$
   S = \int_{t_0}^{t_1} | \vec \varphi'(t)| dt
   $$
-  или если
   $$
+  \vec \varphi'(t) =
   \left\{
   \begin{array}{c}
     x = x(t) \\
     y = y(t) \\
     z = z(t)
   \end{array}
-  \right.
+  \right. ~~~~
   S = \int_{t_0}^{t_1} \sqrt{ x'^2(t) + y'^2(t) + z'^2(t)}
   $$
 \end{block}
 
 \begin{define}[натуральной параметризации кривой]
-  Параметризация при которой каждой точке кривой сопаставляется длина дуги
+  Параметризация при которой каждой точке кривой сопаставляется длина
   кривой от точки до некоторой фиксированной точки называется натуральной или
   естественной параметризацией.
 \end{define}
@@ -60,7 +58,7 @@
 
     $s = s(t)$ натуральная параметризация
     $$
-    \int_{t_0}^{t} |\vec \varphi'(t)| dt ~~~
+    \int_{t_0}^{t_1} |\vec \varphi'(t)| dt ~~~
     \frac{ds}{dt} = |\vec \varphi'(t)| > 0
     $$
     $\Rightarrow ~ s = s(t) ~ \nearrow ~ \Rightarrow ~ s = s(t)$ биективна
@@ -71,7 +69,9 @@
   натурально параметризованной кривой касательный вектор имеет длину $1$
 
   \begin{proof}
-    $\vec \varphi(s) = \vec \varphi (t(s))$
+    $$
+    \vec \varphi(s) = \vec \varphi (t(s))
+    $$
     $$
     S = \int_{t_0}^{t_1} |\vec \varphi'(t)| dt ~ \Rightarrow ~ \frac{ds}{dt} =
     |\vec \varphi'(t)|
@@ -89,14 +89,13 @@
   \end{block}
 
   \begin{proof}
-    $(\vec \varphi, \vec \varphi) = |\vec \varphi|^2 = \const$
+    $$
+    (\vec \varphi, \vec \varphi) = |\vec \varphi|^2 = \const
+    $$
     $$
     \frac{d(\vec \varphi, \vec \varphi)}{dt} = (\vec \varphi', \vec \varphi) +
-    (\vec \varphi, \vec \varphi') = 2(\vec \varphi', \vec \varphi) = 0
-    $$
-    $$
-    \Rightarrow (\vec \varphi', \vec \varphi) = 0 ~~~ \Rightarrow \vec \varphi'
-    \perp \vec \varphi
+    (\vec \varphi, \vec \varphi') = 2(\vec \varphi', \vec \varphi) = 0 ~
+    \Rightarrow ~ \vec \varphi' \perp \vec \varphi
     $$
   \end{proof}
 
@@ -125,7 +124,7 @@
   $$
     \frac{d^2 \vec \varphi}{d s^2} ~~~ \text{вектор кривизны}
   $$
-  Величина, обратная кривизне кривой $r = \frac{1}{\kappa}$ называется радиусом
+  Величина, обратная кривизне кривой $r = \frac{1}{k}$ называется радиусом
   кривизны который совпадает с радиусом соприкасающейся окружности в данной
   точке кривой. Центр этой окружности называется центром кривизны. Если кривизна
   кривой равна нулю, то соприкасающаяся окружность вырождается в прямую.
@@ -134,7 +133,7 @@
 \end{define}
 
 \begin{theorem}
-  Кривизна кривой $k = 0$ тогда когда ее образ является прямой.
+  Кривизна кривой $k = 0$ $\Leftrightarrow$ ее образ является прямой.
 \end{theorem}
 
 \begin{proof}
@@ -143,20 +142,18 @@
   \left| \frac{d^2 \vec \varphi}{ds^2} \right| = 0 ~ \Rightarrow ~
   \frac{d^2 \vec \varphi}{ds^2} = \vec 0 ~ \Rightarrow ~
   \frac{d\vec \varphi}{d s} = \vec a = const ~ \Rightarrow ~
-  \vec \varphi = \vec a S + \vec b
+  \vec \varphi = \vec a s + \vec b
   $$
-  прямая это $\vec \varphi = \vec \varphi_0 + \vec g t$
-
   $\Leftarrow ~ k = 0$ тогда
   $$
-  \vec \varphi = \vec \varphi_0 + \vec g t ~ \Rightarrow ~
+  \vec \varphi = \vec a s + \vec b  ~ \Rightarrow ~
   \frac{d^2 \vec \varphi}{ds^2} = \vec 0 ~ \Rightarrow ~ k = 0
   $$
 \end{proof}
 
 \begin{block}[Лемма]
   $$
-  \frac{d\vec b}{ds} ~ || ~ \vec n ~ \text{колинеарны}
+  \frac{d\vec b}{ds} ~ || ~ \vec n
   $$
 \end{block}
 
@@ -166,10 +163,11 @@
   $|\vec b| = 1 = \const ~ \Rightarrow ~ \frac{d\vec b}{ds} \perp \vec b$
   (по лемме)
   $$
-  \vec b = [\vec \vec t, \vec n] ~ \Rightarrow ~ \frac{d\vec b}{ds} =
-  \cancelto{\vec 0}{\left[\frac{dt}{ds}, \vec n\right]} +
+  \vec b = [\vec t, \vec n] ~ \Rightarrow ~ \frac{d\vec b}{ds} =
+  \cancelto{\vec 0}{\left[\frac{d \vec t}{ds}, \vec n\right]} +
   \left[\vec t, \frac{d\vec n}{ds}\right] =
-  \left[\vec t, \frac{d\vec n}{ds}\right] ~ \Rightarrow ~ \vec b \perp \vec t
+  \left[\vec t, \frac{d\vec n}{ds}\right] ~ \Rightarrow ~ \frac{d\vec b}{ds}
+  \perp \vec t ~ \Rightarrow ~  \frac{d\vec b}{ds} ~ || ~ \vec n
   $$
 \end{proof}
 
@@ -179,29 +177,30 @@
 \end{define}
 
 \begin{theorem}
-  Кручение кривой равно $0$ $\Leftrightarrow$ когда кривая явялется плоскостью
-  (ее образ лежит в плоскости)
+  Кручение кривой равно $\kappa = 0$ $\Leftrightarrow$ образ кривой лежит в
+  плоскости
 \end{theorem}
 
 \begin{proof}
-  $\Rightarrow$ Пусть $\kappa = 0$, тогда $\frac{d\vec b}{ds} = \vec 0 ~
-  \Rightarrow ~ \vec b = \const = (\alpha, \beta, \gamma)$
+  $\Rightarrow$ $\kappa = 0$ тогда
+  $$
+  \frac{d\vec b}{ds} = \vec 0 ~ \Rightarrow ~ \vec b = (\alpha, \beta, \gamma)
+  ~~~ \alpha, \beta, \gamma \in R
+  $$
+  $$
+  \frac{d(\vec \varphi, \vec b)}{ds} = \left(\frac{d \vec \varphi}{ds},
+  \vec b \right) + \left( \vec \varphi, \frac{d\vec b}{ds} \right) = 0 ~
+  \Rightarrow ~ (\vec \varphi, \vec b) = \const ~ \Rightarrow
+  $$
+  кривая $\vec \varphi = \vec \varphi (s)$ лежит в плоскости $\alpha x +
+  \beta y + \gamma z = D$
 
-  Расмотрим
-  $\frac{d(\vec \varphi, \vec b)}{ds} = (\frac{d \vec \varphi}{ds}, \vec b) +
-  (\vec \varphi, \frac{d\vec b}{ds}) = 0 ~ \Rightarrow ~
-  (\vec \varphi, \vec b) = \const$
-
-  $\alpha x(s) + \beta y(s) + \gamma z(s) = \delta ~ \Rightarrow$ кривая
-  $\vec \varphi = \vec \varphi (s)$ лежит в плоскости $\alpha x + \beta y +
-  \gamma z = \delta$
-
-  $\Leftarrow$ Пусть кривая лежит в некоторой плоскости
+  $\Leftarrow$ Пусть кривая лежит в некоторой плоскости тогда
   $\vec b = \const ~ \Rightarrow ~ \frac{d \vec b}{ds} = \vec 0 ~ \Rightarrow ~
   \kappa = 0$
 \end{proof}
 
-\begin{block}[Гометрический смысл кривизны и кручения кривой]
+\begin{block}[Геометрический смысл кривизны и кручения кривой]
   1) Для плоской кривой $k = \left|\frac{d \vec t}{ds}\right|$ равна
   скорости вращения касательного вектора.
 
@@ -212,6 +211,6 @@
 \begin{theorem}
   $\forall$ гладких функций $k = k(s) > 0$ и $\kappa = \kappa(s)$ $\exists!$
   с точностью до пложения в пространстве кривая
-  $\vec \varphi = \vec \varphi(s)$ где кривизна и кручение равна то есть
+  $\vec \varphi = \vec \varphi(s)$ кривизна которой и кручение равны то есть
   кривизна и кручение определяют кривую однозначно.
 \end{theorem}

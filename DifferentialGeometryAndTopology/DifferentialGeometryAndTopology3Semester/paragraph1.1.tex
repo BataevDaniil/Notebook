@@ -14,10 +14,10 @@
 \begin{define}[непрерывной кривой]
   Непрерывной кривой называется непрерывное отображение
   $$
-  \varphi: [a,b] \to R^3 ~~~ \varphi = \varphi (t), ~~~ t \in [a,b]
+  \varphi: [a,b] \to R^3 ~~~ \vec \varphi = \vec \varphi (t), ~~~ t \in [a,b]
   $$
-  $\varphi ([a,b]) \subseteq R^3$ называется образом кривой (множество точек
-  образованных при отображении)
+  $\vec \varphi ([a,b]) \subseteq R^3$ называется образом кривой то есть
+  множество точек образованных при отображении
 
   $\vec \varphi (t) = ( x(t), y(t), z(t) )$ вектор функция
 
@@ -35,8 +35,8 @@
 \end{define}
 
 \begin{define}[гладкой кривой]
-  $\vec \varphi = ( x(t), y(t), z(t) )$ называется гладкая если каждая координата
-  является гладкой. Гладкая значит что существует производная любого порядка.
+  $\vec \varphi = ( x(t), y(t), z(t) )$ называется гладкая если $\forall k \in N
+  ~~~ \exists x^{(k)}(t), y^{(k)}(t), z^{(k)}(t)$
 \end{define}
 
 \begin{define}[касательного вектора к кривой]
@@ -46,23 +46,25 @@
   \lim_{ t_{\Delta} \to 0 }
   \frac{ \vec \varphi (t + t_{\Delta}) - \vec \varphi (t) }{t_{\Delta}}
   $$
+\end{define}
 
+\begin{define}[особой точки]
   Точка кривой $t_0$ называется особой если $\vec \varphi' (t_0) = \vec 0$
 \end{define}
 
 \begin{define}[регулярной кривой]
-  Кривая $\vec \varphi = \vec \varphi (t)$ называется регулярной на $<a,b>$ если
-  $\forall t \in <a,b> ~~ \vec \varphi' (t) \not = \vec 0$
+  Кривая $\vec \varphi = \vec \varphi (t)$ называется регулярной на $[a,b]$ если
+  $\forall t \in [a,b] ~~ \vec \varphi' (t) \not = \vec 0$
 \end{define}
 
 \begin{define}[инективности и неинективности]
-  Инективно - значит нескольким точкам соответсвует одно значение.
+  Инъективно значит каждой точке соответсвует одно значение.
 
-  Неинективно - значит каждой точке соответсвует одно значение.
+  Неинъективно значит нескольким точкам соответсвует одно значение.
 \end{define}
 
 \begin{theorem}
-  Пусть $\varphi : [a,b] \to R^3$ гладкая кривая, $t_0 \in (a,b)$
+  $\varphi : [a,b] \to R^3$ гладкая кривая, $\exists t_0 \in (a,b)$
   $\vec \varphi' (t_0) \not = 0$ тогда $\exists \varepsilon > 0$
   $\varphi : (t_0 - \varepsilon, t_0 + \varepsilon) \to R^3$ инективно.
 \end{theorem}
@@ -73,15 +75,16 @@
   $\varphi' (t_0) \not = \vec 0$ тогда касательная прямая
 \end{define}
 
-\begin{define}[касательной плоскости]
+\begin{define}[соприкасающейся плоскости]
   \includegraphics[width = 6cm]{beleg}
 
-  Соприкасающиейся  л.н.з (некомпланарная) плоскость.
+  Соприкасающиейся плоскость проходит через точку $t_0$ и пару л.н.з
+  векторов $\vec \varphi', \vec \varphi''$.
 \end{define}
 
 \begin{define}[точки бирегулярности]
   Точка $t_0$ называется точкой биригулярности, если $\vec \varphi' (t_0),
-  \vec \varphi''(t_0)$ - линейно независимы (неколинеарны).
+  \vec \varphi''(t_0)$ линейно независимы (неколинеарны).
 \end{define}
 
 \begin{define}[бирегулярности кривой]
@@ -97,14 +100,13 @@
 \end{title}
 
 \begin{theorem}
-  Расмотрим множество точек заданным соотношением $F(x, y) = 0$ гладкая.
-  Пусть $\exists (x_0, y_0) ~~ F(x_0, y_0) = 0$
+  $F(x, y) = 0$ гладкая $\exists (x_0, y_0) ~~ F(x_0, y_0) = 0$
   $$
-  \grad F(x_0, y_0) = \left( \frac{\partial F}{\partial x}(x_0, y_0),
-  \frac{\partial F}{\partial y}(x_0, y_0) \right)
+  \grad F(x_0, y_0) = \left( \frac{\partial F(x_0, y_0)}{\partial x},
+  \frac{\partial F(x_0, y_0)}{\partial y} \right) \not= \vec 0
   $$
-  тогда $\exists O(x_0, y_0)$ в которой множество точек удовлитворяет
-  $F(x, y) = 0$ является образом регулярной кривой.
+  тогда $\exists (x, y) \in O(x_0, y_0) ~~~ F(x, y) = 0$ является образом
+  регулярной кривой.
 
   В этом случа мы будем говорить что это регулярная кривая задана неявно
   соотношением $F(x, y) = 0$.
@@ -126,7 +128,7 @@
     \ldots ~~~ \ldots \\
     F_m(x_0, y_0) = 0 \\
   \end{array} ~~~~~~
-  G(x^0, y^0) = \left|
+  G(x_0, y_0) = \left|
   \begin{array}{ccc}
     \frac{\partial F_1}{\partial y_1} & \dots &
     \frac{\partial F_1}{\partial y_1} \\
@@ -162,22 +164,22 @@
 \begin{proof}
   По условию в точке $(x_0, y_0)$
   $$
-  \grad F(x_0, y_0) = \left( \frac{\partial F}{\partial x}(x_0, y_0);
-  \frac{\partial F}{\partial y}(x_0, y_0) \right) \not= 0
+  \grad F(x_0, y_0) = \left( \frac{\partial F(x_0, y_0)}{\partial x},
+  \frac{\partial F(x_0, y_0)}{\partial y} \right) \not= 0
   $$
-  Можем считать что $\frac{\partial F}{\partial y}(x_0, y_0) \not= 0$. По
-  теореме о неявной функции $\exists (x, y) \in O(x_0, y_0) ~~~ F(x, y) = 0$
+  $\frac{\partial F(x_0, y_0)}{\partial x},
+  \frac{\partial F(x_0, y_0)}{\partial y} \not= 0$ $\Rightarrow$
+  по теореме о неявной функции $\exists (x, y) \in O(x_0, y_0) ~~~ F(x, y) = 0$
   задается соотношением $y = f(x)$
-  то есть состоит из точек вида $(x, f(x))$ следовательно это множество точек
-  задается параметрически $\vec \varphi (t, f(t))$
-
-  $\vec \varphi' = (1, f'(x)) \not= 0$ следовательно кривая заданная этим
-  уравнением регулярная.
+  то есть состоит из точек вида $(x, f(x))$ $\Rightarrow$ это множество точек
+  задается параметрически $\vec \varphi (t, f(t))$  $\Rightarrow$
+  $\vec \varphi' = (1, f'(x)) \not= \vec 0$ кривая заданная этим уравнением
+  регулярная.
 \end{proof}
 
 \begin{block}[Геометрический смысл градиента $F(x,y)$]
   Кривая $F(x, y) = 0$ тогда вектор градиента является нормалью
-  (перпендикулярью касательной кривой) и направлен в сторону выпуклости кривой.
+  (перпендикулярью) касательной кривой и направлен в сторону выпуклости кривой.
 \end{block}
 
 \begin{proof}
