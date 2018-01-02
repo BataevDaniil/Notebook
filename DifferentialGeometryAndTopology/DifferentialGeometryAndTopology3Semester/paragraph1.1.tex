@@ -131,7 +131,7 @@
   G(x_0, y_0) = \left|
   \begin{array}{ccc}
     \frac{\partial F_1}{\partial y_1} & \dots &
-    \frac{\partial F_1}{\partial y_1} \\
+    \frac{\partial F_1}{\partial y_m} \\
 
     \dots & \dots & \dots \\
 
@@ -165,16 +165,15 @@
   По условию в точке $(x_0, y_0)$
   $$
   \grad F(x_0, y_0) = \left( \frac{\partial F(x_0, y_0)}{\partial x},
-  \frac{\partial F(x_0, y_0)}{\partial y} \right) \not= 0
+  \frac{\partial F(x_0, y_0)}{\partial y} \right) \not= \vec 0
   $$
-  $\frac{\partial F(x_0, y_0)}{\partial x},
-  \frac{\partial F(x_0, y_0)}{\partial y} \not= 0$ $\Rightarrow$
+  $\frac{\partial F(x_0, y_0)}{\partial x} \not= 0$ или
+  $\frac{\partial F(x_0, y_0)}{\partial y} \not= 0$ $\Rightarrow$
   по теореме о неявной функции $\exists (x, y) \in O(x_0, y_0) ~~~ F(x, y) = 0$
   задается соотношением $y = f(x)$
   то есть состоит из точек вида $(x, f(x))$ $\Rightarrow$ это множество точек
-  задается параметрически $\vec \varphi (t, f(t))$  $\Rightarrow$
-  $\vec \varphi' = (1, f'(x)) \not= \vec 0$ кривая заданная этим уравнением
-  регулярная.
+  задается параметрически $(t, f(t))$  $\Rightarrow$
+  $(1, f'(x)) \not= \vec 0$ кривая заданная этим уравнением регулярная.
 \end{proof}
 
 \begin{block}[Геометрический смысл градиента $F(x,y)$]

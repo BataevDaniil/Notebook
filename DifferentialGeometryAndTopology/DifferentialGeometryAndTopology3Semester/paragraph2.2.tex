@@ -41,11 +41,8 @@
   1) $\vec \varphi_u \vec \varphi_{\upsilon}$ - л.н.з
 
   2) Всякий касательный вектор поверхости точки $m_0$ линейно выражается через
-  $\vec \varphi_u \vec \varphi_{\upsilon}$
-
-  $\alpha \vec \varphi_u +\beta \vec \varphi_{\upsilon} ~~~
-  \alpha, \beta \in R$ - нужно доказать
-
+  $\vec \varphi_u \vec \varphi_{\upsilon} ~~~ \alpha \vec \varphi_u +\beta
+  \vec \varphi_{\upsilon} ~~~ \alpha, \beta \in R$ нужно доказать
   $$
   \text{расмотрим кривую} ~~~
   \left\{
@@ -98,11 +95,11 @@
 \end{proof}
 
 \begin{define}[локальной системы касательных векторов в точке поверхности]
-  Каждый касательный вектор $\vec a$ имеет вид $\vec a =
-  \alpha \vec \varphi_u + \beta \vec \varphi_{\upsilon}$ тогда
-  $(\alpha, \beta)$ - называются
+  Каждый касательный вектор $\vec a$ в точке $m_0$ имеет вид $\vec a =
+  \alpha \vec \varphi_u(m_0) + \beta \vec \varphi_{\upsilon}(m_0)$ тогда
+  $(\alpha, \beta)$ называются
   координатами касательного вектора $\vec a$ относительно локальной системы
-  координат $(u, \upsilon)$.
+  координат.
 \end{define}
 
 \begin{define}[касательной плоскости поверхности в точке]
@@ -110,3 +107,27 @@
   $\vec \varphi_u (m_0), \vec \varphi_{\upsilon}(m_0)$ называют касательной
   плоскостью поверхности.
 \end{define}
+
+\begin{theorem}
+  Поверхности $F(x,y,z) = 0$
+  $$
+  \grad F = \left( \frac{\partial F}{\partial x},
+  \frac{\partial F}{\partial y},
+  \frac{\partial F}{\partial z}
+   \right)
+  $$
+  является нормалью к касательной плоскости
+\end{theorem}
+
+\begin{proof}
+  $$
+  F(x(t), y(t), z(t)) = 0
+  $$
+  $$
+  \frac{dF}{dt} =
+  \frac{\partial F}{\partial x} \frac{dx}{dt} +
+  \frac{\partial F}{\partial y}\frac{dy}{dt} +
+  \frac{\partial F}{\partial z}\frac{dz}{dt} =
+  (\grad F, \vec \varphi') = 0 ~ \Rightarrow ~ \grad F \perp \vec \varphi'
+  $$
+\end{proof}

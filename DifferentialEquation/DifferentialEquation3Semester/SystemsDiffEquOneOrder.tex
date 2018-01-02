@@ -453,7 +453,7 @@
   Линейная зависимость и независимость вектор-функций
 \end{title}
 
-\begin{define}
+\begin{define}[вектор функции]
   $$
   \varphi_1 (t) =
   \left(
@@ -481,10 +481,15 @@
   \right) ~~~ t \in <\alpha, \beta>
   $$
   $\varphi, \cdots, \varphi_k(t)$ называется ЛЗ если $\exists C_1, C_2, \ldots,
-  C_k(\sum_{j=1}^k C_j^2 \not= 0)$ то комбинация $C_1\varphi_1(t) +
+  C_k ~~ \sum_{j=1}^k C_j^2 \not= 0$ то комбинация $C_1\varphi_1(t) +
   C_2\varphi_2(t) + \ldots + C_k\varphi_k(t) = 0 ~ t \in <\alpha, \beta>$ ЛЗ. В
   противном случае система функций ЛНЗ.
 \end{define}
+
+\begin{title}[\Large]
+  Линейные однородные системы. Пространство решений. Фундаментальная система
+  решений
+\end{title}
 
 \begin{theorem}
   Множество всех решений однородной системы $x'(t) = A(t)x(t)$ образует
@@ -492,20 +497,20 @@
 \end{theorem}
 
 \begin{proof}
-  если $\varphi_1(t), \varphi_2(t)$ - решение $x'(t) = A(t)x(t) ~ \Rightarrow ~
+  1) Если $\varphi_1(t), \varphi_2(t)$ решение $x'(t) = A(t)x(t) ~ \Rightarrow ~
   C_1\varphi_1(t) + C_2\varphi_2(t)$ решение $x'(t) = A(t)x(t)$
 
   $\varphi'_j(t) = A(t)\varphi_j(t)$
 
-  $C_1 \varphi'_1(t) + C_2 \varphi'_2(t) = C_1(A(t) \varphi_1(t)) +
-  C_2A^{(t)}\varphi_2(t) = A(t)(C_1\varphi_1(t) + C_2\varphi_2(t)) ~
+  $C_1 \varphi'_1(t) + C_2 \varphi'_2(t) = C_1A(t) \varphi_1(t) +
+  C_2A(t)\varphi_2(t) = A(t)(C_1\varphi_1(t) + C_2\varphi_2(t)) ~
   \Rightarrow ~ C_1 \varphi_1(t) + C_2 \varphi_2(t)$ решение
   $x'(t) = A(t)x(t)$\\
 
-  Построим $n$ ЛНЗ решений $t \in <\alpha, \beta>$ возьмем $t_0 \in
+  2) Построим $n$ ЛНЗ решений $t \in <\alpha, \beta>$ возьмем $t_0 \in
   <\alpha, \beta>$
   $$
-  e_1 =
+  \varphi_1 =
   \left(
   \begin{array}{c}
     1 \\
@@ -514,7 +519,7 @@
     0
   \end{array}
   \right), ~~~
-  e_2 =
+  \varphi_2 =
   \left(
   \begin{array}{c}
     0 \\
@@ -523,7 +528,7 @@
     0
   \end{array}
   \right), \cdots,
-  e_k =
+  \varphi_n =
   \left(
   \begin{array}{c}
     0 \\
@@ -531,24 +536,24 @@
     \cdots \\
     1
   \end{array}
-  \right) ~~ \text{ЛНЗ}
+  \right)
   $$
   $$
   \left\{
-  \begin{array}{c}
+  \begin{array}{l}
     x'(t) = A(t)x(t) \\
-    x(t_0) = e_k
+    x(t_0) = \varphi_k
   \end{array}
   \right. ~~~ k = 1, 2, \ldots, n
   $$
-  $\varphi_k(t)$ - единственое решение $\varphi_1(t), \ldots, \varphi_n(t) ~~~
-  t \in <\alpha, \beta$
+  $\varphi_k(t)$ единственое решение $\varphi_1(t), \ldots, \varphi_n(t) ~~~
+  t \in <\alpha, \beta>$
 
-  покажем ЛНЗ $C_1 \varphi_1(t) + \ldots + C_n \varphi_n(t) \equiv 0 ~~~
-  t = t_0$
-
-  $C_1 \varphi_1(t_0) + C_2 \varphi_2(t_0) + \ldots + C_n \varphi_n(t_0)
-  \equiv 0$
+  покажем ЛНЗ $C_1 \varphi_1(t) + \ldots + C_n \varphi_n(t) \equiv 0$
+  $$
+  t = t_0 ~~~ C_1 \varphi_1(t_0) + C_2 \varphi_2(t_0) + \ldots +
+  C_n \varphi_n(t_0) \equiv 0
+  $$
   $$
   C_1
   \left(
@@ -603,10 +608,9 @@
     0
   \end{array}
   \right) ~ \Rightarrow ~ C_1 = C_2 = \ldots = C_n = 0 ~ \Rightarrow ~
-  \varphi_1(t), \ldots, \varphi_n(t) ~~~ \text{- ЛНЗ}
-  $$\\
-
-  $\psi(t)$ произвольное решение
+  \varphi_1(t), \ldots, \varphi_n(t) ~ \text{ЛНЗ}
+  $$
+  3) $\psi(t)$ произвольное решение
   $$
   \psi(t_0) =
   \left(
@@ -626,7 +630,7 @@
   $$
   \psi(t) =
   \left\{
-  \begin{array}{c}
+  \begin{array}{l}
   x'(t) = A(t)x(t)\\
   x(t_0) =
   \left(
@@ -638,7 +642,7 @@
   \end{array}
   \right)
   \end{array}
-  \right. ~~ \text{- решение задачи Коши}
+  \right. ~ \text{решение задачи Коши} ~~~
   \varphi(t) =
   \left\{
   \begin{array}{c}
@@ -694,28 +698,34 @@
   \right)
   $$
   так как они обе удовлетворяеют задачи Коши то $\varphi(t) \equiv \psi(t) ~
-  \Rightarrow ~ \psi(t) = \sum_{j=1}^n a_j \varphi_j(t)$
+  \Rightarrow$
+  $$
+  \psi(t) = \sum_{j=1}^n a_j \varphi_j(t)
+  $$
 \end{proof}
 
 \begin{define}[ФСР]
-  ФСР - называется базис пространства решений тоесть $n$ - ЛНЗ решений данной
-  системы
+  ФСР называется базис пространства решений тоесть $n$ ЛНЗ решений данной
+  системы.
 \end{define}
 
-\begin{define}
-  $\varphi_1(t), \ldots, \varphi_n(t)$ - вектор функции
+\begin{title}[\Large]
+  Определитель Вронского. Критерий линейной независимости решений однородной
+  системы
+\end{title}
+
+\begin{define}[определителя Вронского]
+  $\varphi_1(t), \ldots, \varphi_n(t)$ вектор функции
   $$
   \varphi_j(t) =
   \left(
   \begin{array}{c}
     \varphi_{j1}(t) \\
-    \varphi_{j1}(t) \\
+    \varphi_{j2}(t) \\
     \cdots \\
     \varphi_{jn}(t)
   \end{array}
-  \right)
-  $$
-  $$
+  \right) ~~~~~~
   W[\varphi_1, \ldots, \varphi_n](t) =
   \left|
   \begin{array}{cccc}
@@ -737,30 +747,29 @@
 \end{block}
 
 \begin{block}[Критерий ЛНЗ решений системы]
-  Пусть $\varphi_1, \ldots, \varphi_n(t)$
-  решение задачи Коши тогда
+  $\varphi_1, \ldots, \varphi_n(t)$ решение задачи Коши тогда
 
-  1) $W(t) = 0$ хотябы в одной точке
-  $t \in <\alpha, \beta>$ то решение $\varphi_1(t), \ldots, \varphi_n(t)$ ЛЗ
+  1) $\exists t_0 \in <\alpha, \beta> ~~ W(t) = 0$ тогда решение
+  $\varphi_1(t), \ldots, \varphi_n(t)$ ЛЗ
 
-  2) $\varphi_1, \ldots, \varphi_n(t)$ ЛНЗ то $W(t) \not0$ ни в одной точке
-  $t \in <\alpha, \beta>$
+  2) $\varphi_1, \ldots, \varphi_n(t)$ ЛНЗ тогда $\forall t \in <\alpha, \beta>
+  ~~ W(t) \not= 0$
 \end{block}
 
 \begin{proof}
-  Пусть $W(t_0) = 0 ~~~ t \in <\alpha, \beta> ~ \Rightarrow ~ \varphi_1(t_1),
-  \ldots, \varphi_n(t_1)$ ЛЗ $\exists C_1, \ldots, C_n ~~~
-  C_1 \varphi_1(t_1) + \ldots + C_n \varphi_n (t_1) = 0$
+  Пусть $t_0 \in <\alpha, \beta> ~~ W(t_0) = 0 ~ \Rightarrow ~ \varphi_1(t_0),
+  \ldots, \varphi_n(t_0)$ ЛЗ $~\Rightarrow~$ $\exists C_1, \ldots, C_n ~~~
+  C_1 \varphi_1(t_0) + \ldots + C_n \varphi_n (t_0) = 0$
 
   $\varphi(t) = C_1\varphi_1(t) + \ldots + C_n \varphi_n(t)$
   $$
   \varphi(t) =
-  \left(
-  \begin{array}{c}
+  \left\{
+  \begin{array}{l}
     x'(t) = A(t)x(t) \\
     x(t_0) = 0
   \end{array}
-  \right)
+  \right.
   $$
   $\psi \equiv 0$ другое решение $\Rightarrow ~ \varphi(t) = C_1 \varphi_1(t) +
   \ldots + C_n \varphi_n(t) \equiv 0 ~ \Rightarrow ~ \varphi_1, \ldots,
@@ -768,22 +777,10 @@
 \end{proof}
 
 \begin{theorem}
-  $$
-  W(t) =
-  \left|
-  \begin{array}{cccc}
-    \varphi_{11}(t) & \varphi_{21}(t) & \ldots & \varphi_{n1}(t) \\
-    \varphi_{12}(t) & \varphi_{22}(t) & \ldots & \varphi_{n2}(t) \\
-    \ldots & \ldots & \ldots & \ldots \\
-    \varphi_{1n}(t) & \varphi_{2n}(t) & \ldots & \varphi_{nn}(t)
-  \end{array}
-  \right|
-  $$
-  пусть $W(t)$ - определитель Вронского решение $\varphi_1(t), \ldots,
-  \varphi_n(t)$ системы $x'(t) = A(t)x(t)$ то он является
-  $\frac{W(t)}{dt} = (t_2A(t))W(t) ~~~ t \in <\alpha, \beta>$
+  $W(t)$ решение $\varphi_1(t), \ldots, \varphi_n(t)$ системы $x'(t) = A(t)x(t)$
+  тогд он является $\frac{W(t)}{dt} = (t_2A(t))W(t) ~~~ t \in <\alpha, \beta>$
 
-  $t_2A(t) = a_{11}(t) + a_{22}(t) + \ldots + a_{nn}(t)$
+  $t_2A(t) = \sum_{j=1}^n a_{jj}(t)$
 \end{theorem}
 
 \begin{block}[Формула Леовиля]
@@ -794,166 +791,474 @@
 \end{block}
 
 \begin{title}[\Large]
-  Фундаментальная матрица
+  Фундаментальная матрица, свойства. Общее решение линейной однородной системы
 \end{title}
 
-\begin{define}
+\begin{define}[матрицы решения однородной системы]
   Матрица $\Phi(t) ~ t \in <\alpha, \beta>$ называется решением системы
-  $x'(t) = A(t)x(t)$ если столбцы матрицы являются решением системы
-\end{define}
+  $x'(t) = A(t)x(t)$ если столбцы матрицы являются решением системы.
 
-\begin{block}[Утверждение]
-  $\Phi(t)$ является матрицей решений если удовлетворяет матричной системе
-  $X'_{n \times n}(t) = A_{n \times n}(t) X_{n \times n}(t)$ $n$ - уравней
-\end{block}
-
-\begin{define}
+  Тоесть $\Phi(t)$ является матрицей решений если удовлетворяет матричной
+  системе
+  $$
+  X'_{n \times n}(t) = A_{n \times n}(t) X_{n \times n}(t)
+  $$
   Невырожденная матрица решений называется фундаментальной матрицей
-  $|\Phi(t)| = W(t)$ столбца ЛНЗ. Фкндаментальная матрица это матрица столбцы
-  которой образуют ФСР
+  $|\Phi(t)| = W(t)$ столбцы ЛНЗ. Фундаментальная матрица это матрица столбцы
+  которой образуют ФСР.
 \end{define}
 
-\begin{block}[Предложение]
-  Если $\Phi(t)$ фундаментальная матрица $x'(t) = A(t)x(t)$
+\begin{theorem}
+  $\Phi(t)$ фундаментальная матрица $x'(t) = A(t)x(t)$
   тогда множество решений системы совпадает со множеством функций вида
-  $\varphi(t) = \Phi(t)C$ где $C$ произвольный постоянный вектор из $e^n$
-\end{block}
+  $\varphi(t) = \Phi(t)C$ где $C$ произвольный постоянный вектор из $\varphi_n$
+\end{theorem}
 
 \begin{proof}
-  $\Phi(t)$ фундаментальная матрица и $\varphi_1(t), \ldots, \varphi_n(t)$
-  это ФСР
+  $\Rightarrow$ $\Phi(t)$ фундаментальная матрица и $\varphi_1(t), \ldots,
+  \varphi_n(t)$ это ФСР
 
-  $\Phi(t)C = (\varphi_1(t), \ldots, \varphi_n(t))C = C_1 \varphi_1(t) +
-  C_2 \varphi_2(t) + \ldots + C_n \varphi_n(t)$
+  $\Leftarrow$ $\Phi(t)C = (\varphi_1(t), \ldots, \varphi_n(t))C = C_1
+  \varphi_1(t) + C_2 \varphi_2(t) + \ldots + C_n \varphi_n(t)$
 \end{proof}
 
-\begin{block}[Утверждение]
+\begin{theorem}
   $\Phi(t)$ фундаментальная матрица $x'(t) = A(t)x(t)$ тогда множество всех
   фундаментальных матриц системы совпадает с множеством матриц следующего вида
-  $\Psi(t) = \Phi(t)B ~~ detB \not= 0$
-\end{block}
+  $\Psi(t) = \Phi(t)B ~~ detB_{n \times n} \not= 0$
+\end{theorem}
 
 \begin{proof}
-  так как $\Phi(t)$ фундаментальная матрица $det\Phi(t) \not= 0 ~~
-  \forall t \in <\alpha, \beta>$ удовлетворяет $\Phi(t) = A(t)\Phi(t)$
+  $\Rightarrow$ так как $\Phi(t)$ фундаментальная матрица $det\Phi(t) \not= 0 ~~
+  \forall t \in <\alpha, \beta> ~~ \Phi'(t) = A(t)\Phi(t)$
   $det\Psi(t) \not= 0$ невырожденная
 
   $\Phi'(t)B = A(t)(\Phi(t)B)$
 
   $(\Phi(t)B)' = A(t)(\Phi(t)B)$
 
-  $\Psi'(t) = A(t)\Psi(t)$ $\Psi$ - фундаментальная матрица \\
+  $\Psi'(t) = A(t)\Psi(t)$ $\Psi$ фундаментальная матрица
 
-  Пусть $\Psi(t)$ фиксированная фундаментальная матрица
+  $\Leftarrow$ пусть $\Psi(t)$ фиксированная фундаментальная матрица
 
-  $B = \Phi^{-1}(t_0) \Psi(t_0) ~~~ t_0 \in <\alpha, \beta>$
+  $t_0 \in <\alpha, \beta> ~~ B = \Phi^{-1}(t_0) \Psi(t_0)$
 
-  $\Psi(t) = \Phi(t) \Phi_{-1}(t_0) \Psi(t_0)$
+  $\Psi(t) = \Phi(t) \Phi^{-1}(t_0) \Psi(t_0)$
 
-  $t = t_0 ~~~ \Phi(t_0) \Phi^{-1}(t_0) \Psi(t_0)$
+  $t = t_0 ~~~ \Psi(t_0) = \Phi(t_0) \Phi^{-1}(t_0) \Psi(t_0)$
   $$
   \left\{
-  \begin{array}{c}
-    X(t_0) = \Psi(t_0) \\
-    X'(t) = A(t)X(t)
+  \begin{array}{l}
+    X'(t) = A(t)X(t) \\
+    X(t_0) = \Psi(t_0)
   \end{array}
   \right. ~ \Rightarrow ~
   \Psi(t) = \Phi(t) \Phi^{-1}(t_0)\Phi(t_0)
   $$
+  одна фундаментальная матрица вырожена через другую
 \end{proof}
 
-Вывод: $x'(t) = A(t)x(t)$
+\begin{block}[Вывод]
+  система $x'(t) = A(t)x(t)$
 
-1) Множество ее решений образует линейное пространство степени $n$
+  1) Множество ее решений образует линейное пространство степени $n$
 
-2) Для ее решения достаточно найти ФСР
-$$
-\varphi(t) = \sum_{j=1}^n C_j \varphi_j(t)
-$$
+  2) Для ее решения достаточно найти ФСР
+  $$
+  \varphi(t) = \sum_{j=1}^n C_j \varphi_j(t)
+  $$
+\end{block}
 
 \begin{title}[\Large]
-  Линейная неоднородная системы
+  Линейные неоднородные системы дифференциальных уравнений. Метод вариаций.
+  Формула Коши
 \end{title}
 
-$x'(t) = A(t) x(t) + g(t) ~~~ t \in <\alpha, \beta>$ $A(t), g(t)$ -
-непрерывные функции. Метод вариаций производных постоянных.
+\begin{block}[Метод вариаций]
+  $x'(t) = A(t) x(t) + g(t) ~~~ t \in <\alpha, \beta>$ $A(t), g(t)$
+  непрерывные функции. Метод вариаций производных постоянных.
 
-Расмотрим $x'(t) = A(t)x(t)$ $\Phi(t)$ - фундаментальная матрица
-$x(t) = \Phi(t) C$ общее решение $x'(t) = A(t)x(t)$
-$$
-C =
-\left\{
-\begin{array}{c}
-  C_1 \\
-  C_2 \\
-  \cdots \\
-  C_n
-\end{array}
-\right) ~~~
-C(t) =
-\left\{
-\begin{array}{c}
-  C_1(t) \\
-  C_2(t) \\
-  \cdots \\
-  C_n(t)
-\end{array}
-\right)
-$$
-$x(t) = \Phi(t)C(t) ~~~ x'(t) = \Phi'(t)C(t) + \Phi(t)C'(t)$
+  Расмотрим $x'(t) = A(t)x(t)$ $\Phi(t)$ фундаментальная матрица
+  $x(t) = \Phi(t) C$ общее решение $x'(t) = A(t)x(t)$
+  $$
+  C =
+  \left(
+  \begin{array}{c}
+    C_1 \\
+    C_2 \\
+    \cdots \\
+    C_n
+  \end{array}
+  \right) ~~~
+  C(t) =
+  \left(
+  \begin{array}{c}
+    C_1(t) \\
+    C_2(t) \\
+    \cdots \\
+    C_n(t)
+  \end{array}
+  \right)
+  $$
+  $$
+  x(t) = \Phi(t)C(t)
+  $$
+  $$
+  x'(t) = \Phi'(t)C(t) + \Phi(t)C'(t)
+  $$
+  $$
+  \Phi'(t)C(t) + \Phi(t)C'(t) = A(t)\Phi(t)C(t) + g(t)
+  $$
+  $$
+  \Phi'(t) = A(t) \Phi(t)
+  $$
+  $$
+  \Phi(t)C'(t) = g(t)
+  $$
+  $$
+  C'(t) = \Phi^{-1}(t)g(t)
+  $$
+  $$
+  C(t) = \int_{t_0}^t \Phi^{-1}(s)g(s)ds + D
+  $$
+  $$
+  x(t) = \Phi(t)D + \Phi(t)\int_{t_0}^t\Phi^{-1}(s)g(s)ds
+  $$
+  формула общего решения
+\end{block}
 
-$\Phi'(t)C(t) + \Phi(t)C'(t) = A(t)\Phi(t)C(t) + g(t)$
-
-$\Phi'(t) = A(t) \Phi(t)$
-
-$\Phi(t)C'(t) = g(t)$
-
-$C'(t) = \Phi^{-1}(t)g(t)$
-
-$C(t) = \int_{t_0}^2 \Phi^{-1}(s)g(s)ds + D$
-
-$x(t) = \Phi(t)D + \int_{t_0}^t\Phi(t) \Phi^{-1}(s)g(s)ds$ формула общего
-решения. $x(t_0) = x_0$ задача Коши
-
-$x(t_0) = \Phi(t_0)D ~~~ D = \Phi^{-1}(t_0)x(t_0)$
-
-$x(t) = \Phi(t) \Phi^{-1}(t_0)x_0 + \int_{t_0}^t \Phi(t)\Phi^{-1}(s)g(s)ds$
-формула Коши
-
-$$
-\left\{
-\begin{array}{c}
-  x'(t) = A(t)x(t) + g(t) \\
-  x(t_0) = x_0
-\end{array}
-\right. ~~~ \text{задача Коши}
-$$
+\begin{block}[Формула Коши]
+  $$
+  \left\{
+  \begin{array}{l}
+    x'(t) = A(t)x(t) + g(t) \\
+    x(t_0) = x_0
+  \end{array}
+  \right. ~~~ \text{задача Коши}
+  $$
+  $$
+  x(t_0) = \Phi(t_0)D
+  $$
+  $$
+  D = \Phi^{-1}(t_0)x(t_0) = \Phi^{-1}(t_0)x_0
+  $$
+  $$
+  x(t) = \Phi(t) \Phi^{-1}(t_0)x_0 + \Phi(t)\int_{t_0}^t \Phi^{-1}(s)g(s)ds
+  $$
+  формула Коши
+\end{block}
 
 \begin{theorem}
-  Пусть $A(t), g(t)$ непрерывная матрица и вектор $t \in <\alpha, \beta>$ тогда
-  решение задачи Коши определяется формулой Коши
+  $A(t), g(t)$ непрерывные матрицы и вектор на $t \in <\alpha, \beta>$ тогда
+  решение задачи Коши определяется формулой Коши.
 \end{theorem}
 
-$C(t,s) = \Phi(t)\Phi^{-1}(s)$ матрица Коши
+\begin{define}[матрицы Коши]
+  $$
+  C(t,s) = \Phi(t)\Phi^{-1}(s) ~ \text{матрица Коши}
+  $$
+  $$
+  x(t) = C(t, t_0)x_0 + \int_{t_0}^t C(t,s)g(s)ds
+  $$
+\end{define}
 
-$x(t) = C(t, t_0)x_0 + \int_{t_0}^t C(t,s)g(s)ds$
+\begin{theorem}
+  $C(t,s)$ не зависит от выбора фундаментальной матрицы $\Phi(t)$.
+\end{theorem}
 
-$C(t,s)$ зависит от выбора фундаментальной матрицы $\Phi(t)$. Пусть $\Psi(t)$
-другая фундаментальная матрица $D(t,s) = \Psi(t)\Psi^{-1}(s)$ $\exists B$
-невырожденаая матрица которая обеспечивает
-
-$\Psi(t) = \Phi(t)B$
-
-$\Psi^{-1}(s) = B^{-1} \Phi^{-1}(s)$
-
-$\Psi(t) \Psi^{-1}(s) = \Phi(t) B B^{-1} \Phi^{-1}(s)$
-
-$D(t, s) = C(t, s) ~ \Rightarrow$ функция Коши не зависит от выбра
-фундаментальной матрица $\Phi(t)$
+\begin{proof}
+  Пусть $\Psi(t)$ другая фундаментальная матрица $D(t,s) = \Psi(t)\Psi^{-1}(s)$
+  $\exists B$ невырожденаая матрица которая обеспечивает
+  $$
+  \Psi(t) = \Phi(t)B
+  $$
+  $$
+  \colorbox[rgb]{0.7,0.7,0}{$(A\cdot B)^{-1} = B^{-1} \cdot A^{-1}$}
+  $$
+  $$
+  \Psi^{-1}(s) = B^{-1} \Phi^{-1}(s)
+  $$
+  $$
+  \Psi(t) \Psi^{-1}(s) = \Phi(t) B B^{-1} \Phi^{-1}(s)
+  $$
+  $$
+  D(t, s) = C(t, s) ~ \Rightarrow
+  $$
+  функция Коши не зависит от выбра фундаментальной матрица $\Phi(t)$
+\end{proof}
 
 \begin{block}[Свойства]
   1) При каждом фиксиравоном $s \in <\alpha, \beta>$ $C(t, s)$ решение системы
   $X'(t) = A(t)X(t)$
 
   2) $C(t,t) = E$ еденичная матрица
+\end{block}
+
+\begin{title}[\Large]
+  Линейные системы дифференциальных уравнений с постоянными коэффицентами.
+  Теорема о фундаментальной системе решений
+\end{title}
+
+\begin{define}
+  $A(t) \equiv A$
+
+  $x'(t) = Ax(t) + g(t)$
+
+  $x'(t) = Ax(t)$ однородная система $A_{n\times n}$
+  $$
+  n=1 ~~~ x'(t) = ax(t)
+  $$
+  $$
+  \frac{dx(t)}{dt} = ax(t)
+  $$
+  $$
+  \int \frac{d(x(t))}{x(t)} = \int a dt
+  $$
+  $$
+  \ln |x(t)| = at + C
+  $$
+  $$
+  x(t) = Ce^{at}
+  $$
+  $$
+  \varphi(t) = Ce^{\lambda t} ~ \text{решение} ~ x'(t) = Ax(t)
+  $$
+  $$
+  \varphi'(t) = C \lambda e^{\lambda t} = ACe^{\lambda t}
+  $$
+  $$
+  (C\lambda - AC)e^{\lambda t} = 0
+  $$
+  $$
+  (\lambda E - A)C = 0
+  $$
+  $$
+  (A - \lambda E)C = 0 ~~~ C \not= 0
+  $$
+  $$
+  |A - \lambda E| \not= 0 ~ \Rightarrow ~ C = 0
+  $$
+  $$
+  |A - \lambda E| = 0 ~ \Rightarrow ~ C \not= 0 ~ \text{бесконечно много
+  решений характеристического уравнения}
+  $$
+  $\lambda$ собственные значения, $C$ собственный вектор
+
+  ФСР состоит из $n$ решений
+
+  $\lambda_1, \lambda_2, \ldots \lambda_n$ различных корней
+
+  $\varphi_1 \ldots, \varphi_n$ ФСР
+
+  $\lambda_1$ корень кратный 2
+  $$
+  \varphi_1(t) = C(\lambda_1) e^{\lambda_1 t}
+  $$
+  изменим $A + A_{\Delta}$ так чтобы $\lambda_1$ разспался на $\lambda_1$ и
+  $\lambda_1 + \lambda_{\Delta}$
+  $$
+  \varphi_2(t) = C(\lambda_1 + \lambda_{\Delta})e^{\lambda_1 +
+  \lambda_{\Delta}t}
+  $$
+  $\varphi_{\Delta} = \varphi_2(t) - \varphi(t)$ решение системы
+
+  нормируем для того чтобы не было $\varphi_{\Delta} \to 0$
+  $$
+  \frac{\varphi_{\Delta}}{||\varphi_{\Delta}||} =
+  \frac{\varphi_{\Delta}}{\lambda_{\Delta}} =
+  \frac{C(\lambda_1 + \lambda_{\Delta})e^{\lambda_1 + \lambda_{\Delta}t} -
+  C(\lambda)e^{\lambda_1 t}}{\lambda_{\Delta}} = \varphi'_{\lambda_1}(t)
+  $$
+  $$
+  \frac{d \varphi_1(t)}{d\lambda_1} = C'(\lambda_1)e^{\lambda_1 t} +
+  C(\lambda_1)t e^{\lambda_1 t} = (C'(\lambda_1) + t C(\lambda_1))
+  e^{\lambda_1 t}
+  $$
+  решение должно иметь такой вид $(p_0 + p_1 t) e^{\lambda_1 t}$
+
+  $\det(A - \lambda E) = 0$
+
+  $K_m = \{x \in C^n ~ : ~ (A - \lambda_m E)^{n_m} x = 0\}$корневое
+  пространство соответствующие корням $\lambda_m$
+
+  $\det K_m = n_m$ $\forall x \in K_m ~~ Ax \in K_m ~~ C^n = K_1 + K_2 \ldots
+  + K_k$ пространство инвариантно относительно пр
+\end{define}
+
+\begin{theorem}
+  $\lambda_1, \ldots, \lambda_k$ различные корни характеристического урвнения
+  матрицы $|A - \lambda E| = 0$ и кратностей составляет $n_1, \ldots, n_k
+  (n_1 + \ldots + n_k = n)$ (называют порядок) тогда каждому корню $\lambda_m$
+  соответствует $n_m$ ЛНЗ решений системы $x'(t) = Ax(t)$ вида $P_m(t)
+  e^{\lambda_m t}$ где $P(t) = p_0 + p_1(t) + \ldots + p_{n_m-1}t^{n_m-1}$
+  многочлен с векторными коэффицентами степени кратности корня $n_m - 1$
+  $p_j \in C^n$ объединение таких решений по всем $m$ задается ФСР
+
+  Вид решения
+  $$
+  \varphi(t) = (p_0 + p_1t + p_{n_m-1}t^{n_m-1})e^{\lambda_m t}
+  $$
+\end{theorem}
+
+\begin{proof}
+  $x'(t) = Ax(t)$ Корень $\lambda_m$ кратности $n_m$
+  $$
+  \varphi(t) = (C_0 + C_1 t + \ldots + C_{n_m-1}t^{n_m-1})e^{\lambda_m t}
+  $$
+  $C_j \in C^n$ неизвестные
+  $$
+  \varphi'(t) = (C_0 + C_1 t + \ldots + C_{n_m-1}t^{n_m-1})e^{\lambda_m - 1}
+  \lambda_m +
+  $$
+  $$
+  + (C_1 + 2tC_2 + 3t^2C_3 + \ldots + (n_m-1)C_{n_m-1}t^{n_m-2})
+  e^{\lambda_m t} =
+  $$
+  $$
+  = A(C_0 + C_1(t) + \ldots + C_{n_m-1}t^{n_m-1}) e^{\lambda_m t}
+  $$
+  $$
+ (C_0 + C_1 t + \ldots + C_{n_m-1}t^{n_m-1})e^{-1}\lambda_m +
+  $$
+  $$
+  + (C_1 + 2tC_2 + 3t^2C_3 + \ldots + (n_m-1)C_{n_m-1}t^{n_m-2}) =
+  $$
+  $$
+  = A(C_0 + C_1(t) + \ldots + C_{n_m-1}t^{n_m-1})
+  $$
+  $t^0 : C_0 \lambda_m + C_1 = AC_0$
+
+  $t^1 : C_1 \lambda_m + 2C_2 = AC_1$
+
+  $t^2 : C_2 \lambda_m + 3C_3 = AC_2$
+
+  $\ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots$
+
+  $t^{n_m-2} : C_{n_m-2} \lambda_m + (n_m - 1)C_{n_m - 1} = AC_{n_m - 2}$
+
+  $t^{n_m-1} : C_{n_m-1} \lambda_m = AC_{n_m - 1}$
+  $$
+  \left\{
+  \begin{array}{l}
+    (A - \lambda_mE) C_0 = C_1 \\
+    (A - \lambda_mE) C_1 = 2C_2 \\
+    \ldots ~~~ \ldots ~~~ \ldots \\
+    (A - \lambda_mE) C_{n_m-2} = (n_m-1)C_{n_m-1} \\
+    (A - \lambda_mE) C_{n_m-1} = 0
+  \end{array}
+  \right.
+  \left\{
+  \begin{array}{l}
+    (A - \lambda_mE) C_0 = C_1 \\
+    \frac{(A - \lambda_mE)^2 C_0}{2} = C_2 \\
+    \frac{(A - \lambda_mE)^3 C_0}{3!} = C_3 \\
+    \ldots ~~~ \ldots ~~~ \ldots \\
+    \frac{(A - \lambda_mE)^{n_m-1} C_0}{(n_m-1)!} = C_{n_m-1} \\
+    (A - \lambda_mE)^{n_m}C_0 = 0
+  \end{array}
+  \right.
+  $$
+  $C_0 \in K_m ~~ \det K_m = n_m$
+
+  определим $n_m$ ЛНЗ вектора $C_0$
+
+  $\forall C_0 \to C_j$ то есть полученные решения будут ЛНЗ кол-во решений
+  совпадает с кратностью корня
+\end{proof}
+
+\begin{block}[Замечание]
+  $C_j$ комплексные векторы
+
+  Если матрица $A$ вещественная то решения могу быть вещественными то есть
+
+  $|A - \lambda E| = 0$
+
+  $\lambda_1 = \alpha + i\beta$
+
+  $\lambda_2 = \alpha - i\beta$ однаковой кратности
+
+  $\lambda_1, \lambda_2$ сопряженные вектора корневых пространства значит
+  решение соответствующие этим векторам можно построить сопряженные этим
+  векторам
+
+  $\varphi_1 = P(t)e^{(\alpha + i\beta)t}$
+
+  $\vec \varphi_1 = \varphi_2 = \overline{P}(t)e^{(\alpha - i\beta)t}$
+
+  $Re\varphi = \frac{\varphi + \vec \varphi_1}{2} \in R^n$
+
+  $Im \varphi_1 = \frac{\varphi_1 \vec \varphi_1}{2i} \in R^n$
+
+  $\psi_1, \psi_2$ вещественные решения
+\end{block}
+
+\begin{title}[\Large]
+  Экспонента матрицы $e^{At}$, свойства
+\end{title}
+
+\begin{define}[экспоненты матрицы]
+  $A$ постоянная $n \times n$ то экспонента матрицы называется
+  $$
+  e^A = \lim_{k \to \infty} \left( E + A + \frac{1}{2!}A^2 + \ldots +
+  \frac{1}{k!} A^k \right) = \sum_{j=0}^{\infty}\frac{A^j}{j!}
+  $$
+  введем норму матрицы $||A||$ тогда $||A^k|| \le ||A||^k$ $\sum_{k=0}^{\infty}
+  \frac{||A||^k}{k!}$ сходится
+  $$
+  e^{tA} = \sum_{j=0}^{\infty} \frac{t^j A^j}{j!} ~ \text{
+  матричная экспонента}
+  $$
+  1) $t$ фиксируем то ряд сходится
+
+  2) сходится равномерно $t \in [c,d]$  по признаку Вейерштрасса
+  $$
+  \frac{||t^j A^j||}{j!} \le \frac{d^j ||A||^j}{j!} ~ \text{мажорандный ряд}
+  $$
+  $\sum_{j=0}^{\infty}\frac{d^j ||A||^j}{j!}$ сходится
+\end{define}
+
+\begin{block}[Свойства]
+  1) $e^0 = E$
+
+  2) $e^{(t+s)A} = e^{tA} e^{sA}$
+
+  \begin{proof}
+    Пусть $u(t) = e^{(t+s)A} ~~~ \upsilon = e^{tA} e^{sA}$
+    $$
+    \left\{
+    \begin{array}{l}
+      u'(t) = A e^{(t+s)A} = Au(t) \\
+      u(0) = e^{sA}
+    \end{array}
+    \right. ~~~
+    \left\{
+    \begin{array}{l}
+      \upsilon'(t) = A e^{tA} e^{sA}= Au(t) \\
+      u(0) = e^{sA}
+    \end{array}
+    \right.
+    $$
+    удовлитворяют одной и той же задачи коши $\Rightarrow$ есть единственность
+    этих функций
+  \end{proof}
+
+  3) $(e^{At})' = A e^{At}$
+
+  \begin{proof}
+    $$
+    e^{At} = E + At + \frac{A^2t^2}{2!} + \ldots + \frac{A^k t^k}{k!} +
+    $$
+    $t \in [c,d]$ сходится равномерно
+    $$
+    (e^{At})' = A + \frac{2tA^2}{2!} + \ldots + \frac{kt^{k-1}A^k}{k!} +
+    \ldots = A\left(E + tA + \frac{t^2A^2}{2} + \ldots +
+    \frac{t^{k-1}A^{k-1}}{(k-1)!} + \ldots\right)
+    $$
+    сходится равномерно $\Rightarrow$ значит можно почленно дифференциировать
+  \end{proof}
+
+  4) Если $AB = BA$ тогда $e^{A+B} = e^A e^B$
+
+  \begin{proof}
+  \end{proof}
 \end{block}

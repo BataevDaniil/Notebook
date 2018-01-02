@@ -11,10 +11,10 @@
   поверхности
 \end{title}
 
-\begin{define}[поверхности]
-  Поверхность это отображение непрерывной поверхностью в $R^3$, называется
+\begin{define}[непрерывной поверхности]
+  Непрерывной поверхностью в $R^3$, называется
   непрерывное отображение $\varphi: U \subseteq R^2 \to R^3$, где
-  $U$ открытое множество на плоскости (множество, каждый элемент которого входит
+  $U$ открытое множество (множество, каждый элемент которого входит
   в него вместе с некоторой окрестностью)
 
   $(u, \upsilon) \in U ~~~ \vec \varphi(u, \upsilon) = (x(u, \upsilon),
@@ -80,8 +80,8 @@
 \end{block}
 
 \begin{define}
-  Гладка поверхность $\vec \varphi = (x(u, \upsilon), y(u, \upsilon),
-  z(u, \upsilon))$ называется регулярной если
+  Гладка поверхность $\vec \varphi = \vec \varphi
+  (x(u, \upsilon), y(u, \upsilon), z(u, \upsilon))$ называется регулярной если
   $$
   \forall (u, \upsilon) ~~~
   \rang \left(
@@ -102,9 +102,8 @@
   $\vec \varphi = \vec \varphi(u, \upsilon)$ гладкая поверхность и точка
   $(u_0, \upsilon_0) ~~ \vec \varphi_u (u_0, \upsilon_0),
   \vec \varphi_{\upsilon} (u_0, \upsilon_0)$ линейно независисмы, тогда
-  $\exists (u, \upsilon) \in O(u_0, \upsilon_0) ~~ \vec \varphi : (u, \upsilon)
-  \to R^3$ инективно (разные точки поверхности переходят в разные точки
-  пространства)
+  $\exists (u, \upsilon) \in O(u_0, \upsilon_0) ~~ \varphi : (u, \upsilon)
+  \to R^3$ инективно
 \end{theorem}
 
 \begin{proof}
@@ -150,21 +149,37 @@
 \end{title}
 
 \begin{theorem}
-  $F(x,y,z)$ гладкая функция, $(x_0, y_0, z_0) ~~ F(x_0, y_0, z_0) = 0$ и
+  $F(x,y,z)$ гладкая функция, $\exists (x_0, y_0, z_0) ~~ F(x_0, y_0, z_0) = 0$
+  и
   $$
   \grad F(x_0, y_0, z_0) = \left(
   \frac{\partial F(x_0, y_0, z_0)}{\partial x},
   \frac{\partial F(x_0, y_0, z_0)}{\partial y},
-  \frac{\partial F(x_0, y_0, z_0)}{\partial z},
+  \frac{\partial F(x_0, y_0, z_0)}{\partial z}
   \right) \not= 0
   $$
   тогда $\exists x,y,z \in O(x_0, y_0, z_0) ~~ F(x, y, z) = 0$ является образом
   регулярной поверхности.
 
   В этом случае мы будем говорить что эта регулярная поверхность задана
-  уравнением $F(x, y, z) = 0$
+  неявно уравнением $F(x, y, z) = 0$
 \end{theorem}
 
 \begin{proof}
-  доказать
+  По условию в точке $(x_0, y_0, z_0)$
+  $$
+  \grad F(x_0, y_0, z_0) = \left( \frac{\partial F(x_0, y_0, z_0)}{\partial x},
+  \frac{\partial F(x_0, y_0, z_0)}{\partial y}
+  \frac{\partial F(x_0, y_0, z_0)}{\partial z} \right) \not= \vec 0
+  $$
+  $\frac{\partial F(x_0, y_0, z_0)}{\partial x} \not= 0$ или
+  $\frac{\partial F(x_0, y_0, z_0)}{\partial y} \not= 0$ или
+  $\frac{\partial F(x_0, y_0, z_0)}{\partial z} \not= 0$ $\Rightarrow$
+  по теореме о неявной функции $\exists (x, y, z) \in O(x_0, y_0, z_0) ~~~
+  F(x, y, z) = 0$ задается соотношением $z = f(x,y)$
+  то есть состоит из точек вида $(x, y, f(x, y))$ $\Rightarrow$ это множество
+  точек задается параметрически $(u, \upsilon, f(u, \upsilon))$
+  $\Rightarrow$ $(1, \upsilon, f_u(u, \upsilon)) \not= \vec 0 ~~~
+  (u, 1, f_{\upsilon}(u, \upsilon)) \not= \vec 0$ кривая
+  заданная этим уравнением регулярная.
 \end{proof}
