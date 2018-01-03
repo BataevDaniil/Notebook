@@ -1260,5 +1260,460 @@
   4) Если $AB = BA$ тогда $e^{A+B} = e^A e^B$
 
   \begin{proof}
+    Докажем что $e^{At}B = Be^{At}$
+
+    Пусть $u(t) = e^{At}B ~~~ \upsilon(t) = Be^{At}$
+    $$
+    \left\{
+    \begin{array}{l}
+      u'(t) = A e^{At} = Au(t) \\
+      u(0) = B
+    \end{array}
+    \right. ~~~
+    \left\{
+    \begin{array}{l}
+      \upsilon'(t) = A e^{At} = A\upsilon(t) \\
+      u(0) = B
+    \end{array}
+    \right. ~~~
+    $$
+    $\Rightarrow$ $e^{At}B = Be^{At}$
+
+    Расмотрим $u(t) = e^{(A+B)t} ~~~ \upsilon(t) = e^{At}e^{Bt}$
+    $$
+    \left\{
+    \begin{array}{l}
+      u'(t) = (A+B) e^{(A+B)t} = (A+B)u(t) \\
+      u(0) = E
+    \end{array}
+    \right. ~~~
+    \left\{
+    \begin{array}{l}
+      \upsilon'(t) = A e^{At} e^{Bt} + e^{At} B e^{Bt} = \\
+      = A e^{At} e^{Bt} + B e^{At} e^{Bt} = \\
+      = (A+B) e^{At} e^{Bt} =(A+B)\upsilon(t) \\
+      \upsilon(0) = E
+    \end{array}
+    \right.
+    $$
+    так как функции удовлитворяют задачи Коши имеет место равенство между ними
   \end{proof}
 \end{block}
+
+\begin{title}[\Large]
+  Докаазтельство теоремы о фундаментальной системе решений системы с постоянной
+  матрицей с помощью $e^{At}$
+\end{title}
+
+\begin{proof}[теоремы о ФСР для системы с постоянной матрицей]
+  $C^n = K_1 \oplus K_2 \oplus \ldots \oplus K_k$ прямая сумма подпространств
+
+  $\dim k_j = n_j ~~~ K_j = \{x \in C^n ~:~ (A - \lambda_jE)^{n_j}x = 0\}$
+
+  в каждом корневом подпространстве выюерем базис $C^n$ объединение базисов всех
+  корневых подпространств. $C$ базис для $K_m$
+
+  Решение по базисному вектору
+  $$
+  \varphi = e^{At} C = e^{\lambda_m Et + t(A - \lambda_m E)} = e^{\lambda_mEt)}
+  e^{(A - \lambda_mE)t}C = e^{\lambda_mt} E e^{(A - \lambda_mE)t}C =
+  $$
+  $$
+  = e^{\lambda_m t}(E + (A-\lambda_m E)t C + \frac{t^2}{2}(A-\lambda_mE)^2C
+  + \ldots +
+  $$
+  $$
+  \frac{t^{n_m -1}}{(n_m-1)!}(A-\lambda_mE)^{n_m -1}C +
+  \frac{t^{n_m}}{(n_m)!}\overbrace{(A - \lambda_m E)^{n_m}C}^{=0} + \ldots ) =
+  $$
+  $$
+  e^{\lambda_m t}(C + C_1 t + C_2 t^2 + \ldots + C_{n_m-1}t^{n_m-1}) =
+  e^{\lambda_m t} P_{n_m-1}(t)
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Матрица Коши системы с постоянными коэффициентами
+\end{title}
+
+\begin{define}
+  $x'(t) = A(t)x(t) + g(t)$
+  $x'(t) = A(t)x(t)$
+
+  $C(t,s) = \Phi(t) \Phi^{-1}(s)$
+
+  $A(t) = A$ $n \times n$ матрица
+
+  $\Phi(t) = e^{At}$
+
+  $\Phi^{-1}(t) = e^{-At}$
+
+  $C(t,s) = e^{At} e^{-As} = e^{A(t-s)}$ матрица Коши
+  $$
+  x(t) = e^{A(t-t_0)}x(t_0) + \int_{t_0}^t e^{A(t-s)}g(s)ds ~ \text{формула
+  Коши}
+  $$
+\end{define}
+
+\begin{title}[\Large]
+  Оценка $||e^{At}||$
+\end{title}
+
+\begin{theorem}
+  $\lambda_1, \ldots, \lambda_m$ все характеристические многочлены матрицы $A$
+  и $|A - \lambda E| = 0$ тогда $\forall \alpha \ge Re\lambda_j ~~
+  j = 1, \ldots, m ~~ \exists M ~~ ||e^{At}|| \le Me^{\alpha t} ~~ t \ge 0$
+
+  матрица $A$ порождает линейный оператор $y=Ax ~~ R^n \to R^n$
+
+  $||Ax|| \le ||A|||x||$
+
+  Норма матрицы $||B|| \max_{1 \le j \le n} \sum_{i=1}^n |b_{ij}|$ максимум
+  сумм модулей всех элементов столбца
+\end{theorem}
+
+\begin{proof}
+  Оценим столбец матрицы $e^{At}$ так как $e^{At}$ это фундаментальная матрица
+  то каждый ее столбец является решением $x'=Ax(t)$
+
+  каждый столбец это функция вида
+  $$
+  \sum_{j=1}^m P_{n_j-1}(t) e^{\lambda_j t}
+  $$
+  $n_j$ кратности $\lambda_j$, $P_{n_j-1}(t) = p_0 + p_1t + \ldots +
+  p_{n_j-1}(t)$ где $p$ векторы
+
+  Достаточно оценить каждое слагаемое этой суммы
+  $$
+  ||P_{n_j-1}(t)e^{\lambda_j t}|| \le |e^{\lambda_j t}|\cdot||P_{n_j-1}(t)||\le
+  e^{tRe\lambda_j} \overbrace{\sum_{m=0}^{n_j-1} ||p_m||t^m}^{Q_{n_j-1}} =
+  $$
+  $$
+  = Q_{n_j-1}(t)e^{\alpha t} e^{t(Re\lambda_j-\alpha)} \le De^{\alpha t}
+  $$
+  $Q_{n_j-1}(t)e^{t(Re\lambda_j-\alpha)}$ ограничена так как $\to 0$
+  $$
+  \sum_{j=1}^m P_{n_j-1}(t)e^{\lambda_j t} \le e^{\alpha t} C
+  $$
+  $$
+  ||e^{At}|| \le Me^{\alpha t}
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Лемма об эквивалентности задачи Коши интегральному уравнению
+\end{title}
+
+\begin{block}[Лемма]
+  Здача Коши эквивалентна интегральному уравнению
+  $$
+  x(t) = x_0 + \int_{t_0}^t f(s, x(s))ds
+  $$
+\end{block}
+
+\begin{proof}
+  $\Rightarrow$ пусть $\varphi(t)$ решение задачи Коши
+
+  $$
+  \varphi'(t) \equiv f(t, \varphi(t))
+  $$
+  $$
+  t \in <\alpha, \beta> ~~ t_0 \in <\alpha, \beta> ~~ \int_{t_0}^t
+  \varphi'(s)ds = \int_{t_0}^tf(s, \varphi(s))ds
+  $$
+  $$
+  \varphi(s)|_{t_0}^t = \int_{t_0}^t f(s, \varphi(s))ds
+  $$
+  $$
+  \varphi(t) = x_0 + \int_{t_0} f(s, \varphi(s))ds
+  $$
+  $$
+  \varphi(t) = x_0  + \int_{t_0} f(s, \varphi(s))ds
+  $$
+  $\varphi$ решение интегрального уравнения
+
+  $\Rightarrow$ пусть $\varphi$ решение интегрального уравнения тогда
+  $$
+  \varphi(t) \equiv \int_{t_0}^t f(s, \varphi(s))ds + x_0
+  $$
+  $$
+  \left\{
+  \begin{array}{l}
+    \varphi'(t) = f(t, \varphi(t)) \\
+    \varphi(t_0) = x_0
+  \end{array}
+  \right.
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Теорема Пикара существования и единственности решения задачи Коши.
+  (построение приближений, доказательство сходимости, единственности)
+\end{title}
+
+\begin{theorem}
+  $f(t, x)$ определена и непрерывна в области $D$ $D\subset R \times R^n \to
+  R^n$ и имеет в этой области непрерывные частные производные по всем переменным
+  $x$ тоесть $\frac{\partial f_i}{\partial x_j} ~~ i,j = 1, \ldots, n$ и
+  $(t_0, x_0) \in D$ тогда задача Коши $\exists!$ решение
+  на $h > 0 ~~ [t_0 - h, t_0 + h]$
+\end{theorem}
+
+\begin{proof}
+  1) построение приблежений. Выберем произвольную функцию $\varphi_0(t)$
+  непрерывна $\varphi_0(t_0) = x_0$
+  $$
+  \varphi_1(t) = x_0 + \int_{t_0}^t f(s, \varphi_0(s))ds
+  $$
+  $$
+  \varphi_{k+1}(t) = x_0 + \int_{t_0}^t f(s, \varphi_k(s))ds
+  $$
+  В результате мы получим бесконечнуй последовательность функций
+  $\{\varphi_k(t)\}$ и $\varphi_k(t) = x_0$ (проходят через начальную точку)
+
+  $[t_0 - h, t_0 + h]$ отрезок на котором определены все решения
+
+  Пусть $G$ выпуклая ограниченная область $(t_0, x_0) \in G$
+  $$
+  M = \sup_{(t,s) \in G} ||f(t,x)||
+  $$
+  $$
+  ||f|| = |f_1| + |f_2| + \ldots + |f_n|
+  $$
+  $$
+  K_n = \{(t,x) \in R \times R^n ~:~ ||x - x_0|| \le M|t-t_0| ~~
+  t \in [t_0 - h, t_0 + h\}
+  $$
+  кроме того уменьшая $h$ можно считать что график $\varphi_0$ лежит
+  $\varphi_0 \subset G ~~ t \in [t_0 - h, t_0 + h]$
+
+  Докаже что график всех приближений лежат в области $G$ при $(t, \varphi_k(t))
+  \in G$
+
+  Допустим $\varphi_k(t)$ определена на $[t_0 - h, t_0 + h]$ и его графи лежит
+  в области $G$ при $(t, \varphi_k(t)) \in G$
+  $$
+  \varphi_{k+1}(t) = x_0 + \int_{t_0}^t f(s, \varphi_k(s))ds ~
+  \text{непрерывна}
+  $$
+  $\varphi_{k+1}(t)$ определа на $[t_0 - h, t_0 + h]$
+
+  Расмотрим
+  $$
+  ||\varphi_{k+1}(t) - x_0|| = \left\Vert \int_{t_0}^t f(s, \varphi_k(s))ds
+  \right\Vert \le
+  $$
+  $$
+  \le \left| \int_{t_0}^t \left\Vert f(s, \varphi_k(s))\right\Vert ds \right|
+  \le M\left| \int_{t_0}^t \right| = M|t-t_0|
+  $$
+  $(t, \varphi_{k+1}(t))$ удовлитворяет равенству определяющему конус
+
+  $\varphi_k(t)$ поределны на одном и том же $[t_0 - h, t_0 + h]$ $(t,
+  \varphi_k(t)) \in K_n \subset G$
+
+  2) Докажем равномерную сходимость приближений на $[t_0 - h, t_0 + h]$
+
+  $\{\varphi_k(t)\}$
+  $$
+  \varphi_0(t) + \sum_{k=0}^{\infty}(\varphi_{k+1}(t) - \varphi_k(t))
+  $$
+  $$
+  S_n(t) = \varphi_0(t) + \sum_{k=0}^n (\varphi_{k+1}(t) - \varphi_k(t) =
+  $$
+  $$
+  = \varphi_0(t) + \varphi_1(t) - \varphi_0(t) + \varphi_2(t) - \varphi_1(t),
+  \ldots, + \varphi_{n+1}(t) - \varphi_n(t)) = \varphi_{n+1}(t)
+  $$
+  Из теоремы Вейерштрасса $\sum_{k=0}^{\infty} f_k(t) ~~ t \in T$ и
+  $|f_k(t) \le b_k(t)$ и $\sum_{k=0}^{\infty} b_k(t)$ сходится тогда
+  $\sum_{k=0}^{\infty} f_k(t)$ равномерно сходится
+
+  Оценим норму
+  $$
+  ||\varphi_{k+1}(t) - \varphi_k(t)||
+  $$
+  $$
+  k = 0 ~~ ||\varphi_1(t) - \varphi_0(t)||
+  $$
+  $$
+  N = \sup_{t \in [t_0 - h, t_0 + h]} ||\varphi_1(t) - \varphi_0(t)||
+  $$
+  $$
+  ||f(t, x) - f(t,y)|| \le \sup_{(t,x ) \in G} \left\Vert \frac{\partial f}{
+  \partial x} \right\Vert ||x-y||
+  $$
+  $\frac{\partial f}{\partial x}$ непрерывная матрица Якоби $\Rightarrow$
+  $\sup \frac{\partial f}{\partial x} = L = \const$
+
+  значит получаем условие Липница
+  $$
+  ||f(t,x) - f(t,y)|| \le L||x-y||
+  $$
+  $$
+  ||\varphi_2(t) - \varphi_1(t)|| = \left\Vert x_0 + \int_{t_0}^n
+  f(s, \varphi_1(s))ds - x_0 - \int_{t_0}^t f(s, \varphi_0(s))ds \right\Vert =
+  $$
+  $$
+  \left\Vert \int_{t_0}^n f(s, \varphi_1(s)) - f(s, \varphi_0(s))ds \right\Vert
+  \le
+  $$
+  $$
+  \le \left| \int_{t_0}^n ||f(s, \varphi_1(s)) - f(s, \varphi_0(s))||ds
+  \right| \le
+  $$
+  $$
+  \le \left| \int_{t_0}^n ||\varphi_1(s) - \varphi_0(s)||ds \right| \le
+  LN|t-t_0| \le LND
+  $$
+  $$
+  ||\varphi_3(t) - \varphi_2(t)|| = \left\Vert x_0 + \int_{t_0}^n
+  f(s, \varphi_2(s))ds - x_0 - \int_{t_0}^t f(s, \varphi_1(s))ds \right\Vert =
+  $$
+  $$
+  \left\Vert \int_{t_0}^n f(s, \varphi_2(s)) - f(s, \varphi_1(s))ds \right\Vert
+  \le
+  $$
+  $$
+  \le \left| \int_{t_0}^n ||f(s, \varphi_2(s)) - f(s, \varphi_1(s))||ds
+  \right| \le
+  $$
+  $$
+  \le \left| \int_{t_0}^n L||\varphi_2(s) - \varphi_1(s)||ds \right| \le
+  $$
+  $$
+  \le L \left| \int_{t_0}^n LN|s-t_0|ds \right| = L^2 N \int_{t_0}^t
+  |s-t_0|ds =
+  $$
+  $$
+  \int_{t_0}^t |s - t_0| ds =
+  \left\{
+  \begin{array}{l}
+  \int_{t_0}^t |s - t_0| ds, ~ t \ge t_0 \\
+  \int_{t_0}^t |t_0 - s| ds, ~ t < t_0
+  \end{array}
+  \right. =
+  \left\{
+  \begin{array}{l}
+    \frac{(s - t_0)^2}{2}|_{t_0}^t \\
+    \frac{-(t_0 - s)^2}{2}|_{t_0}^t
+  \end{array}
+  \right. =
+  \left\{
+  \begin{array}{l}
+    \frac{(t - t_0)^2}{2} \\
+    \frac{-(t_0 - t)^2}{2}
+  \end{array}
+  \right.
+  $$
+  $$
+  = L^2N\frac{|t - t_0|^2}{2}
+  $$
+  $$
+  ||\varphi_3 - \varphi_2|| \le \frac{L^2N|t-t_0|^2}{2} ~ \Rightarrow ~
+  ||\varphi_{k+1} - \varphi_k|| \le \frac{L^kN|t-t_0|^k}{k!}
+  $$
+  Докажем метадом мат индукции $k \to k+1$
+  $$
+  ||\varphi_{k+2} + \varphi_{k+1}(t)|| = \left\Vert x_0 + \int_{t_0}^t
+  f(s, \varphi_{k+1}(s))ds - x_0 - \int_{t_0}^t
+  f(s, \varphi_k(s))ds\right\Vert \le
+  $$
+  $$
+  \le \ldots \le \left| \int_{t_0}^t L||\varphi_{k+1}(s) - \varphi_k(s)||ds
+  \right| \le
+  $$
+  $$
+  \le \frac{L^{k+1}N}{k!}\left| \int_{t_0}^t |s - t_0|^k ds \right| =
+  \frac{L^{k+1}N}{(k+1)!}|t-t_0|^{k+1}
+  $$
+  $\Rightarrow$ оценка справидлива $\forall k \in N$
+  $$
+  \frac{L^k N D^k}{k!} = b_k ~ \Rightarrow ||\varphi_0(t)|| +
+  \sum_{k=0}^{\infty} \frac{L^kN D^k}{k!}
+  $$
+  По признаку Даламбера
+  $$
+  \frac{b_{k+1}}{b_k} = \frac{L^{k+1}ND^k+1}{(k+1)!} \frac{k!}{L^K N D^k} =
+  \frac{LD}{k+1} \to 0 ~ k \to \infty
+  $$
+  $\Rightarrow$ $||\varphi_0(t)|| + \sum_{k=0}^{\infty} \frac{L^kND^k}{k!}$
+  сходится
+
+  Значит по признаку Вейерштраса функциональный ряд
+  $$
+  \varphi_0(t) + \sum_{k=0}^{\infty} (\varphi_{k+1}(t) - \varphi_k(t)) ~
+  \text{сходится равномерно на} [t_0 - h, t_0 + h]
+  $$
+  $\varphi_k(t) \rightrightarrows \varphi(t)$
+  $$
+  \varphi_0(t) + \sum_{k=0}^{\infty} (\varphi_{k+1}(t) - \varphi_k(t)) =
+  \varphi(t)
+  $$
+  $$
+  \varphi_{k+1} = x_0 \int_{t_0}^t f(s, \varphi_k(s))ds
+  $$
+  $$
+  \downarrow ~~~~~~~~ \downarrow ~~~~~~~~ \downarrow
+  $$
+  $$
+  \varphi = x_0 \int_{t_0}^t f(s, \varphi(s))ds
+  $$
+  Покажем что
+  $$
+  \int_{t_0}^t f(s, \varphi_k(s))ds \to \int_{t_0}^t f(s, \varphi(s))ds ~
+  k \to \infty
+  $$
+  $$
+  \left\Vert \int_{t_0}^t f(s, \varphi_k(s))ds - \int_{t_0}^t
+  f(s, \varphi(s))ds \right\Vert \le
+  $$
+  $$
+  \le \left| \int_{t_0}^t ||f(s, \varphi_k(s)) -
+  f(s, \varphi(s))||ds \right| \le
+  $$
+  $$
+  \le L \left|\int_{t_0}^t ||\varphi_k(s)) - \varphi(s))||ds \right| \le
+  $$
+  $$
+  \le L\max_{s \in [t_0, t]} ||\varphi_k(s)) - \varphi(s))|| \cdot |t-t_0|
+  \to 0
+  $$
+  $||\varphi_k(s)) - \varphi(s))|| \to 0 ~~ k \to 0$
+
+  Переходя к формуле пределов $\varphi(t)$ удовлитворяет интегральному
+  уравнению
+
+  По Лемме $\varphi(t)$ является решением задачи Коши
+
+  3) Единственость $\varphi(t)$
+
+  Пусть есть другое решение $\psi(t)$
+  $$
+  N_1 = \max_{t\in [t_0-h, t_0+h]} ||\varphi(t) - \psi(t)||
+  $$
+  $$
+  \varphi(t) = x_0 + \int_{t_0}^t f(s, \varphi(s))ds
+  $$
+  $$
+  \psi(t) = x_0 + \int_{t_0}^t f(s, \psi(s))ds
+  $$
+  $$
+  ||\varphi(t) - \psi(t)|| = \left\Vert \int_{t_0}^t (f(s, \varphi(s) -
+  f(s, \psi(s)))ds \right\Vert \le
+  $$
+  $$
+  \le \left| \int_{t_0}^t ||f(s, \varphi(s)) + f(s, \psi(s))||ds \right| \le
+  $$
+  $$
+  \le L \left| \int_{t_0}^t ||\varphi(s) - \psi(s)||ds \right| \le
+  $$
+  $$
+  \le L \left| \int_{t_0}^t N_1 L |s-t_0|ds \right| = \frac{L^2N}{2}|t-t_0|^2
+  \le N_1 L |t-t_0|
+  $$
+  $$
+  ||\varphi(t) - \psi(t)|| = \frac{L^kN_1|t-t_0|^k}{k!} \to 0 ~ \Rightarrow ~
+  \varphi(t) \equiv \psi(t)
+  $$
+\end{proof}
