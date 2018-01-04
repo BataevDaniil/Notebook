@@ -11,18 +11,18 @@
   $$
   \vec m = \frac{[\vec \varphi_u, \vec \varphi_{\upsilon}]}{|[\vec \varphi_u,
   \vec \varphi_{\upsilon}]|} = \frac{[\vec \varphi_u, \vec \varphi_{\upsilon}]}
-  {\sqrt{EG - F^2}} ~ \text{еденичная нормаль к поверхности}
+  {\sqrt{EG - F^2}} ~ \text{единичная нормаль к поверхности}
   $$
 \end{define}
 
 \begin{define}
-  $k_n$ проэкция $\stackrel{\bullet \bullet}{\vec \varphi}$ на нормаль
-  называется нормальной кривизной кривой на поверхности.
+  $k_n$ проэкция $\stackrel{\bullet \bullet}{\vec \varphi}$ нормального сечения
+  на нормаль поверхности называется нормальной кривизной кривой на поверхности.
 
-  $k_g$ проэкция $\stackrel{\bullet \bullet}{\vec \varphi}$ на касательную
-  плоскость называется геодезическая кривизна.
+  $k_g$ проэкция $\stackrel{\bullet \bullet}{\vec \varphi}$ нормального сечения
+  на касательную плоскость поверхности называется геодезическая кривизна.
 
-  $k$ кривизная данной кривой на поверхности
+  $k$ кривизна данной кривой на поверхности
   $$
   k^2 = k_g^2 + k_n^2
   $$
@@ -55,7 +55,7 @@
   \vec \varphi_{\upsilon} \stackrel{\bullet \bullet}{\upsilon}
   $$
   $$
-  k_n = (\vec m, \stackrel{\bullet \bullet}{\vec \varphi}) = (\vec \varphi_{uu}
+  k_n = (\stackrel{\bullet \bullet}{\vec \varphi}, \vec m) = (\vec \varphi_{uu}
   \stackrel{\bullet}{u^2} + 2\vec \varphi_{u\upsilon}\stackrel{\bullet}{u}
   \stackrel{\bullet}{\upsilon} + \vec \varphi_{\upsilon \upsilon}
   \stackrel{\bullet}{\upsilon^2}
@@ -65,8 +65,8 @@
   $$
   = \overbrace{(\vec m, \vec \varphi_{uu})}^L \stackrel{\bullet}{u^2} +
   2\overbrace{(\vec m, \vec \varphi_{u\upsilon})}^M \stackrel{\bullet}{u}
-  \stackrel{\bullet}{\upsilon} + \overbrace{(\vec m, \vec \varphi_{\upsilon})}^N
-  \stackrel{\bullet}{\upsilon^2} =
+  \stackrel{\bullet}{\upsilon} + \overbrace{(\vec m, \vec \varphi_{\upsilon
+  \upsilon})}^N \stackrel{\bullet}{\upsilon^2} =
   $$
   $$
   ds^2 = Ldu^2 + 2Mdud\upsilon + Nd\upsilon^2
@@ -95,8 +95,8 @@
   k_n = \frac{Lu'^2 + 2Mu'\upsilon' + N\upsilon'^2}{Eu'^2 + 2Fu'\upsilon' +
   G\upsilon'^2}
   $$
-  вчастности из этой формулы следует что нормальная кривизна кривой зависит
-  только от напрвления касательных векторов.
+  $\Rightarrow$ нормальная кривизна кривой зависит
+  только от направления касательных векторов.
 \end{block}
 
 \begin{define}[нормального сечения]
@@ -111,12 +111,15 @@
 \end{theorem}
 
 \begin{proof}
-  Достаточно показать что нормальная кривизна нормального сечени по
-  абсолютной величине равна его кривизне
+  $k_n = k \cos \alpha$
+
+  $k = k \cos \alpha$
+
+  $1 = \cos \alpha$ $\Rightarrow$ $\alpha = 0$ $\Rightarrow$ $k=k_n$
 \end{proof}
 
 \begin{title}[\Large]
-  Индикатрисса Дюпена. Главные напрвления и кривизны
+  Индикатрисса Дюпена. Главные направления и кривизны
 \end{title}
 
 \begin{define}[индикриссы Дюпена]
@@ -139,7 +142,7 @@
   \sqrt{R_n} = \frac{1}{\sqrt{|k_n|}} = \sqrt{\frac{Ex^2 + 2Fxy + Gy^2}{
   |Lx^2 + 2Mxy + Ny^2|}}
   $$
-  $$\sqrt{I} = \sqrt{\frac{I}{II}}
+  $$\sqrt{I} = \sqrt{\frac{I}{|II|}}
   $$
   $$
   |Lx^2 + 2Mxy + Ny^2| = 1
@@ -178,9 +181,7 @@
 
   $I(M) = du^2 + d\upsilon^2$
 
-  $II(M) = Ldu^2 + Nd\upsilon^2$
-
-  Пояснениe
+  $II(M) = Ldu^2 + Nd\upsilon^2$ то есть
 
   $E = |\vec \varphi_u|^2 = 1$
 
@@ -192,11 +193,10 @@
   касательной плоскости в точке $M$
 
   $Lx^2 + Ny^2 = \pm 1$ уравнение индектрисы Дюпена где оси координат являются
-  осями симметрии
-
-  $\vec \varphi_u, \vec \varphi_{\upsilon}$ главные направления
+  осями симметрии $\Rightarrow \vec \varphi_u, \vec \varphi_{\upsilon}$ главные
+  направления
   $$
-  k_n = \frac{II}{I} = \frac{Ldu^2 + Nd\upsilon^2}{du^2 + d\upsilon^2}
+  k_n = \frac{II(M)}{I(M)} = \frac{Ldu^2 + Nd\upsilon^2}{du^2 + d\upsilon^2}
   $$
   $$
   \vec \varphi_u = (1,0) ~~~ k_1 = \frac{L 1^2 + N 0^2}{1^2 + 0^2} = L
@@ -214,9 +214,8 @@
 \end{title}
 
 \begin{theorem}[Эйлера]
-  Нормальная кривизна кривой выражается следующей формулой
-  $k_n = k_1 \cos^2 \theta + k_2 \sin^2 \theta$ где $\theta$ угол между первыми
-  главными направлением и направлением  нормального сечения.
+  $k_n = k_1 \cos^2 \theta + k_2 \sin^2 \theta$ где $\theta$ угол между первым
+  главными направлением и направлением нормального сечения.
 \end{theorem}
 
 \begin{proof}
@@ -230,7 +229,7 @@
 \end{proof}
 
 \begin{block}[Следствие]
-  Если $k_1 \le k_2$ тогда $k_1 \le k_n \le k_2$
+  $k_1 \le k_2$ тогда $k_1 \le k_n \le k_2$
 \end{block}
 
 \begin{proof}
@@ -245,7 +244,7 @@
 \end{proof}
 
 \begin{title}[\Large]
-  Формулы для вычисления главных напрвлений и кривизн поверхностей
+  Формулы для вычисления главных направлений и кривизн поверхностей
 \end{title}
 
 \begin{theorem}
@@ -286,7 +285,7 @@
   \right.
   $$
   $$
-  -(M\eta_1 + N\eta_2)(E\eta_1 + E\eta_2) + (L\eta_1 + M\eta_2)(F\eta_1 +
+  -(M\eta_1 + N\eta_2)(E\eta_1 + F\eta_2) + (L\eta_1 + M\eta_2)(F\eta_1 +
   G\eta_2) = 0
   $$
   $$
@@ -343,13 +342,13 @@
   $$
   $H = \frac{k_1 + k_2}{2}$ среднаяя кривизна поверхности
 
-  $k = k_1 k_2$ полная Гаусова кривизна
+  $K = k_1 k_2$ полная Гаусова кривизна
   $$
   LN - M^2 > 0
   $$
-  $k > 0$ эллипс
+  $K > 0$ эллипс
 
-  $k < 0$ гиперболическая
+  $K < 0$ гиперболическая
 
-  $k = 0$ параболическая
+  $K = 0$ параболическая
 \end{theorem}
