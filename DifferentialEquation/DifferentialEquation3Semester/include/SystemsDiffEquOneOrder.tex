@@ -1,9 +1,10 @@
 \begin{title}[\Large]
-  Система дифференциальных уравнений в нормальной форме. Векторная запись.
+  Системы обыкновенных дифференциальных уравнений. Векторная запись.
   Задача Коши
 \end{title}
 
-\begin{define}[номальной системы дифференциальных уравнений]
+\begin{define}[системы обыкновенных дифференциальных уравнений]
+  Запись в нормальной форме означает что в правой части нет производной
   $$
   \left\{
   \begin{array}{l}
@@ -34,7 +35,7 @@
   \end{array}
   \right)
   $$
-  $x'(t) = f(t, x(t))$ $x(t)$ неизвестный вектор функции
+  $x'(t) = f(t, x(t))$ где $x(t)$ неизвестный вектор функции
   $$
   x(t):<\alpha, \beta> \to R^n
   $$
@@ -45,20 +46,18 @@
 
 \begin{block}[Задача Коши]
   $$
-  t_0 \in <\alpha, \beta> ~~~ x_0 \in R^n ~~~ x(t_0) = x_0 ~~~
+  t_0 \in <\alpha, \beta> ~~~ x_0 \in R^n ~~~
   \left\{
   \begin{array}{l}
-    x_1(t_0) = x_{0_1} \\
-    x_2(t_0) = x_{0_2} \\
-    \ldots ~~~ \ldots \\
-    x_n(t_0) = x_{0_n}
+    x'(t) = f(t,x(t)) \\
+    x(t_0) = x_0
   \end{array}
   \right.
   $$
 \end{block}
 
-\begin{block}[Решением системы CДУ называется]
-  $\varphi(t): ~ <\varphi, \beta> \to R^n$
+\begin{block}[Решением системы CОДУ называется]
+  $\varphi(t): ~ <\alpha, \beta> \to R^n$
 
   1) непрерывна дифференциируема на $<\alpha, \beta>$
 
@@ -123,15 +122,16 @@
 \end{define}
 
 \begin{block}[Эквивалентность комплексной и вещественной системы]
-  $a_{ij}(t), g(t)$ непрерывны на $<\alpha, \beta> \in C^n$
+  $a_{ij}(t), g(t)$ непрерывны на $<\alpha, \beta> \in \mathbb{C}^n$
 
   $A(t) = A_1(t) + iA_2(t)$
 
   $g(t) = g_1(t) + ig_2(t)$
 
   $x(t) = x_1(t) + ix_2(t)$
-
-  $x'(t) = A(t)x(t) + g(t)$
+  $$
+  x'(t) = A(t)x(t) + g(t)
+  $$
   $$
   x'_1(t) + ix'_2(t) = (A_1(t) + iA_2(t)) (x_1(t) + ix_2(t)) +
   (g_1(t) + ig_2(t)) =
@@ -139,6 +139,14 @@
   $$
   = A_1(t)x_1(t) + iA_2(t)x_1(t) + iA_1(t)x_2(t) - A_2(t)x_2(t) +
   g_1(t) + ig_2(t)
+  $$
+  $$
+  \left\{
+  \begin{array}{l}
+    x'_1(t) = A_1(t)x_1(t) - A_2(t)x_2(t) + g_1(t) \\
+    ix'_2(t) = iA_2(t)x_1(t) + iA_1(t)x_2(t) + ig_2(t)
+  \end{array}
+  \right.
   $$
   $$
   \left\{
@@ -176,6 +184,18 @@
   $$
 \end{block}
 
+\begin{block}[Задача Коши]
+  $$
+  t_0 \in <\alpha, \beta> ~~~ x_0 \in R^n ~~~
+  \left\{
+  \begin{array}{l}
+    x'(t) = A(t)x(t) + g(t) \\
+    x(t_0) = x_0
+  \end{array}
+  \right.
+  $$
+\end{block}
+
 \begin{title}[\Large]
   Лемма об эквивалентности задачи Коши для линейной системы интегральному
   уравнению
@@ -184,7 +204,7 @@
 \begin{block}[Лемма об эквивалентности задачи Коши для линейной системы]
   Задача Коши эквивалентна
   $$
-  x(t) = x_0 + \int_{t_0}^t A(s)x(s)dx +
+  x(t) = x_0 + \int_{t_0}^t A(s)x(s)ds +
   \int_{t_0}^t g(s)ds
   $$
   тоесть любое решение задачи Коши явялется решением этого уравнения и наоборот.
@@ -200,22 +220,14 @@
   \int_{t_0}^t g(s) ds
   $$
   $$
-  \int_{t_0}^t \varphi'(s)ds = \varphi(s)|_{t_0}^t = \varphi(t) - x_0
-  $$
-  $$
   \varphi(t) = x_0 + \int_{t_0}^t A(s) \varphi(s) ds  + \int_{t_0}^t g(s)ds
   $$
-
   $\Leftarrow$ $\varphi(t)$ решение
   $$
   \varphi(t) = x_0 + \int_{t_0}^t A(s)\varphi(s)dx +
   \int_{t_0}^t g(s)ds
   $$
   тогда $\varphi(t)$ непрерывная $\Rightarrow$ дифференцируема
-
-  $\varphi'(t) = A(t)\varphi(t) + g(t)$
-
-  $\varphi(t_0) = x_0$
 \end{proof}
 
 \begin{title}[\Large]
