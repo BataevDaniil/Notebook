@@ -11,13 +11,18 @@
 \newcommand{\const}{\mathrm{const}}
 \newcommand{\Gr}{\mathrm{Gr}}
 
+\newcommand{\bd}[1]{{\bfseries #1}} %текст жирным (bold)
+\newcommand{\kv}{\emph} %текст курсивом
+\newcommand{\mt}{\mathit} %математический шрифт в формулах
+\newcommand{\bk}[1]{\bd{\kv{#1}} } %текст жирный и курсивным шрифтом
+
 \newenvironment{theorem}[1][]{\colorbox[rgb]{1, .4, .6}
 {\bfseries{Теорема #1}}\\}{\\ \colorbox[rgb]{0, 0, 0}{1}\\}
 
 \newenvironment{proof}[1][]{\colorbox[rgb]{0, 0.8, .5}{\bfseries{Доказательство #1}}
 \\}{\\ \colorbox[rgb]{0, 0, 0}{1}\\}
 
-\newenvironment{define}[1][]{\colorbox[rgb]{1, .4, 1}
+\newenvironment{defin}[1][]{\colorbox[rgb]{1, .4, 1}
 {\bfseries{Определение #1}}\\}{\\\colorbox[rgb]{0, 0, 0}{1}\\}
 
 \newenvironment{block}[1][]{\colorbox[rgb]{.9, .5, .0}
