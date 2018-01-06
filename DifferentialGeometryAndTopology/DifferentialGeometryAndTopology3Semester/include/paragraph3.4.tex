@@ -19,16 +19,30 @@
 \end{define}
 
 \begin{theorem}
-  $f:(X, \mathcal{T}) \to (Y, \mathcal{T}')$ является непрерывным когда
-  $\forall V \in \mathcal{T}'$ его полный праобраз
+  $f:(X, \mathcal{T}) \to (Y, \mathcal{T}')$ является непрерывным
+  $\Leftrightarrow$ $\forall V \in \mathcal{T}'$ его полный праобраз
   $$
   f^{-1}(V) = \{ x \in X ~ | ~ f(x) \in V \} \in \mathcal{T}
   $$
-  является открытым
+  является открытым.
+
+  В учебнике Александра Мерзаханяна 59
 \end{theorem}
 
 \begin{proof}
-  В учебнике Александра Мерзаханяна
+  $\Rightarrow$ Пусть $f: X \to Y$ непрерывно и $V \subset Y$ открыто. Докажем,
+  что множество $U = f^{-1}(V)$ открыто в $X$.
+  Пусть $x_0 \in U ~~ y_0 = f(x_0)$ тогда поскольку $V$ является
+  открытой окрестностью точки $y_0 \in Y$, то в силу непрерывности
+  отображения $f(x_0)$ существует открытая $O(x_0) \subset X ~~
+  f(O(x_0))\subset V ~ \Rightarrow O(x_0) \subset U$ $\Rightarrow$ $U$ открыто в $X$.
+
+  $\Leftarrow$ Пусть $V \subset Y$ открыто $U = f^{-1}(V)$ где $U \subset X$ открыто
+  и $x_0 \in X$. Докажем, $f(x_0)$ непрерывно. Пусть
+  $y_0 = f(x_0)$, $V$ произвольная открытая окрестность $y_0$ тогда
+  $U = f^{-1}(V)$ будет, по условию, открытой окрестностью точки $x_0$, образ
+  которой, очевидно, целиком содержится в $V$. Таким образом, отображение $f$
+  непрерывно в каждом точке $x_0 \in X$, т. е. является непрерывным отображением.
 \end{proof}
 
 \begin{title}[\Large]
@@ -56,7 +70,7 @@
 
 \begin{proof}
   $f: (X, \mathcal{T}) \to (Y, \mathcal{T}')$ непрерывна и $(S, \mathcal{T}_s)
-  \subseteq (X, \mathcal{T})$ топологическое подпространство
+  \subseteq (X, \mathcal{T})$
 
   нужно доказать что $f|S : (S, \mathcal{T}_s) \to (Y, \mathcal{T}')$
   $$
@@ -88,25 +102,27 @@
 \begin{theorem}
   Всякий гомеоморфизм устанавливает взаимооднозначное соответствие между
   открытыми множествами. И обратно, если отображение устанавливает
-  взаимооднозначное соответствие мужду открытыми множествами то оно является
+  взаимооднозначное соответствие между открытыми множествами то оно является
   гомеоморфизмом.
 \end{theorem}
 
 \begin{proof}
   $\Rightarrow$ $f:(X, \mathcal{T}) \stackrel{\approx}{\to} (Y, \mathcal{T}')$
   $$
-  \alpha : U \in \mathcal{T} \mapsto f(U) = (f^{-1})^{-1}(U) \in \mathcal{T}
+  \alpha : U \in \mathcal{T} \mapsto f(U) = (f^{-1})^{-1}(U) \in \mathcal{T}'
   $$
   так как $f^{-1}$ непрерывно (всякое открытое множество отображается в открытое
   при гомеоморфизме)
   $$
-  \beta : V \in \mathcal{T} \mapsto f^{-1}(V) \in \mathcal{T}
+  \beta : V \in \mathcal{T}' \mapsto f^{-1}(V) \in \mathcal{T}
   $$
+  так как $f$ непрерывна. Покажем что эти отображения взаимооднозначны.
   $$
   \alpha \cdot \beta (V) = \alpha(\beta(V)) = f(f^{-1}(V)) = V
   $$
   $$
-  \beta \cdot \alpha (V) = \beta(\alpha(V)) = f(f^{-1}(V)) = V
+  \beta \cdot \alpha (U) = \beta(\alpha(U)) = f^{-1}(f(U)) = U
   $$
-  $\Leftarrow$
+  $\Leftarrow$ так как биктивно то $\exists$ полный праобраз открыт
+  $\Rightarrow$ непрерывна $f, f^{-1}$
 \end{proof}
