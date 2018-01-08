@@ -38,7 +38,7 @@
 \end{theorem}
 
 \begin{proof}
-  1) $\vec \varphi_u \vec \varphi_{\upsilon}$ - л.н.з
+  1) $\vec \varphi_u \vec \varphi_{\upsilon}$ л.н.з
 
   2) Всякий касательный вектор поверхости точки $m_0$ линейно выражается через
   $\vec \varphi_u \vec \varphi_{\upsilon} ~~~ \alpha \vec \varphi_u +\beta
@@ -53,7 +53,7 @@
   \right. ~~~ m_0 (u_0, \upsilon_0)
   $$
   $$
-  \text{при} ~ t = 0 ~
+  t = 0 ~
   \left\{
     \begin{array}{l}
       u = u_0 \\
@@ -62,36 +62,12 @@
   \right. ~ \Rightarrow ~ \text{кривая проходит через точку} ~
   m_0 (u_0, \upsilon_0)
   $$
-  $\vec \varphi' = \vec \varphi_u u' + \vec \varphi_{\upsilon}
-  \upsilon' = \alpha \vec \varphi_u + \beta \vec \varphi_{\upsilon}$
-
-  $\vec \varphi_u, \vec \varphi_{\upsilon}$ касательные векторы, которые
-  образуют базис для всех касательных векторов.
-
-  Расмотрим координатные линии $\upsilon = \const ~~~ u = \const$
   $$
-  u = \const ~~~
-  \left\{
-    \begin{array}{l}
-      u = \const \\
-      \upsilon = t
-    \end{array}
-  \right.
+  \vec \varphi' = \vec \varphi_u u' + \vec \varphi_{\upsilon} \upsilon' =
+  (\alpha t + u_0)' \vec \varphi_u + (\beta t + \upsilon_0)'
+  \vec \varphi_{\upsilon} = \alpha \vec \varphi_u  +
+  \beta \vec \varphi_{\upsilon}
   $$
-  $\vec \varphi' = \vec \varphi_u u' + \vec \varphi_{\upsilon}
-  \upsilon' = \vec \varphi_u 0 + \vec \varphi_{\upsilon} 1 =
-  \vec \varphi_{\upsilon}$
-  $$
-  \upsilon = \const ~~~
-  \left\{
-    \begin{array}{l}
-      u = t \\
-      \upsilon = \const
-    \end{array}
-  \right.
-  $$
-  $\vec \varphi' = \vec \varphi_u u' + \vec \varphi_{\upsilon}
-  \upsilon' = \vec \varphi_u 1 + \vec \varphi_{\upsilon} 0 = \vec \varphi_u$
 \end{proof}
 
 \begin{define}[локальной системы касательных векторов в точке поверхности]
@@ -109,14 +85,14 @@
 \end{define}
 
 \begin{theorem}
-  Поверхности $F(x,y,z) = 0$
+  Поверхность $F(x,y,z) = 0$
   $$
   \grad F = \left( \frac{\partial F}{\partial x},
   \frac{\partial F}{\partial y},
   \frac{\partial F}{\partial z}
    \right)
   $$
-  является нормалью к касательной плоскости
+  нормаль к касательному вектору кривой поверхности
 \end{theorem}
 
 \begin{proof}
@@ -130,4 +106,26 @@
   \frac{\partial F}{\partial z}\frac{dz}{dt} =
   (\grad F, \vec \varphi') = 0 ~ \Rightarrow ~ \grad F \perp \vec \varphi'
   $$
+\end{proof}
+
+\begin{theorem}
+  Плоскость $\pi$ проходящая через точку $m_0$ поверхности является касательной
+  плоскостью $\Leftrightarrow$
+  $$
+  \lim_{m \to m_0} \frac{\rho (m, \pi)}{\rho(m, m_0)} = 0
+  $$
+\end{theorem}
+
+\begin{proof}
+  $\Rightarrow$ те же суждения что и ниже только в обратную сторону.
+
+  $\Leftarrow$
+  $$
+  \lim_{m \to m_0} \frac{\rho (m, \pi)}{\rho(m, m_0)} = 0
+  $$
+  означает что со всех сторон точки $m_0$ существуют все касательные вектора
+  и так как базис всех касательных вектором $\vec \varphi_u,
+  \vec \varphi_{\upsilon}$ тогда плоскость проходит через $\vec \varphi_u,
+  \vec \varphi_{\upsilon}$ и точку $m_0$ $\Rightarrow$ является касательной
+  плоскотью в точке $m_0$
 \end{proof}

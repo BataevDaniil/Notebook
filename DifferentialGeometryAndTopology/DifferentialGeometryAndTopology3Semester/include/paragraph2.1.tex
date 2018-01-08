@@ -79,7 +79,7 @@
   $$
 \end{block}
 
-\begin{define}
+\begin{define}[регулярной поверхности]
   Гладка поверхность $\vec \varphi = \vec \varphi
   (x(u, \upsilon), y(u, \upsilon), z(u, \upsilon))$ называется регулярной если
   $$
@@ -102,8 +102,8 @@
   $\vec \varphi = \vec \varphi(u, \upsilon)$ гладкая поверхность и точка
   $(u_0, \upsilon_0) ~~ \vec \varphi_u (u_0, \upsilon_0),
   \vec \varphi_{\upsilon} (u_0, \upsilon_0)$ линейно независисмы, тогда
-  $\exists (u, \upsilon) \in O(u_0, \upsilon_0) ~~ \varphi : (u, \upsilon)
-  \to R^3$ инеъктивно
+  $\exists O(u_0, \upsilon_0) ~~ \varphi : O(u_0, \upsilon_0) \to R^3$
+  инъективно
 \end{theorem}
 
 \begin{proof}
@@ -112,17 +112,16 @@
 
 \begin{block}[Следствие]
   Локально каждая точка образа поверхности однозначно определяется своими
-  параметрами $(u, \upsilon)$ (невозможно что две точки проходят в одну точку
-  образа)
+  параметрами $(u, \upsilon)$.
 
   Будем говорит что $(u, \upsilon)$ задаются на поверхности локальную систему
-  координат
+  координат.
 \end{block}
 
 \begin{theorem}
   $f: U \subseteq R^n \to R^m ~~ m \ge n$ гладкое отображение и точка
-  $x_0 \in U ~~ \rang df(x_0) = n$ тогда $\exists x \in O(x_0) ~~
-  f: x \to R^m$ инективно
+  $x_0 \in U ~~ \rang df(x_0) = n$ тогда $\exists O(x_0) ~~
+  f: O(x_0) \to R^m$ инективно
 \end{theorem}
 
 \begin{proof}
@@ -140,8 +139,8 @@
   \right)^T
   $$
   по условию $\rang df(u_0, \upsilon_0) = 2$ тогда по следствию из теоремы о
-  неявной функции следует что $\exists (u, \upsilon) \in O(u_0, \upsilon_0) ~~
-  f: (u, \upsilon) \to R^3$ инъективна
+  неявной функции следует что $\exists O(u_0, \upsilon_0) ~~
+  f: O(u_0, \upsilon_0) \to R^3$ инъективна
 \end{proof}
 
 \begin{title}[\Large]
@@ -158,7 +157,7 @@
   \frac{\partial F(x_0, y_0, z_0)}{\partial z}
   \right) \not= 0
   $$
-  тогда $\exists x,y,z \in O(x_0, y_0, z_0) ~~ F(x, y, z) = 0$ является образом
+  тогда $\exists O(x_0, y_0, z_0) ~~ F(O(x_0, y_0, z_0)) = 0$ является образом
   регулярной поверхности.
 
   В этом случае мы будем говорить что эта регулярная поверхность задана
@@ -175,11 +174,11 @@
   $\frac{\partial F(x_0, y_0, z_0)}{\partial x} \not= 0$ или
   $\frac{\partial F(x_0, y_0, z_0)}{\partial y} \not= 0$ или
   $\frac{\partial F(x_0, y_0, z_0)}{\partial z} \not= 0$ $\Rightarrow$
-  по теореме о неявной функции $\exists (x, y, z) \in O(x_0, y_0, z_0) ~~~
-  F(x, y, z) = 0$ задается соотношением $z = f(x,y)$
+  по теореме о неявной функции $\exists O(x_0, y_0, z_0) ~~
+  F(O(x_0, y_0, z_0)) = 0$ задается соотношением $z = f(x,y)$
   то есть состоит из точек вида $(x, y, f(x, y))$ $\Rightarrow$ это множество
   точек задается параметрически $(u, \upsilon, f(u, \upsilon))$
-  $\Rightarrow$ $(1, \upsilon, f_u(u, \upsilon)) \not= \vec 0 ~~~
+  $\Rightarrow$ $(1, \upsilon, f_u(u, \upsilon)) \not= \vec 0 ~~
   (u, 1, f_{\upsilon}(u, \upsilon)) \not= \vec 0$ кривая
   заданная этим уравнением регулярная.
 \end{proof}

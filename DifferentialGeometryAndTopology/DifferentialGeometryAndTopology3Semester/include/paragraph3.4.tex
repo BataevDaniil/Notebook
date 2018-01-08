@@ -12,19 +12,19 @@
   $$
   \forall O(f(x_0)) ~~ \exists O(x_0) ~~ f(O(x_0)) \subseteq O(f(x_0))
   $$
-  Все непрерывные функции в математическом анализе непрерывны в топологию.
+  Все непрерывные функции в математическом анализе непрерывны в топологии.
 
   Если отображение непрерывно в каждой точке пространства $X$ то оно
   называется непрерывным
 \end{define}
 
 \begin{theorem}
-  $f:(X, \mathcal{T}) \to (Y, \mathcal{T}')$ является непрерывным
-  $\Leftrightarrow$ $\forall V \in \mathcal{T}'$ его полный праобраз
+  $f:(X, \mathcal{T}) \to (Y, \mathcal{T}')$ непрерыва
+  $\Leftrightarrow$ $\forall V \in \mathcal{T}'$ его полный прообраз
   $$
   f^{-1}(V) = \{ x \in X ~ | ~ f(x) \in V \} \in \mathcal{T}
   $$
-  является открытым.
+  открыт.
 
   В учебнике Александра Мерзаханяна 59
 \end{theorem}
@@ -60,26 +60,23 @@
   $$
   $$
   V \in \mathcal{T}'' ~~~ (gf)^{-1}(V) =
-  f^{-1}(\overbrace{g^{-1}(V)}^{\mathcal{T}'}) \in \mathcal{T}
+  f^{-1}(g^{-1}(V)) \in \mathcal{T}
   $$
 \end{proof}
 
 \begin{theorem}
-  Ограничения непрерывного отображения на подпространства является непрерывным.
+  $f: (X, \mathcal{T}) \to (Y, \mathcal{T}')$ непрерывна тогда его
+  подпространство $(S, \mathcal{T}_s) \subseteq (X, \mathcal{T})$
+  $f|S : (S, \mathcal{T}_s) \to (Y, \mathcal{T}')$ непрерывно.
 \end{theorem}
 
 \begin{proof}
-  $f: (X, \mathcal{T}) \to (Y, \mathcal{T}')$ непрерывна и $(S, \mathcal{T}_s)
-  \subseteq (X, \mathcal{T})$
-
-  нужно доказать что $f|S : (S, \mathcal{T}_s) \to (Y, \mathcal{T}')$
   $$
   V \in \mathcal{T}' ~~~ (f | S)^{-1}(V) = \{ x \in S ~ | ~ f(x) \in V \} =
   $$
   $$
   = \{x \in X ~ | ~ f(x) \in V\} \cap S = S \cap f^{-1}(V) \in \mathcal{T}_s
   $$
-  $f^{-1}(V)$ открыто так как $f$ непрерывно
 \end{proof}
 
 \begin{title}[\Large]
@@ -87,7 +84,7 @@
 \end{title}
 
 \begin{define}[гомеоморфизма]
-  $(X, \mathcal{T}), (Y, \mathcal{T}')$ топологические пространства тогда
+  $(X, \mathcal{T}), (Y, \mathcal{T}')$ топологические пространства
   $f: X \to Y$ называется гомеоморфизмом если
 
   1) $f$ биективное отображение
@@ -100,10 +97,8 @@
 \end{define}
 
 \begin{theorem}
-  Всякий гомеоморфизм устанавливает взаимооднозначное соответствие между
-  открытыми множествами. И обратно, если отображение устанавливает
-  взаимооднозначное соответствие между открытыми множествами то оно является
-  гомеоморфизмом.
+  Гомеоморфизм открытых множеств $\Leftrightarrow$ биективность открытых
+  множеств.
 \end{theorem}
 
 \begin{proof}
@@ -111,18 +106,15 @@
   $$
   \alpha : U \in \mathcal{T} \mapsto f(U) = (f^{-1})^{-1}(U) \in \mathcal{T}'
   $$
-  так как $f^{-1}$ непрерывно (всякое открытое множество отображается в открытое
-  при гомеоморфизме)
   $$
   \beta : V \in \mathcal{T}' \mapsto f^{-1}(V) \in \mathcal{T}
   $$
-  так как $f$ непрерывна. Покажем что эти отображения взаимооднозначны.
   $$
   \alpha \cdot \beta (V) = \alpha(\beta(V)) = f(f^{-1}(V)) = V
   $$
   $$
   \beta \cdot \alpha (U) = \beta(\alpha(U)) = f^{-1}(f(U)) = U
   $$
-  $\Leftarrow$ так как биктивно то $\exists$ полный праобраз открыт
-  $\Rightarrow$ непрерывна $f, f^{-1}$
+  $\Leftarrow$ так как биктивны открытые множества
+  $\Rightarrow$ непрерывны $f, f^{-1}$
 \end{proof}

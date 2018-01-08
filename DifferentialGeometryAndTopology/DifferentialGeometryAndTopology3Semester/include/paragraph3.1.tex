@@ -27,28 +27,27 @@
 \end{define}
 
 \begin{define}[топологического пространства]
-  Множество $(X, \mathcal{T})$ на котором задана топологическая структура это
-  топологическое пространство.
+  Множество $(X, \mathcal{T})$ на котором задана топологическая структура
+  называют топологическим пространством.
 
   Замечание: топология на $X$ может быть задана выделением системы замкнутых
   подмножеств.
 \end{define}
 
 \begin{define}[открытого множества]
-  $(X, \mathcal{T})$ топологическое пространство тогда множество
-  $\mathcal{T}$ будем называть открытым множеством.
+  $(X, \mathcal{T})$ топологическое пространство тогда
+  $\mathcal{T}$ называют открытым множеством.
 \end{define}
 
 \begin{define}[замкнутого множества]
-  Множество $A \subseteq X$ называется замкнутым, если его дополнение
-  $CA = X \backslash A$ является открытым.
+  Множество $A \subseteq X$ называется замкнутым, если
+  $CA = X \backslash A$ открыто.
 \end{define}
 
 \begin{block}[Свойства замкнутых множеств]
-  1) $\oslash, X$ тревиальные подмножества являются замкнутыми
+  1) $\oslash, X$ замкнуты
 
-  2) $F_{\alpha}$ замкнуто тогда $\forall \alpha ~~
-  \cap F_{\alpha}$ является замкнутым
+  2) $F_{\alpha}$ замкнуто тогда $\forall \alpha ~~ \cap F_{\alpha}$ замкнуты
 
   3) $F_1, \ldots, F_k$ замкнуто тогда $F_1 \cup \ldots \cup F_k$ замкнуто
 \end{block}
@@ -65,7 +64,7 @@
   $$
   замкнуто так как $\forall \alpha ~ \cup U_{\alpha} \in \mathcal{T}$
 
-  2) $i = 1,2, \ldots k$ $F_i$ замкнуто тогда $F_i = CU_i$ для $U_i \in
+  3) $i = 1,2, \ldots k$ $F_i$ замкнуто тогда $F_i = CU_i$ для $U_i \in
   \mathcal{T}$ тогда
   $$
   \cup F_i = \cup CU_i = C(\cap U_i)
@@ -73,7 +72,7 @@
   замкнуто так как $\cap U_i \in \mathcal{T}$
 \end{proof}
 
-\begin{define}
+\begin{define}[метризуемой топологии]
   Топология на множестве $X$ называется метризуемой если она может быть
   определена с помощью некоторой метрики $\mathcal{T_{\rho}}$
 \end{define}
@@ -84,33 +83,37 @@
   $$
   $(X,\rho)$ множество $X$ с метрикой $\rho$
 
-  $U \subseteq X$ называется открытым если $\forall a \in U ~~ \exists r > 0 ~~
-  B_r(a) \subseteq U$
+  $U \subseteq X$ называется открытым если $\forall a \in U ~~ \exists r_a > 0
+   ~~ B_{r_a}(a) \subseteq U$
 
   $\mathcal{T}_{\rho}$ семейство открытых множеств в $X$
 
   1) $\oslash, X \in \mathcal{T}_{\rho}$
 
   2) $U_{\alpha} \in \mathcal{T}_{\rho}$ тогда $\forall \alpha ~ \cup U_{\alpha}
-   \in \mathcal{T}_{\rho}$
+  \in \mathcal{T}_{\rho}$
 
   \begin{proof}
     $U = \cup_{\alpha} U_{\alpha}$ по определению открыто
 
     пусть $a \in U$ тогда $\exists \alpha_0 ~~
-    a \in U_{\alpha_0}$ так как $U_{\alpha_0}$ открыто то $\exists B_r(a)$
-    лежащий в $U_{\alpha_0} ~ \Rightarrow ~ B_r (a) \subseteq U ~ \Rightarrow ~
+    a \in U_{\alpha_0}$ так как $U_{\alpha_0}$ открыто то $\exists B_r(a) \in
+    U_{\alpha_0} ~ \Rightarrow ~ B_r (a) \subseteq U ~ \Rightarrow ~
     U \in \mathcal{T}_{\rho}$
   \end{proof}
-  3)
+
+  3) $i = 1,2,\ldots, k ~~ U_i \in \mathcal{T}_{\rho}$ тогда $\cap U_i \in
+  \mathcal{T}_{\rho}$
 \end{proof}
 
 \begin{theorem}
-  $\forall B_r(a)$ в метрическом пространстве является открытым множеством.
+  $\forall B_r(a)$ в метрическом пространстве открыт.
 \end{theorem}
 
 \begin{proof}
-  Пусть $x \in B_r(a) ~~ d = \rho(x, a)$ тогда $B_{r-d}(x) \subseteq B_r(a)$
+  $\forall x \in B_r(a) ~~ d = \rho(x, a)$ тогда $B_{r-d}(x) \subset B_r(a)$
+  так как $\forall c \in \{x \in X ~ |~ \rho(a,x) = r\} ~~
+  \rho(a,c) < \rho(a,x) + \rho(x,c)$
 \end{proof}
 
 \begin{theorem}
@@ -138,8 +141,7 @@
 \end{theorem}
 
 \begin{proof}
-  В метрическом прстранстве достаточно
   $$
-  U = B_{\frac{d}{2}}(a) ~~~ V = B_{\frac{d}{2}}(b) ~ \text{где} ~ d = \rho(a,b)
+  d = \rho(a,b) ~~ B_{\frac{d}{2}}(a) \cap B_{\frac{d}{2}}(b) = \oslash
   $$
 \end{proof}

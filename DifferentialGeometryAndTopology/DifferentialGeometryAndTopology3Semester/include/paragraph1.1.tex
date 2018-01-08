@@ -69,27 +69,17 @@
   $\varphi : (t_0 - \varepsilon, t_0 + \varepsilon) \to R^3$ инективно.
 \end{theorem}
 
-\begin{define}[касательной прямой регулярной кривой]
-  \includegraphics[width = 4.5cm]{tangent}
-
-  $\varphi' (t_0) \not = \vec 0$ тогда касательная прямая
-\end{define}
-
 \begin{define}[соприкасающейся плоскости]
   \includegraphics[width = 6cm]{beleg}
 
-  Соприкасающиейся плоскость проходит через точку $t_0$ и пару л.н.з
-  векторов $\vec \varphi', \vec \varphi''$.
+  Соприкасающиейся плоскость проходит через точку $t_0$ и л.н.з
+  $\vec \varphi', \vec \varphi''$.
 \end{define}
 
-\begin{define}[точки бирегулярности]
-  Точка $t_0$ называется точкой биригулярности, если $\vec \varphi' (t_0),
-  \vec \varphi''(t_0)$ линейно независимы (неколинеарны).
-\end{define}
-
-\begin{define}[бирегулярности кривой]
-  Кривая $\vec \varphi = \vec \varphi(t)$ называется биригулярной если все ее
-  точки являются точками бирегулярности
+\begin{define}[бирегулярноой кривой]
+  Кривая $\vec \varphi = \vec \varphi(t)$ называется биригулярной на
+  $[a,b]$ если $\forall t \in [a,b] ~~ \vec \varphi' (t), \vec \varphi''(t)$
+  л.н.з
 
   \includegraphics[width = 6cm]{notBeleg}
 \end{define}
@@ -105,7 +95,7 @@
   \grad F(x_0, y_0) = \left( \frac{\partial F(x_0, y_0)}{\partial x},
   \frac{\partial F(x_0, y_0)}{\partial y} \right) \not= \vec 0
   $$
-  тогда $\exists (x, y) \in O(x_0, y_0) ~~~ F(x, y) = 0$ является образом
+  тогда $\exists O(x_0, y_0) ~~ F(O(x_0, y_0)) = 0$ является образом
   регулярной кривой.
 
   В этом случа мы будем говорить что это регулярная кривая задана неявно
@@ -169,7 +159,7 @@
   $$
   $\frac{\partial F(x_0, y_0)}{\partial x} \not= 0$ или
   $\frac{\partial F(x_0, y_0)}{\partial y} \not= 0$ $\Rightarrow$
-  по теореме о неявной функции $\exists (x, y) \in O(x_0, y_0) ~~~ F(x, y) = 0$
+  по теореме о неявной функции $\exists O(x_0, y_0)$ $F(O(x_0, y_0)) = 0$
   задается соотношением $y = f(x)$
   то есть состоит из точек вида $(x, f(x))$ $\Rightarrow$ это множество точек
   задается параметрически $(t, f(t))$  $\Rightarrow$

@@ -13,36 +13,31 @@
 
 \begin{define}[точки прикосновения]
   $(X, \mathcal{T})$  и $A \subseteq X$ и $x \in X$ называется точкой
-  прикосновения множества $A$
-  если всякая его окрестность пересекается с $A$
+  прикосновения множества $A$ если $\forall O(x) \cap A \not= \oslash$
 \end{define}
 
 \begin{theorem}
-  1) $A$ открыто $\Leftrightarrow$ $\forall x \in A$ точка является
-  внутренней
+  1) $A$ открыто $\Leftrightarrow$ содержит все свои внутренние точки
 
-  2) $A$ замкнуто $\Leftrightarrow$ содержит все свои точки
-  прикосновения
+  2) $A$ замкнуто $\Leftrightarrow$ содержит все свои точки прикосновения
 \end{theorem}
 
 \begin{proof}
-  1) $\Rightarrow$ Предположим что $A$ открытое множество тогда $\forall a \in A
-  ~~ O(a) = A \subseteq A$
+  1) $\Rightarrow$ $A$ открытое множество тогда $\forall a \in A
+  ~~ \exists O(a) \subseteq A$ $\Rightarrow$ $a$ внутренняя точка
 
-  $\Leftarrow$ Предположим что все точки $A$ являются внутренними то есть
+  $\Leftarrow$ все точки $A$ внутренние то есть
   $\forall a \in A ~~ \exists O(a) \subseteq A$ тогда
   $$
   A = \bigcup_{a \in A} O(a) ~ \text{открыто}
   $$
-  2) $\Rightarrow$ Предположим что $A$ замкнуто тогда если $x \in CA$
-  то $x$ не является точка прикосновения $\Rightarrow$ $O(a) = A$ не пересекаеся
-  c $A$  $\Rightarrow$ $x$ не является точкой прикосновения
+  2) $\Rightarrow$ $A$ замкнуто тогда если $x \in CA$
+  то $x$ не точка прикосновения $\Rightarrow$ $\exists O(x) \cap A = \oslash$
+  $\Rightarrow$ $x$ не точка прикосновения
 
-  $\Leftarrow$ Предположим что $A$ содержит все свои точки прикосновения нужно
-  доказать что $A$ замкнуто или $CA$ открыто. Покажем что $\forall x \in CA$
-  внутренняя так как
-  $x \in CA$ то $x$ не является точкой прикосновением $A$ $\Rightarrow$
-  $\exists O(x)$ не пересекающаяся с $A$ $\Rightarrow$ $O(x) \subseteq CA$
+  $\Leftarrow$ $A$ содержит все свои точки прикосновения $\forall x \in CA$ не
+  точка прикосновения $A$ $\Rightarrow$ $\exists O(x) \cap A = \oslash ~
+  \Rightarrow ~ O(x) \subseteq CA$
 \end{proof}
 
 \begin{define}[внутренности множества]
@@ -50,18 +45,15 @@
   $\stackrel{\bullet}{A} \subseteq A$
 \end{define}
 
-\begin{define}[Замыкания]
-  Замыканием множества $A$ называется множество всех его прикосновений
+\begin{define}[замыкания]
+  Замыканием множества $A$ называется множество всех его точек прикосновений
   $A \subseteq \overline{A}$
 \end{define}
 
 \begin{block}[Следствие]
-  1) $A$ открыто когда все его точки внутренни то есть
-  $A \subseteq \stackrel{\bullet}{A} ~ \Leftrightarrow ~
-  A = \stackrel{\bullet}{A}$
+  1) $A$ открыто $\Leftrightarrow$ множество $A$ внутренненость
 
-  2) $A$ является замкнутым $\Leftrightarrow ~ \overline{A} \subseteq A ~
-  \Leftrightarrow ~ A = \overline{A}$
+  2) $A$ замкнуто $\Leftrightarrow$ замыкание множества $A$
 \end{block}
 
 \begin{define}[границы множества]

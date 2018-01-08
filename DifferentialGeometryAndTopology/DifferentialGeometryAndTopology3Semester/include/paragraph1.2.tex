@@ -73,7 +73,7 @@
     \vec \varphi(s) = \vec \varphi (t(s))
     $$
     $$
-    S = \int_{t_0}^{t_1} |\vec \varphi'(t)| dt ~ \Rightarrow ~ \frac{ds}{dt} =
+    s = \int_{t_0}^{t_1} |\vec \varphi'(t)| dt ~ \Rightarrow ~ \frac{ds}{dt} =
     |\vec \varphi'(t)|
     $$
     $$
@@ -144,9 +144,8 @@
   \frac{d\vec \varphi}{d s} = \vec a = const ~ \Rightarrow ~
   \vec \varphi = \vec a s + \vec b
   $$
-  $\Leftarrow ~ k = 0$ тогда
+  $\Leftarrow ~ \vec \varphi = \vec a s + \vec b$ тогда
   $$
-  \vec \varphi = \vec a s + \vec b  ~ \Rightarrow ~
   \frac{d^2 \vec \varphi}{ds^2} = \vec 0 ~ \Rightarrow ~ k = 0
   $$
 \end{proof}
@@ -166,7 +165,12 @@
   \vec b = [\vec t, \vec n] ~ \Rightarrow ~ \frac{d\vec b}{ds} =
   \cancelto{\vec 0}{\left[\frac{d \vec t}{ds}, \vec n\right]} +
   \left[\vec t, \frac{d\vec n}{ds}\right] =
-  \left[\vec t, \frac{d\vec n}{ds}\right] ~ \Rightarrow ~ \frac{d\vec b}{ds}
+  \left[\vec t, \frac{d\vec n}{ds}\right] =
+  \left[\vec t, -k \vec t \right] + \left[\vec t, \kappa \vec b \right] =
+  -\kappa \vec n ~ \Rightarrow
+  $$
+  $$
+  \frac{d\vec b}{ds}
   \perp \vec t ~ \Rightarrow ~  \frac{d\vec b}{ds} ~ || ~ \vec n
   $$
 \end{proof}
@@ -211,6 +215,6 @@
 \begin{theorem}
   $\forall$ гладких функций $k = k(s) > 0$ и $\kappa = \kappa(s)$ $\exists!$
   с точностью до пложения в пространстве кривая
-  $\vec \varphi = \vec \varphi(s)$ кривизна которой и кручение равны то есть
+  $\vec \varphi = \vec \varphi(s)$ то есть
   кривизна и кручение определяют кривую однозначно.
 \end{theorem}
