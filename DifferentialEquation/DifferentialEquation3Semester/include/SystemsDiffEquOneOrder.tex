@@ -1,3 +1,7 @@
+\begin{title}
+  Системы дифференциальных уравнений
+\end{title}
+
 \begin{title}[\Large]
   Системы обыкновенных дифференциальных уравнений. Векторная запись.
   Задача Коши
@@ -25,13 +29,13 @@
     x_n(t)
   \end{array}
   \right) ~~~
-  f(t) =
+  f(t, x(t)) =
   \left(
   \begin{array}{l}
-   f_1(t, x_1(t), x_2(t), \ldots, x_n(t)) \\
-   f_2(t, x_1(t), x_2(t), \ldots, x_n(t)) \\
+    f_1(t, x_1(t), x_2(t), \ldots, x_n(t)) \\
+    f_2(t, x_1(t), x_2(t), \ldots, x_n(t)) \\
     \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots \\
-   f_n(t, x_1(t), x_2(t), \ldots, x_n(t))
+    f_n(t, x_1(t), x_2(t), \ldots, x_n(t))
   \end{array}
   \right)
   $$
@@ -40,7 +44,7 @@
   x(t):<\alpha, \beta> \to R^n
   $$
   $$
-  f(t, n): (D \subset R) \times R^n \to R^n
+  f(t, n): <\alpha, \beta> \times R^n \to R^n
   $$
 \end{define}
 
@@ -100,10 +104,10 @@
   A(t) =
   \left(
   \begin{array}{cccc}
-    a_{11} & a_{12} & \ldots & a_{1n} \\
-    a_{21} & a_{22} & \ldots & a_{2n} \\
+    a_{11}(t) & a_{12}(t) & \ldots & a_{1n}(t) \\
+    a_{21}(t) & a_{22}(t) & \ldots & a_{2n}(t) \\
     \ldots & \ldots & \ldots & \ldots \\
-    a_{n1} & a_{n2} & \ldots & a_{nn}
+    a_{n1}(t) & a_{n2}(t) & \ldots & a_{nn}(t)
   \end{array}
   \right) ~~~
   g(t) =
@@ -116,9 +120,9 @@
   \end{array}
   \right)
   $$
-  $x'(t) = A(t)x(t) + g(t)$ неоднородная система
+  $x'(t) = A(t)x(t) + g(t)$ неоднородная система линейных ДУ в нормальной форме
 
-  $x'(t) = A(t)x(t)$ однородная система
+  $x'(t) = A(t)x(t)$ однородная система линейных ДУ в нормальной форме
 \end{define}
 
 \begin{block}[Эквивалентность комплексной и вещественной системы]
@@ -195,7 +199,7 @@
   x(t) = x_0 + \int_{t_0}^t A(s)x(s)ds +
   \int_{t_0}^t g(s)ds
   $$
-  тоесть любое решение задачи Коши явялется решением этого уравнения и наоборот.
+  то есть любое решение задачи Коши явялется решением этого уравнения и наоборот.
 \end{block}
 
 \begin{proof}
@@ -234,9 +238,9 @@
   \end{array}
   \right.
   $$
-  $\varphi(t)$ решение задачи Коши на $<a,b> \subset R^n$
+  $\varphi(t) : ~ <a,b> \to R^n$ решение задачи Коши
 
-  $\phi(t)$ решение задачи Коши на $<c,d> \subset R^n$
+  $\phi(t) : ~ <c,d> \to R^n$  решение задачи Коши
 
   если $<c,d> \subset<a,b>$ и $t \in <c,d> ~~ \varphi(t) \equiv \phi(t)$ тогда
 
@@ -420,7 +424,7 @@
 
 \begin{block}[Следствие 1]
   Разность двух решений неоднородной линейной системы является решением
-  однородной линейной системы
+  однородной линейной системы.
 \end{block}
 
 \begin{proof}
@@ -434,8 +438,8 @@
 \begin{block}[Слeдствие 2]
   $\varphi_0(t)$ частное решение системы $x'(t) = A(t)x(t) + g(t)$ то
   множество всех решений этой системы совпадает с множеством следующего вида
-  $\{\varphi_0(t) + \varphi(t)\}$ где $\varphi(t)$ пробегает множество решений
-  однородной системы.
+  $\{\varphi_0(t) + \varphi(t)\}$ где $\varphi(t)$ множество решений
+  $x'(t) = A(t)x(t)$
 \end{block}
 
 \begin{proof}
@@ -484,8 +488,8 @@
   \right) ~~~ t \in <\alpha, \beta>
   $$
   $\varphi, \cdots, \varphi_k(t)$ называется ЛЗ если $\exists C_1, C_2, \ldots,
-  C_k ~~ \sum_{j=1}^k C_j^2 \not= 0$ и комбинация $t \in <\alpha, \beta> ~
-  C_1\varphi_1(t) + C_2\varphi_2(t) + \ldots + C_k\varphi_k(t) = 0$ ЛЗ. В
+  C_k ~~ \sum_{j=1}^k C_j^2 \not= 0 ~~ \forall t \in <\alpha, \beta> ~
+  C_1\varphi_1(t) + C_2\varphi_2(t) + \ldots + C_k\varphi_k(t) = 0$. В
   противном случае система функций ЛНЗ.
 \end{define}
 
@@ -572,7 +576,7 @@
     0
   \end{array}
   \right) + \cdots +
-  C_k
+  C_n
   \left(
   \begin{array}{c}
     0 \\
@@ -625,7 +629,7 @@
 
   Заменим:
   $$
-  \psi(t)
+  \psi(t) =
   \left\{
   \begin{array}{l}
   x'(t) = A(t)x(t)\\
@@ -639,7 +643,7 @@
   \end{array}
   \right)
   \end{array}
-  \right. ~ \text{на} ~~~ \varphi(t)
+  \right. ~ \text{на} ~~~ \varphi(t) =
   \left\{
   \begin{array}{c}
   x'(t) = A(t)x(t)\\
@@ -700,8 +704,8 @@
   $$
 \end{proof}
 
-\begin{define}[ФСР]
-  ФСР называется базис пространства решений тоесть $n$ ЛНЗ решений данной
+\begin{define}[ФСР СЛДУ]
+  ФСР называется базис пространства решений то есть $n$ ЛНЗ решений данной
   системы.
 \end{define}
 
@@ -751,7 +755,7 @@
 \end{block}
 
 \begin{proof}
-  Пусть $t_0 \in <\alpha, \beta> ~~ W(t_0) = 0 ~ \Rightarrow ~ \varphi_1(t_0),
+  1) $t_0 \in <\alpha, \beta> ~~ W(t_0) = 0 ~ \Rightarrow ~ \varphi_1(t_0),
   \ldots, \varphi_n(t_0)$ ЛЗ $~\Rightarrow~$ $\exists C_1, \ldots, C_n ~~~
   C_1 \varphi_1(t_0) + \ldots + C_n \varphi_n (t_0) = 0$
 
@@ -772,16 +776,17 @@
 
 \begin{theorem}
   $W(t)$ решение $\varphi_1(t), \ldots, \varphi_n(t)$ системы $x'(t) = A(t)x(t)$
-  тогда он является $\frac{dW(t)}{dt} = (trA(t))W(t) ~~~ t \in <\alpha, \beta>$
-
-  $trA(t) = \sum_{j=1}^n a_{jj}(t)$
+  тогда $t \in <\alpha, \beta> ~~~ \frac{dW(t)}{dt} = (trA(t))W(t)$
+  $$
+  trA(t) = \sum_{j=1}^n a_{jj}(t)
+  $$
 \end{theorem}
 
 \begin{block}[Формула Леовиля]
   $$
   W(t) = W(t_0)e^{\int_{t_0}^t tr A(s)ds}
   $$
-  если определитель Вронского в некоторой точке $= 0$ то $W(t) \equiv 0$
+  если $\exists t_1 ~~ W(t_1) = 0$ тогда $W(t) \equiv 0$
 \end{block}
 
 \begin{title}[\Large]
@@ -825,7 +830,7 @@
 \begin{theorem}
   $\Phi(t)$ фундаментальная матрица $x'(t) = A(t)x(t)$ тогда множество всех
   фундаментальных матриц системы совпадает с множеством матриц следующего вида
-  $\Psi(t) = \Phi(t)B ~~ detB_{n \times n} \not= 0$
+  $\Psi(t) = \Phi(t)B ~~ \det B_{n \times n} \not= 0$
 \end{theorem}
 
 \begin{proof}
@@ -863,11 +868,9 @@
   Формула Коши
 \end{title}
 
-\begin{block}[Метод вариаций]
-  $x'(t) = A(t) x(t) + g(t) ~~~ t \in <\alpha, \beta>$ $A(t), g(t)$
-  непрерывные функции. Метод вариаций производных постоянных.
+\begin{block}[Метод вариаций для линейных неоднородных CДУ]
+  $A(t), g(t)$ непрерывны на $<\alpha, \beta>$
 
-  Расмотрим $x'(t) = A(t)x(t)$ $\Phi(t)$ фундаментальная матрица
   $x(t) = \Phi(t) C$ общее решение $x'(t) = A(t)x(t)$
   $$
   C =
@@ -913,7 +916,8 @@
   $$
   x(t) = \Phi(t)D + \Phi(t)\int_{t_0}^t\Phi^{-1}(s)g(s)ds
   $$
-  формула общего решения
+  формула общего решения линейной неоднородной системы дифференциальных
+  уравнений.
 \end{block}
 
 \begin{block}[Формула Коши]
@@ -934,11 +938,10 @@
   $$
   x(t) = \Phi(t) \Phi^{-1}(t_0)x_0 + \Phi(t)\int_{t_0}^t \Phi^{-1}(s)g(s)ds
   $$
-  формула Коши
 \end{block}
 
 \begin{theorem}
-  $A(t), g(t)$ непрерывные матрицы и вектор на $t \in <\alpha, \beta>$ тогда
+  $A(t), g(t)$ непрерывные на $<\alpha, \beta>$ тогда
   решение задачи Коши определяется формулой Коши.
 \end{theorem}
 
@@ -952,12 +955,12 @@
 \end{define}
 
 \begin{theorem}
-  $C(t,s)$ не зависит от выбора фундаментальной матрицы $\Phi(t)$.
+  $C(t,s)$ не зависит от выбора фундаментальной матрицы.
 \end{theorem}
 
 \begin{proof}
   Пусть $\Psi(t)$ другая фундаментальная матрица $D(t,s) = \Psi(t)\Psi^{-1}(s)$
-  $\exists B$ невырожденаая матрица которая обеспечивает
+  тогда $\exists B$ невырожденая матрица
   $$
   \Psi(t) = \Phi(t)B
   $$
@@ -971,9 +974,11 @@
   \Psi(t) \Psi^{-1}(s) = \Phi(t) B B^{-1} \Phi^{-1}(s)
   $$
   $$
-  D(t, s) = C(t, s) ~ \Rightarrow
+  \Psi(t) \Psi^{-1}(s) = \Phi(t) \Phi^{-1}(s)
   $$
-  функция Коши не зависит от выбра фундаментальной матрица $\Phi(t)$
+  $$
+  D(t, s) = C(t, s)
+  $$
 \end{proof}
 
 \begin{block}[Свойства]
@@ -1043,10 +1048,11 @@
   изменим $A + A_{\Delta}$ так чтобы $\lambda_1$ разспался на $\lambda_1$ и
   $\lambda_1 + \lambda_{\Delta}$
   $$
-  \varphi_2(t) = C(\lambda_1 + \lambda_{\Delta})e^{\lambda_1 +
-  \lambda_{\Delta}t}
+  \varphi_2(t) = C(\lambda_1 + \lambda_{\Delta})e^{(\lambda_1 +
+  \lambda_{\Delta})t}
   $$
-  $\varphi_{\Delta} = \varphi_2(t) - \varphi_1(t)$ решение системы
+  $\lambda_{\Delta} \to 0 ~~ \varphi_2 \to \varphi_1 ~ \Rightarrow ~
+  \varphi_{\Delta} = \varphi_2(t) - \varphi_1(t)$ решение системы
 
   нормируем для того чтобы не было $\varphi_{\Delta} \to 0$
   $$
@@ -1071,29 +1077,24 @@
   + K_k$ пространство инвариантно относительно пр
 \end{define}
 
-\begin{theorem}
+\begin{theorem}[о ФСР системы с постоянными коэффицентами]
   $\lambda_1, \ldots, \lambda_k$ различные корни характеристического урвнения
   матрицы $|A - \lambda E| = 0$ и кратностей соответствующие $n_1, \ldots, n_k
-  (n_1 + \ldots + n_k = n)$ (называют порядок) тогда каждому корню $\lambda_m$
-  соответствует $n_m$ ЛНЗ решений системы $x'(t) = Ax(t)$ вида $P_m(t)
-  e^{\lambda_m t}$ где $P(t) = p_0 + p_1(t) + \ldots + p_{n_m-1}t^{n_m-1}$
+  (n_1 + \ldots + n_k = n)$ ($n$ называют порядком) тогда каждому корню
+  $\lambda_m$ соответствует $n_m$ ЛНЗ решений системы $x'(t) = Ax(t)$ вида
+  $P_m(t) e^{\lambda_m t}$ где $P(t) = p_0 + p_1t + \ldots + p_{n_m-1}t^{n_m-1}$
   многочлен с векторными коэффицентами степени кратности корня $n_m - 1$
-  $p_j \in C^n$ объединение таких решений по всем $m$ задается ФСР
-
-  Вид решения
-  $$
-  \varphi(t) = (p_0 + p_1t + p_{n_m-1}t^{n_m-1})e^{\lambda_m t}
-  $$
+  $p_j \in \mathbb{C}^n$ объединение таких решений по всем $m$ задает ФСР.
 \end{theorem}
 
 \begin{proof}
-  $x'(t) = Ax(t)$ Корень $\lambda_m$ кратности $n_m$
+  $x'(t) = Ax(t)$ корень $\lambda_m$ кратности $n_m$
   $$
   \varphi(t) = (C_0 + C_1 t + \ldots + C_{n_m-1}t^{n_m-1})e^{\lambda_m t}
   $$
   $C_j \in C^n$ неизвестные
   $$
-  \varphi'(t) = (C_0 + C_1 t + \ldots + C_{n_m-1}t^{n_m-1})e^{\lambda_m - 1}
+  \varphi'(t) = (C_0 + C_1 t + \ldots + C_{n_m-1}t^{n_m-1})e^{\lambda_m t}
   \lambda_m +
   $$
   $$
@@ -1104,13 +1105,13 @@
   = A(C_0 + C_1(t) + \ldots + C_{n_m-1}t^{n_m-1}) e^{\lambda_m t}
   $$
   $$
- (C_0 + C_1 t + \ldots + C_{n_m-1}t^{n_m-1})e^{-1}\lambda_m +
+ (C_0 + C_1 t + \ldots + C_{n_m-1}t^{n_m-1})\lambda_m +
   $$
   $$
   + (C_1 + 2tC_2 + 3t^2C_3 + \ldots + (n_m-1)C_{n_m-1}t^{n_m-2}) =
   $$
   $$
-  = A(C_0 + C_1(t) + \ldots + C_{n_m-1}t^{n_m-1})
+  = A(C_0 + C_1t + \ldots + C_{n_m-1}t^{n_m-1})
   $$
   $t^0 : C_0 \lambda_m + C_1 = AC_0$
 
@@ -1209,7 +1210,7 @@
   2) $e^{(t+s)A} = e^{tA} e^{sA}$
 
   \begin{proof}
-    Пусть $u(t) = e^{(t+s)A} ~~~ \upsilon = e^{tA} e^{sA}$
+    Пусть $u(t) = e^{(t+s)A} ~~~ \upsilon(t) = e^{tA} e^{sA}$
     $$
     \left\{
     \begin{array}{l}
@@ -1220,7 +1221,7 @@
     \left\{
     \begin{array}{l}
       \upsilon'(t) = A e^{tA} e^{sA}= Au(t) \\
-      u(0) = e^{sA}
+      \upsilon(0) = e^{sA}
     \end{array}
     \right.
     $$
@@ -1232,7 +1233,7 @@
 
   \begin{proof}
     $$
-    e^{At} = E + At + \frac{A^2t^2}{2!} + \ldots + \frac{A^k t^k}{k!} +
+    e^{At} = E + At + \frac{A^2t^2}{2!} + \ldots + \frac{A^k t^k}{k!} + \ldots
     $$
     $t \in [c,d]$ сходится равномерно
     $$
@@ -1240,32 +1241,34 @@
     \ldots = A\left(E + tA + \frac{t^2A^2}{2} + \ldots +
     \frac{t^{k-1}A^{k-1}}{(k-1)!} + \ldots\right)
     $$
-    сходится равномерно $\Rightarrow$ значит можно почленно дифференциировать
+    так как функции удовлитворяют задачи Коши имеет место равенство между ними.
   \end{proof}
 
   4) Если $AB = BA$ тогда $e^{A+B} = e^A e^B$
 
   \begin{proof}
-    Докажем что $e^{At}B = Be^{At}$
-
     Пусть $u(t) = e^{At}B ~~~ \upsilon(t) = Be^{At}$
     $$
     \left\{
     \begin{array}{l}
-      u'(t) = A e^{At} = Au(t) \\
+      u'(t) = A e^{At} B = Au(t) \\
       u(0) = B
     \end{array}
     \right. ~~~
     \left\{
     \begin{array}{l}
-      \upsilon'(t) = A e^{At} = A\upsilon(t) \\
-      u(0) = B
+      \upsilon'(t) = A B e^{At} =  A e^{At} B = A\upsilon(t) \\
+      \upsilon(0) = B
     \end{array}
     \right. ~~~
     $$
-    $\Rightarrow$ $e^{At}B = Be^{At}$
+    так как функции удовлитворяют задачи Коши имеет место равенство между ними.
+  \end{proof}
 
-    Расмотрим $u(t) = e^{(A+B)t} ~~~ \upsilon(t) = e^{At}e^{Bt}$
+  5) Если $AB = BA$ тогда $e^{A+B} = e^A e^B$
+
+  \begin{proof}
+    Пусть $u(t) = e^{(A+B)t} ~~~ \upsilon(t) = e^{At}e^{Bt}$
     $$
     \left\{
     \begin{array}{l}
@@ -1282,7 +1285,7 @@
     \end{array}
     \right.
     $$
-    так как функции удовлитворяют задачи Коши имеет место равенство между ними
+    так как функции удовлитворяют задачи Коши имеет место равенство между ними.
   \end{proof}
 \end{block}
 
@@ -1291,29 +1294,39 @@
   матрицей с помощью $e^{At}$
 \end{title}
 
-\begin{proof}[теоремы о ФСР для системы с постоянной матрицей]
+\begin{theorem}[о ФСР уравнений с постоянными коэффицентами]
+  $\lambda_1, \lambda_2, \ldots, \lambda_k$ корни характеристического уравнения
+  $\lambda^n, + a_{n-1} \lambda^{n-1} + \ldots + a_n \lambda + a_0 = 0$
+  кратностей $n_1, n_2, \ldots, n_k ~~~ n_1 + n_2 + \ldots + n_k = n$
+
+  $\forall \lambda_j$ соответсвует $n_j$ ЛНЗ решений вида
+  $e^{\lambda_j t}, te^{\lambda_j t}, \ldots, t^{n_j-1} e^{\lambda_j t}$
+
+  Объеденение таких решений по всем $j$ дает ФСР.
+\end{theorem}
+
+\begin{proof}
   $C^n = K_1 \oplus K_2 \oplus \ldots \oplus K_k$ прямая сумма подпространств
 
   $\dim k_j = n_j ~~~ K_j = \{x \in C^n ~:~ (A - \lambda_jE)^{n_j}x = 0\}$
 
-  в каждом корневом подпространстве выюерем базис $C^n$ объединение базисов всех
-  корневых подпространств. $C$ базис для $K_m$
-
-  Решение по базисному вектору
+  в каждом корневом подпространстве выберем базис $\mathbb{C}^n$ объединение
+  базисов всех корневых подпространств.
   $$
-  \varphi = e^{At} C = e^{\lambda_m Et + t(A - \lambda_m E)} = e^{\lambda_mEt)}
-  e^{(A - \lambda_mE)t}C = e^{\lambda_mt} E e^{(A - \lambda_mE)t}C =
+  \varphi(t) = e^{At} C = e^{\lambda_m Et + t(A - \lambda_m E)} =
+  e^{\lambda_mEt} e^{(A - \lambda_mE)t}C =
+  e^{\lambda_mt} E e^{(A - \lambda_mE)t}C =
   $$
   $$
   = e^{\lambda_m t}(E + (A-\lambda_m E)t C + \frac{t^2}{2}(A-\lambda_mE)^2C
   + \ldots +
   $$
   $$
-  \frac{t^{n_m -1}}{(n_m-1)!}(A-\lambda_mE)^{n_m -1}C +
-  \frac{t^{n_m}}{(n_m)!}\overbrace{(A - \lambda_m E)^{n_m}C}^{=0} + \ldots ) =
+  + \frac{t^{n_m -1}}{(n_m-1)!}(A-\lambda_mE)^{n_m -1}C +
+  \frac{t^{n_m}}{n_m!}(A - \lambda_m E)^{n_m}C + \ldots ) =
   $$
   $$
-  e^{\lambda_m t}(C + C_1 t + C_2 t^2 + \ldots + C_{n_m-1}t^{n_m-1}) =
+  = e^{\lambda_m t}(C + C_1 t + C_2 t^2 + \ldots + C_{n_m-1}t^{n_m-1}) =
   e^{\lambda_m t} P_{n_m-1}(t)
   $$
 \end{proof}
@@ -1322,8 +1335,9 @@
   Матрица Коши системы с постоянными коэффициентами
 \end{title}
 
-\begin{define}
+\begin{define}[матрица Коши СЛДУ с постоянными коэффициентами]
   $x'(t) = A(t)x(t) + g(t)$
+
   $x'(t) = A(t)x(t)$
 
   $C(t,s) = \Phi(t) \Phi^{-1}(s)$
@@ -1336,7 +1350,7 @@
 
   $C(t,s) = e^{At} e^{-As} = e^{A(t-s)}$ матрица Коши
   $$
-  x(t) = e^{A(t-t_0)}x(t_0) + \int_{t_0}^t e^{A(t-s)}g(s)ds ~ \text{формула
+  x(t) = e^{A(t-t_0)}x(t_0) + \int_{t_0}^t e^{A(t-s)}g(s)ds ~~ \text{формула
   Коши}
   $$
 \end{define}
@@ -1346,16 +1360,14 @@
 \end{title}
 
 \begin{theorem}
-  $\lambda_1, \ldots, \lambda_m$ все характеристические многочлены матрицы $A$
-  и $|A - \lambda E| = 0$ тогда $\forall \alpha \ge Re\lambda_j ~~
+  $\lambda_1, \ldots, \lambda_m$ все характеристические многочлены матрицы
+  $|A - \lambda E| = 0$ тогда $\forall \alpha \ge Re\lambda_j ~~
   j = 1, \ldots, m ~~ \exists M ~~ ||e^{At}|| \le Me^{\alpha t} ~~ t \ge 0$
 
   матрица $A$ порождает линейный оператор $y=Ax ~~ R^n \to R^n$
-
-  $||Ax|| \le ||A|||x||$
-
-  Норма матрицы $||B|| \max_{1 \le j \le n} \sum_{i=1}^n |b_{ij}|$ максимум
-  сумм модулей всех элементов столбца
+  $$
+  ||B|| = \max_{1 \le j \le n} \sum_{i=1}^n |b_{ij}|
+  $$
 \end{theorem}
 
 \begin{proof}
@@ -1367,12 +1379,15 @@
   \sum_{j=1}^m P_{n_j-1}(t) e^{\lambda_j t}
   $$
   $n_j$ кратности $\lambda_j$, $P_{n_j-1}(t) = p_0 + p_1t + \ldots +
-  p_{n_j-1}(t)$ где $p$ векторы
+  p_{n_j-1}t^{n_j-1}$ где $p$ векторы
 
   Достаточно оценить каждое слагаемое этой суммы
   $$
+  \colorbox[rgb]{0.7,0.7,0}{$||Ax|| \le |x| ~ ||A||$}
+  $$
+  $$
   ||P_{n_j-1}(t)e^{\lambda_j t}|| \le |e^{\lambda_j t}|\cdot||P_{n_j-1}(t)||\le
-  e^{tRe\lambda_j} \overbrace{\sum_{m=0}^{n_j-1} ||p_m||t^m}^{Q_{n_j-1}} =
+  e^{tRe\lambda_j} \overbrace{\sum_{m=0}^{n_j-1} ||p_m||t^m}^{Q_{n_j-1}(t)} =
   $$
   $$
   = Q_{n_j-1}(t)e^{\alpha t} e^{t(Re\lambda_j-\alpha)} \le De^{\alpha t}
@@ -1383,6 +1398,14 @@
   $$
   $$
   ||e^{At}|| \le Me^{\alpha t}
+  $$
+  $$
+  \colorbox[rgb]{0.7,0.7,0}{$e^{\alpha + i\beta} = e^{\alpha} (\cos \alpha +
+  i\sin \beta)$}
+  $$
+  $$
+  \colorbox[rgb]{0.7,0.7,0}{$|e^{\alpha + i\beta}| = \sqrt{e^{\alpha}
+  (\cos \alpha + i\sin \beta)}$}
   $$
 \end{proof}
 
@@ -1411,14 +1434,11 @@
   \varphi(s)|_{t_0}^t = \int_{t_0}^t f(s, \varphi(s))ds
   $$
   $$
-  \varphi(t) = x_0 + \int_{t_0} f(s, \varphi(s))ds
-  $$
-  $$
-  \varphi(t) = x_0  + \int_{t_0} f(s, \varphi(s))ds
+  \varphi(t) = x_0 + \int_{t_0}^t f(s, \varphi(s))ds
   $$
   $\varphi$ решение интегрального уравнения
 
-  $\Rightarrow$ пусть $\varphi$ решение интегрального уравнения тогда
+  $\Leftarrow$ пусть $\varphi$ решение интегрального уравнения тогда
   $$
   \varphi(t) \equiv \int_{t_0}^t f(s, \varphi(s))ds + x_0
   $$
@@ -1438,24 +1458,35 @@
 \end{title}
 
 \begin{theorem}
-  $f(t, x)$ определена и непрерывна в области $D$ $D\subset R \times R^n \to
-  R^n$ и имеет в этой области непрерывные частные производные по всем переменным
-  $x$ тоесть $\frac{\partial f_i}{\partial x_j} ~~ i,j = 1, \ldots, n$ и
+  $f(t, x)$ определена и непрерывна $D$ $D\subset R \times R^n \to
+  R^n$ и
+  $\exists \frac{\partial f_i}{\partial x_j} ~~ i,j = 1, \ldots, n$ и
   $(t_0, x_0) \in D$ тогда задача Коши $\exists!$ решение
   на $h > 0 ~~ [t_0 - h, t_0 + h]$
 \end{theorem}
 
 \begin{proof}
   1) построение приблежений. Выберем произвольную функцию $\varphi_0(t)$
-  непрерывна $\varphi_0(t_0) = x_0$
+  непрерывна
+  $$
+  \varphi_0(t_0) = x_0
+  $$
   $$
   \varphi_1(t) = x_0 + \int_{t_0}^t f(s, \varphi_0(s))ds
   $$
   $$
+  \varphi_2(t) = x_0 + \int_{t_0}^t f(s, \varphi_1(s))ds
+  $$
+  $$
+  \ldots ~~~~ \ldots  ~~~~ \ldots  ~~~~ \ldots  ~~~~ \ldots  ~~~~ \ldots
+  $$
+  $$
   \varphi_{k+1}(t) = x_0 + \int_{t_0}^t f(s, \varphi_k(s))ds
   $$
-  В результате мы получим бесконечнуй последовательность функций
-  $\{\varphi_k(t)\}$ и $\varphi_k(t) = x_0$ (проходят через начальную точку)
+  $\{\varphi_k(t)\}$ бесконечная последовательность функций
+  и $\varphi_k(t) = x_0$ (проходят через начальную точку)
+
+  \includegraphics[width = 7cm]{proofPikar}
 
   $[t_0 - h, t_0 + h]$ отрезок на котором определены все решения
 
@@ -1471,7 +1502,7 @@
   t \in [t_0 - h, t_0 + h\}
   $$
   кроме того уменьшая $h$ можно считать что график $\varphi_0$ лежит
-  $\varphi_0 \subset G ~~ t \in [t_0 - h, t_0 + h]$
+  $t \in [t_0 - h, t_0 + h] ~~ \varphi_0(t) \subset G$
 
   Докаже что график всех приближений лежат в области $G$ при $(t, \varphi_k(t))
   \in G$
