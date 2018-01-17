@@ -7,9 +7,9 @@
   функционального ряда
 \end{title}
 
-\href{http://nuclphys.sinp.msu.ru/mathan/p3/m3102.html}{Информация по теме}
+\href{http://nuclphys.sinp.msu.ru/mathan/p3/m3102.html}{Сылка по теме}
 
-\begin{define}[функциональной последовательности]
+\begin{define}[сходимости функциональной последовательности]
   $f_n(x)$ определена на $E$ тогда если
   $$
   \forall x \in E ~~~ \lim_{n \to \infty} f_n(x) = f(x)
@@ -38,7 +38,7 @@
   $$
   f_n(x) \stackrel{E}{\rightrightarrows} f(x)
   $$
-  Кудрявцев 3 том 71 страница
+  Кудрявцев 2 том 71 страница
 \end{define}
 
 \begin{define}[сходимости функционального ряда]
@@ -94,7 +94,7 @@
   $$
   тогда $f_n(x) \stackrel{E}{\rightrightarrows}$
 
-  Кудрявцев 3 том 77 страница
+  Кудрявцев 2 том 77 страница
 \end{block}
 
 \begin{proof}
@@ -150,7 +150,7 @@
   \forall x \in E ~~~ \forall k \in N~~~ |f_k(x)| \le a_k ~ \text{тогда} ~
   S_n (x) \stackrel{E}{\rightrightarrows} ~ \text{и абсолютно}
   $$
-  Кудрявцев 3 том 77 страница
+  Кудрявцев 2 том 77 страница
 \end{block}
 
 \begin{proof}
@@ -173,7 +173,7 @@
 \end{title}
 
 \begin{block}[Признак Дирихле]
-  1) $\exists M > 0 ~~ \forall x \in E ~~ \forall n \in N ~~~ |F_n(x)| \le M$
+  1) $\exists M > 0 ~~ \forall x \in E ~~ \forall k \in N ~~~ |F_k(x)| \le M$
 
   2) $g_k(x) ~~~ \searrow$ или $\nearrow$
 
@@ -181,7 +181,7 @@
 
   тогда $\sum_{k=1}^{\infty} f_k(x) \cdot g_k(x)\stackrel{E}{\rightrightarrows}$
 
-  Кудрявцев 3 том 87 страница
+  Кудрявцев 2 том 87 страница
 \end{block}
 
 \begin{block}[Признак Абеля]
@@ -193,7 +193,7 @@
 
   тогда $\sum_{k=1}^{\infty} f_k(x) \cdot g_k(x)\stackrel{E}{\rightrightarrows}$
 
-  Кудрявцев 3 том 89 страница
+  Кудрявцев 2 том 89 страница
 \end{block}
 
 \begin{title}[\Large]
@@ -201,16 +201,17 @@
 \end{title}
 
 \begin{theorem}
-  1) $\forall k \in N ~~~ f_k(x)$ непрерывна на $[a,b]$
+  1) $\forall k \in N ~~~ \forall x \in [a,b] ~~~ f_k(x)$ непрерывна
 
   2) $S_k (x) \stackrel{[a,b]}{\rightrightarrows} S(x)$
 
   тогда $S(x)$ непрерывна на $[a,b]$ тоже что и
   $$
+  \forall x_0 \in E ~~~
   \lim_{x \to x_0} \sum_{n=1}^{\infty} f_n (x) = \sum_{n=1}^{\infty}
   \lim_{x \to x_0} f_n(x)
   $$
-  Кудрявцев 3 том 90 страница
+  Кудрявцев 2 том 90 страница
 \end{theorem}
 
 \begin{proof}
@@ -220,12 +221,12 @@
   |S(x) - S(x_0)| < \frac{\varepsilon}{3} ~ \text{этого хочется}
   $$
   $$
-  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~ \forall n \ge
-  n_{\varepsilon} ~~~ \forall x \in [a,b] ~~~ |S_n(x) - S(x)| <
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall x \in [a,b] ~~~ \forall n \ge n_{\varepsilon} ~~~ |S_n(x) - S(x)| <
   \frac{\varepsilon}{3} ~~~ |S_n(x_0) - S(x_0)| < \frac{\varepsilon}{3}
   $$
   $$
-  n_0 \ge n ~~~ S_{n_0}(x) = \sum_{k=1}^{n_0} f_k(x) ~~~ \forall \varepsilon > 0
+  n_0 \ge n ~~~ \forall \varepsilon > 0
   ~~~ \exists \delta_{\varepsilon} > 0 ~~~ \forall x \in [a,b] ~~~ |x - x_0| <
   \delta_{\varepsilon} ~~~ |S_{n_0}(x) - S_{n_0}(x_0)| < \frac{\varepsilon}{3}
   $$
@@ -235,7 +236,7 @@
   $$
   $$
    \le |S_{n_0}(x) - S(x)| +
-  |S_{n_0}(x) - S_{n_0}(x_0)| + |S_{n_0}(x) - S(x_0)| <
+  |S_{n_0}(x) - S_{n_0}(x_0)| + |S_{n_0}(x_0) - S(x_0)| <
   $$
   $$
   < \frac{\varepsilon}{3} +
@@ -248,22 +249,22 @@
 \end{title}
 
 \begin{theorem}
-  1) $\forall k \in N ~~ f_k(x)$ непрерывна на $[a,b]$
+  1) $\forall k \in N ~~~ \forall x \in [a,b] ~~~ f_k(x)$ непрерывна
 
-  2)$S_k(x) \stackrel{[a,b]}{\rightrightarrows} S(x)$
+  2) $S_k(x) \stackrel{[a,b]}{\rightrightarrows} S(x)$
 
   тогда
   $$
   \forall c \in [a,b] ~~~ \int_a^c S(x)dx =
   \sum_{k=1}^{\infty} \int_a^c f_k(x)dx
   $$
-  Кудрявцев 3 том 94 страница
+  Кудрявцев 2 том 94 страница
 \end{theorem}
 
 \begin{proof}
   $$
   \forall \varepsilon  > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
-  \forall n \ge n_{\varepsilon} ~~~ \forall x \in[a,b] ~~~
+  \forall x \in[a,b] ~~~ \forall n \ge n_{\varepsilon} ~~~
   |S_n(x) - S(x)| < \frac{\varepsilon}{(b-a)}
   $$
   $$
@@ -284,7 +285,7 @@
   тогда
   $$
   \forall c \in [a,b] ~~~ \int_a^c S(x)dx = \lim_{n \to \infty}
-  \int_a^c S_n(x)dc
+  \int_a^c S_n(x)dx
   $$
 \end{theorem}
 
@@ -297,22 +298,24 @@
 
   2) $\sum_{k=1}^{\infty} f_k'(x) \stackrel{[a, b]}{\rightrightarrows}$
 
-  3) $\exists! c \in [a,b] ~~ S_k(c) \stackrel{[a,b]}{\rightarrow} S(c)$
+  3) $S_k(a) \rightarrow S(a)$
 
   тогда
   $$
   S_k(x) \stackrel{[a, b]}{\rightrightarrows} S(x) ~
   \text{непрерывна дифференцируема и} ~ \sum_{k=1}^{\infty} f_k'(x) = S'(x)
   $$
-  Кудрявцев 3 том 97 страница
+  Кудрявцев 2 том 97 страница
 \end{theorem}
 
 \begin{proof}
   $$
-  \sum_{k=1}^{\infty} f_n'(x) \stackrel{[a,b]}{\rightrightarrows} G(x)
+  \sum_{k=1}^{\infty} f_k'(x) \stackrel{[a,b]}{\rightrightarrows} G(x)
   $$
   $$
-  \int_a^x G(t)dt = \sum_{k=1}^{\infty} \int_a^x f_k'(t) dt = S(x) - S(a)
+  \int_a^x G(t)dt = \int_a^x \sum_{k=1}^{\infty} f_k'(t) dt =
+  \sum_{k=1}^{\infty} \int_a^x f_k'(t) dt = \sum_{k=1}^{\infty}
+  (f_k(x) - f_k(a)) = S(x) - S(a)
   $$
   $$
   S(x) = \int_a^x G(t)dt + S(a)
@@ -336,14 +339,12 @@
   Степенные ряды. Теорема Абеля
 \end{title}
 
-\begin{define}
+\begin{define}[степенного ряда]
   $$
-  \sum_{k=0}^{\infty} a_k (x-x_0)^k ~ \text{- степенной ряд}
+  \sum_{k=0}^{\infty} a_k (x-x_0)^k ~~~ t = x - x_0 ~~~
+  \sum_{k=0}^{\infty} a_k t^k ~ \text{степенной ряд}
   $$
-  $$
-  \sum_{k=0}^{\infty} a_k t^k ~~~ t = x - x_0
-  $$
-  $a_k$ - последовательность коэффицентов степенного ряда
+  $a_k$ последовательность коэффицентов степенного ряда
 \end{define}
 
 \begin{theorem}[Абеля]
@@ -353,7 +354,7 @@
   Если $\sum_{k=0}^{\infty} a_k x^k$ расходится в точке $x_2 \not= 0$ тогда
   $\forall x ~~ |x| > |x_2|$ расходится
 
-  Кудрявцев 3 том 104 страница
+  Кудрявцев 2 том 104 страница
 \end{theorem}
 
 \begin{proof}
@@ -376,23 +377,12 @@
   что протеворечит данному условию.
 \end{proof}
 
-\begin{block}[Следствие из теоремы Абеля]
-  Степенной ряд
-
-  1) сходится только в одной точке
-
-  2) сходится на всей числовой прямой
-
-  3) сходится во всех точках некоторого интеравала, симметричен относительно
-  точки $0$
-\end{block}
-
 \begin{title}[\Large]
   Радиус сходимости степенного ряда. Формула Коши-Адамара
 \end{title}
 
-\begin{define}[радиуса сходимости функционального ряда]
-  $\rho = \sup\{ |x| : x \in D \}$ $D \not= 0$ - радиус сходимости
+\begin{define}[радиуса сходимости степенного ряда]
+  $\rho = \sup\{ |x| : x \in D \}$ $D \not= \oslash$ радиус сходимости
 
   Свойства
 
@@ -407,7 +397,7 @@
   $$
   \exists \lim_{k \to \infty} \left| \frac{a_k}{a_{k+1}} \right| = \rho
   $$
-  Кудрявцев 3 том 106 страница
+  Кудрявцев 2 том 106 страница
 \end{theorem}
 
 \begin{proof}
@@ -417,11 +407,11 @@
   $$
   $$
   |x| < \lim_{k \to \infty} \left| \frac{a_k}{a_{k+1}} \right| ~~~
-  \text{- сходится}
+  \text{сходится}
   $$
   $$
   |x| > \lim_{k \to \infty} \left| \frac{a_k}{a_{k+1}} \right| ~~~
-  \text{- расходится}
+  \text{расходится}
   $$
 \end{proof}
 
@@ -429,7 +419,7 @@
   $$
   \exists \lim_{k \to \infty} \sqrt[k]{|a_k|} = \frac{1}{\rho}
   $$
-  Кудрявцев 3 том 106 страница
+  Кудрявцев 2 том 106 страница
 \end{theorem}
 
 \begin{proof}
@@ -438,10 +428,10 @@
   \sqrt[k]{|a_k|} < 1
   $$
   $$
-  |x| < \lim_{k \to \infty} \frac{1}{\sqrt[k]{a_k}} ~~~ \text{- сходится}
+  |x| < \lim_{k \to \infty} \frac{1}{\sqrt[k]{a_k}} ~~~ \text{сходится}
   $$
   $$
-  |x| > \lim_{k \to \infty} \frac{1}{\sqrt[k]{a_k}} ~~~ \text{- расходится}
+  |x| > \lim_{k \to \infty} \frac{1}{\sqrt[k]{a_k}} ~~~ \text{расходится}
   $$
 \end{proof}
 
@@ -450,7 +440,7 @@
   \overline{\lim_{k \to \infty}} \sqrt[k]{|a_k|} =
   \lim_{n \to \infty} \sup_{k > n}\sqrt[k]{|a_k|} = \frac{1}{\rho}
   $$
-  Кудрявцев 3 том 108 страница
+  Кудрявцев 2 том 108 страница
 \end{block}
 
 \begin{title}[\Large]
@@ -458,18 +448,30 @@
 \end{title}
 
 \begin{theorem}
-  Если степенной ряд имеет $\rho > 0$, то он сходится равномерно
-  на любом отрезке внутри интеравала сходимости.
+  $\sum_{k=0}^{\infty} a_k x^k$ сходится на $\rho > 0$ тогда сходится равномерно
+  $\forall x ~~ |x| < \rho$
 \end{theorem}
 
+\begin{proof}
+  $$
+  x = \rho - \delta ~~~ \sum_{k=0}^{\infty} |a_k(\rho - \delta)^k| ~ \text{
+  сходится абсолютно}
+  $$
+  $$
+  \forall x \in [-\rho + \delta, \rho - \delta] ~~~
+  |a_k x^k| \le |a_k(\rho - \delta)^k| ~ \text{по признаку Вейерштрасса}
+  $$
+\end{proof}
+
 \begin{block}[Следствие 1]
-  $\sum_{k=1} a_k x^k$ сходится на $\rho > 0$ тогда непрерывна на
+  $\sum_{k=0}^{\infty} a_k x^k$ сходится на $\rho > 0$ тогда непрерывна на
   $(-\rho, \rho)$
 \end{block}
 
 \begin{block}[Следствие 2]
-  $\rho > 0 ~~~ x \in (-\rho, \rho)$ степенных рядов можно
+  $\sum_{k=0}^{\infty} a_k x^k$ сходится на $\rho > 0$ тогда
   $$
+  x \in (-\rho, \rho) ~~~
   \int_0^x S(t)dt = \sum_{k=0}^{\infty} a_k \frac{x^{k+1}}{k+1}
   $$
   при этом $\rho_k = \rho$
@@ -489,13 +491,18 @@
 \end{proof}
 
 \begin{block}[Следствие 3]
-  $S'(x) = \sum_{k=1}^{\infty}k a_k x^{k-1}$ при $\rho_k = \rho$
+  $\sum_{k=0}^{\infty} a_k x^k$ сходится на $\rho > 0$ тогда
+  $$
+  S'(x) = \sum_{k=1}^{\infty}k a_k x^{k-1}
+  $$
+  при этом $\rho_k = \rho$
 \end{block}
 
 \begin{proof}
   $$
   \rho_k = \lim_{k \to \infty} \left| \frac{k a_k}{(k+1)a_{k+1}} \right| =
-  \lim_{k \to \infty} \left| \frac{k a_k}{(k+1)a_{k+1}} \right| =
+  \lim_{k \to \infty} \left| \frac{k}{k+1} \right| \cdot
+  \lim_{k \to \infty} \left| \frac{a_k}{a_{k+1}} \right| =
   \lim_{k \to \infty} \left| \frac{a_k}{a_{k+1}} \right| = \rho
   $$
 \end{proof}
@@ -505,18 +512,18 @@
 \end{title}
 
 \begin{define}
-  $f(x)$ имеет $f^{(k)}(a) ~~~ \forall k \in N$ тогда ряд вида
+  $f(x)$ имеет $\forall k \in N ~~ \exists f^{(k)}(a)$ тогда
   $$
   \sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!} (x-a)^k
   $$
-  называют рядом Тейлора в точке $a$
+  называют рядом Тейлора в точке $a$.
 
-  Если $a = 0$ тогда это ряд Маклорена
+  Если $a = 0$ тогда это ряд Маклорена.
 
-  $R_n(x) = f(x) - S_n(x)$ называется формулой Тейлора
+  $R_n(x) = f(x) - S_n(x)$ называется формулой Тейлора.
 
   Если $x_0 \in R ~~~ \lim_{n \to \infty} R_n(x_0) = 0$ то ряд Тейлора сходится
-  к $f(x_0)$
+  к $f(x_0)$.
 \end{define}
 
 \begin{theorem}
@@ -549,21 +556,24 @@
   $$
 \end{proof}
 
-\begin{define}
+\begin{define}[остаточного члена в форме Лагранжа]
   $$
-  R_n(x) = \frac{f^{n+1}(c)}{(n+1)!} (x - a)^{n+1} ~~~
+  R_n(x) = \frac{1}{n!} \int_a^x (x - t) f^{(n+1)}(t)dt
+  $$
+  $$
+  R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x - a)^{n+1} ~~~
   c = a + \theta(x-a) ~~~ 0 < \theta < 1
   $$
-  остаточный член в форме Лагранжа
+  остаточный член в форме Лагранжа.
 
-  Кудрявцев 3 том 118 страница
+  Кудрявцев 2 том 118 страница
 \end{define}
 
 \begin{theorem}
   $\forall k \in N ~~~ \forall x \in O_{\delta}(a) ~~~ |f^{(k)}(x)| \le M L^k$
-  тогда $\forall x \in O_{\delta}(a)$ представим в виде ряда Тейлора
+  тогда $\forall x \in O_{\delta}(a)$ представим в виде ряда Тейлора.
 
-  Кудрявцев 3 том 120 страница
+  Кудрявцев 2 том 120 страница
 \end{theorem}
 
 \begin{proof}
