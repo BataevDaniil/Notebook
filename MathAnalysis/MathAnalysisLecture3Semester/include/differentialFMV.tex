@@ -12,8 +12,8 @@
 
   Аксиомы:
 
-  1) $\forall x,y \in M ~~~ \rho(x,y) \ge 0$ причем $\rho(x,y) = 0$ тогда и
-  только тогда когда $x = y$
+  1) $\forall x,y \in M ~~~ \rho(x,y) \ge 0$ причем $\rho(x,y) = 0 ~
+  \Leftrightarrow ~ x = y$
 
   2) $\forall x,y \in M ~~~ \rho(x,y) =\rho(y,x)$
 
@@ -22,15 +22,22 @@
 
   Отображение с такими свойствами называется метрикой.
 
-  Значение $\rho(x,y)$ это растояние между $x$ и $y$.
+  Значение $\rho(x,y)$ растояние между $x$ и $y$.
 \end{define}
+
+\begin{theorem}
+  $C[a,b]$ множество всех непрерывных функций на $[a,b]$ тогда
+  $$
+  \rho(f(x), g(x)) = \sup_{x \in [a,b]} |f(x) - g(x)|
+  $$
+\end{theorem}
 
 \begin{block}[Неравенство Коши]
   $$
   \left( \sum_{k=1}^n a_k b_k \right)^2 \le \sum_{k=1}^n a_k^2 \cdot
   \sum_{k=1}^n b_k^2
   $$
-  Кудрявцев 3 том 167 страница
+  Кудрявцев 2 том 167 страница
 \end{block}
 
 \begin{proof}
@@ -53,7 +60,7 @@
   \sqrt{\sum_{k=1}^n (a_k + b_k)^2} \le \sqrt{\sum_{k=1}^n a_k^2} +
   \sqrt{\sum_{k=1}^n b_k^2}
   $$
-  Кудрявцев 3 том 167 страница
+  Кудрявцев 2 том 167 страница
 \end{block}
 
 \begin{proof}
@@ -84,7 +91,7 @@
 
 \begin{define}[предела в метрическом пространстве]
   Множество $M$ с метрикой $\rho$ последовательность $x_k \in M$ называется
-  сходящейся к элементу $p \in M$ если $\exists \lim_{k \to \infty} \rho(x_k, p)
+  сходящейся к $p \in M$ если $\exists \lim_{k \to \infty} \rho(x_k, p)
   = 0$
 \end{define}
 
@@ -94,30 +101,28 @@
   \{ x \in M: ~ \rho(x, p) < \varepsilon \} = O_{\varepsilon}(p)
   $$
   $$
-  \{ x \in M: ~ 0 < \rho(x, p) < \varepsilon \} =
+  \{ x \in M: ~ 0 < \rho(x, p) < \varepsilon \} = ~
   \stackrel{\bullet}{O}_{\varepsilon}(p)
   $$
 \end{define}
 
 \begin{block}[Свойство]
-  Если дано метрическое пространство, то вложенное подпротсранство тоже
-  является метрическим.
+  В метрическом пространстве подпространство тоже метрическое.
 \end{block}
 
 \begin{theorem}
-  Если $x_k$ в метрическом пространсве сходится в $p \in R^n ~ n \in N$ тогда
-  $x_k \le M$
+  $x_k$ в метрическом пространсве сходится тогда $\exists M ~~ |x_k| \le M$
 \end{theorem}
 
 \begin{theorem}
-  Если $x_k$ в метрическом пространстве сходится то она имеет не более одного
-  предела.
+  $x_k$ в метрическом пространстве сходится тогда $\exists ! \lim x_k$
 \end{theorem}
 
 \begin{proof}
   Допустим предела два $x_k \to p$ $x_k \to q$
   $$
   0 < \rho(p, q) \le \rho(p, x_k) + \rho(x_k, q) = \rho(x_k, p) + \rho(x_k, q)
+  \to 0 ~~ k \to \infty ~ \Rightarrow ~ p = q
   $$
 \end{proof}
 
@@ -138,27 +143,29 @@
   \end{array}
   \right.
   $$
+  Кудрявцев 2 том 175 страница
 \end{block}
 
 \begin{proof}
-  I Пусть $x^{(k)} \to p$, тогда $|x_i^{(k)} - p_i| \le \rho(x^{(k)}, p) \to 0
-  ~~~ i = 1, 2, \ldots, n$
+  1) $\Rightarrow$ $x^{(k)} \to p$ тогда $|x_i^{(k)} - p_i| \le
+  \rho(x^{(k)}, p) \to 0 ~~~ i = 1, 2, \ldots, n$
 
-  II Пусть все условия выполнены $\rho(x^{(k)}, p) \to 0$ тогда $x^{(k)} \to p$
+  2) $\Leftarrow$ все условия выполнены $\rho(x^{(k)}, p) \to 0$ тогда
+  $x^{(k)} \to p$
 \end{proof}
 
 \begin{define}[фундаментальной последовательности]
   $x_k$ метрического пространства $M$ называется фундаментальной
-  последовательностью, если
+  последовательностью если
   $$
   \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
-  \forall k \ge n_{\varepsilon} ~~~ \forall m \in M ~~~ \rho(x_k, x_{k+m}) <
+  \forall k \ge n_{\varepsilon} ~~~ \forall m \in N ~~~ \rho(x_k, x_{k+m}) <
   \varepsilon
   $$
 \end{define}
 
 \begin{theorem}
-  Если $x_k$ сходится, то она фундаментальна.
+  $x_k$ сходится тогда $x_k$ фундаментальна.
 
   Замечание: обратное утверждение не верно.
 \end{theorem}
@@ -172,7 +179,6 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   \forall m \ge n_{\varepsilon} ~~~ \rho(x_{k + m}, p) < \frac{\varepsilon}{2}
   $$
-  тогда
   $$
   \rho(x_k, x_{k+m}) \le \rho(x_k, p) + \rho(x_{k+m}, p)
   < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
@@ -180,8 +186,8 @@
 \end{proof}
 
 \begin{define}[полного метрического пространства]
-  Метрическое пространства, в которых любая фундаментальная последовательность
-  сходится называется полным.
+  Метрическое пространство в котором любая фундаментальная последовательность
+  сходится к элементу того же множества называется полным.
 \end{define}
 
 \begin{theorem}
@@ -189,10 +195,9 @@
 \end{theorem}
 
 \begin{proof}
-  $(x_k, y_k, z_k)$ - пусть последовательность фундаменталная
+  $(x_k, y_k, z_k)$ пусть последовательность фундаменталная
 
-  $x_k, y_k, z_k$ - также фундаменталные
-
+  $x_k, y_k, z_k$ также фундаменталные
   $$
   |x_{k+m} - x_k| \le \rho(x_k, y_k, z_k)
   $$
@@ -208,7 +213,7 @@
   $x_k \to p_1 ~~~ y_k \to p_2 ~~~ z_k \to p_3$ имеют пределы по критерию Коши
 
   $(x_k, y_k, z_k) = (p_1, p_2, p_3)$ является сходящейся $\Rightarrow$ $R^n$
-  - является полным.
+  является полным.
 \end{proof}
 
 \begin{title}[\Large]
@@ -225,20 +230,21 @@
 \end{define}
 
 \begin{block}[Свойства]
-  1) $\bigcup_{i \in I} D_i = D$ - объеденение любого числа открытых множеств
+  1) $\bigcup_{i \in I} D_i = D$ объеденение любого числа открытых множеств
   является открытым множеством.
 
   \begin{proof}
-    $a \in D ~~ \Rightarrow ~~ \exists i_0 \in I ~~ a \in D_{i_0}$
-
-    $\exists O_{\varepsilon}(a) \subset D_{c_0} \subset \bigcup_{i \in I} D_i$
+    $$
+    a \in D ~~ \exists i_0 \in I ~~ a \in D_{i_0} ~ \Rightarrow ~
+    \exists O_{\varepsilon}(a) \subset D_{i_0} \subset \bigcup_{i \in I} D_i
+    $$
   \end{proof}
 
   2) $\bigcap_{i=1}^m D_i = D$ пересечение конечного числа открытых
   множеств является открытым множеством.
 
   \begin{proof}
-    $\forall i = 1, 2, \ldots, m ~~~ a \in D_i ~~~
+    $a \in D ~~ \forall i = 1, 2, \ldots, m ~~~ a \in D_i ~~~
     \exists O_{\varepsilon_i}(a) \subset D_i$
 
     $\varepsilon = \min \{\varepsilon_1, \varepsilon_2, \ldots, \varepsilon_m\}$
@@ -259,53 +265,66 @@
 \end{define}
 
 \begin{define}[замкнутого множества]
-  Если множество содержит все свои предельные точки, то оно называется
+  Если множество содержит все свои предельные точки тогда оно называется
   замкнутым.
 \end{define}
 
-\begin{theorem}
-  Для того, чтобы множество $E \subset M$ было замкнутым необходимоо и
-  достаточно, чтобы $D = M\backslash E$ его дополнение было открытым.
-\end{theorem}
+\begin{block}[Критерий]
+  Чтобы $E \subset M$ было замкнутым необходимо и
+  достаточно чтобы $D = M\backslash E$ его дополнение было открытым.
+\end{block}
 
 \begin{proof}
-  I Пусть $E$ - замкнутое. Предположим что $D = M \backslash E$ не является
-  открытым $\exists a \in D$ $a$ - не внутренняя. В $\forall
-  \stackrel{\bullet}{O}(a) \cap \not= \oslash$ тоисть $a$ - предельная, но $E$
-  замкнуто $\Rightarrow a \in E$. Не может быть так как дополнение $E$\\
+  1) $\Rightarrow$ $E$ замкнутое. Предположим что $D = M \backslash E$ не
+  является открытым $\exists a \in D$ $a$ не внутренняя. В $\forall
+  \stackrel{\bullet}{O}(a) \cap E \not= \oslash$ то есть $a$ предельная, но $E$
+  замкнуто $\Rightarrow a \in E$. Не может быть так как $D$ дополнение $E$
 
-  II Пусть $D$ - открытое. Пусть $E$ не замкнутое, тогда есть хотя бы одна
+  2) $\Leftarrow$ Пусть $D$ открытое. Пусть $E$ не замкнутое, тогда есть хотя
+  бы одна
   точка, которая $a \not\in E$ и $a$ предельная для $E$ $\Rightarrow \forall
-  \stackrel{\bullet}{O}_{\varepsilon}(a) \cap E \not= \oslash$. $a$ - не может
+  \stackrel{\bullet}{O}_{\varepsilon}(a) \cap E \not= \oslash$. $a$ не может
   быть внутренней точкой.
 \end{proof}
 
+\begin{block}[Законы Деморгана]
+  $$
+  M \backslash (A \cup B) = (M \backslash A) \cap (M \backslash B)
+  $$
+  $$
+  M \backslash (\cup A_i) = \cap (M \backslash A_i)
+  $$
+  $$
+  M \backslash (\cap A_i) = \cup (M \backslash A_i)
+  $$
+\end{block}
+
 \begin{block}[Свойства]
-  1) $\cup E_i = E ~ i = 1,2, \ldots, m$ - объединение конечного числа
+  1) $\cup E_i = E ~ i = 1,2, \ldots, m$ объединение конечного числа
   замкнутых множеств, есть множество замкнутое.
 
-  2) $\cap E_i = E ~ i \in I$ - пересечение любого числа замкнутых множеств,
-  есть множество замкнутое.
-
-  Законы Деморгана
-
-  $M \backslash (A \cup B) = (M \backslash A) \cap (M \backslash B)$
-
-  $M \backslash (\cup A_i) = \cap (M \backslash A_i)$
-
-  $M \backslash (\cap A_i) = \cup (M \backslash A_i)$
-
   \begin{proof}
-    $\cup E_i ~ i = 1,2, \ldots, m$ - замкнутое
+    $\cup E_i ~ i = 1,2, \ldots, m$ замкнутое
 
-    $M \backslash (\cup E_i) ~ i = 1,2, \ldots, m$ - открытое
+    $M \backslash (\cup E_i) ~ i = 1,2, \ldots, m$ открытое
 
     $\cap (M \backslash E_i) ~ i = 1,2, \ldots, m$ открытое
+  \end{proof}
+
+  2) $\cap E_i = E ~ i \in I$ пересечение любого числа замкнутых множеств,
+  есть замкнутое множество.
+
+  \begin{proof}
+    $\cap E_i ~ i \in I$ замкнутое
+
+    $M \backslash (\cap E_i) ~ i \in I$ открытое
+
+    $\cup (M \backslash E_i) ~ i \in I$ открытое
   \end{proof}
 \end{block}
 
 \begin{title}[\Large]
-  Компактные множества
+  Компактные множества в метрических пространствах
 \end{title}
 
 \begin{define}[компактного множества]
@@ -315,58 +334,62 @@
 \end{define}
 
 \begin{theorem}
-  Компактное множество является ограниченным.
+  Компактное множество ограниченно.
 \end{theorem}
 
 \begin{proof}
-  Пусть $K$ - неограничена $x_1 \in K$
+  Пусть $K$ неограничена $x_1 \in K$
 
   $\exists x_2 \in K ~~~ \rho(x_2, x_1) \ge 1$
 
   $\exists x_3 \in K ~~~ \rho(x_3, x_1) \ge 1$ и $\rho(x_3, x_2) \ge 1$ и так
   далее.
 
-  Расиотрим последовательность $x_k \to p$, то она была бы фундаментальной для
+  Расмотрим последовательность $x_k \to p$ то она была бы фундаментальной для
   членов с достаточно большими номерами растояние должно быть $< \varepsilon$
 \end{proof}
 
 \begin{theorem}
-  Компактное множество в любом метрическом пространстве является замкнутым.
+  Компактное множество в любом метрическом пространстве замкнуто.
 \end{theorem}
 
 \begin{proof}
-  Пусть $K$ - незамкунутое $a$ - предельная точка, $a \not\in K ~~~
+  Пусть $K$ незамкунутое $a$ предельная точка $a \not\in K ~~~
   x_k \in \stackrel{\bullet}{O}_{\frac{1}{k}}(a)$, который $x_k \in K$
 
-  Все элементы сходятся к $a$, а $a$ не входит в $K$. Противоречие
+  Все элементы сходятся к $a$ а $a$ не входит в $K$. Противоречие
 \end{proof}
 
 \begin{theorem}[Больцана-Вейерштраса для $R^n$]
-  Для простоты $n = 3$ тогда $(x_k, y_k, z_k) ~ k \in N$
-
-  $(x_{\varphi_{s_i}}, y_{\varphi_{s_i}}, z_{\varphi_{s_i}}) \to
-  (p_1, p_2, p_3)$
+  Для простоты $n = 3$
+  $$
+  (x_k, y_k, z_k) ~~ x_{k_l}\to p_1
+  $$
+  $$
+  (x_{k_l}, y_{k_l}, z_{k_l}) ~~ y_{k_{l_s}} \to p_2
+  $$
+  $$
+  (x_{k_{l_s}}, y_{k_{l_s}}, z_{k_{l_s}}) ~~ z_{k_{l_{s_i}}} \to p_3
+  $$
+  $$
+  (x_{k_{l_{s_i}}}, y_{k_{l_{s_i}}}, z_{k_{l_{s_i}}}) \to (p_1, p_2, p_3)
+  $$
 \end{theorem}
 
-\begin{theorem}
-  Для того чтобы множество $K \in R^n$ было компактным необходимо и достаточно
-  чтобы оно было замкнутым и ограниченным.
-\end{theorem}
+\begin{block}[Критерий]
+  $K \in R^n$ компактно $\Leftrightarrow$ замкнуто и ограничено.
+\end{block}
 
 \begin{proof}
-  $R^n$ $x_k \in K$ ограничена. Из теоремы 3 $x_{m_i} \to a \in R^n$ $a$ -
-  предельная точка из $K$. Так как $K$ - замкнуто, $a \in K$
+  $x_k \in K$ ограничена. Из теоремы выше $x_{m_i} \to a \in R^n$ $a$
+  предельная точка из $K$. Так как $K$ замкнуто то $a \in K$
 \end{proof}
 
-\begin{title}[\Large]
-  Граница множества
-\end{title}
-
 \begin{define}[граничной точки множества]
-  Точка называется граничной точкой множества $E \subset M$, если
-  $\forall O_{\varepsilon}(b)\cap E \not= 0$
+  Точка $b$ называется граничной точкой $E \subset M$ если
+  $\forall O_{\varepsilon}(b)\cap E \not= \oslash$
 
-  $\partial E$ - множества всех граничных точек множества $E$
+  $\partial E$ множества всех граничных точек множества $E$
 \end{define}
 
 \begin{define}
@@ -382,18 +405,22 @@
   \text{Луч} ~~~ \frac{\varphi(a)}{e} = \{ x: ~ x_i = a_i + te_i ~~~
   t \in [0, + \infty\}
   $$
+\end{define}
+
+\begin{define}[выпуклого множества]
   Множество называется выпуклым, если любые две точки которые принадлежат этому
-  множеству, можно провести отрезок так что он будет принадлежать этомуже
+  множеству, можно провести отрезок так что он будет принадлежать томуже
   множеству.
 \end{define}
 
 \begin{title}[\Large]
   Предел функции многих переменных. Различные типы пределов функций многих
-  переменных
+  переменных (предел по множеству, предел по направлению, бесконечные приделы,
+  повторные пределы)
 \end{title}
 
 \begin{define}[предела функции многих переменных]
-  Пусть $f(x)$ определена на $\stackrel{\bullet}{O}(a) \subset R^n$ число
+  $f(x)$ определена на $\stackrel{\bullet}{O}(a) \subset R^n$ число
   $p = \lim_{x \to a} f(x)$ если
   $$
   \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
@@ -408,38 +435,40 @@
   определение по Гейне
 \end{define}
 
-\begin{define}[предела по направлению функции многих переменных]
-  Пределом функции многих переменных $a = (a_1, a_2, \ldots, a_n)$ по
-  напрвалению лучу $e = (e_1, e_2, \ldots, e_n)$ - направляющие косинусы тогда
-  $$
-  \lim_{t \to 0 +0} f(a_1 + te_1, a_2 + te_2, \ldots, a_n + te_n)
-  $$
-  предел функции $f(x)$ по направлению $e$ в точке $a$.
-
-  $\vec e_2 = (\cos \alpha, \sin \alpha)$
-\end{define}
-
 \begin{define}[предела по множеству функции многих переменных]
   Число $p$ называется пределом $f(x)$ в точке $a$ по множеству $E$ если
-  $p = \lim \limits_{x \to a ~ x \in E} f(x)$ где $a$ - предельная точка
+  $p = \lim \limits_{x \to a ~ x \in E} f(x)$ где $a$ предельная точка
   множества $E$
   $$
   \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
   \forall x \in E ~~~ \rho(x, a) < \delta_{\varepsilon} ~~~
   |f(x) - p| < \varepsilon
   $$
+\end{define}
+
+\begin{define}[предела по направлению функции многих переменных]
+  $a = (a_1, a_2, \ldots, a_n)$ предел по
+  напрвалению луча $e = (e_1, e_2, \ldots, e_n)$ (направляющие косинусы) тогда
+  $$
+  \lim_{t \to 0 +0} f(a_1 + te_1, a_2 + te_2, \ldots, a_n + te_n)
+  $$
+  называеют предел функции $f(x)$ по направлению $e$ в точке $a$.
+
   Предел по направлению, есть частный случай предела по множеству, когда луч
   выходящий из точки $a$ выходит по направлению к вектору $e$
-
   $$
   D = \{ (x,y): ~ 0 < |x - a| < \alpha ~~ 0 < |y - b| < \beta \}
   $$
+  $\vec e_2 = (\cos \alpha, \sin \alpha)$
+\end{define}
+
+\begin{define}[повторного предела]
   $$
   \forall y \in \stackrel{\bullet}{O}(b) ~~~
   \lim_{x \to a} f(x, y) = \varphi(y) ~~~ \lim_{y \to b} \varphi(y) = p_1
   $$
   $$
-  \forall x \in \stackrel{\bullet}{O}(a)
+  \forall x \in \stackrel{\bullet}{O}(a) ~~~
   \lim_{y \to b} f(x, y) = \psi(x) ~~~ \lim_{x \to a} \psi(x) = p_2
   $$
 \end{define}
@@ -449,12 +478,12 @@
 \end{title}
 
 \begin{define}[непрерывности ФМП в точке]
-  Пусть $f(x)$ определена в $O(a)$ если $\lim_{x \to a} f(x) = f(a)$, то
-  $f(a)$ - непрерывна в точке
+  $f(x)$ определена в $O(a)$ если $\lim_{x \to a} f(x) = f(a)$ тогда
+  $f(x)$ непрерывна в точке $a$.
 \end{define}
 
 \begin{block}[Свойства]
-  Если $f(x), g(x)$ непрерывна в точке $a$ то
+  $f(x), g(x)$ непрерывна в точке $a$ тогда
   $$
   f(a) \pm g(a)
   $$
@@ -464,15 +493,14 @@
   $$
   \frac{f(a)}{g(a)} ~~~ (g(a) \not= 0)
   $$
-  также будут непрывны в точке
+  также будут непрывны в точке.
 \end{block}
 
 \begin{theorem}
-  $f(t) = f(t_1, t_2, \ldots, t_m)$ непрерывна в $b = (b_1, b_2, \ldots, b_m)$
-  $t_k = g_k(x) = g_k(x_1, x_2, \ldots, x_n) ~ k = 1,2, \ldots, m$ непрывна в
-  точке $a = (a_1, a_2, \ldots, a_m)$ тогда
-  $F(x) = f(g_1(x), g_2(x), \ldots, g_m(x))$ непрерывна в
-  точке $a$
+  $f(t) = f(t_1, t_2, \ldots, t_m)$ непрерывна в $b = (b_1, b_2, \ldots, b_m)
+  ~~ t_k = g_k(x) = g_k(x_1, x_2, \ldots, x_n) ~ k = 1,2, \ldots, m$
+  непрерывна в точке $a = (a_1, a_2, \ldots, a_m)$ и $b_k = g_k(a)$ тогда
+  $F(x) = f(g_1(x), g_2(x), \ldots, g_m(x))$ непрерывна в точке $a$.
 \end{theorem}
 
 \begin{proof}
@@ -486,9 +514,12 @@
   $$
 \end{proof}
 
-\begin{define}
-  $f(x)$ определена на $E$ и предельна в точке $a$, то непрерывна в точке $a$
-  по множеству $E$, если $\lim \limits_{x \to a ~ x \in E} f(x) = f(a)$
+\begin{define}[непрерывности по множеству]
+  $f(x)$ определена на $E$ и $a$ предельная точка $E$ тогда непрерывна в точке
+  $a$ по множеству $E$ если
+  $$
+  \lim_{\substack{x \to a \\ x \in E}} f(x) = f(a)
+  $$
 \end{define}
 
 \begin{title}[\Large]
@@ -496,40 +527,42 @@
 \end{title}
 
 \begin{define}[непрерывности ФМП на множестве]
-  $f(x)$ называется непрерывной на $E$ если она непрерывна в каждой точке по
-  множеству $E$ то eсть
+  $f(x)$ называется непрерывной на $E$ если она непрерывна в каждой точке
+  множества $E$ то eсть
   $$
-  \lim_{\substack{x \to a \\ \forall x \in E}} f(x) = f(a)
+  \lim_{\substack{x \to a \\ a \in E}} f(x) = f(a)
   $$
 \end{define}
 
 \begin{theorem}[Вейерштрасса ФМП]
-  Если $f(x)$ непрерывна на компактном множестве $K$ в метрическом пространстве
-  $M$, то она ограничена на множестве $K$. $\exists L > 0 ~~~
-  \forall x \in K ~~~ |f(x)| \le L$
+  $f(x)$ непрерывна на компактном множестве $K$ в метрическом пространстве
+  $M$ тогда она ограничена на множестве $K$ то есть
+  $$
+  \exists L > 0 ~~~ \forall x \in K ~~~ |f(x)| \le L
+  $$
 \end{theorem}
 
 \begin{proof}
   Доказательство от обратного
   $$
-  \exists L > 0 ~~~ \forall x_L \in K ~~~ |f(x_L)| > L
+  \forall L > 0 ~~~ \exists x_L \in K ~~~ |f(x_L)| > L
   $$
   $$
-  \exists n \in N ~~~ \forall x_n \in K ~~~ |f(x_n)| > n
+  \forall n \in N ~~~ \exists x_n \in K ~~~ |f(x_n)| > n
   $$
-  так как $K$ - компактное множество, то $x_n$ $x_{k_m} \to a \in K$ тогда
+  так как $K$ компактное множество, то $x_n$ $x_{k_m} \to a \in K$ тогда
   $|f(x_{n_m})| > n_m ~ \Rightarrow ~ n_m \to \infty ~ |f(a)| \ge +\infty$
   противоречие
 \end{proof}
 
 \begin{theorem}
-  Если $f(x)$ непрерывно на компактном множестве $K$, то в некоторых точках она
-  достигается своего наибольшено и наименьшего значения
+  $f(x)$ непрерывно на компактном множестве $K$ тогда в некоторых точках она
+  достигается своего наибольшено и наименьшего значения то есть
   $$
   \exists a \in K ~~~ f(a) = \inf \limits_{x \in K} f(x)
   $$
   $$
-  \exists a \in K ~~~ f(d) = \sup \limits_{x \in K} f(x)
+  \exists d \in K ~~~ f(d) = \sup \limits_{x \in K} f(x)
   $$
 \end{theorem}
 
@@ -541,13 +574,11 @@
 
   2) $\forall \varepsilon > 0 ~~~ \exists x_{\varepsilon} \in K ~~~
   f(x_{\varepsilon}) < \alpha + \varepsilon$
-
-  Пусть
   $$
   \varepsilon = \frac{1}{k} ~~~ k \in N ~~~ \exists x_k \in K ~~~
   \alpha \le f(x_k) < \alpha + \frac{1}{k}
   $$
-  так как $K$ - компактное множество, то
+  так как $K$ компактное множество тогда
   $$
   \exists x_k \in K ~~~ x_{k_{\varphi}} \to a \in K ~~~ \alpha \le
   f(x_{k_{\varphi}}) < \alpha + \frac{1}{k_{\varphi}}
@@ -555,11 +586,30 @@
   $$
   \alpha \le f(a) \le \alpha ~ \Rightarrow ~ f(a) = \alpha = \inf f(x)
   $$
+  $$
+  \sup \limits_{x \in K} f(x) = \alpha
+  $$
+  1) $\forall x \in K ~~~ \alpha \ge f(x)$
+
+  2) $\forall \varepsilon > 0 ~~~ \exists x_{\varepsilon} \in K ~~~
+  f(x_{\varepsilon}) > \alpha - \varepsilon$
+  $$
+  \varepsilon = \frac{1}{k} ~~~ k \in N ~~~ \exists x_k \in K ~~~
+  \alpha \ge f(x_k) > \alpha - \frac{1}{k}
+  $$
+  так как $K$ компактное множество тогда
+  $$
+  \exists x_k \in K ~~~ x_{k_{\varphi}} \to a \in K ~~~ \alpha \ge
+  f(x_{k_{\varphi}}) > \alpha - \frac{1}{k_{\varphi}}
+  $$
+  $$
+  \alpha \ge f(a) \ge \alpha ~ \Rightarrow ~ f(a) = \alpha = \sup f(x)
+  $$
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}[Кантора]
   $f(x)$ непрерывная на компактном множестве $K$ является равномерно
-  непрерывной на множестве $K$
+  непрерывной на множестве $K$.
 \end{theorem}
 
 \begin{proof}
@@ -590,23 +640,28 @@
   $$
 \end{proof}
 
+\begin{define}[области]
+  Областью называют открытое и связанное множество в $R^n$
+\end{define}
+
 \begin{theorem}[Коши для открытого множества]
-  Пусть $f(x)$ непрерывна в области $D \subset R^n ~~~ f(a) = p ~~~ f(b) = q$
-  где $a,b \in D$ то для $\forall s$ между $p$ и $q$
-  $\exists c \in D: ~ f(c) = s$
+  $f(x)$ непрерывна в области $D \subset R^n ~~~ f(a) = p ~~~ f(b) = q$
+  где $a,b \in D$ тогда $\forall s$ между $p$ и $q$
+  $\exists c \in D ~~~ f(c) = s$
 \end{theorem}
 
 \begin{proof}
   $\gamma \subset D ~~~ x = x(t) = (x_1(t), x_2(t), \ldots, x_n(t)) ~~~
   t \in [\alpha, \beta]$
 
-  Рассмотрим $f(t) = f(x(t))$ которая также непрерывна по теореме Коши о
+  Рассмотрим $F(t) = f(x(t))$ которая также непрерывна по теореме Коши о
   функция непрерывных на отрезках $\forall s$ между $p$ и $q$
-  $\exists G \in [\alpha, \beta] ~~~ f(G) = s$
 
-  $f(\alpha) = f(a) = p ~~~ x(G) = s$
+  $\exists G \in [\alpha, \beta] ~~~ F(G) = s$
 
-  $f(\beta) = f(b) = q ~~~ f(c) = f(G) = s$
+  $F(\alpha) = f(a) = p ~~~ x(G) = s$
+
+  $F(\beta) = f(b) = q ~~~ f(c) = F(G) = s$
 \end{proof}
 
 \begin{title}[\Large]
