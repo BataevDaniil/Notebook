@@ -1,9 +1,9 @@
 \begin{title}
-  Интегрирования ФМП
+  Интегрирование ФМП
 \end{title}
 
 \begin{title}[\Large]
-  Определений кратного интеграла. Критерий интегрированя
+  Определение кратного интеграла. Критерий интегрируемости
 \end{title}
 
 \begin{block}[Обозначения]
@@ -13,15 +13,15 @@
 
   $E = \sqcup_{k=1}^L E_k$
 
-  $d(E_k) = \sup \limits_{x,y \in E_k} \rho(x,y)$ ($d(A)$ - наибольшее
-  растояние между двумя точками множества)
+  $d(E_k) = \sup \limits_{x,y \in E_k} \rho(x,y)$ диаметр множества $E_k$
 
   $\lambda(R) = \max \limits_{1 \le k \le L} d(E_k)$ мелкость разбиения
 
   $m_k = \inf \limits_{x \in E_k} f(x) ~~~ M_k = \sup \limits_{x \in E_k} f(x)$
 
   $\sum_{k=1}^L f(x^{(k)}) m(E_k)$ называется итегральной суммой для $f$
-  соответствующее разбиению $R(E)$ и выборки $\upsilon(R) = \{x^{(k)}\}$
+  соответствующее разбиению $R(E)$ и выборки $\upsilon(R) = \{x^{(k)}\} ~~
+  x^{(k)} \in E_k$
 
   $\sum_{k=1}^L m_k m(E_k) = \int_* (R)$ нижняя сумма Дарбу
 
@@ -35,21 +35,21 @@
   \forall \upsilon(R) ~~~ \left| \sum_{k=1}^L f(x^{(k)}) m(E_k) - I \right|
   < \varepsilon
   $$
-  $I$ называется кратным интегралом и обозначают
+  число $I$ называется кратным интегралом и обозначают
   $$
   \int_E f(x) dx = \int_E f(x) dm
   $$
   $$
-  \iint_E f(x,y) dxdy ~~~ n = 2 ~~ \text{двойной интеграл}
+  \iint_E f(x,y) dxdy ~~ \text{двойной интеграл}
   $$
   $$
-  \iiint_E f(x,y,z) dxdydz ~~~ n = 3 ~~ \text{тройной интеграл}
+  \iiint_E f(x,y,z) dxdydz ~~ \text{тройной интеграл}
   $$
   Если кратный интеграл функции на множестве $E$ существует то $f(x)$
-  называется интегрируемой по мере Жорадана
+  называется интегрируемой по мере Жорадана.
 
-  Если $n \ge 2$ то ограниченное не является необходимым условием
-  интегрирования функции
+  Если $n \ge 2$ то ограничение не является необходимым условием
+  интегрирования функции.
 \end{define}
 
 \begin{block}[Критерий интегрируемости кратного интеграла]
@@ -60,9 +60,9 @@
 
   2)
   $$
-  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~ \forall(R)
-  ~~~ \lambda(R) < \delta_{\varepsilon} ~~~ \left| S^*(R) - S_*(R) \right| <
-  \varepsilon
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~ \forall R(E)
+  ~~~ \lambda(R) < \delta_{\varepsilon} ~~~ \left| \int^*(R) - \int_*(R)
+  \right| < \varepsilon
   $$
 \end{block}
 
@@ -72,8 +72,8 @@
 \end{title}
 
 \begin{theorem}
-  $f(x)$ непрерывна на компактном множестве $E$ измеренным по Жордану то она
-  интегрируема на этом множестве
+  $f(x)$ непрерывна на компактном множестве $E$ измеренным по Жордану тогда
+  $f(x)$ интегрируема на $E$.
 \end{theorem}
 
 \begin{proof}
@@ -96,19 +96,19 @@
   $$
 \end{proof}
 
-\begin{theorem}
-  $f(x)$ ограничена на компактном множестве $E$ и непрерывна на $E$ за
-  исключением Жорданова множество 0 тогда $f(x)$ интегрируема
-\end{theorem}
-
 \begin{define}[Жораданова множетеля $0$]
   $$
   \forall \varepsilon > 0 ~~~ \exists B_{\varepsilon} ~~~ E \subset
-  B_{\varepsilon} ~~~ n(B_{\varepsilon}) < \varepsilon
+  B_{\varepsilon} ~~~ m(B_{\varepsilon}) < \varepsilon
   $$
 \end{define}
 
-\begin{define}
+\begin{theorem}
+  $f(x)$ ограничена на компактном множестве $E$ и непрерывна на $E$ за
+  исключением меры Жорданова $m(E)=0$ тогда $f(x)$ интегрируема на $E$.
+\end{theorem}
+
+\begin{define}[цилиндра]
   $$
   E_h = \{ (x_1, x_2, \ldots, x_n, x_{n+1}): ~ (x_1, x_2, \ldots, x_n) \in E
   ~~ 0 \le x_{n+1} \le h\}
@@ -117,12 +117,13 @@
 \end{define}
 
 \begin{block}[Лемма]
-  $E \subset R^n ~~~ m(E) ~~~ m(E)h = m(E_h)$
+  $E \subset R^n ~~~ m(E)$ измемерена тогда $m(E)h = m(E_h)$
 \end{block}
 
 \begin{proof}
   $$
-  \forall \varepsilon > 0 ~~~ A_{\varepsilon} \subset E \subset B_{\varepsilon}
+  \forall \varepsilon > 0 ~~~ \exists A_{\varepsilon}, B_{\varepsilon} ~~~
+  A_{\varepsilon} \subset E \subset B_{\varepsilon}
   ~~~ m(B_{\varepsilon}) - m(A_{\varepsilon}) < \frac{\varepsilon}{h}
   $$
   $$
@@ -148,7 +149,7 @@
   $$
 \end{proof}
 
-\begin{define}
+\begin{define}[графика функции]
   $$
   \Gr f = \{ (x_1, x_2, \ldots, x_n, x_{n+1}): ~ (x_1, x_2, \ldots, x_n) \in E
   ~~ x_{n+1} = f(x_1, x_2, \ldots, x_n) \}
@@ -157,7 +158,7 @@
 
 \begin{theorem}
   $f(x)$ интегрируема на измеренным по Жордану множестве $E \subset R^n$ тогда
-  ее $\Gr f$ является $\Gr f \subset R^{n+1}$
+  ее $\Gr f$ с $m(E) = 0$ в $R^{n+1}$
 \end{theorem}
 
 \begin{proof}
@@ -172,15 +173,20 @@
   \sqcup_{k=1}^n A_{k m_k} \subset \Gr f \subset \sqcup_{k=1}^n B_{k M_k}
   $$
   $$
-  \Gr f \subset \sqcup_{k=1}^m (B_{k M_k} - A_{k m_k}) ~~~~
+  \Gr f \subset \sqcup_{k=1}^m (B_{k M_k} - A_{k m_k})
+  $$
+  $$
   m(\Gr f) \le \sum_{k=1}^m (M_k - m_k)m(E_k) =
-  \int^* (R) - \int_* (R) < \varepsilon
+  \int^* (R) - \int_* (R) < \varepsilon \Rightarrow
+  $$
+  $$
+  m(\Gr f) = m(E) = 0
   $$
 \end{proof}
 
 \begin{block}[Следствие]
-  График любой непрерывной $f$ а компактном множестве $E \subset R^n$ имеет
-  $n(E)$ в $R^{n+1}$
+  График любой непрерывной $f$ на компактном множестве $E \subset R^n$ имеет
+  $m(E)=0$ в $R^{n+1}$
 \end{block}
 
 \begin{title}[\Large]
@@ -192,7 +198,7 @@
 
   2) $\forall x \in E \subset R^n ~~~ f(x) > 0$ тогда $\int_E f(x) dx \ge 0$
 
-  3) $\alpha, \beta \subset R ~~~ f(x), g(x)$ интегрируемы на $E$ тогда
+  3) $\alpha, \beta \in R ~~~ f(x), g(x)$ интегрируемы на $E$ тогда
   $$
   \exists \int_E (\alpha f(x) + \beta g(x)) dx = \alpha \int_E f(x)dx +
   \beta \int_E g(x) dx
@@ -205,12 +211,12 @@
   $$
   6)
   $$
-  E = \sqcup_{k=1}^m E_k ~~~ \int_E f(x) dx = \sum_{k=1}^m \int_E f(x) dx
+  E = \sqcup_{k=1}^m E_k ~~~ \int_E f(x) dx = \sum_{k=1}^m \int_{E_k} f(x) dx
   $$
 \end{block}
 
 \begin{theorem}[о среднем]
-  $f(x)$ непрерывна на компактном множестве $E$ и связанное тогда
+  $f(x)$ непрерывна на компактном и связанном множестве $E$ тогда
   $\exists c \in E$
   $$
   \int_E f(x)dx = f(c) m(E)
@@ -230,7 +236,7 @@
   \mu m(E) \le \int_E f(x) dx \le \nu m(E)
   $$
   $$
-  \mu) \le \frac{\int_E f(x)dx}{m(E)} \le \nu
+  \mu \le \frac{\int_E f(x)dx}{m(E)} \le \nu
   $$
   по Коши
   $$
@@ -361,8 +367,8 @@
 \end{title}
 
 \begin{theorem}
-  $f(x,y)$ определена и непрерывна на $E ~~~ E = (x,y) ~~~ a < x < b ~~~
-  \varphi(x) \le y \le \psi(x)$ где $\varphi(x), \phi(x)$ непрерывны на
+  $f(x,y)$ определена и непрерывна на $E = \{ (x,y) : a < x < b ~~
+  \varphi(x) \le y \le \psi(x) \}$ где $\varphi(x), \phi(x)$ непрерывны на
   $[a,b]$ тогда
   $$
   \iint_E f(x,y)dxdy = \int_a^b dx \int_{\varphi(x)}^{\phi(x)} f(x,y)dy
@@ -370,10 +376,9 @@
 \end{theorem}
 
 \begin{proof}
-  $0 \le \varphi(x) \le y \le \phi$
+  $0 \le \varphi(x) \le y \le \phi(x)$
 
   $\Pi = [a,b] \times [c,d]$
-
   $$
   F(x,y) =
   \left\{
@@ -381,8 +386,10 @@
     f(x,y) &(x,y) \in E \\
     0 & (x,y) \in \Pi \backslash E
   \end{array}
-  \right. ~~ \text{интегрируема на $\Pi$}
+  \right.
   $$
+  множество точек имеет разрыв $m(E) = 0$ $\Rightarrow$ $F(x,y)$ интегрируема
+  на $\Pi$
   $$
   \iint_{\Pi} F(x,y) dxdy = \int_a^b dx \int_c^d F(x,y) dy =
   $$
@@ -390,8 +397,11 @@
   = \iint_{\Pi \backslash E} F(x,y) dxdy + \iint_E F(x,y)dxdy =
   $$
   $$
-  \int_a^b dx \left( \int_a^{\varphi(x)} F(x, y) dy +
+  = \int_a^b dx \left( \int_a^{\varphi(x)} F(x, y) dy +
   \int_{\varphi(x)}^{\phi(x)} F(x, y) dy \right)
+  $$
+  $$
+  \iint_E f(x,y)dxdy = \int_a^b dx \int_{\varphi(x)}^{\phi(x)} f(x,y)dy
   $$
 \end{proof}
 
@@ -400,26 +410,30 @@
 \end{title}
 
 \begin{theorem}
-  1) $f(x,y,z) ~~~ \Pi = [a,b] \times [c,d] \times [p,h]$
+  1) $f(x,y,z)$ ограничена на $\Pi = [a,b] \times [c,d] \times [p,h]$
 
-  2) $\iiint_{\Pi} f(x,y,z) dx dy dz$
+  2) $\exists \iiint_{\Pi} f(x,y,z) dx dy dz$
 
-  3) $\forall (x,y) \in [a,b] \times [c,d] ~~~ \int_p^h f(x,y,)dz = F(x,y)$
+  3) $\forall (x,y) \in [a,b] \times [c,d] ~~~ \int_p^h f(x,y,z)dz = F(x,y)$
 
-  $F(x,y) ~ [a,b] \times [c,d]$
-  $\iiint_{\Pi} f(y,z) dxdydz = \iint_{[a,b] \times [c,d]} F(x,y) dxdy$
-
-  $f(x)$ непрерывна на $\Pi$ тогда
+  тогда $F(x,y) ~ [a,b] \times [c,d]$
   $$
-  \iiint_{\Pi} f(y,z) dxdydz = \int_a^b dx \int_c^d dy \int_p^h f(x,y,z) dz
+  \iiint_{\Pi} f(x,y,z) dxdydz = \iint_{[a,b] \times [c,d]} F(x,y) dxdy
   $$
 \end{theorem}
+
+\begin{block}[Следствие]
+  $f(x)$ непрерывна на $\Pi$ тогда
+  $$
+  \iiint_{\Pi} f(x,y,z) dxdydz = \int_a^b dx \int_c^d dy \int_p^h f(x,y,z) dz
+  $$
+\end{block}
 
 \begin{theorem}
   $T = \{ (x, y, z): ~ (x, y) \in D ~~ \varphi(x, y) \le z \le \psi(x, y) \}$
 
-  $T$ - измерена по Жордану, $\varphi, \psi$ непрерывны в $D$ тогда
-  $u = f(x, y, z)$ непрерывна в $T$
+  $T$ измерена по Жордану, $\varphi, \psi$ непрерывны в $D$ и
+  $u = f(x, y, z)$ непрерывна в $T$ тогда
   $$
   \iiint_T f(x,y,z) dxdydz = \iint_D dx dy \int_{\varphi(x,y)}^{\psi(x,y)}
   f(x,y,z)dz
@@ -431,19 +445,23 @@
 \end{title}
 
 $$
+\left\{
 \begin{array}{c}
   x_1 = \varphi_1(t_1, t_2, \ldots, t_n) \\
   x_2 = \varphi_2(t_1, t_2, \ldots, t_n) \\
   \cdots ~~~ \cdots ~~~ \cdots ~~~ \cdots \\
   x_n = \varphi_n(t_1, t_2, \ldots, t_n) \\
 \end{array}
+\right. ~~~ x = \Phi(t)
 $$
-1) $\phi$ биективна $D \to E$
+1) $\Phi(t)$ биективна $D \to E$
 
-2) $\exists \frac{\partial \varphi_i}{\partial f_i}$ ограничена и равномерно
-непрерывна
+2) $\exists \frac{\partial \varphi_i}{\partial t_i}$ ограничена и равномерно
+непрерывна в $D$
+
+3)
 $$
-3) ~~~ Y(t) =
+Y(t) =
 \left|
 \begin{array}{cccc}
   \frac{\partial \varphi_1}{\partial t_1} &
@@ -456,6 +474,8 @@ $$
   \cdots &
   \frac{\partial \varphi_2}{\partial t_n} \\
 
+  \cdots & \cdots & \cdots & \cdots \\
+
   \frac{\partial \varphi_n}{\partial t_1} &
   \frac{\partial \varphi_n}{\partial t_2} &
   \cdots &
@@ -466,7 +486,7 @@ $$
 тогда
 $$
 \int_E f(x) dx = \int_D f(\varphi_1(t), \varphi_2(t), \ldots \varphi_n(t))
-Y(t)dt
+|Y(t)|dt
 $$
 
 \begin{title}[\Large]
@@ -482,10 +502,16 @@ Y(t) =
 \right| =
 \cos \varphi r \cos \varphi + r \sin \varphi \sin \varphi = r
 $$
+\includegraphics[width = 6cm]{polarCordinat}
+$$
+\iint_D f(x,y) dxdy = \iint_E f(r\cos \varphi, r\sin \varphi) r dr d\varphi
+$$
 
 \begin{title}[\Large]
   Использование цилиндрических координат при вычислении тройных интегралов
 \end{title}
+
+\includegraphics[width = 6cm]{cilindrCordinat}
 $$
 \left\{
 \begin{array}{c}
@@ -496,7 +522,7 @@ $$
 \right.
 $$
 $$
-T  = \{ (r, \varphi, h): ~ r \ge 0, ~ 0 \le \varphi \le 2\pi ~ h \in R \}
+T  = \{ (r, \varphi, h): ~ r \ge 0 ~~ 0 \le \varphi < 2\pi ~~ h \in R \}
 $$
 $$
 Y(r, \varphi, h) =
@@ -516,9 +542,10 @@ $$
 \begin{title}[\Large]
   Использование сферических координат при вычислении тройных интегралов
 \end{title}
+\includegraphics[width = 6cm]{spherCordinat}
 $$
 \left\{
-\begin{array}{c}
+\begin{array}{l}
   x = r \cos \psi \cos \varphi\\
   y = r \sin \psi \sin \varphi \\
   z = r \sin \psi
@@ -526,7 +553,7 @@ $$
 \right.
 $$
 $$
-T = \left\{ (r, \varphi, \psi): ~ r \ge 0 ~ \varphi, \psi \in
+T = \left\{ (r, \varphi, \psi): ~ r \ge 0 ~~ \varphi \in [0, 2\pi] ~~ \psi \in
 \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \right\}
 $$
 $$
@@ -547,7 +574,7 @@ Y =
 $$
 $$
 \iiint_E f(x,y,z) dxdydz = \iint_D f(r\cos \psi \cos \varphi,
-2\cos \psi \sin \varphi, r\sin \varphi) r^2 \cos \psi dr d\varphi d\psi
+r\sin\psi \sin \varphi, r\sin \varphi) r^2 \cos \psi dr d\varphi d\psi
 $$
 
 \begin{title}[\Large]
@@ -559,20 +586,20 @@ $$
 
   1) открытые и измеримы по Жордану множества
 
-  2) $\forall n \in N ~~ [D_n] \subset D_{n+1}$
+  2) $\forall n \in N ~~ [D_n] \subset D_{n+1}$ (замыкание)
 
   3) $\cup_{n=1}^{\infty} D_n = D$
 \end{define}
 
 \begin{theorem}
-  $\{D_n\} ~~ \{Q_n\}$ исчерпания $D \subset R^m$ $\forall n \in N ~~
+  $\{D_n\} ~~ \{Q_n\}$ исчерпания $D \subset R^m$ тогда $\forall n \in N ~~
   \exists k_n \in N ~~ [D_n] \subset Q_{k_n}$
 \end{theorem}
 
 \begin{proof}
   От противного
 
-  $\exists n_0 \in N ~~ \forall k \in N ~~ [D_{n_0}] \subset Q_k$
+  $\exists n_0 \in N ~~ \forall k \in N ~~ [D_{n_0}] \not\subset Q_k$
   $$
   \begin{array}{c}
     \exists x_1 \in [D_{n_0}] ~~ x_1 \not\in Q_1 \\
@@ -581,6 +608,10 @@ $$
     \exists x_n \in [D_{n_0}] ~~ x_n \not\in Q_n
   \end{array}
   $$
+  $[D_{n_0}]$ замкнуто и ограничено так как измерено по Жордану
+
+  Расмотрим последовательность $x_k$
+
   $\exists x_{n_k} \to a \in [D_{n_0}] \subset D_{n_0+1} \subset D ~~
   Q \in \cup_{k=1}^{\infty} Q_k$
 
@@ -589,18 +620,18 @@ $$
   $x_{n_k} \to a ~~ \exists l \in N ~~ x_{n_k} \in O_{\delta}(a)$
 \end{proof}
 
-\begin{theorem}
+\begin{define}[несобственного кратного интеграла]
   $f(x) \ge 0$ непрерывна в $D \subset R^n$ тогда
   $$
-  \lim_{n \to \infty} \int_{\Delta_n} f(x) dx = \int_D f(x) dx
+  \lim_{n \to \infty} \int_{D_n} f(x) dx = \int_D f(x) dx
   $$
   если предел конечен то несобственный кратный интеграл сходится иначе
-  расходится
-\end{theorem}
+  расходится.
+\end{define}
 
 \begin{theorem}
-  Определение несобственного интеграла коректно, тоесть не зависит от выбора
-  исчерпаемого множества
+  Определение несобственного интеграла коректно то есть не зависит от выбора
+  исчерпаемого множества.
 \end{theorem}
 
 \begin{proof}
@@ -609,14 +640,14 @@ $$
   \nearrow
   $$
   $$
-  \alpha_n = \int_{D_n} \le f(x) dx \int_{Q_{k_n}} f(x) dx = \beta_{k_n} \le
+  \alpha_n = \int_{D_n} f(x) dx \le \int_{Q_{k_n}} f(x) dx = \beta_{k_n} \le
   \lim_{n \to \infty} \beta_n = \beta
   $$
   $$
   \forall \alpha_n \le \beta ~~ \lim_{n \to \infty} \alpha_n = \alpha \le \beta
   $$
   $$
-  \beta_n = \int_{Q_n} \le f(x) dx \int_{D_{k_n}} f(x) dx = \alpha_{k_n} \le
+  \beta_n = \int_{Q_n} f(x) dx \le \int_{D_{k_n}} f(x) dx = \alpha_{k_n} \le
   \lim_{n \to \infty} \alpha_n = \alpha
   $$
   $$
@@ -635,14 +666,17 @@ $$
   $$
   \int_D f(x) dx = \int_D f^+(x) dx - \int_D f^-(x)dx
   $$
-  сходится если оба оба интегрла сходсят иначе расходится
+  сходится если оба интегрла сходятся иначе расходится.
 \end{theorem}
 
 \begin{title}[\Large]
   Приложения кратных интегралов
 \end{title}
 $$
-\iint_D \rho(x,y) dx dy = M(D)
+\iint_D dx dy = S(D) ~ \text{площадь} ~ D
+$$
+$$
+\iint_D \rho(x,y) dx dy = M(D) ~ \text{масса}
 $$
 $$
 \iiint_T \rho(x,y,z) dx dy dz = M(T)
@@ -651,5 +685,5 @@ $$
 S_{oy} = \iint_D x \rho(x,y) dx dy ~~~ x_0 = \frac{S_{oy}}{M(D)}
 $$
 $$
-I_{oy} = \iint x^2 \rho(x,y)dx dy ~~~ x_0 = \frac{I_{oy}}{M(D)}
+I_{oy} = \iint_D x^2 \rho(x,y)dx dy ~~~ x_0 = \frac{I_{oy}}{M(D)}
 $$

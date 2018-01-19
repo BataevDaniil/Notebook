@@ -207,7 +207,7 @@
 
   тогда $S(x)$ непрерывна на $[a,b]$ тоже что и
   $$
-  \forall x_0 \in E ~~~
+  \forall x_0 \in [a,b] ~~~
   \lim_{x \to x_0} \sum_{n=1}^{\infty} f_n (x) = \sum_{n=1}^{\infty}
   \lim_{x \to x_0} f_n(x)
   $$
@@ -332,7 +332,8 @@
 
   3) $S_n(a) \to S(a)$
 
-  тогда $S_n(x) \stackrel{[a,b]}{\rightrightarrows} S(x)$ и $S'(x) = G(x)$
+  тогда $S_n(x) \stackrel{[a,b]}{\rightrightarrows} S(x)$
+  непрерывна дифференцируема и $S'(x) = G(x)$
 \end{theorem}
 
 \begin{title}[\Large]
@@ -536,7 +537,7 @@
 
 \begin{proof}
   $$
-  x = a ~~~ f(x) = c_0
+  f(a) = c_0
   $$
   $$
   f'(x) = \sum_{k=1}^{\infty} k c_k(x - a)^{k - 1} ~~~ f'(a) = 1 \cdot c_1 ~~~
