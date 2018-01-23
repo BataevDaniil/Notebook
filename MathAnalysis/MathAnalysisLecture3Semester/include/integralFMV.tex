@@ -462,7 +462,7 @@ $$
 3)
 $$
 Y(t) =
-\left|
+\left(
 \begin{array}{cccc}
   \frac{\partial \varphi_1}{\partial t_1} &
   \frac{\partial \varphi_1}{\partial t_2} &
@@ -481,7 +481,7 @@ Y(t) =
   \cdots &
   \frac{\partial \varphi_n}{\partial t_n}
 \end{array}
-\right| ~~~ |Y(t)| \ge \delta > 0
+\right) ~~~ |Y(t)| \ge \delta > 0
 $$
 тогда
 $$
@@ -493,13 +493,13 @@ $$
   Использование полярных координат при вычислении двойных интегралов
 \end{title}
 $$
-Y(t) =
-\left|
+Y(r, \varphi) =
+\left(
 \begin{array}{cc}
   \cos \varphi & -r \sin \varphi \\
   \sin \varphi & r \cos \varphi
 \end{array}
-\right| =
+\right) =
 \cos \varphi r \cos \varphi + r \sin \varphi \sin \varphi = r
 $$
 \includegraphics[width = 6cm]{polarCordinat}
@@ -514,7 +514,7 @@ $$
 \includegraphics[width = 6cm]{cilindrCordinat}
 $$
 \left\{
-\begin{array}{c}
+\begin{array}{l}
   x = r \cos \varphi \\
   y = r \sin \varphi \\
   z = h
@@ -526,13 +526,13 @@ T  = \{ (r, \varphi, h): ~ r \ge 0 ~~ 0 \le \varphi < 2\pi ~~ h \in R \}
 $$
 $$
 Y(r, \varphi, h) =
-\left|
+\left(
 \begin{array}{ccc}
   \cos \varphi & -r \sin \varphi & 0 \\
   \sin \varphi & r \cos \varphi & 0 \\
   0 & 0 & 1
 \end{array}
-\right| = r
+\right) = r
 $$
 $$
 \iiint_E f(x, y, z) dxdydz = \iiint_D f(r\cos \varphi, r\sin \varphi, h) r
@@ -547,7 +547,7 @@ $$
 \left\{
 \begin{array}{l}
   x = r \cos \psi \cos \varphi\\
-  y = r \sin \psi \sin \varphi \\
+  y = r \cos \psi \sin \varphi \\
   z = r \sin \psi
 \end{array}
 \right.
@@ -557,8 +557,8 @@ T = \left\{ (r, \varphi, \psi): ~ r \ge 0 ~~ \varphi \in [0, 2\pi] ~~ \psi \in
 \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \right\}
 $$
 $$
-Y =
-\left|
+Y(r, \psi, \varphi) =
+\left(
 \begin{array}{ccc}
   \cos \psi \cos \varphi &
   -r \cos \psi \sin \varphi &
@@ -570,11 +570,11 @@ Y =
 
   \sin \psi & 0 & r \cos \psi
 \end{array}
-\right| = r^2 \cos \phi
+\right) = r^2 \cos \psi
 $$
 $$
 \iiint_E f(x,y,z) dxdydz = \iint_D f(r\cos \psi \cos \varphi,
-r\sin\psi \sin \varphi, r\sin \varphi) r^2 \cos \psi dr d\varphi d\psi
+r\cos\psi \sin \varphi, r\sin \psi) r^2 \cos \psi dr d\varphi d\psi
 $$
 
 \begin{title}[\Large]
