@@ -1,0 +1,107 @@
+\begin{title}[\Large]
+  Комплексная плоскость
+\end{title}
+
+\begin{block}[Комплексное число]
+  $(a,b)$ комплексное число это два упорядоченных числа.
+
+  Свойства:
+
+  1) $(a,b) + (c,d) = (a+c, b+d)$ ассоциативно и коммутативно
+
+  2) $(a,b)\cdot(c,d) = (ac - bd, ad + bc)$
+
+  3) $(a,0) \sim a \in R$
+
+  4) $(0,1) = i ~~~ i^2 = (0,1)(0,1) = (-1,0)$
+
+  $Re(a,b) = a$ вещественная часть
+
+  $Im(a,b) = b$ комплексная часть
+
+  $a + ib = (a,b) = (a,0) + (0,1)(b,0)$
+
+  $z = a + ib$ тогда $\overline{z} = a - ib$ сопряженная $z$
+
+  $|z| = |a + ib| = \sqrt{a^2 + b^2}$
+
+  $Arg z = \varphi + 2\pi k ~~ k \in Z$
+
+  $arg z = \varphi_0$
+
+  обычно $-\pi < \varphi_0 \le \pi$ или $0 \le \varphi_0 < 2\pi$
+
+  Так как $a = r \cos \varphi ~~~ b = r \sin \varphi$
+
+  $z = a + ib = r(\cos \varphi + i \sin \varphi) = r e^{i\varphi}$
+
+  $a + ib$ алгебраическая форма
+
+  $r(\cos \varphi + i \sin \varphi)$ тригонометрическая форма
+
+  $r e^{i\varphi}$ показательная форма (работают те же свойства что и с
+  экспонентой)
+  $$
+  \varphi_0 = arg(a + ib) =
+  \left\{
+  \begin{array}{lc}
+    \arctg \frac{b}{a} & a > 0 \\
+    \arctg \frac{b}{a} + \pi \sign b & a < 0 \\
+    \frac{\pi}{2} \sign b & a = 0
+  \end{array}
+  \right.
+  $$
+  $$
+  re^{i\varphi} = \rho e^{i\psi} ~~ \text{если} ~~
+  \left\{
+  \begin{array}{l}
+    r = \rho \\
+    \varphi = \psi + 2\pi k
+  \end{array}
+  \right.
+  $$
+  $$
+  re^{i\varphi_0} = \rho e^{i\psi_0} ~~ \text{если} ~~
+  \left\{
+  \begin{array}{l}
+    r = \rho \\
+    \varphi_0 = \psi_0
+  \end{array}
+  \right.
+  $$
+
+  Формула Муавра
+  $(r e^{i\varphi})^n = r^n e^{in\varphi} = r^n(\cos(n\varphi) +
+  i\sin(n\varphi))$
+
+  $\sqrt[n]{re^{i\varphi}} = \rho e^{i\psi}$
+
+  $re^{i\varphi} = \rho^n e^{in\psi}$
+  $$
+  \left\{
+  \begin{array}{l}
+    r = \rho^n \\
+    n\psi = \varphi + 2\pi k ~~ k \in Z
+  \end{array}
+  \right.
+  $$
+  $\rho = \sqrt[n]{r} ~~~ \psi = \frac{\varphi + 2\pi k}{n}$
+
+  $k = 0 ~~ z_0 = \sqrt[n]{r} e^{i\frac{\varphi}{n}}$
+
+  $k = 1 ~~ z_1 = \sqrt[n]{r} e^{i\frac{\varphi + 2\pi}{n}}$
+
+  $k = 2 ~~ z_2 = \sqrt[n]{r} e^{i\frac{\varphi + 4\pi}{n}}$
+
+  $\ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots$
+
+  $k = n-1 ~~ z_{n-1} = \sqrt[n]{r} e^{i\frac{\varphi + 2\pi(n-1)}{n}}$
+
+  $k = n ~~ z_n = \sqrt[n]{r} e^{i\frac{\varphi}{n} + 2\pi}$
+
+  $z \cdot \overline{z} = |z|^2$
+
+  $z + \overline{z} = 2x ~~~ x = \frac{z + \overline{z}}{2}$
+
+  $z - \overline{z} = 2iy ~~~ y = \frac{z - \overline{z}}{2i}$
+\end{block}
