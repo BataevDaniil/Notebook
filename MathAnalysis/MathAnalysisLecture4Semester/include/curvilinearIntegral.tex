@@ -1,0 +1,85 @@
+\begin{title}[\Large]
+  Криволинейные интегралы первого рода
+\end{title}
+
+\begin{block}[Кривая]
+  Кривая это упорядоченное множество точек $\Gamma \subset R^3$
+
+  $\vec \varphi = \vec \varphi(t) = (x(t), y(t), z(t)) ~~~ t = [a,b]$
+
+  $R \to R^3$ непрерывно
+
+  $\vec \varphi(a)$ начальная точка кривой
+
+  $\vec \varphi(b)$ конечная точка кривой
+
+  $\vec \varphi([a,b]) \not= 0$ тогда гладкая
+
+  Кривая называется кусочно гладкая если каждая гладкая часть начинается с
+  другой гладкой части (может быть разорвано)
+
+  $\vec \rho = \vec \rho(\tau) = (u(\tau), v(\tau), w(\tau)) ~~
+  \tau \in [\alpha, \beta]$
+
+  $\vec \rho$ эквивалентна $\vec \varphi$ если $\exists$ взаимооднозначное
+  отображение, $\nearrow$, $t'(\tau) > 0$ тогда замена параметра допустима
+
+  $\vec \rho(\tau) = (x(t(\tau)) = v(\tau), y(t(\tau)) = u(\tau),
+  z(t(\tau)) = w(\tau))$
+\end{block}
+
+\begin{define}[криволинейным интегралом первого рода]
+  $\Gamma \subset R^3$ частично гладкая кривая $\vec \varphi = \vec \varphi(t) =
+  (x(t), y(t), z(t)) ~~ t \in [a,b]$ и $f(x,y,z)$ непрерывна на $\Gamma$ тогда
+  криволинейным интегралом первого рода $f(x,y,z)$ называется определенный
+  интеграл
+  $$
+  \int_a^b f(x(t), y(t), z(t))|\vec \varphi'(t)|dt =
+  \int_{\Gamma} f(x,y,z) d l
+  $$
+\end{define}
+
+\begin{theorem}[о коректности определения что не зависит от способа задания
+кривой]
+  $$
+  \int_a^b f(x(t), y(t), z(t))|\vec \varphi'_t(t)|dt =
+  \int_{\alpha}^{\beta} f(v(\tau), u(\tau), w(\tau))
+  |\vec \rho'_{\tau}(\tau)|d\tau =
+  $$
+  $$
+  = \int_{\alpha}^{\beta} f(x(t(\tau)), y(t(\tau)), z(t(\tau)))
+  |\vec \varphi'_t(t(\tau))| t'(\tau)d\tau =
+  $$
+  $$
+  = \int_{\alpha}^{\beta} f(v(\tau), u(\tau), w(\tau))
+  |\vec \varphi'_t(t(\tau))| d\tau =
+  $$
+  $$
+  = \int_{\alpha}^{\beta} f(v(\tau), u(\tau), w(\tau))
+  |\vec \rho'_{\tau}(t(\tau))| d\tau =
+  $$
+\end{theorem}
+
+\begin{theorem}
+  Криволинейный интеграл не зависит от ориентации кривой $\Gamma$
+  $$
+  \int_{\Gamma} f(x,y,z) d l = \int_{\Gamma^-} f(x,y,z) d l
+  $$
+  $\vec \rho (\tau) = \vec \varphi (a+b-\tau) ~~ \tau \in [a,b]$
+  $$
+  \int_{\Gamma^-} f(x,y,z) d l = \int_a^b
+  f(x(a+b-\tau),y(a+b-\tau),z(a+b-\tau)) |\varphi'_{\tau}(a+b-\tau)|d \tau =
+  $$
+  $$
+  = |a+b-\tau=t ~~ dt = -d\tau| = \int_a^b f(x(t),y(t),z(t))
+  |\vec \varphi'_t(t)| dt = \int_{\Gamma} f(x,y,z) dl
+  $$
+\end{theorem}
+
+\begin{theorem}
+  $\Gamma$ кусочно гладкая кривая $\Gamma = \Gamma_1 \cup \Gamma_2 \cup
+  \ldots \cup \Gamma_m$
+  $$
+  \int_{\Gamma} f(x,y,z) d l = \sum_{k=1}^m \int_{\Gamma_k} f(x,y,z) d l
+  $$
+\end{theorem}
