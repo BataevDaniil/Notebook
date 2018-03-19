@@ -70,6 +70,24 @@
   \right.
   $$
 
+  Окрестность
+  $$
+  O_{\varepsilon}(a) = \{ z: |z-a| < \varepsilon\}
+  $$
+  Проколотая окрестность
+  $$
+  \stackrel{\bullet}{O_{\varepsilon}}(a) = \{ z: |z-a| < \varepsilon\}
+  $$
+  $$
+  \left\{
+  \begin{array}{l}
+    x = x(t) \\
+    y = y(t)
+  \end{array}
+  \right. ~~~ t \in [a,b]
+  $$
+  $z = z(t) = x(t) + iy(t)$ кривая
+
   Формула Муавра
   $(r e^{i\varphi})^n = r^n e^{in\varphi} = r^n(\cos(n\varphi) +
   i\sin(n\varphi))$
@@ -105,3 +123,130 @@
 
   $z - \overline{z} = 2iy ~~~ y = \frac{z - \overline{z}}{2i}$
 \end{block}
+
+\begin{title}[\Large]
+  Последовательности комплексных чисел
+\end{title}
+
+\begin{define}[предела комплексной последовательности]
+  $k \in N ~~ z_k = x_k + iy_k = r_k e^{i \varphi_k}$ последовательность
+
+  $p \in C ~~~ p = a + ib$ называется пределом последовательности $z_k$
+  $p = \lim z_k$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall k \le n_{\varepsilon} ~~~ |z_k - p| < \varepsilon ~~ \text{или} ~~
+  \sqrt{(x_k - a)^2 + (y_k - b)^2} \varepsilon
+  $$
+\end{define}
+
+\begin{block}[Критерий предела комплексной последовательности]
+  $$
+  p = \lim z_k ~ \Leftrightarrow
+  \left\{
+  \begin{array}{l}
+    x_k \to a \\
+    y_k \to b
+  \end{array}
+  \right.
+  $$
+  $$
+  p = \lim z_k ~ \Leftrightarrow
+  \left\{
+  \begin{array}{l}
+    r_k \to r \\
+    \varphi_k \to \varphi
+  \end{array}
+  \right. ~~~ p = re^{i\varphi}
+  $$
+\end{block}
+
+\begin{block}[Критерий Коши]
+  $\forall \varepsilon > 0 ~~~ \exists n_{\varepsilon} \in N ~~~
+  \forall k \le n_{\varepsilon} ~~~ \forall m \in N ~~~ |z_{k+m} - z_k| <
+  \varepsilon$
+\end{block}
+
+\begin{define}[функции комплексного переменного]
+  $z \in D \subset C$ по некоторому правилу ставится в соответствии одно или
+  несколько значений $w$ то говорят что $w = f(z)$
+
+  1) если одно значение тогда функция однозначна
+
+  2) если много значений тогда функция многозначна
+
+  3) если бесконечно значений тогда функция бесконечнозначна
+\end{define}
+
+\begin{block}[Свойства $w = az + b$]
+  $w = az + b ~~~ a \not = 0,b \in C$
+
+  1) $w_1 = |a| z$ плоскость либо растянутая либо сжалась относительно нуля
+
+  2) $w_2 = w_1 e^{i \arg a}$
+
+  $a > 0$ поворот против часовой стрелке
+
+  $a < 0$ поворот по часовой стрелке
+
+  3) $w = w_2 + b$ паралельный поворот в направлении вектора $\vec b$ на длину
+  вектора $b$
+\end{block}
+
+\begin{define}[однолистной функции]
+  $f(z)$ называется однолистной в области $D$ если $\forall z_1, z_2 \in D ~~~
+  z_1 \not = z_2 ~ \Rightarrow ~ f(z_1) \not = f(z_2)$
+\end{define}
+
+\begin{define}[предела комплексной функции]
+  По Коши
+  $$
+  \lim_{z \to z_0} f(z) = p ~~~ \stackrel{\bullet}{O_{\varepsilon}}(z_0) \in D
+  $$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta_{\varepsilon} > 0 ~~~
+  \forall z \in D ~~~ 0 < |z - z_0| < \delta_{\varepsilon} ~~~
+  |f(z) - p| < \varepsilon
+  $$
+  По Гейне
+  $\stackrel{\bullet}{O_{\varepsilon}}(z_0) \in D ~~~ \forall z_k \to z_0 ~~~
+  f(z_k) \to p$
+\end{define}
+
+\begin{block}[Критерий предела комплексной функции]
+  $f(z) = u(x, y) + i\upsilon(x,y)$
+  $$
+  \lim_{z \to z_0} f(z) = p ~ \Leftrightarrow ~
+  \left\{
+  \begin{array}{l}
+    u(x,y) \to a \\
+    (x,y) \to (x_0, y_0) \\
+    \upsilon(x,y) \to b
+  \end{array}
+  \right.
+  $$
+\end{block}
+
+\begin{define}[непрерывности комплексной функции в точке]
+  $f(z)$ называется непрерывной в точке если
+  $$
+  \lim_{z \to z_0} f(z) = f(z_0)
+  $$
+\end{define}
+
+\begin{theorem}[Вейерштрасса]
+  Если функция непрерывная на замкнутом множестве то она ограничена.
+\end{theorem}
+
+\begin{theorem}[равномерной непрерывности]
+  $f(z)$ наызывается равномерно непрерывной на $[a,b]$
+  $$
+  \forall \varepsilon > 0 ~~~ \exists \delta > 0 ~~~ \forall z', z'' \in [a,b]
+  ~~~ |z'' - z'| < \delta ~~~ |f(z'') - f(z') < \varepsilon
+  $$
+\end{theorem}
+
+\begin{theorem}[Кантора]
+  Если функция $f(z)$ определена и непрерывна на $[a,b]$ тогда она равномерно
+  непрерывна на $[a,b]$
+\end{theorem}
