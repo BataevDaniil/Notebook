@@ -250,3 +250,132 @@
   Если функция $f(z)$ определена и непрерывна на $[a,b]$ тогда она равномерно
   непрерывна на $[a,b]$
 \end{theorem}
+
+\begin{title}[\Large]
+  Дифференцируемость функции комплексной переменной
+\end{title}
+
+\begin{define}[производной функции комплексной переменной]
+  $w = f(z)$
+  $$
+  \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} =
+  \frac{f(z + z_{\Delta}) - f(z)}{z_{\Delta}} =
+  \frac{f_{\Delta}(z)}{z_{\Delta}} = f'(z_0)
+  $$
+  таблица производный и правила производных такие же как и для функций с
+  вещественным аргументом.
+\end{define}
+
+\begin{theorem}
+  $f(z)$ имела производную в точке $z_0$ $\Leftrightarrow$ $u$ и $\upsilon$
+  дифференцируемы в этой точке и
+  $$
+  \left\{
+  \begin{array}{l}
+    \frac{\partial u}{\partial x} = \frac{\partial \upsilon}{\partial y} \\
+    \frac{\partial u}{\partial y} = -\frac{\partial \upsilon}{\partial x}
+  \end{array}
+  \right. ~~~ \text{условия Коши-Римана (Даламбера - Эйлера)}
+  $$
+\end{theorem}
+
+\begin{proof}
+  1) $\Rightarrow$
+  $$
+  f'(z) = \lim_{z_{\Delta} \to 0} \frac{f(z + z_{\Delta}) - f(z)}{z_{\Delta}}
+  $$
+  Пусть $y_{\Delta} = 0$ тогда $z_{\Delta} = x_{\Delta}$
+  $$
+  f'(z) = \lim_{x_{\Delta} \to 0} \frac{u(x + x_{\Delta}, y) - u(x,y) +
+  i(\upsilon(x + x_{\Delta}, y) - \upsilon(x,y))}{x_{\Delta}} = u'_x +
+  i\upsilon'_x
+  $$
+  Пусть $x_{\Delta} = 0$ тогда $z_{\Delta} = iy_{\Delta}$
+  $$
+  f'(z) = \lim_{y_{\Delta} \to 0} \frac{u(x, y + y_{\Delta}) - u(x,y) +
+  i(\upsilon(x, y + y_{\Delta}) - \upsilon(x,y))}{iy_{\Delta}} =
+  $$
+  $$
+  = \lim_{y_{\Delta} \to 0} -i\frac{u(x, y + y_{\Delta}) - u(x,y)}{y_{\Delta}} +
+  \frac{\upsilon(x, y + y_{\Delta}) - \upsilon(x,y)}{y_{\Delta}} = -iu'_y +
+  i\upsilon'_y
+  $$
+  $$
+  u_{\Delta} = u(x + x_{\Delta}, y + y_{\Delta}) - u(x,y) =
+  u'_x x_{\Delta} + u'_y y_{\Delta} + \alpha(x_{\Delta}, y_{\Delta})
+  \sqrt{(x_{\Delta})^2 + (y_{\Delta})^2}
+  $$
+  $$
+  \upsilon_{\Delta} = \upsilon'_x x_{\Delta} + \upsilon'_y y_{\Delta} +
+  \beta(x_{\Delta}, y_{\Delta})\sqrt{(x_{\Delta})^2 + (y_{\Delta})^2}
+  $$
+  $$
+  f'(z) = \lim_{z_{\Delta} \to 0} \frac{u_{\Delta} +
+  i\upsilon_{\Delta}}{x_{\Delta} + iy_{\Delta}} =
+  $$
+  $$
+  = \lim_{z_{\Delta} \to 0} \frac{u'_x x_{\Delta} + u'_y y_{\Delta} +
+  i(\upsilon'_x x_{\Delta} + \upsilon'_y y_{\Delta}) + (\alpha + i\beta)
+  \sqrt{(x_{\Delta})^2 + (y_{\Delta})^2} }{x_{\Delta} + iy_{\Delta}} =
+  $$
+  $$
+  = \lim_{z_{\Delta} \to 0} \left( \frac{u'_x x_{\Delta} +
+  iu'_x y_{\Delta}} {x_{\Delta} + iy_{\Delta}}
+  -\frac{\upsilon'_x y_{\Delta} +
+  i\upsilon'_x x_{\Delta}}{x_{\Delta} + iy_{\Delta}} + \frac{(\alpha + i\beta)
+  \sqrt{(x_{\Delta})^2 + (y_{\Delta})^2} }{x_{\Delta} + iy_{\Delta}}\right) =
+  $$
+  $$
+  = u'_x + i\upsilon'_x = \upsilon'_y - iu'_y
+  $$
+\end{proof}
+
+\begin{theorem}
+  $$
+  \left\{
+  \begin{array}{l}
+    \frac{\partial u}{\partial r} = \frac{1}{r} \frac{\partial \upsilon}
+    {\partial \varphi} \\
+    \frac{\partial u}{\partial \varphi} = -\frac{1}{r} \frac{\partial \upsilon}
+    {\partial r}
+  \end{array}
+  \right.
+  $$
+\end{theorem}
+
+\begin{proof}
+  $$
+  \left\{
+  \begin{array}{l}
+    x = r \cos \varphi \\
+    y = r \sin \varphi
+  \end{array}
+  \right.
+  $$
+  $$
+  \left\{
+  \begin{array}{l}
+    \frac{\partial u}{\partial r} = \frac{\partial u}{\partial x} \cos \varphi
+    + \frac{\partial u}{\partial y} \sin \varphi \\
+    \frac{\partial \upsilon}{\partial \varphi} =
+    \frac{\partial \upsilon}{\partial x} (-2 \sin \varphi) +
+    \frac{\partial \upsilon}{\partial y} 2\cos \varphi
+  \end{array}
+  \right.
+  $$
+\end{proof}
+
+\begin{define}[аналитической функции в точке]
+  Функция называется аналитической в точке если она дифференциируема в
+  некоторой окрестности этой точки.
+\end{define}
+
+\begin{define}[аналитическая функция в области]
+  Функция называется аналитической в области если она дифференцируема во всех
+  точках области.
+\end{define}
+
+\begin{define}[регулярной функции]
+  Регулярной функцией (в точке) в области называют аналитическую и однозначную
+  (в точке) в области функцию.
+\end{define}
