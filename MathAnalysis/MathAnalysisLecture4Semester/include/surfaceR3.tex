@@ -307,3 +307,35 @@
   \vec \varphi'_{\upsilon}]| du d\upsilon
   $$
 \end{proof}
+
+\begin{title}[\Large]
+  Поверхностный интеграл 1-ого рода
+\end{title}
+
+\begin{define}[поверхностного интеграла 1-ого рода ]
+  $P$ простая или почти простая поверхность в $R^3$ заданная параметрически
+  $(u, \upsilon) \in [D] \subset R^2$
+
+  $\forall (x,y,z) \in P ~~~ F(x,y,z)$
+  $$
+  \iint_{[D]} F(x(u, \upsilon), y(u,\upsilon), z(u, \upsilon))
+  |[\vec \varphi'_u, \vec \varphi'_{\upsilon}]| du d\upsilon =
+  \iint_P F(x,y,z) ds
+  $$
+\end{define}
+
+\begin{theorem}
+  Поверхностный интеграл 1-ого рода не зависит от параметризации поверхности.
+\end{theorem}
+
+\begin{theorem}
+  Велечина поверхностного интеграла 1-ого рода не зависит от выбора стороны
+  поверхности.
+\end{theorem}
+
+\begin{theorem}
+  $$
+  P = \bigcup_{k=1}^m P_k ~~~
+  \iint_P F(x,y,z) ds = \sum_{k=1}^m \iint_{P_k} F(x,y,z) ds
+  $$
+\end{theorem}
