@@ -208,3 +208,123 @@
   $$
   доказать самому
 \end{proof}
+
+\begin{title}[\Large]
+  Условия независимости криволинейного интеграла 2-ого рода от пути
+  интегрирования (плоский случай)
+\end{title}
+
+\begin{define}[непрерывного векторного поля]
+  Непрерывное векторное поле $(P(x,y), D(x,y))$ называется потенциальным в
+  области $D \subset R^2$ если $\exists u = u(x,u)$ непрерывно дифференцируема
+  и
+  $$
+  du = Pdx + Qdy \Leftrightarrow
+  \left\{
+  \begin{array}{c}
+    \frac{\partial u}{\partial x} = P(x, y) \\
+
+    \frac{\partial u}{\partial y} = Q(x, y)
+  \end{array}
+  \right.
+  $$
+\end{define}
+
+\begin{theorem}
+  $P$ и $Q$ непрерывное векторное поле в области $D$ (дырки разрешены) тогда
+  следующие условия эквивалентны
+
+  a)
+  $$
+  \forall L \subset D ~~ \int_L Pdx + Qdy = 0
+  $$
+  b)
+  $$
+  \int_{L_{AB}} Pdx + Qdy
+  $$
+  ($L$ - ломанная соеденияющая точки $A$ и $B$ и лежит в $D$)
+  он не зависит от характера ломанной (кривой)
+
+  c) Поле $(P, Q)$ в области $D$ потенциальное
+\end{theorem}
+
+\begin{proof}
+  Докажем так $a \Rightarrow b \Rightarrow c \Rightarrow a$
+
+  1) $a \Rightarrow b$
+  $$
+  \int_{L_{AB}} Pdx + Qdy = \int_{L_{AB}} Pdx + Qdy ~~ \text{доказать}
+  $$
+  $$
+  \int_L Pdx + Qdy = 0 ~~~ L = L'_{AB} \cup (L''_{AB})^- \Rightarrow
+  \int_{L'_{AB}} Pdx + Qdy - \int_{L''_{AB}} Pdx + Qdy = 0
+  $$
+
+  2) $b \Rightarrow c$
+  $$
+  \int_{L_{AB}} Pdx + Qdy = u(x,y)
+  $$
+  $$
+  w(x + x_{\Delta}, y) = \int_{L_{AB} \cup L_{BB_1}} Pdx + Qdy
+  $$
+  $$
+  \lim_{x_{\Delta} \to 0} \frac{1}{x_{\Delta}} (u(x + x_{\Delta}) - u(x,y))
+  = \lim_{x_{\Delta} \to 0} \frac{1}{x_{\Delta}} \int_{L_{BB_1}} Pdx + Qdy =
+  $$
+  $$
+  = \lim_{x_{\Delta} \to 0} \frac{1}{x_{\Delta}} \int_{L_{BB_1}} Pdx =
+  $$
+  $$
+  = \lim_{x_{\Delta} \to 0} \frac{1}{x_{\Delta}} \int_x^{x+x_{\Delta}}
+  P(t, y)dt =
+  $$
+  $$
+  = \lim_{x_{\Delta} \to 0} \frac{1}{x_{\Delta}} P(x + \theta x_{\Delta}, y)dt
+  = P(x,y) ~~ 0 < \theta < 1
+  $$
+
+  $$
+  \frac{\partial u}{\partial y} = Q(x,y)
+  $$
+  Доказать самим
+
+  3) $b \Rightarrow c$
+
+  Если поле $(P, Q)$ потенциально в $D$ то $\forall$ кусочно гладкой кривой
+  $\Gamma \subset D$
+  $$
+  \int_{\Gamma} P dx + Q dy = 0
+  $$
+  В случае когда $\Gamma$ простая кривая (без самопересечений) для простоты
+  $$
+  \text{если} ~~ \Gamma \subset D
+  \left\{
+  \begin{array}{l}
+    x = x(t) \\
+    y = y(t)
+  \end{array}
+  \right.
+  ~~~ t \in [a,b]
+  $$
+  $$
+  \int_{\Gamma} Pdx + Qdy = \int_a^b (P(x(t), y(t)))x'(t) +
+  Q(x(t), y(t))y'(t)dt =
+  $$
+  так как поле потенциально
+  $$
+  = \int_a^b \left( \frac{\partial u}{\partial x} \cdot
+  \frac{\partial x}{\partial t} + \frac{\partial u}{\partial y}
+  \frac{\partial y}{\partial t} dt \right) = \int_a^b
+  \frac{du(x(t), y(t))}{dt} dt =
+  $$
+  кривая замкнута $\Rightarrow$ $a$ и $b$ совпадают
+  $$
+  = u(x(t), y(t))|_a^b = u(x(b), y(b)) - u(x(a), y(a)) = 0
+  $$
+\end{proof}
+
+\begin{block}[Следствие]
+  Для того чтобы криволинейный интеграл 2-ого рода по любой кусочно гладкой
+  кривой замкнутой в области $D$ равнялся нулю $\Leftrightarrow$ чтобы он
+  равнялся нулю по любой замкнутой ломанной.
+\end{block}
