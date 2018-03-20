@@ -197,3 +197,113 @@
   так как $\vec \varphi_u, \vec \varphi_{\upsilon}$ лнз из за регулярности
   поверхности $\Rightarrow ~ \not= \vec 0$
 \end{proof}
+
+\begin{title}[\Large]
+  Площадь поверхности
+\end{title}
+
+\begin{block}[Площадь поверхности]
+  $$
+  S(P) = \iint \limits_{[D]} |[\vec \varphi_u, \vec \varphi_{\upsilon}]|
+  du d\upsilon = \iint \limits_{[D]} \sqrt{EG - F^2}dud\upsilon
+  $$
+\end{block}
+
+\begin{theorem}
+  Определение площади поверхности не зависит от способа ее задания.
+\end{theorem}
+
+\begin{proof}
+  $\vec \rho = \vec \rho(p,s) ~~ (p,s) \in [\Omega]$
+
+  $u = u(p,s)$
+
+  $\upsilon = \upsilon(p, s) ~~~ [\Omega] \leftrightarrow [D]$
+  $$
+  \left|
+  \begin{array}{cc}
+    u'_p & u'_s \\
+    \upsilon'_p & \upsilon'_s
+  \end{array}
+  \right| \not = 0
+  $$
+  $\vec \rho(p,s) = \vec \varphi(u(p,s), \upsilon(p,s))$
+  $$
+  \iint_{[\Omega]}|[\vec \rho'_p, \vec \rho'_s]| d\rho ds =
+  \iint_{[\Omega]}|[\vec \varphi'_u(p,s), \vec \varphi'_u(p,x)]|
+  \left| \left|
+  \begin{array}{cc}
+    u'_p & u'_s \\
+    \upsilon'_p & \upsilon'_s
+  \end{array}
+  \right| \right|dp ds =
+  $$
+  $$
+  = \iint_{[D]} |[\vec \varphi'_u, \vec \varphi'_u]| du d\upsilon
+  $$
+\end{proof}
+
+\begin{theorem}
+  Выбор стороны поверхности не влияет на площадь.
+
+  При выборе стороны поверхности меняется только направление векторов нормалей.
+\end{theorem}
+
+\begin{theorem}
+  $$
+  P = \bigcup_{k=1}^m P_k ~~~ S(P) = \sum_{k=1}^m S(P_k) ~~~
+  \iint_{[D]} = \sum_{k=1}^m \iint_{[D_k]}
+  $$
+\end{theorem}
+
+\begin{theorem}
+  Если $P$ плоская поверхность, то ее площадь равна обычной Жордановой мере
+  плоской фигуре.
+\end{theorem}
+
+\begin{proof}
+  $\vec \varphi = (u, \upsilon, C)$
+
+  $\vec \varphi'_u = (1,0,0)$
+
+  $\vec \varphi'_{\upsilon} = (0,1,0)$
+  $$
+  S(P) = \iint_{[D]} dud\upsilon = S([D])
+  $$
+  $$
+  [\vec \varphi'_u, \vec \varphi'_{\upsilon}] =
+  \left|
+  \begin{array}{ccc}
+    \vec i & \vec j & \vec k \\
+    1 & 0 & 0 \\
+    0 & 1 & 0
+  \end{array}
+  \right| = \vec k
+  $$
+  $z = f(x) ~~ (x, y) \in [D]$
+
+  $\vec \varphi = \vec \varphi(x, y, f(x,y))$
+
+  $\vec \varphi'_x = (1, 0, f'_x)$
+
+  $\vec \varphi'_y = (0, 1, f'_y)$
+  $$
+  [\vec \varphi'_x, \vec \varphi'_u] =
+  \left|
+  \begin{array}{ccc}
+    \vec i & \vec j & \vec k \\
+    1 & 0 & f'_x \\
+    0 & 1 & f'_y
+  \end{array}
+  \right| = -f'_x \vec i - f'_y \vec j + \vec k
+  $$
+  $$
+  S(P) = \iint_{[D]} \sqrt{1 + (f'_x)^2 + (f'_y)^2} dxdy
+  $$
+  если $D$ почти простая тогда
+  $$
+  S(P) = \lim_{n \to \infty} \iint_{[D_n]} |[\vec \varphi'_u,
+  \vec \varphi'_{\upsilon}]| du d\upsilon = \iint_{[D]} |[\vec \varphi'_u,
+  \vec \varphi'_{\upsilon}]| du d\upsilon
+  $$
+\end{proof}
