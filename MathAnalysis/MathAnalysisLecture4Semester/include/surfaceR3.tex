@@ -1,0 +1,199 @@
+\begin{title}
+  Поверхность в пространстве $R^3$
+\end{title}
+
+\begin{define}
+  $\vec \varphi = (x(u, \upsilon) , y(u, \upsilon), z(u, \upsilon)) ~~~
+  (u, \upsilon) \in [D]$ непрерывно дифференцируема
+  $$
+  \rang \left(
+  \begin{array}{ccc}
+    x'_u & y'_u & y'_u \\
+    x'_{\upsilon} & y'_{\upsilon} & y'_{\upsilon}
+  \end{array}
+  \right) = 2 ~~~
+  \text{тогда называют поверхность гладкой}
+  $$
+  $[D] \leftrightarrow P \subset R^3$ то образ $\vec \varphi([D]) = P$
+  называется простой поверхностью в $R^3$ а отображение
+  $\vec \varphi(u, \upsilon)$ еe параметрическим заданием.
+\end{define}
+
+\begin{define}[эквивалентности поверхностей]
+  $\vec \rho = \vec \rho(p,s) \sim \vec \varphi(u, \upsilon) ~~~
+  (\rho, s) \in [\Omega]$ если возможна замена параметра
+  $$
+  \left\{
+  \begin{array}{l}
+    u = u(p,s) \\
+    \upsilon = \upsilon(p,s)
+  \end{array}
+  \right. ~~~ [\Omega] \leftrightarrow [D] ~~~
+  \left|
+  \begin{array}{cc}
+    \upsilon'_p & \upsilon'_s \\
+    v'_p & v'_s
+  \end{array}
+  \right| \not = 0
+  $$
+  тогда $\vec \rho = \vec \rho(p,s) = \vec \varphi (x(u(p,s), \upsilon(p,s)),
+  y(u(p,s), \upsilon(p,s)), z(u(p,s), \upsilon(p,s)))$
+
+  $\vec \varphi ([D]) = P = \vec \rho([\Omega])$
+\end{define}
+
+\begin{define}[почти простой поверхности]
+  $\vec \rho(u, \upsilon)$ гладкое отображение которое отображается
+  взаимооднозначно в область $D$
+  (может быть не ограничена) на какое-то множество в $R^3$, если $\exists$
+  исчерпание $[D_n]$ такое что $P_n = \vec \varphi ([D_n])$
+  является простой тогда $\vec P =
+  \varphi(D)$ называется почти простой.
+\end{define}
+
+\begin{theorem}
+  $P$ простая поверхность заданная парасетрически $(u, \upsilon) \in [D]$
+  $\vec \varphi (u, \upsilon) = (x(u, \upsilon), y(u, \upsilon),
+  z(u, \upsilon))$ тогда $d\vec \varphi = \vec \varphi'_udu +
+  \vec \varphi'_{\upsilon} d\upsilon$
+\end{theorem}
+
+\begin{proof}
+  $$
+  [\vec \varphi_u, \vec \varphi_{\upsilon}] \not = \vec 0 =
+  \left|
+  \begin{array}{ccc}
+    \vec i & \vec j & \vec k \\
+    x'_u & y'_u & z'_u \\
+    x'_{\upsilon} & y'_{\upsilon} & z'_{\upsilon}
+  \end{array}
+  \right| =
+  $$
+  $$
+  = \vec i \left|
+  \begin{array}{cc}
+    y'_u & z'_u \\
+    y'_{\upsilon} & z'_{\upsilon}
+  \end{array}
+  \right| +
+  \vec j \left|
+  \begin{array}{cc}
+    z'_u & x'_u \\
+    z'_{\upsilon} & x'_{\upsilon}
+  \end{array}
+  \right| +
+  \vec k \left|
+  \begin{array}{cc}
+    x'_u & y'_u \\
+    x'_{\upsilon} & u'_{\upsilon}
+  \end{array}
+  \right| \not = 0
+  $$
+  так как $\rang(...) = 2$ и будет хотябы один определитель не нулевой
+\end{proof}
+
+\begin{theorem}
+  $\vec \varphi(u, \upsilon) \sim \vec \rho(p,s) ~~~ (p, s) \in [\Omega]$ тогда
+  $[\vec \rho'_p, \vec \rho'_s]$ либо соноправлены либо противоположенно
+  направленны.
+
+  При замене параметризации меняется направления векторов.
+\end{theorem}
+
+\begin{proof}
+  $\vec \rho(p,s) = \vec \varphi(u(p,s), \upsilon(p,s))$
+  $$
+  [\vec \rho'_p, \vec \rho'_s] = [\vec \varphi'_u u'_p +
+  \vec \varphi'_{\upsilon} \upsilon'_p, \vec \varphi'_u u'_s +
+  \vec \varphi'_{\upsilon} \upsilon'_s] =
+  $$
+  $$
+  = [\vec \varphi'_u, \vec \varphi'_{\upsilon}] (u'_p \upsilon'_s -
+  u'_s \upsilon'_p) = [\vec \varphi'_u, \vec \varphi'_{\upsilon}]
+  \left|
+  \begin{array}{cc}
+    u'_p & u'_s \\
+    \upsilon'_p & \upsilon'_s
+  \end{array}
+  \right| = 0
+  $$
+\end{proof}
+
+\begin{define}
+  $$
+  \frac{d \vec \varphi}{dt} ~~ \text{касательный вектор}
+  $$
+  $$
+  \frac{d \vec \varphi}{dt} \perp [\vec \varphi'_u, \vec \varphi'_{\upsilon}]
+  = \vec n
+  $$
+  Векто нормали это вектор перпендикулярен всем прямым проходящим через точку
+  $t$
+
+  Поверхности бывают одностороними и двусторонними.
+
+  Меры обладают свойством конечной адитивности то есть если разделить что-то
+  на конечное кол-во частей то сумма всех мер будет равна мере всей части.
+\end{define}
+
+\begin{define}[первой квадратичной формы]
+  $$
+  \vec \varphi' = \vec \varphi_u u' + \vec \varphi_{\upsilon} \upsilon'
+  $$
+  $$
+  |\vec \varphi'|^2 = (\vec \varphi', \vec \varphi') =
+  (\vec \varphi_u u' + \vec \varphi_{\upsilon} \upsilon', \vec \varphi_u u' +
+  \vec \varphi_{\upsilon} \upsilon') =
+  $$
+  $$
+  = (\vec \varphi_u, \vec \varphi_u)u'^2 + 2(\vec \varphi_u,
+  \vec \varphi_{\upsilon}) u' \upsilon' + \upsilon'^2 (\vec \varphi_{\upsilon},
+  \vec \varphi_{\upsilon})
+  $$
+  $E = (\vec \varphi_u, \vec \varphi_u)$
+
+  $F = (\vec \varphi_u, \vec \varphi_{\upsilon})$
+
+  $G = (\vec \varphi_{\upsilon}, \vec \varphi_{\upsilon})$
+
+  $|\vec \varphi'|^2 = E u'^2 + 2Fu'\upsilon' + G\upsilon'^2$
+
+  $ds^2 = Edu^2 + 2Fdud\upsilon + Gd\upsilon^2$
+\end{define}
+
+\begin{theorem}
+  Первая квадратичная формула положительна определена.
+\end{theorem}
+
+\begin{proof}
+  $$
+  E = (\vec \varphi_u, \vec \varphi_u) = |\vec \varphi_u|^2 > 0
+  $$
+  $$
+  G = (\vec \varphi_{\upsilon}, \vec \varphi_{\upsilon}) =
+  |\vec \varphi_{\upsilon}|^2 > 0
+  $$
+  так как $\vec \varphi_u, \vec \varphi_{\upsilon}$ лнз из за регулярности
+  поверхности $\Rightarrow ~ \not= \vec 0$
+  $$
+  F = (\vec \varphi_u, \vec \varphi_{\upsilon}) = |\vec \varphi_u|
+  |\vec \varphi_{\upsilon}| \cos \alpha
+  $$
+  $$
+  \left|
+  \begin{array}{cc}
+    E & F \\
+    F & G
+  \end{array}
+  \right|
+  = EG - F^2 = |\vec \varphi_u|^2|\vec \varphi_{\upsilon}|^2 -
+  |\vec \varphi_u|^2 |\vec \varphi_{\upsilon}|^2 \cos^2 \alpha =
+  $$
+  $$
+  = |\vec \varphi_u|^2
+  |\vec \varphi_{\upsilon}|^2 \sin^2 \alpha = |[\vec \varphi_u, \vec
+  \varphi_{\upsilon}]|^2 > 0
+  $$
+  так как $\vec \varphi_u, \vec \varphi_{\upsilon}$ лнз из за регулярности
+  поверхности $\Rightarrow ~ \not= \vec 0$
+\end{proof}
