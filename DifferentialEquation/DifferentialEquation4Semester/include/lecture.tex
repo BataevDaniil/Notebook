@@ -1,0 +1,304 @@
+\begin{define}[устойчивости по Ляпунову]
+  $$
+  \left\{
+  \begin{array}{l}
+    x'(t) = f(t, x(t)) \\
+    x(t_0) = x_0
+  \end{array}
+  \right.
+  ~~~~
+  \left\{
+  \begin{array}{l}
+    x'(t) = f_1(t, x(t)) \\
+    x(t_0) = x_1
+  \end{array}
+  \right.
+  t \in [a,b] ~~~ t_0, t_1 \in (a,b)
+  $$
+  $$
+  \forall \varepsilon > 0 ~~ \exists \delta_{\varepsilon} ~~ ||x_1 - x_0||
+  < \delta ~~ |t_0 - t_1| < \delta_1
+  $$
+  $$
+  \sup ||f(t,x) - f_1(t,x)|| < \delta
+  ~ \Rightarrow ~ \sup_{t \in [a,b]} ||\varphi(t) - \psi(t)|| < \varepsilon
+  $$
+\end{define}
+
+\begin{define}
+  Решение $\varphi(t)$ системы (1) определенное на $t \in [t_0, \infty]$
+  называется устойчивой по Ляпунову если $\forall \varepsilon > 0 ~~ \exists
+  \delta$ для любого другого решения (1) $\psi(t)$ удовлетворяющего условию
+  $$
+  ||\varphi(t_0) - \varphi(t_0)|| < \delta ~ \Rightarrow ~ \sup||\varphi(t) -
+  \psi(t)|| < \varepsilon
+  $$
+\end{define}
+
+\begin{define}[асимтотической устойчивости решения]
+  Решение $\varphi$ системы (1) называется ассмтотически устойчивым если
+
+  1) оно $\varphi(t)$ устойчиво
+
+  2) $\exists \Delta > 0 ~~ \forall \psi(t): ~~ || \varphi(t_0) - \psi(t_0)||
+  < \Delta$
+  $$
+  \Rightarrow ~ \lim_{t \to +\infty} ||\varphi(t) - \psi(t)|| = 0
+  $$
+\end{define}
+
+
+\begin{define}[неустойчивости решения]
+  $\varphi(t)$ решение системы (1) называется неустойчивым если
+  $$
+  \exists \varepsilon_0 > 0 ~~ \forall \delta > 0 ~~ \exists \text{решение}
+  \psi_{\delta}(t) ~~ ||\varphi(t_0) - \psi(t_0)|| < \delta ~ \Rightarrow ~
+  \exists t \ge t_0 ~~ || \varphi(t) - \psi(t)|| \ge \varepsilon_0
+  $$
+\end{define}
+
+\begin{define}[тривиального решения]
+  Тривиальное решение системы называется устойчивым если
+  $$
+  \forall \varepsilon > 0 ~~ \exists \delta_{\varepsilon} ~~ \forall \psi(t) ~~
+  ||\psi(t_0)|| < \delta \Rightarrow \sup_{t \ge t_0} ||\psi(t)|| < \varepsilon
+  $$
+\end{define}
+
+\begin{define}[тривиального решения асимтотической устойчивости]
+  $$
+  \exists \Delta ~~ \forall \psi(t) ~~ ||\psi(t_0)|| < \Delta ~~
+  \lim_{t \to + \infty} ||\psi(t)|| = 0
+  $$
+\end{define}
+
+\begin{define}[тривиального неустойчивого решения]
+  Тривиальное решение неустойчиво если
+  $$
+  \exists \varepsilon_0 > 0 ~~ \forall \delta ~~ \exists \psi_{\delta}(t) ~~
+  ||\psi(t_0)|| < \delta ~~ \exists \overline{t} \ge t_0 ~~
+  ||\psi_{\delta}(\overline{t})|| > \varepsilon_0
+  $$
+\end{define}
+
+\begin{title}[\Large]
+  Система приведенная по решению
+\end{title}
+
+$x'(t) = f(t, x(t))$
+
+$\varphi(t)$ решение фиксированно
+
+$x(t)$ любое другое решение (1)
+
+$y(t) = x(t) - \varphi(t)$
+
+$$
+y'(t) = x'(t) - \varphi'(t) = f(t, x(t)) - f(t, \varphi(t) = \frac{f(t, y(t) +
+\varphi(t)) - f(t, \varphi(t))}{F(t, y(t))}
+$$
+
+(2) $y'(t) = F(t, y(t)) ~~~ y(t) \equiv 0$ система приведенная по решению
+$\varphi(t)$
+
+\begin{block}[Утверждение]
+  Решение $\varphi(t)$ системы (1) устойчиво (асомтотически устойчиво) или
+  неустойчиво $\Leftrightarrow$ когда устойчиво (ассимтотически устойчиво) или
+  неустойчивое тривиальное решение приведенной системы (2)
+\end{block}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0 ~~ \exists \delta ~~ \forall \psi(t) ~~
+  ||\varphi(t_0) - \psi(t_0)|| < \delta ~ \Leftrightarrow ~ \sup_{t \ge t_0}
+  ||\varphi(t) - \psi(t)|| = \sup_{t \ge t_0} y(t) < \varepsilon
+  $$
+  выпоняется условие устойчивости по тривиальному решению
+\end{proof}
+
+\begin{block}[Утверждение]
+  Либо все решения всех систем с матрицей $A(t)$ устойчивы либо все неустойчивы
+
+  $\varphi(t)$ решение
+
+  $x(t) = y(t) + \varphi(t)$
+
+  $x'(t) = y'(t) + \varphi'(t)$
+
+  $y'(t) + \varphi'(t) = A(t)(y(t) + \varphi(t)) + b(t)$
+
+  $\varphi'(t) = A(t)\varphi(t) + b(t) ~ \Rightarrow ~ y'(t) = A(t)y(t)$
+  система тривиальная по любому решению совпадает с однородной системой
+  $\Rightarrow$ $\varphi(t)$ устойчиво $\Leftrightarrow$ тогда устойчиво
+  тривиальное решение системы (1). Аналагочино снеустойчивостью.
+
+  Все определяется только матрицей $A(t)$
+\end{block}
+
+\begin{define}
+  Матрица $A(t)$ и система (1) называется устойчивыми (асимптотически устойчиво)
+  или неустойчивыми) если устойчива (ассимтотически устойчиво или неустойчиво)
+  тривиальное решение соответствующеей однородной системы.
+\end{define}
+
+\begin{block}[Утверждение 1]
+  $x'(t) = A(t)x(t) ~~~ (1_0)$
+  Система ($1_0$) устойчива $\Leftrightarrow$ когда все ее решения ограничены
+\end{block}
+
+\begin{proof}
+  Пусть ($1_0$) устойчива $\Rightarrow$ по определению $x \equiv 0$ устойчива
+  то есть
+  $$
+  \forall \varepsilon > 0 ~~ \exists \delta_{\varepsilon} ~~ \forall \varphi(t)
+  ~~ ||\varphi(t_0)|| < \delta ~ \Rightarrow ~ \sup_{t \ge t_0} ||\varphi(t)||
+  < \varepsilon
+  $$
+  $x(t)$ ограничена значит $\exists M ~~ \forall \ge t_0 ~~ ||x(t)|| \le M$
+
+  $\varepsilon = 1 ~~ \exists \delta_1 ~~ \forall \varphi(t) ~~ ||\varphi(t_0)||
+  < \delta ~ \Rightarrow ~ \forall t \ge t_0 ~~ ||\varphi(t)|| < 1$
+
+  все значения функции с условием $||\varphi(t_0)|| < \delta$ находятся в
+  $\varepsilon$ полосе $\varphi(t)$ ограничена
+
+  Возьмите любой решение $\overline{x}(t)$ произведение $\overline{x}(t_0) =
+  x_0 \not = 0$ из условия едиснственности решения так как если хотя бы одно
+  решение будет нулевым то все решения станут нулевыми так как все решения
+  выходят из точки $O$
+  $$
+  y(t) = \frac{\overline{x}(t)}{||x_0||} \frac{\delta_1}{2} ~ \text{решение} ~
+  (1_0)
+  $$
+  $x'(t) = A(t) x$
+  $$
+  ||y(t_0)|| = \left|\left| \frac{\overline{x}(t_0)}{||x_0||} \right|\right|
+  \frac{\delta_1}{2} = \frac{1}{||x_0||} ||\overline{x}(t_0)||
+  \frac{\delta}{2} = \frac{\delta_1}{2} < \delta_1
+  $$
+  Решение $y$ подходит под определение устойчивости $\Rightarrow ~ \forall
+  t \ge t_0 ~~ ||y(t)|| \le 1$
+  $$
+  \left|\left| \frac{\overline{x}(t_0)}{||x_0||} \frac{\delta_1}{2}
+  \right|\right| < 1
+  $$
+  так как $||x_0||$ и $\frac{\delta_1}{2}$ это константы тогда из под нормы
+  можно вынести
+  $$
+  \frac{||\overline{x}(t_0)||}{||x_0||} \frac{\delta_1}{2} < 1
+  $$
+  $$
+  ||\overline{x}(t)|| < \frac{2||x_0||}{\delta_1}
+  $$
+  при всех $t$ решение ограничено какойто константой $\Rightarrow$
+  $\overline{x}(t)$ ограничена $\forall t \ge 0$
+
+  $\Leftarrow$ все решения ограничены $\Rightarrow$ ограничена $\Phi(t) =
+  (\varphi_1(t), \ldots, \varphi_n(t))$
+
+  $\exists M ~~ ||\Phi(t)|| \le M ~~ \forall t \ge t_0 ~~ x(t) = \Phi(t)x(t_0)$
+
+  $\Phi(t_0) = E$ выбрали для удобства
+  $$
+  \forall \varepsilon > 0 ~~ \exists \delta_{\varepsilon} ~~ \forall x(t) =
+  \Phi(t)x(t_0) ~~ ||x(t_0)|| < \delta ~ \Rightarrow ~ \forall t \ge t_0 ~~
+  ||x(t)|| < \varepsilon
+  $$
+  $$
+  ||x(t)|| = ||\Phi(t) x(t_0)|| \le ||\Phi(t)|| ||x(t_0)|| < M \delta =
+  \varepsilon
+  $$
+  $\delta = \frac{\varepsilon}{M}$
+
+  $M \not= 0$ так как матрица $\Phi$ не может быть вырожденной $x \equiv$
+  устойчиво $\Rightarrow$ система устойчива
+\end{proof}
+
+\begin{block}[Утверждение]
+  Система ($1_0$) ассимтотически устойчива $\Leftrightarrow$ когда все ее
+  решения стремятся у к нулю при $t \to \infty$
+\end{block}
+
+\begin{proof}
+  Пусть система ассимтотически устойчива
+
+  тр. решение асс. усто.
+
+  1) устойчиво
+
+  2) $\exists \Delta ~~ ||\varphi(t_0)|| < \Delta ~~ \lim_{t \to +\infty}
+  \varphi(t) = 0$
+
+  ассимптотически устойчиво $\Rightarrow$ тривиальное решение ассимтотически
+  устойчиво $\Rightarrow$ устойчиво
+  $$
+  \exists \Delta ~~ \forall \varphi(t) ~~ ||\varphi(t_0)|| < \Delta ~~
+  \lim_{t \to +\infty} \varphi(t) = 0
+  $$
+  $\overline{x}(t)$ решение $1_0$
+
+  $y(t) = \frac{\overline{x}(t)}{||\overline{x}(t_0)||} = \frac{\Delta}{2}$
+  решение однородной системы ($1_0$)
+
+  $y(t_0) = \left|\left|\frac{\overline{x}(t)}{2||\overline{x}(t_0)||}\right|
+  \right| = \frac{\Delta}{2} < \Delta$
+  решение однородной системы ($1_0$)
+  $$
+  \Rightarrow ~ \lim_{t \to +\infty}y(t) = 0
+  $$
+  $$
+  \Rightarrow ~ \lim_{t \to +\infty} \frac{\overline{x}(t)}{
+  ||\overline{x}(t_0)||} \frac{\Delta}{2} = 0
+  $$
+  $\frac{\Delta}{2||\overline{x}(t_0)||} \lim_{t \to +\infty} \overline{x}(t)
+  = 0$
+
+  како бы решение мы не взяли все равно будет $0$
+
+  Пусть все решения $x(t) \to 0$ $\Rightarrow$ $\Phi(t) \to 0$ при $t \to
+  +\infty$
+
+  Значит $\Phi(t)$ ограничена так как имеет предел $\Rightarrow ~ x(t)\Phi(t)C$
+  тоже ограничена то есть система ($1_0$) устойчива
+  $$
+  \forall x(t) ~~ \lim_{t \to \infty} x(t) = 0 \Rightarrow \Delta \forall
+  $$
+\end{proof}
+
+\begin{title}[\Large]
+  Устойчивость системы с постоянной матрицей
+\end{title}
+
+$x'(t) = Ax(t) ~~ A_{n \times n} ~~ t \ge t_0 ~~ t_0 = 0$ с постоянной матрицей
+$\det|A - \lambda E| = 0$
+
+$\lambda_1, \ldots, \lambda_m$ кратности $n_1, \ldots, n_m$
+
+$\forall j \to n_j$ решение вида $\varphi(t) = e^{\lambda_j t}(p_0 + p_1 t +
+\ldots + p_{n_j - 1} t^{n_j-1}$
+
+\begin{block}[Критерий ассимтотической устойчивости]
+  Для того чтоыы система с постоянной матрицей была устойчивой
+  $\Leftrightarrow$ чтобы занчения матрицы $A$ имели отрицательные вещественные
+  части $\forall j ~~ Re \lambda_j < 0$
+\end{block}
+
+\begin{block}[Критерий ассимтотической неустойчивости]
+  Если среди корней есть хотя бы один у которого вещественная часть больше нуля
+  то система с постоянной матрицей неусточива.
+\end{block}
+
+Если среди корней есть корень с нулевой вещественной частью то необходимо
+проводить дополнительное иследование в частности если этот корень однократный
+то система устойчива но не ассимтотически устойчива
+
+Если корень кратный то завист от корневого пр-ва соответствующего данному корню
+
+Если корневое пространство состоит только из собственных вектором о система
+устойчиво если нет то неустойчиво
+
+$\{x \in C^n ~~ (A - \lambda E)^{h_j} x = 0 \}$ корневое пространство
+
+\begin{proof}
+  $\Rightarrow$
+\end{proof}
