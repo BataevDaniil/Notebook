@@ -239,3 +239,93 @@
   \int_a^b f(x,y) g(x,y) dx \stackrel{E}{\rightrightarrows}
   $$
 \end{block}
+
+\begin{title}[\Large]
+  Непрерывность несобственных интегралов зависящих от параметра
+\end{title}
+
+\begin{theorem}
+  $f(x,y)$ непрерывна на $[a,b) \times [c, d]$
+  $$
+  \int_a^b f(x,y) dx = F(y) ~~ \text{тогда} ~~ F(y) ~~ \text{непрерывна на} ~~
+  [a,b)
+  $$
+\end{theorem}
+
+\begin{proof}
+  $y_0, y_0 + y_{\delta} \in [c, d]$
+  $$
+  \forall \varepsilon > 0
+  ~~~
+  \exists \delta_{\varepsilon} \in (a,b)
+  ~~~
+  \forall l \in [\delta_{\varepsilon}, b)
+  ~~~
+  \forall y \in [c, d]
+  ~~~
+  \left|
+    \int_l^b f(x,y)dx
+  \right|
+  < \frac{\varepsilon}{3}
+  $$
+  $$
+  \left|
+    \int_l^b f(x,y_0)dx
+  \right|
+  < \frac{\varepsilon}{3}
+  $$
+  $$
+  \left|
+    \int_a^l f(x,y)dx
+    -
+    \int_a^l f(x,y_0)dx
+  \right|
+  < \frac{\varepsilon}{3}
+  $$
+  $|y - y_0| = |y_{\delta}| < \gamma_{\varepsilon}$
+  $$
+  \left|
+    \int_a^b f(x,y)dx
+    -
+    \int_a^b f(x,y_0)dx
+  \right|
+  =
+  $$
+  $$
+  =
+  \left|
+    \int_a^l f(x,y)dx
+    -
+    \int_a^l f(x,y_0)dx
+    +
+    \int_l^b f(x,y)dx
+    -
+    \int_l^b f(x,y_0)dx
+  \right|
+  \le
+  $$
+  $$
+  \le
+  \left|
+    \int_a^l f(x,y)dx
+    -
+    \int_a^l f(x,y_0)dx
+  \right|
+  +
+  \left|
+    \int_l^b f(x,y)dx
+  \right|
+  +
+  \left|
+    \int_l^b f(x,y_0)dx
+  \right|
+  <
+    \frac{\varepsilon}{3}
+    +
+    \frac{\varepsilon}{3}
+    +
+    \frac{\varepsilon}{3}
+  =
+    \varepsilon
+  $$
+\end{proof}
