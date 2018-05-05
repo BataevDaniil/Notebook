@@ -449,3 +449,77 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
 \includegraphics[width = 12cm]{physicalSenseSurface2Kind}
 
 в каждой точке есть направление (аэродинамика, гидродинамика)
+
+\begin{title}[\Large]
+  Формула Астроградского - Гаусса
+\end{title}
+
+\begin{define}[дивергенции]
+  Если в области $D$ заданое дифференцируемое векторное поле $\vec F(x,y,)
+  = (P, Q, R)$ то скалярная фукнция (дивергенция)
+  $$
+  div \vec F = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}
+  + \frac{\partial R}{\partial z}
+  $$
+\end{define}
+
+\begin{theorem}
+  Если $\vec F$ непрервыное дифференцируемое векторное поле в области $R^3$
+  Тело $T$ в этой области ограниченное кусочно гладкой поверхности $P$
+  (дырки разрешаются) $P = \partial T$ тогда
+  $$
+  \iint_P P dy dz + Q dz dx + R dx dy =
+  \iiint_T div \vec F dxdydz
+  $$
+\end{theorem}
+
+\begin{proof}
+  Тело $T$ является эелментарным относительно всех координатных плоскостей
+  $$
+  T = \{(x, y,z): ~ (x,y) \in D ~~ \varphi(x,y) \le z \le \psi(x,y)\}
+  $$
+  1)
+  $$
+  \iiint_T \frac{\partial R}{\partial z} dxdydz = \iint_D dxdy
+  \int^{\psi(x,y)}_{\varphi(x,y)} \frac{\partial R}{\partial z} dz =
+  $$
+  $$
+  = \iint_D (R(x,y, \psi(x,y)) - R(x,y, \varphi(x,y))) dx dy =
+  $$
+  $$
+  \iint_{P^+} R(x,y,z) dx dy + \iint_{P^-} R(x,y,z) dxdy + \iint_{P_0}
+  R(x,y,z) dxdy
+  $$
+  Аналогичено
+
+  2)
+  $$
+  \iiint_T \frac{\partial P}{\partial x} = \iint_P P dydz
+  $$
+  используя что тело $T$ элементарно относительно плоскости $yOz$
+
+  3)
+  $$
+  \iiint_T \frac{\partial Q}{\partial y} = \iint_P Q dzdy
+  $$
+  используя что тело $T$ элементарно относительно плоскости $xOz$
+
+  Далее складываем и получаем формулу Астроградского-Гаусса.
+
+  Распространяется и на случай когда тело $T$ можно разбить на конечное число
+  плоскостей элементарных относительно координатных плоскостей.
+
+  В частности таким телов является многогранник.
+\end{proof}
+
+\begin{block}[Следствие]
+  Формула для вычисления объема, если известна поверхность
+  $$
+  V(T) = \frac{1}{3} \iint_P xdydz + ydzdx + zdxdy
+  $$
+  $$
+  \iiint_T \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}
+  + \frac{\partial R}{\partial z} \right) dxdydz = \frac{1}{3} \iiint_T dxdydz =
+  \frac{V(T)}{3} ~~~ P = x ~~ Q = y ~~ R = z
+  $$
+\end{block}
