@@ -783,3 +783,102 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
     \frac{\partial P}{\partial y} dx dy
   $$
 \end{proof}
+
+\begin{title}[\Large]
+  Потенциальные векторные поля в $R^3$
+\end{title}
+
+\begin{define}[потенциального векторного поля]
+  Непрерывное векторное поле $\vec F(x,y,z) = (P, Q, R)$ называется
+  потенциальным в какой-то области $D \subset R^3$ $u = u(x,y,)$ если
+  выполняется равенство
+  $$
+  \grad (u) = \vec F ~~ \Leftrightarrow ~~
+  \left\{
+  \begin{array}{l}
+    \frac{\partial u}{\partial x} = P \\
+    \frac{\partial u}{\partial y} = Q \\
+    \frac{\partial u}{\partial z} = R
+  \end{array}
+  \right.
+  $$
+\end{define}
+
+\begin{theorem}
+  Пусть $\vec F$ непрерывное векторное поле в области $D$ следующие 3 условия
+  эквивалентны
+
+  1)
+  $$
+  \int_{L \subset D} Pdx + Qdy + Rdz = 0
+  $$
+  2)
+  $$
+  \int_{L_{ABCD}} Pdx + Qdy + Rdz = 0
+  $$
+  не зависит от вида ломанной $L_{AB}$, а зависит только от граничных точек
+
+  3)
+  $\vec F = (P, Q, R)$ является потенциальным в $D$
+\end{theorem}
+
+\begin{define}[линейной односвязонности]
+  Область $D \subset R^3$ называется линейно односвязаной если $\forall$
+  замкнутой кусочно-гладкой кривой $\Gamma \subset D$ $\exists$ поверхность
+  $P \subset D$ такая что $\Gamma = \partial P$
+\end{define}
+
+\begin{block}[Критерий потенциальности поля]
+  Для того чтобы непрерывно дифференцируемое векторное поле $\vec F = (P, Q, R)$
+  была потенциально необходимо, а в случае, когда область $D$ линейно
+  односвязанна достаточно $\forall (x,y,z) \in D ~~ rot \vec F(x,y,z) = \vec 0$
+\end{block}
+
+\begin{proof}
+  $\Rightarrow$ Пусть $\vec F$ потенциально
+  $$
+  u = u(x,y,z) ~~~
+  \left\{
+  \begin{array}{l}
+    \frac{\partial u}{\partial x} = P \\
+    \frac{\partial u}{\partial y} = Q \\
+    \frac{\partial u}{\partial z} = R
+  \end{array}
+  \right.
+  $$
+  $$
+  \frac{\partial R}{\partial y}
+  =
+  \frac{\partial^2 u}{\partial y \partial z}
+  ~~~
+  \frac{\partial Q}{\partial z}
+  =
+  \frac{\partial^2 u}{\partial z \partial y}
+  $$
+  $$
+  \left(
+    \frac{\partial R}{\partial y}
+    -
+    \frac{\partial Q}{\partial z}
+    ,
+    \frac{\partial P}{\partial z}
+    -
+    \frac{\partial R}{\partial x}
+    ,
+    \frac{\partial Q}{\partial x}
+    -
+    \frac{\partial P}{\partial y}
+  \right)
+  = rot \vec F
+  ~~~
+  \Rightarrow (0, 0, 0) = rot \vec F
+  $$
+
+  $\Leftarrow$ Пусть $rot \vec F = \vec 0$
+
+  Берем замкнутую ломанную $L \in D ~~~ P \subset D ~~~ \exists L = \partial P$
+  $$
+  \int_L (\vec F, d \vec \varphi) = \iint_P (rot \vec F, \vec n) ds = 0
+  $$
+  так как область линейно односвязанна. Из теоремы 1 поле потенциально
+\end{proof}
