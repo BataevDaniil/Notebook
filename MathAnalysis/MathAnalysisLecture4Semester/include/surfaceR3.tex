@@ -598,3 +598,188 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
   \iint_P (\vec F, \vec n) ds = \iiint div \vec F dx dy dz = 0
   $$
 \end{proof}
+
+\begin{title}[\Large]
+  Теорема Стокса
+\end{title}
+
+\begin{theorem}[Стокса]
+  Пусть $\vec F(x,y,z) = (P,Q,R)$ векторное поле
+  $$
+  rot \vec F =
+  \left|
+  \begin{array}{ccc}
+    \vec i & \vec j & \vec k \\
+    \frac{\partial}{\partial x} &
+    \frac{\partial}{\partial y} &
+    \frac{\partial}{\partial z} \\
+    P & G & R
+  \end{array}
+  \right| =
+  \left(
+    \frac{\partial R}{\partial x}
+    -
+    \frac{\partial Q}{\partial z},
+    \frac{\partial R}{\partial z}
+    -
+    \frac{\partial P}{\partial x},
+    \frac{\partial Q}{\partial x}
+    -
+    \frac{\partial P}{\partial y},
+  \right) = ~ \text{ротор} ~ \vec F
+  $$
+  степень закругленности (вихрь)
+
+  $T \subset R^3 ~~ \Gamma \subset T$ контур (замкнутая кривая) края
+  поверхности $P$ то есть $\Gamma = \partial P$
+
+  $\vec \varphi = \vec \varphi(u, \upsilon) ~~~ (u, \upsilon) \in [D]$
+  отображение $R^2 \to R^3$
+
+  $\gamma = \partial D$ ориентированна положительно
+  $$
+  \left\{
+  \begin{array}{l}
+    u = u(t) \\
+    \upsilon = \upsilon(t)
+  \end{array}
+  \right. ~~ t \in [a,b]
+  $$
+  тогда $\Gamma = \vec \varphi(\gamma)$ тоже ориентированна.
+
+  Сторона которая содержится $\vec n$ называется согласованной с ориентацией
+  $\gamma$
+\end{theorem}
+
+\begin{theorem}
+  Пусть поле $\vec F$ непрерывно дифференцируем в некоторой области $R^3$ в
+  которой задана простая почти проставя поверхность $P$ с параметрическим
+  заданием $\vec \varphi = \vec \varphi(u, \upsilon)$ а $(u, \upsilon \in [D]$
+  бегает в замыкани $D$
+
+  Если $\Gamma = \partial P$ (край поверхности P) ориентация которого
+  согласованна с выбором стороы поверхности $P$ то
+  $$
+  \int_{\Gamma} (\vec F, d\vec \varphi) = \iint_P (rot \vec F, \vec n) ds
+  $$
+  $$
+  \int_{\Gamma} Pdx + Qdy + Rdz =
+  $$
+  $$
+  = \iint_P
+  \left(
+    \frac{\partial R}{\partial y}
+    -
+    \frac{\partial Q}{\partial z}
+  \right) dy dz
+  +
+  \left(
+    \frac{\partial P}{\partial z}
+    -
+    \frac{\partial R}{\partial x}
+  \right) dz dx
+  +
+  \left(
+    \frac{\partial Q}{\partial x}
+    -
+    \frac{\partial P}{\partial y}
+  \right) dx dy
+  $$
+  обобщение формулы Грина
+\end{theorem}
+
+\begin{proof}
+  $$
+  \int_{\Gamma} P dx = \iint_P
+    \frac{\partial P}{\partial z} dz dx
+    -
+    \frac{\partial P}{\partial y} dx dy
+  $$
+  $$
+  \int_{\Gamma} P dx = \iint_{\gamma}
+    P
+    \left(
+      \frac{\partial x}{\partial u} du
+      +
+      \frac{\partial x}{\partial \upsilon} d\upsilon
+    \right)
+  =
+  $$
+  $$
+  \int_{\gamma} Pdx + Qdy = \iint_D
+    \left(
+      \frac{\partial Q}{\partial x}
+      -
+      \frac{\partial Q}{\partial x}
+    \right)
+    dx dy
+  $$
+  $$
+  = \iint_{[D]}
+    \left[
+      \left(
+        \frac{\partial P}{\partial x}
+        \frac{\partial x}{\partial u}
+        +
+        \frac{\partial P}{\partial y}
+        \frac{\partial y}{\partial u}
+        +
+        \frac{\partial P}{\partial z}
+        \frac{\partial z}{\partial u}
+      \right)
+      \frac{\partial x}{\partial \upsilon}
+      +
+      P \frac{\partial^2 x}{\partial u \partial \upsilon}
+    \right.
+    -
+  $$
+  $$
+    \left.
+      -
+      \left(
+        \frac{\partial P}{\partial x}
+        \frac{\partial x}{\partial \upsilon}
+        +
+        \frac{\partial P}{\partial y}
+        \frac{\partial y}{\partial \upsilon}
+        +
+        \frac{\partial P}{\partial z}
+        \frac{\partial z}{\partial \upsilon}
+      \right)
+      \frac{\partial x}{\partial u}
+      -
+      P \frac{\partial^2 x}{\partial \upsilon \partial u}
+    \right]
+    du d\upsilon
+  =
+  $$
+  $$
+  = \iint_{[D]}
+    \left[
+      \frac{\partial P}{\partial z}
+      \left(
+        \frac{\partial z}{\partial x}
+        \frac{\partial u}{\partial \upsilon}
+        -
+        \frac{\partial z}{\partial x}
+        \frac{\partial \upsilon}{\partial u}
+      \right)
+      -
+      \frac{\partial P}{\partial y}
+      \left(
+        \frac{\partial y}{\partial x}
+        \frac{\partial \upsilon}{\partial u}
+        -
+        \frac{\partial y}{\partial x}
+        \frac{\partial u}{\partial \upsilon}
+      \right)
+    \right]
+    du d\upsilon =
+  $$
+  $$
+  = \iint_P
+    \frac{\partial P}{\partial z} dz dx
+    -
+    \frac{\partial P}{\partial y} dx dy
+  $$
+\end{proof}
