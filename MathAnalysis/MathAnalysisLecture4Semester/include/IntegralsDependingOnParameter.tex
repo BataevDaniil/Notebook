@@ -1,0 +1,63 @@
+\begin{title}
+  Интегралы зависящие от параметра
+\end{title}
+
+\begin{define}
+  $$
+  F(y) = \int_a^b f(x,y) dx ~~ y \in E
+  $$
+  Обычная сходимость
+  $$
+  \forall y \in E
+  ~~~
+  \forall \varepsilon > 0
+  ~~~
+  \exists \delta_{\varepsilon; y} \in (a, b)
+  ~~~
+  \forall c \in [\delta_{\varepsilon; y}, b]
+  ~~~
+  \left|
+    \int_a^b f(x,y) dx
+  \right|
+  < \varepsilon
+  $$
+  Равномерная сходимость
+  $$
+  \forall \varepsilon > 0
+  ~~~
+  \exists \delta_{\varepsilon} \in (a,b)
+  ~~~
+  \forall c \in [\delta_{\varepsilon}, b]
+  ~~~
+  \forall y \in E
+  ~~~
+  \left|
+    \int_c^b f(x,y) dx
+  \right|
+  < \varepsilon
+  $$
+  Обозначения
+  $$
+  \int_a^b f(x,y) dx \stackrel{E}{\to} f(x) ~~ \text{обычная сходимость}
+  $$
+  $$
+  \int_a^b f(x,y) dx \stackrel{E}{\rightrightarrows} f(x) ~~
+  \text{равномерная сходимость}
+  $$
+  Не равномерная сходимость
+  $$
+  \exists \varepsilon_0 > 0
+  ~~~
+  \forall \delta \in (a,b)
+  ~~~
+  \exists c_{\delta} \in [\delta_{\varepsilon}, b)
+  ~~~
+  \exists y_{\delta} \in E
+  ~~~
+  \left|
+    \int_{c_{\delta}}^b f(x,y) dx
+  \right|
+  \ge \varepsilon
+  $$
+  Интеграл является неравномерно сходящимся если он сходится но сходится плохо.
+\end{define}
