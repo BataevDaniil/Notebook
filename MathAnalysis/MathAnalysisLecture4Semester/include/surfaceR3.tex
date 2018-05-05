@@ -335,7 +335,105 @@
 
 \begin{theorem}
   $$
-  P = \bigcup_{k=1}^m P_k ~~~
+  P = \bigcup_{k=1}^m P_k
+  $$
+  $P$ это объеденение простых или почти простых поверхностей
+  $$
   \iint_P F(x,y,z) ds = \sum_{k=1}^m \iint_{P_k} F(x,y,z) ds
   $$
 \end{theorem}
+
+\begin{theorem}
+  $\vec z = \vec z(x, y) = (x, y, f(x,y))$
+
+  $\sqrt{EG-F^2} = \sqrt{1 + (f'_x)^2 + (f'_y)^2}$
+  $$
+  \iint_P F(x,y,z)ds = \iint_{[D]} F(x,y,f(x,y)) \sqrt{1 + (f'_x)^2 + (f'_y)^2}
+  dx dy
+  $$
+\end{theorem}
+
+\begin{title}[\Large]
+  Поверхностный интеграл 2-ого рода
+\end{title}
+
+\begin{define}[поверхностного интеграла 2-ого рода]
+  Пусть в некоторой области пространства задана
+  $\vec F(x,y,z) = (P(x,y,z), Q(x,y,z),R(x,y,z))$ непрервыное векторное поле
+  $P = \vec z = \vec z(u, \upsilon) ~~ (u, \upsilon) \in D$
+
+  Поверхностным интегралов 2-ого рода от векторного поля $\vec F$ по поверхности
+  $P$ называется поверхностный интеграл 1-ого рода
+  $$
+  \iint (\vec F, \vec n) ds = \iint_P P dy dz + Q dz dx + Rdx dy
+  $$
+  $$
+  \vec n = \frac{[\vec z'_u, \vec z'_{\upsilon}]}
+  {|[\vec z'_u, \vec z'_{\upsilon}]|} ~~
+  \text{еденичный вектор нормали}
+  $$
+\end{define}
+
+\begin{theorem}
+  Определение поверхностного интеграла 2-ого рода корректно, то есть не зависит
+  от способа параметризации $P$
+\end{theorem}
+
+\begin{proof}
+  По определению поверхностный интеграл 2-ого рода равен поверхностному
+  интегралу 1-ого рода, а для него уже доказано данное утверждение.
+\end{proof}
+
+\begin{theorem}
+  Велечина интеграла 2-ого рода зависит от выбора стороный поверхности $P$ по
+  которой интегрируем. При замене стороны поверхности на противоположенную,
+  знак интеграла изменяется на противоположенный
+\end{theorem}
+
+\begin{proof}
+  $$
+  P = \bigcup_{k=1}^m P_k ~~~ \iint_P = \sum_{k=1}^m \iint_{P_k}
+  $$
+  $$
+  \iint_P (\vec F, \vec n) ds = \iint_P
+  P(\cos(\widehat{\vec n, Ox})) +
+  Q(\cos(\widehat{\vec n, Oy})) +
+  R(\cos(\widehat{\vec n, Oz}))ds
+  $$
+  $$
+  \vec n = \frac{[\vec z'_u, \vec z'_{\upsilon}]}
+  {|[\vec z'_u, \vec z'_{\upsilon}]|}
+  $$
+  $$
+  \iint_P (\vec F, \vec n) ds = \iint_{[D]} \left( \vec F,
+  \frac{[\vec z'_u, \vec z'_{\upsilon}]}
+  {|[\vec z'_u, \vec z'_{\upsilon}]|} \right) |[\vec z'_u, \vec z'_{\upsilon}]|
+  du d\upsilon = \iint_{[D]} (\vec F,[\vec z'_u, \vec z'_{\upsilon}])du
+  d\upsilon =
+  $$
+  $$
+  \iint_{[D]} (\vec F, \vec z'_u , \vec z'_{\upsilon}) du d\upsilon
+  = \iint_{[D]}
+  \left|
+  \begin{array}{ccc}
+    P & Q & R \\
+    x'_u & y'_u & z'_u \\
+    x'_{\upsilon} & y'_{\upsilon} & z'_{\upsilon}
+  \end{array}
+  \right| du d\upsilon
+  $$
+  $$
+  \iint_P R dx dy = \iint_Q R \cos(\widehat{\vec n, Ox}) ds = \iint_{[D]}
+  R(x,y,f(x,y)) \frac{\pm 1}{\sqrt{1 + (f'_x)^2 + (f'_y)^2}} \cdot
+  $$
+  $P: z = f(x,y)$
+
+  $\vec n = [\vec z'_x, \vec z'_y] = (-f'_x, -f'_y, 1) ~~ (x,y) \in [D]$
+
+  $\vec k = Oz = (0,0,1)$
+  $\cos(\widehat{\vec n, Ox}) = \frac{\pm 1}{\sqrt{1 + (f'_x)^2 + (f'_y)^2}}$
+  $$
+  \cdot \sqrt{1 + (f'_x)^2 + (f'_y)^2} dx dy = \pm \iint_{[D]} R(x,y, f(x,y))
+  dx dy
+  $$
+\end{proof}
