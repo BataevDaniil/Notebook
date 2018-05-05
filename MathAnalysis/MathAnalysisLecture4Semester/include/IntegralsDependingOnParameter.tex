@@ -38,10 +38,10 @@
   $$
   Обозначения
   $$
-  \int_a^b f(x,y) dx \stackrel{E}{\to} f(x) ~~ \text{обычная сходимость}
+  \int_a^b f(x,y) dx \stackrel{E}{\to} ~~ \text{обычная сходимость}
   $$
   $$
-  \int_a^b f(x,y) dx \stackrel{E}{\rightrightarrows} f(x) ~~
+  \int_a^b f(x,y) dx \stackrel{E}{\rightrightarrows} ~~
   \text{равномерная сходимость}
   $$
   Не равномерная сходимость
@@ -148,3 +148,94 @@
   < \varepsilon
   $$
 \end{proof}
+
+\begin{title}[\Large]
+  Признаки равномерной сходимости несобственных интегралов
+\end{title}
+
+\begin{block}[Признак Вейерштрасса]
+  1)
+  $$
+  \forall  x \in [a, b)
+  ~~~
+  \forall y \in E
+  ~~~
+  |f(x, y)| < g(x)
+  $$
+  2)
+  $$
+  \int_a^b g(x) dx ~~ \text{сходится}
+  $$
+  тогда
+  $$
+  \int_a^b f(x,y) g(x,y) dx \stackrel{E}{\rightrightarrows}
+  $$
+\end{block}
+
+\begin{proof}
+  $$
+  \forall \varepsilon > 0
+  ~~~
+  \exists \delta_{\varepsilon} \in (a,b)
+  ~~~
+  \forall c', c'' \in [\delta_{\varepsilon}, b)
+  ~~~
+  \forall y \in E
+  ~~~
+  \left|
+    \int_{c'}^{c''} f(x,y) dx
+  \right|
+  < \varepsilon
+  $$
+  $$
+  \left|
+    \int_{c'}^{c''} f(x,y) dx
+  \right|
+  \le
+  \int_{c'}^{c''} |f(x,y)| dx
+  \le
+  \left|
+    \int_{c'}^{c''} g(x,y) dx
+  \right|
+  < \varepsilon
+  $$
+\end{proof}
+
+\begin{block}[Признак Дирехле]
+  $f(x,y) ~~ g_x(x,y) ~~ g(x,y) ~~ [a,b] \times E$
+
+  1)
+  $$
+  \forall x \in [a, b]
+  ~~
+  \forall y \in E
+  ~~
+  | F(x, y)| \le M
+  $$
+  2) $g'_x (x,y) \le 0$ (или $g'x(x,y) \ge 0$)
+
+  3) $|g(x,y)| \le \alpha(x) ~~~ \lim_{x \to b ~ -0}$
+
+  тогда
+  $$
+  \int_a^b f(x,y) g(x,y) dx \stackrel{E}{\rightrightarrows}
+  $$
+\end{block}
+
+\begin{block}[Признак Абеля]
+  При $f(x,y) ~~ g(x,y) ~~ g'_x(x,y)$ непрерывны на $[a,b) \times E$
+
+  1)
+  $$
+  \int_a^b f(x,y) dx ~~ \text{равмноерно сходится на} ~~ E
+  $$
+  2) $\forall x \in [a,b) ~~ \forall y \in E ~~ g'_x(x,y) \le 0$ (или
+  $g'_x(x,y) \ge 0$)
+
+  3) $\exists M > 0 ~~ \forall (x,y) \ in [a,b) \times E ~~ |g(x,y) \le M$
+
+  тогда
+  $$
+  \int_a^b f(x,y) g(x,y) dx \stackrel{E}{\rightrightarrows}
+  $$
+\end{block}
