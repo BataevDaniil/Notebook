@@ -523,3 +523,78 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
   \frac{V(T)}{3} ~~~ P = x ~~ Q = y ~~ R = z
   $$
 \end{block}
+
+\begin{title}[\Large]
+  Соленоидальные поля
+\end{title}
+
+\begin{define}[допустивости]
+  Поверхность $P$ будем называть допустивой в теле $T \subset R^3$ если
+  ограниченная часть пространства данной поверхностью полностью содержится
+  (в теле $T$) или граница ограничиваесят в $R^3$
+
+  \includegraphics[width = 12cm]{acess}
+\end{define}
+
+\begin{define}[соленоидальности]
+  Векторное поле $\vec F(x,y,z) \in T$ называется соленоидальным если
+  $\forall P \subset T$
+  $$
+  \iint_P (\vec F, \vec n) ds = \iint_P Pdydz + Q dzdx + R dxdy = 0
+  $$
+\end{define}
+
+\begin{define}[поверхностно односвязанно]
+  Область $D \subset R^3$ называется поверхностно односвязанной если
+  $\forall P \subset D$ ограниченная данной поверхностью частью пространства
+  также содержится в $D$ (обласить без дырок)
+\end{define}
+
+\begin{block}[Критерий соленоидальности поля]
+  Для того чтобы векторное поле $\vec F(x,y,z)$ непрерывно дифференцируемое в
+  области $D$ было соленоидальным в области $D$ необходимо, а в случае когда
+  область $D$ поверхностно односвязанно достаточно, чтобы
+  $\forall (x,y,z) \in D ~~ div \vec F = 0$ (сумма частных производных)
+\end{block}
+
+\begin{proof}
+  $\Leftarrow$ Пусть поле $\vec F$ называется соленоидальным точка
+  $(x_0, y_0, z_0) \in D$ так как область $D$ открытое множество то $\exists$
+  шар $O_{\varepsilon}(x_0, y_0, z_0) \subset D$
+
+  применим к шару формулу Астроградского-Гаусса
+  $$
+  \iint_{\partial O_{\varepsilon}(x_0, y_0, z_0) =
+  S_{\varepsilon}(x_0, y_0, z_0)} (\vec F, \vec n) ds =
+  \iiint_{O_{\varepsilon}} div \vec F dxdydz =
+  $$
+  $$
+  (x_i, y_i, z_i) \subset O_{\varepsilon}(x_0, y_0, z_0) ~~ \text{средняя точка
+  лежит где-то в шаре}
+  $$
+  $$
+  = div \vec F(x_0, y_0, z_0) \iiint_{O_{\varepsilon}(x_0, y_0, z_0)} dxdydz =
+  div F(x_0, y_0, z_0) \frac{4}{3} \pi \varepsilon^3
+  $$
+  $\frac{4}{3} \pi \varepsilon^3$ объем шара
+  $$
+  div \vec F(x_0, y_0, z_0) = \frac{\iint_{S_{\varepsilon}(x_0, y_0, z_0)}
+  (\vec F, \vec n) ds}{\frac{4}{3} \pi \varepsilon^3}
+  $$
+  $$
+  \lim_{\varepsilon \to 0} div \vec F(x_0, y_0, z_0) = \lim_{\varepsilon \to 0}
+  \frac{\iint_{S_{\varepsilon}(x_0, y_0, z_0)}(\vec F, \vec n) ds}
+  {\frac{4}{3} \pi \varepsilon^3} = 0
+  $$
+  в любой точке области $div$ оказывается равной нулю так как поле соленоидально
+
+  $\Rightarrow$ Пусть $div \vec F = 0 ~~ \forall (x,y,z) \in D$ D - поверхностно
+  односвязанно.
+
+  Расмотрим произвольную поверхность $P \subset D$ так как $D$ - поверхность
+  односвязанна, то тело $\partial T = P$ ограничена данной поверхностью и
+  полностью содержится
+  $$
+  \iint_P (\vec F, \vec n) ds = \iiint div \vec F dx dy dz = 0
+  $$
+\end{proof}
