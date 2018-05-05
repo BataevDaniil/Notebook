@@ -61,3 +61,90 @@
   $$
   Интеграл является неравномерно сходящимся если он сходится но сходится плохо.
 \end{define}
+
+\begin{title}[\Large]
+  Критерий Коши равномерной сходимости определенного интеграла
+\end{title}
+
+\begin{block}[Критерий Коши равномерной сходимости определенного интеграла]
+  $$
+  F(y) = \int_a^b f(x,y) dx ~~ \text{сходится равномерно на} ~~ E ~~
+  $$
+  $$
+  \Leftrightarrow
+  \forall \varepsilon > 0
+  ~~~
+  \exists \delta_{\varepsilon} \in (a,b)
+  ~~~
+  \forall c', c'' \in [\delta_{\varepsilon}, b)
+  ~~~
+  \forall y \in E
+  ~~~
+  \left|
+    \int_{c'}^{c''} f(x,y) dx
+  \right|
+  < \varepsilon
+  $$
+\end{block}
+
+\begin{proof}
+  $\Rightarrow$
+  $$
+  \forall \varepsilon > 0
+  ~~~
+  \exists \delta_{\varepsilon} \in (a,b)
+  ~~~
+  \forall c \in [\delta_{\varepsilon}, b]
+  ~~~
+  \forall y \in E
+  ~~~
+  \left|
+    \int_c^b f(x,y) dx
+  \right|
+  < \frac{\varepsilon}{2}
+  ~~~
+  c = c'
+  ~~~
+  c = c''
+  $$
+  $$
+  \left|
+    \int_{c'}^{c''} f(x,y) dx
+  \right|
+  \le
+  \left|
+    \int_{c'}^{b} f(x,y) dx
+  \right|
+  +
+  \left|
+    \int_{c''}^{b} f(x,y) dx
+  \right|
+  <
+  \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+  $$
+  $\Leftarrow$
+  $$
+  \Leftrightarrow
+  \forall \varepsilon > 0
+  ~~~
+  \exists \delta_{\varepsilon} \in (a,b)
+  ~~~
+  \forall c', c'' \in [\delta_{\varepsilon}, b)
+  ~~~
+  \forall y \in E
+  ~~~
+  \left|
+    \int_{c'}^{c''} f(x,y) dx
+  \right|
+  < \frac{\varepsilon}{2}
+  $$
+  $$
+  \lim_{c'' \to b -0}
+    \left|
+      \int_{c''}^{b} f(x,y) dx
+    \right|
+  =
+  \int_{a}^{b} f(x,y) dx
+  < \varepsilon
+  $$
+\end{proof}
