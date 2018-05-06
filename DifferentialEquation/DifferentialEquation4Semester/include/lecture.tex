@@ -238,6 +238,37 @@
   тождественнвый ноль
 \end{block}
 
+\begin{title}[\Large]
+  Фундаментальная система решений, ее связь с общим решением уравнения
+\end{title}
+
+\begin{theorem}
+  Множество решений однородного уравнения
+  это ФСР.
+  $$
+  (1_0) ~~ x^{(n)}(t) + \sum_{j=0}^{n-1} a_j(t)x^{(j)}(t) = 0
+  $$
+
+  Если $\varphi_1(t), \ldots, \varphi_n(t)$ ФСР то множество решений ($1_0$)
+  $x(t) = C_1 \varphi_1(t) + \ldots + C_n \varphi_n(t)$ общее решение ($1_0$)
+\end{theorem}
+
+\begin{define}[определителя Вронского]
+  Определитель Вронского фукнций $\varphi_1(t), \ldots, \varphi_n(t)$
+  $$
+  \left|
+  \begin{array}{ccc}
+    \varphi_1(t) & \cdots & \varphi_n(t) \\
+    \varphi'_1(t) & \cdots & \varphi'_n(t) \\
+    \cdots &
+    \cdots &
+    \cdots \\
+    \varphi_1^{(n-1)}(t) & \cdots & \varphi_n^{(n-1)}(t)
+  \end{array}
+  \right|
+  $$
+\end{define}
+
 \begin{define}[устойчивости по Ляпунову]
   $$
   \left\{
