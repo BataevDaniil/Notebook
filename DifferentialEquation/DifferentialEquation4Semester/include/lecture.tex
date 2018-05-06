@@ -1,3 +1,202 @@
+\begin{title}[\Large]
+  Линейные дифференциальные уравнения n-ого порядка. Эквивалентность линейной
+  системе
+\end{title}
+
+\begin{define}[линейных уравнений n-ого порядка]
+  $(1) ~~ x^{(n)} + a_{n-1}(t)x^{(n-1)} + \ldots + a_1(t) x'(t) + a_0(t)x(t)
+  = g(t)$
+
+  $x(t)$ неизвестная функция
+
+  $a_0(t), a_1(t), \ldots, a_{n-1}(t)$ непрерывные функции
+
+  $g(t)$ непрерывная фукнция (свободный член)
+
+  $t \in <\alpha, \beta>$
+
+  Если $g(t) \equiv 0$ то уравнение наызвается однородным
+  $$
+  \left\{
+  \begin{array}{l}
+    x_1(t) = x(t) \\
+    x_2(t) = x'(t) \\
+    x_3(t) = x''(t) \\
+    \ldots ~~~ \ldots \\
+    x'_n(t) = g(t) - a_{n-1}(t)x^{(n-1)} - \ldots - a_1(t) x'(t) - a_0(t)x(t)
+  \end{array}
+  \right.
+  $$
+  $$
+  A(t) =
+  \left(
+  \begin{array}{ccccc}
+    0 & 1 & 0 & \cdots & 0 \\
+    0 & 0 & 1 & \cdots & 0 \\
+    \cdots & \cdots & \cdots & \cdots & \cdots  \\
+    0 & 0 & 0 & \cdots & 1 \\
+    -a_0(t) & -a_1(t) & -a_2(t) & \cdots & -a_{n-1}(t)
+  \end{array}
+  \right)
+  ~~~
+  b(t) =
+  \left(
+  \begin{array}{c}
+    0 \\
+    0 \\
+    \vdots \\
+    0 \\
+    g(t)
+  \end{array}
+  \right)
+  $$
+  $(3) ~~ \varphi'(t) = A\varphi(t) + b(t) ~~~ \varphi(t_0) = \varphi_0$
+  $$
+  \varphi(t) =
+  \left(
+  \begin{array}{c}
+    x_1(t) \\
+    x_2(t) \\
+    \vdots \\
+    x_n(t)
+  \end{array}
+  \right)
+  ~~~
+  \varphi_0 =
+  \left(
+  \begin{array}{c}
+    x_0 \\
+    x_1 \\
+    \vdots \\
+    x_{n-1}
+  \end{array}
+  \right)
+  $$
+\end{define}
+
+\begin{define}[задачи Коши для линейных уравнений n-ого порядка]
+  Задача Коши для линейных уравнений n-ого порядка
+  $$
+  \left\{
+  \begin{array}{l}
+    x(t_0) = x_0 \\
+    x'(t_0) = x_1 \\
+    x''(t_0) = x_2 \\
+    \ldots ~~~ \ldots \\
+    x^{(n-1)}(t_0) = x_{n-1}
+  \end{array}
+  \right.
+  ~~~
+  t_0 \in <\alpha, \beta>
+  ~~~
+  x_0, x_1, \ldots, x_{n-1} \in C
+  $$
+\end{define}
+
+\begin{block}[Утверждение]
+  Уравнение (1) и система (3) эквивалентны, то есть если $x(t)$ решение
+  уравнения (1) то является решением системы (3).
+
+  Обратно, если $\varphi(t)$ решение системы (3) то его первая компонента
+  $\varphi_1(t)$ решение уравнения (1)
+\end{block}
+
+\begin{proof}
+  $\Rightarrow$
+
+  Пусть $\varphi(t)$ решение системы (3)
+  $$
+  \varphi(t) =
+  \left(
+  \begin{array}{c}
+    \varphi_1(t) \\
+    \varphi_2(t) \\
+    \vdots \\
+    \varphi_n(t) \\
+  \end{array}
+  \right)
+  ~~
+  \text{решение}
+  ~
+  \Rightarrow
+  ~
+  \left\{
+  \begin{array}{l}
+    \varphi'_1(t) = \varphi_2(t) \\
+    \varphi'_2(t) = \varphi_3(t) \\
+    \cdots ~~~ \cdots ~~~ \cdots \\
+    \varphi'_{n-1}(t) = \varphi_n(t) \\
+    \varphi'_n(t) = g(t) - \sum_{j=0}^{n-1} a_j(t) \varphi_{j+1}(t)
+  \end{array}
+  \right.
+  $$
+  $\Rightarrow ~~ \varphi'_n(t) = \varphi_1^{(n)}(t) =
+    g(t) - \sum_{j=0}^{n-1} a_j(t) \varphi_1^{(j)}(t)$
+
+  $\varphi_1^{(n)} + a_{n-1}(t) \varphi_1^{(n-1)}(t) + \ldots +
+  a_1(t)\varphi'_1(t) + a_0(t) \varphi_1(t) = g(t)$
+
+  $\Leftarrow$
+  $$
+  \begin{array}{ll}
+    x'_1(t) = x_2(t) & (x(t))' = x'(t) \\
+    x'_2(t) = x_3(t) & (x'(t))' = x''(t) \\
+    \cdots ~~~ \cdots ~~~ \cdots &
+    \cdots ~~~ \cdots ~~~ \cdots \\
+    x'_{n-1}(t) = x_n(t) & (x^{n-1}(t))' = x^{(n-1)}(t)
+  \end{array}
+  $$
+  Пусть $x(t)$ решение (1)
+  $$
+  x'_n(t) = g(t) - \sum_{j=0}^{n-1} a_j(t) x_{j+1}(t)
+  $$
+  $$
+  x^n(t) = g(t) - \sum_{j=0}^{n-1} a_j(t) x^{(j)}(t)
+  $$
+\end{proof}
+
+\begin{block}[Заменачание]
+  Если $n$ раз дифференцируемыые функции $\varphi_1(t), \ldots, \varphi_n(t)$
+  ЛНЗ тогда
+  $$
+  \left(
+  \begin{array}{c}
+    \varphi_1(t) \\
+    \varphi'_1(t) \\
+    \vdots \\
+    \varphi_1^{(n-1)}(t)
+  \end{array}
+  \right)
+  ,
+  \left(
+  \begin{array}{c}
+    \varphi_2(t) \\
+    \varphi'_2(t) \\
+    \vdots \\
+    \varphi_2^{(n-1)}(t)
+  \end{array}
+  \right)
+  , \ldots ,
+  \left(
+  \begin{array}{c}
+    \varphi_n(t) \\
+    \varphi'_n(t) \\
+    \vdots \\
+    \varphi_n^{(n-1)}(t)
+  \end{array}
+  \right)
+  $$
+\end{block}
+
+\begin{theorem}[о $\exists !$ задачи Коши (1,2)]
+  $a_0(t), a_1(t), \ldots, a_{n-1}(t), g(t)$ непрерывные на $<\alpha, \beta>$
+  тогда
+  $\forall t_0 \in <\alpha, \beta>
+  ~~~
+  \forall x_0, x_1, \ldots, x_{n-1} \in C$ задача Коши $(1,2)$ имеет и притом
+  единственное решение
+\end{theorem}
+
 \begin{define}[устойчивости по Ляпунову]
   $$
   \left\{
