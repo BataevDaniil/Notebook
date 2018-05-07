@@ -755,6 +755,52 @@
   $\upsilon(t) \ge \varepsilon > 0$ (Аналагочино и с модулем $< 0$)
 \end{proof}
 
+\begin{title}[\Large]
+  Непрерывная зависимость решения задачи Коши от начальных данных
+\end{title}
+
+\begin{define}[задачи Коши]
+  $$
+  \left\{
+  \begin{array}{l}
+    (1) ~~~ x'(t) = f(t, x(t)) \\
+    (2) ~~~ x(t_0) = x_0
+  \end{array}
+  \right. ~~~ \text{задача Коши}
+  $$
+  $f$ непрерывна и непрерывна дифференцируема по $x$ в
+  $G \subset R^{n+1} \to R^n$ (то есть удовлитворяет условию Пикара)
+
+  Предположи вместо исходной задачи мы рассматриваем другую
+  $$
+  \left\{
+  \begin{array}{l}
+    (3) ~~~ x'(t) = f_1(t, x(t)) \\
+    (4) ~~~ x(t_1) = x_1
+  \end{array}
+  \right. ~~~  t \in [a,b] ~~~ t_0 \in [a,b]
+  $$
+\end{define}
+
+\begin{theorem}[о ннепрерывной зависимости]
+  Пусть $\varphi_0(t)$ решения (1,2) определенное на $t \in [a,b]$ тогда
+  $$
+  \forall \varepsilon > 0
+  ~~~
+  \exists \delta_{\varepsilon}
+  ~~~
+  |t_1 - t_0| < \delta
+  ~~~
+  ||x_1 - x_0|| < \delta
+  $$
+  $$
+  \sup_{(t, x) \in G} ||f_1(t,x) - f(t,x)|| < \delta
+  ~~~
+  \sup_{t \in [a,b]} ||\varphi_0(t) - \varphi_1(t)|| < \varepsilon
+  $$
+  где $\varphi_1(t)$ решение задачи (3,4) причем оно определено на $[a,b]$
+\end{theorem}
+
 \begin{define}[устойчивости по Ляпунову]
   $$
   \left\{
