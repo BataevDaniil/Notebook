@@ -575,6 +575,55 @@
   набор вещественных решений
 \end{block}
 
+\begin{title}[\Large]
+  Нахождение частного решения линейного неоднородного дифференциального
+  уравнения n-ого порядка по виду f(x)
+\end{title}
+
+\begin{define}[неоднородного уравнения с постоянными коэффицентами]
+  $$
+  x^{(n)}(t) + \ldots + a_1 x'(t) + a_0 x(t) = f(t)
+  $$
+\end{define}
+
+\begin{theorem}[определение частного решения во виду правой части]
+  $x_{\text{о.р.н}} = x_{\text{о.р.о}} + x_{\text{ч.р.н}}$
+
+  I $f(t) = P_m(t) = b_0 + b_1 t + \ldots b_m t^m$
+
+  1) $\lambda = 0$ не является корнем характеристического уравнения
+  $\lambda^n + a_{n-1} \lambda^{n-1} + \ldots + a_0 = 0$
+
+  $x_{\text{ч.н}}(t) = Q_m(t)$ многочлен той же самой степени но с другими
+  коэффицентами
+
+  2) $\lambda = 0$ корень характеристического уравнения кратности $l$
+
+  $x_{\text{ч.н}}(t) = t^l Q_m(t)$
+
+  II $f(t) = P_m(t) e^{\alpha t}$
+
+  1) $\lambda = \alpha$ не корень характеристического уравнения
+
+  $\Rightarrow ~ x_{\text{ч.н}}(t) = Q_m(t) e^{\alpha t}$
+
+  2) $\lambda = \alpha$ корень характеристического уаравнения кратности $l$
+
+  $\Rightarrow ~ x_{\text{ч.н}}(t) = t^l Q_m(t) e^{\alpha t}$
+
+  III $f(t) = e^{\alpha t} (P_m(t) \cos \beta t + Q_k(t) \sin \beta t)$
+
+  1) $\lambda = \alpha \pm i\beta$ не корень характеристического уравнения
+
+  $\Rightarrow ~ x_{\text{ч.н}}(t) = e^{\alpha t}(T_2(t) \cos \beta t + S_2(t)
+  \sin \beta t) ~~~ r = max\{ k,m \}$
+
+  2) $\alpha \pm i\beta$ корни характеристического уравнения кратности $l$
+
+  $\Rightarrow ~ x_{\text{ч.н}}(t) = t^l e^{\alpha t}(T_2(t) \cos \beta t +
+  S_2(t) \sin \beta t)$
+\end{theorem}
+
 \begin{define}[устойчивости по Ляпунову]
   $$
   \left\{
