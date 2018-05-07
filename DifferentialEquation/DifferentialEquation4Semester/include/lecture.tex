@@ -475,6 +475,106 @@
   УЗНАТЬ О ТОМ ЧТО СДЕСЬ ДОЛЖНО БЫТЬ
 \end{block}
 
+\begin{title}[\Large]
+  Теорема о фундаментальной системе решений линейного дифференциального
+  уравнения n-ого порядка с постоянными коэффициентами
+\end{title}
+
+\begin{define}[уравнений с постоянными коэффициентами]
+  $a_j(t) \equiv a_j$
+
+  $x^{(n)} + a_{n-1} x^{(n-1)}(t) + \ldots + a_0x(t) = 0 ~~~ (1_0)$
+  $$
+  A =
+  \left(
+  \begin{array}{ccccc}
+    0 & 1 & 0 & \cdots & 0 \\
+    0 & 0 & 1 & \cdots & 0 \\
+    \cdots & \cdots & \cdots & \cdots & \cdots \\
+    0 & 0 & 0 & \cdots & 1 \\
+    -a_0 & -a_1 & -a_2 & \cdots & -a_{n-1}
+  \end{array}
+  \right)
+  $$
+  $$
+  |A - \lambda E| =
+  \left|
+  \begin{array}{ccccc}
+    -\lambda & 1 & 0 & \cdots & 0 \\
+    0 & -\lambda & 1 & \cdots & 0 \\
+    \cdots & \cdots & \cdots & \cdots & \cdots \\
+    0 & 0 & 0 & \cdots  &  1\\
+    -a_0 & -a_1 & -a_2 & \cdots & -a_{n-1} - \lambda
+  \end{array}
+  \right|
+  = -(\lambda^3 + a_{n-1}\lambda^{n-1} + \ldots + a_1\lambda a_0)(-1)^{n+1}
+  $$
+
+  $|A - \lambda E| = 0$
+
+  $\lambda^3 + a_{n-1}\lambda^{n-1} + \ldots + a_1\lambda a_0 = 0$
+  характеристическое уравнение для уравнения $(1_0)$
+\end{define}
+
+\begin{theorem}
+  Пусть $\lambda_1, \lambda_2, \ldots, \lambda_k$ корни характеристического
+  уравнения
+
+  $\lambda^n + a_{n-1} \lambda^{n-1} + \ldots + a_n\lambda + a_0 = 0$ кратностей
+  $n_1, n_2, \ldots, n_k$ где $n_1, + \ldots + n_k = n$
+
+  $\forall \lambda_j$ соответствует $n_j$ ЛНЗ решений вида $e^{\lambda_j t},
+  te^{\lambda_j t}, \ldots, t^{n_j - 1} e^{\lambda_j t}$
+
+  объеденение таких решений по всем $j$ дает ФСР.
+\end{theorem}
+
+\begin{proof}
+  $(1^0) ~~~ x' = Ax(t)$ по теореме о ФСР
+
+  $\lambda_1, \ldots, \lambda_k$
+
+  $n_1, \ldots, n_k$
+
+  $\lambda_j ~~~ \exists n_j$ решений вида (ЛНЗ) $P_{n_j - 1}(t)e^{\lambda_j t}$
+
+  $\lambda_j$ соответствует $\sum_{m=0}^{n_j - 1} P^{(l)}_m t^m e^{\lambda_j t}
+  l = 1, \ldots, n_j$
+
+  $\varphi_l(t)\sum_{m=0}^{n_j - 1} P^{(l)}_m t^m e^{\lambda_j t}$ первые
+  компоненты ЛНЗ решений уравнения $(1^0)$ (многочлены образуют базис)
+
+  $1, t, t^2, \ldots, t^{n_j - 1}$ перейдем к новому базису тогда каждое решение
+  будет выражаться через ЛНЗ корни вида $e^{\lambda_j t}, te^{\lambda_j t},
+  \ldots, t^{n_j - 1} e^{\lambda_j t}$ таким образом решение образует ФСР.
+\end{proof}
+
+\begin{block}[Замечание]
+  Если все коэффициенты уравнения вещественные то
+
+  $\lambda_1 = \alpha+ i\beta$
+
+  $\lambda_2 = \overline{\lambda_1} = \alpha - i\beta$ корень кратности $n_1$
+
+  в этом случае обязательно переходим к вещественной ФСР
+
+  $e^{(\alpha + i\beta)t}, te^{(\alpha - i\beta)t}, \ldots,
+  t^{n_1 - 1}e^{(\alpha - i\beta)t} - \alpha + i\beta$
+
+  $e^{(\alpha + i\beta)t}, te^{(\alpha - i\beta)t}, \ldots,
+  t^{n_1 - 1}e^{(\alpha - i\beta)t} - \alpha - i\beta$
+  $$
+  e^{(\alpha \pm i\beta)t} = e^{\alpha t}(\cos \beta t \pm i \sin \beta t)
+  $$
+  $e^{\alpha t} \cos \beta t, t e^{\alpha t} \cos \beta t, \ldots,
+  t^{n_1 - 1} e^{\alpha t} \cos \beta t$
+
+  $e^{\alpha t} \sin \beta t, t e^{\alpha t} \sin \beta t, \ldots,
+  t^{n_1 - 1} e^{\alpha t} \sin \beta t$
+
+  набор вещественных решений
+\end{block}
+
 \begin{define}[устойчивости по Ляпунову]
   $$
   \left\{
