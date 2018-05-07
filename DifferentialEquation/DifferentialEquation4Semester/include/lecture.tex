@@ -294,6 +294,144 @@
   с множеством функций $\{\varphi(t) + \varphi_0(t)\}$
 \end{block}
 
+\begin{title}[\Large]
+  Метод вариации для линейного неоднородного дифференциального уравнения
+  n-ого порядка.
+\end{title}
+
+\begin{block}[Метод вариации]
+  $(1) ~~ x^{(n)}(t) + a_{n-1}(t)x^{(n-1)}(t) + \ldots + a_1(t)x'(t) +
+  a_0(t)x(t) = b(t)$
+
+  $\varphi_1(t), \ldots, \varphi_n(t)$ ФСР линейного однородного уравнения
+
+  $x(t) = C_1\varphi_1(t) + \ldots + C_n\varphi_n(t)$ общее решение линейного
+  однородного уравнения
+
+  Общее решение (1) имеем в виде $\varphi(t) = u_1(t)\varphi_1(t) + \ldots +
+  u_n(t)\varphi_n(t)$
+  $$
+  \begin{array}{l}
+    x'(t) = u_1(t) \varphi'_1(t) + \ldots + u_n(t) \varphi'_n(t) +
+    u'_1(t)\varphi_1(t) + \ldots + u'_n(t) \varphi_n(t) \\
+
+    x''(t) = u_1(t) \varphi''_1(t) + \ldots + u_n(t) \varphi''_n(t) +
+    u'_1(t)\varphi_1'(t) + \ldots + u'_n(t) \varphi'_n(t) \\
+
+    \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots
+    ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots ~~~ \ldots \\
+
+    x^{(n)}(t) = u_1(t) \varphi^{(n)}_1(t) + \ldots + u_n(t) \varphi^{(n)}_n(t) +
+    u'_1(t)\varphi_1^{(n-1)}(t) + \ldots + u'_n(t) \varphi^{(n-1)}_n(t) \\
+  \end{array}
+  $$
+  подставим в уравнение
+  $$
+  \sum_{j=1}^n u_j(t) \varphi_j^{(n)}(t)
+  +
+  \sum_{j=1}^n u'_j(t) \varphi_j^{(n-1)}(t)
+  +
+  a_{n-1}(t)\sum_{j=1}^n u'_j(t) \varphi_j^{(n-1)}(t)
+  + \ldots +
+  $$
+  $$
+  +
+  a_1(t)\sum_{j=1}^n u_j(t) \varphi'_j(t)
+  +
+  a_0(t)\sum_{j=1}^n u_j(t) \varphi_j(t)
+  =
+  b(t)
+  $$
+  $$
+  u_1(t)
+  \left(
+    \varphi_1^{(n)}(t) + a_{n-1}(t)\varphi_1^{(n-1)} + \ldots + a_1(t)
+    \varphi'_1(t) + a_0(t)\varphi_1(t)
+  \right)
+  + \ldots
+  $$
+  $$
+  \ldots + u_n(t)
+  \left(
+    \varphi_n^{(n)} + \ldots + a_0(t)\varphi_0(t)
+  \right)
+  + u_1'(t)\varphi_1^{(n-1)} + \ldots + u_n'(t) \varphi_n^{(n-1)}(t) = b(t)
+  $$
+  $$
+  \left\{
+  \begin{array}{l}
+    u'_1(t)\varphi(t) + \cdots + u'_n(t)\varphi_n(t) = 0 \\
+    u'_1(t)\varphi'(t) + \cdots + u'_n(t)\varphi'_n(t) = 0 \\
+    \cdots ~~~ \cdots ~~~ \cdots ~~~ \cdots ~~~ \cdots ~~~ \cdots \\
+    u'_1(t)\varphi^{(n-2)}(t) + \cdots + u'_n(t)\varphi^{(n-2)}_n(t) = 0 \\
+    u'_1(t)\varphi^{(n-1)}(t) + \cdots + u'_n(t)\varphi^{(n-1)}_n(t) = b(t)
+  \end{array}
+  \right.
+  $$
+  Метод Крамера
+  $$
+  \Delta(t) =
+  \left|
+  \begin{array}{ccc}
+    \varphi_1(t) & \cdots & \varphi_n(t) \\
+    \varphi'_1(t) & \cdots & \varphi'_n(t) \\
+    \vdots & \cdots & \vdots \\
+    \varphi^{(n-1)}_1(t) & \cdots & \varphi^{(n-1)}_n(t) \\
+  \end{array}
+  \right|
+  = W(t) \not= 0
+  $$
+  $$
+  \Delta(t) =
+  \left|
+  \begin{array}{cccc}
+    0 & \varphi_1(t) & \cdots & \varphi_n(t) \\
+    0 & \varphi'_2(t) & \cdots & \varphi'_n(t) \\
+    \vdots & \vdots & \cdots & \vdots \\
+    b(t) & \varphi^{(n-1)}_n(t) & \cdots & \varphi^{(n-1)}_n(t) \\
+  \end{array}
+  \right|
+  = b(t)A_{n1}(t)
+  $$
+  $\Delta_j(t) = b(t)A_{nj}(t)$
+  $$
+  u'_j(t) = \frac{b(t)A_{nj}(t)}{w(t)}
+  $$
+  $$
+  u_j(t) = \int_{t_0}^t \frac{b(s)A_{nj}(s)}{w(s)}ds + D_j
+  ~~~
+  t_0 \in <\alpha, \beta>
+  $$
+  $$
+  x(t) = \sum_{j=1}^n u_j(t)\varphi_j(t) = D_1\varphi_1(t) + \ldots +
+  D_n\varphi_n(t) +
+  $$
+  $$
+  + \varphi_1(t) \int_{t_0}^t \frac{b(s)A_{nj}(s)}{w(s)}ds + \ldots +
+  \varphi_n(t) \int_{t_0}^t \frac{b(s)A_{nn}(s)}{w(s)}ds =
+  $$
+  $$
+  = \sum_{j=1}^n u_j(t)\varphi_j(t) = D_1\varphi_1(t) + \ldots +
+  D_n\varphi_n(t) +
+  $$
+  $$
+  + \int_{t_0}^t \frac{b(s)(\varphi_1(t) A_{nj}(s) + \ldots +
+ \varphi_n(t) A_{nn}(s))}{w(s)}ds =
+  $$
+  $$
+  = D_1\varphi_1(t) + \ldots + D_n\varphi_n(t) + \int_{t_0}^t \frac{
+    \left|
+    \begin{array}{ccc}
+      \varphi_1(s) & \cdots & \varphi_n(s) \\
+      \varphi'_1(s) & \cdots & \varphi'_n(s) \\
+      \vdots & \cdots & \vdots \\
+      \varphi^n_1(s) & \cdots & \varphi^n_n(s)
+    \end{array}
+    \right|
+  }{w(s)}b(s)ds
+  $$
+\end{block}
+
 \begin{define}[устойчивости по Ляпунову]
   $$
   \left\{
