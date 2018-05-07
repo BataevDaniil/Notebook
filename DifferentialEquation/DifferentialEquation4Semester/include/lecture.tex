@@ -691,6 +691,70 @@
   $$
 \end{block}
 
+\begin{title}[\Large]
+  Лемма Белмана
+\end{title}
+
+\begin{block}[Лемма Гронуолла-Белмана]
+  Пусть $a(t) \ge 0$ непрерывная $C \ge 0 ~~ t \in <\alpha, \beta> ~~
+  t_0 \in <\alpha, \beta>$
+
+  $\forall$ неотрицательных на $<\alpha, \beta>$ решения неравенства
+  $$
+  z(t) \le C + \left| \int_{t_0}^t a(s) z(s) ds \right|
+  $$
+  справедлива оценка
+  $$
+  z(t) \le C e^{\left| \int_{t_0}^t a(s) ds \right|}
+  ~~~
+  t \in <\alpha, \beta>
+  $$
+\end{block}
+
+\begin{proof}
+  $t \in [t_0, \beta>$
+  $$
+  z(t) \le C + \left| \int_{t_0}^t a(s) z(s) ds \right|
+  $$
+  возьмем $\varepsilon > 0$ и
+  $$
+  \upsilon(t) \le C + \varepsilon + \int_{t_0}^t a(s) z(s) ds
+  $$
+  $z(t) < \upsilon(t)$
+  $$
+  \upsilon '(t) = a(t)z(t) \le a(t) \upsilon(t)
+  ~~~
+  \upsilon(t) \ge \varepsilon > 0
+  $$
+  так как $\upsilon(t) > 0$ $\Rightarrow$
+  $\frac{\upsilon'(t)}{\upsilon(t)} \le a(t)$
+  $$
+  \int_{t_0}^t \frac{\upsilon'(t)}{\upsilon(t)} ds \le \int_{t_0}^t a(s) ds
+  $$
+  $$
+  \ln \upsilon(s)|_{t_0}^t \le \int_{t_0}^t a(s) ds
+  $$
+  $$
+  \ln \left( \frac{\upsilon(t)}{\upsilon(t_0)} \right) \le \int_{t_0}^t a(s) ds
+  $$
+  $$
+  \frac{\upsilon(t)}{\upsilon(t_0)} \le e^{\int_{t_0}^t a(s) ds}
+  $$
+  $$
+  \upsilon(t_0) = C + e > 0
+  $$
+  $$
+  \upsilon(t) = (C + e)e^{\int_{t_0}^t a(s) ds}
+  $$
+  $$
+  z(t) = (C + e)e^{\int_{t_0}^t a(s) ds}
+  $$
+  $$
+  \varepsilon \to 0 ~~~ z(t) \le C e^{\left| \int_{t_0}^t a(s) ds \right|}
+  $$
+  $\upsilon(t) \ge \varepsilon > 0$ (Аналагочино и с модулем $< 0$)
+\end{proof}
+
 \begin{define}[устойчивости по Ляпунову]
   $$
   \left\{
