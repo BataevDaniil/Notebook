@@ -577,7 +577,7 @@
 
 \begin{title}[\Large]
   Нахождение частного решения линейного неоднородного дифференциального
-  уравнения n-ого порядка по виду f(x)
+  уравнения n-ого порядка по виду $f(x)$
 \end{title}
 
 \begin{define}[неоднородного уравнения с постоянными коэффицентами]
@@ -623,6 +623,73 @@
   $\Rightarrow ~ x_{\text{ч.н}}(t) = t^l e^{\alpha t}(T_2(t) \cos \beta t +
   S_2(t) \sin \beta t)$
 \end{theorem}
+
+\begin{title}[\Large]
+  Функция Коши для линейного дифференциального уравнения n-ого порядка с
+  постоянными коэффициентами
+\end{title}
+
+\begin{define}[функции Коши]
+  $$
+  x(t) = C_1\varphi_1(t) + \ldots + C_n\varphi_n(t) + \int_{t_0}^t C(t,s)f(s)ds
+  $$
+  $$
+  C(t,s) = \frac{
+    \left|
+    \begin{array}{ccc}
+      \varphi_1(s) & \cdots & \varphi_n(s) \\
+      \varphi'_1(s) & \cdots & \varphi'_n(s) \\
+      \cdots & \cdots & \cdots \\
+      \varphi_1(s) & \cdots & \varphi_n(s)
+    \end{array}
+    \right|
+  }{w(s)}
+  $$
+  1) $C(t,s)$ $\forall s$ решение $(1_0)$
+
+  2)
+
+  $C(s,s) = 0$
+
+  $C'_t(s,s) = 0$
+
+  $C_t^{(n-2)}(s,s) = 0$
+
+  $C_t^{(n-1)}(s,s) = 1$
+\end{define}
+
+\begin{block}[Предложение]
+  Пусть $\varphi(t)$ решение
+  $$
+  x^{(n)}(t) a_{n-1}x^{(n-1)} + \ldots + a_1 x'(t) + a_0 x(t) = 0
+  $$
+  $$
+  \left\{
+  \begin{array}{l}
+    x(0) = 0 \\
+    x'(0) = 0 \\
+    x^{(n-2)}(0) = 0 \\
+    x^{(n-1)}(0) = 1
+  \end{array}
+  \right.
+  \Rightarrow ~ C(t,s) = \varphi(t-s)
+  $$
+  $$
+  \varphi^{(n)}(t) a_{n-1}\varphi^{(n-1)} + \ldots + a_1 \varphi'(t) + a_0
+  \varphi(t) = 0 ~~~ \forall t ~~ C(t,s) = \varphi(t-s)
+  $$
+  $$
+  (\varphi(t-s))^{(n)} + \ldots + a_0 \varphi(t-s) = 0
+  ~~~
+  (\varphi(t-s))' = \varphi'(t-s)
+  $$
+  $$
+  C'_t(s,s) =  \varphi'(s,s) = \varphi'(0) = 0
+  $$
+  $$
+  C^{(n-1)}_t(s,s) = \varphi^{(n-1)}(s,s) = 1
+  $$
+\end{block}
 
 \begin{define}[устойчивости по Ляпунову]
   $$
