@@ -296,7 +296,7 @@
 
 \begin{title}[\Large]
   Метод вариации для линейного неоднородного дифференциального уравнения
-  n-ого порядка.
+  n-ого порядка
 \end{title}
 
 \begin{block}[Метод вариации]
@@ -430,6 +430,49 @@
     \right|
   }{w(s)}b(s)ds
   $$
+\end{block}
+
+\begin{title}[\Large]
+  Функция Коши. Формула Коши для линейного неоднородного дифференциального
+  уравнения n-ого порядка
+\end{title}
+
+\begin{block}[Функция Коши]
+  $$
+  C(t,s) = \frac{
+    \left|
+    \begin{array}{ccc}
+      \varphi_1(s) & 8->\cdots & \varphi_n(s) \\
+      \varphi'_1(s) & \cdots & \varphi'_n(s) \\
+      \vdots & \cdots & \vdots \\
+      \varphi^{(n-2)}_1(s) & \cdots & \varphi^{(n-2)}_n(s) \\
+      \varphi^n_1(s) & \cdots & \varphi^n_n(s)
+    \end{array}
+    \right|
+  }{
+    \left|
+    \begin{array}{ccc}
+      \varphi_1(s) & \cdots & \varphi_n(s) \\
+      \varphi'_1(s) & \cdots & \varphi'_n(s) \\
+      \vdots & \cdots & \vdots \\
+      \varphi^{(n-1)}_1(s) & \cdots & \varphi^{(n-1)}_n(s) \\
+    \end{array}
+    \right|
+  }
+  $$
+  $$
+  x(t) = D_1\varphi_1(t) + \ldots D_n\varphi_n(t) + \int_{t_0}^t C(t,s)b(s) ds
+  $$
+  решение формулы Коши
+\end{block}
+
+\begin{block}[Свойства функции Коши]
+  1) $\forall$ фиксированного $s$ функция Коши удовлитворяет однородному
+  уравнению $(1^0)$
+
+  2) Посчитает функцию Коши в точке $C(s,s) = 0$
+
+  УЗНАТЬ О ТОМ ЧТО СДЕСЬ ДОЛЖНО БЫТЬ
 \end{block}
 
 \begin{define}[устойчивости по Ляпунову]
