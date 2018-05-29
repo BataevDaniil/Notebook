@@ -13,33 +13,46 @@
 
   $\vec \varphi(b)$ конечная точка кривой
 
-  $\vec \varphi([a,b]) \not= 0$ тогда гладкая
+  $\vec \varphi'([a,b]) \not= 0$ тогда гладкая
 
-  Кривая называется кусочно гладкая если каждая гладкая часть начинается с
+  Кривая называется кусочно гладкая если каждая ее гладкая часть начинается с
   другой гладкой части (может быть разорвано)
+
+  Если кривая самопересекается то называется не простой иначе простой.
+
+  $\vec \varphi(a) = \vec \varphi(b)$ замкнутая кривая (контур)
+  \\
 
   $\vec \rho = \vec \rho(\tau) = (u(\tau), v(\tau), w(\tau)) ~~
   \tau \in [\alpha, \beta]$
 
-  $\vec \rho$ эквивалентна $\vec \varphi$ если $\exists$ взаимооднозначное
-  отображение, $\nearrow$, $t'(\tau) > 0$ тогда замена параметра допустима
+  $\vec \rho$ эквивалентна $\vec \varphi$ если $\exists t(\tau)$
+  взаимооднозначное отображение, строго $\nearrow$, $t'(\tau) > 0$ тогда замена
+  параметра допустима
 
   $\vec \rho(\tau) = (x(t(\tau)) = v(\tau), y(t(\tau)) = u(\tau),
   z(t(\tau)) = w(\tau))$
 \end{block}
 
-\begin{define}[криволинейным интегралом первого рода]
-  $\Gamma \subset R^3$ частично гладкая кривая $\vec \varphi = \vec \varphi(t) =
-  (x(t), y(t), z(t)) ~~ t \in [a,b]$ и $f(x,y,z)$ непрерывна на $\Gamma$ тогда
-  криволинейным интегралом первого рода $f(x,y,z)$ называется определенный
-  интеграл
+\begin{define}[криволинейного интеграла первого рода]
+  $\Gamma \subset R^3$ кривая которая задается с помощью параметрического
+  задания $\vec \varphi = \vec \varphi(t) =
+  (x(t), y(t), z(t)) ~~ t \in [a,b]$ кусочно-гладкая и $f(x,y,z)$ непрерывна
+  на $\Gamma$ тогда
+  криволинейным интегралом первого рода от $f(x,y,z)$ на $\Gamma$ называется
+  определенный интеграл вида
   $$
   \int_a^b f(x(t), y(t), z(t))|\vec \varphi'(t)|dt =
-  \int_{\Gamma} f(x,y,z) d l
+  $$
+  $$
+  = \int_a^b f(x(t), y(t), z(t)) \sqrt{x'^2(t) + y'^2(t) + z'^2(t)} dt =
+  $$
+  $$
+  = \int_{\Gamma} f(x,y,z) d l
   $$
 \end{define}
 
-\begin{theorem}
+\begin{theorem}[проверки коректности определения]
   Криволинейный интеграл 1-ого рода не зависит от способа задания кривой
   $\Gamma$
 \end{theorem}
@@ -65,20 +78,30 @@
 \end{proof}
 
 \begin{theorem}
-  Криволинейный интеграл не зависит от ориентации кривой $\Gamma$
+  Криволинейный интеграл первого рода не зависит от ориентации кривой $\Gamma$
   $$
   \int_{\Gamma} f(x,y,z) d l = \int_{\Gamma^-} f(x,y,z) d l
   $$
+\end{theorem}
+
+\begin{proof}
   $\vec \rho (\tau) = \vec \varphi (a+b-\tau) ~~ \tau \in [a,b]$
   $$
   \int_{\Gamma^-} f(x,y,z) d l = \int_a^b
   f(x(a+b-\tau),y(a+b-\tau),z(a+b-\tau)) |\varphi'_{\tau}(a+b-\tau)|d \tau =
   $$
   $$
-  = |a+b-\tau=t ~~ dt = -d\tau| = \int_a^b f(x(t),y(t),z(t))
+  =
+  \left|
+    \begin{array}{l}
+      a+b-\tau = t \\
+      dt = -d\tau
+    \end{array}
+  \right|
+  = \int_a^b f(x(t),y(t),z(t))
   |\vec \varphi'_t(t)| dt = \int_{\Gamma} f(x,y,z) dl
   $$
-\end{theorem}
+\end{proof}
 
 \begin{theorem}
   $\Gamma$ кусочно гладкая кривая $\Gamma = \Gamma_1 \cup \Gamma_2 \cup
@@ -87,6 +110,10 @@
   \int_{\Gamma} f(x,y,z) d l = \sum_{k=1}^m \int_{\Gamma_k} f(x,y,z) d l
   $$
 \end{theorem}
+
+\begin{proof}
+  Доказательство вытекает из соответствующего свойства определенного интеграла.
+\end{proof}
 
 \begin{title}[\Large]
   Криволинейный интеграл второго рода
