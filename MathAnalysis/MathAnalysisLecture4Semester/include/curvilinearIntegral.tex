@@ -120,13 +120,18 @@
 \end{title}
 
 \begin{define}[плоского поля]
-  Если можно так выбрать систему координат что $Q$ или $P$ или $R$ $\equiv 0$
+  $(P(x,y,z), Q(x,y,z), R(x,y,z)) = \vec F(x,y,z)$
+  векторное поле,
+  если можно так выбрать систему координат что $Q$ или $P$ или $R$ $\equiv 0$
   тогда поле плоское.
 \end{define}
 
-\begin{define}
-  $\Gamma \subset \Omega$ $\vec \varphi = \vec \varphi(t) = (x(t), y(t), z(t))$
-  криволинейным интегралом второго рода называет определенный интгерал
+\begin{define}[криволинейного интеграла второго рода]
+  Область $\Omega \subset R^3$ $(P(x,y,z), Q(x,y,z), R(x,y,z)) = \vec F(x,y,z)$
+  векторное поле и кусочно гладкая кривая
+  $\Gamma \subset \Omega$ $\vec \varphi = \vec \varphi(t) = (x(t), y(t), z(t))
+  ~~~ t \in [a,b]$
+  криволинейным интегралом второго рода называет определенный интеграл
   $$
   \int_a^b (P(x(t), y(t), z(t))x'(t) + Q (x(t), y(t), z(t))y'(t) +
   R(x(t), y(t), z(t))z'(t))dt =
@@ -140,7 +145,7 @@
 \begin{theorem}
   Криволинейный интеграл второго рода не зависит от выбора парамтризации
 
-  $\vec \varphi = \vec \varphi(t) = (x(t), y(t), z(t))$
+  $\vec \varphi = \vec \varphi(t) = (x(t), y(t), z(t)) ~~ t \in [a,b]$
 
   $\vec \rho = \vec \rho(\tau) = (u(\tau), v(\tau), w(\tau)) ~~ \tau \in
   [\alpha, \beta]$
@@ -149,9 +154,41 @@
   $$
 \end{theorem}
 
+\begin{proof}
+  $t = t(\tau) ~~~ [\alpha, \beta] \to [a,b] ~~~ t'(\tau) > 0$
+  $$
+  u(\tau) = x(t(\tau))
+  ~~~
+  \upsilon(\tau) = y(t(\tau))
+  ~~~
+  \omega(\tau) = z(t(\tau))
+  $$
+  $$
+  \int_a^b (P(x(t), y(t), z(t))x'(t) + Q (x(t), y(t), z(t))y'(t) +
+  R(x(t), y(t), z(t))z'(t))dt =
+  $$
+  $$
+  = \int_{\alpha}^{\beta} (P(u(t), \upsilon(t), \omega(t))u'(t) + Q (u(t),
+  \upsilon(t), \omega(t))\upsilon'(t) + R(u(t), \upsilon(t),
+  \omega(t))\omega'(t))d\tau
+  $$
+  $$
+  \int_{\alpha}^{\beta} (P(x(t(\tau)), y(t(\tau)), z(t(\tau)))x'_t(t(\tau)) +
+  Q (x(t(\tau)), y(t(\tau)), z(t(\tau)))y'_t(t(\tau)) +
+  $$
+  $$
+  + R(x(t(\tau)), y(t(\tau)), z(t(\tau)))z'_t(t(\tau))) t(\tau) d\tau =
+  $$
+  $$
+  = \int_{\alpha}^{\beta} (P(u(t), \upsilon(t), \omega(t))u'(t) + Q (u(t),
+  \upsilon(t), \omega(t))\upsilon'(t) + R(u(t), \upsilon(t),
+  \omega(t))\omega'(t))d\tau
+  $$
+\end{proof}
+
 \begin{theorem}
   $$
-  \int_{\Gamma^-} (\vec F, d\vec \varphi) = - \int_{\Gamma} (\vec F, d \vec
+  \int_{\Gamma^-} (\vec F, d\vec \varphi) = - \int_{\Gamma^+} (\vec F, d \vec
   \varphi)
   $$
 \end{theorem}
@@ -161,31 +198,53 @@
 
   $\vec \rho = \vec \rho (\tau) = \vec \varphi(a+b-\tau) ~~ \tau \in [a,b]$
   $$
-  \int_{\Gamma^-}(\vec F, d\vec \phi) = \int_a^b \vec F(u(\tau), v(\tau),
-  w(\tau)d\vec \rho (\tau)) =
+  \int_{\Gamma^-}(\vec F, d\vec \rho) = \int_a^b (\vec F(u(\tau), v(\tau),
+  w(\tau)), d\vec \rho (\tau)) =
   $$
   $$
-  = \int_a^b \vec F(x(a+b-\tau),y(a+b-\tau),z(a+b-\tau))d\vec \varphi(a+b-\tau)
+  = \int_a^b (\vec F(x(a+b-\tau),y(a+b-\tau),z(a+b-\tau)),
+  d\vec \varphi(a+b-\tau))
   =
   $$
   $$
-  |a+b -\tau = t ~~ d\tau = -dt|
-  = \int_a^b \vec F(x(t), y(t), z(t))d\vec \varphi(t) =
-  - \int_a^b \vec F(x,y,z)d\vec\varphi
+  =
+  \left|
+    \begin{array}{l}
+      a+b-\tau = t \\
+      dt = -d\tau
+    \end{array}
+  \right|
+  = \int_a^b (\vec F(x(t), y(t), z(t)), (-d\vec \varphi(t)))(-dt) =
   $$
   $$
-  d\vec \rho(\tau) = \vec \rho'_{\tau} d\tau = \vec \varphi'_t \rho'_{\tau}
+  = - \int_a^b (\vec F(x,y,z), d \vec \varphi)
+  = \int_a^b (\vec F, d \vec \varphi)
+  $$
+  $$
+  d\vec \rho(\tau) = \vec \rho'_{\tau} d\tau = (\vec \varphi'_t, \rho'_{\tau})
   d\tau = -\vec \varphi'_t d\tau
   $$
 \end{proof}
 
 \begin{theorem}
-  $\Gamma = \Gamma_1 \cup \Gamma_2 \cup \ldots \cup \Gamma_m$
+  $\Gamma = \Gamma_1 \cup \Gamma_2 \cup \ldots \cup \Gamma_m$ кусочно гладкая
+  кривая
   $$
-  \int_{\Gamma^-} (\vec F, d\vec \varphi) = \sum_{k=1}^m \int_{\Gamma_k}
+  \int_{\Gamma} (\vec F, d\vec \varphi) = \sum_{k=1}^m \int_{\Gamma_k}
   (\vec F, d\vec \varphi)
   $$
 \end{theorem}
+
+\begin{theorem}
+  $\Gamma$ плоская кривая $(x,y)$ график $y = f(x) ~~ x \in [a,b]$ тогда
+  $$
+  \int_{\Gamma} P(x,y)dx = \int_a^b P(x, f(x))dx
+  $$
+\end{theorem}
+
+\begin{title}[\Large]
+  Формула Грина
+\end{title}
 
 \begin{define}[односвязаной области]
   $D \subset R^2$ область называется односвязной если ограниченная часть
