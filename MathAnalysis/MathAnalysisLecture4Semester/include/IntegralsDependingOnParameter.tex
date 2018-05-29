@@ -329,3 +329,71 @@
     \varepsilon
   $$
 \end{proof}
+
+\begin{title}[\Large]
+  Интегрирование несобственных интегралов зависящих от параметра
+\end{title}
+
+\begin{theorem}
+  $f(x,y)$ непрерывна $[a,b) \times [c,d]$ $b$ особая точка
+  $$
+  \int_a^b f(x,y) dx = F(y) ~~~ \text{равномерно сходится на отрезке} [c,d]
+  $$
+  тогда ее можно проинтегрировать и интеграл равен
+  $$
+  \int_c^d F(y) dy = \int_a^b dx \int_c^d f(x,y) dy =
+  \int_c^d dy \int_a^b f(x,y) dx
+  $$
+\end{theorem}
+
+\begin{proof}
+  $F(y)$ непрерывна по теореме непрерывности несобственных интегралов зависящих
+  от параметра
+  $$
+  \forall \varepsilon > 0
+  ~~~
+  \exists \delta_{\varepsilon} \in [a, b)
+  ~~~
+  \forall t \in [\delta_{\varepsilon}, b)
+  ~~~
+  \forall y \in [c,d]
+  ~~~
+  \left|
+    \int_t^b f(x,y) dx < \frac{\varepsilon}{d-c}
+  \right|
+  $$
+  так как $\int_t^b f(x,y) dx$ удовлитворяет теореме об интегрировании
+  собственных интегралов, то
+  $$
+  \int_a^t dx \int_c^d f(x,y) dy =
+  \int_c^d dy \int_a^t f(x,y) dx
+  $$
+  перейдем к пределу при $t \to b -0$
+  $$
+  \left|
+    \int_c^d dy \int_a^b f(x,y) dx
+    -
+    \int_c^d dy \int_a^t f(x,y) dx
+  \right|
+  =
+  \left|
+    \int_c^d dy \int_t^b f(x,y) dx
+  \right|
+  \le
+  $$
+  $$
+  \le
+  \int_c^d dy
+  \left|
+    \int_t^b f(x,y) dx
+  \right|
+  <
+  \frac{\varepsilon}{d-c} \int_c^d dy = \varepsilon
+  $$
+  теперь переходим к пределу
+  $$
+  \int_c^d dy \int_a^b f(x,y) dx
+  =
+  \int_a^b dx \int_c^d f(x,y) dy
+  $$
+\end{proof}
