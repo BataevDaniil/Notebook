@@ -247,15 +247,17 @@
 \end{title}
 
 \begin{define}[односвязаной области]
-  $D \subset R^2$ область называется односвязной если ограниченная часть
-  плоскости ограничена контуром часть плоскости $Q$ польностью содержит кривую.
+  $D \subset R^2$ область называется односвязной если $\forall$ замкнутого
+  контура $\Gamma \subset D$ ограничена $\partial Q = \Gamma$
+  лежит полностью $Q \subset D$
 
   По колхозному: односвязанная область это область без дырок.
 \end{define}
 
 \begin{block}[Формула Грин]
-  $D \subset R^2$ односвязанная область где $(P,Q)$ непрерывно дифференцируемое
-  поле тогда $\forall \Gamma \subset D$ $\Gamma = \partial \Omega$ замкнута и
+  $D \subset R^2$ односвязанная область в котором задана непрерывно
+  дифференцируемое поле $(P,Q)$ тогда $\forall \Gamma \subset D$
+  $\Gamma = \partial \Omega$ замкнута и
   ориентация против часовой стрелки
   $$
   \int_{\Gamma} Pdx + Qdy = \iint_{\Omega}  \left( \frac{\partial Q}{\partial x}
@@ -269,6 +271,7 @@
   Докажем для $\Omega$ элементарный относительно обеих осей
 
   1)
+
   $\Gamma_{ABCD}: y = \varphi(x) ~~ x \in [a,b]$
 
   $\Gamma_{HGFE}: y = \psi(x) ~~ x \in [a,b]$
@@ -277,8 +280,8 @@
   -\int_a^b dx \int_{\varphi(x)}^{\psi(x)} \frac{\partial P}{\partial y} dy =
   $$
   $$
-  = \int_a^b dx P(x,y) |_{\varphi(x)}^{\psi(x)} = \int_a^b(-P(x, \psi(x)))dx +
-  \int_a^b P(x, \varphi(x)) dx =
+  = -\int_a^b dx P(x,y) |_{\varphi(x)}^{\psi(x)} =
+  - \int_a^b P(x, \psi(x))dx + \int_a^b P(x, \varphi(x)) dx =
   $$
   $$
   = -\int_{\Gamma_{HGFE}} P(x, y) dx + \int_{\Gamma_{ABCD}} P(x,y)dx =
@@ -289,10 +292,26 @@
   \int_{\Gamma} P(x,y) dx
   $$
   2)
+
+  $\Gamma_{GHAB}: y = \varphi(x) ~~ x \in [a,b]$
+
+  $\Gamma_{CDEF}: y = \psi(x) ~~ x \in [a,b]$
   $$
-  \iint_{\Omega} \frac{\partial Q}{\partial x} dx dy = \int_{\Gamma} Q(x,y)dy
+  \iint_{\Omega} \frac{\partial Q}{\partial x} dx dy =
+  \int_c^d dy \int_{\varphi(y)}^{\psi(y)} \frac{\partial Q}{\partial x} dx =
   $$
-  доказать самому
+  $$
+  = \int_c^d dy Q(x,y) |_{\varphi(x)}^{\psi(x)} =
+  \int_c^d Q(\psi(y), y)dy - \int_c^d Q(\varphi(y), y) dy =
+  $$
+  $$
+  = \int_{\Gamma_{CDEF}} Q(x, y) dy - \int_{\Gamma_{GHAB}} Q(x,y)dy =
+  \int_{\Gamma_{CDEF}} Q(x, y) dy + \int_{\Gamma_{BAHG}} Q(x,y)dy =
+  $$
+  $$
+  + \int_{\Gamma_{FG}} Q(x, y)dy + \int_{\Gamma_{BC}} Q(x,y) dy =
+  \int_{\Gamma} Q(x,y) dy
+  $$
 \end{proof}
 
 \begin{title}[\Large]
