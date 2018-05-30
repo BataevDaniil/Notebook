@@ -446,3 +446,95 @@
   F(y) - 0 = \int_a^b f'_y(x,y) dx
   $$
 \end{proof}
+
+\begin{title}[\Large]
+  Ортогональные системы функций. Ряды Фурье. Коэффициенты Фурье
+\end{title}
+
+\begin{define}[ортогональной системы функций]
+  Системы функций $\varphi_k(x) ~~ k \in N$ непрерывна на отрезке $[a,b]$
+  отличных от тождественного нуля называется ортогональным на отрезке
+  если
+  $$
+  \forall k,m \in N ~~ k \not= m
+  ~~~
+  \int_a^b \varphi_k(x)\varphi_m(x) dx = 0
+  ~~
+  \text{аналог скалярного произведения}
+  $$
+  $$
+  \forall k \in N
+  ~~~
+  \int_a^b \varphi_k^2(x) dx = 1
+  ~~
+  \text{система ортонормированна}
+  $$
+\end{define}
+
+\begin{theorem}
+  $f(x)$ непрерывна на $[a,b]$ и $\forall x \in [a,b]$
+  $$
+  f(x) = \sum_{k=1}^{\infty} a_k \varphi_k(x)
+  $$
+  представима в виде ряд, где $\varphi_k(x)$ ортогоональная система функций и
+  $$
+  \sum_{k=1}^{\infty} a_k \varphi_k(x) \rightrightarrows
+  ~~
+  \text{сходится равмномерно}
+  $$
+  тогда коэффициенты имеют такой вид
+  $$
+  a_k = \frac{
+    \int_a^b f(t) \varphi_k(t) dt
+  }{
+    \int_a^b \varphi_k^2(t) dt
+  }
+  $$
+  $a_k$ коэффиценты Фурье.
+
+  $f(x)$ абсолютно интегрируема на $[a,b]$ по ортогональной системе
+  $\varphi_k(x)$
+
+  Ряд Фурье
+  $$
+  \sum_{k=1}^{\infty} a_k \varphi_k(x) f(x)
+  $$
+  построена для функции
+\end{theorem}
+
+\begin{proof}
+  $$
+  f(t) \varphi_m(t) = \sum_{k=1}^{\infty} a_k \varphi_k(t) \varphi_m(t)
+  $$
+  $$
+  \int_a^b f(t) \varphi_m(t) dt = \sum_{k=1}^{\infty} a_k \int_a^b
+  \varphi_k(t) \varphi_m(t) dt
+  $$
+  $$
+  \text{Если} ~~ m \not= k ~~ \text{тогда}
+  \int_a^b \varphi_k(t) \varphi_m(t) dt = 0
+  $$
+  $$
+  \text{Если} ~~ m = k ~~ \text{тогда}
+  \int_a^b \varphi_k(t) \varphi_m(t) dt \not= 0
+  $$
+  $$
+  \int_a^b f(t) \varphi_m(t) dt
+  =
+  a_m \int_a^b \varphi_m^2(t) dt
+  $$
+  числа $a_k$ будут существовать для $f(t)$ если $f(t)$ является абсолютно
+  интегрируемой на $[a,b]$
+  $$
+  \forall k \in N
+  ~~~
+  M_k = \sup_{x \in [a,b]} |\varphi_k(x)|
+  ~~~
+  |f(x) \varphi_k(x)| \le |f(x)| M_k
+  $$
+  тогда по признаку сравнения
+  $$
+  \int_a^b |f(t)| |\varphi_k(t)| dt
+  $$
+  $\Rightarrow$ $\exists a_k$
+\end{proof}
