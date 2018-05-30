@@ -397,3 +397,52 @@
   \int_a^b dx \int_c^d f(x,y) dy
   $$
 \end{proof}
+
+\begin{title}[\Large]
+  Дифференцирование несобственных интегралов зависящих от параметра
+\end{title}
+
+\begin{theorem}
+  $f(x,y), f'_y (x,y)$ непрерывна на $[a,b) \times [c,d]$ где $b$ собственная
+  точка одной из функций или обоих
+  $$
+  \int_a^b f'_y (x,y) dx \rightrightarrows
+  $$
+  $$
+  \int_a^b f(x,c) dx \rightarrow
+  $$
+  тогда
+  $$
+  F(y) = \int_a^b f (x,c) dx ~~~ \text{дифференцируема}
+  $$
+  $$
+  F'(y) = \int_a^b f'_y (x,y) dx
+  $$
+\end{theorem}
+
+\begin{proof}
+  $y \in [c,d] ~~~ t \in [c,y]$
+
+  $\int_a^b f'_t(x,t)dx$ по теореме об интегрировании несобственого интеграла,
+  его можно интегрировать на $[c,d]$
+  $$
+  \int_c^y dt \int_a^b f'_t(x, t) dx
+  =
+  \int_a^b dx \int_c^y f'_t(x,t) dt
+  =
+  \int_a^b dx f(x,t)|_c^y
+  $$
+  $$
+  =
+  \int_a^b dx f(x,y) dx - \int_a^b f(x,c)dx = F(y) - F(c)
+  $$
+  $$
+  \left( \int_a^x f(t) dt \right)'_x = f(x)
+  $$
+  $$
+  F(y) - F(c) = \int_c^y dt \int_a^b f'_t(x,t) dx
+  $$
+  $$
+  F(y) - 0 = \int_a^b f'_y(x,y) dx
+  $$
+\end{proof}
