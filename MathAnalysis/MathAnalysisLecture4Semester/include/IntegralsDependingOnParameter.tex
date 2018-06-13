@@ -2,10 +2,106 @@
   Интегралы зависящие от параметра
 \end{title}
 
-\begin{define}
+\begin{title}[\Large]
+  Непрерывность и интегрируемость собственных интегралов, зависящих от
+  параметра
+\end{title}
+
+\begin{define}[интеграла зависящего от параметра]
+  $f(x,y)$ определена на $[a,b] \times E \subset R^n ~~ \forall y \in E ~~
+  f(x,y)$ явялется интегрируемой по $x$ то
   $$
   F(y) = \int_a^b f(x,y) dx ~~ y \in E
   $$
+  это интеграл зависящий от параметра.
+
+  Область определения это для каких $y$ этот интеграл имеет смысл (существует)
+\end{define}
+
+\begin{theorem}
+  $f(x,y)$ непрерывна на $[a,b] \times [c,d]$ тогда $F(y)$ непрерывна
+  на $[c,d]$
+\end{theorem}
+
+\begin{proof}
+  Его нет, но он есть.
+\end{proof}
+
+\begin{theorem}
+  $f(x,y)$ непрерывна на $[a,b] \times E \subset R^2$ где
+  $$
+  E = \{ (x,y): c \le y \le d ~~ \varphi(y) \le x \le \psi(y) \}
+  $$
+  тогда
+  $$
+  F(y) = \int_{\varphi(y)}^{\psi(y)} f(x,y) dx
+  $$
+  непрерывна на $[c,d]$
+\end{theorem}
+
+\begin{proof}
+  Его нет, но он есть.
+\end{proof}
+
+\begin{title}[\Large]
+  Дифференцирование собственных интегралов, зависящих от параметра
+\end{title}
+
+\begin{theorem}
+  $f(x,y)$ непрерывна на $[a,b] \times [c,d]$ тогда
+  $$
+  \int_c^d F(y) dy = \int_a^b dx \int_c^d f(x,y) dy
+  $$
+  или
+  $$
+  \int_c^d dy \int_a^b f(x,y) dx = \int_a^b dx \int_c^d f(x,y) dy
+  $$
+\end{theorem}
+
+\begin{proof}
+  Его нет, но он есть.
+\end{proof}
+
+\begin{theorem}
+  $f(x,y)$ и $f'_y(x,y)$ непрерывна на $[a,b] \times [c,d]$ $F(y) = \int_a^b
+  f(x,y)dx$ дифференцируема на $[c,d]$ тогда
+  $$
+  F'(y) = \int_a^b f'_y(x,y) dx
+  $$
+\end{theorem}
+
+\begin{proof}
+  Его нет, но он есть.
+\end{proof}
+
+\begin{theorem}
+  $f(x,y)$ и $f'_y(x,y)$ непрерывна на
+  $$
+  E = \{ (x,y): c \le y \le d ~~ \alpha(y) \le x \le \beta(y) \}
+  $$
+  $\alpha, \beta$ непрерывна дифференцируемы на $[c,d]$ и
+  $$
+  F(y) = \int_{\alpha(y)}^{\beta(y)} f(x,y) dx
+  $$
+  тогда
+  $$
+  F'(y) = \int_{\alpha(y)}^{\beta(y)} f'_y(x,y)dx + f(\beta(y), y) \beta'(y) -
+  f(\alpha(y), y) \alpha'(y)
+  $$
+\end{theorem}
+
+\begin{proof}
+  Его нет, но он есть.
+\end{proof}
+
+\begin{title}[\Large]
+  Равномерная сходимость несобственных интегралов, зависящих от параметра
+\end{title}
+
+\begin{define}
+  Пусть $f(x,y)$ определена на $[a,b] \times E$ где $b$ особая точка
+  $F(y) = \int_a^b f(x,y) dx ~~ \forall y \in E$
+
   Обычная сходимость
   $$
   \forall y \in E
@@ -59,19 +155,21 @@
   \right|
   \ge \varepsilon
   $$
-  Интеграл является неравномерно сходящимся если он сходится но сходится плохо.
+  Интеграл является неравномерно сходящимся если он сходится, но сходится не
+  равномерно.
 \end{define}
 
 \begin{title}[\Large]
-  Критерий Коши равномерной сходимости определенного интеграла
+   Критерий равномерной сходимости несобственных интегралов, зависящих от
+   параметра
 \end{title}
 
 \begin{block}[Критерий Коши равномерной сходимости определенного интеграла]
-  $$
-  F(y) = \int_a^b f(x,y) dx ~~ \text{сходится равномерно на} ~~ E ~~
-  $$
+  $F(y) = \int_a^b f(x,y) dx$ где $b$ особая точка, сходится равномерно на $E$
   $$
   \Leftrightarrow
+  $$
+  $$
   \forall \varepsilon > 0
   ~~~
   \exists \delta_{\varepsilon} \in (a,b)
@@ -155,6 +253,7 @@
 
 \begin{block}[Признак Вейерштрасса]
   1)
+  $b$ особая точка
   $$
   \forall  x \in [a, b)
   ~~~
@@ -168,7 +267,7 @@
   $$
   тогда
   $$
-  \int_a^b f(x,y) g(x,y) dx \stackrel{E}{\rightrightarrows}
+  \int_a^b f(x,y) dx \stackrel{E}{\rightrightarrows}
   $$
 \end{block}
 
@@ -202,19 +301,25 @@
 \end{proof}
 
 \begin{block}[Признак Дирехле]
-  $f(x,y) ~~ g_x(x,y) ~~ g(x,y) ~~ [a,b] \times E$
+  $f(x,y) ~~ g(x,y) ~~ g_x(x,y)$ непрерывны на $[a,b) \times E$
 
   1)
   $$
+  \exists M > 0
+  ~~
   \forall x \in [a, b]
   ~~
   \forall y \in E
   ~~
   | F(x, y)| \le M
   $$
-  2) $g'_x (x,y) \le 0$ (или $g'x(x,y) \ge 0$)
+  где $F(x,y)$ первообразная $f(x,y)$ по переменной $x$
 
-  3) $|g(x,y)| \le \alpha(x) ~~~ \lim_{x \to b ~ -0}$
+  2) $\forall x \in [a,b) ~~ \forall y \in E ~~ g'_x(x,y) \le 0$ (или
+  $g'_x(x,y) \ge 0$)
+
+  3) $|g(x,y)| \le \alpha(x)$ где $\lim_{x \to b ~ -0} \alpha(x) = 0$ то есть
+  $g(x,y)$ равномерно сходится когда $x \to b -0$ а $y$ не изменяется
 
   тогда
   $$
@@ -223,16 +328,16 @@
 \end{block}
 
 \begin{block}[Признак Абеля]
-  При $f(x,y) ~~ g(x,y) ~~ g'_x(x,y)$ непрерывны на $[a,b) \times E$
+  $f(x,y) ~~ g(x,y) ~~ g'_x(x,y)$ непрерывны на $[a,b] \times E$
 
   1)
   $$
-  \int_a^b f(x,y) dx ~~ \text{равмноерно сходится на} ~~ E
+  \int_a^b f(x,y) dx \stackrel{E}{\rightrightarrows}
   $$
   2) $\forall x \in [a,b) ~~ \forall y \in E ~~ g'_x(x,y) \le 0$ (или
   $g'_x(x,y) \ge 0$)
 
-  3) $\exists M > 0 ~~ \forall (x,y) \ in [a,b) \times E ~~ |g(x,y) \le M$
+  3) $\exists M > 0 ~~ \forall (x,y) \in [a,b] \times E ~~ |g(x,y)| \le M$
 
   тогда
   $$
@@ -241,15 +346,15 @@
 \end{block}
 
 \begin{title}[\Large]
-  Непрерывность несобственных интегралов зависящих от параметра
+  Непрерывность несобственных интегралов, зависящих от параметра
 \end{title}
 
 \begin{theorem}
   $f(x,y)$ непрерывна на $[a,b) \times [c, d]$
   $$
-  \int_a^b f(x,y) dx = F(y) ~~ \text{тогда} ~~ F(y) ~~ \text{непрерывна на} ~~
-  [a,b)
+  \int_a^b f(x,y) dx = F(y) \stackrel{[c,d]}{\rightrightarrows}
   $$
+ тогда $F(y)$ непрерывна на $[c,d]$
 \end{theorem}
 
 \begin{proof}
@@ -337,11 +442,14 @@
 \begin{theorem}
   $f(x,y)$ непрерывна $[a,b) \times [c,d]$ $b$ особая точка
   $$
-  \int_a^b f(x,y) dx = F(y) ~~~ \text{равномерно сходится на отрезке} [c,d]
+  \int_a^b f(x,y) dx = F(y) \stackrel{[c,d]}{\rightrightarrows}
   $$
   тогда ее можно проинтегрировать и интеграл равен
   $$
-  \int_c^d F(y) dy = \int_a^b dx \int_c^d f(x,y) dy =
+  \int_c^d F(y) dy
+  =
+  \int_a^b dx \int_c^d f(x,y) dy
+  =
   \int_c^d dy \int_a^b f(x,y) dx
   $$
 \end{theorem}
@@ -399,11 +507,11 @@
 \end{proof}
 
 \begin{title}[\Large]
-  Дифференцирование несобственных интегралов зависящих от параметра
+  Дифференцирование несобственных интегралов, зависящих от параметра
 \end{title}
 
 \begin{theorem}
-  $f(x,y), f'_y (x,y)$ непрерывна на $[a,b) \times [c,d]$ где $b$ собственная
+  $f(x,y), f'_y (x,y)$ непрерывны на $[a,b) \times [c,d]$ где $b$ собственная
   точка одной из функций или обоих
   $$
   \int_a^b f'_y (x,y) dx \rightrightarrows
@@ -413,7 +521,7 @@
   $$
   тогда
   $$
-  F(y) = \int_a^b f (x,c) dx ~~~ \text{дифференцируема}
+  F(y) = \int_a^b f (x,y) dx ~~~ \text{дифференцируема}
   $$
   $$
   F'(y) = \int_a^b f'_y (x,y) dx
@@ -448,11 +556,19 @@
 \end{proof}
 
 \begin{title}[\Large]
-  Ортогональные системы функций. Ряды Фурье. Коэффициенты Фурье
+  Гамма-функция Эйлера
+\end{title}
+
+$$
+\Gamma(x) = \int_0^{+\infty} t^{x-1} e^{-t} dt
+$$
+
+\begin{title}[\Large]
+  Ортогональные системы функций
 \end{title}
 
 \begin{define}[ортогональной системы функций]
-  Системы функций $\varphi_k(x) ~~ k \in N$ непрерывна на отрезке $[a,b]$
+  Системы функций $\varphi_k(x) ~~ k \in N$ непрерывна на $[a,b]$
   отличных от тождественного нуля называется ортогональным на отрезке
   если
   $$
@@ -471,16 +587,18 @@
   $$
 \end{define}
 
+\begin{title}[\Large]
+  Ряд Фурье. Коэффициенты Фурье
+\end{title}
+
 \begin{theorem}
   $f(x)$ непрерывна на $[a,b]$ и $\forall x \in [a,b]$
   $$
   f(x) = \sum_{k=1}^{\infty} a_k \varphi_k(x)
   $$
-  представима в виде ряд, где $\varphi_k(x)$ ортогоональная система функций и
+  представима в виде ряд, где $\varphi_k(x)$ ортогональная система функций и
   $$
   \sum_{k=1}^{\infty} a_k \varphi_k(x) \rightrightarrows
-  ~~
-  \text{сходится равмномерно}
   $$
   тогда коэффициенты имеют такой вид
   $$
@@ -492,14 +610,17 @@
   $$
   $a_k$ коэффиценты Фурье.
 
+  Если функция $a_k \varphi_k(x)$ тогда ряд тоже непрерывен.
+
+  Числа $a_k$ будут существовать для $f(x)$ если
   $f(x)$ абсолютно интегрируема на $[a,b]$ по ортогональной системе
   $\varphi_k(x)$
 
   Ряд Фурье
   $$
-  \sum_{k=1}^{\infty} a_k \varphi_k(x) f(x)
+  \sum_{k=1}^{\infty} a_k \varphi_k(x) \sim f(x)
   $$
-  построена для функции
+  построена для функции $f(x)$
 \end{theorem}
 
 \begin{proof}
@@ -538,3 +659,18 @@
   $$
   $\Rightarrow$ $\exists a_k$
 \end{proof}
+
+\begin{title}[\Large]
+  Лемма Римана
+\end{title}
+
+\begin{theorem}
+  Если $f(x)$ абсолютно интегрируема на $(a,b)$ который может быть
+  неограниченным
+  $$
+  \lim_{\omega \to \infty} \int_a^b f(x) \cos \omega x dx
+  =
+  \lim_{\omega \to \infty} \int_a^b f(x) \sin \omega x dx
+  = 0
+  $$
+\end{theorem}

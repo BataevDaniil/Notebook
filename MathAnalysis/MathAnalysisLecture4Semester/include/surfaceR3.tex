@@ -8,8 +8,8 @@
   $$
   \rang \left(
   \begin{array}{ccc}
-    x'_u & y'_u & y'_u \\
-    x'_{\upsilon} & y'_{\upsilon} & y'_{\upsilon}
+    x'_u & y'_u & z'_u \\
+    x'_{\upsilon} & y'_{\upsilon} & z'_{\upsilon}
   \end{array}
   \right) = 2 ~~~
   \text{тогда называют поверхность гладкой}
@@ -31,8 +31,8 @@
   \right. ~~~ [\Omega] \leftrightarrow [D] ~~~
   \left|
   \begin{array}{cc}
-    \upsilon'_p & \upsilon'_s \\
-    v'_p & v'_s
+    u'_p & u'_s \\
+    \upsilon'_p & \upsilon'_s
   \end{array}
   \right| \not = 0
   $$
@@ -40,22 +40,25 @@
   y(u(p,s), \upsilon(p,s)), z(u(p,s), \upsilon(p,s)))$
 
   $\vec \varphi ([D]) = P = \vec \rho([\Omega])$
+
+  такое отображение называется допустимой заменой параметра.
 \end{define}
 
 \begin{define}[почти простой поверхности]
-  $\vec \rho(u, \upsilon)$ гладкое отображение которое отображается
+  $\vec \varphi(u, \upsilon)$ гладкое отображение которое отображается
   взаимооднозначно в область $D$
   (может быть не ограничена) на какое-то множество в $R^3$, если $\exists$
-  исчерпание $[D_n]$ такое что $P_n = \vec \varphi ([D_n])$
-  является простой тогда $\vec P =
-  \varphi(D)$ называется почти простой.
+  исчерпание $[D_n]$ такое что $P_n = \vec \varphi ([D_n])$ исчерпаний
+  является простым тогда $P =
+  \vec \varphi(D)$ называется почти простой.
 \end{define}
 
 \begin{theorem}
-  $P$ простая поверхность заданная парасетрически $(u, \upsilon) \in [D]$
+  $P$ простая поверхность заданная параметрически $(u, \upsilon) \in [D]$
   $\vec \varphi (u, \upsilon) = (x(u, \upsilon), y(u, \upsilon),
   z(u, \upsilon))$ тогда $d\vec \varphi = \vec \varphi'_udu +
-  \vec \varphi'_{\upsilon} d\upsilon$
+  \vec \varphi'_{\upsilon} d\upsilon$ где $\varphi'_u, \vec \varphi'_{\upsilon}$
+  неколлинеарны
 \end{theorem}
 
 \begin{proof}
@@ -94,8 +97,8 @@
 
 \begin{theorem}
   $\vec \varphi(u, \upsilon) \sim \vec \rho(p,s) ~~~ (p, s) \in [\Omega]$ тогда
-  $[\vec \rho'_p, \vec \rho'_s]$ либо соноправлены либо противоположенно
-  направленны.
+  $[\vec \rho'_p, \vec \rho'_s]$ и $[\vec \varphi'_u, \vec \varphi'_{\upsilon}]$
+  либо соноправлены либо противоположенно направленны.
 
   При замене параметризации меняется направления векторов.
 \end{theorem}
@@ -199,14 +202,18 @@
 \end{proof}
 
 \begin{title}[\Large]
-  Площадь поверхности
+  Площадь поверхности в пространстве $R^3$
 \end{title}
 
 \begin{block}[Площадь поверхности]
+  $P$ простая поверхность в $R^3$ которая задана параметрически
+  $(u, \upsilon) \in [D] \subset R^2 ~~ P \subset R^3 ~~ \vec \varphi = \vec
+  \varphi(u, \upsilon)$
   $$
   S(P) = \iint \limits_{[D]} |[\vec \varphi_u, \vec \varphi_{\upsilon}]|
   du d\upsilon = \iint \limits_{[D]} \sqrt{EG - F^2}dud\upsilon
   $$
+  $S(P)$ называется площадью поверхности $P$
 \end{block}
 
 \begin{theorem}
@@ -251,8 +258,7 @@
 
 \begin{theorem}
   $$
-  P = \bigcup_{k=1}^m P_k ~~~ S(P) = \sum_{k=1}^m S(P_k) ~~~
-  \iint_{[D]} = \sum_{k=1}^m \iint_{[D_k]}
+  P = \bigcup_{k=1}^m P_k ~~ \text{тогда} ~~ S(P) = \sum_{k=1}^m S(P_k)
   $$
 \end{theorem}
 
@@ -316,7 +322,8 @@
   $P$ простая или почти простая поверхность в $R^3$ заданная параметрически
   $(u, \upsilon) \in [D] \subset R^2$
 
-  $\forall (x,y,z) \in P ~~~ F(x,y,z)$
+  Поверхностный интеграл 1-ого рода $\forall (x,y,z) \in P ~~~ F(x,y,z)$ от
+  функции $F(x,y,z)$ по поверхности $P$ называется
   $$
   \iint_{[D]} F(x(u, \upsilon), y(u,\upsilon), z(u, \upsilon))
   |[\vec \varphi'_u, \vec \varphi'_{\upsilon}]| du d\upsilon =
@@ -344,7 +351,7 @@
 \end{theorem}
 
 \begin{theorem}
-  $\vec z = \vec z(x, y) = (x, y, f(x,y))$
+  $\vec \varphi = \vec \varphi(x, y) = (x, y, f(x,y))$
 
   $\sqrt{EG-F^2} = \sqrt{1 + (f'_x)^2 + (f'_y)^2}$
   $$
@@ -359,17 +366,17 @@
 
 \begin{define}[поверхностного интеграла 2-ого рода]
   Пусть в некоторой области пространства задана
-  $\vec F(x,y,z) = (P(x,y,z), Q(x,y,z),R(x,y,z))$ непрервыное векторное поле
-  $P = \vec z = \vec z(u, \upsilon) ~~ (u, \upsilon) \in D$
+  $\vec F(x,y,z) = (P(x,y,z), Q(x,y,z),R(x,y,z))$ непрервыное векторное поле и
+  $P = \vec \varphi = \vec \varphi(u, \upsilon) ~~ (u, \upsilon) \in [D]$
 
   Поверхностным интегралов 2-ого рода от векторного поля $\vec F$ по поверхности
   $P$ называется поверхностный интеграл 1-ого рода
   $$
-  \iint (\vec F, \vec n) ds = \iint_P P dy dz + Q dz dx + Rdx dy
+  \iint_P (\vec F, \vec n) ds = \iint_P P dy dz + Q dz dx + Rdx dy
   $$
   $$
-  \vec n = \frac{[\vec z'_u, \vec z'_{\upsilon}]}
-  {|[\vec z'_u, \vec z'_{\upsilon}]|} ~~
+  \vec n = \frac{[\vec \varphi'_u, \vec \varphi'_{\upsilon}]}
+  {|[\vec \varphi'_u, \vec \varphi'_{\upsilon}]|} ~~
   \text{еденичный вектор нормали}
   $$
 \end{define}
@@ -412,6 +419,7 @@
   d\upsilon =
   $$
   $$
+  =
   \iint_{[D]} (\vec F, \vec z'_u , \vec z'_{\upsilon}) du d\upsilon
   = \iint_{[D]}
   \left|
@@ -451,21 +459,21 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
 в каждой точке есть направление (аэродинамика, гидродинамика)
 
 \begin{title}[\Large]
-  Формула Астроградского - Гаусса
+  Формула Остроградского-Гаусса
 \end{title}
 
 \begin{define}[дивергенции]
   Если в области $D$ заданое дифференцируемое векторное поле $\vec F(x,y,)
-  = (P, Q, R)$ то скалярная фукнция (дивергенция)
+  = (P, Q, R)$ то скалярная фукнция дивергенция это
   $$
   div \vec F = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}
   + \frac{\partial R}{\partial z}
   $$
 \end{define}
 
-\begin{theorem}
+\begin{theorem}[Остроградского-Гаусса]
   Если $\vec F$ непрервыное дифференцируемое векторное поле в области $R^3$
-  Тело $T$ в этой области ограниченное кусочно гладкой поверхности $P$
+  и тело $T$ в этой области ограниченное кусочно гладкой поверхностью $P$
   (дырки разрешаются) $P = \partial T$ тогда
   $$
   \iint_P P dy dz + Q dz dx + R dx dy =
@@ -525,13 +533,13 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
 \end{block}
 
 \begin{title}[\Large]
-  Соленоидальные поля
+  Соленоидальные векторные поля
 \end{title}
 
-\begin{define}[допустивости]
-  Поверхность $P$ будем называть допустивой в теле $T \subset R^3$ если
+\begin{define}[допустимой поверхности]
+  Поверхность $P$ будем называть допустимой в теле $T \subset R^3$ если
   ограниченная часть пространства данной поверхностью полностью содержится
-  (в теле $T$) или граница ограничиваесят в $R^3$
+  в теле $T$ или граница ограничивается в $R^3$
 
   \includegraphics[width = 12cm]{acess}
 \end{define}
@@ -546,11 +554,11 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
 
 \begin{define}[поверхностно односвязанно]
   Область $D \subset R^3$ называется поверхностно односвязанной если
-  $\forall P \subset D$ ограниченная данной поверхностью частью пространства
-  также содержится в $D$ (обласить без дырок)
+  $\forall P \subset D$ ограниченная данной поверхностью часть пространства
+  также содержится в $D$ (область без дырок)
 \end{define}
 
-\begin{block}[Критерий соленоидальности поля]
+\begin{block}[Критерий соленоидальности векторного поля]
   Для того чтобы векторное поле $\vec F(x,y,z)$ непрерывно дифференцируемое в
   области $D$ было соленоидальным в области $D$ необходимо, а в случае когда
   область $D$ поверхностно односвязанно достаточно, чтобы
@@ -603,7 +611,7 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
   Теорема Стокса
 \end{title}
 
-\begin{theorem}[Стокса]
+\begin{define}
   Пусть $\vec F(x,y,z) = (P,Q,R)$ векторное поле
   $$
   rot \vec F =
@@ -613,19 +621,19 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
     \frac{\partial}{\partial x} &
     \frac{\partial}{\partial y} &
     \frac{\partial}{\partial z} \\
-    P & G & R
+    P & Q & R
   \end{array}
   \right| =
   \left(
-    \frac{\partial R}{\partial x}
+    \frac{\partial R}{\partial y}
     -
     \frac{\partial Q}{\partial z},
-    \frac{\partial R}{\partial z}
+    \frac{\partial P}{\partial z}
     -
-    \frac{\partial P}{\partial x},
+    \frac{\partial R}{\partial x},
     \frac{\partial Q}{\partial x}
     -
-    \frac{\partial P}{\partial y},
+    \frac{\partial P}{\partial y}
   \right) = ~ \text{ротор} ~ \vec F
   $$
   степень закругленности (вихрь)
@@ -649,16 +657,15 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
 
   Сторона которая содержится $\vec n$ называется согласованной с ориентацией
   $\gamma$
-\end{theorem}
+\end{define}
 
-\begin{theorem}
-  Пусть поле $\vec F$ непрерывно дифференцируем в некоторой области $R^3$ в
-  которой задана простая почти проставя поверхность $P$ с параметрическим
-  заданием $\vec \varphi = \vec \varphi(u, \upsilon)$ а $(u, \upsilon \in [D]$
-  бегает в замыкани $D$
+\begin{theorem}[Стокса]
+  Пусть поле $\vec F$ непрерывно дифференцируема в некоторой области $R^3$ в
+  которой задана простая или почти простая поверхность $P$ с параметрическим
+  заданием $\vec \varphi = \vec \varphi(u, \upsilon) ~~ (u, \upsilon) \in [D]$
 
   Если $\Gamma = \partial P$ (край поверхности P) ориентация которого
-  согласованна с выбором стороы поверхности $P$ то
+  согласованна с выбором стороны поверхности $P$ то
   $$
   \int_{\Gamma} (\vec F, d\vec \varphi) = \iint_P (rot \vec F, \vec n) ds
   $$
@@ -790,8 +797,8 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
 
 \begin{define}[потенциального векторного поля]
   Непрерывное векторное поле $\vec F(x,y,z) = (P, Q, R)$ называется
-  потенциальным в какой-то области $D \subset R^3$ $u = u(x,y,)$ если
-  выполняется равенство
+  потенциальным в какой-то области $D \subset R^3$ если $\exists u = u(x,y,z)$
+  если выполняется равенство
   $$
   \grad (u) = \vec F ~~ \Leftrightarrow ~~
   \left\{
@@ -810,13 +817,14 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
 
   1)
   $$
-  \int_{L \subset D} Pdx + Qdy + Rdz = 0
+  \forall L \subset D ~~ \int_L Pdx + Qdy + Rdz = 0
   $$
   2)
   $$
-  \int_{L_{ABCD}} Pdx + Qdy + Rdz = 0
+  \int_{L_{AB}} Pdx + Qdy + Rdz = 0
   $$
-  не зависит от вида ломанной $L_{AB}$, а зависит только от граничных точек
+  не зависит от вида ломанной $L_{AB} \subset D$, а зависит только от граничных
+  точек
 
   3)
   $\vec F = (P, Q, R)$ является потенциальным в $D$
@@ -830,7 +838,7 @@ $\iint_P (\vec F, \vec n) ds$ колличество жидкости/газов
 
 \begin{block}[Критерий потенциальности поля]
   Для того чтобы непрерывно дифференцируемое векторное поле $\vec F = (P, Q, R)$
-  была потенциально необходимо, а в случае, когда область $D$ линейно
+  было потенциально необходимо, а в случае, когда область $D$ линейно
   односвязанна достаточно $\forall (x,y,z) \in D ~~ rot \vec F(x,y,z) = \vec 0$
 \end{block}
 
